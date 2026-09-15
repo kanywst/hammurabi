@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/kanywst/hammurabi/compare/v1.0.1...v1.0.2) (2026-09-15)
+
+
+### Corrections
+
+* **website:** bump sharp override to ^0.35.4 to clear high-severity audit ([7f01681](https://github.com/kanywst/hammurabi/commit/7f01681ee4f78e1e1c097d19811c2fe2a13b89b4))
+
 ## [1.0.1](https://github.com/kanywst/hammurabi/compare/v1.0.0...v1.0.1) (2026-08-20)
 
 
