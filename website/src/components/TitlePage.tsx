@@ -48,7 +48,13 @@ export default function TitlePage({ lang }: { lang: Locale }) {
       id="top"
       className="grid gap-x-16 pb-16 pt-28 sm:pt-36 md:grid-cols-[minmax(0,1fr)_12rem] lg:grid-cols-[minmax(0,1fr)_14rem]"
     >
-      <div className="min-w-0">
+      <div className="relative min-w-0">
+        {/* On a phone the stele is too tall to stand beside the text, so a
+            small one stands beside the name instead, with today's line cut
+            in red. */}
+        <div className="absolute right-0 top-1 md:hidden [&_.stele]:w-14">
+          <Stele lang={lang} variant="mini" current={shown.slug} />
+        </div>
         <h1 className="text-[clamp(3.25rem,10vw,7rem)] font-bold leading-[0.95] tracking-[-0.035em]">
           {t.hero.title}
         </h1>
@@ -59,7 +65,7 @@ export default function TitlePage({ lang }: { lang: Locale }) {
           {'\u{12129}\u{12000}\u{12220}\u{12261}\u{12049}'}
         </p>
 
-        <p className="mt-8 max-w-[38rem] text-[1.25rem] leading-relaxed text-relief-dim">
+        <p className="mt-8 max-w-[38rem] pr-[4.5rem] text-[1.25rem] leading-relaxed text-relief-dim md:pr-0">
           {t.hero.lede}
         </p>
 
