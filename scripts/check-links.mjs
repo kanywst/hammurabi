@@ -6,6 +6,7 @@
  * link rot is silent. Run it locally before adding a law; CI runs it on a
  * schedule rather than per-commit so a publisher's outage never blocks a merge.
  */
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { requireCodex } from './lib/codex.mjs';
 
 // A publisher answering 401/403/405/429 has told us the URL exists and that it
@@ -79,32 +80,66 @@ await Promise.all(
 results.sort((a, b) => a.law.number - b.law.number);
 
 const verbose = process.argv.includes('--verbose');
+// --state=<file> carries, between runs, the day each unreachable source was
+// first seen. A retry can tell a bad afternoon from a bad minute, but not a
+// dead domain from a bad week; only time can, so a source that has not
+// answered for STALE_DAYS stops being a warning and becomes a failure.
+const statePath = process.argv.find((arg) => arg.startsWith('--state='))?.slice('--state='.length);
+const STALE_DAYS = 28;
+const today = new Date().toISOString().slice(0, 10);
+const previous = statePath && existsSync(statePath) ? JSON.parse(readFileSync(statePath, 'utf8') || '{}') : {};
+const daysSince = (day) => Math.floor((Date.parse(today) - Date.parse(day)) / 86_400_000);
+
 const failed = [];
 const blocked = [];
 const unreachable = [];
 
 for (const result of results) {
-  const { law, status, error } = result;
+  const { status } = result;
   const ok = status >= 200 && status < 400;
-  const isBlocked = BLOCKED.has(status);
-  const isUnreachable = !ok && isTransient(status);
-  if (isBlocked) blocked.push(result);
-  else if (isUnreachable) unreachable.push(result);
+  if (BLOCKED.has(status)) blocked.push(result);
+  else if (!ok && isTransient(status)) unreachable.push(result);
   else if (!ok) failed.push(result);
+}
 
-  const mark = ok ? 'ok  ' : isBlocked ? 'bot ' : isUnreachable ? 'warn' : 'FAIL';
-  const detail = error ? ` (${error})` : ` (${status})`;
+// Most of the codex not answering is the runner's network, not the publishers;
+// passing that run would report a check that never happened. The state is left
+// as it was, so an outage on our side does not start anyone's clock.
+const networkDown = unreachable.length > results.length / 2;
+
+const next = {};
+if (!networkDown) {
+  for (const result of unreachable) {
+    const since = previous[result.law.slug] ?? today;
+    next[result.law.slug] = since;
+    result.since = since;
+    if (daysSince(since) >= STALE_DAYS) failed.push(result);
+  }
+}
+if (statePath) writeFileSync(statePath, `${JSON.stringify(networkDown ? previous : next, null, 2)}\n`);
+
+for (const result of results) {
+  const { law, status, error, since } = result;
+  const ok = status >= 200 && status < 400;
+  const mark = ok
+    ? 'ok  '
+    : BLOCKED.has(status)
+      ? 'bot '
+      : failed.includes(result)
+        ? 'FAIL'
+        : 'warn';
+  const detail = (error ? ` (${error})` : ` (${status})`) + (since ? ` [unreachable since ${since}]` : '');
   if (!ok || verbose) console.log(`${mark} ${law.slug}${detail} ${law.source_url}`);
 }
 
-const resolved = results.length - failed.length - blocked.length - unreachable.length;
+const stale = failed.filter((result) => result.since).length;
+const pending = unreachable.length - stale;
+const resolved = results.length - blocked.length - unreachable.length - (failed.length - stale);
 console.log(
-  `\n${resolved} resolved, ${blocked.length} refused robots, ${unreachable.length} unreachable, ${failed.length} broken (of ${results.length})`
+  `\n${resolved} resolved, ${blocked.length} refused robots, ${pending} unreachable, ${failed.length} broken (of ${results.length})`
 );
 
-// Most of the codex not answering is the runner's network, not the publishers;
-// passing that run would report a check that never happened.
-if (unreachable.length > results.length / 2) {
+if (networkDown) {
   console.error(`\n${unreachable.length} of ${results.length} sources unreachable. The check itself did not run.`);
   process.exit(1);
 }
