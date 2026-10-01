@@ -101,7 +101,7 @@ html:lang(ja) body {
   }
 
   /* Article numbers are set in the didone: its figures are the ones that look
-     cut, and the text face draws its zero slashed, which reads as a code. */
+     cut, and they mark a number as an address rather than a quantity. */
   .num {
     font-family: var(--font-display);
     font-variant-numeric: tabular-nums lining-nums;

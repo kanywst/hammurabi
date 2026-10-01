@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
-import {
-  Atkinson_Hyperlegible_Next,
-  Bodoni_Moda,
-  Noto_Sans_Cuneiform,
-} from 'next/font/google';
+import { Bodoni_Moda, Noto_Sans_Cuneiform } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import { translations } from '@/translations';
 import {
@@ -25,13 +22,34 @@ const bodoni = Bodoni_Moda({
   variable: '--font-bodoni',
 });
 
-// The text face, for everything that is read rather than declared. Drawn for
-// legibility first: the letters most easily confused are pulled apart.
-const atkinson = Atkinson_Hyperlegible_Next({
-  subsets: ['latin', 'latin-ext'],
+// The text face, for everything that is read rather than declared: Atkinson
+// Hyperlegible Next, drawn for legibility first, with its zero opened so years
+// and percentages read as numbers rather than codes. scripts/unslash-zero.py
+// builds it; the OFL requires the modified font to carry another name.
+const atkinson = localFont({
+  src: [
+    {
+      path: '../fonts/HammurabiText-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/HammurabiText-Italic.woff2',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../fonts/HammurabiText-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/HammurabiText-BoldItalic.woff2',
+      weight: '700',
+      style: 'italic',
+    },
+  ],
   display: 'swap',
-  weight: ['400', '700'],
-  style: ['normal', 'italic'],
   variable: '--font-text-face',
 });
 
