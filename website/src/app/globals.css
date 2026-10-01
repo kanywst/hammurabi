@@ -73,8 +73,7 @@ body {
   font-variant-numeric: lining-nums;
 }
 
-:lang(ja) body,
-:lang(ja) {
+html:lang(ja) body {
   line-height: 1.85;
 }
 
@@ -88,184 +87,316 @@ body {
   border-radius: 2px;
 }
 
-/* --- Type ------------------------------------------------------------ */
+/* Component classes sit in their own layer so a utility on the same element
+   (a margin, a size) always wins, the way the markup reads. */
+@layer components {
+  /* --- Type ------------------------------------------------------------ */
 
-/* Secondary text: the kind, the date, the count. Small but not tiny, and never
-   set in capitals — a reader skims a category, they do not decode it. */
-.meta {
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--color-relief-faint);
-}
+  /* Secondary text: the kind, the date, the count. Small but not tiny, and never
+     set in capitals — a reader skims a category, they do not decode it. */
+  .meta {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--color-relief-faint);
+  }
 
-/* Article numbers are set in the didone: its figures are the ones that look
-   cut, and the text face draws its zero slashed, which reads as a code. */
-.num {
-  font-family: var(--font-display);
-  font-variant-numeric: tabular-nums lining-nums;
-  font-size: 1.0625em;
-  color: var(--color-relief-faint);
-}
+  /* Article numbers are set in the didone: its figures are the ones that look
+     cut, and the text face draws its zero slashed, which reads as a code. */
+  .num {
+    font-family: var(--font-display);
+    font-variant-numeric: tabular-nums lining-nums;
+    font-size: 1.0625em;
+    color: var(--color-relief-faint);
+  }
 
-.cuneiform {
-  font-family: var(--font-cuneiform);
-  color: var(--color-relief-faint);
-  letter-spacing: 0.06em;
-}
+  .cuneiform {
+    font-family: var(--font-cuneiform);
+    color: var(--color-relief-faint);
+    letter-spacing: 0.06em;
+  }
 
-/* --- The clause ------------------------------------------------------ */
+  /* --- The clause ------------------------------------------------------ */
 
-/* Every law is the conditional the original was written in: if the mechanism
-   holds, then the verdict, unless the counter-force applies. The operators sit
-   in a narrow column so the eye can run down If / Then / Unless. */
-.clause {
-  display: grid;
-  grid-template-columns: 4.5rem 1fr;
-  gap: 0 1.25rem;
-  align-items: baseline;
-}
-
-.clause__op {
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--color-relief-faint);
-  text-align: right;
-}
-
-.clause__op--then {
-  color: var(--color-rubric);
-}
-
-.clause__v {
-  margin-bottom: 1.25rem;
-  color: var(--color-relief-dim);
-}
-
-/* The verdict: the one thing on the page set in a serif, and the one thing in
-   red. Everything else is evidence for it. */
-.clause__v--then {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  line-height: 1.4;
-  color: var(--color-relief);
-  border-left: 3px solid var(--color-rubric);
-  padding: 0.15rem 0 0.15rem 1.1rem;
-  margin-bottom: 1.5rem;
-}
-
-:lang(ja) .clause__v--then {
-  font-size: 1.25rem;
-  line-height: 1.75;
-}
-
-@media (max-width: 40rem) {
+  /* Every law is the conditional the original was written in: if the mechanism
+     holds, then the verdict, unless the counter-force applies. The operators sit
+     in a narrow column so the eye can run down If / Then / Unless. */
   .clause {
-    grid-template-columns: 1fr;
-  }
-
-  .clause__op {
-    text-align: left;
-    margin-bottom: 0.25rem;
-  }
-
-  .clause__v--then {
-    font-size: 1.3125rem;
-  }
-}
-
-/* --- Controls -------------------------------------------------------- */
-
-.field {
-  background: var(--color-field-sunk);
-  border: 1px solid var(--color-rule);
-  border-radius: 6px;
-  color: var(--color-relief);
-}
-
-.field::placeholder {
-  color: var(--color-relief-faint);
-}
-
-.field:focus-visible {
-  outline: 2px solid var(--color-rubric);
-  outline-offset: 0;
-}
-
-/* Filters are a running list of terms, the way an index lists its headings.
-   The pressed one is underlined in the text colour; red stays with the verdict. */
-.term {
-  font-size: 0.9375rem;
-  color: var(--color-relief-dim);
-  text-decoration: underline 2px transparent;
-  text-underline-offset: 0.35em;
-  transition:
-    color 0.15s ease,
-    text-decoration-color 0.15s ease;
-}
-
-.term:hover {
-  color: var(--color-relief);
-  text-decoration-color: var(--color-rule);
-}
-
-.term[aria-pressed='true'] {
-  color: var(--color-relief);
-  font-weight: 700;
-  text-decoration-color: currentColor;
-}
-
-.link {
-  color: var(--color-relief);
-  text-decoration: underline 1px var(--color-relief-faint);
-  text-underline-offset: 0.25em;
-  transition: text-decoration-color 0.15s ease;
-}
-
-.link:hover {
-  text-decoration-color: currentColor;
-}
-
-/* --- The index ------------------------------------------------------- */
-
-/* One law, one line: number, name, what it says, what kind it is. The whole row
-   is the link, so the target is the full width rather than the name alone. */
-.entry {
-  display: grid;
-  grid-template-columns: 2.25rem minmax(0, 1fr);
-  column-gap: 1rem;
-  padding: 0.9rem 0.75rem;
-  margin: 0 -0.75rem;
-  border-radius: 6px;
-  transition: background-color 0.12s ease;
-}
-
-.entry:hover {
-  background: var(--color-field-sunk);
-}
-
-.entry__title {
-  font-weight: 700;
-  font-size: 1.0625rem;
-  color: var(--color-relief);
-}
-
-.entry:hover .entry__title {
-  text-decoration: underline 1px;
-  text-underline-offset: 0.25em;
-}
-
-.entry__concept {
-  color: var(--color-relief-dim);
-}
-
-@media (min-width: 52rem) {
-  .entry {
-    grid-template-columns: 2.5rem minmax(12rem, 18rem) minmax(0, 1fr) 9rem;
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: 0 1.25rem;
     align-items: baseline;
   }
 
-  .entry__tag {
+  .clause__op {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-relief-faint);
     text-align: right;
+  }
+
+  .clause__op--then {
+    color: var(--color-rubric);
+  }
+
+  .clause__v {
+    margin-bottom: 1.25rem;
+    color: var(--color-relief-dim);
+  }
+
+  /* The verdict: the one thing on the page set in a serif, and the one thing in
+     red. Everything else is evidence for it. */
+  .clause__v--then {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: var(--color-relief);
+    border-left: 3px solid var(--color-rubric);
+    padding: 0.15rem 0 0.15rem 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  :lang(ja) .clause__v--then {
+    font-size: 1.25rem;
+    line-height: 1.75;
+  }
+
+  @media (max-width: 40rem) {
+    .clause {
+      grid-template-columns: 1fr;
+    }
+
+    .clause__op {
+      text-align: left;
+      margin-bottom: 0.25rem;
+    }
+
+    .clause__v--then {
+      font-size: 1.3125rem;
+    }
+  }
+
+  /* --- Controls -------------------------------------------------------- */
+
+  .field {
+    background: var(--color-field-sunk);
+    border: 1px solid var(--color-rule);
+    border-radius: 6px;
+    color: var(--color-relief);
+  }
+
+  .field::placeholder {
+    color: var(--color-relief-faint);
+  }
+
+  .field:focus-visible {
+    outline: 2px solid var(--color-rubric);
+    outline-offset: 0;
+  }
+
+  /* Filters are a running list of terms, the way an index lists its headings.
+     The pressed one is underlined in the text colour; red stays with the verdict. */
+  .term {
+    font-size: 0.9375rem;
+    color: var(--color-relief-dim);
+    text-decoration: underline 2px transparent;
+    text-underline-offset: 0.35em;
+    transition:
+      color 0.15s ease,
+      text-decoration-color 0.15s ease;
+  }
+
+  .term:hover {
+    color: var(--color-relief);
+    text-decoration-color: var(--color-rule);
+  }
+
+  .term[aria-pressed='true'] {
+    color: var(--color-relief);
+    font-weight: 700;
+    text-decoration-color: currentColor;
+  }
+
+  .link {
+    color: var(--color-relief);
+    text-decoration: underline 1px var(--color-relief-faint);
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color 0.15s ease;
+  }
+
+  .link:hover {
+    text-decoration-color: currentColor;
+  }
+
+  /* --- The index ------------------------------------------------------- */
+
+  /* One law, one line: number, name, what it says, what kind it is. The whole row
+     is the link, so the target is the full width rather than the name alone. */
+  .entry {
+    display: grid;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    column-gap: 1rem;
+    padding: 0.9rem 0.75rem;
+    margin: 0 -0.75rem;
+    border-radius: 6px;
+    transition: background-color 0.12s ease;
+  }
+
+  .entry:hover {
+    background: var(--color-field-sunk);
+  }
+
+  .entry__title {
+    font-weight: 700;
+    font-size: 1.0625rem;
+    color: var(--color-relief);
+  }
+
+  .entry:hover .entry__title {
+    text-decoration: underline 1px;
+    text-underline-offset: 0.25em;
+  }
+
+  .entry__concept {
+    color: var(--color-relief-dim);
+  }
+
+  @media (min-width: 52rem) {
+    .entry {
+      grid-template-columns: 2.5rem minmax(12rem, 18rem) minmax(0, 1fr) 9rem;
+      align-items: baseline;
+    }
+
+    .entry__tag {
+      text-align: right;
+    }
+  }
+
+  /* --- The stele ------------------------------------------------------- */
+
+  /* The stone is basalt in either theme: it is an object on the page, not part of
+     the page, so it keeps its own colours when the ground turns light. */
+  .stele {
+    --stone: #25262a;
+    --stone-lit: #313237;
+    --stone-shade: #1e1f22;
+    --stone-sunk: #1a1b1e;
+    --stone-ink: #f1ece3;
+    --stone-ink-dim: rgb(241 236 227 / 0.34);
+    --stone-ink-soft: rgb(241 236 227 / 0.66);
+    --stone-rubric: #ef7a5d;
+    position: relative;
+    aspect-ratio: 79 / 225;
+    user-select: none;
+  }
+
+  .stele--hero {
+    width: 100%;
+    max-width: 14rem;
+    margin-left: auto;
+  }
+
+  .stele--mini {
+    width: 4.75rem;
+  }
+
+  .stele__stone {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    fill: var(--stone);
+  }
+
+  .stele__stone .stele__relief {
+    fill: var(--stone-sunk);
+    stroke: rgb(255 255 255 / 0.07);
+    stroke-width: 0.6;
+    vector-effect: non-scaling-stroke;
+  }
+
+  /* The relief panel: where the original shows the law being handed down, this
+     one shows the law under the reader's hand. */
+  .stele__relief-content {
+    position: absolute;
+    top: 5%;
+    bottom: 72.5%;
+    left: 17%;
+    right: 17%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    text-align: center;
+    color: var(--stone-ink);
+  }
+
+  .stele__registers {
+    position: absolute;
+    top: 31%;
+    bottom: 3%;
+    left: 12%;
+    right: 12%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 8%;
+  }
+
+  .stele__column {
+    display: grid;
+    grid-template-rows: repeat(24, minmax(0, 1fr));
+  }
+
+  .stele__line {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .stele__cut {
+    display: block;
+    width: var(--reach);
+    height: 2px;
+    border-radius: 1px;
+    background: var(--stone-ink-dim);
+    transform-origin: left center;
+    transition:
+      background-color 0.12s ease,
+      height 0.12s ease;
+  }
+
+  .stele--mini .stele__cut {
+    height: 1.5px;
+  }
+
+  .stele__line:hover .stele__cut,
+  .stele__line[data-state='active'] .stele__cut {
+    height: 3px;
+    background: var(--stone-ink);
+  }
+
+  .stele__line[data-state='current'] .stele__cut {
+    height: 3px;
+    background: var(--stone-rubric);
+  }
+
+  /* The one moment of motion on the site: on arrival, the lines are cut into
+     the stone in reading order, down each column and across. */
+  @keyframes carve {
+    from {
+      transform: scaleX(0);
+    }
+  }
+
+  .stele--hero .stele__cut {
+    animation: carve 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: calc(var(--i) * 14ms + 150ms);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stele--hero .stele__cut {
+      animation: none;
+    }
   }
 }
 

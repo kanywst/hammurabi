@@ -7,9 +7,12 @@ export const translations = {
     hero: {
       title: 'Hammurabi',
       lede: 'Every law in the Code of Hammurabi is a conditional — šumma awīlum, “if a man…”. So is every law here: if the mechanism holds, then do this, unless the counter-force applies.',
-      keyIf: 'The mechanism — why it happens.',
-      keyThen: 'The verdict — what to do about it.',
-      keyUnless: 'The counter-force — where it stops being true.',
+    },
+    stele: {
+      featured: 'Law of the day',
+      another: 'Another law',
+      position: (column: string, line: number) =>
+        `On the stele: column ${column}, line ${line}`,
     },
     nav: {
       principles: 'The Laws',
@@ -64,9 +67,12 @@ export const translations = {
     hero: {
       title: 'Hammurabi',
       lede: 'ハンムラビ法典の条文はすべて条件文である——šumma awīlum、「人が…したならば」。この法典も同じだ。もしその力が働くならば、こうせよ。ただし対抗力が効く場合を除く。',
-      keyIf: 'メカニズム——なぜ起きるか。',
-      keyThen: '判断——どうすべきか。',
-      keyUnless: '対抗力——どこで成り立たなくなるか。',
+    },
+    stele: {
+      featured: '今日の法則',
+      another: '別の法則',
+      position: (column: string, line: number) =>
+        `石碑の第${column}欄 ${line}行`,
     },
     nav: {
       principles: '法則',

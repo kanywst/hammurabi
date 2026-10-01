@@ -5,6 +5,8 @@ import { laws, lawBySlug, tags, type Law, type Locale } from '@/data/laws';
 import { article, DATA_URL, routeFor } from '@/lib/site';
 import RichText from './RichText';
 import LawDiagram from './diagrams';
+import Stele from './Stele';
+import { position } from '@/lib/stele';
 
 /** A titled part of the article, below the clause. */
 function Part({
@@ -30,6 +32,7 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
     .map((slug) => lawBySlug.get(slug))
     .filter((candidate): candidate is Law => Boolean(candidate));
 
+  const where = position(law.number);
   const index = laws.findIndex((candidate) => candidate.slug === law.slug);
   const previous = index > 0 ? laws[index - 1] : null;
   const next = index < laws.length - 1 ? laws[index + 1] : null;
@@ -93,6 +96,13 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
         </div>
 
         <aside className="mt-6 lg:mt-0 lg:pt-28">
+          <div className="hidden items-end gap-5 pb-8 lg:flex">
+            <Stele lang={lang} variant="mini" current={law.slug} />
+            <p className="meta max-w-[10rem]">
+              {t.stele.position(where.column, where.line)}
+            </p>
+          </div>
+
           <Part title={t.law.source}>
             <p className="text-relief-dim">
               <RichText>{text.source}</RichText>
