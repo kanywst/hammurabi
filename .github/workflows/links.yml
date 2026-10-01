@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: read
+  issues: write
 
 jobs:
   check:
@@ -31,4 +32,30 @@ jobs:
         run: npm ci
 
       - name: Check every source URL
-        run: npm run check:links -- --verbose
+        run: |
+          set -o pipefail
+          npm run check:links -- --verbose 2>&1 | tee "$RUNNER_TEMP/links.log"
+
+      # One open issue per outage of the codex, not one per Monday: a dead
+      # citation that stays dead gets a comment on the issue already tracking it.
+      - name: Report broken citations
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Broken source links"
+          {
+            echo "The scheduled source-link check found citations that no longer resolve. Run: $RUN_URL"
+            echo
+            echo '```'
+            grep -E '^(FAIL|warn) ' "$RUNNER_TEMP/links.log" || echo "(no per-link output; see the run log)"
+            echo '```'
+          } > "$RUNNER_TEMP/body.md"
+          number=$(gh issue list --state open --search "\"$title\" in:title" --json number,title \
+            --jq "map(select(.title == \"$title\")) | .[0].number // empty")
+          if [ -n "$number" ]; then
+            gh issue comment "$number" --body-file "$RUNNER_TEMP/body.md"
+          else
+            gh issue create --title "$title" --body-file "$RUNNER_TEMP/body.md"
+          fi
