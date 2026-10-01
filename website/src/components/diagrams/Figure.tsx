@@ -20,8 +20,8 @@ export default function Figure({
   children: ReactNode;
 }) {
   return (
-    <figure className="mt-6 max-w-[46rem]">
-      <div className="overflow-x-auto border border-rule-soft bg-field-sunk p-5">
+    <figure className="my-4 max-w-[46rem]">
+      <div className="overflow-x-auto rounded-md border border-rule-soft bg-field-sunk p-5">
         <svg
           viewBox={viewBox}
           role="img"
@@ -32,9 +32,7 @@ export default function Figure({
           {children}
         </svg>
       </div>
-      <figcaption className="mt-3 text-[0.6875rem] leading-relaxed text-relief-faint">
-        {caption}
-      </figcaption>
+      <figcaption className="meta mt-3">{caption}</figcaption>
     </figure>
   );
 }
@@ -52,13 +50,13 @@ export const ink = {
 };
 
 export const label = {
-  fontFamily: 'var(--font-mono)',
+  fontFamily: 'var(--font-sans)',
   fontSize: 13,
   fill: ink.text,
 } as const;
 
 export const small = {
-  fontFamily: 'var(--font-mono)',
-  fontSize: 11,
+  fontFamily: 'var(--font-sans)',
+  fontSize: 12,
   fill: ink.dim,
 } as const;

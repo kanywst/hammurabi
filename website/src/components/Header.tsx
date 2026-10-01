@@ -5,14 +5,10 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
 import { translations } from '@/translations';
-import { laws } from '@/data/laws';
-import { article, REPO_URL, routeFor } from '@/lib/site';
+import { REPO_URL, routeFor } from '@/lib/site';
 import type { Locale } from '@/data/laws';
 
-/**
- * The masthead of an instrument: what this is on the left, which articles it
- * covers on the right. Not a product nav bar.
- */
+/** The masthead: the name on the left, the three places you can go on the right. */
 export default function Header({
   lang,
   counterpart,
@@ -30,13 +26,10 @@ export default function Header({
   ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-rule bg-field/95 backdrop-blur-sm lg:pl-20">
-      <div className="flex items-center justify-between gap-6 px-5 py-3 sm:px-8">
-        <Link href={home} className="label hover:text-relief">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-rule-soft bg-field/90 backdrop-blur-md">
+      <div className="mx-auto flex max-w-[72rem] items-center justify-between gap-6 px-5 py-3.5 sm:px-8">
+        <Link href={home} className="text-[0.9375rem] font-bold">
           Hammurabi
-          <span className="ml-2 hidden text-relief-faint sm:inline">
-            · {t.hero.tagLabel}
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
@@ -54,15 +47,12 @@ export default function Header({
             {t.nav.github}
           </a>
           <LanguageSwitcher lang={lang} counterpart={counterpart} />
-          <span className="label text-relief-faint">
-            § 01–{article(laws.length)}
-          </span>
         </nav>
 
         <button
-          className="text-relief-dim transition-colors hover:text-relief md:hidden"
+          className="-mr-2 p-2 text-relief-dim transition-colors hover:text-relief md:hidden"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
+          aria-label={t.nav.menu}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
         >
@@ -73,7 +63,7 @@ export default function Header({
       {isOpen && (
         <nav
           id="mobile-menu"
-          className="flex flex-col gap-3 border-t border-rule-soft px-5 py-4 sm:px-8 md:hidden"
+          className="flex flex-col gap-4 border-t border-rule-soft px-5 py-5 sm:px-8 md:hidden"
         >
           {links.map((link) => (
             <Link

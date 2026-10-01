@@ -28,15 +28,15 @@ const ASSETS = join(ROOT, 'assets', 'diagrams');
    figures sit in the README rather than on top of it. */
 const THEMES = {
   dark: {
-    '--color-field': '#100e0c',
-    '--color-field-sunk': '#171410',
-    '--color-relief': '#ece6d9',
-    '--color-relief-dim': '#8b8478',
-    '--color-relief-faint': '#5a554c',
-    '--color-rule': '#ece6d9',
-    '--color-rule-soft': '#322d26',
-    '--color-rubric': '#c9543a',
-    '--color-rubric-bright': '#e0684c',
+    '--color-field': '#141516',
+    '--color-field-sunk': '#1c1d1f',
+    '--color-relief': '#ece7de',
+    '--color-relief-dim': '#bdb6aa',
+    '--color-relief-faint': '#948e84',
+    '--color-rule': '#3a3b3d',
+    '--color-rule-soft': '#27282a',
+    '--color-rubric': '#e36d51',
+    '--color-rubric-bright': '#ef8669',
   },
   light: {
     '--color-field': '#ffffff',
@@ -51,7 +51,13 @@ const THEMES = {
   },
 };
 
+// An <img> cannot load the site's web fonts, so each family falls back to what
+// the reader's system already has.
 const FONTS = {
+  '--font-sans':
+    "'Atkinson Hyperlegible Next', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+  '--font-body':
+    "'Atkinson Hyperlegible Next', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
   '--font-mono': "ui-monospace, SFMono-Regular, Menlo, monospace",
   '--font-display': "Georgia, 'Times New Roman', serif",
 };
