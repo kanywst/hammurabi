@@ -1,47 +1,59 @@
 @import 'tailwindcss';
 
-/* This is an estampage, not a website.
+/* The impression of a stele, set for reading.
  *
- * An estampage — a squeeze — is how an inscription is recorded: damp paper is
- * beaten into the cuts, inked, and peeled off, and what comes away is the carved
- * text in white on a black field. It is the standard technique for cuneiform.
- * So a dark ground here is not a theme; it is what the document looks like.
+ * The ground is the stone: basalt, so a cool near-black rather than a warm one,
+ * and in daylight (a light OS setting) the same stone in raking light. One
+ * colour is reserved. Incised inscriptions were filled with red ochre, and legal
+ * texts have marked the binding clause in red for a thousand years — "rubric" is
+ * Latin for red earth — so the verdict of each law is red and nothing else is.
  *
- * One colour, used once. Incised inscriptions were filled with red ochre, and
- * legal texts have marked the binding clause in red for a thousand years — the
- * word "rubric" is Latin for red earth. So the verdict is red and nothing else
- * is. Two other sites in this category own cream-with-vermilion and
- * black-with-acid-green; this is neither.
- *
- * The stone the original was cut from is black. Whether it is basalt or diorite
- * has been argued for a century and a 2026 analysis favours basalt, so the page
- * takes no side: it is the impression, not the stone. */
+ * Everything else is there to be read. Body text is a proportional face at a
+ * reading size, every text colour clears 4.5:1 against the ground, and the
+ * texture the earlier version carried (a cuneiform edge, line counts, grain) is
+ * gone because none of it helped anyone find or read a law. */
 @theme {
-  --color-field: #100e0c;
-  --color-field-sunk: #171410;
-  --color-relief: #ece6d9;
-  --color-relief-dim: #8b8478;
-  --color-relief-faint: #5a554c;
-  --color-rule: #ece6d9;
-  --color-rule-soft: #322d26;
-  --color-rubric: #c9543a;
-  --color-rubric-bright: #e0684c;
+  --color-field: #141516;
+  --color-field-sunk: #1c1d1f;
+  --color-relief: #ece7de;
+  --color-relief-dim: #bdb6aa;
+  --color-relief-faint: #948e84;
+  --color-rule: #3a3b3d;
+  --color-rule-soft: #27282a;
+  --color-rubric: #e36d51;
+  --color-rubric-bright: #ef8669;
 
-  /* The body face is the monospace: a statute is set to a measure, and a fixed
-     advance width is the closest a screen gets to a set line. Bodoni Moda is
-     kept for one job only — the verdict — where a didone's thick-to-hairline
-     contrast reads as something cut rather than typed. */
-  --font-mono:
-    var(--font-mono-face), 'Hiragino Sans', 'Noto Sans JP', ui-monospace,
-    SFMono-Regular, Menlo, monospace;
+  /* Atkinson Hyperlegible was drawn for low-vision readers: every letter that
+     could be mistaken for another (Il1, O0, rn/m) is pulled apart. That is the
+     brief here — a codex is consulted, not admired. Bodoni Moda is kept for one
+     job, the verdict, where a didone's thick-to-hairline contrast reads as cut
+     rather than typed. */
+  --font-sans:
+    var(--font-text-face), 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+    'Noto Sans JP', system-ui, sans-serif;
   --font-display:
     var(--font-bodoni), 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP',
     Georgia, serif;
-  --font-cuneiform: var(--font-cuneiform-face), var(--font-mono);
+  --font-cuneiform: var(--font-cuneiform-face), var(--font-sans);
 }
 
 :root {
   color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --color-field: #eceeed;
+    --color-field-sunk: #e1e4e3;
+    --color-relief: #16171a;
+    --color-relief-dim: #3d4045;
+    --color-relief-faint: #5c6066;
+    --color-rule: #bfc4c4;
+    --color-rule-soft: #d4d8d7;
+    --color-rubric: #ad3a22;
+    --color-rubric-bright: #c4442a;
+  }
 }
 
 /* Keep in-page anchors clear of the fixed masthead */
@@ -53,79 +65,48 @@ html {
 body {
   background-color: var(--color-field);
   color: var(--color-relief);
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  line-height: 1.75;
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  font-variant-numeric: lining-nums;
+}
+
+:lang(ja) body,
+:lang(ja) {
+  line-height: 1.85;
 }
 
 ::selection {
-  background: rgba(201, 84, 58, 0.3);
+  background: color-mix(in srgb, var(--color-rubric) 30%, transparent);
 }
 
 :focus-visible {
   outline: 2px solid var(--color-rubric);
-  outline-offset: 2px;
-}
-
-/* --- The sheet ------------------------------------------------------- */
-
-/* A faint fibre, so the ground reads as stock rather than as #eeeae0. */
-.grain {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.5;
-  mix-blend-mode: screen;
-  transform: translateZ(0);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-}
-
-/* --- The edge of the stone ------------------------------------------- */
-
-/* Real cuneiform, set vertically down the outer edge, the way the original runs
-   in columns. It is decoration in the honest sense — it carries no message — so
-   it is hidden from assistive technology and dropped entirely on narrow screens
-   where the width it costs is width the law needs. */
-.edge {
-  font-family: var(--font-cuneiform);
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  /* Sized so a wedge fits the band whole. Above this the glyph advance exceeds
-     the column and every character gets clipped on both edges. */
-  font-size: 0.8125rem;
-  line-height: 1.6;
-  letter-spacing: 0.08em;
-  color: var(--color-rule-soft);
-  user-select: none;
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 /* --- Type ------------------------------------------------------------ */
 
-.label {
-  font-size: 0.625rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-relief-dim);
+/* Secondary text: the kind, the date, the count. Small but not tiny, and never
+   set in capitals — a reader skims a category, they do not decode it. */
+.meta {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-relief-faint);
 }
 
-.label--rubric {
-  color: var(--color-rubric);
-}
-
-.numeral {
-  font-size: 1.375rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--color-rubric);
+/* Article numbers are set in the didone: its figures are the ones that look
+   cut, and the text face draws its zero slashed, which reads as a code. */
+.num {
+  font-family: var(--font-display);
   font-variant-numeric: tabular-nums lining-nums;
+  font-size: 1.0625em;
+  color: var(--color-relief-faint);
 }
 
-/* Base-sixty, the way it was actually written: 𒌋 is ten, 𒁹 is one, and past
-   fifty-nine the digits separate — 71 is one sixty and eleven. */
 .cuneiform {
   font-family: var(--font-cuneiform);
   color: var(--color-relief-faint);
@@ -134,22 +115,21 @@ body {
 
 /* --- The clause ------------------------------------------------------ */
 
+/* Every law is the conditional the original was written in: if the mechanism
+   holds, then the verdict, unless the counter-force applies. The operators sit
+   in a narrow column so the eye can run down If / Then / Unless. */
 .clause {
   display: grid;
-  grid-template-columns: minmax(3.75rem, auto) 1fr;
-  gap: 0 0.9rem;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 0 1.25rem;
   align-items: baseline;
 }
 
 .clause__op {
-  font-size: 0.625rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-relief-dim);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-relief-faint);
   text-align: right;
-  padding-top: 0.45rem;
-  white-space: nowrap;
 }
 
 .clause__op--then {
@@ -157,7 +137,7 @@ body {
 }
 
 .clause__v {
-  padding-bottom: 0.7rem;
+  margin-bottom: 1.25rem;
   color: var(--color-relief-dim);
 }
 
@@ -165,12 +145,17 @@ body {
    red. Everything else is evidence for it. */
 .clause__v--then {
   font-family: var(--font-display);
-  font-size: 1.1875rem;
-  line-height: 1.5;
+  font-size: 1.5rem;
+  line-height: 1.4;
   color: var(--color-relief);
-  border-left: 2px solid var(--color-rubric);
-  padding-left: 0.9rem;
-  padding-bottom: 0.85rem;
+  border-left: 3px solid var(--color-rubric);
+  padding: 0.15rem 0 0.15rem 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+:lang(ja) .clause__v--then {
+  font-size: 1.25rem;
+  line-height: 1.75;
 }
 
 @media (max-width: 40rem) {
@@ -180,41 +165,21 @@ body {
 
   .clause__op {
     text-align: left;
-    padding-top: 0.7rem;
+    margin-bottom: 0.25rem;
   }
-}
 
-/* Japanese has no italic and no need of one here; the display face falls to a
-   mincho, which carries the same weight of authority. */
-:lang(ja) .clause__v--then {
-  font-size: 1.0625rem;
-  line-height: 1.85;
-}
-
-/* --- Rules and line numbers ------------------------------------------ */
-
-.rule-soft {
-  border-color: var(--color-rule-soft);
-}
-
-/* The margin count. A statute numbers its lines so a reader can cite one; here
-   the count is per article, which is the unit anyone would actually cite. */
-.linecount {
-  font-size: 0.5625rem;
-  line-height: 2.05;
-  color: var(--color-relief-faint);
-  text-align: right;
-  user-select: none;
-  font-variant-numeric: tabular-nums;
+  .clause__v--then {
+    font-size: 1.3125rem;
+  }
 }
 
 /* --- Controls -------------------------------------------------------- */
 
 .field {
-  background: transparent;
+  background: var(--color-field-sunk);
   border: 1px solid var(--color-rule);
+  border-radius: 6px;
   color: var(--color-relief);
-  font-family: var(--font-mono);
 }
 
 .field::placeholder {
@@ -223,92 +188,92 @@ body {
 
 .field:focus-visible {
   outline: 2px solid var(--color-rubric);
-  outline-offset: -1px;
+  outline-offset: 0;
 }
 
-/* Filters are set as a running list of terms, not as pills. A code of laws has
-   an index, not a tag cloud. */
+/* Filters are a running list of terms, the way an index lists its headings.
+   The pressed one is underlined in the text colour; red stays with the verdict. */
 .term {
-  font-size: 0.6875rem;
-  letter-spacing: 0.06em;
+  font-size: 0.9375rem;
   color: var(--color-relief-dim);
-  border-bottom: 1px solid transparent;
+  text-decoration: underline 2px transparent;
+  text-underline-offset: 0.35em;
   transition:
     color 0.15s ease,
-    border-color 0.15s ease;
+    text-decoration-color 0.15s ease;
 }
 
 .term:hover {
   color: var(--color-relief);
-  border-bottom-color: var(--color-rule-soft);
+  text-decoration-color: var(--color-rule);
 }
 
 .term[aria-pressed='true'] {
-  color: var(--color-rubric);
-  border-bottom-color: var(--color-rubric);
-}
-
-.link-quiet {
   color: var(--color-relief);
-  border-bottom: 1px solid var(--color-rule-soft);
-  transition:
-    color 0.15s ease,
-    border-color 0.15s ease;
+  font-weight: 700;
+  text-decoration-color: currentColor;
 }
 
-.link-quiet:hover {
-  color: var(--color-rubric);
-  border-bottom-color: var(--color-rubric);
-}
-
-.btn-solid {
-  background: var(--color-relief);
-  color: var(--color-field);
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.6875rem;
-  transition: background 0.2s ease;
-}
-
-.btn-solid:hover {
-  background: var(--color-rubric);
-}
-
-.btn-ghost {
-  border: 1px solid var(--color-rule);
+.link {
   color: var(--color-relief);
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.6875rem;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  text-decoration: underline 1px var(--color-relief-faint);
+  text-underline-offset: 0.25em;
+  transition: text-decoration-color 0.15s ease;
 }
 
-.btn-ghost:hover {
-  background: var(--color-relief);
-  color: var(--color-field);
+.link:hover {
+  text-decoration-color: currentColor;
 }
 
-/* --- The article ----------------------------------------------------- */
+/* --- The index ------------------------------------------------------- */
 
-/* Articles are entries in one continuous instrument, divided by a rule, not
-   cards floating on a background. */
-.article-row {
-  border-top: 1px solid var(--color-rule);
+/* One law, one line: number, name, what it says, what kind it is. The whole row
+   is the link, so the target is the full width rather than the name alone. */
+.entry {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  column-gap: 1rem;
+  padding: 0.9rem 0.75rem;
+  margin: 0 -0.75rem;
+  border-radius: 6px;
+  transition: background-color 0.12s ease;
 }
 
-.article-row:hover .article-row__no {
-  color: var(--color-rubric-bright);
+.entry:hover {
+  background: var(--color-field-sunk);
 }
 
-.article-row__no {
-  transition: color 0.2s ease;
+.entry__title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--color-relief);
+}
+
+.entry:hover .entry__title {
+  text-decoration: underline 1px;
+  text-underline-offset: 0.25em;
+}
+
+.entry__concept {
+  color: var(--color-relief-dim);
+}
+
+@media (min-width: 52rem) {
+  .entry {
+    grid-template-columns: 2.5rem minmax(12rem, 18rem) minmax(0, 1fr) 9rem;
+    align-items: baseline;
+  }
+
+  .entry__tag {
+    text-align: right;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   * {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;

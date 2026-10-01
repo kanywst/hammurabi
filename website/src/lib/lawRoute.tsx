@@ -4,7 +4,7 @@ import LawArticle from '@/components/LawArticle';
 import PageShell from '@/components/PageShell';
 import JsonLd from '@/components/JsonLd';
 import { lawJsonLd } from './jsonld';
-import { alternatesFor, article, OG_LOCALE, routeFor, urlFor } from './site';
+import { alternatesFor, OG_LOCALE, routeFor, urlFor } from './site';
 import { laws, lawBySlug, type Locale } from '@/data/laws';
 
 type Params = { slug: string };
@@ -30,7 +30,7 @@ export function makeLawRoute(locale: Locale) {
     if (!law) return {};
 
     const text = law[locale];
-    const title = `§ ${article(law.number)} · ${text.title}`;
+    const title = text.title;
     const description = `${text.concept} ${text.mechanism}`.slice(0, 200);
 
     return {

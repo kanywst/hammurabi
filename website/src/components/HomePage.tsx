@@ -1,72 +1,77 @@
 import { translations } from '@/translations';
 import LawsCodex from './LawsCodex';
-import { laws, type Locale } from '@/data/laws';
-import { article, babylonian } from '@/lib/site';
+import type { Locale } from '@/data/laws';
 
 /**
- * There is no hero. An instrument opens with its own title page — what it is,
- * what it covers, where the original is — then the prologue, then the articles,
- * in that order, because that is the order the stele is carved in.
+ * The title page, the prologue, the index of laws, the epilogue — in that order,
+ * because that is the order the stele is carved in. The title page also teaches
+ * the one thing a reader needs before the index: every law is a conditional.
  */
 export default function HomePage({ lang }: { lang: Locale }) {
   const t = translations[lang];
-  const last = article(laws.length);
+
+  const key = [
+    { op: t.law.opIf, gloss: t.hero.keyIf, then: false },
+    { op: t.law.opThen, gloss: t.hero.keyThen, then: true },
+    { op: t.law.opUnless, gloss: t.hero.keyUnless, then: false },
+  ];
 
   return (
-    <div className="lg:pl-20">
+    <div className="mx-auto max-w-[72rem] px-5 sm:px-8">
       {/* ── Title page ───────────────────────────────────────── */}
       <section
         id="top"
-        className="border-b border-rule px-5 pb-10 pt-24 sm:px-8 sm:pb-14 sm:pt-28"
+        className="grid gap-x-16 gap-y-10 pb-14 pt-28 sm:pb-20 sm:pt-36 lg:grid-cols-[minmax(0,1fr)_17rem] lg:items-end"
       >
-        <p className="label">
-          § 01–{last} · {t.hero.tagLabel}
-        </p>
+        <div>
+          <h1 className="text-[clamp(3.25rem,10vw,7rem)] font-bold leading-[0.95] tracking-[-0.035em]">
+            {t.hero.title}
+          </h1>
+          <p
+            className="cuneiform mt-4 text-[clamp(1.75rem,4vw,2.75rem)] leading-none"
+            aria-hidden
+          >
+            {'\u{12129}\u{12000}\u{12220}\u{12261}\u{12049}'}
+          </p>
 
-        <h1 className="mt-5 text-[clamp(2.5rem,9vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.05em]">
-          HAMMURABI
-        </h1>
-
-        <p className="cuneiform mt-4 text-2xl sm:text-3xl" aria-hidden>
-          {'\u{12129}\u{12000}\u{12220}\u{12261}\u{12049}'}
-        </p>
-
-        <p className="label mt-6 text-relief-faint">{t.ui.provenance}</p>
-
-        <p className="mt-4 max-w-[62ch] leading-relaxed text-relief-dim">
-          {t.hero.lede}
-        </p>
-
-        <div className="mt-8 flex flex-wrap items-center gap-3">
-          <a href="#laws" className="btn-solid px-5 py-2.5">
-            {t.hero.ctaPrimary}
-          </a>
-          <a href="#prologue" className="btn-ghost px-5 py-2.5">
-            {t.ui.prologueLabel}
-          </a>
+          <p className="mt-8 max-w-[38rem] text-[1.25rem] leading-relaxed text-relief-dim">
+            {t.hero.lede}
+          </p>
         </div>
+
+        <dl className="grid gap-x-8 gap-y-5 border-t border-rule-soft pt-6 sm:grid-cols-3 lg:grid-cols-1 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+          {key.map(({ op, gloss, then }) => (
+            <div key={op}>
+              <dt
+                className={`text-[0.875rem] font-bold ${then ? 'text-rubric' : 'text-relief-faint'}`}
+              >
+                {op}
+              </dt>
+              <dd className="mt-1 text-relief">{gloss}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       {/* ── Prologue ─────────────────────────────────────────── */}
       <section
         id="prologue"
-        className="grid border-b border-rule lg:grid-cols-[10rem_1fr]"
+        aria-labelledby="prologue-heading"
+        className="grid gap-x-12 gap-y-6 border-t border-rule-soft py-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]"
       >
-        <p className="label px-5 pb-2 pt-6 sm:px-8 lg:px-0 lg:py-8 lg:pr-6 lg:text-right">
+        <h2 id="prologue-heading" className="meta lg:col-span-2">
           {t.ui.prologueLabel}
-        </p>
-        <div className="px-5 pb-8 sm:px-8 lg:py-8 lg:pl-0 lg:pr-8">
-          <blockquote className="max-w-[58ch] font-display text-xl leading-snug text-relief sm:text-2xl">
+        </h2>
+        <figure>
+          <blockquote className="font-display text-[1.75rem] leading-snug text-relief">
             {t.ui.prologueQuote}
           </blockquote>
-          <p className="label mt-4 text-relief-faint">{t.ui.prologueQuoteBy}</p>
-          <p className="mt-6 max-w-[62ch] leading-relaxed text-relief-dim">
-            {t.ui.prologueBody}
-          </p>
-        </div>
+          <figcaption className="meta mt-4">{t.ui.prologueQuoteBy}</figcaption>
+        </figure>
+        <p className="max-w-[36rem] text-relief-dim">{t.ui.prologueBody}</p>
       </section>
 
-      {/* ── The articles ─────────────────────────────────────── */}
+      {/* ── The laws ─────────────────────────────────────────── */}
       <LawsCodex lang={lang} />
 
       {/* ── Epilogue ─────────────────────────────────────────────
@@ -74,23 +79,21 @@ export default function HomePage({ lang }: { lang: Locale }) {
           one keeps the position and changes the target. */}
       <section
         id="about"
-        className="grid border-t border-rule lg:grid-cols-[10rem_1fr]"
+        aria-labelledby="epilogue-heading"
+        className="border-t border-rule-soft py-16"
       >
-        <p className="label px-5 pb-2 pt-8 sm:px-8 lg:px-0 lg:py-10 lg:pr-6 lg:text-right">
+        <h2 id="epilogue-heading" className="meta">
           {t.ui.epilogueLabel}
-        </p>
-        <div className="px-5 pb-12 sm:px-8 lg:py-10 lg:pl-0 lg:pr-8">
-          <blockquote className="max-w-[54ch] font-display text-2xl leading-snug text-relief sm:text-3xl">
+        </h2>
+        <figure className="mt-4">
+          <blockquote className="max-w-[42rem] font-display text-[clamp(1.6rem,3.5vw,2.25rem)] leading-snug text-relief">
             {t.ui.maxim}
           </blockquote>
-          <p className="label mt-4 text-relief-faint">{t.ui.maximBy}</p>
-          <p className="mt-8 max-w-[62ch] leading-relaxed text-rubric">
-            {t.ui.epilogueCurse}
-          </p>
-          <p className="cuneiform mt-8 text-lg" aria-hidden>
-            {babylonian(laws.length)}
-          </p>
-        </div>
+          <figcaption className="meta mt-4">{t.ui.maximBy}</figcaption>
+        </figure>
+        <p className="mt-10 max-w-[38rem] text-relief-dim">
+          {t.ui.epilogueCurse}
+        </p>
       </section>
     </div>
   );

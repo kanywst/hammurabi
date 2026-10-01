@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import {
+  Atkinson_Hyperlegible_Next,
   Bodoni_Moda,
-  JetBrains_Mono,
   Noto_Sans_Cuneiform,
 } from 'next/font/google';
 import './globals.css';
@@ -25,17 +25,18 @@ const bodoni = Bodoni_Moda({
   variable: '--font-bodoni',
 });
 
-// The body face. A statute is set to a measure, and a fixed advance width is
-// the closest a screen gets to a set line.
-const jetbrains = JetBrains_Mono({
-  subsets: ['latin'],
+// The text face, for everything that is read rather than declared. Drawn for
+// legibility first: the letters most easily confused are pulled apart.
+const atkinson = Atkinson_Hyperlegible_Next({
+  subsets: ['latin', 'latin-ext'],
   display: 'swap',
-  weight: ['400', '500'],
-  variable: '--font-mono-face',
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-text-face',
 });
 
-// Real cuneiform, for the article numerals and the edge of the stone. One
-// weight, one subset, and it is never asked to carry meaning on its own.
+// Real cuneiform, for the name on the title page. One weight, one subset, and it
+// is never asked to carry meaning on its own.
 const cuneiform = Noto_Sans_Cuneiform({
   subsets: ['cuneiform'],
   display: 'swap',
@@ -84,13 +85,9 @@ export default function RootLayout({
   return (
     <html
       lang={HTML_LANG[DEFAULT_LOCALE]}
-      className={`${bodoni.variable} ${jetbrains.variable} ${cuneiform.variable}`}
+      className={`${bodoni.variable} ${atkinson.variable} ${cuneiform.variable}`}
     >
-      <body className="antialiased">
-        <div className="stele-wash" />
-        <div className="grain" />
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

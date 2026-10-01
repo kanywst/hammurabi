@@ -2,30 +2,22 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { translations } from '@/translations';
 import { laws, lawBySlug, tags, type Law, type Locale } from '@/data/laws';
-import { article, babylonian, DATA_URL, routeFor } from '@/lib/site';
+import { article, DATA_URL, routeFor } from '@/lib/site';
 import RichText from './RichText';
 import LawDiagram from './diagrams';
 
-/**
- * A labelled division of the instrument. On wide screens the label sits out in
- * the margin, the way a statute puts its marginal notes — which is also what
- * keeps the sheet from being a narrow column in an empty room.
- */
-function Division({
-  label,
+/** A titled part of the article, below the clause. */
+function Part({
+  title,
   children,
 }: {
-  label: string;
+  title: string;
   children: React.ReactNode;
 }) {
   return (
-    <section className="grid border-t border-rule-soft lg:grid-cols-[8rem_1fr]">
-      <p className="label px-5 pb-1 pt-5 sm:px-8 lg:px-0 lg:py-6 lg:pr-6 lg:text-right">
-        {label}
-      </p>
-      <div className="px-5 pb-6 text-relief-dim sm:px-8 lg:py-6 lg:pl-0 lg:pr-8">
-        {children}
-      </div>
+    <section className="border-t border-rule-soft py-8 lg:first:border-t-0 lg:first:pt-0">
+      <h2 className="meta font-bold">{title}</h2>
+      <div className="mt-3">{children}</div>
     </section>
   );
 }
@@ -43,118 +35,126 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
   const next = index < laws.length - 1 ? laws[index + 1] : null;
 
   return (
-    <article className="lg:pl-20">
-      <div className="border-b border-rule px-5 pb-2 pt-20 sm:px-8 sm:pt-24">
-        <Link
-          href={`${routeFor(lang)}#laws`}
-          className="term inline-flex items-center gap-2 pb-4"
-        >
-          <ArrowLeft className="h-3 w-3" /> {t.law.backToCodex}
-        </Link>
+    <article className="mx-auto max-w-[72rem] px-5 sm:px-8">
+      {/* On a wide screen the source and the related laws sit in the margin
+          beside the article, the way a statute carries its marginal notes. */}
+      <div className="lg:grid lg:grid-cols-[minmax(0,46rem)_minmax(0,1fr)] lg:gap-x-16">
+        <div className="pt-24 sm:pt-28">
+          <Link
+            href={`${routeFor(lang)}#${law.slug}`}
+            className="term inline-flex items-center gap-2"
+          >
+            <ArrowLeft className="h-4 w-4" aria-hidden /> {t.law.backToCodex}
+          </Link>
+
+          {/* The head: where it sits in the codex, its name, and what it says in
+            one line. */}
+          <header className="pb-10 pt-10">
+            <p className="meta">
+              <span className="num">{article(law.number)}</span>
+              {tag ? <span className="ml-3">{tag[lang]}</span> : null}
+            </p>
+            <h1 className="mt-3 text-[clamp(2.25rem,6vw,3.25rem)] font-bold leading-[1.08] tracking-[-0.025em]">
+              {text.title}
+            </h1>
+            <p className="mt-4 text-[1.25rem] leading-relaxed text-relief-dim">
+              {text.concept}
+            </p>
+          </header>
+
+          {/* Every article in the Code of Hammurabi is a conditional — šumma
+            awīlum, "if a man…". So is every article here: the mechanism is the
+            condition, the guideline is the consequence, and the counter-force is
+            the exception that keeps the rule from hardening into dogma. */}
+          <div className="clause border-t border-rule-soft pt-8">
+            <p className="clause__op">{t.law.opIf}</p>
+            <p className="clause__v">
+              <RichText>{text.mechanism}</RichText>
+            </p>
+
+            <p className="clause__op clause__op--then">{t.law.opThen}</p>
+            <p className="clause__v clause__v--then">
+              <RichText>{text.guideline}</RichText>
+            </p>
+
+            <p className="clause__op">{t.law.opUnless}</p>
+            <p className="clause__v">
+              <span className="font-bold text-relief">{text.counter.name}</span>
+              {text.counter.note ? (
+                <>
+                  {' — '}
+                  <RichText>{text.counter.note}</RichText>
+                </>
+              ) : null}
+            </p>
+          </div>
+
+          <LawDiagram slug={law.slug} lang={lang} />
+        </div>
+
+        <aside className="mt-6 lg:mt-0 lg:pt-28">
+          <Part title={t.law.source}>
+            <p className="text-relief-dim">
+              <RichText>{text.source}</RichText>
+            </p>
+            <a
+              href={law.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="link mt-3 inline-flex items-center gap-1.5"
+            >
+              {t.law.sourceLink}
+              <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden />
+            </a>
+          </Part>
+
+          {related.length > 0 && (
+            <Part title={t.law.seeAlso}>
+              <ul>
+                {related.map((other) => (
+                  <li key={other.slug}>
+                    <Link
+                      href={routeFor(lang, other.slug)}
+                      className="entry !grid-cols-[2.25rem_minmax(0,1fr)]"
+                    >
+                      <span className="num">{article(other.number)}</span>
+                      <span>
+                        <span className="entry__title">
+                          {other[lang].title}
+                        </span>
+                        <span className="entry__concept mt-0.5 block">
+                          {other[lang].concept}
+                        </span>
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Part>
+          )}
+        </aside>
       </div>
-
-      {/* The head of the article: the number in both scripts, the name, and the
-          one-line concept. */}
-      <header className="grid border-b border-rule lg:grid-cols-[8rem_1fr]">
-        <div className="px-5 pt-6 sm:px-8 lg:px-0 lg:py-8 lg:pr-6 lg:text-right">
-          <p className="numeral text-3xl">{article(law.number)}</p>
-          <p className="cuneiform mt-1 text-sm" aria-hidden>
-            {babylonian(law.number)}
-          </p>
-          {tag ? <p className="label mt-2">{tag[lang]}</p> : null}
-        </div>
-        <div className="px-5 pb-8 pt-4 sm:px-8 lg:py-8 lg:pl-0 lg:pr-8">
-          <h1 className="text-2xl font-medium uppercase leading-tight tracking-[0.02em] sm:text-3xl">
-            {text.title}
-          </h1>
-          <p className="mt-3 max-w-[60ch] text-relief-dim">{text.concept}</p>
-        </div>
-      </header>
-
-      {/* Every article in the Code of Hammurabi is a conditional — šumma
-          awīlum, "if a man…". So is every article here: the mechanism is the
-          condition, the guideline is the consequence, and the counter-force is
-          the exception that keeps the rule from hardening into dogma. */}
-      <Division label={t.law.article}>
-        <div className="clause max-w-[74ch]">
-          <p className="clause__op">{t.law.opIf}</p>
-          <p className="clause__v">
-            <RichText>{text.mechanism}</RichText>
-          </p>
-
-          <p className="clause__op clause__op--then">{t.law.opThen}</p>
-          <p className="clause__v clause__v--then">
-            {t.ui.quoteOpen}
-            <RichText>{text.guideline}</RichText>
-            {t.ui.quoteClose}
-          </p>
-
-          <p className="clause__op">{t.law.opUnless}</p>
-          <p className="clause__v">
-            <span className="text-relief">{text.counter.name}</span>
-            {text.counter.note ? (
-              <>
-                {' — '}
-                <RichText>{text.counter.note}</RichText>
-              </>
-            ) : null}
-          </p>
-        </div>
-        <LawDiagram slug={law.slug} lang={lang} />
-      </Division>
-
-      <Division label={t.law.source}>
-        <p className="max-w-[74ch]">
-          <RichText>{text.source}</RichText>
-        </p>
-        <a
-          href={law.sourceUrl}
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-          className="link-quiet mt-3 inline-flex items-center gap-1.5"
-        >
-          {t.law.sourceLink} <ArrowUpRight className="h-3 w-3 shrink-0" />
-        </a>
-      </Division>
-
-      {related.length > 0 && (
-        <Division label={t.law.seeAlso}>
-          <ul className="space-y-1.5">
-            {related.map((other) => (
-              <li key={other.slug}>
-                <Link
-                  href={routeFor(lang, other.slug)}
-                  className="link-quiet inline-flex items-baseline gap-2"
-                >
-                  <span className="numeral text-sm">
-                    {article(other.number)}
-                  </span>
-                  <span className="uppercase tracking-[0.04em]">
-                    {other[lang].title}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </Division>
-      )}
 
       {/* Reading straight through is a legitimate way to use a numbered code,
           so the next article is one click away rather than a trip through the
           index. */}
       <nav
         aria-label={t.law.adjacent}
-        className="grid border-t border-rule sm:grid-cols-2"
+        className="mt-6 grid gap-3 border-t border-rule-soft py-8 sm:grid-cols-2"
       >
         {previous ? (
           <Link
             href={routeFor(lang, previous.slug)}
-            className="group/nav flex flex-col gap-1 border-b border-rule-soft px-5 py-5 hover:bg-field-sunk sm:border-b-0 sm:border-r sm:px-8"
+            className="group/nav flex flex-col gap-1 rounded-md border border-rule-soft p-4 hover:bg-field-sunk"
           >
-            <span className="label flex items-center gap-2">
-              <ArrowLeft className="h-3 w-3" /> {article(previous.number)}
+            <span className="meta flex items-center gap-2">
+              <ArrowLeft className="h-4 w-4" aria-hidden />
+              {t.law.previous}
             </span>
-            <span className="text-sm uppercase tracking-[0.04em] group-hover/nav:text-rubric">
+            <span className="font-bold group-hover/nav:underline">
+              <span className="num mr-2 font-normal">
+                {article(previous.number)}
+              </span>
               {previous[lang].title}
             </span>
           </Link>
@@ -164,28 +164,33 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
         {next ? (
           <Link
             href={routeFor(lang, next.slug)}
-            className="group/nav flex flex-col items-end gap-1 px-5 py-5 text-right hover:bg-field-sunk sm:px-8"
+            className="group/nav flex flex-col items-end gap-1 rounded-md border border-rule-soft p-4 text-right hover:bg-field-sunk"
           >
-            <span className="label flex items-center gap-2">
-              {article(next.number)} <ArrowRight className="h-3 w-3" />
+            <span className="meta flex items-center gap-2">
+              {t.law.next}
+              <ArrowRight className="h-4 w-4" aria-hidden />
             </span>
-            <span className="text-sm uppercase tracking-[0.04em] group-hover/nav:text-rubric">
+            <span className="font-bold group-hover/nav:underline">
+              <span className="num mr-2 font-normal">
+                {article(next.number)}
+              </span>
               {next[lang].title}
             </span>
           </Link>
         ) : null}
       </nav>
 
-      <div className="border-t border-rule px-5 py-5 sm:px-8">
+      <p className="pb-10">
         <a
           href={DATA_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="term inline-flex items-center gap-1.5"
         >
-          {t.law.editOnGitHub} <ArrowUpRight className="h-3 w-3" />
+          {t.law.editOnGitHub}
+          <ArrowUpRight className="h-4 w-4" aria-hidden />
         </a>
-      </div>
+      </p>
     </article>
   );
 }
