@@ -12,6 +12,10 @@ on:
 
 permissions:
   contents: read
+  issues: write
+
+env:
+  TRACK_TITLE: Unreachable source links
 
 jobs:
   check:
@@ -30,5 +34,87 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # A source that does not answer is only a warning, but a warning that has
+      # lasted four weeks is a dead domain. The day each one was first seen lives
+      # in the body of the "Unreachable source links" issue, between runs.
+      - name: Restore unreachable-since state
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          number=$(gh issue list --state open --search "\"$TRACK_TITLE\" in:title" --json number,title \
+            --jq "map(select(.title == \"$TRACK_TITLE\")) | .[0].number // empty")
+          echo "TRACK_ISSUE=$number" >> "$GITHUB_ENV"
+          state=''
+          if [ -n "$number" ]; then
+            state=$(gh issue view "$number" --json body --jq .body \
+              | sed -n 's/^<!-- link-state \(.*\) -->$/\1/p' | head -1)
+          fi
+          [ -n "$state" ] || state='{}'
+          echo "$state" > "$RUNNER_TEMP/state.json"
+
       - name: Check every source URL
-        run: npm run check:links -- --verbose
+        run: |
+          set -o pipefail
+          npm run check:links -- --verbose --state="$RUNNER_TEMP/state.json" 2>&1 | tee "$RUNNER_TEMP/links.log"
+
+      # Rewritten every run rather than commented on, so a source that keeps not
+      # answering costs no notifications until it turns into a failure.
+      - name: Track unreachable sources
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # No log means the check never started; a network-down run left the
+          # state as it was and has nothing new to say about any source.
+          [ -f "$RUNNER_TEMP/links.log" ] || exit 0
+          ! grep -q 'The check itself did not run' "$RUNNER_TEMP/links.log" || exit 0
+          state=$(jq -c . "$RUNNER_TEMP/state.json")
+          if [ "$state" = "{}" ]; then
+            [ -z "$TRACK_ISSUE" ] || gh issue close "$TRACK_ISSUE" --comment "Every source answers again."
+            exit 0
+          fi
+          {
+            echo "These sources did not answer on the last scheduled check. They are warnings until they have been unreachable for 28 days, when the check fails on them."
+            echo
+            echo '```'
+            grep -E '^(warn|FAIL) .*\[unreachable since ' "$RUNNER_TEMP/links.log" || true
+            echo '```'
+            echo
+            echo "<!-- link-state $state -->"
+          } > "$RUNNER_TEMP/track.md"
+          if [ -n "$TRACK_ISSUE" ]; then
+            gh issue edit "$TRACK_ISSUE" --body-file "$RUNNER_TEMP/track.md"
+          else
+            gh issue create --title "$TRACK_TITLE" --body-file "$RUNNER_TEMP/track.md"
+          fi
+
+      # One open issue per outage of the codex, not one per Monday: a dead
+      # citation that stays dead gets a comment on the issue already tracking it.
+      # A run that failed without a single FAIL line never checked anything
+      # (the runner's network, or npm), and says so instead.
+      - name: Report broken citations
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if grep -qE '^FAIL ' "$RUNNER_TEMP/links.log" 2>/dev/null; then
+            title="Broken source links"
+            {
+              echo "The scheduled source-link check found citations that no longer resolve. Run: $RUN_URL"
+              echo
+              echo '```'
+              grep -E '^FAIL ' "$RUNNER_TEMP/links.log"
+              echo '```'
+            } > "$RUNNER_TEMP/body.md"
+          else
+            title="Source link check did not run"
+            echo "The scheduled source-link check failed before it could judge any citation (most sources unreachable from the runner, or setup failed). Nothing is known to be broken. Run: $RUN_URL" > "$RUNNER_TEMP/body.md"
+          fi
+          number=$(gh issue list --state open --search "\"$title\" in:title" --json number,title \
+            --jq "map(select(.title == \"$title\")) | .[0].number // empty")
+          if [ -n "$number" ]; then
+            gh issue comment "$number" --body-file "$RUNNER_TEMP/body.md"
+          else
+            gh issue create --title "$title" --body-file "$RUNNER_TEMP/body.md"
+          fi
