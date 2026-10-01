@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/kanywst/hammurabi/compare/v1.0.2...v1.1.0) (2026-10-01)
+
+
+### Added to the codex
+
+* **site:** set the codex for reading, and make the stele its index ([#118](https://github.com/kanywst/hammurabi/issues/118)) ([69b5835](https://github.com/kanywst/hammurabi/commit/69b58354b1fde4740cf5eca574fc9d842e88c188))
+
+
+### Corrections
+
+* **ci:** stop failing the link check on publishers that do not answer ([#116](https://github.com/kanywst/hammurabi/issues/116)) ([4d764f4](https://github.com/kanywst/hammurabi/commit/4d764f4582f6c6b795e9c0e99c459b61ab56a9fc))
+
 ## [1.0.2](https://github.com/kanywst/hammurabi/compare/v1.0.1...v1.0.2) (2026-09-15)
 
 
