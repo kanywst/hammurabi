@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  // The repository root has its own package-lock.json (for the codex scripts),
+  // so Next.js would otherwise guess the workspace root and warn about it. The
+  // site is self-contained in website/, so that is the root.
+  turbopack: {
+    root: import.meta.dirname,
+  },
   images: {
     unoptimized: true,
   },
