@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/kanywst/hammurabi/compare/v1.1.0...v1.1.1) (2026-10-12)
+
+
+### Corrections
+
+* **deps:** bump sharp and source-map-js to clear high-severity audit findings ([df0febe](https://github.com/kanywst/hammurabi/commit/df0febe79aa00eba50b7ee7262e36118cede3b0e))
+
 ## [1.1.0](https://github.com/kanywst/hammurabi/compare/v1.0.2...v1.1.0) (2026-10-01)
 
 
