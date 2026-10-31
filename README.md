@@ -65,7 +65,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | --- | --- | --- | --- |
 | `01` | [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) | Decision | Teams spend the caution meant for irreversible decisions on ones they could easily undo. |
 | `02` | [Normalization of Deviance](#normalization-of-deviance) | Safety | A broken rule that causes no immediate harm quietly becomes the new normal. |
-| `03` | [Chesterton's Fence](#chestertons-fence) | Systems | Code or rules whose origin you don't know look like clutter, so they get deleted. |
+| `03` | [Chesterton's Fence](#chestertons-fence) | Systems | Code or rules whose origin you don't know look like clutter, which makes them tempting to delete. |
 | `04` | [Normalcy Bias](#normalcy-bias) | Cognition | Faced with a real anomaly, people reach for the familiar, harmless explanation. |
 | `05` | [Law of Triviality](#law-of-triviality) | Organization | Discussion goes to the parts everyone understands, not the parts that matter. |
 | `06` | [Gall's Law](#galls-law) | Systems | Complex systems that work usually grew from simple systems that worked; designed ones rarely do. |
@@ -87,11 +87,11 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `22` | [Kernighan's Law](#kernighans-law) | Maintainability | Debugging is harder than writing, so code written at your cleverest is beyond your debugging. |
 | `23` | [Cobra Effect](#cobra-effect) | Incentives | An incentive meant to reduce a problem rewards people for producing more of it. |
 | `24` | [Dunbar's Number](#dunbars-number) | Organization | People keep only about 150 stable relationships; past the size where everyone shares context, added people go into coordination. |
-| `25` | [Worse is Better](#worse-is-better) | Systems | A simpler design that is easy to build and adopt beats a more correct but complex one. |
+| `25` | [Worse is Better](#worse-is-better) | Systems | A simpler design that is easy to build and adopt tends to beat a more correct but complex one. |
 | `26` | [Cunningham's Law](#cunninghams-law) | Organization | People are quicker to correct a wrong answer than to answer a question. |
 | `27` | [Bystander Effect](#bystander-effect) | Organization | The more people who see a problem, the less likely any one of them is to act on it. |
 | `28` | [Murphy's Law](#murphys-law) | Safety | Given enough time and traffic, a failure mode that can happen eventually will. |
-| `29` | [Boy Scout Rule](#boy-scout-rule) | Maintainability | Code decays because cleanup is always deferred to a refactor that never happens. |
+| `29` | [Boy Scout Rule](#boy-scout-rule) | Maintainability | Code decays because cleanup tends to be deferred to a refactor that rarely happens. |
 | `30` | [Tesler's Law](#teslers-law) | Systems | A system's inherent complexity can't be removed, only moved to someone else. |
 | `31` | [Dunning-Kruger Effect](#dunning-kruger-effect) | Cognition | People who are least skilled at something tend to overrate their ability the most. |
 | `32` | [Curse of Knowledge](#curse-of-knowledge) | Cognition | Once you know something, you can't easily imagine what it's like not to know it. |
@@ -99,16 +99,16 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `34` | [Premature Optimization](#premature-optimization) | Performance | Optimizing before measuring spends effort on code that isn't the bottleneck. |
 | `35` | [Linus's Law](#linuss-law) | Maintainability | A bug that stumps one person is often obvious to someone else looking at the same code. |
 | `36` | [CAP Theorem](#cap-theorem) | Distributed Systems | During a network partition, a data store must give up either consistency or availability. |
-| `37` | [Little's Law](#littles-law) | Performance | In a stable system, items inside equal arrival rate times the time each spends there. |
+| `37` | [Little's Law](#littles-law) | Performance | In a stable system, the average number of items inside equals arrival rate times average time spent. |
 | `38` | [Two Generals Problem](#two-generals-problem) | Distributed Systems | Over an unreliable channel, two parties can never be certain they have agreed. |
-| `39` | [Peter Principle](#peter-principle) | Organization | People get promoted until they reach a role they are bad at, and stay there. |
+| `39` | [Peter Principle](#peter-principle) | Organization | People tend to get promoted until they reach a role they are bad at, and stay there. |
 | `40` | [Parkinson's Law](#parkinsons-law) | Organization | Work expands to fill the time available for it. |
 | `41` | [Wirth's Law](#wirths-law) | Performance | Software gets slower faster than hardware gets faster. |
-| `42` | [Ninety-Ninety Rule](#ninety-ninety-rule) | Estimation | The last 10% of the work takes as long as the first 90%. |
+| `42` | [Ninety-Ninety Rule](#ninety-ninety-rule) | Estimation | The last 10% of the work tends to take as long as the first 90% did. |
 | `43` | [Eagleson's Law](#eaglesons-law) | Maintainability | Your own code that you haven't read in six months might as well be someone else's. |
 | `44` | [Hick's Law](#hicks-law) | Interaction | The more options people are given, the longer they take to choose one. |
 | `45` | [Fitts's Law](#fittss-law) | Interaction | Small, distant targets take longer to hit and get missed more often. |
-| `46` | [Miller's Law](#millers-law) | Cognition | Working memory holds only about seven items; past that, people start dropping them. |
+| `46` | [Miller's Law](#millers-law) | Cognition | Working memory holds only a handful of chunks (Miller said about seven; later estimates are lower). |
 | `47` | [Fallacies of Distributed Computing](#fallacies-of-distributed-computing) | Distributed Systems | Networked code quietly assumes eight things about the network that are false in production. |
 | `48` | [Ironies of Automation](#ironies-of-automation) | Safety | Automation leaves people only the hardest cases, after their skills have faded from disuse. |
 | `49` | [Principle of Least Privilege](#principle-of-least-privilege) | Security | Every permission a component doesn't need widens the damage when something goes wrong. |
@@ -127,15 +127,15 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `62` | [Occam's Razor](#occams-razor) | Cognition | The explanation that needs the fewest unverified assumptions is usually the right one. |
 | `63` | [Single Responsibility Principle](#single-responsibility-principle) | Maintainability | A module serving two groups gets conflicting change requests from both. |
 | `64` | [Principle of Least Astonishment](#principle-of-least-astonishment) | Interaction | Behavior that surprises users costs more than behavior that is slightly worse but expected. |
-| `65` | [Second-System Effect](#second-system-effect) | Systems | After a first success, designers pack every deferred idea into the second system. |
+| `65` | [Second-System Effect](#second-system-effect) | Systems | After a first success, designers tend to pack the ideas they deferred into the second system. |
 | `66` | [Moore's Law](#moores-law) | Performance | The number of transistors on a chip at lowest cost per part doubles about every two years. |
 | `67` | [Amara's Law](#amaras-law) | Estimation | New technology is overrated in its first years and underrated over a decade. |
-| `68` | [The Bitter Lesson](#the-bitter-lesson) | Systems | In AI, general methods that scale with compute beat hand-coded human knowledge. |
+| `68` | [The Bitter Lesson](#the-bitter-lesson) | Systems | In AI, general methods that scale with compute have, in the long run, beaten hand-coded human knowledge. |
 | `69` | [Metcalfe's Law](#metcalfes-law) | Systems | Each new node adds value to every existing one, so a network's value outgrows its size. |
 | `70` | [Ringelmann Effect](#ringelmann-effect) | Organization | Each person contributes less as a group grows, most of all when no one can see who did what. |
 | `71` | [Shirky Principle](#shirky-principle) | Incentives | Institutions tend to keep alive the problem they exist to solve. |
 | `72` | [Error Budget](#error-budget) | Operations | An SLO below 100% leaves a measurable allowance of failure, and that allowance can be spent. |
-| `73` | [Toil](#toil) | Operations | Manual, repetitive operational work grows with the service until it crowds out engineering. |
+| `73` | [Toil](#toil) | Operations | Manual, repetitive operational work grows with the service and, left unchecked, crowds out engineering. |
 | `74` | [Blameless Postmortem](#blameless-postmortem) | Operations | Punishing the person nearest a failure teaches people to hide what they did. |
 | `75` | [Working Backwards](#working-backwards) | Decision | Teams that start from a solution often build things no customer needed; starting from the announcement exposes that early. |
 | `76` | [Disagree and Commit](#disagree-and-commit) | Decision | Waiting for everyone to agree is often slower than committing and correcting course if the call turns out wrong. |
@@ -166,7 +166,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 
 `§ 03` · Systems
 
-- **Concept:** Code or rules whose origin you don't know look like clutter, so they get deleted.
+- **Concept:** Code or rules whose origin you don't know look like clutter, which makes them tempting to delete.
 - **Mechanism:** We view legacy code/processes as "clutter" because we lack the context of their origin. The ego jumps to "simplify" by deleting what it doesn't understand.
 - **Counter:** **Time-Boxed Archaeology** — taken absolutely the rule removes nothing ever, because the reason is sometimes gone with the person who had it.
 - **Guideline:** You are forbidden from removing a "fence" (code/rule) until you can explain why it was put there — but put a deadline on the search. When it expires, take the fence down behind a flag, with a rollback ready, and watch what complains.
@@ -415,7 +415,7 @@ The architecture is downstream of the communication structure, not the org chart
 
 `§ 25` · Systems
 
-- **Concept:** A simpler design that is easy to build and adopt beats a more correct but complex one.
+- **Concept:** A simpler design that is easy to build and adopt tends to beat a more correct but complex one.
 - **Mechanism:** A simpler, "inferior" design that is easy to implement and adopt will beat a theoretically "correct" but complex design in the real world. Unix beat Lisp. HTTP beat CORBA.
 - **Counter:** **The Right Thing / Perfectionism**.
 - **Guideline:** A solution that is 80% correct and ships today will outperform a 100% correct solution that ships next year. Optimize for adoption, not elegance.
@@ -459,7 +459,7 @@ The architecture is downstream of the communication structure, not the org chart
 
 `§ 29` · Maintainability
 
-- **Concept:** Code decays because cleanup is always deferred to a refactor that never happens.
+- **Concept:** Code decays because cleanup tends to be deferred to a refactor that rarely happens.
 - **Mechanism:** Codebases decay because cleanup is always "someone else's job." Each engineer absorbs the entropy hit but defers the fix to a future refactor that never lands. The graph trends down.
 - **Counter:** **One Reason Per Diff** — cleanup riding along with a behaviour change hides the change, and a pull request that also renames forty things is one nobody reviews.
 - **Guideline:** Always leave the code cleaner than you found it, and keep the cleanup small enough to read inside the same diff — a one-line rename, a clearer comment, a deleted dead branch. Anything bigger gets its own commit.
@@ -561,7 +561,7 @@ The triangle is usually drawn as "pick two", which is misleading — you do not 
 
 `§ 37` · Performance
 
-- **Concept:** In a stable system, items inside equal arrival rate times the time each spends there.
+- **Concept:** In a stable system, the average number of items inside equals arrival rate times average time spent.
 - **Mechanism:** In any stable system, the average number of items in the system (L) equals the average arrival rate (λ) times the average time each item spends in it (W): **L = λW**. It holds regardless of arrival distribution or service discipline.
 - **Counter:** **Backpressure / Admission Control**.
 - **Guideline:** To cut latency (W) without adding capacity, cut work-in-progress (L). Cap concurrent requests — a shorter queue is faster than a faster server.
@@ -590,7 +590,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 
 `§ 39` · Organization
 
-- **Concept:** People get promoted until they reach a role they are bad at, and stay there.
+- **Concept:** People tend to get promoted until they reach a role they are bad at, and stay there.
 - **Mechanism:** In a hierarchy, people are promoted on performance in their *current* role, not the one above. So everyone tends to rise until they reach a role they are bad at — and there they stay. Competence is promoted away; incompetence accumulates.
 - **Counter:** **Dual Career Ladders / Role-Specific Evaluation**.
 - **Guideline:** Do not promote your best engineer into management as a reward — it removes a great engineer and risks creating a poor manager. Offer a technical ladder, and evaluate candidates for the role above, not the one they already mastered.
@@ -623,7 +623,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 
 `§ 42` · Estimation
 
-- **Concept:** The last 10% of the work takes as long as the first 90%.
+- **Concept:** The last 10% of the work tends to take as long as the first 90% did.
 - **Mechanism:** "The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time." The visible work hides a second, equally large body of integration, edge cases, and polish.
 - **Counter:** **Demo on Real Data / Hard Definition of Done**.
 - **Guideline:** When something looks "almost done," assume an entire second project remains: the last-10% of hardening, edge cases, and integration. Schedule it explicitly instead of treating it as a rounding error.
@@ -667,7 +667,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 
 `§ 46` · Cognition
 
-- **Concept:** Working memory holds only about seven items; past that, people start dropping them.
+- **Concept:** Working memory holds only a handful of chunks (Miller said about seven; later estimates are lower).
 - **Mechanism:** "The Magical Number Seven, Plus or Minus Two" — human working memory holds only about seven chunks at once. Cross that limit and recall collapses; the brain drops items rather than slowing down.
 - **Counter:** **Chunking / Information Hiding**.
 - **Guideline:** Group related items into a handful of named chunks — phone-number style — wherever a person must hold state in their head: function arguments, form fields, menu groups, on-call steps.
@@ -890,7 +890,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 
 `§ 65` · Systems
 
-- **Concept:** After a first success, designers pack every deferred idea into the second system.
+- **Concept:** After a first success, designers tend to pack the ideas they deferred into the second system.
 - **Mechanism:** The first system is built cautiously, by someone unsure of the ground. Its success converts that caution into confidence, and every idea deferred the first time is loaded into the rewrite at once. The result is over-general, late, and frequently never ships at all.
 - **Counter:** **Gall's Law** — the answer is not to freeze the first system but to grow it — a rewrite that ships in slices is not a second system.
 - **Guideline:** When rewriting, carry forward the constraints and not just the wish list. Cut the deferred features to the two that actually blocked users, and replace the original one piece at a time.
@@ -923,7 +923,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 
 `§ 68` · Systems
 
-- **Concept:** In AI, general methods that scale with compute beat hand-coded human knowledge.
+- **Concept:** In AI, general methods that scale with compute have, in the long run, beaten hand-coded human knowledge.
 - **Mechanism:** Across seven decades of AI research the approaches that won were search and learning scaled with available computation, not the ones that encoded human insight about the domain. Built-in knowledge helps in the short run and becomes the ceiling in the long run, because unlike computation it does not get cheaper every year.
 - **Counter:** **Compute Is Not Free** — inside a fixed budget domain knowledge is often the only lever you have, and the lesson describes the trajectory of a field rather than the right move this quarter.
 - **Guideline:** When choosing between encoding what you know and building something that learns from more data or more compute, ask which one improves on its own when the budget doubles. Bet on that one for anything with a multi-year horizon.
@@ -978,7 +978,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 
 `§ 73` · Operations
 
-- **Concept:** Manual, repetitive operational work grows with the service until it crowds out engineering.
+- **Concept:** Manual, repetitive operational work grows with the service and, left unchecked, crowds out engineering.
 - **Mechanism:** Toil is work that is manual, repetitive, automatable, interrupt-driven, leaves the system no better than it found it, and scales linearly with traffic or users. Each instance is small and urgent, so it always beats project work in the moment. Because it grows with the service and engineering time does not, a team that never pushes back ends up doing nothing else.
 - **Counter:** **Ironies of Automation** — automating a task removes the practice people needed to handle it when the automation fails, and some automation costs more to build and keep alive than the toil it replaces.
 - **Guideline:** Measure the share of each person's time spent on toil and set a ceiling (Google uses 50%). When a task comes back a third time (a rule of thumb, not the book's), file it as engineering work; when it scales with users, treat it as a defect rather than a chore.

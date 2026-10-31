@@ -337,7 +337,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Chesterton's Fence",
-      "concept": "Code or rules whose origin you don't know look like clutter, so they get deleted.",
+      "concept": "Code or rules whose origin you don't know look like clutter, which makes them tempting to delete.",
       "mechanism": "We view legacy code/processes as \"clutter\" because we lack the context of their origin. The ego jumps to \"simplify\" by deleting what it doesn't understand.",
       "counter": {
         "name": "Time-Boxed Archaeology",
@@ -348,7 +348,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "チェスタトンの柵",
-      "concept": "経緯を知らないコードやルールは無駄に見え、理由も知らずに消される。",
+      "concept": "経緯を知らないコードやルールは無駄に見え、理由も知らずに消したくなる。",
       "mechanism": "背景文脈を知らない古いコードやプロセスを「無駄」に見誤る。エゴは理解できないものを「単純化」という名目で削除したがる。",
       "counter": {
         "name": "期限を切った考古学",
@@ -441,7 +441,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ガルの法則",
-      "concept": "動く複雑なシステムは、たいてい動く単純なシステムから育ったものだ。最初から設計したものはまず動かない。",
+      "concept": "動く複雑なシステムは、たいてい動く単純なシステムから育ったものだ。最初から設計したものが動くことはまれだ。",
       "mechanism": "複雑なシステムをゼロから「設計」できるという妄想。実際には、複雑系は混沌すぎてトップダウンでは設計できない。",
       "counter": {
         "name": "MVP (実用最小限の製品)"
@@ -718,7 +718,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "リンディ効果",
-      "concept": "アイデアやソフトウェアは、長く生き残ったものほどこの先も長く残る。",
+      "concept": "アイデアやソフトウェアは、長く生き残ったものほどこの先も長く残る可能性が高い。",
       "mechanism": "アイデアやソフトウェアのような非腐敗的なものは、長く生き残ってきたものほど、今後も長く生き残る可能性が高い。",
       "counter": {
         "name": "ハイプサイクル分析"
@@ -1011,7 +1011,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Worse is Better",
-      "concept": "A simpler design that is easy to build and adopt beats a more correct but complex one.",
+      "concept": "A simpler design that is easy to build and adopt tends to beat a more correct but complex one.",
       "mechanism": "A simpler, \"inferior\" design that is easy to implement and adopt will beat a theoretically \"correct\" but complex design in the real world. Unix beat Lisp. HTTP beat CORBA.",
       "counter": {
         "name": "The Right Thing / Perfectionism"
@@ -1021,7 +1021,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "劣っている方が勝つ",
-      "concept": "作りやすく広めやすい単純な設計は、正しいが複雑な設計に勝つ。",
+      "concept": "作りやすく広めやすい単純な設計は、正しいが複雑な設計に勝ちやすい。",
       "mechanism": "理論的に「正しい」が複雑な設計よりも、単純で「不完全」だが実装と採用が容易な設計の方が、現実世界では勝利する。UnixはLispに勝ち、HTTPはCORBAに勝った。",
       "counter": {
         "name": "The Right Thing / 完璧主義"
@@ -1081,7 +1081,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "傍観者効果",
-      "concept": "問題を目にする人が多いほど、そのうち誰かが動く可能性は下がる。",
+      "concept": "問題を目にする人が多いほど、一人ひとりが自分から動く可能性は下がる。",
       "mechanism": "緊急事態において、居合わせる人数が多いほど、個々人が行動を起こす可能性は低くなる。「誰かが対応するだろう」と全員が思い、結果誰も対応しない。エンジニアリングでは、グループチャンネルへのアラートは往々にして無視される。",
       "counter": {
         "name": "明示的な役割割り当て / インシデントコマンダー制"
@@ -1131,7 +1131,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Boy Scout Rule",
-      "concept": "Code decays because cleanup is always deferred to a refactor that never happens.",
+      "concept": "Code decays because cleanup tends to be deferred to a refactor that rarely happens.",
       "mechanism": "Codebases decay because cleanup is always \"someone else's job.\" Each engineer absorbs the entropy hit but defers the fix to a future refactor that never lands. The graph trends down.",
       "counter": {
         "name": "One Reason Per Diff",
@@ -1142,7 +1142,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ボーイスカウトの規則",
-      "concept": "掃除がいつも来ないリファクタリングに先送りされ、コードは劣化していく。",
+      "concept": "掃除はめったに来ないリファクタリングに先送りされがちで、コードは劣化していく。",
       "mechanism": "クリーンアップは常に「誰か別の人の仕事」になりがちで、コードベースは劣化していく。各エンジニアはエントロピー増加の影響だけ受けて、修正は「いつかのリファクタ」に先送りされ、それは結局来ない。",
       "counter": {
         "name": "1つの差分に1つの理由",
@@ -1376,7 +1376,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Little's Law",
-      "concept": "In a stable system, items inside equal arrival rate times the time each spends there.",
+      "concept": "In a stable system, the average number of items inside equals arrival rate times average time spent.",
       "mechanism": "In any stable system, the average number of items in the system (L) equals the average arrival rate (λ) times the average time each item spends in it (W): **L = λW**. It holds regardless of arrival distribution or service discipline.",
       "counter": {
         "name": "Backpressure / Admission Control"
@@ -1386,7 +1386,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "リトルの法則",
-      "concept": "系の中にある件数は、到着率と滞在時間の積に等しい。",
+      "concept": "安定した系では、系の中にある件数の平均は、到着率と平均滞在時間の積に等しい。",
       "mechanism": "安定したシステムでは、系内の平均項目数 (L) は平均到着率 (λ) と平均滞留時間 (W) の積に等しい: **L = λW**。到着分布やサービス規律に依らず成り立つ。",
       "counter": {
         "name": "バックプレッシャ / 流入制御"
@@ -1435,7 +1435,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Peter Principle",
-      "concept": "People get promoted until they reach a role they are bad at, and stay there.",
+      "concept": "People tend to get promoted until they reach a role they are bad at, and stay there.",
       "mechanism": "In a hierarchy, people are promoted on performance in their *current* role, not the one above. So everyone tends to rise until they reach a role they are bad at — and there they stay. Competence is promoted away; incompetence accumulates.",
       "counter": {
         "name": "Dual Career Ladders / Role-Specific Evaluation"
@@ -1445,7 +1445,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ピーターの法則",
-      "concept": "人は苦手な役職にたどり着くまで昇進し、そこにとどまる。",
+      "concept": "人は苦手な役職にたどり着くまで昇進し、そこにとどまりがちだ。",
       "mechanism": "階層組織では、人は*一つ上*の職務ではなく*現職*の成績で昇進する。だから誰もが、自分の不得手な職位に達するまで昇り続け、そこで留まる。有能は昇進によって失われ、無能が堆積していく。",
       "counter": {
         "name": "複線型キャリアパス / 職務別の評価"
@@ -1525,7 +1525,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Ninety-Ninety Rule",
-      "concept": "The last 10% of the work takes as long as the first 90%.",
+      "concept": "The last 10% of the work tends to take as long as the first 90% did.",
       "mechanism": "\"The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time.\" The visible work hides a second, equally large body of integration, edge cases, and polish.",
       "counter": {
         "name": "Demo on Real Data / Hard Definition of Done"
@@ -1535,7 +1535,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "90対90の法則",
-      "concept": "残り1割の作業に、最初の9割と同じだけの時間がかかる。",
+      "concept": "残り1割の作業に、最初の9割と同じくらいの時間がかかりがちだ。",
       "mechanism": "「最初の90%のコードが、開発時間の最初の90%を占める。残り10%のコードが、もう90%を占める。」目に見える作業は、同じ大きさの統合・エッジケース・仕上げという第二の塊を隠している。",
       "counter": {
         "name": "本番相当データでのデモ / 厳格な完了の定義"
@@ -1644,7 +1644,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Miller's Law",
-      "concept": "Working memory holds only about seven items; past that, people start dropping them.",
+      "concept": "Working memory holds only a handful of chunks (Miller said about seven; later estimates are lower).",
       "mechanism": "\"The Magical Number Seven, Plus or Minus Two\" — human working memory holds only about seven chunks at once. Cross that limit and recall collapses; the brain drops items rather than slowing down.",
       "counter": {
         "name": "Chunking / Information Hiding"
@@ -1654,7 +1654,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ミラーの法則",
-      "concept": "作業記憶に入るのは7個前後で、それを超えると人は項目を取りこぼす。",
+      "concept": "作業記憶に保てるのは数個のまとまりだけだ（Miller は7前後とし、後の研究はもっと少ないとする）。",
       "mechanism": "「マジカルナンバー 7 ± 2」——人間の作業記憶が一度に保持できるのは約7チャンクのみ。その限界を超えると想起は崩壊する。脳は速度を落とすのではなく、項目を捨てる。",
       "counter": {
         "name": "チャンク化 / 情報隠蔽"
@@ -2041,7 +2041,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "YAGNI",
-      "concept": "想像した将来のために書いたコードは、今の工数を食い、実際の要件にもまず合わない。",
+      "concept": "想像した将来のために書いたコードは、今の工数を食い、実際の要件に合うこともまれだ。",
       "mechanism": "推測に基づく一般化は3回支払わされる。抽象を書くとき、使われないまま抱え続けるとき、そして予期した要件が違う形で実際に来て解きほぐすとき。将来要件の予測は、たいてい「その抽象が固定してしまった細部」で外れる。",
       "counter": {
         "name": "チェスタトンの柵",
@@ -2256,7 +2256,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Second-System Effect",
-      "concept": "After a first success, designers pack every deferred idea into the second system.",
+      "concept": "After a first success, designers tend to pack the ideas they deferred into the second system.",
       "mechanism": "The first system is built cautiously, by someone unsure of the ground. Its success converts that caution into confidence, and every idea deferred the first time is loaded into the rewrite at once. The result is over-general, late, and frequently never ships at all.",
       "counter": {
         "name": "Gall's Law",
@@ -2267,7 +2267,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "セカンドシステム症候群",
-      "concept": "最初の成功のあと、設計者は先送りしたアイデアをすべて二作目に詰め込む。",
+      "concept": "最初の成功のあと、設計者は先送りしたアイデアを二作目に詰め込みがちだ。",
       "mechanism": "1番目のシステムは、地面の固さを測りかねている者によって慎重に作られる。その成功が慎重さを自信に変え、1回目に見送ったアイデアがすべて一度に書き直しへ流し込まれる。結果は過剰に汎用的で、遅れ、そして多くの場合そもそも出荷されない。",
       "counter": {
         "name": "ガルの法則",
@@ -2353,7 +2353,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "The Bitter Lesson",
-      "concept": "In AI, general methods that scale with compute beat hand-coded human knowledge.",
+      "concept": "In AI, general methods that scale with compute have, in the long run, beaten hand-coded human knowledge.",
       "mechanism": "Across seven decades of AI research the approaches that won were search and learning scaled with available computation, not the ones that encoded human insight about the domain. Built-in knowledge helps in the short run and becomes the ceiling in the long run, because unlike computation it does not get cheaper every year.",
       "counter": {
         "name": "Compute Is Not Free",
@@ -2364,7 +2364,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "苦い教訓",
-      "concept": "AIでは、計算量とともに伸びる汎用手法が、人が作り込んだ知識に勝つ。",
+      "concept": "AIでは長い目で見ると、計算量とともに伸びる汎用手法が、人が作り込んだ知識に勝ってきた。",
       "mechanism": "AI研究の70年を通じて勝ったのは、利用可能な計算量とともにスケールする探索と学習であり、その領域についての人間の洞察を埋め込んだ手法ではなかった。作り込まれた知識は短期では効き、長期では天井になる。計算資源と違って、毎年安くならないからだ。",
       "counter": {
         "name": "計算資源はタダではない",
@@ -2515,7 +2515,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Toil",
-      "concept": "Manual, repetitive operational work grows with the service until it crowds out engineering.",
+      "concept": "Manual, repetitive operational work grows with the service and, left unchecked, crowds out engineering.",
       "mechanism": "Toil is work that is manual, repetitive, automatable, interrupt-driven, leaves the system no better than it found it, and scales linearly with traffic or users. Each instance is small and urgent, so it always beats project work in the moment. Because it grows with the service and engineering time does not, a team that never pushes back ends up doing nothing else.",
       "counter": {
         "name": "Ironies of Automation",
@@ -2526,7 +2526,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "トイル",
-      "concept": "手作業の繰り返し運用はサービスと一緒に増え、やがて開発の時間を食い尽くす。",
+      "concept": "手作業の繰り返し運用はサービスと一緒に増え、放っておけば開発の時間を食い尽くす。",
       "mechanism": "トイルとは、手作業で、繰り返され、自動化でき、割り込みでやって来て、終えてもシステムが良くならず、トラフィックや利用者数に比例して増える作業だ。一件ずつは小さく急ぎなので、その場では必ずプロジェクト作業に勝つ。サービスとともに増えるのに開発の時間は増えないので、押し返さないチームは最後にはそれしかしなくなる。",
       "counter": {
         "name": "自動化の皮肉",
