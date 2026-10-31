@@ -193,10 +193,12 @@ const FIGURES_DIR = join(ROOT, 'website', 'public', 'figures');
  *  significant words of a title. */
 function monogram(text, isName) {
   const words = text
+    .replace(/['’]s\b/g, '')
     .replace(/[&,.'’]/g, ' ')
     .split(/\s+/)
     .filter((w) => w && !/^(the|of|a|an|and|jr|to)$/i.test(w));
   const picked = isName ? [words[0], words[words.length - 1]] : words.slice(0, 2);
+  if (words.length === 0) return text.trim()[0]?.toUpperCase() ?? '§';
   return [...new Set(picked)].map((w) => w[0].toUpperCase()).join('');
 }
 

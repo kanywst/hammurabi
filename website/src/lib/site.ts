@@ -52,7 +52,7 @@ export function article(number: number): string {
 /** A file under public/, with the GitHub Pages sub-path in production. next/link
  *  adds the base path to routes, but a plain <img src> does not. */
 export function asset(path: string): string {
-  return `${process.env.NODE_ENV === 'production' ? '/hammurabi' : ''}${path}`;
+  return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${path}`;
 }
 
 /** A category's seal colour: hues spread evenly round the OKLCH wheel, in the

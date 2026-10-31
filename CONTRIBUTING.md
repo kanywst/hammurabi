@@ -85,12 +85,12 @@ Every law has an entry in `data/figures.yaml`, and `npm run validate` fails with
 
 - **`kind: person`**: the originator. Give `name`, and `image` if a freely licensed photo exists.
 - **`kind: scene`**: no free photo of the originator exists, so a freely licensed picture of what the law is about (the cobra for the Cobra Effect). `name` describes it.
-- **`kind: company`**: the practice comes from an organisation. `logo` is its current official mark, in its own colours.
+- **`kind: company`**: the practice comes from an organisation. `logo` is its current official mark, in its own colours. When the file is a wide lockup, `viewbox` crops an SVG to the symbol.
 - **`kind: none`**: no single originator. The site draws a seal from the title.
 
 Without an image or logo, the site draws a monogram seal in the law's category colour, so a missing picture never looks broken.
 
-Only freely licensed images: public domain, CC0, CC BY or CC BY-SA. No fair-use, NC or ND files, even if Wikipedia shows them. Record `license`, `author` and `page` (the file's description page); the article prints them under its source. Wikimedia Commons is the usual place to look. Check the licence on the file page itself, not on the article that embeds it.
+Photos and scenes must be freely licensed: public domain, CC0, CC BY or CC BY-SA. No fair-use, NC or ND files, even if Wikipedia shows them. Company marks are trademarks shown only to say where a practice comes from; take the mark from Wikimedia Commons where it is there as a public-domain text logo, otherwise from the company's own published assets, and say which in `license`. Record `license`, `author` and `page` (the file's description page); the article prints them under its source. Wikimedia Commons is the usual place to look. Check the licence on the file page itself, not on the article that embeds it.
 
 ```yaml
   - slug: some-law

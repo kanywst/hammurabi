@@ -168,8 +168,9 @@ html:lang(ja) body {
     opacity: 0.8;
   }
 
-  /* One law, one row: number, name, the claim, the category. The whole row is
-     the link, so the target is the full width rather than the name alone. */
+  /* One law, one row: its medallion, the name with its § number and category,
+     then the claim. The whole row is the link, so the target is the full
+     width rather than the name alone. */
   .row {
     display: grid;
     grid-template-columns: 3.5rem minmax(0, 1fr);
@@ -321,7 +322,8 @@ html:lang(ja) body {
     font-size: 3.25rem;
   }
 
-  .row:hover .medal {
+  .row:hover .medal,
+  .row:focus-visible .medal {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
   }

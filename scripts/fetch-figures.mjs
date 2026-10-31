@@ -17,7 +17,8 @@
  * off-centre: x and y are the face's centre as a fraction of the original,
  * zoom is how many times smaller than the short side the square is.
  */
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { join } from 'node:path';
 import { loadFigures, ROOT } from './lib/codex.mjs';
@@ -40,7 +41,7 @@ mkdirSync(OUT, { recursive: true });
 mkdirSync(CACHE, { recursive: true });
 
 async function get(slug, url) {
-  const cached = join(CACHE, `${slug}-${Buffer.from(url).toString('base64url').slice(-24)}`);
+  const cached = join(CACHE, `${slug}-${createHash('sha256').update(url).digest('hex').slice(0, 16)}`);
   if (existsSync(cached)) return { body: readFileSync(cached), fetched: false };
   const res = await fetch(url, { headers: { 'User-Agent': UA } });
   if (!res.ok) throw new Error(`${res.status} ${url}`);
@@ -51,9 +52,12 @@ async function get(slug, url) {
 
 /** The square to cut: the figure's own focus, or sharp's saliency guess. */
 async function portrait(body, focus) {
-  const image = sharp(body);
+  // Phone photos carry their rotation in EXIF; apply it so the crop and the
+  // focus coordinates are in the frame a viewer sees.
+  const image = sharp(body, { autoOrient: true });
   if (focus) {
-    const { width, height } = await image.metadata();
+    const meta = await image.metadata();
+    const { width, height } = meta.autoOrient ?? meta;
     const size = Math.round(Math.min(width, height) / (focus.zoom ?? 1));
     const clamp = (v, max) => Math.max(0, Math.min(Math.round(v), max));
     image.extract({
@@ -64,6 +68,12 @@ async function portrait(body, focus) {
     });
   }
   return image.resize(320, 320, { fit: 'cover', position: sharp.strategy.attention });
+}
+
+for (const slug of ONLY) {
+  if (!figures.get(slug)?.image && !figures.get(slug)?.logo) {
+    console.error(`warn: ${slug} has no image or logo in data/figures.yaml`);
+  }
 }
 
 let failed = 0;
@@ -77,9 +87,17 @@ for (const f of figures.values()) {
     const { body, fetched } = await get(f.slug, url);
     if (ext === 'svg') {
       let svg = body.toString('utf8');
+      // Served from the site's own origin, so refuse anything that could run.
+      if (/<script|\son\w+\s*=|<foreignObject|<!ENTITY/i.test(svg)) {
+        throw new Error('SVG contains script, event handlers or entities');
+      }
       if (f.viewbox) {
-        svg = svg.replace(/\sviewBox="[^"]*"/, '').replace(/<svg\b/, `<svg viewBox="${f.viewbox}"`);
-        svg = svg.replace(/(<svg\b[^>]*?)\s(width|height)="[^"]*"/g, '$1');
+        // Only the root element: a nested <symbol> or <svg> keeps its own box.
+        svg = svg.replace(/<svg\b[^>]*>/, (tag) =>
+          tag
+            .replace(/\s(viewBox|width|height)=("[^"]*"|'[^']*')/g, '')
+            .replace(/^<svg\b/, `<svg viewBox="${f.viewbox}"`)
+        );
       }
       writeFileSync(target, svg);
     } else if (ext === 'png') {
@@ -101,4 +119,18 @@ for (const f of figures.values()) {
     console.error(`failed: ${f.slug}: ${err.message}`);
   }
 }
+// A figure whose image was removed, or a law that was renamed, leaves a file
+// nothing references; it would still be deployed, so sweep it.
+const expected = new Set(
+  [...figures.values()]
+    .filter((f) => f.image || f.logo)
+    .flatMap((f) => (f.image ? [`${f.slug}.webp`] : [`${f.slug}.svg`, `${f.slug}.png`]))
+);
+for (const file of readdirSync(OUT)) {
+  if (!expected.has(file)) {
+    rmSync(join(OUT, file));
+    console.log(`removed: ${file}`);
+  }
+}
+
 process.exit(failed ? 1 : 0);

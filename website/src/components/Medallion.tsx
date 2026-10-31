@@ -35,7 +35,13 @@ export default function Medallion({
     >
       {src ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={asset(src)} alt="" loading="lazy" decoding="async" />
+        <img
+          src={asset(src)}
+          alt=""
+          // The large one heads the article, above the fold.
+          loading={size === 'lg' ? 'eager' : 'lazy'}
+          decoding="async"
+        />
       ) : (
         <span className="medal__mono">{figure.monogram}</span>
       )}

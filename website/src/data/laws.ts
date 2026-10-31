@@ -525,7 +525,7 @@ export const laws: Law[] = [
     "figure": {
       "kind": "scene",
       "name": "Wright Flyer, first flight, 1903",
-      "monogram": "GS",
+      "monogram": "GL",
       "image": "/figures/galls-law.webp",
       "logo": null,
       "credit": {
@@ -1839,7 +1839,7 @@ export const laws: Law[] = [
     "figure": {
       "kind": "scene",
       "name": "Checkout queue at a food store",
-      "monogram": "LS",
+      "monogram": "LL",
       "image": "/figures/littles-law.webp",
       "logo": null,
       "credit": {
@@ -2092,7 +2092,7 @@ export const laws: Law[] = [
     "figure": {
       "kind": "scene",
       "name": "Punched-card program deck (c.1969)",
-      "monogram": "ES",
+      "monogram": "EL",
       "image": "/figures/eaglesons-law.webp",
       "logo": null,
       "credit": {
@@ -2217,7 +2217,7 @@ export const laws: Law[] = [
     "figure": {
       "kind": "scene",
       "name": "Rotary telephone dial (seven-digit phone numbers)",
-      "monogram": "MS",
+      "monogram": "ML",
       "image": "/figures/millers-law.webp",
       "logo": null,
       "credit": {

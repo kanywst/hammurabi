@@ -135,7 +135,11 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
           </a>
           {law.figure.credit ? (
             <p className="meta mt-4">
-              {law.figure.image ? t.law.portraitCredit : t.law.logoCredit}
+              {law.figure.logo
+                ? t.law.logoCredit
+                : law.figure.kind === 'person'
+                  ? t.law.portraitCredit
+                  : t.law.imageCredit}
               {lang === 'ja' ? '：' : ': '}
               {[law.figure.credit.author, law.figure.credit.license]
                 .filter(Boolean)

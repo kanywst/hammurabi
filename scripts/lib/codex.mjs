@@ -176,12 +176,23 @@ export function requireCodex() {
  * a map from slug, with the problems found, so validate.mjs can gate it and
  * generate.mjs can read it with the same rules.
  */
+const FIGURE_KEYS = new Set(['slug', 'kind', 'name', 'image', 'logo', 'license', 'author', 'page', 'focus', 'viewbox']);
+
 export function loadFigures({ file = join(ROOT, 'data', 'figures.yaml') } = {}) {
   const raw = parse(readFileSync(file, 'utf8'));
   const problems = [];
   const figures = new Map();
   for (const [i, f] of (raw?.figures ?? []).entries()) {
-    const at = f?.slug ?? `figures[${i}]`;
+    if (!f || typeof f !== 'object') {
+      problems.push(`figures[${i}]: not a mapping`);
+      continue;
+    }
+    const at = f.slug ?? `figures[${i}]`;
+    const unknown = Object.keys(f).filter((k) => !FIGURE_KEYS.has(k));
+    if (unknown.length) problems.push(`${at}: unknown field(s) ${unknown.join(', ')}`);
+    for (const key of ['image', 'logo', 'page']) {
+      if (f[key] !== undefined && !/^https:\/\/\S+$/.test(f[key])) problems.push(`${at}: ${key} must be an https URL`);
+    }
     if (!f?.slug || !SLUG_RE.test(f.slug)) problems.push(`${at}: bad slug`);
     if (figures.has(f.slug)) problems.push(`${at}: duplicate`);
     if (!['person', 'scene', 'company', 'none'].includes(f.kind)) problems.push(`${at}: kind must be person, scene, company or none`);
