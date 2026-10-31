@@ -536,7 +536,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ブルックスの法則",
-      "concept": "遅れたプロジェクトに人を足すと、調整コストが増えてさらに遅れる。",
+      "concept": "遅れたプロジェクトに人を足すと、立ち上がりと調整のコストが新しい人の寄与を上回り、さらに遅れる。",
       "mechanism": "遅れているプロジェクトに人を追加すると、調整コストが二次関数的に増大する（n 人で n(n-1)/2 本の通信路）。新人はベテランの手を止めるため、貢献よりも損失が上回る。",
       "counter": {
         "name": "スコープ削減"
@@ -1101,7 +1101,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Murphy's Law",
-      "concept": "Given enough time and traffic, every failure mode a system has will eventually occur.",
+      "concept": "Given enough time and traffic, a failure mode that can happen eventually will.",
       "mechanism": "\"Anything that can go wrong, will go wrong.\" Given enough time, traffic, or unexpected input, every latent failure mode eventually fires. Engineers who design only for the happy path build systems that are one network blip away from collapse.",
       "counter": {
         "name": "Defensive Design / Chaos Engineering"
@@ -1111,7 +1111,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "マーフィーの法則",
-      "concept": "時間と負荷が十分にあれば、潜んでいる故障はいずれすべて起きる。",
+      "concept": "時間と負荷が十分にあれば、起こりうる故障はいずれ起きる。",
       "mechanism": "「うまくいかない可能性があることは、必ずうまくいかない。」十分な時間・トラフィック・想定外の入力さえあれば、潜在的な失敗モードはいずれ必ず発火する。ハッピーパスだけを設計したシステムは、ネットワークの一瞬の揺れで崩れる。",
       "counter": {
         "name": "防御的設計 / カオスエンジニアリング"
@@ -1326,7 +1326,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "リーナスの法則",
-      "concept": "一人では見つからないバグも、多くの人が見れば誰かがすぐに気づく。",
+      "concept": "一人では見つからないバグも、同じコードを見る別の人にはあっさり分かることが多い。",
       "mechanism": "「十分な目玉があれば、あらゆるバグは浅い。」一人の目には不可能に見える欠陥も、独立した多くの視点が当たれば自明になる——ただし、コードが実際にその視点に対して可視であることが前提。",
       "counter": {
         "name": "オープンソース / レビュアーのローテーション / バグバウンティ / 社内コードの発見可能性"
@@ -2549,24 +2549,24 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Blameless Postmortem",
-      "concept": "Punishing the person nearest a failure teaches everyone to hide what they did.",
+      "concept": "Punishing the person nearest a failure teaches people to hide what they did.",
       "mechanism": "The people closest to an incident hold the only accurate account of what they saw, what they believed and why the action made sense at the time. If telling that story can cost them, they tell a shorter one, and the organisation loses the information it needs to fix the conditions that made the mistake easy. The error repeats with someone else's name on it. Blameless is not consequence-free: a just culture still separates an honest mistake inside a bad system from knowingly disregarding a risk.",
       "counter": {
         "name": "Diffused Ownership",
         "note": "when nobody is answerable, the action items have no owner and quietly expire; some teams name a person accountable for the fix precisely because blamelessness leaves no one holding it"
       },
-      "guideline": "Write the postmortem as a timeline of what people saw and why each action made sense then, and end with changes to the system, not to a person. Ban \"human error\" as a root cause; ask what made the error easy to make.",
+      "guideline": "Write the postmortem as a timeline of what people saw and why each action made sense then, and end with changes to the system, not to a person, each with one named owner and a date. Ban \"human error\" as a root cause; ask what made the error easy to make.",
       "source": "John Allspaw, *Blameless PostMortems and a Just Culture* (Code as Craft, Etsy, 2012); the practice is codified in Lunney & Lueder, \"Postmortem Culture\", *Site Reliability Engineering* (O'Reilly, 2016), ch. 15."
     },
     "ja": {
       "title": "非難なきポストモーテム",
-      "concept": "障害のいちばん近くにいた人を罰すると、全員が自分のしたことを隠すようになる。",
+      "concept": "障害のいちばん近くにいた人を罰すると、人は自分のしたことを隠すようになる。",
       "mechanism": "障害の現場にいた人だけが、何を見て、何を信じ、なぜその操作がその時点で妥当に思えたかを正確に語れる。語ることで不利益を被るなら、その人は話を短くする。すると組織は、ミスを起こしやすくしていた条件を直すための情報を失う。同じ誤りが、別の人の名前で繰り返される。非難しないことは、何をしても責任を問わないことではない。公正な文化は、悪い仕組みの中での正直なミスと、リスクを承知で無視したこととを区別する。",
       "counter": {
         "name": "責任の拡散",
         "note": "誰も責任を負わないと、対策項目に持ち主がいなくなり、いつの間にか立ち消える。だから責めないことと引き換えに、修正の担当者だけは名指しするチームもある"
       },
-      "guideline": "ポストモーテムは、各人が何を見て、なぜその操作がその時点で妥当だったかの時系列として書き、人ではなく仕組みの変更で締めくくれ。根本原因に「ヒューマンエラー」と書くことを禁じ、何がその誤りを起こしやすくしたかを問え。",
+      "guideline": "ポストモーテムは、各人が何を見て、なぜその操作がその時点で妥当だったかの時系列として書き、人ではなく仕組みの変更で締めくくれ。変更ごとに担当者を一人名指しし、期日を付けよ。根本原因に「ヒューマンエラー」と書くことを禁じ、何がその誤りを起こしやすくしたかを問え。",
       "source": "John Allspaw『Blameless PostMortems and a Just Culture』(Code as Craft, Etsy, 2012)。実践としては Lunney & Lueder「Postmortem Culture」『Site Reliability Engineering』(O'Reilly, 2016) 第 15 章にまとめられている。"
     }
   },
@@ -2574,7 +2574,7 @@ export const laws: Law[] = [
     "slug": "working-backwards",
     "number": 75,
     "tag": "decision",
-    "sourceUrl": "https://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management/answer/Ian-McAllister",
+    "sourceUrl": "https://www.allthingsdistributed.com/2006/11/working_backwards.html",
     "seeAlso": [
       "xy-problem",
       "yagni"
@@ -2588,7 +2588,7 @@ export const laws: Law[] = [
         "note": "when customers cannot judge an idea on paper (a new platform, an infrastructure change, something with no precedent) a cheap prototype tells you more than a polished press release"
       },
       "guideline": "Before a project starts, write a one-page press release and an FAQ for the customer, and review them as a team. If you cannot name the customer and their problem in the first paragraph, do not start building.",
-      "source": "Ian McAllister, answer to \"What is Amazon's approach to product development and product management?\" (Quora, 2010) — the first public description; Colin Bryar & Bill Carr, *Working Backwards* (St. Martin's Press, 2021) — the PR/FAQ process in full."
+      "source": "Werner Vogels, *Working Backwards* (All Things Distributed, 2006) — Amazon's CTO describing the press-release-first process; Ian McAllister's Quora answer \"What is Amazon's approach to product development and product management?\" is the source of \"if the press release is hard to write, the product is probably going to suck\"; Colin Bryar & Bill Carr, *Working Backwards* (St. Martin's Press, 2021) — the PR/FAQ process in full."
     },
     "ja": {
       "title": "ワーキング・バックワーズ",
@@ -2599,7 +2599,7 @@ export const laws: Law[] = [
         "note": "顧客が紙の上では判断できないもの（新しいプラットフォーム、基盤の変更、前例のないもの）では、磨いたプレスリリースより安い試作品のほうが多くを教えてくれる"
       },
       "guideline": "プロジェクトを始める前に、顧客向けの一枚のプレスリリースと FAQ を書き、チームでレビューせよ。最初の段落で顧客とその問題を言えないなら、作り始めるな。",
-      "source": "Ian McAllister による Quora の回答「What is Amazon's approach to product development and product management?」(2010) が最初の公開記述。PR/FAQ の全体像は Colin Bryar & Bill Carr『Working Backwards』(St. Martin's Press, 2021)。"
+      "source": "Werner Vogels『Working Backwards』(All Things Distributed, 2006)。Amazon の CTO がプレスリリースから書き始める手順を説明したもの。「プレスリリースが書きにくいなら、その製品はたぶんひどい」は Ian McAllister の Quora の回答「What is Amazon's approach to product development and product management?」から。PR/FAQ の全体像は Colin Bryar & Bill Carr『Working Backwards』(St. Martin's Press, 2021)。"
     }
   },
   {
@@ -2613,25 +2613,25 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Disagree and Commit",
-      "concept": "Waiting for everyone to agree is slower than committing and correcting course if the call turns out wrong.",
-      "mechanism": "When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate nobody can know the answer anyway. A dissenter who keeps arguing also tends to half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating \"do you agree\" from \"will you commit\" lets the disagreement be stated fully and the work still go ahead at full effort.",
+      "concept": "Waiting for everyone to agree is often slower than committing and correcting course if the call turns out wrong.",
+      "mechanism": "When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate nobody can know the answer anyway. A dissenter who keeps arguing can also half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating \"do you agree\" from \"will you commit\" lets the disagreement be stated fully and the work still go ahead at full effort.",
       "counter": {
         "name": "Dissent on One-Way Doors",
         "note": "for an irreversible decision, or one with a safety or ethical risk, committing should not end the objection; escalate instead of going quiet"
       },
       "guideline": "State your disagreement once, in full, with your reasons. Then say \"I disagree and commit\" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you.",
-      "source": "Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — \"use the phrase 'disagree and commit'\", with the Amazon Studios example. The phrase predates Amazon; it is associated with Scott McNealy at Sun Microsystems in the 1980s."
+      "source": "Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — \"use the phrase 'disagree and commit'\", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and it is also attributed to Intel."
     },
     "ja": {
       "title": "反対してもコミットする",
-      "concept": "全員の同意を待つより、決めて実行し、誤りなら軌道修正するほうが速い。",
-      "mechanism": "合意を求める集団では、決定は最も粘る懐疑派の速度でしか進まない。しかも議論の終盤では、誰にも正解は分からない。議論に負けた反対者は、決まった方針を半端にしか実行しないことが多く、どちらが正しかったにせよ結果を悪くする。「同意するか」と「コミットするか」を分ければ、反対は全部言い切ったうえで、実行は全力で進められる。",
+      "concept": "全員の同意を待つより、決めて実行し、誤りなら軌道修正するほうが速いことが多い。",
+      "mechanism": "合意を求める集団では、決定は最も粘る懐疑派の速度でしか進まない。しかも議論の終盤では、誰にも正解は分からない。議論に負けた反対者が、決まった方針を半端にしか実行しないこともあり、どちらが正しかったにせよ結果を悪くする。「同意するか」と「コミットするか」を分ければ、反対は全部言い切ったうえで、実行は全力で進められる。",
       "counter": {
         "name": "一方向のドアでは反対を続ける",
         "note": "取り返しのつかない決定や、安全・倫理上のリスクがある決定では、コミットしても異議を取り下げるべきではない。黙るのではなくエスカレーションせよ"
       },
       "guideline": "反対意見は一度、理由とともに全部言え。そのうえで「反対だがコミットする」と宣言し、自分の案だったかのように実行せよ。立場が上の人も同じことをせよ。チームに自分を説得させるのではなく、チームの判断を支えよ。",
-      "source": "Jeff Bezos『2016 年 株主への手紙』（Amazon.com, Inc.、2017 年）。\"use the phrase 'disagree and commit'\" と Amazon Studios の例。語句自体は Amazon 以前からあり、1980 年代の Sun Microsystems の Scott McNealy に結びつけられている。"
+      "source": "Jeff Bezos『2016 年 株主への手紙』（Amazon.com, Inc.、2017 年）。\"use the phrase 'disagree and commit'\" と Amazon Studios の例。語句自体は Amazon 以前からある。Karen Southwick『High Noon』(1999) は Sun Microsystems の Scott McNealy がこの語を使っていたと記しており、Intel 発祥とする説もある。"
     }
   }
 ];

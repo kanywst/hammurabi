@@ -90,7 +90,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `25` | [Worse is Better](#worse-is-better) | Systems | A simpler design that is easy to build and adopt beats a more correct but complex one. |
 | `26` | [Cunningham's Law](#cunninghams-law) | Organization | People are quicker to correct a wrong answer than to answer a question. |
 | `27` | [Bystander Effect](#bystander-effect) | Organization | The more people who see a problem, the less likely any one of them is to act on it. |
-| `28` | [Murphy's Law](#murphys-law) | Safety | Given enough time and traffic, every failure mode a system has will eventually occur. |
+| `28` | [Murphy's Law](#murphys-law) | Safety | Given enough time and traffic, a failure mode that can happen eventually will. |
 | `29` | [Boy Scout Rule](#boy-scout-rule) | Maintainability | Code decays because cleanup is always deferred to a refactor that never happens. |
 | `30` | [Tesler's Law](#teslers-law) | Systems | Complexity can't be removed from a system, only moved to someone else. |
 | `31` | [Dunning-Kruger Effect](#dunning-kruger-effect) | Cognition | The less skilled people are at something, the more they overrate their own ability. |
@@ -136,9 +136,9 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `71` | [Shirky Principle](#shirky-principle) | Incentives | Institutions tend to keep alive the problem they exist to solve. |
 | `72` | [Error Budget](#error-budget) | Operations | An SLO below 100% leaves a measurable allowance of failure, and that allowance can be spent. |
 | `73` | [Toil](#toil) | Operations | Manual, repetitive operational work grows with the service until it crowds out engineering. |
-| `74` | [Blameless Postmortem](#blameless-postmortem) | Operations | Punishing the person nearest a failure teaches everyone to hide what they did. |
+| `74` | [Blameless Postmortem](#blameless-postmortem) | Operations | Punishing the person nearest a failure teaches people to hide what they did. |
 | `75` | [Working Backwards](#working-backwards) | Decision | Teams that start from a solution build things no customer needed; starting from the announcement exposes that early. |
-| `76` | [Disagree and Commit](#disagree-and-commit) | Decision | Waiting for everyone to agree is slower than committing and correcting course if the call turns out wrong. |
+| `76` | [Disagree and Commit](#disagree-and-commit) | Decision | Waiting for everyone to agree is often slower than committing and correcting course if the call turns out wrong. |
 
 ### Type 1 vs Type 2 Decisions
 
@@ -448,7 +448,7 @@ The architecture is downstream of the communication structure, not the org chart
 
 `§ 28` · Safety
 
-- **Concept:** Given enough time and traffic, every failure mode a system has will eventually occur.
+- **Concept:** Given enough time and traffic, a failure mode that can happen eventually will.
 - **Mechanism:** "Anything that can go wrong, will go wrong." Given enough time, traffic, or unexpected input, every latent failure mode eventually fires. Engineers who design only for the happy path build systems that are one network blip away from collapse.
 - **Counter:** **Defensive Design / Chaos Engineering**.
 - **Guideline:** Treat every external dependency, retry, and timeout as something that *will* fail in production. Build the failure path before the success path.
@@ -989,10 +989,10 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 
 `§ 74` · Operations
 
-- **Concept:** Punishing the person nearest a failure teaches everyone to hide what they did.
+- **Concept:** Punishing the person nearest a failure teaches people to hide what they did.
 - **Mechanism:** The people closest to an incident hold the only accurate account of what they saw, what they believed and why the action made sense at the time. If telling that story can cost them, they tell a shorter one, and the organisation loses the information it needs to fix the conditions that made the mistake easy. The error repeats with someone else's name on it. Blameless is not consequence-free: a just culture still separates an honest mistake inside a bad system from knowingly disregarding a risk.
 - **Counter:** **Diffused Ownership** — when nobody is answerable, the action items have no owner and quietly expire; some teams name a person accountable for the fix precisely because blamelessness leaves no one holding it.
-- **Guideline:** Write the postmortem as a timeline of what people saw and why each action made sense then, and end with changes to the system, not to a person. Ban "human error" as a root cause; ask what made the error easy to make.
+- **Guideline:** Write the postmortem as a timeline of what people saw and why each action made sense then, and end with changes to the system, not to a person, each with one named owner and a date. Ban "human error" as a root cause; ask what made the error easy to make.
 - **Source:** John Allspaw, *Blameless PostMortems and a Just Culture* (Code as Craft, Etsy, 2012); the practice is codified in Lunney & Lueder, "Postmortem Culture", *Site Reliability Engineering* (O'Reilly, 2016), ch. 15. — [source ↗](https://www.etsy.com/codeascraft/blameless-postmortems)
 - **See also:** [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Hanlon's Razor](#hanlons-razor) · [Bystander Effect](#bystander-effect)
 
@@ -1004,18 +1004,18 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Mechanism:** Engineers start from what they can build and look for customers afterwards. A press release written before any code forces the team to state who the customer is, what problem they have and why existing options fail, in words the customer would use. If that page is hard to write, the product is unclear, and rewriting a page is far cheaper than rewriting the product.
 - **Counter:** **Build to Learn** — when customers cannot judge an idea on paper (a new platform, an infrastructure change, something with no precedent) a cheap prototype tells you more than a polished press release.
 - **Guideline:** Before a project starts, write a one-page press release and an FAQ for the customer, and review them as a team. If you cannot name the customer and their problem in the first paragraph, do not start building.
-- **Source:** Ian McAllister, answer to "What is Amazon's approach to product development and product management?" (Quora, 2010) — the first public description; Colin Bryar & Bill Carr, *Working Backwards* (St. Martin's Press, 2021) — the PR/FAQ process in full. — [source ↗](https://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management/answer/Ian-McAllister)
+- **Source:** Werner Vogels, *Working Backwards* (All Things Distributed, 2006) — Amazon's CTO describing the press-release-first process; Ian McAllister's Quora answer "What is Amazon's approach to product development and product management?" is the source of "if the press release is hard to write, the product is probably going to suck"; Colin Bryar & Bill Carr, *Working Backwards* (St. Martin's Press, 2021) — the PR/FAQ process in full. — [source ↗](https://www.allthingsdistributed.com/2006/11/working_backwards.html)
 - **See also:** [XY Problem](#xy-problem) · [YAGNI](#yagni)
 
 ### Disagree and Commit
 
 `§ 76` · Decision
 
-- **Concept:** Waiting for everyone to agree is slower than committing and correcting course if the call turns out wrong.
-- **Mechanism:** When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate nobody can know the answer anyway. A dissenter who keeps arguing also tends to half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating "do you agree" from "will you commit" lets the disagreement be stated fully and the work still go ahead at full effort.
+- **Concept:** Waiting for everyone to agree is often slower than committing and correcting course if the call turns out wrong.
+- **Mechanism:** When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate nobody can know the answer anyway. A dissenter who keeps arguing can also half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating "do you agree" from "will you commit" lets the disagreement be stated fully and the work still go ahead at full effort.
 - **Counter:** **Dissent on One-Way Doors** — for an irreversible decision, or one with a safety or ethical risk, committing should not end the objection; escalate instead of going quiet.
 - **Guideline:** State your disagreement once, in full, with your reasons. Then say "I disagree and commit" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you.
-- **Source:** Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — "use the phrase 'disagree and commit'", with the Amazon Studios example. The phrase predates Amazon; it is associated with Scott McNealy at Sun Microsystems in the 1980s. — [source ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
+- **Source:** Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — "use the phrase 'disagree and commit'", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and it is also attributed to Intel. — [source ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
 - **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Law of Triviality](#law-of-triviality)
 
 <!-- CODEX:END -->
