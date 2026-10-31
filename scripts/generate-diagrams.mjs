@@ -71,11 +71,13 @@ function pageFor(locale, slug) {
 /**
  * Pull the diagram out of a rendered page.
  *
- * Scoped to the <figure> rather than to the first <svg> on the page — the first
+ * Scoped to a <figure> rather than to the first <svg> on the page — the first
  * <svg> is the masthead's menu icon, and most articles have no diagram at all.
+ * The diagram is the figure that holds an <svg>: the article's medallion is a
+ * <figure> too, but its picture is an <img>.
  */
 function extract(html) {
-  const figure = html.match(/<figure[^>]*>[\s\S]*?<\/figure>/);
+  const figure = [...html.matchAll(/<figure[^>]*>[\s\S]*?<\/figure>/g)].find((f) => /<svg[\s>]/.test(f[0]));
   if (!figure) return null;
   const svg = figure[0].match(/<svg[^>]*>[\s\S]*?<\/svg>/);
   if (!svg) return null;
