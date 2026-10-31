@@ -1,0 +1,29 @@
+name: Research request
+description: Something worth looking into before deciding whether it belongs in the codex
+title: "research: "
+labels: ["codex", "research"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Not sure it is a law yet? File it here. Research checks the primary source, the counter-force and the overlap with existing laws, then either turns this into a `new law` candidate or closes it with the reason.
+
+  - type: input
+    id: topic
+    attributes:
+      label: Topic
+      placeholder: Two-pizza teams
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it might belong
+      description: Where you ran into it, and what decision it would have helped with.
+
+  - type: input
+    id: lead
+    attributes:
+      label: Lead
+      description: Any link or name to start from. A summary is fine here; research will find the primary source.

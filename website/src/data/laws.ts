@@ -41,6 +41,8 @@ export interface Law {
   tag: string;
   sourceUrl: string;
   seeAlso: string[];
+  /** One of the editor's picks, shown at the top of the index. */
+  featured: boolean;
   figure: Figure;
   en: LawText;
   ja: LawText;
@@ -306,6 +308,7 @@ export const laws: Law[] = [
       "parkinsons-law",
       "disagree-and-commit"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Amazon",
@@ -355,6 +358,7 @@ export const laws: Law[] = [
       "error-budget",
       "andon"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Diane Vaughan",
@@ -394,6 +398,7 @@ export const laws: Law[] = [
       "eaglesons-law",
       "yagni"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "G. K. Chesterton",
@@ -440,6 +445,7 @@ export const laws: Law[] = [
       "normalization-of-deviance",
       "occams-razor"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Amanda Ripley",
@@ -484,6 +490,7 @@ export const laws: Law[] = [
       "disagree-and-commit",
       "code-health-standard"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "C. Northcote Parkinson",
@@ -529,6 +536,7 @@ export const laws: Law[] = [
       "second-system-effect",
       "strangler-fig"
     ],
+    "featured": false,
     "figure": {
       "kind": "scene",
       "name": "Wright Flyer, first flight, 1903",
@@ -575,6 +583,7 @@ export const laws: Law[] = [
       "you-build-it-you-run-it",
       "context-not-control"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Melvin E. Conway",
@@ -616,6 +625,7 @@ export const laws: Law[] = [
       "beyonce-rule",
       "churn-rule"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Hyrum Wright",
@@ -659,6 +669,7 @@ export const laws: Law[] = [
       "second-system-effect",
       "metcalfes-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Fred Brooks",
@@ -703,6 +714,7 @@ export const laws: Law[] = [
       "working-backwards",
       "five-whys"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Eric S. Raymond",
@@ -746,6 +758,7 @@ export const laws: Law[] = [
       "hyrums-law",
       "fallacies-of-distributed-computing"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Jon Postel",
@@ -790,6 +803,7 @@ export const laws: Law[] = [
       "occams-razor",
       "blameless-postmortem"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Robert A. Heinlein",
@@ -834,6 +848,7 @@ export const laws: Law[] = [
       "parkinsons-law",
       "fixed-time-variable-scope"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Douglas Hofstadter",
@@ -879,6 +894,7 @@ export const laws: Law[] = [
       "error-budget",
       "mechanisms-not-good-intentions"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Charles Goodhart",
@@ -923,6 +939,7 @@ export const laws: Law[] = [
       "amaras-law",
       "choose-boring-technology"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Nassim Nicholas Taleb",
@@ -966,6 +983,7 @@ export const laws: Law[] = [
       "type-1-vs-type-2-decisions",
       "fixed-time-variable-scope"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Richard H. Thaler",
@@ -1009,6 +1027,7 @@ export const laws: Law[] = [
       "survivorship-bias",
       "the-bitter-lesson"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Richard Feynman",
@@ -1053,6 +1072,7 @@ export const laws: Law[] = [
       "premature-optimization",
       "theory-of-constraints"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Gene Amdahl",
@@ -1096,6 +1116,7 @@ export const laws: Law[] = [
       "teslers-law",
       "law-of-demeter"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Joel Spolsky",
@@ -1138,6 +1159,7 @@ export const laws: Law[] = [
     "seeAlso": [
       "premature-optimization"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Vilfredo Pareto",
@@ -1181,6 +1203,7 @@ export const laws: Law[] = [
       "cargo-cult-engineering",
       "amaras-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Abraham Wald",
@@ -1224,6 +1247,7 @@ export const laws: Law[] = [
       "eaglesons-law",
       "kiss-principle"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Brian Kernighan",
@@ -1267,6 +1291,7 @@ export const laws: Law[] = [
       "goodharts-law",
       "jevons-paradox"
     ],
+    "featured": false,
     "figure": {
       "kind": "scene",
       "name": "Indian cobra (Naja naja)",
@@ -1313,6 +1338,7 @@ export const laws: Law[] = [
       "metcalfes-law",
       "ringelmann-effect"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Robin Dunbar",
@@ -1357,6 +1383,7 @@ export const laws: Law[] = [
       "lindy-effect",
       "second-system-effect"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Richard P. Gabriel",
@@ -1395,6 +1422,7 @@ export const laws: Law[] = [
     "seeAlso": [
       "linus-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Ward Cunningham",
@@ -1439,6 +1467,7 @@ export const laws: Law[] = [
       "ringelmann-effect",
       "blameless-postmortem"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "John M. Darley",
@@ -1479,6 +1508,7 @@ export const laws: Law[] = [
       "fallacies-of-distributed-computing",
       "chaos-engineering"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "John Paul Stapp",
@@ -1523,6 +1553,7 @@ export const laws: Law[] = [
       "broken-windows-theory",
       "code-health-standard"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Robert C. Martin",
@@ -1568,6 +1599,7 @@ export const laws: Law[] = [
       "leaky-abstractions",
       "ashbys-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Larry Tesler",
@@ -1611,6 +1643,7 @@ export const laws: Law[] = [
       "curse-of-knowledge",
       "peter-principle"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "David Dunning",
@@ -1658,6 +1691,7 @@ export const laws: Law[] = [
       "principle-of-least-astonishment",
       "context-not-control"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "George Loewenstein",
@@ -1703,6 +1737,7 @@ export const laws: Law[] = [
       "blameless-postmortem",
       "five-whys"
     ],
+    "featured": false,
     "figure": {
       "kind": "scene",
       "name": "Emmentaler cheese block",
@@ -1746,6 +1781,7 @@ export const laws: Law[] = [
       "amdahls-law",
       "pareto-principle"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Donald Knuth",
@@ -1788,6 +1824,7 @@ export const laws: Law[] = [
     "seeAlso": [
       "cunninghams-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Linus Torvalds",
@@ -1831,6 +1868,7 @@ export const laws: Law[] = [
       "two-generals-problem",
       "fallacies-of-distributed-computing"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Eric Brewer",
@@ -1874,6 +1912,7 @@ export const laws: Law[] = [
       "tail-at-scale",
       "theory-of-constraints"
     ],
+    "featured": false,
     "figure": {
       "kind": "scene",
       "name": "Checkout queue at a food store",
@@ -1916,6 +1955,7 @@ export const laws: Law[] = [
     "seeAlso": [
       "cap-theorem"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Jim Gray",
@@ -1959,6 +1999,7 @@ export const laws: Law[] = [
       "dunning-kruger-effect",
       "shirky-principle"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Laurence J. Peter",
@@ -2004,6 +2045,7 @@ export const laws: Law[] = [
       "hofstadters-law",
       "fixed-time-variable-scope"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "C. Northcote Parkinson",
@@ -2047,6 +2089,7 @@ export const laws: Law[] = [
       "jevons-paradox",
       "moores-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Niklaus Wirth",
@@ -2090,6 +2133,7 @@ export const laws: Law[] = [
       "hofstadters-law",
       "strangler-fig"
     ],
+    "featured": false,
     "figure": {
       "kind": "scene",
       "name": "Bell Laboratories, Murray Hill / New Providence, NJ",
@@ -2133,6 +2177,7 @@ export const laws: Law[] = [
       "chestertons-fence",
       "kernighans-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "scene",
       "name": "Punched-card program deck (c.1969)",
@@ -2176,6 +2221,7 @@ export const laws: Law[] = [
       "millers-law",
       "fitts-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Ray Hyman",
@@ -2218,6 +2264,7 @@ export const laws: Law[] = [
     "seeAlso": [
       "hicks-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Paul M. Fitts",
@@ -2261,6 +2308,7 @@ export const laws: Law[] = [
       "dunbars-number",
       "hicks-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "scene",
       "name": "Rotary telephone dial (seven-digit phone numbers)",
@@ -2307,6 +2355,7 @@ export const laws: Law[] = [
       "static-stability",
       "chaos-engineering"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "James Gosling",
@@ -2353,6 +2402,7 @@ export const laws: Law[] = [
       "toil",
       "avoid-fallback"
     ],
+    "featured": false,
     "figure": {
       "kind": "scene",
       "name": "Nuclear power plant control room",
@@ -2397,6 +2447,7 @@ export const laws: Law[] = [
     "seeAlso": [
       "kerckhoffs-principle"
     ],
+    "featured": false,
     "figure": {
       "kind": "scene",
       "name": "Keys",
@@ -2441,6 +2492,7 @@ export const laws: Law[] = [
     "seeAlso": [
       "principle-of-least-privilege"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Auguste Kerckhoffs",
@@ -2486,6 +2538,7 @@ export const laws: Law[] = [
       "amdahls-law",
       "moores-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "John Gustafson",
@@ -2531,6 +2584,7 @@ export const laws: Law[] = [
       "littles-law",
       "error-budget"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Jeffrey Dean",
@@ -2577,6 +2631,7 @@ export const laws: Law[] = [
       "normal-accident-theory",
       "kiss-principle"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "W. Ross Ashby",
@@ -2623,6 +2678,7 @@ export const laws: Law[] = [
       "dry-principle",
       "single-responsibility-principle"
     ],
+    "featured": false,
     "figure": {
       "kind": "scene",
       "name": "Head of the goddess Demeter (Dion, 4th c. BC)",
@@ -2668,6 +2724,7 @@ export const laws: Law[] = [
       "cobra-effect",
       "wirths-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "William Stanley Jevons",
@@ -2716,6 +2773,7 @@ export const laws: Law[] = [
       "ashbys-law",
       "five-whys"
     ],
+    "featured": false,
     "figure": {
       "kind": "scene",
       "name": "Three Mile Island Nuclear Generating Station",
@@ -2762,6 +2820,7 @@ export const laws: Law[] = [
       "boy-scout-rule",
       "code-health-standard"
     ],
+    "featured": false,
     "figure": {
       "kind": "scene",
       "name": "Broken window",
@@ -2808,6 +2867,7 @@ export const laws: Law[] = [
       "galls-law",
       "working-backwards"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Ron Jeffries",
@@ -2854,6 +2914,7 @@ export const laws: Law[] = [
       "ashbys-law",
       "choose-boring-technology"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Kelly Johnson",
@@ -2899,6 +2960,7 @@ export const laws: Law[] = [
       "law-of-demeter",
       "single-responsibility-principle"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Andy Hunt",
@@ -2944,6 +3006,7 @@ export const laws: Law[] = [
       "amdahls-law",
       "littles-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Eliyahu M. Goldratt",
@@ -2985,6 +3048,7 @@ export const laws: Law[] = [
       "normalcy-bias",
       "hanlons-razor"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "William of Ockham",
@@ -3031,6 +3095,7 @@ export const laws: Law[] = [
       "law-of-demeter",
       "conways-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Robert C. Martin",
@@ -3076,6 +3141,7 @@ export const laws: Law[] = [
       "hyrums-law",
       "curse-of-knowledge"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Mike Cowlishaw",
@@ -3123,6 +3189,7 @@ export const laws: Law[] = [
       "worse-is-better",
       "strangler-fig"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Fred Brooks",
@@ -3169,6 +3236,7 @@ export const laws: Law[] = [
       "gustafsons-law",
       "the-bitter-lesson"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Gordon Moore",
@@ -3214,6 +3282,7 @@ export const laws: Law[] = [
       "survivorship-bias",
       "lindy-effect"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Roy Amara",
@@ -3259,6 +3328,7 @@ export const laws: Law[] = [
       "cargo-cult-engineering",
       "moores-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Richard S. Sutton",
@@ -3304,6 +3374,7 @@ export const laws: Law[] = [
       "dunbars-number",
       "brooks-law"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Robert Metcalfe",
@@ -3349,6 +3420,7 @@ export const laws: Law[] = [
       "bystander-effect",
       "dunbars-number"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Maximilien Ringelmann",
@@ -3390,6 +3462,7 @@ export const laws: Law[] = [
       "goodharts-law",
       "peter-principle"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Clay Shirky",
@@ -3438,6 +3511,7 @@ export const laws: Law[] = [
       "normalization-of-deviance",
       "andon"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Google",
@@ -3485,6 +3559,7 @@ export const laws: Law[] = [
       "you-build-it-you-run-it",
       "churn-rule"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Google",
@@ -3534,6 +3609,7 @@ export const laws: Law[] = [
       "mechanisms-not-good-intentions",
       "five-whys"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Etsy",
@@ -3579,6 +3655,7 @@ export const laws: Law[] = [
       "xy-problem",
       "yagni"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Amazon",
@@ -3624,6 +3701,7 @@ export const laws: Law[] = [
       "type-1-vs-type-2-decisions",
       "law-of-triviality"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Amazon",
@@ -3670,6 +3748,7 @@ export const laws: Law[] = [
       "toil",
       "mechanisms-not-good-intentions"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Amazon",
@@ -3716,6 +3795,7 @@ export const laws: Law[] = [
       "constant-work",
       "fallacies-of-distributed-computing"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Amazon Web Services",
@@ -3763,6 +3843,7 @@ export const laws: Law[] = [
       "ironies-of-automation",
       "chaos-engineering"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Amazon Web Services",
@@ -3808,6 +3889,7 @@ export const laws: Law[] = [
       "static-stability",
       "avoid-fallback"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Amazon Web Services",
@@ -3855,6 +3937,7 @@ export const laws: Law[] = [
       "you-build-it-you-run-it",
       "context-not-control"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Amazon",
@@ -3901,6 +3984,7 @@ export const laws: Law[] = [
       "error-budget",
       "five-whys"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Toyota",
@@ -3949,6 +4033,7 @@ export const laws: Law[] = [
       "andon",
       "xy-problem"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Taiichi Ohno",
@@ -3995,6 +4080,7 @@ export const laws: Law[] = [
       "fallacies-of-distributed-computing",
       "avoid-fallback"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Netflix",
@@ -4041,6 +4127,7 @@ export const laws: Law[] = [
       "mechanisms-not-good-intentions",
       "curse-of-knowledge"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Netflix",
@@ -4087,6 +4174,7 @@ export const laws: Law[] = [
       "broken-windows-theory",
       "law-of-triviality"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Google",
@@ -4132,6 +4220,7 @@ export const laws: Law[] = [
       "hyrums-law",
       "churn-rule"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Google",
@@ -4178,6 +4267,7 @@ export const laws: Law[] = [
       "hyrums-law",
       "toil"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "Google",
@@ -4224,6 +4314,7 @@ export const laws: Law[] = [
       "hofstadters-law",
       "sunk-cost-fallacy"
     ],
+    "featured": false,
     "figure": {
       "kind": "company",
       "name": "37signals",
@@ -4270,6 +4361,7 @@ export const laws: Law[] = [
       "galls-law",
       "ninety-ninety-rule"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Martin Fowler",
@@ -4315,6 +4407,7 @@ export const laws: Law[] = [
       "kiss-principle",
       "lindy-effect"
     ],
+    "featured": false,
     "figure": {
       "kind": "person",
       "name": "Dan McKinley",

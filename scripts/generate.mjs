@@ -246,6 +246,7 @@ function websiteModule(laws, tags, situations) {
       tag: law.tag,
       sourceUrl: law.source_url,
       seeAlso: law.see_also,
+      featured: law.featured,
       figure: figureFor(law),
       en: law.en,
       ja: law.ja,
@@ -295,6 +296,8 @@ export interface Law {
   tag: string;
   sourceUrl: string;
   seeAlso: string[];
+  /** One of the editor's picks, shown at the top of the index. */
+  featured: boolean;
   figure: Figure;
   en: LawText;
   ja: LawText;

@@ -85,6 +85,8 @@ export function loadCodex({ file = join(ROOT, 'data', 'laws.yaml') } = {}) {
       if (ref === law.slug) fail(`${at}: see_also refers to itself`);
     }
 
+    if (law?.featured !== undefined && typeof law.featured !== 'boolean') fail(`${at}: featured must be true or false`);
+
     for (const locale of LOCALES) {
       const loc = law?.[locale];
       if (!loc) {
@@ -156,6 +158,7 @@ export function loadCodex({ file = join(ROOT, 'data', 'laws.yaml') } = {}) {
     ...law,
     number: index + 1,
     see_also: law.see_also ?? [],
+    featured: law.featured === true,
   }));
 
   return { tags, situations, laws: numbered, problems };
