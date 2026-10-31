@@ -88,7 +88,7 @@ function Teams({
             x={p.cx}
             y={p.cy + 4}
             textAnchor="middle"
-            fontFamily="var(--font-body)"
+            fontFamily="var(--font-sans)"
             fontSize="9"
             fill={ink.dim}
           >

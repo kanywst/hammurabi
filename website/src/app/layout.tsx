@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Bodoni_Moda, Noto_Sans_Cuneiform } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 import { translations } from '@/translations';
@@ -11,16 +10,6 @@ import {
   SITE_URL,
   urlFor,
 } from '@/lib/site';
-
-// A didone for display: the thick-to-hairline contrast is the chisel cut, and
-// the optical-size axis pulls the hairlines back before they can disappear at
-// text sizes. Never set below about 18px.
-const bodoni = Bodoni_Moda({
-  subsets: ['latin'],
-  display: 'swap',
-  style: ['normal', 'italic'],
-  variable: '--font-bodoni',
-});
 
 // The text face, for everything that is read rather than declared: Atkinson
 // Hyperlegible Next, drawn for legibility first, with its zero opened so years
@@ -51,15 +40,6 @@ const atkinson = localFont({
   ],
   display: 'swap',
   variable: '--font-text-face',
-});
-
-// Real cuneiform, for the name on the title page. One weight, one subset, and it
-// is never asked to carry meaning on its own.
-const cuneiform = Noto_Sans_Cuneiform({
-  subsets: ['cuneiform'],
-  display: 'swap',
-  weight: '400',
-  variable: '--font-cuneiform-face',
 });
 
 const copy = translations[DEFAULT_LOCALE].ui;
@@ -101,10 +81,7 @@ export default function RootLayout({
   // Per-route correction happens in two places: scripts/postbuild.mjs rewrites
   // the exported Japanese documents, and <HtmlLang> handles client navigation.
   return (
-    <html
-      lang={HTML_LANG[DEFAULT_LOCALE]}
-      className={`${bodoni.variable} ${atkinson.variable} ${cuneiform.variable}`}
-    >
+    <html lang={HTML_LANG[DEFAULT_LOCALE]} className={atkinson.variable}>
       <body className="antialiased">{children}</body>
     </html>
   );

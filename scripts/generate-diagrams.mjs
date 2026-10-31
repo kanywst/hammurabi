@@ -28,26 +28,24 @@ const ASSETS = join(ROOT, 'assets', 'diagrams');
    figures sit in the README rather than on top of it. */
 const THEMES = {
   dark: {
-    '--color-field': '#141516',
-    '--color-field-sunk': '#1c1d1f',
-    '--color-relief': '#ece7de',
-    '--color-relief-dim': '#bdb6aa',
-    '--color-relief-faint': '#948e84',
-    '--color-rule': '#3a3b3d',
-    '--color-rule-soft': '#27282a',
-    '--color-rubric': '#e36d51',
-    '--color-rubric-bright': '#ef8669',
+    '--color-paper': '#141516',
+    '--color-surface': '#1d1f21',
+    '--color-ink': '#ecebe8',
+    '--color-ink-2': '#c4c4c0',
+    '--color-ink-3': '#a2a29e',
+    '--color-line': '#3c3e41',
+    '--color-line-soft': '#2a2c2e',
+    '--color-accent': '#9bb5ff',
   },
   light: {
-    '--color-field': '#ffffff',
-    '--color-field-sunk': '#f6f8fa',
-    '--color-relief': '#1f2328',
-    '--color-relief-dim': '#59636e',
-    '--color-relief-faint': '#818b98',
-    '--color-rule': '#1f2328',
-    '--color-rule-soft': '#d1d9e0',
-    '--color-rubric': '#a3260f',
-    '--color-rubric-bright': '#cf3a1c',
+    '--color-paper': '#ffffff',
+    '--color-surface': '#f6f8fa',
+    '--color-ink': '#1f2328',
+    '--color-ink-2': '#59636e',
+    '--color-ink-3': '#6e7781',
+    '--color-line': '#d1d9e0',
+    '--color-line-soft': '#e6eaef',
+    '--color-accent': '#1d47b8',
   },
 };
 
@@ -127,7 +125,7 @@ function standalone({ svg, viewBox }, theme) {
 
   // A transparent figure reads as broken on whichever theme it was not drawn
   // for, so the ground is painted in.
-  const ground = `<rect width="${w}" height="${h}" fill="${THEMES[theme]['--color-field']}"/>`;
+  const ground = `<rect width="${w}" height="${h}" fill="${THEMES[theme]['--color-paper']}"/>`;
   return out.replace(/(<title>[\s\S]*?<\/title>)/, `$1${ground}`);
 }
 

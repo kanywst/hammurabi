@@ -32,6 +32,13 @@ export interface Tag {
   ja: string;
 }
 
+export interface Situation {
+  key: string;
+  en: string;
+  ja: string;
+  laws: string[];
+}
+
 export const tags: Tag[] = [
   {
     "key": "decision",
@@ -92,6 +99,163 @@ export const tags: Tag[] = [
     "key": "interaction",
     "en": "Interaction",
     "ja": "ヒューマンインタフェース"
+  },
+  {
+    "key": "operations",
+    "en": "Operations",
+    "ja": "運用"
+  }
+];
+
+export const situations: Situation[] = [
+  {
+    "key": "estimates-slip",
+    "en": "Estimates keep slipping",
+    "ja": "見積りが毎回ずれる",
+    "laws": [
+      "hofstadters-law",
+      "ninety-ninety-rule",
+      "parkinsons-law",
+      "brooks-law"
+    ]
+  },
+  {
+    "key": "team-growing",
+    "en": "The team is growing",
+    "ja": "チームが大きくなってきた",
+    "laws": [
+      "brooks-law",
+      "dunbars-number",
+      "ringelmann-effect",
+      "conways-law",
+      "bystander-effect"
+    ]
+  },
+  {
+    "key": "metric-gamed",
+    "en": "A metric is being gamed",
+    "ja": "指標が数字合わせになっている",
+    "laws": [
+      "goodharts-law",
+      "cobra-effect",
+      "shirky-principle"
+    ]
+  },
+  {
+    "key": "cannot-decide",
+    "en": "The decision is stuck",
+    "ja": "決めきれない",
+    "laws": [
+      "type-1-vs-type-2-decisions",
+      "disagree-and-commit",
+      "law-of-triviality",
+      "sunk-cost-fallacy"
+    ]
+  },
+  {
+    "key": "after-incident",
+    "en": "After an incident",
+    "ja": "障害が起きた後",
+    "laws": [
+      "blameless-postmortem",
+      "swiss-cheese-model",
+      "normalization-of-deviance",
+      "normal-accident-theory",
+      "hanlons-razor",
+      "ironies-of-automation"
+    ]
+  },
+  {
+    "key": "reliability-vs-speed",
+    "en": "Reliability versus shipping speed",
+    "ja": "信頼性と開発速度がぶつかる",
+    "laws": [
+      "error-budget",
+      "toil",
+      "normalization-of-deviance",
+      "murphys-law"
+    ]
+  },
+  {
+    "key": "too-slow",
+    "en": "Something is too slow",
+    "ja": "何かが遅い",
+    "laws": [
+      "amdahls-law",
+      "theory-of-constraints",
+      "premature-optimization",
+      "tail-at-scale",
+      "littles-law"
+    ]
+  },
+  {
+    "key": "legacy-code",
+    "en": "Deleting or rewriting old code",
+    "ja": "古いコードを消す・作り直す",
+    "laws": [
+      "chestertons-fence",
+      "second-system-effect",
+      "galls-law",
+      "hyrums-law",
+      "eaglesons-law",
+      "boy-scout-rule"
+    ]
+  },
+  {
+    "key": "designing-interface",
+    "en": "Designing an API or interface",
+    "ja": "API やインタフェースを設計する",
+    "laws": [
+      "hyrums-law",
+      "postels-law",
+      "principle-of-least-astonishment",
+      "leaky-abstractions",
+      "teslers-law"
+    ]
+  },
+  {
+    "key": "new-product",
+    "en": "Starting something new",
+    "ja": "新しいものを作り始める",
+    "laws": [
+      "working-backwards",
+      "yagni",
+      "galls-law",
+      "worse-is-better",
+      "kiss-principle",
+      "xy-problem"
+    ]
+  },
+  {
+    "key": "choosing-tech",
+    "en": "Choosing a technology",
+    "ja": "技術を選ぶ",
+    "laws": [
+      "lindy-effect",
+      "cargo-cult-engineering",
+      "amaras-law",
+      "survivorship-bias"
+    ]
+  },
+  {
+    "key": "distributed",
+    "en": "Building a distributed system",
+    "ja": "分散システムを組む",
+    "laws": [
+      "fallacies-of-distributed-computing",
+      "cap-theorem",
+      "two-generals-problem",
+      "tail-at-scale"
+    ]
+  },
+  {
+    "key": "access-control",
+    "en": "Designing permissions and secrets",
+    "ja": "権限と秘密を設計する",
+    "laws": [
+      "principle-of-least-privilege",
+      "kerckhoffs-principle"
+    ]
   }
 ];
 
@@ -103,11 +267,12 @@ export const laws: Law[] = [
     "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm",
     "seeAlso": [
       "sunk-cost-fallacy",
-      "parkinsons-law"
+      "parkinsons-law",
+      "disagree-and-commit"
     ],
     "en": {
       "title": "Type 1 vs Type 2 Decisions",
-      "concept": "Reversibility of Decisions.",
+      "concept": "Teams spend the caution meant for irreversible decisions on ones they could easily undo.",
       "mechanism": "The brain instinctively treats all failures as threats to survival, demanding excessive caution for reversible decisions (Two-way doors). This causes \"Analysis Paralysis.\"",
       "counter": {
         "name": "The \"One-Way Door\" Filter"
@@ -117,7 +282,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "意思決定の可逆性",
-      "concept": "意思決定の可逆性。",
+      "concept": "やり直せる決定にまで、やり直せない決定と同じ慎重さを払ってしまう。",
       "mechanism": "脳は生存本能的に「すべての失敗」を脅威と見なし、すぐに戻せる決定（双方向のドア）に対しても過剰な慎重さを求めてしまう。これが「分析麻痺」の正体。",
       "counter": {
         "name": "「一方向のドア」フィルター"
@@ -136,11 +301,13 @@ export const laws: Law[] = [
       "normal-accident-theory",
       "boy-scout-rule",
       "normalcy-bias",
-      "broken-windows-theory"
+      "broken-windows-theory",
+      "blameless-postmortem",
+      "error-budget"
     ],
     "en": {
       "title": "Normalization of Deviance",
-      "concept": "The erosion of safety standards.",
+      "concept": "A broken rule that causes no immediate harm quietly becomes the new normal.",
       "mechanism": "When a minor rule is broken (e.g., skipping a test) and no immediate disaster occurs, the brain re-classifies this \"deviance\" as \"normal.\" This is how catastrophic failures begin.",
       "counter": {
         "name": "Broken Windows Theory"
@@ -150,7 +317,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "逸脱の常態化",
-      "concept": "安全基準の侵食。",
+      "concept": "破っても何も起きなかったルール違反は、いつの間にか当たり前になる。",
       "mechanism": "小さなルール違反（テストのスキップ等）をしても即座に大惨事が起きない場合、脳はその「逸脱」を「正常」なものとして再定義する。これが破滅的な失敗の始まり。",
       "counter": {
         "name": "割れ窓理論"
@@ -170,7 +337,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Chesterton's Fence",
-      "concept": "Second-Order Thinking.",
+      "concept": "Code or rules whose origin you don't know look like clutter, which makes them tempting to delete.",
       "mechanism": "We view legacy code/processes as \"clutter\" because we lack the context of their origin. The ego jumps to \"simplify\" by deleting what it doesn't understand.",
       "counter": {
         "name": "Time-Boxed Archaeology",
@@ -181,7 +348,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "チェスタトンの柵",
-      "concept": "二次的思考。",
+      "concept": "経緯を知らないコードやルールは無駄に見え、理由も知らずに消したくなる。",
       "mechanism": "背景文脈を知らない古いコードやプロセスを「無駄」に見誤る。エゴは理解できないものを「単純化」という名目で削除したがる。",
       "counter": {
         "name": "期限を切った考古学",
@@ -203,7 +370,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Normalcy Bias",
-      "concept": "Crisis Denial.",
+      "concept": "Faced with a real anomaly, people reach for the familiar, harmless explanation.",
       "mechanism": "In the face of a true anomaly, the brain defaults to the most \"frequent\" explanation to save energy. \"It's probably just a transient network error,\" we say as the database corrupts.",
       "counter": {
         "name": "Pre-mortem / Red Teaming"
@@ -213,7 +380,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "正常性バイアス",
-      "concept": "危機への否認。",
+      "concept": "本物の異常を前にしても、人はいつもの無害な説明に飛びつく。",
       "mechanism": "真の異常に直面しても、脳はエネルギー節約のため「いつものパターン」で解釈しようとする。DBが壊れ始めていても「一時的なネットワークの瞬断だろう」と片付けてしまう。",
       "counter": {
         "name": "プレモータム / レッドチーミング"
@@ -228,11 +395,12 @@ export const laws: Law[] = [
     "tag": "organization",
     "sourceUrl": "https://en.wikipedia.org/wiki/Law_of_triviality",
     "seeAlso": [
-      "parkinsons-law"
+      "parkinsons-law",
+      "disagree-and-commit"
     ],
     "en": {
       "title": "Law of Triviality",
-      "concept": "Cognitive Ease — the bike-shed problem.",
+      "concept": "Discussion goes to the parts everyone understands, not the parts that matter.",
       "mechanism": "People provide more feedback on simple things (naming variables) than complex things (distributed consensus) because everyone understands the simple things, creating a false sense of value.",
       "counter": {
         "name": "Core Value Focus"
@@ -242,7 +410,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "パーキンソンの凡俗法則",
-      "concept": "認知的な容易性。",
+      "concept": "議論は重要な部分ではなく、誰でも口を出せる簡単な部分に集中する。",
       "mechanism": "人は複雑なこと（分散合意）より、単純なこと（変数名）に多くのフィードバックをする。誰でも理解できるため、意見を言うことで偽の貢献感を得やすいため。",
       "counter": {
         "name": "コア・バリューへの集中"
@@ -263,7 +431,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Gall's Law",
-      "concept": "Evolutionary Design.",
+      "concept": "Complex systems that work usually grew from simple systems that worked; designed ones rarely do.",
       "mechanism": "We believe we can \"architect\" a complex system from scratch. We can't. Complex systems are too chaotic to be designed top-down.",
       "counter": {
         "name": "The MVP (Minimum Viable Product)"
@@ -273,7 +441,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ガルの法則",
-      "concept": "進化的デザイン。",
+      "concept": "動く複雑なシステムは、たいてい動く単純なシステムから育ったものだ。最初から設計したものが動くことはまれだ。",
       "mechanism": "複雑なシステムをゼロから「設計」できるという妄想。実際には、複雑系は混沌すぎてトップダウンでは設計できない。",
       "counter": {
         "name": "MVP (実用最小限の製品)"
@@ -294,7 +462,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Conway's Law",
-      "concept": "Mirroring.",
+      "concept": "Systems end up shaped like the communication paths of the teams that build them.",
       "mechanism": "The software architecture is a map of the organizational chart. If two teams don't talk, their services won't integrate smoothly.",
       "counter": {
         "name": "Inverse Conway Maneuver"
@@ -304,7 +472,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "コンウェイの法則",
-      "concept": "ミラーリング。",
+      "concept": "システムの構造は、作るチーム同士の意思疎通の形に似てくる。",
       "mechanism": "ソフトウェアの構造は、組織図の写し鏡になる。2つのチームが会話しなければ、そのサービス間の統合もスムーズにはいかない。",
       "counter": {
         "name": "逆コンウェイ戦略"
@@ -324,7 +492,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Hyrum's Law",
-      "concept": "Implicit Contract.",
+      "concept": "With enough users, every observable behavior of a system, bugs included, is depended on.",
       "mechanism": "With a sufficient number of users, every observable behavior of your system (even bugs) will be depended on by someone.",
       "counter": {
         "name": "Deliberate Variance",
@@ -335,7 +503,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ハイラムの法則",
-      "concept": "暗黙の契約。",
+      "concept": "利用者が十分に多ければ、バグも含めた観測可能な挙動すべてに誰かが依存する。",
       "mechanism": "ユーザー数が十分に増えれば、システムの観測可能なあらゆる挙動（バグさえも）は、誰かの依存対象になる。",
       "counter": {
         "name": "意図的なゆらぎ",
@@ -358,7 +526,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Brooks' Law",
-      "concept": "Communication Debt.",
+      "concept": "Adding people to a late project tends to make it later, because ramp-up and coordination cost more than they add.",
       "mechanism": "Adding people to a late project increases communication overhead quadratically (n(n-1)/2 communication channels for n people). New people take more time from veterans than they contribute.",
       "counter": {
         "name": "Scope Cutting"
@@ -368,7 +536,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ブルックスの法則",
-      "concept": "コミュニケーション負債。",
+      "concept": "遅れたプロジェクトに人を足すと、立ち上がりと調整のコストが寄与を上回り、かえって遅れがちだ。",
       "mechanism": "遅れているプロジェクトに人を追加すると、調整コストが二次関数的に増大する（n 人で n(n-1)/2 本の通信路）。新人はベテランの手を止めるため、貢献よりも損失が上回る。",
       "counter": {
         "name": "スコープ削減"
@@ -383,11 +551,12 @@ export const laws: Law[] = [
     "tag": "cognition",
     "sourceUrl": "https://xyproblem.info/",
     "seeAlso": [
-      "curse-of-knowledge"
+      "curse-of-knowledge",
+      "working-backwards"
     ],
     "en": {
       "title": "XY Problem",
-      "concept": "Goal Misalignment.",
+      "concept": "People ask for help with their attempted fix instead of the problem they actually have.",
       "mechanism": "A user/engineer gets stuck on a solution (Y) and asks for help with it, forgetting that the original problem (X) might have a much simpler solution.",
       "counter": {
         "name": "Five Whys"
@@ -397,7 +566,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "XY問題",
-      "concept": "目標の不整合。",
+      "concept": "人は本当の問題ではなく、自分が思いついた解決策について助けを求める。",
       "mechanism": "ユーザーやエンジニアが解決策（Y）で詰まったとき、その方法を質問してしまうが、本来の目的（X）にはもっと簡単な解決策があることが多い。",
       "counter": {
         "name": "なぜなぜ分析"
@@ -417,7 +586,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Postel's Law",
-      "concept": "Fault Tolerance — the Robustness Principle.",
+      "concept": "Systems that assume every peer follows the spec exactly tend to be brittle against the first one that doesn't.",
       "mechanism": "In a distributed system, assuming everyone follows the spec perfectly leads to brittle failures.",
       "counter": {
         "name": "Fail-Fast (Internal only)"
@@ -427,7 +596,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ポステルの法則",
-      "concept": "障害許容性。",
+      "concept": "相手が仕様どおりに動く前提のシステムは、最初の逸脱にもろくなりがちだ。",
       "mechanism": "分散システムで全員が仕様を完璧に守ると想定すると、脆い失敗を招く。",
       "counter": {
         "name": "フェイルファスト (内部エラー限定)"
@@ -443,11 +612,12 @@ export const laws: Law[] = [
     "sourceUrl": "https://en.wikipedia.org/wiki/Hanlon%27s_razor",
     "seeAlso": [
       "bystander-effect",
-      "occams-razor"
+      "occams-razor",
+      "blameless-postmortem"
     ],
     "en": {
       "title": "Hanlon's Razor",
-      "concept": "Attribution Bias.",
+      "concept": "We read malice into delays and bugs that are better explained by fatigue or missing context.",
       "mechanism": "We take bugs/delays personally, assuming \"malice\" or \"sabotage\" when it's usually just lack of sleep or missing context.",
       "counter": {
         "name": "Psychological Safety"
@@ -457,7 +627,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ハンロンの剃刀",
-      "concept": "帰属バイアス。",
+      "concept": "疲労や文脈不足で説明がつく遅れやバグに、人は悪意を読み取ってしまう。",
       "mechanism": "バグや遅延を「悪意」や「嫌がらせ」と受け取ってしまう。実際には、単なる睡眠不足やコンテキストの欠如であることがほとんど。",
       "counter": {
         "name": "心理的安全性"
@@ -477,7 +647,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Hofstadter's Law",
-      "concept": "Recursive Estimation Bias.",
+      "concept": "Work takes longer than estimated, even when the estimate already allows for that.",
       "mechanism": "\"It always takes longer than you expect, even when you take into account Hofstadter's Law.\" The brain cannot visualize unknown unknowns.",
       "counter": {
         "name": "Evidence-Based Scheduling"
@@ -487,7 +657,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ホフスタッターの法則",
-      "concept": "再帰的な見積もりバイアス。",
+      "concept": "作業は見積りより長くかかる。それを織り込んで見積もってもなお長くかかる。",
       "mechanism": "「この法則を考慮に入れたとしても、常に予想以上の時間がかかる」。脳は「未知の未知」を可視化できない。",
       "counter": {
         "name": "実績ベースのスケジューリング"
@@ -503,11 +673,12 @@ export const laws: Law[] = [
     "sourceUrl": "https://en.wikipedia.org/wiki/Goodhart%27s_law",
     "seeAlso": [
       "cobra-effect",
-      "shirky-principle"
+      "shirky-principle",
+      "error-budget"
     ],
     "en": {
       "title": "Goodhart's Law",
-      "concept": "Metric Obsolescence.",
+      "concept": "A number stops measuring well once people are rewarded for moving it.",
       "mechanism": "When a measure becomes a target, it ceases to be a good measure. If you reward \"number of commits,\" people will make tiny, useless commits.",
       "counter": {
         "name": "Balanced Scorecards"
@@ -517,7 +688,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "グッドハートの法則",
-      "concept": "指標の形骸化。",
+      "concept": "数字を動かすことに報酬がつくと、その数字は実態を測らなくなる。",
       "mechanism": "ある指標が目標になると、それは良い指標ではなくなる。「コミット数」で評価すれば、人々は意味のない小さなコミットを量産する。",
       "counter": {
         "name": "バランスト・スコアカード"
@@ -537,7 +708,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Lindy Effect",
-      "concept": "Survivability.",
+      "concept": "For ideas and software, the longer something has survived, the longer it is likely to last.",
       "mechanism": "For non-perishable things like ideas or software, the longer they have survived, the longer they are likely to survive.",
       "counter": {
         "name": "Hype Cycle Analysis"
@@ -547,7 +718,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "リンディ効果",
-      "concept": "生存性。",
+      "concept": "アイデアやソフトウェアは、長く生き残ったものほどこの先も長く残る可能性が高い。",
       "mechanism": "アイデアやソフトウェアのような非腐敗的なものは、長く生き残ってきたものほど、今後も長く生き残る可能性が高い。",
       "counter": {
         "name": "ハイプサイクル分析"
@@ -566,7 +737,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Sunk Cost Fallacy",
-      "concept": "Loss Aversion.",
+      "concept": "Teams keep funding a failing project because of what they have already spent on it.",
       "mechanism": "We continue investing in a failing tech stack/project because \"we've already spent so much on it.\" The brain hates admitting a loss.",
       "counter": {
         "name": "Zero-Based Budgeting"
@@ -576,7 +747,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "サンクコストの誤謬",
-      "concept": "損失回避。",
+      "concept": "すでに注ぎ込んだ分が惜しくて、失敗しているプロジェクトに投資し続ける。",
       "mechanism": "「既に多額の投資をしたから」という理由で、失敗している技術やプロジェクトに投資し続けてしまう。脳は負けを認めるのを嫌う。",
       "counter": {
         "name": "ゼロベース予算"
@@ -596,7 +767,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Cargo Cult Engineering",
-      "concept": "Surface Imitation.",
+      "concept": "Teams copy another company's practices without the conditions that made them work.",
       "mechanism": "Copying the practices of successful companies (e.g., \"The Spotify Model\") without understanding *why* they worked there, hoping for the same results.",
       "counter": {
         "name": "First Principles Thinking"
@@ -606,7 +777,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "カーゴ・カルト・エンジニアリング",
-      "concept": "表面的な模倣。",
+      "concept": "うまくいった理由を理解しないまま、他社のやり方の形だけを真似る。",
       "mechanism": "成功企業の慣行（例：Spotifyモデル）を、なぜそれが機能したか理解せずに真似る。同じ結果が得られると盲信する罠。",
       "counter": {
         "name": "第一原理思考"
@@ -627,7 +798,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Amdahl's Law",
-      "concept": "Diminishing Returns.",
+      "concept": "Speeding up one part of a system barely helps when the bottleneck is somewhere else.",
       "mechanism": "Optimizing a small part of a system has no impact if the bottleneck is elsewhere.",
       "counter": {
         "name": "Theory of Constraints"
@@ -637,7 +808,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "アムダールの法則",
-      "concept": "収穫逓減。",
+      "concept": "ボトルネックが別の場所にあれば、一部を速くしても全体はほとんど速くならない。",
       "mechanism": "ボトルネックが他にある場合、システムの一部をいくら最適化しても全体の性能には影響しない。",
       "counter": {
         "name": "制約理論"
@@ -657,7 +828,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Law of Leaky Abstractions",
-      "concept": "Complexity Leakage.",
+      "concept": "Every non-trivial abstraction eventually exposes the details it was meant to hide.",
       "mechanism": "All non-trivial abstractions, to some degree, leak. You can't use SQL without understanding how indexes work eventually.",
       "counter": {
         "name": "T-Shaped Skills"
@@ -667,7 +838,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "リーキー・アブストラクション",
-      "concept": "複雑性の漏洩。",
+      "concept": "込み入った抽象化はいずれ、隠したはずの下の層の詳細を露出させる。",
       "mechanism": "あらゆる非自明な抽象化は、ある程度「漏れる」。インデックスの仕組みを知らずにSQLを使い続けることはできない。",
       "counter": {
         "name": "T型スキル"
@@ -686,7 +857,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Pareto Principle",
-      "concept": "Distribution Inequality — the 80/20 rule.",
+      "concept": "Most of the effect comes from a small share of the causes, such as bugs in a few modules.",
       "mechanism": "80% of bugs come from 20% of the code. 80% of value comes from 20% of the features.",
       "counter": {
         "name": "Ruthless Prioritization"
@@ -696,7 +867,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "パレートの法則",
-      "concept": "分布の不平等。",
+      "concept": "結果の大半は、少数の原因から生まれる。バグの多くは一部のコードに集中する。",
       "mechanism": "バグの80%はコードの20%に起因する。価値の80%は機能の20%から生まれる。",
       "counter": {
         "name": "非情な優先順位付け"
@@ -716,7 +887,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Survivorship Bias",
-      "concept": "Invisible Failures.",
+      "concept": "Conclusions drawn only from successes ignore the failures that used the same strategy.",
       "mechanism": "We study only the successes that survived and draw conclusions from them, ignoring the silent graveyard of failures that used the same strategy. The data we see is fundamentally skewed.",
       "counter": {
         "name": "Failure Studies / Post-mortem Culture"
@@ -726,7 +897,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "生存者バイアス",
-      "concept": "見えない失敗。",
+      "concept": "成功例だけから結論を出すと、同じやり方で失敗した例が見えなくなる。",
       "mechanism": "生き残った成功事例だけを研究し、そこから結論を導いてしまう。同じ戦略を採って消えていった無数の失敗は、データとして見えない。本質的に偏った情報で意思決定している。",
       "counter": {
         "name": "失敗学 / ポストモーテム文化"
@@ -746,7 +917,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Kernighan's Law",
-      "concept": "Complexity Debt.",
+      "concept": "Debugging is harder than writing, so code written at your cleverest is beyond your debugging.",
       "mechanism": "\"Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.\"",
       "counter": {
         "name": "KISS (Keep It Simple, Stupid)"
@@ -756,7 +927,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "カーニハンの法則",
-      "concept": "複雑性負債。",
+      "concept": "デバッグは書くより難しい。最大限に凝ったコードは、自分ではデバッグできない。",
       "mechanism": "「デバッグは、コードを書くときの2倍の知性を要する。したがって、自分の知力の限界まで賢いコードを書いた時点で、そのコードをデバッグする知性が定義上、足りなくなる。」",
       "counter": {
         "name": "KISS (Keep It Simple, Stupid)"
@@ -776,7 +947,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Cobra Effect",
-      "concept": "Perverse Incentives.",
+      "concept": "An incentive meant to reduce a problem rewards people for producing more of it.",
       "mechanism": "A solution designed to fix a problem creates a worse problem. In colonial India, a bounty on cobras led people to breed cobras for the reward. When the bounty was cancelled, breeders released their stock, making the problem worse.",
       "counter": {
         "name": "Second-Order Effects Analysis / System Dynamics"
@@ -786,7 +957,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "コブラ効果",
-      "concept": "逆効果のインセンティブ。",
+      "concept": "問題を減らすための報酬が、問題を増やす行動に報いてしまう。",
       "mechanism": "問題を解決するための施策が、かえって問題を悪化させる。英領インドでコブラ駆除のため懸賞金をかけたら、人々がコブラを養殖し始めた。懸賞金を廃止すると養殖コブラが放流され、さらに事態が悪化した。",
       "counter": {
         "name": "二次効果分析 / システムダイナミクス"
@@ -809,7 +980,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Dunbar's Number",
-      "concept": "Cognitive Scaling Limit.",
+      "concept": "People keep only about 150 stable relationships. Engineers extrapolate: past shared context, added headcount goes to coordination.",
       "mechanism": "Humans can maintain approximately 150 stable social relationships. Dunbar's result is about neocortex size and group size across primates — it is not about work teams. What engineering extrapolates from it is a separate argument: communication channels grow as n(n-1)/2, so past the size where everyone can still hold everyone else's context, added people go into coordination rather than output.",
       "counter": {
         "name": "Two-Pizza Rule / Team Topologies"
@@ -819,7 +990,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ダンバー数",
-      "concept": "認知的スケーリング限界。",
+      "concept": "人が安定して保てる関係は150人ほどだ。工学ではそこから、文脈を共有できる規模を超えると増員は調整に消える、と推し量る。",
       "mechanism": "人間が安定した社会関係を維持できる認知限界は約150人。ダンバーの結果は霊長類全般における新皮質サイズと群れの大きさの関係についてであって、仕事のチームについてではない。エンジニアリングがそこから外挿しているのは別の議論だ——コミュニケーション経路は n(n-1)/2 で増えるので、全員が全員の文脈をまだ保持できる規模を超えた時点から、増えた人員は成果ではなく調整に消える。",
       "counter": {
         "name": "ツー・ピザ・ルール / チームトポロジー"
@@ -840,7 +1011,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Worse is Better",
-      "concept": "Pragmatic Design Philosophy.",
+      "concept": "A simpler design that is easy to build and adopt tends to beat a more correct but complex one.",
       "mechanism": "A simpler, \"inferior\" design that is easy to implement and adopt will beat a theoretically \"correct\" but complex design in the real world. Unix beat Lisp. HTTP beat CORBA.",
       "counter": {
         "name": "The Right Thing / Perfectionism"
@@ -850,7 +1021,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "劣っている方が勝つ",
-      "concept": "実用主義的設計哲学。",
+      "concept": "作りやすく広めやすい単純な設計は、正しいが複雑な設計に勝ちやすい。",
       "mechanism": "理論的に「正しい」が複雑な設計よりも、単純で「不完全」だが実装と採用が容易な設計の方が、現実世界では勝利する。UnixはLispに勝ち、HTTPはCORBAに勝った。",
       "counter": {
         "name": "The Right Thing / 完璧主義"
@@ -869,7 +1040,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Cunningham's Law",
-      "concept": "Social Knowledge Extraction.",
+      "concept": "People are quicker to correct a wrong answer than to answer a question.",
       "mechanism": "\"The best way to get the right answer on the internet is not to ask a question; it's to post the wrong answer.\" People are more motivated to correct mistakes than to answer questions.",
       "counter": {
         "name": "Socratic Method"
@@ -879,7 +1050,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "カニンガムの法則",
-      "concept": "社会的な知識抽出。",
+      "concept": "人は質問に答えるより、間違った答えを訂正するほうに熱心だ。",
       "mechanism": "「インターネットで正しい答えを得る最良の方法は、質問することではなく、間違った答えを投稿することだ。」人は質問に答えるよりも、間違いを訂正する動機の方が強い。",
       "counter": {
         "name": "ソクラテス式問答"
@@ -895,11 +1066,12 @@ export const laws: Law[] = [
     "sourceUrl": "https://doi.org/10.1037/h0025589",
     "seeAlso": [
       "hanlons-razor",
-      "ringelmann-effect"
+      "ringelmann-effect",
+      "blameless-postmortem"
     ],
     "en": {
       "title": "Bystander Effect",
-      "concept": "Diffusion of Responsibility.",
+      "concept": "The more people who see a problem, the less likely any one of them is to act on it.",
       "mechanism": "In an emergency, the more people who are present, the less likely any single person is to take action. \"Someone else will handle it.\" In engineering, a page sent to a group channel often means nobody responds.",
       "counter": {
         "name": "Explicit Role Assignment / Incident Commander"
@@ -909,7 +1081,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "傍観者効果",
-      "concept": "責任の拡散。",
+      "concept": "問題を目にする人が多いほど、一人ひとりが自分から動く可能性は下がる。",
       "mechanism": "緊急事態において、居合わせる人数が多いほど、個々人が行動を起こす可能性は低くなる。「誰かが対応するだろう」と全員が思い、結果誰も対応しない。エンジニアリングでは、グループチャンネルへのアラートは往々にして無視される。",
       "counter": {
         "name": "明示的な役割割り当て / インシデントコマンダー制"
@@ -929,7 +1101,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Murphy's Law",
-      "concept": "Failure as a Default Assumption.",
+      "concept": "Given enough time and traffic, a failure mode that can happen eventually will.",
       "mechanism": "\"Anything that can go wrong, will go wrong.\" Given enough time, traffic, or unexpected input, every latent failure mode eventually fires. Engineers who design only for the happy path build systems that are one network blip away from collapse.",
       "counter": {
         "name": "Defensive Design / Chaos Engineering"
@@ -939,7 +1111,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "マーフィーの法則",
-      "concept": "失敗を前提とする設計姿勢。",
+      "concept": "時間と負荷が十分にあれば、起こりうる故障はいずれ起きる。",
       "mechanism": "「うまくいかない可能性があることは、必ずうまくいかない。」十分な時間・トラフィック・想定外の入力さえあれば、潜在的な失敗モードはいずれ必ず発火する。ハッピーパスだけを設計したシステムは、ネットワークの一瞬の揺れで崩れる。",
       "counter": {
         "name": "防御的設計 / カオスエンジニアリング"
@@ -959,7 +1131,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Boy Scout Rule",
-      "concept": "Continuous Improvement.",
+      "concept": "Code decays because cleanup tends to be deferred to a refactor that rarely happens.",
       "mechanism": "Codebases decay because cleanup is always \"someone else's job.\" Each engineer absorbs the entropy hit but defers the fix to a future refactor that never lands. The graph trends down.",
       "counter": {
         "name": "One Reason Per Diff",
@@ -970,7 +1142,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ボーイスカウトの規則",
-      "concept": "継続的改善。",
+      "concept": "掃除はめったに来ないリファクタリングに先送りされがちで、コードは劣化していく。",
       "mechanism": "クリーンアップは常に「誰か別の人の仕事」になりがちで、コードベースは劣化していく。各エンジニアはエントロピー増加の影響だけ受けて、修正は「いつかのリファクタ」に先送りされ、それは結局来ない。",
       "counter": {
         "name": "1つの差分に1つの理由",
@@ -991,7 +1163,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Tesler's Law",
-      "concept": "Complexity is a Conserved Quantity.",
+      "concept": "A system's inherent complexity can't be removed, only moved to someone else.",
       "mechanism": "Every system has an irreducible amount of complexity that cannot be removed — only relocated. Hide it from the user and it lands on the developer. Hide it from the developer and it lands on the operator. Hide it from the operator and it lands on the customer at 3 AM.",
       "counter": {
         "name": "Honest Layering / Explicit Tradeoffs"
@@ -1001,7 +1173,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "テスラーの複雑性保存則",
-      "concept": "複雑性は保存量である。",
+      "concept": "システムに本来備わる複雑さは消せない。誰か別の人に移るだけだ。",
       "mechanism": "あらゆるシステムには取り除けない本質的複雑性があり、それは消えるのではなく**移動する**だけだ。ユーザーから隠せば開発者へ、開発者から隠せば運用者へ、運用者から隠せば午前 3 時の顧客の手元に着地する。",
       "counter": {
         "name": "誠実なレイヤリング / 明示的なトレードオフ"
@@ -1021,7 +1193,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Dunning-Kruger Effect",
-      "concept": "Metacognitive Blind Spots.",
+      "concept": "People who are least skilled at something tend to overrate their ability the most.",
       "mechanism": "Lacking expertise in a domain also means lacking the meta-skill required to recognize one's own incompetence. In the original study the bottom quartile scored around the 12th percentile and placed themselves near the 60th. Top performers *under*-rated themselves, because they assumed others found the task as easy as they did.",
       "counter": {
         "name": "Calibrated Confidence",
@@ -1032,7 +1204,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ダニング・クルーガー効果",
-      "concept": "メタ認知の盲点。",
+      "concept": "ある分野に疎い人ほど、自分の能力を過大評価しがちだ。",
       "mechanism": "ある分野で専門性を欠くということは、「自分の無能さを認識するために必要なメタ的スキル」も同時に欠くということ。元の研究では、下位四分位の被験者は実際には12パーセンタイル程度でありながら、自己評価を60パーセンタイル付近に置いた。逆に上位の被験者は、他人にも同じくらい簡単なはずだと仮定して自分を過小評価した。",
       "counter": {
         "name": "較正された自信",
@@ -1054,7 +1226,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Curse of Knowledge",
-      "concept": "Expert-Novice Asymmetry.",
+      "concept": "Once you know something, you can't easily imagine what it's like not to know it.",
       "mechanism": "Once you know a thing, you cannot easily imagine not knowing it. Engineers write docs, error messages, and APIs that are obvious to themselves and opaque to the next person who has to use them.",
       "counter": {
         "name": "User Testing / Onboarding Buddies / Documentation Reviewers Outside the Author's Team"
@@ -1064,7 +1236,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "知識の呪い",
-      "concept": "熟達者と初心者の非対称性。",
+      "concept": "一度知ってしまうと、知らなかったときの感覚を想像できなくなる。",
       "mechanism": "一度ある事を知ってしまうと、「それを知らなかった状態」を容易には想像できなくなる。エンジニアはドキュメント、エラーメッセージ、API を、自分にとっては自明で、次に使う人にとっては不透明な状態で書いてしまう。",
       "counter": {
         "name": "ユーザーテスト / オンボーディングバディ / 著者のチーム外のドキュメントレビュアー"
@@ -1080,11 +1252,12 @@ export const laws: Law[] = [
     "sourceUrl": "https://en.wikipedia.org/wiki/Swiss_cheese_model",
     "seeAlso": [
       "normalization-of-deviance",
-      "normal-accident-theory"
+      "normal-accident-theory",
+      "blameless-postmortem"
     ],
     "en": {
       "title": "Swiss Cheese Model",
-      "concept": "Layered Defense and Aligned Holes.",
+      "concept": "Every safeguard has holes; accidents happen when the holes in several layers line up.",
       "mechanism": "Every protective layer (review, test, alert, runbook, rollback) has holes. Accidents happen when holes across multiple independent layers happen to align. No single layer can ever be perfect, so resilience comes from layers that fail in independent ways.",
       "counter": {
         "name": "Defense in Depth / Independent Controls / Hole-Audit at Post-Mortem"
@@ -1094,7 +1267,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "スイスチーズモデル",
-      "concept": "多層防御と穴の整列。",
+      "concept": "どの防御層にも穴がある。事故は複数の層の穴がそろったときに起きる。",
       "mechanism": "すべての保護層（レビュー、テスト、アラート、ランブック、ロールバック）には穴がある。事故は、独立した複数層の穴が偶然一直線に並んだ瞬間に発生する。単一の層を完璧にすることはできないので、独立した形で失敗する複数層に依存するしかない。",
       "counter": {
         "name": "多層防御 / 独立した統制 / ポストモーテムでの「穴の監査」"
@@ -1114,7 +1287,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Premature Optimization",
-      "concept": "Misallocated Engineering Cost.",
+      "concept": "Optimizing before measuring spends effort on code that isn't the bottleneck.",
       "mechanism": "\"Premature optimization is the root of all evil.\" Optimizing code before measurement proves it matters wastes engineering hours, adds complexity, and obstructs the eventual real optimization by entangling hot and cold paths.",
       "counter": {
         "name": "Profile First / Make It Work, Make It Right, Make It Fast (in that order)"
@@ -1124,7 +1297,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "早すぎる最適化",
-      "concept": "工数の誤配分。",
+      "concept": "計測する前に最適化すると、ボトルネックでない箇所に工数を使ってしまう。",
       "mechanism": "「早すぎる最適化はあらゆる悪の根源である。」計測が必要性を示す前にコードを最適化すると、エンジニアの時間を浪費するだけでなく、ホットパスとコールドパスを絡め取って、本当に必要となる最適化を阻む複雑性を残してしまう。",
       "counter": {
         "name": "プロファイル優先 / Make It Work, Make It Right, Make It Fast (この順序で)"
@@ -1143,7 +1316,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Linus's Law",
-      "concept": "Distributed Bug Detection.",
+      "concept": "A bug that stumps one person is often obvious to someone else looking at the same code.",
       "mechanism": "\"Given enough eyeballs, all bugs are shallow.\" A defect that looks impossible to one person often becomes trivial when many independent perspectives are applied to it — provided the code is actually visible to those perspectives.",
       "counter": {
         "name": "Open Source / Rotated Reviewers / Bug Bounties / Internal Code Discoverability"
@@ -1153,7 +1326,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "リーナスの法則",
-      "concept": "分散型のバグ検出。",
+      "concept": "一人では見つからないバグも、同じコードを見る別の人にはあっさり分かることが多い。",
       "mechanism": "「十分な目玉があれば、あらゆるバグは浅い。」一人の目には不可能に見える欠陥も、独立した多くの視点が当たれば自明になる——ただし、コードが実際にその視点に対して可視であることが前提。",
       "counter": {
         "name": "オープンソース / レビュアーのローテーション / バグバウンティ / 社内コードの発見可能性"
@@ -1173,7 +1346,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "CAP Theorem",
-      "concept": "Impossibility Under Partition.",
+      "concept": "During a network partition, a data store must give up either consistency or availability.",
       "mechanism": "A networked data store cannot simultaneously guarantee **C**onsistency, **A**vailability, and **P**artition tolerance. Because network partitions are not optional in the real world, the live choice is really between consistency and availability *at the moment a partition happens*.",
       "counter": {
         "name": "PACELC / Tunable Consistency"
@@ -1183,7 +1356,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "CAP定理",
-      "concept": "分断下の不可能性。",
+      "concept": "ネットワーク分断が起きたら、データストアは一貫性か可用性のどちらかを捨てる。",
       "mechanism": "ネットワーク化されたデータストアは、**一貫性 (C)**・**可用性 (A)**・**分断耐性 (P)** を同時には保証できない。現実世界でネットワーク分断は不可避なので、実際に選べるのは*分断が起きたその瞬間*の「一貫性か可用性か」である。",
       "counter": {
         "name": "PACELC / 調整可能な一貫性"
@@ -1203,7 +1376,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Little's Law",
-      "concept": "Queueing Invariant.",
+      "concept": "In a stable system, the average number of items inside equals arrival rate times average time spent.",
       "mechanism": "In any stable system, the average number of items in the system (L) equals the average arrival rate (λ) times the average time each item spends in it (W): **L = λW**. It holds regardless of arrival distribution or service discipline.",
       "counter": {
         "name": "Backpressure / Admission Control"
@@ -1213,7 +1386,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "リトルの法則",
-      "concept": "待ち行列の不変量。",
+      "concept": "安定した系では、系の中にある件数の平均は、到着率と平均滞在時間の積に等しい。",
       "mechanism": "安定したシステムでは、系内の平均項目数 (L) は平均到着率 (λ) と平均滞留時間 (W) の積に等しい: **L = λW**。到着分布やサービス規律に依らず成り立つ。",
       "counter": {
         "name": "バックプレッシャ / 流入制御"
@@ -1232,7 +1405,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Two Generals Problem",
-      "concept": "Impossibility of Guaranteed Agreement.",
+      "concept": "Over an unreliable channel, two parties can never be certain they have agreed.",
       "mechanism": "Two parties communicating over an unreliable channel can never be *certain* they have reached agreement — every message needs an acknowledgment, which itself needs an acknowledgment, forever. No fixed number of messages yields common knowledge.",
       "counter": {
         "name": "Idempotency / Eventual Consistency / Acknowledged Retries"
@@ -1242,7 +1415,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "二人の将軍問題",
-      "concept": "合意の保証は不可能。",
+      "concept": "信頼できない通信路では、二者は合意できたと確信することができない。",
       "mechanism": "不確実な通信路で通信する二者は、合意に達したと*確信*することが決してできない——あらゆるメッセージは確認応答を必要とし、その応答自体もまた応答を必要とし、永遠に終わらない。いかなる固定回数のやり取りも共有知識をもたらさない。",
       "counter": {
         "name": "べき等性 / 結果整合性 / 確認付き再送"
@@ -1262,7 +1435,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Peter Principle",
-      "concept": "Promotion to Incompetence.",
+      "concept": "People tend to get promoted until they reach a role they are bad at, and stay there.",
       "mechanism": "In a hierarchy, people are promoted on performance in their *current* role, not the one above. So everyone tends to rise until they reach a role they are bad at — and there they stay. Competence is promoted away; incompetence accumulates.",
       "counter": {
         "name": "Dual Career Ladders / Role-Specific Evaluation"
@@ -1272,7 +1445,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ピーターの法則",
-      "concept": "無能への昇進。",
+      "concept": "人は苦手な役職にたどり着くまで昇進し、そこにとどまりがちだ。",
       "mechanism": "階層組織では、人は*一つ上*の職務ではなく*現職*の成績で昇進する。だから誰もが、自分の不得手な職位に達するまで昇り続け、そこで留まる。有能は昇進によって失われ、無能が堆積していく。",
       "counter": {
         "name": "複線型キャリアパス / 職務別の評価"
@@ -1293,7 +1466,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Parkinson's Law",
-      "concept": "Work Expands to Fill Time.",
+      "concept": "Work expands to fill the time available for it.",
       "mechanism": "\"Work expands so as to fill the time available for its completion.\" Give a task a week and it takes a week; the same task with a two-day deadline ships in two days. Slack is consumed, not banked.",
       "counter": {
         "name": "Timeboxing"
@@ -1303,7 +1476,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "パーキンソンの法則",
-      "concept": "仕事は時間を満たすまで膨張する。",
+      "concept": "仕事は、完了までに使える時間をすべて使い切るまで膨らむ。",
       "mechanism": "「仕事は、それを完了するために与えられた時間を満たすまで膨張する。」一週間与えれば一週間かかり、同じ作業も締切が二日なら二日で片付く。緩衝 (slack) は貯蓄されず、消費される。",
       "counter": {
         "name": "タイムボックス"
@@ -1323,7 +1496,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Wirth's Law",
-      "concept": "Software Bloat Outpaces Hardware.",
+      "concept": "Software gets slower faster than hardware gets faster.",
       "mechanism": "\"Software is getting slower more rapidly than hardware is becoming faster.\" Each hardware gain is absorbed by added abstraction layers, features, and carelessness, so user-perceived speed stays flat or worsens.",
       "counter": {
         "name": "Performance Budgets / Lean Software"
@@ -1333,7 +1506,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ヴィルトの法則",
-      "concept": "ソフトの肥大はハードの高速化を上回る。",
+      "concept": "ソフトウェアが遅くなる速さは、ハードウェアが速くなる速さを上回る。",
       "mechanism": "「ソフトウェアはハードウェアが速くなるよりも速く遅くなっている。」ハードの利得はそのたびに、追加された抽象層・機能・不注意によって吸収され、ユーザーが体感する速度は横ばいか悪化する。",
       "counter": {
         "name": "パフォーマンスバジェット / リーンなソフトウェア"
@@ -1352,7 +1525,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Ninety-Ninety Rule",
-      "concept": "The Estimation Tail.",
+      "concept": "The last 10% of the work tends to take as long as the first 90% did.",
       "mechanism": "\"The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time.\" The visible work hides a second, equally large body of integration, edge cases, and polish.",
       "counter": {
         "name": "Demo on Real Data / Hard Definition of Done"
@@ -1362,7 +1535,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "90対90の法則",
-      "concept": "見積りの尾。",
+      "concept": "残り1割の作業に、最初の9割と同じくらいの時間がかかりがちだ。",
       "mechanism": "「最初の90%のコードが、開発時間の最初の90%を占める。残り10%のコードが、もう90%を占める。」目に見える作業は、同じ大きさの統合・エッジケース・仕上げという第二の塊を隠している。",
       "counter": {
         "name": "本番相当データでのデモ / 厳格な完了の定義"
@@ -1382,7 +1555,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Eagleson's Law",
-      "concept": "Code Memory Decay.",
+      "concept": "Your own code that you haven't read in six months might as well be someone else's.",
       "mechanism": "\"Any code of your own that you haven't looked at for six months might as well have been written by someone else.\" Your mental model of the code evaporates far faster than the code does; context is not stored in the source.",
       "counter": {
         "name": "ADRs / Self-Explaining Code / Code Comments on the \"Why\""
@@ -1392,7 +1565,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "イーグルソンの法則",
-      "concept": "コードの記憶の減衰。",
+      "concept": "半年見ていない自分のコードは、他人が書いたコードも同然だ。",
       "mechanism": "「半年見ていない自分のコードは、他人が書いたも同然である。」コードそのものより遥かに速く、頭の中のメンタルモデルは蒸発する。文脈はソースには保存されない。",
       "counter": {
         "name": "ADR / 自己説明的なコード / 「なぜ」を記すコメント"
@@ -1412,7 +1585,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Hick's Law",
-      "concept": "Choice Overload.",
+      "concept": "The more options people are given, the longer they take to choose one.",
       "mechanism": "The time to make a decision grows logarithmically with the number of choices: **T = b·log₂(n+1)**. More options do not just add visual clutter — they measurably slow every user down.",
       "counter": {
         "name": "Progressive Disclosure / Sensible Defaults"
@@ -1422,7 +1595,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ヒックの法則",
-      "concept": "選択肢過多。",
+      "concept": "選択肢が増えるほど、人は一つを選ぶのに時間がかかる。",
       "mechanism": "決定にかかる時間は選択肢の数の対数で増える: **T = b·log₂(n+1)**。選択肢の増加は見た目を散らかすだけでなく、すべてのユーザーを計測可能なほど遅くする。",
       "counter": {
         "name": "段階的開示 / 妥当な既定値"
@@ -1441,7 +1614,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Fitts's Law",
-      "concept": "Target Acquisition Cost.",
+      "concept": "Small, distant targets take longer to hit and get missed more often.",
       "mechanism": "The time to move to a target depends on its distance and size: distant, small targets are slow and error-prone; near, large targets are fast. Pointing is a physical act with a measurable cost.",
       "counter": {
         "name": "Edges & Corners / Sizing by Frequency"
@@ -1451,7 +1624,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "フィッツの法則",
-      "concept": "標的到達のコスト。",
+      "concept": "小さく遠いターゲットほど、押すのに時間がかかり、押し間違えも増える。",
       "mechanism": "標的へ移動する時間は、その距離と大きさで決まる。遠く小さい標的は遅く誤りやすく、近く大きい標的は速い。ポインティングは計測可能なコストを持つ物理的行為である。",
       "counter": {
         "name": "端と角の活用 / 頻度に応じたサイズ設計"
@@ -1471,7 +1644,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Miller's Law",
-      "concept": "Working-Memory Limit.",
+      "concept": "Working memory holds only a handful of chunks (Miller said about seven; later estimates are lower).",
       "mechanism": "\"The Magical Number Seven, Plus or Minus Two\" — human working memory holds only about seven chunks at once. Cross that limit and recall collapses; the brain drops items rather than slowing down.",
       "counter": {
         "name": "Chunking / Information Hiding"
@@ -1481,7 +1654,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ミラーの法則",
-      "concept": "作業記憶の限界。",
+      "concept": "作業記憶に保てるのは数個のまとまりだけだ（Miller は7前後とし、後の研究はもっと少ないとする）。",
       "mechanism": "「マジカルナンバー 7 ± 2」——人間の作業記憶が一度に保持できるのは約7チャンクのみ。その限界を超えると想起は崩壊する。脳は速度を落とすのではなく、項目を捨てる。",
       "counter": {
         "name": "チャンク化 / 情報隠蔽"
@@ -1502,7 +1675,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Fallacies of Distributed Computing",
-      "concept": "The hidden assumptions of networked code.",
+      "concept": "Networked code quietly assumes eight things about the network that are false in production.",
       "mechanism": "Newcomers to distributed systems silently assume the network is reliable, latency is zero, bandwidth is infinite, the network is secure, topology is stable, there is one administrator, transport cost is zero, and the network is homogeneous. Every one of these eight assumptions fails in production.",
       "counter": {
         "name": "Design for Failure",
@@ -1513,7 +1686,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "分散コンピューティングの誤謬",
-      "concept": "ネットワーク越しのコードに潜む暗黙の仮定。",
+      "concept": "ネットワーク越しのコードは、本番では成り立たない8つの前提を暗に置いている。",
       "mechanism": "分散システムに不慣れな者は、ネットワークは信頼でき、遅延はゼロ、帯域は無限、通信は安全、構成は不変、管理者は一人、転送コストはゼロ、ネットワークは均質だと暗黙に仮定する。この8つの仮定はすべて本番で崩れる。",
       "counter": {
         "name": "失敗前提の設計",
@@ -1529,11 +1702,12 @@ export const laws: Law[] = [
     "tag": "safety",
     "sourceUrl": "https://doi.org/10.1016/0005-1098(83)90046-8",
     "seeAlso": [
-      "normal-accident-theory"
+      "normal-accident-theory",
+      "toil"
     ],
     "en": {
       "title": "Ironies of Automation",
-      "concept": "Automation reshapes the human role rather than removing it.",
+      "concept": "Automation leaves people only the hardest cases, after their skills have faded from disuse.",
       "mechanism": "Automating the routine parts of a task leaves the human only the rarest, hardest exceptions — while their manual skill and situational awareness atrophy from disuse, precisely at the moment a failing automated system hands control back to them.",
       "counter": {
         "name": "Human-in-the-Loop Drills",
@@ -1544,7 +1718,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "自動化の皮肉",
-      "concept": "自動化は人間の役割を消すのではなく作り変える。",
+      "concept": "自動化は人に最も難しい例外だけを残し、その対応に要る腕は使わないうちに鈍る。",
       "mechanism": "作業の定型部分を自動化すると、人間には最も稀で難しい例外だけが残る——しかも使わぬ間に手作業の技能と状況認識は衰える。破綻した自動システムが制御を人へ返すのは、まさにその瞬間である。",
       "counter": {
         "name": "人間参加型の訓練",
@@ -1564,7 +1738,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Principle of Least Privilege",
-      "concept": "Grant the minimum authority required.",
+      "concept": "Every permission a component doesn't need widens the damage when something goes wrong.",
       "mechanism": "Every component granted more authority than it strictly needs enlarges the blast radius of any bug, compromise, or accident, and multiplies the interactions an auditor must reason about.",
       "counter": {
         "name": "Psychological Acceptability",
@@ -1575,7 +1749,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "最小権限の原則",
-      "concept": "必要最小限の権限だけを与える。",
+      "concept": "不要な権限を持つ部品ほど、問題が起きたときの被害範囲が広がる。",
       "mechanism": "厳密に必要な以上の権限を与えられた要素は、あらゆるバグ・侵害・事故の被害範囲を広げ、監査者が考慮すべき相互作用を増やす。",
       "counter": {
         "name": "心理的受容性",
@@ -1595,7 +1769,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Kerckhoffs's Principle",
-      "concept": "Security must not depend on the secrecy of the mechanism.",
+      "concept": "A system that is secure only while its design stays secret is not secure.",
       "mechanism": "A cryptosystem should remain secure even if everything about it except the key is public. Secrecy of the algorithm is brittle: mechanisms leak, get reverse-engineered, and get reused across systems.",
       "counter": {
         "name": "Defense in Depth",
@@ -1606,7 +1780,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ケルクホフスの原理",
-      "concept": "安全は仕組みの秘匿に依存してはならない。",
+      "concept": "設計が秘密である間だけ安全なシステムは、安全ではない。",
       "mechanism": "暗号方式は、鍵以外のすべてが公開されても安全であるべきだ。アルゴリズムの秘匿は脆い——仕組みは漏れ、解析され、他システムで使い回される。",
       "counter": {
         "name": "多層防御",
@@ -1627,7 +1801,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Gustafson's Law",
-      "concept": "Scaled speedup for growing problems.",
+      "concept": "When the problem grows with the machine, parallel speedup keeps growing nearly linearly.",
       "mechanism": "For a fixed time budget, a larger machine lets you solve a proportionally larger problem, so the serial fraction shrinks with scale and speedup grows near-linearly — the optimistic counterpart to Amdahl's fixed-workload pessimism.",
       "counter": {
         "name": "Amdahl's Law",
@@ -1638,7 +1812,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "グスタフソンの法則",
-      "concept": "問題が拡大するときのスケール速度向上。",
+      "concept": "問題の規模が計算機とともに大きくなるなら、並列化の効果はほぼ比例して伸びる。",
       "mechanism": "時間の予算を固定すれば、大きな計算機はそれに比例して大きな問題を解ける。ゆえに規模とともに逐次部分の割合は縮み、速度向上はほぼ線形に伸びる——固定作業量を前提とするアムダールの悲観に対する、楽観的な対の視点である。",
       "counter": {
         "name": "アムダールの法則",
@@ -1654,11 +1828,12 @@ export const laws: Law[] = [
     "tag": "distributed-systems",
     "sourceUrl": "https://doi.org/10.1145/2408776.2408794",
     "seeAlso": [
-      "littles-law"
+      "littles-law",
+      "error-budget"
     ],
     "en": {
       "title": "The Tail at Scale",
-      "concept": "Tail latency dominates at fan-out.",
+      "concept": "When one request fans out to many servers, the slowest one sets the response time.",
       "mechanism": "In a service that fans out to many components, rare per-node slowness (GC pauses, contention, a failing disk) is near-certain to hit some node on every request. So tail latency (p99, p99.9) governs the user experience even when medians look healthy.",
       "counter": {
         "name": "Redundancy Has a Price",
@@ -1669,7 +1844,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "スケールの裾野",
-      "concept": "扇状展開では裾野のレイテンシが支配する。",
+      "concept": "一つのリクエストが多数のサーバに分かれると、最も遅いサーバが応答時間を決める。",
       "mechanism": "多数の要素へ扇状に処理を広げるサービスでは、ノード単位の稀な遅延（GC 停止・競合・不良ディスク）がほぼ毎リクエストどこかのノードで発生する。ゆえに中央値が健全に見えても、裾野のレイテンシ（p99・p99.9）が体感を支配する。",
       "counter": {
         "name": "冗長化には代償がある",
@@ -1691,7 +1866,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Ashby's Law of Requisite Variety",
-      "concept": "Only variety can absorb variety.",
+      "concept": "A controller can only handle a system if it can respond to as many states as the system has.",
       "mechanism": "A controller can regulate a system only if it can match the variety of states that system can produce. Under-powered control simply cannot cope with a sufficiently rich environment.",
       "counter": {
         "name": "Constrain the Environment",
@@ -1702,7 +1877,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "アシュビーの必要多様性の法則",
-      "concept": "多様性のみが多様性を吸収する。",
+      "concept": "制御側は、対象がとりうる状態と同じだけの対応を持たないと制御できない。",
       "mechanism": "制御装置が系を調整できるのは、その系が生み出しうる状態の多様性に匹敵できる場合のみである。力不足の制御は、十分に豊かな環境にはそもそも対処できない。",
       "counter": {
         "name": "環境そのものを制約する",
@@ -1724,7 +1899,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Law of Demeter",
-      "concept": "Principle of Least Knowledge.",
+      "concept": "Code that reaches through other objects' internals breaks when anything in the chain changes.",
       "mechanism": "An object that reaches through other objects' internals (`a.getB().getC().doThing()`) couples itself to the entire dependency chain, so a change anywhere along that chain ripples back and breaks it.",
       "counter": {
         "name": "Pragmatism over Dogma",
@@ -1735,7 +1910,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "デメテルの法則",
-      "concept": "最小知識の原則。",
+      "concept": "他のオブジェクトの内部をたどるコードは、その連鎖のどこが変わっても壊れる。",
       "mechanism": "他オブジェクトの内部を辿って呼び出すコード（`a.getB().getC().doThing()`）は、依存の連鎖全体に自らを結びつける。ゆえにその連鎖のどこかの変更が波及して壊れる。",
       "counter": {
         "name": "教条より実用",
@@ -1756,7 +1931,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Jevons Paradox",
-      "concept": "Efficiency can increase total consumption.",
+      "concept": "Making a resource cheaper to use can increase how much of it is used in total.",
       "mechanism": "Making a resource cheaper to use per unit lowers its effective price and can raise total consumption instead of lowering it — the efficiency gain is spent on more usage rather than banked as savings.",
       "counter": {
         "name": "Cap the Rebound",
@@ -1767,7 +1942,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ジェヴォンズのパラドックス",
-      "concept": "効率化が総消費を増やしうる。",
+      "concept": "資源を安く使えるようにすると、かえって総使用量が増えることがある。",
       "mechanism": "資源の単位あたり利用を安くすると実効価格が下がり、総消費はむしろ増えうる——効率化で浮いた分は、節約として貯まらず、さらなる利用に費やされる。",
       "counter": {
         "name": "反動に上限を設ける",
@@ -1790,7 +1965,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Normal Accident Theory",
-      "concept": "In some systems, accidents are structural.",
+      "concept": "In complex, tightly coupled systems, accidents are built into the structure.",
       "mechanism": "In systems that are both interactively complex and tightly coupled, small independent failures interact in ways no designer anticipated and propagate faster than operators can intervene — so accidents become a property of the structure, not bad luck.",
       "counter": {
         "name": "High-Reliability Organizations",
@@ -1801,7 +1976,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "通常事故理論",
-      "concept": "ある種の系では、事故は構造的なものである。",
+      "concept": "複雑で密に結合したシステムでは、事故は構造そのものから生じる。",
       "mechanism": "相互作用的に複雑で、かつ密結合な系では、独立した小さな故障が設計者の予見しない形で相互作用し、運用者が介入するより速く伝播する——ゆえに事故は不運ではなく、構造の性質となる。",
       "counter": {
         "name": "高信頼性組織（HRO）",
@@ -1822,7 +1997,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Broken Windows Theory",
-      "concept": "Visible disorder invites more disorder.",
+      "concept": "Visible disorder left unrepaired can signal that standards are optional, inviting more.",
       "mechanism": "An unrepaired broken window signals that nobody is watching, which lowers the cost of the next violation. In a codebase, one tolerated hack, one skipped test and one permanently silenced alert together announce that the standard is optional.",
       "counter": {
         "name": "Repair Is Not Free",
@@ -1833,7 +2008,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "割れ窓理論",
-      "concept": "目に見える無秩序が、さらなる無秩序を招く。",
+      "concept": "放置された小さな乱れは、基準は守らなくてよいという合図になり、さらに乱れを呼びやすい。",
       "mechanism": "割れたまま放置された窓は「誰も見ていない」という信号になり、次の違反のコストを下げる。コードベースでも、見逃された一つのハック、飛ばされた一つのテスト、恒久的に黙らされた一つのアラートが揃って「この基準は守らなくてよい」と宣言する。",
       "counter": {
         "name": "修繕もタダではない",
@@ -1850,11 +2025,12 @@ export const laws: Law[] = [
     "sourceUrl": "https://ronjeffries.com/xprog/articles/practices/pracnotneed/",
     "seeAlso": [
       "chestertons-fence",
-      "galls-law"
+      "galls-law",
+      "working-backwards"
     ],
     "en": {
       "title": "YAGNI",
-      "concept": "You aren't gonna need it — build for the case in front of you.",
+      "concept": "Code built for imagined future needs costs time now and rarely fits the need that arrives.",
       "mechanism": "Speculative generality is paid for three times: writing the abstraction, carrying it while it is unused, and unpicking it when the anticipated requirement finally arrives in a different shape. Predictions about future requirements are usually wrong in exactly the details the abstraction fixed.",
       "counter": {
         "name": "Chesterton's Fence",
@@ -1865,7 +2041,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "YAGNI",
-      "concept": "それはきっと必要にならない——目の前のケースだけを作れ。",
+      "concept": "想像した将来のために書いたコードは、今の工数を食い、実際の要件に合うこともまれだ。",
       "mechanism": "推測に基づく一般化は3回支払わされる。抽象を書くとき、使われないまま抱え続けるとき、そして予期した要件が違う形で実際に来て解きほぐすとき。将来要件の予測は、たいてい「その抽象が固定してしまった細部」で外れる。",
       "counter": {
         "name": "チェスタトンの柵",
@@ -1886,7 +2062,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "KISS Principle",
-      "concept": "Simple enough to be repaired under bad conditions.",
+      "concept": "A system has to be simple enough for an ordinary person to fix under bad conditions.",
       "mechanism": "\"Keep it simple, stupid\" came out of aircraft design, where the requirement was that a jet be repairable by an average mechanic in a field with basic tools. The test was never elegance — it was whether an ordinary person could fix it in the worst circumstances the thing would actually meet.",
       "counter": {
         "name": "Ashby's Law of Requisite Variety",
@@ -1897,7 +2073,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "KISS の原則",
-      "concept": "悪条件下でも修理できる程度に単純であること。",
+      "concept": "システムは、普通の人が悪条件の中でも直せる程度に単純である必要がある。",
       "mechanism": "\"Keep it simple, stupid\" は航空機設計から出た言葉で、要件は「平均的な整備兵が、基本的な工具だけで、野戦で直せること」だった。基準は優雅さではなく、その機体が実際に遭遇する最悪の状況で、普通の人間が直せるかどうかだった。",
       "counter": {
         "name": "アシュビーの必要多様性の法則",
@@ -1918,7 +2094,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "DRY Principle",
-      "concept": "Every piece of knowledge has one authoritative representation.",
+      "concept": "Knowledge kept in two places drifts apart, because nothing makes the copies change together.",
       "mechanism": "Duplicated knowledge drifts, because nothing forces the copies to change together. The cost is not the extra characters — it is that some future editor fixes one copy and ships a system that now quietly contradicts itself.",
       "counter": {
         "name": "Duplication Is Cheaper Than the Wrong Abstraction",
@@ -1929,7 +2105,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "DRY 原則",
-      "concept": "あらゆる知識は、系の中でただ一つの権威ある表現を持つ。",
+      "concept": "同じ知識を二か所に置くと、一緒に変わる保証がないので食い違っていく。",
       "mechanism": "重複した知識は必ずずれていく。コピー同士を一緒に変えることを強制するものが何もないからだ。コストは余分な文字数ではない。将来の誰かが片方だけを直し、自分自身と静かに矛盾するシステムを出荷してしまうことだ。",
       "counter": {
         "name": "誤った抽象より重複のほうが安い",
@@ -1950,7 +2126,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Theory of Constraints",
-      "concept": "Throughput is set by exactly one constraint at a time.",
+      "concept": "A system's throughput is set by its single tightest bottleneck.",
       "mechanism": "Every chain has one weakest link. Improvement anywhere else raises local efficiency while total throughput stays flat — and often makes things worse, because the faster upstream stage simply piles more work in front of the real bottleneck.",
       "counter": {
         "name": "The Constraint Moves",
@@ -1961,7 +2137,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "制約理論",
-      "concept": "スループットは、常にただ一つの制約によって決まる。",
+      "concept": "システムの処理量は、最も詰まっている一か所で決まる。",
       "mechanism": "鎖には必ず最も弱い環が一つある。それ以外のどこを改善しても、局所的な効率は上がるが全体のスループットは動かない。むしろ悪化することが多い——速くなった上流工程が、本当のボトルネックの前により多くの仕掛品を積み上げるからだ。",
       "counter": {
         "name": "制約は移動する",
@@ -1982,7 +2158,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Occam's Razor",
-      "concept": "Prefer the explanation that requires the fewest new assumptions.",
+      "concept": "The explanation that needs the fewest unverified assumptions is usually the right one.",
       "mechanism": "Under incident pressure the mind reaches for the interesting hypothesis — a kernel bug, a bad disk, an attacker. The explanation requiring the fewest unverified assumptions is almost always the deploy that went out twenty minutes ago.",
       "counter": {
         "name": "Hickam's Dictum",
@@ -1993,7 +2169,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "オッカムの剃刀",
-      "concept": "新しい仮定を最も必要としない説明を選べ。",
+      "concept": "検証されていない仮定が最も少ない説明が、たいてい正しい。",
       "mechanism": "インシデントの圧力下では、思考は面白い仮説に手を伸ばす——カーネルのバグ、壊れたディスク、攻撃者。だが未検証の仮定を最も必要としない説明は、ほぼ常に「20分前に出たデプロイ」である。",
       "counter": {
         "name": "ヒッカムの格言",
@@ -2015,7 +2191,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Single Responsibility Principle",
-      "concept": "A module should have one reason to change. The S in SOLID.",
+      "concept": "A module serving two groups gets conflicting change requests from both.",
       "mechanism": "When one module serves two audiences, their change requests arrive on different schedules and collide in the same file. Coupling is not really about calls between modules — it is about who is entitled to force you to edit them.",
       "counter": {
         "name": "Premature Decomposition",
@@ -2026,7 +2202,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "単一責任の原則",
-      "concept": "モジュールが変更される理由は一つであるべき。SOLID の S。",
+      "concept": "二つの利用者に仕えるモジュールには、両方から食い違う変更要求が届く。",
       "mechanism": "一つのモジュールが二つの利用者集団に仕える場合、彼らの変更要求は異なるスケジュールで届き、同じファイルの上で衝突する。結合とは本当はモジュール間の呼び出しの話ではない——「誰があなたにそのモジュールの編集を強制できるか」の話だ。",
       "counter": {
         "name": "早すぎる分解",
@@ -2047,7 +2223,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Principle of Least Astonishment",
-      "concept": "A component should behave the way its users already expect.",
+      "concept": "Behavior that surprises users costs more than behavior that is slightly worse but expected.",
       "mechanism": "Users arrive with a model assembled from every similar thing they have used. A behaviour that is defensible but surprising costs more than a behaviour that is slightly worse but predicted, because the surprise is paid again by every user, every time, forever.",
       "counter": {
         "name": "Astonishment Is Relative",
@@ -2058,7 +2234,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "驚き最小の原則",
-      "concept": "部品は、利用者がすでに期待しているとおりに振る舞うべき。",
+      "concept": "利用者を驚かせる挙動は、少し劣っても予想どおりの挙動より高くつく。",
       "mechanism": "利用者は、これまで使ってきた似たものすべてから組み立てたモデルを持ってやって来る。「筋は通っているが意外な」振る舞いは、「わずかに劣るが予想どおりの」振る舞いより高くつく。驚きは全利用者が、毎回、永久に支払い続けるからだ。",
       "counter": {
         "name": "驚きは相対的である",
@@ -2080,7 +2256,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Second-System Effect",
-      "concept": "The second system a person designs is the most dangerous one.",
+      "concept": "After a first success, designers tend to pack the ideas they deferred into the second system.",
       "mechanism": "The first system is built cautiously, by someone unsure of the ground. Its success converts that caution into confidence, and every idea deferred the first time is loaded into the rewrite at once. The result is over-general, late, and frequently never ships at all.",
       "counter": {
         "name": "Gall's Law",
@@ -2091,7 +2267,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "セカンドシステム症候群",
-      "concept": "人が設計する2番目のシステムが、最も危険である。",
+      "concept": "最初の成功のあと、設計者は先送りしたアイデアを二作目に詰め込みがちだ。",
       "mechanism": "1番目のシステムは、地面の固さを測りかねている者によって慎重に作られる。その成功が慎重さを自信に変え、1回目に見送ったアイデアがすべて一度に書き直しへ流し込まれる。結果は過剰に汎用的で、遅れ、そして多くの場合そもそも出荷されない。",
       "counter": {
         "name": "ガルの法則",
@@ -2113,25 +2289,25 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Moore's Law",
-      "concept": "Transistors per chip double on a regular cadence.",
+      "concept": "The number of transistors on a chip at lowest cost per part doubles about every two years.",
       "mechanism": "Moore's observation was economic rather than physical: the component count giving the lowest cost per component doubles about every two years. It held for half a century and quietly underwrote every plan that assumed hardware would rescue it — but single-thread performance stopped following it once Dennard scaling ended around 2005.",
       "counter": {
         "name": "Wirth's Law",
         "note": "the gains get spent rather than banked, and clock speed stopped rising long before transistor counts did"
       },
       "guideline": "Do not budget for the hardware bailing out a design. If the workload is single-threaded and latency-bound, next year's machine will not save it — you have to parallelise it or do less work.",
-      "source": "Gordon E. Moore, *Cramming More Components onto Integrated Circuits* (Electronics, 19 April 1965)."
+      "source": "Gordon E. Moore, *Cramming More Components onto Integrated Circuits* (Electronics, 19 April 1965), which projected a doubling every year; Moore revised it to every two years in *Progress in Digital Integrated Electronics* (IEDM, 1975)."
     },
     "ja": {
       "title": "ムーアの法則",
-      "concept": "チップあたりのトランジスタ数は一定の周期で倍になる。",
+      "concept": "部品単価が最も安くなるチップのトランジスタ数は、約2年ごとに倍になる。",
       "mechanism": "ムーアの観察は物理ではなく経済のものだった——部品あたりコストが最小になる集積度が、およそ2年で倍になる。これが半世紀成立し、「ハードがいずれ救ってくれる」という前提のあらゆる計画を静かに支えた。だが2005年頃にデナードスケーリングが終わってから、シングルスレッド性能はこの曲線から外れている。",
       "counter": {
         "name": "ヴィルトの法則",
         "note": "得られた余力は貯金されず消費される。しかもクロック速度はトランジスタ数よりずっと早く頭打ちになった"
       },
       "guideline": "ハードウェアが設計を救ってくれる前提で予算を組むな。ワークロードがシングルスレッドかつレイテンシ律速なら、来年のマシンは助けにならない。並列化するか、やる仕事を減らすかだ。",
-      "source": "Gordon E. Moore『Cramming More Components onto Integrated Circuits』(Electronics, 1965年4月19日)。"
+      "source": "Gordon E. Moore『Cramming More Components onto Integrated Circuits』(Electronics, 1965年4月19日) は毎年の倍増を予測した。2年ごとへの修正は『Progress in Digital Integrated Electronics』(IEDM, 1975)。"
     }
   },
   {
@@ -2145,7 +2321,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Amara's Law",
-      "concept": "Overestimated in the short run, underestimated in the long run.",
+      "concept": "New technology is overrated in its first years and underrated over a decade.",
       "mechanism": "A new technology is judged on a demo, which flatters it, and then adopted against an installed base, which resists it — so the first two years disappoint. The same compounding that made the early forecast wrong then runs for a decade in the other direction, and the ten-year forecast turns out to be wrong too, this time low.",
       "counter": {
         "name": "Some Things Simply Do Not Arrive",
@@ -2156,7 +2332,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "アマラの法則",
-      "concept": "短期では過大評価され、長期では過小評価される。",
+      "concept": "新しい技術は、最初の数年は過大評価され、十年単位では過小評価される。",
       "mechanism": "新技術はデモで評価され——デモは技術を実際より良く見せる——そして既存の設備の上に導入される。既存設備は抵抗する。だから最初の2年は期待外れになる。その後、初期予測を外させたのと同じ複利が10年間逆方向に働き、10年予測もまた外れる。今度は過小に。",
       "counter": {
         "name": "そもそも来ないものもある",
@@ -2177,7 +2353,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "The Bitter Lesson",
-      "concept": "General methods that scale with computation beat handcrafted knowledge.",
+      "concept": "In AI, general methods that scale with compute have, in the long run, beaten hand-coded human knowledge.",
       "mechanism": "Across seven decades of AI research the approaches that won were search and learning scaled with available computation, not the ones that encoded human insight about the domain. Built-in knowledge helps in the short run and becomes the ceiling in the long run, because unlike computation it does not get cheaper every year.",
       "counter": {
         "name": "Compute Is Not Free",
@@ -2188,7 +2364,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "苦い教訓",
-      "concept": "計算量とともにスケールする汎用手法が、人手で作り込んだ知識に勝つ。",
+      "concept": "AIでは長い目で見ると、計算量とともに伸びる汎用手法が、人が作り込んだ知識に勝ってきた。",
       "mechanism": "AI研究の70年を通じて勝ったのは、利用可能な計算量とともにスケールする探索と学習であり、その領域についての人間の洞察を埋め込んだ手法ではなかった。作り込まれた知識は短期では効き、長期では天井になる。計算資源と違って、毎年安くならないからだ。",
       "counter": {
         "name": "計算資源はタダではない",
@@ -2209,7 +2385,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Metcalfe's Law",
-      "concept": "A network's value grows faster than its size.",
+      "concept": "Each new node adds value to every existing one, so a network's value outgrows its size.",
       "mechanism": "A network of n nodes has n(n−1)/2 possible connections, so its value was claimed to scale with n². The exponent is disputed — n log n fits real networks better — but the shape holds: each new node adds value to every existing node, which is why networks tip rather than grow smoothly.",
       "counter": {
         "name": "The Same Quadratic Is a Cost",
@@ -2220,7 +2396,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "メトカーフの法則",
-      "concept": "ネットワークの価値は、その規模より速く増える。",
+      "concept": "ノードが一つ増えるたびに既存の全ノードの価値が上がり、価値は規模より速く増える。",
       "mechanism": "n ノードのネットワークには n(n−1)/2 通りの接続がありうるため、価値は n² に比例すると主張された。指数には異論があり——実在のネットワークには n log n のほうがよく当てはまる——だが形は変わらない。新しいノードは既存の全ノードに価値を足す。だからネットワークは滑らかに成長せず、ある点で一気に傾く。",
       "counter": {
         "name": "同じ二次関数はコストでもある",
@@ -2241,7 +2417,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Ringelmann Effect",
-      "concept": "Effort per person falls as the group grows.",
+      "concept": "Each person contributes less as a group grows, most of all when no one can see who did what.",
       "mechanism": "Ringelmann had men pull a rope alone and in teams, and measured the force. Each additional person contributed less than they had alone — partly coordination loss, partly reduced individual effort once the contribution stopped being separable. It shows up wherever output is pooled and nobody can see who produced which part.",
       "counter": {
         "name": "Separable Contribution",
@@ -2252,7 +2428,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "リンゲルマン効果",
-      "concept": "集団が大きくなるほど、一人あたりの努力は落ちる。",
+      "concept": "集団が大きくなるほど一人あたりの貢献は減る。誰の成果か見えないと特にそうだ。",
       "mechanism": "リンゲルマンは、綱を一人で引かせた場合とチームで引かせた場合の力を測った。人を増やすたび、一人あたりの寄与は単独時より小さくなった。一部は協調のロスだが、一部は「寄与が分離できなくなった途端に落ちる個人の努力」である。成果が合算され、誰がどの部分を出したか見えない場所ならどこでも起きる。",
       "counter": {
         "name": "寄与を分離可能にする",
@@ -2273,7 +2449,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Shirky Principle",
-      "concept": "Institutions will try to preserve the problem to which they are the solution.",
+      "concept": "Institutions tend to keep alive the problem they exist to solve.",
       "mechanism": "An organisation built to solve a problem draws its budget, headcount and status from that problem persisting. Nobody has to be cynical for this to work: the incentives simply never point at making the team unnecessary, so over time the solution quietly becomes an argument for the problem.",
       "counter": {
         "name": "Some Problems Are Permanent",
@@ -2284,7 +2460,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "シャーキーの原理",
-      "concept": "組織は、自らが解である問題を保存しようとする。",
+      "concept": "組織は、自分たちが存在する理由である問題を残そうとする。",
       "mechanism": "ある問題を解くために作られた組織は、その問題が存続することから予算・人員・地位を得る。これが働くのに誰かが冷笑的である必要はない。インセンティブが「自分のチームを不要にすること」を決して指さないだけだ。時間が経つと、解決策は静かに問題の存続理由へと変わる。",
       "counter": {
         "name": "永続する問題も実在する",
@@ -2292,6 +2468,170 @@ export const laws: Law[] = [
       },
       "guideline": "何かを直すために作ったチームやツールには、「直った状態」がどう見えるか、いつそれを確認するかを書き出せ。自らの不要化を説明できないプラットフォームチームは、自らの生存を最適化している。",
       "source": "Clay Shirky の言。Kevin Kelly『The Shirky Principle』(The Technium, 2010) で命名・引用された。"
+    }
+  },
+  {
+    "slug": "error-budget",
+    "number": 72,
+    "tag": "operations",
+    "sourceUrl": "https://sre.google/sre-book/embracing-risk/",
+    "seeAlso": [
+      "goodharts-law",
+      "tail-at-scale",
+      "toil",
+      "normalization-of-deviance"
+    ],
+    "en": {
+      "title": "Error Budget",
+      "concept": "An SLO below 100% leaves a measurable allowance of failure, and that allowance can be spent.",
+      "mechanism": "Product teams are judged on velocity and operations teams on reliability, so every release becomes a negotiation decided by whoever argues harder. Past a point users cannot tell the difference (someone on a 99%-reliable phone cannot tell 99.99% from 99.999%), but the last fraction costs the most and blocks the most change. Once the target is explicit, the gap between it and perfect is a budget: 99.9% over 30 days is about 43 minutes of failure, and both sides can see how much of it is left.",
+      "counter": {
+        "name": "Normalization of Deviance",
+        "note": "a standing allowance for failure teaches a team that each failure is routine; the outage that should have alarmed people gets logged against the budget and never investigated"
+      },
+      "guideline": "Agree on the SLO and the policy before the incident, not during it: while budget remains, ship; when it is spent, freeze feature releases and put the time into reliability until it recovers. Keep data loss and security outside the budget entirely.",
+      "source": "Marc Alvidrez, \"Embracing Risk\" (with \"Motivation for Error Budgets\" by Mark Roth), in Beyer, Jones, Petoff & Murphy (eds.), *Site Reliability Engineering* (O'Reilly, 2016), ch. 3 — where the error budget is defined and \"100% is probably never the right reliability target\" is argued."
+    },
+    "ja": {
+      "title": "エラーバジェット",
+      "concept": "100% 未満の SLO は許容できる失敗の量を決める。その量は使ってよい予算だ。",
+      "mechanism": "プロダクト開発は速度で、運用は信頼性で評価される。だからリリースのたびに交渉になり、声の大きい側が勝つ。ある水準を超えると利用者は違いに気づかない（信頼性 99% のスマートフォンを使う人には 99.99% と 99.999% の差は分からない）のに、最後のわずかな差にいちばんコストがかかり、いちばん変更を止める。目標を明示すれば、目標と完璧の差が予算になる。30 日で 99.9% なら失敗に使えるのは約 43 分で、残りがいくらかを両者が同じ数字で見られる。",
+      "counter": {
+        "name": "逸脱の常態化",
+        "note": "失敗を許す枠があると、失敗は日常だとチームが学ぶ。本来なら驚くべき障害も予算から差し引かれるだけで、調べられなくなる"
+      },
+      "guideline": "SLO と予算を使い切ったときの方針は、障害の最中ではなく事前に合意せよ。予算が残っていればリリースし、使い切ったら機能リリースを止めて回復するまで信頼性に時間を使え。データ消失とセキュリティは予算の外に置け。",
+      "source": "Marc Alvidrez「Embracing Risk」（「Motivation for Error Budgets」節は Mark Roth）、Beyer, Jones, Petoff & Murphy 編『Site Reliability Engineering』(O'Reilly, 2016) 第 3 章。エラーバジェットの定義と「100% がふさわしい信頼性目標であることはおそらくない」という主張の出典。"
+    }
+  },
+  {
+    "slug": "toil",
+    "number": 73,
+    "tag": "operations",
+    "sourceUrl": "https://sre.google/sre-book/eliminating-toil/",
+    "seeAlso": [
+      "ironies-of-automation",
+      "error-budget"
+    ],
+    "en": {
+      "title": "Toil",
+      "concept": "Manual, repetitive operational work grows with the service and, left unchecked, crowds out engineering.",
+      "mechanism": "Toil is work that is manual, repetitive, automatable, interrupt-driven, leaves the system no better than it found it, and scales linearly with traffic or users. Each instance is small and urgent, so it always beats project work in the moment. Because it grows with the service and engineering time does not, a team that never pushes back ends up doing nothing else.",
+      "counter": {
+        "name": "Ironies of Automation",
+        "note": "automating a task removes the practice people needed to handle it when the automation fails, and some automation costs more to build and keep alive than the toil it replaces"
+      },
+      "guideline": "Measure the share of each person's time spent on toil and set a ceiling (Google uses 50%). When a task comes back a third time (a rule of thumb, not the book's), file it as engineering work; when it scales with users, treat it as a defect rather than a chore.",
+      "source": "Vivek Rau, \"Eliminating Toil\", in Beyer, Jones, Petoff & Murphy (eds.), *Site Reliability Engineering* (O'Reilly, 2016), ch. 5 — the definition of toil and the 50% cap."
+    },
+    "ja": {
+      "title": "トイル",
+      "concept": "手作業の繰り返し運用はサービスと一緒に増え、放っておけば開発の時間を食い尽くす。",
+      "mechanism": "トイルとは、手作業で、繰り返され、自動化でき、割り込みでやって来て、終えてもシステムが良くならず、トラフィックや利用者数に比例して増える作業だ。一件ずつは小さく急ぎなので、その場では必ずプロジェクト作業に勝つ。サービスとともに増えるのに開発の時間は増えないので、押し返さないチームは最後にはそれしかしなくなる。",
+      "counter": {
+        "name": "自動化の皮肉",
+        "note": "作業を自動化すると、自動化が壊れたときに対処するための練習の機会が消える。作って維持するコストが、置き換えるトイルより高くつく自動化もある"
+      },
+      "guideline": "一人ひとりの時間のうちトイルが占める割合を測り、上限を決めよ（Google は 50%）。同じ作業が三度目に来たら（本書ではなく経験則だ）開発タスクとして起票せよ。利用者数に比例して増える作業は、雑用ではなく欠陥として扱え。",
+      "source": "Vivek Rau「Eliminating Toil」、Beyer, Jones, Petoff & Murphy 編『Site Reliability Engineering』(O'Reilly, 2016) 第 5 章。トイルの定義と 50% 上限の出典。"
+    }
+  },
+  {
+    "slug": "blameless-postmortem",
+    "number": 74,
+    "tag": "operations",
+    "sourceUrl": "https://www.etsy.com/codeascraft/blameless-postmortems",
+    "seeAlso": [
+      "swiss-cheese-model",
+      "normalization-of-deviance",
+      "hanlons-razor",
+      "bystander-effect"
+    ],
+    "en": {
+      "title": "Blameless Postmortem",
+      "concept": "Punishing the person nearest a failure teaches people to hide what they did.",
+      "mechanism": "The people closest to an incident hold the only accurate account of what they saw, what they believed and why the action made sense at the time. If telling that story can cost them, they tell a shorter one, and the organisation loses the information it needs to fix the conditions that made the mistake easy. The error repeats with someone else's name on it. Blameless is not consequence-free: a just culture still separates an honest mistake inside a bad system from knowingly disregarding a risk.",
+      "counter": {
+        "name": "Diffused Ownership",
+        "note": "when nobody is answerable, the action items have no owner and quietly expire; some teams name a person accountable for the fix precisely because blamelessness leaves no one holding it"
+      },
+      "guideline": "Write the postmortem as a timeline of what people saw and why each action made sense then, and end with changes to the system, not to a person, each with one named owner and a date. Ban \"human error\" as a root cause; ask what made the error easy to make.",
+      "source": "John Allspaw, *Blameless PostMortems and a Just Culture* (Code as Craft, Etsy, 2012); the practice is codified in Lunney & Lueder, \"Postmortem Culture\", *Site Reliability Engineering* (O'Reilly, 2016), ch. 15."
+    },
+    "ja": {
+      "title": "非難なきポストモーテム",
+      "concept": "障害のいちばん近くにいた人を罰すると、人は自分のしたことを隠すようになる。",
+      "mechanism": "障害の現場にいた人だけが、何を見て、何を信じ、なぜその操作がその時点で妥当に思えたかを正確に語れる。語ることで不利益を被るなら、その人は話を短くする。すると組織は、ミスを起こしやすくしていた条件を直すための情報を失う。同じ誤りが、別の人の名前で繰り返される。非難しないことは、何をしても責任を問わないことではない。公正な文化は、悪い仕組みの中での正直なミスと、リスクを承知で無視したこととを区別する。",
+      "counter": {
+        "name": "責任の拡散",
+        "note": "誰も責任を負わないと、対策項目に持ち主がいなくなり、いつの間にか立ち消える。だから責めないことと引き換えに、修正の担当者だけは名指しするチームもある"
+      },
+      "guideline": "ポストモーテムは、各人が何を見て、なぜその操作がその時点で妥当だったかの時系列として書き、人ではなく仕組みの変更で締めくくれ。変更ごとに担当者を一人名指しし、期日を付けよ。根本原因に「ヒューマンエラー」と書くことを禁じ、何がその誤りを起こしやすくしたかを問え。",
+      "source": "John Allspaw『Blameless PostMortems and a Just Culture』(Code as Craft, Etsy, 2012)。実践としては Lunney & Lueder「Postmortem Culture」『Site Reliability Engineering』(O'Reilly, 2016) 第 15 章にまとめられている。"
+    }
+  },
+  {
+    "slug": "working-backwards",
+    "number": 75,
+    "tag": "decision",
+    "sourceUrl": "https://www.allthingsdistributed.com/2006/11/working_backwards.html",
+    "seeAlso": [
+      "xy-problem",
+      "yagni"
+    ],
+    "en": {
+      "title": "Working Backwards",
+      "concept": "Teams that start from a solution often build things no customer needed; starting from the announcement exposes that early.",
+      "mechanism": "Engineers start from what they can build and look for customers afterwards. A press release written before any code forces the team to state who the customer is, what problem they have and why existing options fail, in words the customer would use. If that page is hard to write, the product is unclear, and rewriting a page is far cheaper than rewriting the product.",
+      "counter": {
+        "name": "Build to Learn",
+        "note": "when customers cannot judge an idea on paper (a new platform, an infrastructure change, something with no precedent) a cheap prototype tells you more than a polished press release"
+      },
+      "guideline": "Before a project starts, write a one-page press release and an FAQ for the customer, and review them as a team. If you cannot name the customer and their problem in the first paragraph, do not start building.",
+      "source": "Werner Vogels, *Working Backwards* (All Things Distributed, 2006) — Amazon's CTO describing the press-release-first process; Ian McAllister's Quora answer \"What is Amazon's approach to product development and product management?\" is the source of \"if the press release is hard to write, the product is probably going to suck\"; Colin Bryar & Bill Carr, *Working Backwards* (St. Martin's Press, 2021) — the PR/FAQ process in full."
+    },
+    "ja": {
+      "title": "ワーキング・バックワーズ",
+      "concept": "解決策から始めると、誰も必要としないものを作ることが多い。発表文から始めれば早く気づける。",
+      "mechanism": "エンジニアは作れるものから考え始め、顧客は後から探しがちだ。コードを書く前にプレスリリースを書くと、誰が顧客で、どんな問題を抱え、既存の手段がなぜ駄目なのかを、顧客自身の言葉で書かざるを得なくなる。その一枚が書きにくいなら、製品の輪郭がぼやけている。紙一枚を書き直すほうが、製品を作り直すよりずっと安い。",
+      "counter": {
+        "name": "作って学ぶ",
+        "note": "顧客が紙の上では判断できないもの（新しいプラットフォーム、基盤の変更、前例のないもの）では、磨いたプレスリリースより安い試作品のほうが多くを教えてくれる"
+      },
+      "guideline": "プロジェクトを始める前に、顧客向けの一枚のプレスリリースと FAQ を書き、チームでレビューせよ。最初の段落で顧客とその問題を言えないなら、作り始めるな。",
+      "source": "Werner Vogels『Working Backwards』(All Things Distributed, 2006)。Amazon の CTO がプレスリリースから書き始める手順を説明したもの。「プレスリリースが書きにくいなら、その製品はたぶんひどい」は Ian McAllister の Quora の回答「What is Amazon's approach to product development and product management?」から。PR/FAQ の全体像は Colin Bryar & Bill Carr『Working Backwards』(St. Martin's Press, 2021)。"
+    }
+  },
+  {
+    "slug": "disagree-and-commit",
+    "number": 76,
+    "tag": "decision",
+    "sourceUrl": "https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders",
+    "seeAlso": [
+      "type-1-vs-type-2-decisions",
+      "law-of-triviality"
+    ],
+    "en": {
+      "title": "Disagree and Commit",
+      "concept": "Waiting for everyone to agree is often slower than committing and correcting course if the call turns out wrong.",
+      "mechanism": "When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate the answer often cannot be known anyway. A dissenter who keeps arguing can also half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating \"do you agree\" from \"will you commit\" lets the disagreement be stated fully and the work still go ahead at full effort.",
+      "counter": {
+        "name": "Groupthink",
+        "note": "a culture that prizes commitment teaches people to stop objecting early, and silent compliance hides the dissent that would have caught the error"
+      },
+      "guideline": "State your disagreement once, in full, with your reasons. Then say \"I disagree and commit\" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you. For an irreversible decision, or one with a safety or ethical risk, do not commit quietly: escalate.",
+      "source": "Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — \"use the phrase 'disagree and commit'\", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and it is also attributed to Intel."
+    },
+    "ja": {
+      "title": "反対してもコミットする",
+      "concept": "全員の同意を待つより、決めて実行し、誤りなら軌道修正するほうが速いことが多い。",
+      "mechanism": "合意を求める集団では、決定は最も粘る懐疑派の速度でしか進まない。しかも議論の終盤では、正解は分からないことが多い。議論に負けた反対者が、決まった方針を半端にしか実行しないこともあり、どちらが正しかったにせよ結果を悪くする。「同意するか」と「コミットするか」を分ければ、反対は全部言い切ったうえで、実行は全力で進められる。",
+      "counter": {
+        "name": "集団浅慮",
+        "note": "コミットを重んじる文化では、人は早々に反対をやめることを覚える。黙って従えば、誤りを見つけたはずの異論が表に出なくなる"
+      },
+      "guideline": "反対意見は一度、理由とともに全部言え。そのうえで「反対だがコミットする」と宣言し、自分の案だったかのように実行せよ。立場が上の人も同じことをせよ。チームに自分を説得させるのではなく、チームの判断を支えよ。ただし取り返しのつかない決定や、安全・倫理上のリスクがある決定では、黙ってコミットせずエスカレーションせよ。",
+      "source": "Jeff Bezos『2016 年 株主への手紙』（Amazon.com, Inc.、2017 年）。\"use the phrase 'disagree and commit'\" と Amazon Studios の例。語句自体は Amazon 以前からある。Karen Southwick『High Noon』(1999) は Sun Microsystems の Scott McNealy がこの語を使っていたと記しており、Intel 発祥とする説もある。"
     }
   }
 ];
