@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/kanywst/hammurabi/compare/v1.1.1...v2.0.0) (2026-10-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* **site:** rebuild the site for lookup, add five operations and decision laws ([#139](https://github.com/kanywst/hammurabi/issues/139))
+
+### Added to the codex
+
+* **site:** rebuild the site for lookup, add five operations and decision laws ([#139](https://github.com/kanywst/hammurabi/issues/139)) ([b97495b](https://github.com/kanywst/hammurabi/commit/b97495b3030f29a85f488270c8b6656710f17994))
+
 ## [1.1.1](https://github.com/kanywst/hammurabi/compare/v1.1.0...v1.1.1) (2026-10-12)
 
 
