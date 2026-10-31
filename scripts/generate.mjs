@@ -59,9 +59,13 @@ const COPY = {
     seeAlso: 'See also',
     sourceLink: 'source ↗',
     backToIndex: 'Back to the index',
+    bySituation: 'Start from a situation',
+    allLaws: 'All laws',
   },
   ja: {
     indexHead: ['§', '法則', 'カテゴリ', '核心'],
+    bySituation: '状況から引く',
+    allLaws: 'すべての法則',
     concept: '概念',
     mechanism: 'メカニズム',
     counter: '対立概念',
@@ -129,10 +133,29 @@ function entry(law, tags, locale, bySlug, depth) {
   return lines.join('\n');
 }
 
-function codexSection(laws, tags, locale, depth) {
+function situationList(situations, bySlug, locale) {
+  return situations
+    .map((situation) => {
+      const refs = situation.laws.map((slug) => {
+        const title = heading(bySlug.get(slug), locale);
+        return `[${title}](#${anchor(title)})`;
+      });
+      return `- **${situation[locale]}:** ${refs.join(' · ')}`;
+    })
+    .join('\n');
+}
+
+function codexSection(laws, tags, situations, locale, depth) {
   const bySlug = new Map(laws.map((l) => [l.slug, l]));
+  const t = COPY[locale];
   return [
     WARNING,
+    '',
+    `**${t.bySituation}**`,
+    '',
+    situationList(situations, bySlug, locale),
+    '',
+    `**${t.allLaws}**`,
     '',
     indexTable(laws, tags, locale),
     '',
@@ -163,9 +186,10 @@ function spliceMarkdown(path, section, count) {
   return retallyBadge(next, count);
 }
 
-function websiteModule(laws, tags) {
+function websiteModule(laws, tags, situations) {
   const payload = {
     tags: Object.entries(tags).map(([key, value]) => ({ key, ...value })),
+    situations: situations.map(({ key, en, ja, laws: refs }) => ({ key, en, ja, laws: refs })),
     laws: laws.map((law) => ({
       slug: law.slug,
       number: law.number,
@@ -211,7 +235,16 @@ export interface Tag {
   ja: string;
 }
 
+export interface Situation {
+  key: string;
+  en: string;
+  ja: string;
+  laws: string[];
+}
+
 export const tags: Tag[] = ${JSON.stringify(payload.tags, null, 2)};
+
+export const situations: Situation[] = ${JSON.stringify(payload.situations, null, 2)};
 
 export const laws: Law[] = ${JSON.stringify(payload.laws, null, 2)};
 
@@ -221,12 +254,12 @@ export const lawBySlug: ReadonlyMap<string, Law> = new Map(
 `;
 }
 
-const { tags, laws } = requireCodex();
+const { tags, situations, laws } = requireCodex();
 
 const targets = [
-  { path: join(ROOT, 'README.md'), build: () => spliceMarkdown(join(ROOT, 'README.md'), codexSection(laws, tags, 'en', 0), laws.length) },
-  { path: join(ROOT, 'translations', 'ja.md'), build: () => spliceMarkdown(join(ROOT, 'translations', 'ja.md'), codexSection(laws, tags, 'ja', 1), laws.length) },
-  { path: join(ROOT, 'website', 'src', 'data', 'laws.ts'), build: () => websiteModule(laws, tags) },
+  { path: join(ROOT, 'README.md'), build: () => spliceMarkdown(join(ROOT, 'README.md'), codexSection(laws, tags, situations, 'en', 0), laws.length) },
+  { path: join(ROOT, 'translations', 'ja.md'), build: () => spliceMarkdown(join(ROOT, 'translations', 'ja.md'), codexSection(laws, tags, situations, 'ja', 1), laws.length) },
+  { path: join(ROOT, 'website', 'src', 'data', 'laws.ts'), build: () => websiteModule(laws, tags, situations) },
 ];
 
 let stale = 0;

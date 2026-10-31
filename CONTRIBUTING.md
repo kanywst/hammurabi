@@ -75,6 +75,8 @@ Notes on the fields:
 - **`see_also`** must be reciprocated. If A lists B, B lists A — `npm run validate` warns when it is not.
 - **`ja`** is required. A law that only exists in one language leaves the two codices asserting different things, which is exactly the drift this repository is built to prevent. If you cannot write the Japanese, say so in the pull request and it can be filled in for you.
 
+- **`situations`** (top of the file) are the "start from a situation" entry points: a label in each locale and the laws worth reading for it. When a new law answers a situation that is already listed, add its slug there.
+
 Long values use YAML's `|-` block form. Do not hard-wrap prose; one paragraph is one line.
 
 ## Correcting a source

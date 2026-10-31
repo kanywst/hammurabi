@@ -50,6 +50,7 @@ export function loadCodex({ file = join(ROOT, 'data', 'laws.yaml') } = {}) {
   if (!raw || typeof raw !== 'object') fail('laws.yaml did not parse to an object');
   const tags = raw?.tags ?? {};
   const laws = raw?.laws ?? [];
+  const situations = raw?.situations ?? [];
 
   if (!Array.isArray(laws) || laws.length === 0) fail('laws: expected a non-empty list');
 
@@ -128,13 +129,30 @@ export function loadCodex({ file = join(ROOT, 'data', 'laws.yaml') } = {}) {
     }
   });
 
+  // Situations are entry points into the codex, so every law they name must
+  // exist, and each needs a label in every locale.
+  const seenSituations = new Set();
+  situations.forEach((situation, index) => {
+    const at = `situations[${index}]${situation?.key ? ` (${situation.key})` : ''}`;
+    if (!situation?.key || !SLUG_RE.test(situation.key)) fail(`${at}: key must be lowercase kebab-case`);
+    else if (seenSituations.has(situation.key)) fail(`${at}: duplicate key`);
+    else seenSituations.add(situation.key);
+    for (const locale of LOCALES) {
+      if (typeof situation?.[locale] !== 'string' || !situation[locale].trim()) fail(`${at}.${locale} is missing`);
+    }
+    if (!Array.isArray(situation?.laws) || situation.laws.length === 0) fail(`${at}: laws must be a non-empty list`);
+    for (const ref of situation?.laws ?? []) {
+      if (!seenSlugs.has(ref)) fail(`${at}: law "${ref}" matches no law`);
+    }
+  });
+
   const numbered = laws.map((law, index) => ({
     ...law,
     number: index + 1,
     see_also: law.see_also ?? [],
   }));
 
-  return { tags, laws: numbered, problems };
+  return { tags, situations, laws: numbered, problems };
 }
 
 /** Load and throw on the first structural problem. Callers that want to report

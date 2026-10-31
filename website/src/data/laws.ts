@@ -32,6 +32,13 @@ export interface Tag {
   ja: string;
 }
 
+export interface Situation {
+  key: string;
+  en: string;
+  ja: string;
+  laws: string[];
+}
+
 export const tags: Tag[] = [
   {
     "key": "decision",
@@ -97,6 +104,155 @@ export const tags: Tag[] = [
     "key": "operations",
     "en": "Operations",
     "ja": "運用"
+  }
+];
+
+export const situations: Situation[] = [
+  {
+    "key": "estimates-slip",
+    "en": "Estimates keep slipping",
+    "ja": "見積りが毎回ずれる",
+    "laws": [
+      "hofstadters-law",
+      "ninety-ninety-rule",
+      "parkinsons-law",
+      "brooks-law"
+    ]
+  },
+  {
+    "key": "team-growing",
+    "en": "The team is growing",
+    "ja": "チームが大きくなってきた",
+    "laws": [
+      "brooks-law",
+      "dunbars-number",
+      "ringelmann-effect",
+      "conways-law",
+      "bystander-effect"
+    ]
+  },
+  {
+    "key": "metric-gamed",
+    "en": "A metric is being gamed",
+    "ja": "指標が数字合わせになっている",
+    "laws": [
+      "goodharts-law",
+      "cobra-effect",
+      "shirky-principle"
+    ]
+  },
+  {
+    "key": "cannot-decide",
+    "en": "The decision is stuck",
+    "ja": "決めきれない",
+    "laws": [
+      "type-1-vs-type-2-decisions",
+      "disagree-and-commit",
+      "law-of-triviality",
+      "sunk-cost-fallacy"
+    ]
+  },
+  {
+    "key": "after-incident",
+    "en": "After an incident",
+    "ja": "障害が起きた後",
+    "laws": [
+      "blameless-postmortem",
+      "swiss-cheese-model",
+      "normalization-of-deviance",
+      "normal-accident-theory",
+      "hanlons-razor"
+    ]
+  },
+  {
+    "key": "reliability-vs-speed",
+    "en": "Reliability versus shipping speed",
+    "ja": "信頼性と開発速度がぶつかる",
+    "laws": [
+      "error-budget",
+      "toil",
+      "murphys-law",
+      "ironies-of-automation"
+    ]
+  },
+  {
+    "key": "too-slow",
+    "en": "Something is too slow",
+    "ja": "何かが遅い",
+    "laws": [
+      "amdahls-law",
+      "theory-of-constraints",
+      "premature-optimization",
+      "tail-at-scale",
+      "littles-law"
+    ]
+  },
+  {
+    "key": "legacy-code",
+    "en": "Deleting or rewriting old code",
+    "ja": "古いコードを消す・作り直す",
+    "laws": [
+      "chestertons-fence",
+      "second-system-effect",
+      "galls-law",
+      "hyrums-law",
+      "eaglesons-law"
+    ]
+  },
+  {
+    "key": "designing-interface",
+    "en": "Designing an API or interface",
+    "ja": "API やインタフェースを設計する",
+    "laws": [
+      "hyrums-law",
+      "postels-law",
+      "principle-of-least-astonishment",
+      "leaky-abstractions",
+      "teslers-law"
+    ]
+  },
+  {
+    "key": "new-product",
+    "en": "Starting something new",
+    "ja": "新しいものを作り始める",
+    "laws": [
+      "working-backwards",
+      "yagni",
+      "galls-law",
+      "worse-is-better",
+      "xy-problem"
+    ]
+  },
+  {
+    "key": "choosing-tech",
+    "en": "Choosing a technology",
+    "ja": "技術を選ぶ",
+    "laws": [
+      "lindy-effect",
+      "cargo-cult-engineering",
+      "amaras-law",
+      "survivorship-bias"
+    ]
+  },
+  {
+    "key": "distributed",
+    "en": "Building a distributed system",
+    "ja": "分散システムを組む",
+    "laws": [
+      "fallacies-of-distributed-computing",
+      "cap-theorem",
+      "two-generals-problem",
+      "tail-at-scale"
+    ]
+  },
+  {
+    "key": "access-control",
+    "en": "Deciding who can do what",
+    "ja": "権限と秘密を設計する",
+    "laws": [
+      "principle-of-least-privilege",
+      "kerckhoffs-principle"
+    ]
   }
 ];
 
