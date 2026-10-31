@@ -472,7 +472,7 @@ export const laws: Law[] = [
         "note": "treating every anomaly as the start of a collapse burns out the on-call rotation, and an engineer who escalates everything is soon ignored; most anomalies really are the usual thing"
       },
       "guideline": "When an error occurs, ask: \"If this were the start of a total system collapse, what would the next 10 minutes look like?\" If that scares you, investigate now.",
-      "source": "No single originator; the term grew out of disaster-response research on why people delay evacuating. Amanda Ripley, *The Unthinkable: Who Survives When Disaster Strikes — and Why* (Crown, 2008) — the survey this entry relies on, including delay on 9/11 in the World Trade Center."
+      "source": "No single originator; the term grew out of disaster-response research on why people delay evacuating. Amanda Ripley, *The Unthinkable: Who Survives When Disaster Strikes — and Why* (Crown, 2008) — the survey this entry relies on, including delay on 9/11 in the World Trade Center. Hirotada Hirose, *Hito wa naze nigeokureru no ka* (Why People Are Late to Evacuate; Shueisha Shinsho, 2004, in Japanese) covers the same pattern."
     },
     "ja": {
       "title": "正常性バイアス",
@@ -483,7 +483,7 @@ export const laws: Law[] = [
         "note": "異常のたびに崩壊の始まりとして扱えばオンコールが燃え尽き、何でもエスカレーションする人はやがて相手にされなくなる。たいていの異常は本当にいつものことだ"
       },
       "guideline": "異常が起きたとき、「これがシステム全壊の始まりだとしたら、次の 10 分で何が起きるか？」を問え。その答えが恐ろしいなら、今すぐ調査せよ。",
-      "source": "特定の提唱者はいない。避難が遅れる理由を調べた災害研究から生まれた言葉である。Amanda Ripley『The Unthinkable: Who Survives When Disaster Strikes — and Why』(Crown, 2008) が本項の拠り所で、世界貿易センターでの避難の遅れも扱う。日本語では広瀬弘忠『人はなぜ逃げおくれるのか ―災害の心理学』(集英社新書, 2004) が定番の解説。"
+      "source": "特定の提唱者はいない。避難が遅れる理由を調べた災害研究から生まれた言葉である。Amanda Ripley『The Unthinkable: Who Survives When Disaster Strikes — and Why』(Crown, 2008) が本項の拠り所で、世界貿易センターでの避難の遅れも扱う。広瀬弘忠『人はなぜ逃げおくれるのか ―災害の心理学』(集英社新書, 2004) も同じ現象を扱う。"
     }
   },
   {
@@ -791,10 +791,10 @@ export const laws: Law[] = [
     "en": {
       "title": "Postel's Law",
       "concept": "Systems that assume every peer follows the spec exactly tend to be brittle against the first one that doesn't.",
-      "mechanism": "Specifications are incomplete and implementations are written by different people at different times. A receiver that rejects anything slightly off breaks against the first peer that read the spec differently; a sender that emits only the strict core gives receivers the least to disagree about. Postel's asymmetry made early internet implementations interoperate before the specs had settled.",
+      "mechanism": "Specifications are incomplete and implementations are written by different people at different times. A receiver that rejects anything slightly off breaks against the first peer that read the spec differently; a sender that emits only the strict core gives receivers the least to disagree about. Postel's asymmetry helped early internet implementations interoperate before the specs had settled.",
       "counter": {
         "name": "Maintaining Robust Protocols (RFC 9413)",
-        "note": "tolerating malformed input lets broken senders ship, every receiver then has to copy the tolerance, and the de facto protocol drifts from the spec; the IAB now recommends failing loudly on violations"
+        "note": "tolerating malformed input lets broken senders ship, every receiver then has to copy the tolerance, and the de facto protocol drifts from the spec; the IAB now asks protocol designers to keep maintaining their specifications so tolerance does not become permanent, and calls ignoring faulty input almost always the wrong fix"
       },
       "guideline": "Send exactly what the spec says. Accept small deviations at the edge only where they are documented and logged, and set a date to stop accepting them.",
       "source": "Jon Postel, *RFC 761* (DoD Standard TCP, January 1980) §2.10 — \"be conservative in what you do, be liberal in what you accept from others\". The same guidance appears in *RFC 760* (IP) §3.2 in different words, and verbatim again in *RFC 793* (1981)."
@@ -802,10 +802,10 @@ export const laws: Law[] = [
     "ja": {
       "title": "ポステルの法則",
       "concept": "相手が仕様どおりに動く前提のシステムは、最初の逸脱にもろくなりがちだ。",
-      "mechanism": "仕様は不完全で、実装は別々の人が別々の時期に書く。少しでも外れた入力を拒む受信側は、仕様を違うふうに読んだ最初の相手で壊れる。厳格な中核だけを送る送信側は、受信側が食い違う余地を最小にする。Postel のこの非対称が、仕様が固まる前の初期インターネットの実装どうしを相互運用させた。",
+      "mechanism": "仕様は不完全で、実装は別々の人が別々の時期に書く。少しでも外れた入力を拒む受信側は、仕様を違うふうに読んだ最初の相手で壊れる。厳格な中核だけを送る送信側は、受信側が食い違う余地を最小にする。Postel のこの非対称は、仕様が固まる前の初期インターネットの実装どうしが相互運用する助けになった。",
       "counter": {
         "name": "堅牢なプロトコルの維持（RFC 9413）",
-        "note": "不正な入力を許すと壊れた送信側がそのまま出荷され、受信側はみな同じ寛容さを真似るしかなくなり、事実上のプロトコルが仕様から離れていく。IAB は今では違反をはっきり失敗させることを勧めている"
+        "note": "不正な入力を許すと壊れた送信側がそのまま出荷され、受信側はみな同じ寛容さを真似るしかなくなり、事実上のプロトコルが仕様から離れていく。IAB は今では、寛容さが恒久化しないよう仕様を保守し続けることを設計者に求め、不正な入力を黙って受け流すのはほぼ常に誤った対処だとしている"
       },
       "guideline": "送るものは仕様どおりにせよ。受け取る側の小さな逸脱は、文書化しログに残す場合に限って境界で受け入れ、受け入れをやめる期日を決めよ。",
       "source": "Jon Postel『RFC 761』(DoD Standard TCP, 1980 年 1 月) §2.10。\"be conservative in what you do, be liberal in what you accept from others\" の出典。同じ趣旨は『RFC 760』(IP) §3.2 に別の言い回しで、『RFC 793』(1981) に同文で再掲される。"
@@ -1485,7 +1485,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Cunningham's Law",
       "concept": "People are quicker to correct a wrong answer than to answer a question.",
-      "mechanism": "Answering a question means admitting you have time to help a stranger; correcting a wrong answer feels like defending the record, and it costs less because the wrong answer already set out the structure. So a confident mistake draws replies that an open question does not. The law is itself an example: Cunningham never said it, and the misattribution spread faster than the correction.",
+      "mechanism": "Answering a question means admitting you have time to help a stranger; correcting a wrong answer feels like defending the record, and it costs less because the wrong answer already set out the structure. So a confident mistake draws replies that an open question does not. The law is itself an example: Cunningham disowns it, yet it still circulates under his name.",
       "counter": {
         "name": "Wrong Answers Persist",
         "note": "the correction does not always arrive, and the wrong answer gets copied and indexed in the meantime; in shared docs, a guess must be labeled as a guess"
@@ -1496,7 +1496,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "カニンガムの法則",
       "concept": "人は質問に答えるより、間違った答えを訂正するほうに熱心だ。",
-      "mechanism": "質問に答えるのは、見知らぬ人を助ける時間があると認めることだ。間違いを正すのは記録を守ることのように感じられ、しかも間違った答えがすでに骨組みを示しているので手間も少ない。だから、自信ありげな誤りには、開かれた質問には来ない返事が来る。この法則自体がその例だ。Cunningham はそう言っておらず、誤った帰属のほうが訂正より速く広まった。",
+      "mechanism": "質問に答えるのは、見知らぬ人を助ける時間があると認めることだ。間違いを正すのは記録を守ることのように感じられ、しかも間違った答えがすでに骨組みを示しているので手間も少ない。だから、自信ありげな誤りには、開かれた質問には来ない返事が来る。この法則自体がその例だ。Cunningham 本人は否定しているが、今も彼の名で出回っている。",
       "counter": {
         "name": "誤答は残る",
         "note": "訂正が来るとは限らず、その間に誤答は複製され、検索に載る。共有ドキュメントでは、推測は推測だと明記しなければならない"
@@ -1904,7 +1904,7 @@ export const laws: Law[] = [
       "mechanism": "\"Given enough eyeballs, all bugs are shallow.\" A defect that looks impossible to one person often becomes trivial when many independent perspectives are applied to it — provided the code is actually visible to those perspectives.",
       "counter": {
         "name": "Many Eyes, Few Looking",
-        "note": "visibility is not review; the Heartbleed bug sat in OpenSSL's public source for two years before its disclosure in 2014, because everyone assumed someone else was reading it, and some code needs a few paid, expert eyes rather than many casual ones"
+        "note": "visibility is not review; the Heartbleed bug sat in OpenSSL's public source for two years before its disclosure in 2014, and some code needs a few paid, expert eyes rather than many casual ones"
       },
       "guideline": "If the same class of bug keeps slipping through, the fix is not more careful review by the same people — it is exposing the code to more, differently-shaped eyes. Rotate reviewers, open up internal libraries, run bug bounties.",
       "source": "Eric S. Raymond, *The Cathedral and the Bazaar* (1999) — named for Linus Torvalds."
@@ -1915,7 +1915,7 @@ export const laws: Law[] = [
       "mechanism": "「十分な目玉があれば、あらゆるバグは浅い。」一人の目には不可能に見える欠陥も、独立した多くの視点が当たれば自明になる。ただし、その人たちが実際にコードを見られることが前提だ。",
       "counter": {
         "name": "目は多くても見ていない",
-        "note": "公開されていることはレビューされていることではない。Heartbleed のバグは 2014 年に公表されるまで 2 年間 OpenSSL の公開ソースにあったが、誰もが他の誰かが読んでいると思っていた。気軽な多くの目より、報酬を受けた少数の専門家の目が要るコードもある"
+        "note": "公開されていることはレビューされていることではない。Heartbleed のバグは 2014 年に公表されるまで 2 年間 OpenSSL の公開ソースにあった。気軽な多くの目より、報酬を受けた少数の専門家の目が要るコードもある"
       },
       "guideline": "ある型のバグが何度もすり抜けるなら、解決策は「同じ人による、より慎重なレビュー」ではない。形の違う多くの目にコードを晒せ。レビュアーをローテーションし、内部ライブラリを公開し、バウンティを開け。",
       "source": "Eric S. Raymond『The Cathedral and the Bazaar』(1999)。Linus Torvalds にちなんで名付けられた法則の出典。"
@@ -2462,7 +2462,7 @@ export const laws: Law[] = [
         "note": "Fowler's first law of distributed object design; the cheapest way to survive the eight fallacies is not to make the call remote in the first place"
       },
       "guideline": "Before shipping any cross-process call, name which of the eight assumptions you are relying on and add an explicit timeout, retry, and failure path for each.",
-      "source": "Bill Joy and Tom Lyon (the first four, Sun Microsystems, c. 1991); L. Peter Deutsch (5–7, 1994); James Gosling (the 8th, c. 1997)."
+      "source": "L. Peter Deutsch drafted seven at Sun Microsystems in 1994, folding in four \"Fallacies of Networked Computing\" already identified there by Bill Joy and Lyon (given as Dave Lyon in the source, often as Tom Lyon); James Gosling added the eighth around 1997 — Ingrid Van Den Hoogen, *Deutsch's Fallacies, 10 Years After* (Java Developer's Journal, 2004). Arnon Rotem-Gal-Oz, *Fallacies of Distributed Computing Explained* (2006), is the standard commentary."
     },
     "ja": {
       "title": "分散コンピューティングの誤謬",
@@ -2473,7 +2473,7 @@ export const laws: Law[] = [
         "note": "Fowler の分散オブジェクト設計の第一法則。8 つの誤謬を乗り切る最も安い方法は、そもそも呼び出しをリモートにしないことだ"
       },
       "guideline": "プロセス間呼び出しを出す前に、8つの仮定のどれに依存しているかを明示し、各々に明示的なタイムアウト・リトライ・失敗経路を与えよ。",
-      "source": "Bill Joy と Tom Lyon (最初の 4 つ、Sun Microsystems、1991 年頃)、L. Peter Deutsch (5〜7、1994 年)、James Gosling (8 つ目、1997 年頃)。"
+      "source": "L. Peter Deutsch が 1994 年に Sun Microsystems で 7 つにまとめた。そこには Bill Joy と Lyon (出典では Dave Lyon、Tom Lyon とされることも多い) が同社ですでに挙げていた「Fallacies of Networked Computing」の 4 つが含まれる。8 つ目は 1997 年頃に James Gosling が加えた。Ingrid Van Den Hoogen『Deutsch's Fallacies, 10 Years After』(Java Developer's Journal, 2004) が経緯の出典。解説の定番は Arnon Rotem-Gal-Oz『Fallacies of Distributed Computing Explained』(2006)。"
     }
   },
   {
@@ -4038,7 +4038,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Mechanisms, Not Good Intentions",
       "concept": "Asking people to try harder after a failure changes little, because the failure happened to people who were already trying.",
-      "mechanism": "Most mistakes are made by people who meant well and knew the rule, so telling them again adds nothing they lacked. Attention is finite and fades, so a fix that depends on someone remembering holds for a few weeks before the same error comes back. What changes behavior is a mechanism: a tool, its actual adoption, and inspection that checks whether it works. A checklist nobody reads is not a mechanism; a gate that blocks the merge is.",
+      "mechanism": "Many mistakes are made by people who meant well and knew the rule, so telling them again adds nothing they lacked. Attention is finite and fades, so a fix that depends on someone remembering often fades, and the same error comes back. What changes behavior is a mechanism: a tool, its actual adoption, and inspection that checks whether it works. A checklist nobody reads is not a mechanism; a gate that blocks the merge is.",
       "counter": {
         "name": "Resist Proxies",
         "note": "a mechanism can harden into the goal; once following the process is what gets judged, people defend a bad outcome by saying they followed it, and nobody asks whether the process still serves the result"
@@ -4049,7 +4049,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "善意ではなく仕組み",
       "concept": "失敗のあとで「もっと気をつけろ」と求めても、ほとんど何も変わらない。失敗した人は、もともと気をつけていたからだ。",
-      "mechanism": "ミスの多くは、善意があり、ルールも知っている人が起こす。だからもう一度言い聞かせても、その人に欠けていたものは何も足されない。注意力は有限で、時間とともに薄れる。誰かが覚えていることに頼る対策は数週間はもつが、やがて同じ誤りが戻ってくる。行動を変えるのは仕組みだ。道具、その道具が実際に使われていること（採用）、機能しているかを確かめる点検（検査）の三つがそろったものだ。誰も読まないチェックリストは仕組みではない。マージを止めるゲートは仕組みだ。",
+      "mechanism": "ミスの多くは、善意があり、ルールも知っている人が起こす。だからもう一度言い聞かせても、その人に欠けていたものは何も足されない。注意力は有限で、時間とともに薄れる。誰かが覚えていることに頼る対策は、しばしば薄れ、同じ誤りが戻ってくる。行動を変えるのは仕組みだ。道具、その道具が実際に使われていること（採用）、機能しているかを確かめる点検（検査）の三つがそろったものだ。誰も読まないチェックリストは仕組みではない。マージを止めるゲートは仕組みだ。",
       "counter": {
         "name": "代理指標に抗う",
         "note": "仕組みは、それ自体が目的に固まりうる。プロセスに従ったかどうかで評価されるようになると、人は悪い結果を「プロセスどおりにやった」と弁護し、そのプロセスがまだ結果の役に立っているかを誰も問わなくなる"
@@ -4087,22 +4087,22 @@ export const laws: Law[] = [
       "concept": "Letting anyone who sees an abnormality stop the line keeps a defect from traveling downstream, where it costs more to find and fix.",
       "mechanism": "A defect caught where it is made has one cause and an obvious fix; the same defect found three stations later is buried under work built on top of it, and the person who could explain it has moved on. Pressure to keep the line moving makes each worker discount what they saw and assume someone downstream will catch it. Toyota's jidoka moved the decision into the station: first a loom that stopped itself when a thread broke, later a cord any operator can pull to halt the line and light the andon board. The stop is not the point; it forces the abnormality to be examined while the evidence is still fresh.",
       "counter": {
-        "name": "Alarm Fatigue",
-        "note": "when the stop signal fires often or falsely, people learn to route around it, and throughput pressure turns every pull of the cord into a cost someone has to justify"
+        "name": "Throughput Pressure",
+        "note": "every stop costs output, and where a team is judged on throughput, pulling the cord becomes a cost someone has to justify, so a cord that fires often or falsely teaches people to route around it"
       },
       "guideline": "Make a red main-branch build, a failed canary or a breached SLO halt further merges or deploys for everyone, and let anyone pull that cord without asking permission. Keep the trigger narrow enough that it rarely fires falsely, and treat a stop that nobody investigates as a defect in the response, not in the person who pulled it.",
-      "source": "Toyota Motor Corporation, *Toyota Production System* (official page, global.toyota) — jidoka, the andon board and the stop cord any operator can pull, traced to Sakichi Toyoda's 1896 power loom that stopped when a weft thread broke; the page credits Taiichi Ohno (1912–1990) with establishing the system and the framework of Just-in-Time."
+      "source": "Toyota Motor Corporation, *Toyota Production System* (official page, global.toyota) — jidoka, the andon board and the stop cord any operator can pull, traced to the Toyoda Power Loom with a weft-breakage automatic stopping device, developed in 1896; the page credits Taiichi Ohno (1912–1990) with establishing the system and the framework of Just-in-Time."
     },
     "ja": {
       "title": "アンドン（ラインを止める）",
       "concept": "異常に気づいた人が誰でもラインを止められれば、欠陥は下流に流れず、見つけるのも直すのも高くつく前に捕まる。",
       "mechanism": "欠陥は、作られたその場で捕まえれば原因は一つで、直し方も明らかだ。三工程先で見つかった同じ欠陥は、その上に積まれた作業の下に埋もれ、事情を説明できた人はもう別の仕事をしている。ラインを動かし続けろという圧力があると、作業者は自分が見たものを軽く見積もり、下流の誰かが気づくだろうと考える。トヨタの自働化は、この判断を工程の中に移した。最初は糸が切れると自ら止まる織機、のちにはどの作業者でも引けばラインが止まり、アンドンが点灯する紐だ。止めること自体が目的なのではない。証拠が新しいうちに、異常を調べざるを得なくすることが目的だ。",
       "counter": {
-        "name": "アラーム疲れ",
-        "note": "停止の合図が頻繁に、あるいは誤って鳴ると、人はそれを迂回することを覚える。スループットへの圧力がかかると、紐を引くたびに誰かがその代償を説明させられるようになる"
+        "name": "スループットの圧力",
+        "note": "止めるたびに産出は減る。スループットで評価されるチームでは、紐を引くことは誰かが説明を求められるコストになり、頻繁に、あるいは誤って止まる紐は人にそれを迂回することを教える"
       },
       "guideline": "main ブランチのビルドが赤い、カナリアが失敗した、SLO を割った、といったときには、全員のマージやデプロイが止まるようにせよ。その紐は誰でも許可なく引けるようにせよ。誤発火がめったに起きない程度に条件を絞り、誰も調べない停止は、引いた人ではなく対応の側の欠陥として扱え。",
-      "source": "トヨタ自動車『トヨタ生産方式』(global.toyota の公式ページ)。自働化、アンドン (異常表示盤)、どの作業者も引ける停止紐の出典。その源流を、緯糸が切れると止まる豊田佐吉の動力織機 (1896 年) に求めている。同ページは大野耐一 (1912–1990) がこの方式と、ジャスト・イン・タイムの枠組みを確立したとしている。"
+      "source": "トヨタ自動車『トヨタ生産方式』(global.toyota の公式ページ)。自働化、アンドン (異常表示盤)、どの作業者も引ける停止紐の出典。その源流を、緯糸切断自動停止装置を備えた豊田式汽力織機 (1896 年開発) に求めている。同ページは大野耐一 (1912–1990) がこの方式と、ジャスト・イン・タイムの枠組みを確立したとしている。"
     }
   },
   {
@@ -4181,7 +4181,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Chaos Engineering",
       "concept": "Resilience that has never been exercised is a hypothesis, and production will test it whether or not you schedule the test.",
-      "mechanism": "Failover paths, retries and redundancy run only when something breaks, so they decay between failures: a config drifts, a dependency is added, a timeout changes, and nobody notices until the real outage. Staging cannot reproduce production's traffic, data and coupling, so a test there says little about the system people actually use. Injecting failure on purpose, in production, against a stated hypothesis about steady-state behavior, makes those weaknesses show up on a weekday afternoon with engineers watching instead of at 3 a.m. Netflix built Chaos Monkey early in its move to AWS to kill instances at random, so every service had to survive losing one.",
+      "mechanism": "Failover paths, retries and redundancy run only when something breaks, so they decay between failures: a config drifts, a dependency is added, a timeout changes, and nobody notices until the real outage. Staging cannot reproduce production's traffic, data and coupling, so a test there tells you less than you would hope about the system people actually use. Injecting failure on purpose, in production, against a stated hypothesis about steady-state behavior, makes those weaknesses show up on a weekday afternoon with engineers watching instead of at 3 a.m. Netflix built Chaos Monkey early in its move to AWS to kill instances at random, so every service had to survive losing one.",
       "counter": {
         "name": "First, Do No Harm",
         "note": "deliberately degrading a system real customers depend on spends their trust, and much of the same knowledge comes cheaper from fault-injection tests, game days and design review; on a system already known to be fragile an experiment only confirms what you knew, so fix it first"
@@ -4192,7 +4192,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "カオスエンジニアリング",
       "concept": "一度も試されていない耐障害性は仮説にすぎない。予定を組もうと組むまいと、本番がいずれそれを試す。",
-      "mechanism": "フェイルオーバー、リトライ、冗長構成は、何かが壊れたときにしか動かない。だから障害と障害の間に劣化する。設定がずれ、依存が増え、タイムアウトが変わっても、本物の障害が来るまで誰も気づかない。ステージングは本番のトラフィックもデータも結合も再現できないので、そこでの試験は人が実際に使うシステムについてほとんど何も語らない。定常状態についての仮説を立てたうえで本番に意図的に障害を注入すれば、弱点は深夜 3 時ではなく、エンジニアが見ている平日の午後に表に出る。Netflix は AWS への移行初期に、インスタンスを無作為に落とす Chaos Monkey を作り、どのサービスも一台失っても生き残るよう求めた。",
+      "mechanism": "フェイルオーバー、リトライ、冗長構成は、何かが壊れたときにしか動かない。だから障害と障害の間に劣化する。設定がずれ、依存が増え、タイムアウトが変わっても、本物の障害が来るまで誰も気づかない。ステージングは本番のトラフィックもデータも結合も再現できないので、そこでの試験が人が実際に使うシステムについて教えてくれることは、期待するより少ない。定常状態についての仮説を立てたうえで本番に意図的に障害を注入すれば、弱点は深夜 3 時ではなく、エンジニアが見ている平日の午後に表に出る。Netflix は AWS への移行初期に、インスタンスを無作為に落とす Chaos Monkey を作り、どのサービスも一台失っても生き残るよう求めた。",
       "counter": {
         "name": "まず害をなさない",
         "note": "実際の顧客が頼っているシステムをわざと劣化させれば、その信頼を代償にすることになる。同じ知見の多くは、障害注入テストやゲームデイ、設計レビューでもっと安く得られる。もろいと分かっているシステムで実験しても分かっていたことを確かめるだけなので、まず直せ"
@@ -4234,7 +4234,7 @@ export const laws: Law[] = [
         "note": "some failures (a leaked credential, a compliance breach, an irreversible deletion) cost too much to leave to judgment, and context does nothing for a newcomer who has not absorbed it yet"
       },
       "guideline": "When a team makes a call you would have made differently, ask what context they were missing before you write a rule, and fix the context first. Keep hard controls (approval gates, enforced policy) for decisions that are irreversible, unethical or a material risk, and record why each one exists so it can be removed when the reason goes away.",
-      "source": "Netflix, *Netflix Culture Memo* (jobs.netflix.com, current version c. 2024) — \"context not control\", \"highly aligned and loosely coupled\", and keeping rules to a minimum to avoid the process creep that comes with growth."
+      "source": "Netflix, *Netflix Culture Memo* (jobs.netflix.com, current version c. 2024), with the same principles set out in Reed Hastings & Erin Meyer, *No Rules Rules: Netflix and the Culture of Reinvention* (Penguin Press, 2020) — \"context not control\", \"highly aligned and loosely coupled\", and keeping rules to a minimum to avoid the process creep that comes with growth."
     },
     "ja": {
       "title": "統制ではなく文脈を",
@@ -4245,7 +4245,7 @@ export const laws: Law[] = [
         "note": "一部の失敗（認証情報の漏洩、コンプライアンス違反、取り消せない削除）は判断に任せるには高くつきすぎる。まだ文脈を身につけていない新人には役に立たない"
       },
       "guideline": "自分なら別の判断をしただろうという決定をチームが下したら、ルールを書く前に、彼らに欠けていた文脈は何かを問い、まず文脈を直せ。強い統制（承認ゲート、強制されるポリシー）は、取り返しのつかない決定、倫理に反する決定、重大なリスクを伴う決定に限れ。それぞれがなぜ存在するかを書き残し、理由が消えたら外せるようにせよ。",
-      "source": "Netflix『Netflix Culture Memo』(jobs.netflix.com, 2024 年頃の版)。「context not control」、「highly aligned and loosely coupled」、成長に伴うプロセスの肥大を避けるためにルールを最小限に保つという方針の出典。"
+      "source": "Netflix『Netflix Culture Memo』(jobs.netflix.com, 2024 年頃の版)。同じ原則は Reed Hastings & Erin Meyer『No Rules Rules: Netflix and the Culture of Reinvention』(Penguin Press, 2020) にもまとめられている。「context not control」、「highly aligned and loosely coupled」、成長に伴うプロセスの肥大を避けるためにルールを最小限に保つという方針の出典。"
     }
   },
   {
@@ -4280,7 +4280,7 @@ export const laws: Law[] = [
         "name": "Broken Windows Theory",
         "note": "a reviewer who waves each small flaw through because the change is a net improvement can still leave a codebase full of tolerated flaws, each one making the next easier to accept"
       },
-      "guideline": "Approve a change once it definitely leaves the code healthier than before, even if you would have written it differently. Prefix polish with \"Nit:\" so the author can skip it, and block only on what makes the code worse: never approve a change that definitely worsens overall code health.",
+      "guideline": "Approve a change once it definitely leaves the code healthier than before, even if you would have written it differently. Prefix polish with \"Nit:\" so the author can skip it, and block only on what makes the code worse: outside an emergency, do not approve a change that definitely worsens overall code health.",
       "source": "Google, \"The Standard of Code Review\", *Google Engineering Practices Documentation* (2019) — \"favor approving a CL once it is in a state where it definitely improves the overall code health\", \"there is no such thing as 'perfect' code—there is only better code\", and \"Nit:\" for optional comments."
     },
     "ja": {
@@ -4291,7 +4291,7 @@ export const laws: Law[] = [
         "name": "割れ窓理論",
         "note": "正味では改善だからと小さな欠点を一つずつ通していくと、許された欠点だらけのコードベースが残り、一つ通すたびに次を通しやすくなる"
       },
-      "guideline": "変更が以前よりコードを確実に健全にするなら、自分なら違う書き方をしたとしても承認せよ。磨き込みの指摘には「Nit:」を付けて作者が見送れるようにし、ブロックするのはコードを悪くする点だけにせよ。全体としてのコードの健全性を確実に悪くする変更は決して承認するな。",
+      "guideline": "変更が以前よりコードを確実に健全にするなら、自分なら違う書き方をしたとしても承認せよ。磨き込みの指摘には「Nit:」を付けて作者が見送れるようにし、ブロックするのはコードを悪くする点だけにせよ。緊急時を除き、全体としてのコードの健全性を確実に悪くする変更は承認するな。",
       "source": "Google「The Standard of Code Review」『Google Engineering Practices Documentation』(2019)。\"favor approving a CL once it is in a state where it definitely improves the overall code health\"、\"there is no such thing as 'perfect' code—there is only better code\"、任意の指摘に付ける「Nit:」の出典。"
     }
   },
@@ -4415,7 +4415,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Fixed Time, Variable Scope",
       "concept": "When scope is fixed and time is not, the date slips and the scope stays; fixing the time instead forces a choice about what matters.",
-      "mechanism": "An estimate starts from a design and ends with a number, and the number is wrong in the same direction every time because the unknowns only surface once the work is under way. When the date slips, the scope stays, since every item already has an advocate and asking for more time feels cheaper than cutting something. Fixing the time first (what *Shape Up* calls the appetite) turns the question from \"how long will this take\" into \"what is the best version we can ship in this much time\", so cutting scope becomes the normal move rather than an admission of failure. An overrun project that keeps getting extensions is the same force again, now fed by sunk cost.",
+      "mechanism": "An estimate starts from a design and ends with a number, and the number is usually wrong in the same direction because the unknowns only surface once the work is under way. When the date slips, the scope stays, since every item already has an advocate and asking for more time feels cheaper than cutting something. Fixing the time first (what *Shape Up* calls the appetite) turns the question from \"how long will this take\" into \"what is the best version we can ship in this much time\", so cutting scope becomes the normal move rather than an admission of failure. An overrun project that keeps getting extensions is the same force again, now fed by sunk cost.",
       "counter": {
         "name": "Quality as the Hidden Variable",
         "note": "under a fixed date a team that cannot or will not cut scope cuts tests, review and error handling instead, and some work (a protocol, a compliance requirement) has a floor below which no slice is worth shipping"
@@ -4426,7 +4426,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "時間を固定し、スコープを変える",
       "concept": "スコープを固定して時間を固定しないと、ずれるのは期日で、スコープは残る。時間を固定すれば、何が大事かを選ばざるを得なくなる。",
-      "mechanism": "見積りは設計から始まって数字で終わる。そしてその数字は毎回同じ方向に外れる。未知のことは作業が進んでから初めて表に出るからだ。期日がずれてもスコープは残る。どの項目にも推す人がいて、何かを削るより時間を延ばすほうが安く感じられる。先に時間を固定すると（『Shape Up』はこれを「アペタイト」と呼ぶ）、問いは「どれだけかかるか」から「この時間で出せる最良の版は何か」に変わり、スコープを削ることが失敗の告白ではなく普通の判断になる。超過したプロジェクトに延長を重ねるのも同じ力で、そこにサンクコストが拍車をかけている。",
+      "mechanism": "見積りは設計から始まって数字で終わる。そしてその数字はたいてい同じ方向に外れる。未知のことは作業が進んでから初めて表に出るからだ。期日がずれてもスコープは残る。どの項目にも推す人がいて、何かを削るより時間を延ばすほうが安く感じられる。先に時間を固定すると（『Shape Up』はこれを「アペタイト」と呼ぶ）、問いは「どれだけかかるか」から「この時間で出せる最良の版は何か」に変わり、スコープを削ることが失敗の告白ではなく普通の判断になる。超過したプロジェクトに延長を重ねるのも同じ力で、そこにサンクコストが拍車をかけている。",
       "counter": {
         "name": "隠れた変数としての品質",
         "note": "期日が固定されてもスコープを削れない、あるいは削らないチームは、代わりにテストやレビュー、エラー処理を削る。また、プロトコルやコンプライアンス要件のように、それ以下に切っては出す意味のない下限がある仕事もある"
@@ -4461,7 +4461,7 @@ export const laws: Law[] = [
     },
     "en": {
       "title": "Strangler Fig",
-      "concept": "Replacing a live system piece by piece around its edges is far safer than replacing it all at once.",
+      "concept": "Replacing a live system piece by piece around its edges is usually safer than replacing it all at once.",
       "mechanism": "A complete rewrite has to reproduce years of behavior nobody wrote down, while users keep needing features the old system must still deliver, so the target moves while the new system is not yet usable. Nothing reaches production until the end, so the risk and the value both land on a cutover day that often never comes. Routing one capability at a time to new code keeps each step small enough to verify and roll back, and each step starts paying back as soon as it lands. The price is transitional architecture: interception layers and adapters built to be thrown away.",
       "counter": {
         "name": "Clean Cutover",
@@ -4472,7 +4472,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ストラングラーフィグ",
-      "concept": "稼働中のシステムは、一度に置き換えるより、周縁から少しずつ置き換えるほうがはるかに安全だ。",
+      "concept": "稼働中のシステムは、一度に置き換えるより、周縁から少しずつ置き換えるほうがたいてい安全だ。",
       "mechanism": "全面的な書き直しは、誰も書き残していない何年分もの挙動を再現しなければならない。その間も利用者は新しい機能を必要とし、それは古いシステムに足すしかないので、新システムが使えるようになる前に目標が動いていく。最後まで本番に何も出ないので、リスクも価値も切り替え日に一度に来る。そしてその日は来ないことが多い。機能を一つずつ新しいコードへ回せば、一歩ごとに検証も切り戻しもできる大きさに収まり、出したそばから元が取れ始める。代償は移行用のアーキテクチャだ。捨てる前提で作る振り分け層やアダプタである。",
       "counter": {
         "name": "一括切り替え",
