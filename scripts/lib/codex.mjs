@@ -85,6 +85,8 @@ export function loadCodex({ file = join(ROOT, 'data', 'laws.yaml') } = {}) {
       if (ref === law.slug) fail(`${at}: see_also refers to itself`);
     }
 
+    if (law?.featured !== undefined && typeof law.featured !== 'boolean') fail(`${at}: featured must be true or false`);
+
     for (const locale of LOCALES) {
       const loc = law?.[locale];
       if (!loc) {
@@ -156,6 +158,7 @@ export function loadCodex({ file = join(ROOT, 'data', 'laws.yaml') } = {}) {
     ...law,
     number: index + 1,
     see_also: law.see_also ?? [],
+    featured: law.featured === true,
   }));
 
   return { tags, situations, laws: numbered, problems };
@@ -169,4 +172,44 @@ export function requireCodex() {
     throw new Error(`data/laws.yaml is invalid:\n  - ${codex.problems.join('\n  - ')}`);
   }
   return codex;
+}
+
+/**
+ * data/figures.yaml: who or what pictures each law on the website. Returned as
+ * a map from slug, with the problems found, so validate.mjs can gate it and
+ * generate.mjs can read it with the same rules.
+ */
+const FIGURE_KEYS = new Set(['slug', 'kind', 'name', 'image', 'logo', 'license', 'author', 'page', 'focus', 'viewbox']);
+
+export function loadFigures({ file = join(ROOT, 'data', 'figures.yaml') } = {}) {
+  const raw = parse(readFileSync(file, 'utf8'));
+  const problems = [];
+  const figures = new Map();
+  for (const [i, f] of (raw?.figures ?? []).entries()) {
+    if (!f || typeof f !== 'object') {
+      problems.push(`figures[${i}]: not a mapping`);
+      continue;
+    }
+    const at = f.slug ?? `figures[${i}]`;
+    const unknown = Object.keys(f).filter((k) => !FIGURE_KEYS.has(k));
+    if (unknown.length) problems.push(`${at}: unknown field(s) ${unknown.join(', ')}`);
+    for (const key of ['image', 'logo', 'page']) {
+      if (f[key] !== undefined && !/^https:\/\/\S+$/.test(f[key])) problems.push(`${at}: ${key} must be an https URL`);
+    }
+    if (!f?.slug || !SLUG_RE.test(f.slug)) problems.push(`${at}: bad slug`);
+    if (figures.has(f.slug)) problems.push(`${at}: duplicate`);
+    if (!['person', 'scene', 'company', 'none'].includes(f.kind)) problems.push(`${at}: kind must be person, scene, company or none`);
+    if (f.kind !== 'none' && !f.name) problems.push(`${at}: ${f.kind} needs a name`);
+    if (f.image && !['person', 'scene'].includes(f.kind)) problems.push(`${at}: only a person or a scene has an image`);
+    if (f.kind === 'scene' && !f.image) problems.push(`${at}: a scene needs an image`);
+    if (f.logo && f.kind !== 'company') problems.push(`${at}: only a company has a logo`);
+    if (f.kind === 'company' && !f.logo) problems.push(`${at}: company needs a logo`);
+    if (f.viewbox && !(f.logo && /^-?[\d.]+( -?[\d.]+){3}$/.test(f.viewbox))) problems.push(`${at}: viewbox needs an SVG logo and four numbers`);
+    if (f.focus && !(f.image && [f.focus.x, f.focus.y].every((v) => v >= 0 && v <= 1) && (f.focus.zoom ?? 1) >= 1)) {
+      problems.push(`${at}: focus needs an image, x and y in 0..1, zoom >= 1`);
+    }
+    if ((f.image || f.logo) && !f.license) problems.push(`${at}: an image needs its licence`);
+    figures.set(f.slug, f);
+  }
+  return { figures, problems };
 }

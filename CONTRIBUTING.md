@@ -4,9 +4,9 @@ Corrections are the most valuable thing you can send. A law credited to the wron
 
 ## The one rule
 
-**`data/laws.yaml` is the only content file you edit.**
+**`data/laws.yaml` and `data/figures.yaml` are the only content files you edit.**
 
-`README.md`, `translations/ja.md` and `website/src/data/laws.ts` are generated from it. CI regenerates them and fails if what you committed differs, so editing them by hand cannot merge.
+`README.md`, `translations/ja.md` and `website/src/data/laws.ts` are generated from them. CI regenerates them and fails if what you committed differs, so editing them by hand cannot merge.
 
 ```bash
 npm install
@@ -75,9 +75,45 @@ Notes on the fields:
 - **`see_also`** must be reciprocated. If A lists B, B lists A — `npm run validate` warns when it is not.
 - **`ja`** is required. A law that only exists in one language leaves the two codices asserting different things, which is exactly the drift this repository is built to prevent. If you cannot write the Japanese, say so in the pull request and it can be filled in for you.
 
+- **`featured: true`** puts a law in the "Editor's picks" at the top of the site. It is the maintainer's call; leave it out of contributed entries.
 - **`situations`** (top of the file) are the "start from a situation" entry points: a label in each locale and the laws worth reading for it. When a new law answers a situation that is already listed, add its slug there.
 
 Long values use YAML's `|-` block form. Do not hard-wrap prose; one paragraph is one line.
+
+## Picturing a law
+
+Every law has an entry in `data/figures.yaml`, and `npm run validate` fails without one. It decides the round picture shown next to the law on the website:
+
+- **`kind: person`**: the originator. Give `name`, and `image` if a freely licensed photo exists.
+- **`kind: scene`**: no free photo of the originator exists, so a freely licensed picture of what the law is about (the cobra for the Cobra Effect). `name` describes it.
+- **`kind: company`**: the practice comes from an organisation. `logo` is its current official mark, in its own colours. When the file is a wide lockup, `viewbox` crops an SVG to the symbol.
+- **`kind: none`**: no single originator. The site draws a seal from the title.
+
+Without an image or logo, the site draws a monogram seal in the law's category colour, so a missing picture never looks broken.
+
+Photos and scenes must be freely licensed: public domain, CC0, CC BY or CC BY-SA. No fair-use, NC or ND files, even if Wikipedia shows them. Company marks are trademarks shown only to say where a practice comes from; take the mark from Wikimedia Commons where it is there as a public-domain text logo, otherwise from the company's own published assets, and say which in `license`. Record `license`, `author` and `page` (the file's description page); the article prints them under its source. Wikimedia Commons is the usual place to look. Check the licence on the file page itself, not on the article that embeds it.
+
+```yaml
+  - slug: some-law
+    kind: person
+    name: "Jane Doe"
+    image: "https://upload.wikimedia.org/wikipedia/commons/…/Jane_Doe.jpg"
+    license: "CC BY-SA 4.0"
+    author: "Photographer Name"
+    page: "https://commons.wikimedia.org/wiki/File:Jane_Doe.jpg"
+    focus: { x: 0.5, y: 0.3, zoom: 1.5 }   # optional: face centre and zoom
+```
+
+Images are not hot-linked. Fetch them, look at the result, and commit what lands in `website/public/figures/`:
+
+```bash
+npm --prefix website install    # the fetch uses the site's image library
+npm run fetch:figures           # download and process anything new
+npm run fetch:figures -- some-law   # reprocess one, e.g. after changing focus
+npm run generate
+```
+
+Originals are cached in `.cache/figures/` (ignored by git), so adjusting a `focus` does not download again.
 
 ## Correcting a source
 

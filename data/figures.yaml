@@ -1,0 +1,650 @@
+# Who or what each law is pictured by on the website.
+#
+# kind: person  — the originator. `image` is a freely licensed photo; when it
+#                 is absent the site draws a monogram seal from `name`.
+# kind: scene   — no free photo of the originator exists, so a freely licensed
+#                 picture of what the law is about; `name` describes it.
+# kind: company — the organisation the practice comes from; `logo` is its current
+#                 official mark in its own colours. `viewbox` crops an SVG mark to
+#                 its symbol when the file is a wide lockup.
+# focus:        — optional {x, y, zoom} crop for a photo whose face is small or
+#                 off-centre; see scripts/fetch-figures.mjs.
+# kind: none    — no single originator; the site draws a seal from the title.
+#
+# Images are not hot-linked. `npm run fetch:figures` downloads them and writes
+# the processed files to website/public/figures/, which are committed. Every
+# non-PD image carries its author and licence, shown under the article's source.
+
+figures:
+  - slug: type-1-vs-type-2-decisions
+    kind: company
+    name: "Amazon"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
+  - slug: normalization-of-deviance
+    kind: person
+    name: "Diane Vaughan"
+  - slug: chestertons-fence
+    kind: person
+    name: "G. K. Chesterton"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Gilbert_Chesterton.jpg/500px-Gilbert_Chesterton.jpg"
+    license: "Public domain"
+    author: "Ernest Herbert Mills"
+    page: "https://commons.wikimedia.org/wiki/File:Gilbert_Chesterton.jpg"
+  - slug: normalcy-bias
+    kind: person
+    name: "Amanda Ripley"
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/63/Amanda_Ripley_-_PopTech_2012.jpg"
+    license: "CC BY-SA 2.0"
+    author: "Thatcher Cook for PopTech"
+    page: "https://commons.wikimedia.org/wiki/File:Amanda_Ripley_-_PopTech_2012.jpg"
+    focus: { x: 0.51, y: 0.37, zoom: 1.6 }
+  - slug: law-of-triviality
+    kind: person
+    name: "C. Northcote Parkinson"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Cyril_Northcote_Parkinson_1961.jpg/500px-Cyril_Northcote_Parkinson_1961.jpg"
+    license: "CC BY-SA 3.0 NL"
+    author: "Wim van Rossem for Anefo"
+    page: "https://commons.wikimedia.org/wiki/File:Cyril_Northcote_Parkinson_1961.jpg"
+  - slug: galls-law
+    kind: scene
+    name: "Wright Flyer, first flight, 1903"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/First_flight2.jpg/500px-First_flight2.jpg"
+    license: "Public domain"
+    author: "John T. Daniels (Library of Congress)"
+    page: "https://commons.wikimedia.org/wiki/File:First_flight2.jpg"
+    focus: { x: 0.55, y: 0.43, zoom: 1.3 }
+  - slug: conways-law
+    kind: person
+    name: "Melvin E. Conway"
+  - slug: hyrums-law
+    kind: person
+    name: "Hyrum Wright"
+  - slug: brooks-law
+    kind: person
+    name: "Fred Brooks"
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Fred_Brooks_%28cropped_square%29.jpg"
+    license: "CC BY-SA 3.0"
+    author: "SD&M (www.sdm.de)"
+    page: "https://commons.wikimedia.org/wiki/File:Fred_Brooks_(cropped_square).jpg"
+    focus: { x: 0.48, y: 0.22, zoom: 2.2 }
+  - slug: xy-problem
+    kind: person
+    name: "Eric S. Raymond"
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Eric_S_Raymond_portrait.jpg"
+    license: "CC BY-SA 2.0"
+    author: "jerone2 (Flickr); derivative by Bilby"
+    page: "https://commons.wikimedia.org/wiki/File:Eric_S_Raymond_portrait.jpg"
+    focus: { x: 0.48, y: 0.38, zoom: 1.3 }
+  - slug: postels-law
+    kind: person
+    name: "Jon Postel"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Jon_Postel_sitting_in_office_%28cropped%29.jpg/500px-Jon_Postel_sitting_in_office_%28cropped%29.jpg"
+    license: "CC BY 2.0"
+    author: "Carl Malamud"
+    page: "https://commons.wikimedia.org/wiki/File:Jon_Postel_sitting_in_office_(cropped).jpg"
+  - slug: hanlons-razor
+    kind: person
+    name: "Robert A. Heinlein"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Robert_A._Heinlein_%28Doubleday_photo%29_%28retouched%29.jpg/500px-Robert_A._Heinlein_%28Doubleday_photo%29_%28retouched%29.jpg"
+    license: "Public domain"
+    author: "Photographer unknown, published by Doubleday"
+    page: "https://commons.wikimedia.org/wiki/File:Robert_A._Heinlein_(Doubleday_photo)_(retouched).jpg"
+    focus: { x: 0.52, y: 0.43, zoom: 1.3 }
+  - slug: hofstadters-law
+    kind: person
+    name: "Douglas Hofstadter"
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/16/Douglas_Hofstadter%2C_Stanford_2006_%28crop%29.jpg"
+    license: "CC BY-SA 2.0"
+    author: "null0"
+    page: "https://commons.wikimedia.org/wiki/File:Douglas_Hofstadter,_Stanford_2006_(crop).jpg"
+    focus: { x: 0.47, y: 0.33, zoom: 2 }
+  - slug: goodharts-law
+    kind: person
+    name: "Charles Goodhart"
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/94/Charles_Goodhart_delives_the_2012_Long_Finance_conference_keynote_speech.JPG"
+    license: "CC BY-SA 3.0"
+    author: "Jamesfranklingresham"
+    page: "https://commons.wikimedia.org/wiki/File:Charles_Goodhart_delives_the_2012_Long_Finance_conference_keynote_speech.JPG"
+    focus: { x: 0.56, y: 0.25, zoom: 2.5 }
+  - slug: lindy-effect
+    kind: person
+    name: "Nassim Nicholas Taleb"
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Nassim_Nicholas_Taleb_DLD_2009-012_%28cropped%29.jpg"
+    license: "CC BY-SA 2.0"
+    author: "Eirik Solheim / NRKbeta"
+    page: "https://commons.wikimedia.org/wiki/File:Nassim_Nicholas_Taleb_DLD_2009-012_(cropped).jpg"
+    focus: { x: 0.58, y: 0.2, zoom: 2 }
+  - slug: sunk-cost-fallacy
+    kind: person
+    name: "Richard H. Thaler"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Richard_Thaler_Chatham.jpg/500px-Richard_Thaler_Chatham.jpg"
+    license: "CC BY 2.0"
+    author: "Chatham House"
+    page: "https://commons.wikimedia.org/wiki/File:Richard_Thaler_Chatham.jpg"
+    focus: { x: 0.48, y: 0.4, zoom: 1 }
+  - slug: cargo-cult-engineering
+    kind: person
+    name: "Richard Feynman"
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/1a/RichardFeynman-PaineMansionWoods1984_copyrightTamikoThiel_bw.jpg"
+    license: "CC BY-SA 3.0"
+    author: "Tamiko Thiel"
+    page: "https://commons.wikimedia.org/wiki/File:RichardFeynman-PaineMansionWoods1984_copyrightTamikoThiel_bw.jpg"
+    focus: { x: 0.37, y: 0.25, zoom: 1.8 }
+  - slug: amdahls-law
+    kind: person
+    name: "Gene Amdahl"
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/79/Amdahl_march_13_2008.jpg"
+    license: "CC BY 3.0"
+    author: "Perry Kivolowitz"
+    page: "https://commons.wikimedia.org/wiki/File:Amdahl_march_13_2008.jpg"
+    focus: { x: 0.58, y: 0.3, zoom: 1.8 }
+  - slug: leaky-abstractions
+    kind: person
+    name: "Joel Spolsky"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Joel_Spolsky_2014-06-18_%28cropped%29.jpg/500px-Joel_Spolsky_2014-06-18_%28cropped%29.jpg"
+    license: "CC BY-SA 4.0"
+    author: "Katie Chan"
+    page: "https://commons.wikimedia.org/wiki/File:Joel_Spolsky_2014-06-18_(cropped).jpg"
+    focus: { x: 0.5, y: 0.47, zoom: 1 }
+  - slug: pareto-principle
+    kind: person
+    name: "Vilfredo Pareto"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Vilfredo_Pareto_1870s2.jpg/500px-Vilfredo_Pareto_1870s2.jpg"
+    license: "Public domain"
+    author: "Unknown author"
+    page: "https://commons.wikimedia.org/wiki/File:Vilfredo_Pareto_1870s2.jpg"
+  - slug: survivorship-bias
+    kind: person
+    name: "Abraham Wald"
+    image: "https://upload.wikimedia.org/wikipedia/en/0/05/Abraham_Wald_in_his_youth.jpg"
+    license: "Public domain in the US"
+    author: "Unknown"
+    page: "https://en.wikipedia.org/wiki/File:Abraham_Wald_in_his_youth.jpg"
+  - slug: kernighans-law
+    kind: person
+    name: "Brian Kernighan"
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Brian_Kernighan_at_VCF_East_2.jpg"
+    license: "CC0"
+    author: "Jw12321"
+    page: "https://commons.wikimedia.org/wiki/File:Brian_Kernighan_at_VCF_East_2.jpg"
+    focus: { x: 0.55, y: 0.37, zoom: 2.2 }
+  - slug: cobra-effect
+    kind: scene
+    name: "Indian cobra (Naja naja)"
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/84/Indian_Cobra%2C_crop.jpg"
+    license: "CC BY-SA 3.0"
+    author: "Pavan Kumar N (Simplypavi)"
+    page: "https://commons.wikimedia.org/wiki/File:Indian_Cobra,_crop.jpg"
+    focus: { x: 0.6, y: 0.36, zoom: 1.6 }
+  - slug: dunbars-number
+    kind: person
+    name: "Robin Dunbar"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Robin_Dunbar_%286293027302%29.jpg/500px-Robin_Dunbar_%286293027302%29.jpg"
+    license: "CC BY-SA 2.0"
+    author: "Festival della Scienza from Genova"
+    page: "https://commons.wikimedia.org/wiki/File:Robin_Dunbar_(6293027302).jpg"
+  - slug: worse-is-better
+    kind: person
+    name: "Richard P. Gabriel"
+  - slug: cunninghams-law
+    kind: person
+    name: "Ward Cunningham"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Ward_Cunningham_-_Commons-1_%28cropped%29.jpg/500px-Ward_Cunningham_-_Commons-1_%28cropped%29.jpg"
+    license: "CC BY-SA 3.0"
+    author: "Carrigg Photography for the Wikimedia Foundation"
+    page: "https://commons.wikimedia.org/wiki/File:Ward_Cunningham_-_Commons-1_(cropped).jpg"
+  - slug: bystander-effect
+    kind: person
+    name: "John M. Darley"
+  - slug: murphys-law
+    kind: person
+    name: "John Paul Stapp"
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a3/John_Stapp.triddle.jpg"
+    license: "Public domain (US government work)"
+    author: "U.S. Air Force"
+    page: "https://commons.wikimedia.org/wiki/File:John_Stapp.triddle.jpg"
+    focus: { x: 0.5, y: 0.32, zoom: 1.15 }
+  - slug: boy-scout-rule
+    kind: person
+    name: "Robert C. Martin"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Robert_C._Martin_surrounded_by_computers_%28cropped%29.jpg/500px-Robert_C._Martin_surrounded_by_computers_%28cropped%29.jpg"
+    license: "CC BY-SA 4.0"
+    author: "Angelacleancoder"
+    page: "https://commons.wikimedia.org/wiki/File:Robert_C._Martin_surrounded_by_computers_(cropped).jpg"
+  - slug: teslers-law
+    kind: person
+    name: "Larry Tesler"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Larry_Tesler_Smiles_at_Whisper.jpeg/500px-Larry_Tesler_Smiles_at_Whisper.jpeg"
+    license: "CC BY 2.0"
+    author: "Yahoo! Blog from Sunnyvale, California, USA"
+    page: "https://commons.wikimedia.org/wiki/File:Larry_Tesler_Smiles_at_Whisper.jpeg"
+    focus: { x: 0.66, y: 0.5, zoom: 1 }
+  - slug: dunning-kruger-effect
+    kind: person
+    name: "David Dunning"
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d2/David_Dunning_at_LiliCon_2026.jpg"
+    license: "CC BY-SA 4.0"
+    author: "Karl Withakay"
+    page: "https://commons.wikimedia.org/wiki/File:David_Dunning_at_LiliCon_2026.jpg"
+    focus: { x: 0.51, y: 0.22, zoom: 2.2 }
+  - slug: curse-of-knowledge
+    kind: person
+    name: "George Loewenstein"
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/11/George_Loewenstein_%282012%29.jpg"
+    license: "CC BY 3.0"
+    author: "Me Judice (MeJudice)"
+    page: "https://commons.wikimedia.org/wiki/File:George_Loewenstein_(2012).jpg"
+    focus: { x: 0.51, y: 0.35, zoom: 1.3 }
+  - slug: swiss-cheese-model
+    kind: scene
+    name: "Emmentaler cheese block"
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Emmentaler_aoc_block.jpg"
+    license: "CC BY-SA 2.0"
+    author: "Dieter Seeger"
+    page: "https://commons.wikimedia.org/wiki/File:Emmentaler_aoc_block.jpg"
+  - slug: premature-optimization
+    kind: person
+    name: "Donald Knuth"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Donald_Ervin_Knuth_%28cropped%29.jpg/500px-Donald_Ervin_Knuth_%28cropped%29.jpg"
+    license: "CC BY-SA 2.0"
+    author: "Alex Handy"
+    page: "https://commons.wikimedia.org/wiki/File:Donald_Ervin_Knuth_(cropped).jpg"
+  - slug: linus-law
+    kind: person
+    name: "Linus Torvalds"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg/500px-LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg"
+    license: "CC BY-SA 4.0"
+    author: "Krd (photo); Von Sprat (crop)"
+    page: "https://commons.wikimedia.org/wiki/File:LinuxCon_Europe_Linus_Torvalds_03_(cropped).jpg"
+  - slug: cap-theorem
+    kind: person
+    name: "Eric Brewer"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/TNW_Con_EU15_-_Eric_Brewer_%28scientist%29-2.jpg/500px-TNW_Con_EU15_-_Eric_Brewer_%28scientist%29-2.jpg"
+    license: "CC BY-SA 4.0"
+    author: "Vera de Kok"
+    page: "https://commons.wikimedia.org/wiki/File:TNW_Con_EU15_-_Eric_Brewer_(scientist)-2.jpg"
+  - slug: littles-law
+    kind: scene
+    name: "Checkout queue at a food store"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Waiting_in_line_at_a_food_store.JPG/500px-Waiting_in_line_at_a_food_store.JPG"
+    license: "CC BY-SA 3.0"
+    author: "David Shankbone"
+    page: "https://commons.wikimedia.org/wiki/File:Waiting_in_line_at_a_food_store.JPG"
+  - slug: two-generals-problem
+    kind: person
+    name: "Jim Gray"
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/76/Jim_Gray_Computing_in_the_21st_Century_2006.jpg"
+    license: "CC BY-SA 3.0 US"
+    author: "Microsoft Research"
+    page: "https://commons.wikimedia.org/wiki/File:Jim_Gray_Computing_in_the_21st_Century_2006.jpg"
+    focus: { x: 0.62, y: 0.5, zoom: 2.5 }
+  - slug: peter-principle
+    kind: person
+    name: "Laurence J. Peter"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Laurence_J._Peter%2C_1975.jpg/500px-Laurence_J._Peter%2C_1975.jpg"
+    license: "CC BY 4.0"
+    author: "Larry Bessel"
+    page: "https://commons.wikimedia.org/wiki/File:Laurence_J._Peter,_1975.jpg"
+    focus: { x: 0.5, y: 0.4, zoom: 1 }
+  - slug: parkinsons-law
+    kind: person
+    name: "C. Northcote Parkinson"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Cyril_Northcote_Parkinson_1961.jpg/500px-Cyril_Northcote_Parkinson_1961.jpg"
+    license: "CC BY-SA 3.0 NL"
+    author: "Wim van Rossem for Anefo"
+    page: "https://commons.wikimedia.org/wiki/File:Cyril_Northcote_Parkinson_1961.jpg"
+  - slug: wirths-law
+    kind: person
+    name: "Niklaus Wirth"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Niklaus_Wirth%2C_UrGU.jpg/500px-Niklaus_Wirth%2C_UrGU.jpg"
+    license: "Free use with attribution"
+    author: "Tyomitch"
+    page: "https://commons.wikimedia.org/wiki/File:Niklaus_Wirth,_UrGU.jpg"
+  - slug: ninety-ninety-rule
+    kind: scene
+    name: "Bell Laboratories, Murray Hill / New Providence, NJ"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Bell_Laboratories_at_New_Providence%2C_New_Jersey_%287235324892%29_%28cropped%29.jpg/500px-Bell_Laboratories_at_New_Providence%2C_New_Jersey_%287235324892%29_%28cropped%29.jpg"
+    license: "CC BY-SA 2.0"
+    author: "Ken Lund"
+    page: "https://commons.wikimedia.org/wiki/File:Bell_Laboratories_at_New_Providence,_New_Jersey_(7235324892)_(cropped).jpg"
+  - slug: eaglesons-law
+    kind: scene
+    name: "Punched-card program deck (c.1969)"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Punched_card_program_deck.agr.jpg/500px-Punched_card_program_deck.agr.jpg"
+    license: "CC BY-SA 3.0"
+    author: "Arnold Reinhold"
+    page: "https://commons.wikimedia.org/wiki/File:Punched_card_program_deck.agr.jpg"
+  - slug: hicks-law
+    kind: person
+    name: "Ray Hyman"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Rayhyman.jpg/500px-Rayhyman.jpg"
+    license: "CC BY-SA 3.0"
+    author: "Rouven Schäfer"
+    page: "https://commons.wikimedia.org/wiki/File:Rayhyman.jpg"
+    focus: { x: 0.48, y: 0.44, zoom: 1.3 }
+  - slug: fitts-law
+    kind: person
+    name: "Paul M. Fitts"
+    image: "https://quod.lib.umich.edu/cgi/i/image/api/tile/bhl:HS15404:HS15404/full/full/0/default.jpg"
+    license: "CC BY 4.0"
+    author: "University of Michigan / Bentley Historical Library"
+    page: "https://quod.lib.umich.edu/b/bhl/x-hs15404/hs15404"
+    focus: { x: 0.5, y: 0.35, zoom: 1.6 }
+  - slug: millers-law
+    kind: scene
+    name: "Rotary telephone dial (seven-digit phone numbers)"
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/04c093_rotary_dial_abc.jpg"
+    license: "Public domain"
+    author: "RHaworth (en.wikipedia)"
+    page: "https://commons.wikimedia.org/wiki/File:04c093_rotary_dial_abc.jpg"
+    focus: { x: 0.5, y: 0.5, zoom: 1 }
+  - slug: fallacies-of-distributed-computing
+    kind: person
+    name: "James Gosling"
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/James_Gosling_2008.jpg"
+    license: "CC BY-SA 4.0"
+    author: "Peter Campbell"
+    page: "https://commons.wikimedia.org/wiki/File:James_Gosling_2008.jpg"
+    focus: { x: 0.44, y: 0.25, zoom: 1.8 }
+  - slug: ironies-of-automation
+    kind: scene
+    name: "Nuclear power plant control room"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Nuclear_power_plant_control_room_%2815856397259%29.jpg/500px-Nuclear_power_plant_control_room_%2815856397259%29.jpg"
+    license: "CC BY 2.0"
+    author: "Nuclear Regulatory Commission from US"
+    page: "https://commons.wikimedia.org/wiki/File:Nuclear_power_plant_control_room_(15856397259).jpg"
+    focus: { x: 0.55, y: 0.45, zoom: 1.3 }
+  - slug: principle-of-least-privilege
+    kind: scene
+    name: "Keys"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Four_Skeleton_Keys_on_a_blue_background_%2851865175725%29.jpg/500px-Four_Skeleton_Keys_on_a_blue_background_%2851865175725%29.jpg"
+    license: "CC BY 2.0"
+    author: "Cindy Shebley"
+    page: "https://commons.wikimedia.org/wiki/File:Four_Skeleton_Keys_on_a_blue_background_(51865175725).jpg"
+    focus: { x: 0.5, y: 0.5, zoom: 1 }
+  - slug: kerckhoffs-principle
+    kind: person
+    name: "Auguste Kerckhoffs"
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/83/Auguste_Kerckhoffs.jpg"
+    license: "Public domain"
+    author: "Unknown author"
+    page: "https://commons.wikimedia.org/wiki/File:Auguste_Kerckhoffs.jpg"
+    focus: { x: 0.5, y: 0.32, zoom: 1.1 }
+  - slug: gustafsons-law
+    kind: person
+    name: "John Gustafson"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/John_L_Gustafson_CEO.jpg/500px-John_L_Gustafson_CEO.jpg"
+    license: "CC BY-SA 3.0"
+    author: "Davisourus at English Wikipedia"
+    page: "https://commons.wikimedia.org/wiki/File:John_L_Gustafson_CEO.jpg"
+    focus: { x: 0.47, y: 0.38, zoom: 1.05 }
+  - slug: tail-at-scale
+    kind: person
+    name: "Jeffrey Dean"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Jeff_Dean_in_2025_x.jpg/500px-Jeff_Dean_in_2025_x.jpg"
+    license: "CC BY-SA 4.0"
+    author: "Cmichel67"
+    page: "https://commons.wikimedia.org/wiki/File:Jeff_Dean_in_2025_x.jpg"
+  - slug: ashbys-law
+    kind: person
+    name: "W. Ross Ashby"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/W._Ross_Ashby_%281948%29.jpg/500px-W._Ross_Ashby_%281948%29.jpg"
+    license: "Public domain"
+    author: "Unknown author"
+    page: "https://commons.wikimedia.org/wiki/File:W._Ross_Ashby_(1948).jpg"
+  - slug: law-of-demeter
+    kind: scene
+    name: "Head of the goddess Demeter (Dion, 4th c. BC)"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Head_of_the_Goddess_Demeter.JPG/500px-Head_of_the_Goddess_Demeter.JPG"
+    license: "Public domain"
+    author: "Ophelia2 (Wikimedia Commons user); sculptor anonymous"
+    page: "https://commons.wikimedia.org/wiki/File:Head_of_the_Goddess_Demeter.JPG"
+    focus: { x: 0.49, y: 0.48, zoom: 1.4 }
+  - slug: jevons-paradox
+    kind: person
+    name: "William Stanley Jevons"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/William_Stanley_Jevons_portrait_extract.jpg/500px-William_Stanley_Jevons_portrait_extract.jpg"
+    license: "CC BY-SA 4.0"
+    author: "Unknown (via University of Manchester Libraries)"
+    page: "https://commons.wikimedia.org/wiki/File:William_Stanley_Jevons_portrait_extract.jpg"
+  - slug: normal-accident-theory
+    kind: scene
+    name: "Three Mile Island Nuclear Generating Station"
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Three_Mile_Island_%28color%29-2.jpg"
+    license: "Public domain (US government work)"
+    author: "United States Department of Energy"
+    page: "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_(color)-2.jpg"
+    focus: { x: 0.43, y: 0.22, zoom: 1.5 }
+  - slug: broken-windows-theory
+    kind: scene
+    name: "Broken window"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Broken_window_large.jpg/500px-Broken_window_large.jpg"
+    license: "CC BY-SA 3.0"
+    author: "Tomas Castelazo"
+    page: "https://commons.wikimedia.org/wiki/File:Broken_window_large.jpg"
+    focus: { x: 0.45, y: 0.45, zoom: 1.2 }
+  - slug: yagni
+    kind: person
+    name: "Ron Jeffries"
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Ron_Jeffries.jpg"
+    license: "CC BY-SA 3.0"
+    author: "Michael Hüttermann"
+    page: "https://commons.wikimedia.org/wiki/File:Ron_Jeffries.jpg"
+  - slug: kiss-principle
+    kind: person
+    name: "Kelly Johnson"
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/ea/ClarenceLeonardKellyJohnson.jpg"
+    license: "Public domain"
+    author: "CIA"
+    page: "https://commons.wikimedia.org/wiki/File:ClarenceLeonardKellyJohnson.jpg"
+    focus: { x: 0.58, y: 0.3, zoom: 1.8 }
+  - slug: dry-principle
+    kind: person
+    name: "Andy Hunt"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Andy_Hunt_programmer.jpg/500px-Andy_Hunt_programmer.jpg"
+    license: "CC BY-SA 3.0"
+    author: "Kittie Rue"
+    page: "https://commons.wikimedia.org/wiki/File:Andy_Hunt_programmer.jpg"
+  - slug: theory-of-constraints
+    kind: person
+    name: "Eliyahu M. Goldratt"
+  - slug: occams-razor
+    kind: person
+    name: "William of Ockham"
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/70/William_of_Ockham.png"
+    license: "CC BY-SA 3.0"
+    author: "Moscarlop"
+    page: "https://commons.wikimedia.org/wiki/File:William_of_Ockham.png"
+  - slug: single-responsibility-principle
+    kind: person
+    name: "Robert C. Martin"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Robert_C._Martin_surrounded_by_computers_%28cropped%29.jpg/500px-Robert_C._Martin_surrounded_by_computers_%28cropped%29.jpg"
+    license: "CC BY-SA 4.0"
+    author: "Angelacleancoder"
+    page: "https://commons.wikimedia.org/wiki/File:Robert_C._Martin_surrounded_by_computers_(cropped).jpg"
+  - slug: principle-of-least-astonishment
+    kind: person
+    name: "Mike Cowlishaw"
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/05/Mike_Cowlishaw_2005.jpg"
+    license: "CC BY-SA 3.0"
+    author: "Mfc (Mike Cowlishaw)"
+    page: "https://commons.wikimedia.org/wiki/File:Mike_Cowlishaw_2005.jpg"
+    focus: { x: 0.44, y: 0.33, zoom: 1.3 }
+  - slug: second-system-effect
+    kind: person
+    name: "Fred Brooks"
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Fred_Brooks_%28cropped_square%29.jpg"
+    license: "CC BY-SA 3.0"
+    author: "SD&M (www.sdm.de)"
+    page: "https://commons.wikimedia.org/wiki/File:Fred_Brooks_(cropped_square).jpg"
+    focus: { x: 0.48, y: 0.22, zoom: 2.2 }
+  - slug: moores-law
+    kind: person
+    name: "Gordon Moore"
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Gordon_Moore_1978_%28cropped%29.png"
+    license: "CC BY-SA 2.0"
+    author: "Intel Free Press"
+    page: "https://commons.wikimedia.org/wiki/File:Gordon_Moore_1978_(cropped).png"
+    focus: { x: 0.46, y: 0.3, zoom: 1.6 }
+  - slug: amaras-law
+    kind: person
+    name: "Roy Amara"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Roy_Amara%2C_RIT_NandE_Vol12Num31_1980_Sep25_Complete.jpg/500px-Roy_Amara%2C_RIT_NandE_Vol12Num31_1980_Sep25_Complete.jpg"
+    license: "Public domain"
+    author: "Rochester Institute of Technology"
+    page: "https://commons.wikimedia.org/wiki/File:Roy_Amara,_RIT_NandE_Vol12Num31_1980_Sep25_Complete.jpg"
+    focus: { x: 0.5, y: 0.36, zoom: 1.05 }
+  - slug: the-bitter-lesson
+    kind: person
+    name: "Richard S. Sutton"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/SD_2025_-_Richard_Sutton_01_%28cropped%29.jpg/500px-SD_2025_-_Richard_Sutton_01_%28cropped%29.jpg"
+    license: "CC BY-SA 4.0"
+    author: "Xuthoria"
+    page: "https://commons.wikimedia.org/wiki/File:SD_2025_-_Richard_Sutton_01_(cropped).jpg"
+  - slug: metcalfes-law
+    kind: person
+    name: "Robert Metcalfe"
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/85/With_Bob_Metcalfe_%28cropped%29.jpg"
+    license: "CC BY-SA 3.0"
+    author: "Andreu Veà, WiWiW.org"
+    page: "https://commons.wikimedia.org/wiki/File:With_Bob_Metcalfe_(cropped).jpg"
+    focus: { x: 0.5, y: 0.36, zoom: 1.15 }
+  - slug: ringelmann-effect
+    kind: person
+    name: "Maximilien Ringelmann"
+  - slug: shirky-principle
+    kind: person
+    name: "Clay Shirky"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Etech05_Clay2_%28cropped%29.jpg/500px-Etech05_Clay2_%28cropped%29.jpg"
+    license: "CC BY 2.0"
+    author: "James Duncan Davidson from Portland, USA"
+    page: "https://commons.wikimedia.org/wiki/File:Etech05_Clay2_(cropped).jpg"
+  - slug: error-budget
+    kind: company
+    name: "Google"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
+  - slug: toil
+    kind: company
+    name: "Google"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
+  - slug: blameless-postmortem
+    kind: company
+    name: "Etsy"
+    logo: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4d/c1/c3/4dc1c3c7-0eef-4976-1884-8a9b2d6d85a6/Placeholder.mill/1024x1024bb.png"
+    license: "© Etsy, Inc."
+    page: "https://apps.apple.com/us/app/etsy-shop-from-real-people/id477128284"
+  - slug: working-backwards
+    kind: company
+    name: "Amazon"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
+  - slug: disagree-and-commit
+    kind: company
+    name: "Amazon"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
+  - slug: you-build-it-you-run-it
+    kind: company
+    name: "Amazon"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
+  - slug: static-stability
+    kind: company
+    name: "Amazon Web Services"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Amazon_Web_Services_2025.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_2025.svg"
+  - slug: avoid-fallback
+    kind: company
+    name: "Amazon Web Services"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Amazon_Web_Services_2025.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_2025.svg"
+  - slug: constant-work
+    kind: company
+    name: "Amazon Web Services"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Amazon_Web_Services_2025.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_2025.svg"
+  - slug: mechanisms-not-good-intentions
+    kind: company
+    name: "Amazon"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
+  - slug: andon
+    kind: company
+    name: "Toyota"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Toyota_Symbol.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Toyota_Symbol.svg"
+  - slug: five-whys
+    kind: person
+    name: "Taiichi Ohno"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Ohno-Taiichi-1.jpg/500px-Ohno-Taiichi-1.jpg"
+    license: "Public domain in Japan"
+    author: "Toyota Motor Corporation company history editorial committee"
+    page: "https://commons.wikimedia.org/wiki/File:Ohno-Taiichi-1.jpg"
+    focus: { x: 0.48, y: 0.36, zoom: 1.3 }
+  - slug: chaos-engineering
+    kind: company
+    name: "Netflix"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/1/18/Netflix_2016_N_logo.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Netflix_2016_N_logo.svg"
+  - slug: context-not-control
+    kind: company
+    name: "Netflix"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/1/18/Netflix_2016_N_logo.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Netflix_2016_N_logo.svg"
+  - slug: code-health-standard
+    kind: company
+    name: "Google"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
+  - slug: beyonce-rule
+    kind: company
+    name: "Google"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
+  - slug: churn-rule
+    kind: company
+    name: "Google"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
+  - slug: fixed-time-variable-scope
+    kind: company
+    name: "37signals"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/37signals_logo.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:37signals_logo.svg"
+    viewbox: "763 0 300 300"
+  - slug: strangler-fig
+    kind: person
+    name: "Martin Fowler"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Martin_Fowler_%282008%29.jpg/500px-Martin_Fowler_%282008%29.jpg"
+    license: "CC BY 2.0"
+    author: "Ade Oshineye"
+    page: "https://commons.wikimedia.org/wiki/File:Martin_Fowler_(2008).jpg"
+    focus: { x: 0.4, y: 0.38, zoom: 1.2 }
+  - slug: choose-boring-technology
+    kind: person
+    name: "Dan McKinley"
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Dan_McKinley_-_Wikimedia_Dev_Summit_2018.png"
+    license: "CC BY-SA 4.0"
+    author: "Michael Holloway"
+    page: "https://commons.wikimedia.org/wiki/File:Dan_McKinley_-_Wikimedia_Dev_Summit_2018.png"
+    focus: { x: 0.73, y: 0.43, zoom: 2.5 }
