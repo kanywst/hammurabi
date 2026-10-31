@@ -71,7 +71,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `06` | [Gall's Law](#galls-law) | Systems | Complex systems that work grew from simple systems that worked; designed ones don't. |
 | `07` | [Conway's Law](#conways-law) | Organization | Systems end up shaped like the communication paths of the teams that build them. |
 | `08` | [Hyrum's Law](#hyrums-law) | Systems | With enough users, every observable behavior of a system, bugs included, is depended on. |
-| `09` | [Brooks' Law](#brooks-law) | Organization | Adding people to a late project makes it later, because ramp-up and coordination cost more than the new people add. |
+| `09` | [Brooks' Law](#brooks-law) | Organization | Adding people to a late project tends to make it later, because ramp-up and coordination cost more than they add. |
 | `10` | [XY Problem](#xy-problem) | Cognition | People ask for help with their attempted fix instead of the problem they actually have. |
 | `11` | [Postel's Law](#postels-law) | Distributed Systems | Systems that assume every peer follows the spec exactly break on the first one that doesn't. |
 | `12` | [Hanlon's Razor](#hanlons-razor) | Organization | We read malice into delays and bugs that are better explained by fatigue or missing context. |
@@ -239,7 +239,7 @@ The architecture is downstream of the communication structure, not the org chart
 
 `§ 09` · Organization
 
-- **Concept:** Adding people to a late project makes it later, because ramp-up and coordination cost more than the new people add.
+- **Concept:** Adding people to a late project tends to make it later, because ramp-up and coordination cost more than they add.
 - **Mechanism:** Adding people to a late project increases communication overhead quadratically (n(n-1)/2 communication channels for n people). New people take more time from veterans than they contribute.
 - **Counter:** **Scope Cutting**.
 - **Guideline:** If a project is late, do not add people. Remove features or push the date.
@@ -905,7 +905,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Mechanism:** Moore's observation was economic rather than physical: the component count giving the lowest cost per component doubles about every two years. It held for half a century and quietly underwrote every plan that assumed hardware would rescue it — but single-thread performance stopped following it once Dennard scaling ended around 2005.
 - **Counter:** **Wirth's Law** — the gains get spent rather than banked, and clock speed stopped rising long before transistor counts did.
 - **Guideline:** Do not budget for the hardware bailing out a design. If the workload is single-threaded and latency-bound, next year's machine will not save it — you have to parallelise it or do less work.
-- **Source:** Gordon E. Moore, *Cramming More Components onto Integrated Circuits* (Electronics, 19 April 1965). — [source ↗](https://en.wikipedia.org/wiki/Moore%27s_law)
+- **Source:** Gordon E. Moore, *Cramming More Components onto Integrated Circuits* (Electronics, 19 April 1965), which projected a doubling every year; Moore revised it to every two years in *Progress in Digital Integrated Electronics* (IEDM, 1975). — [source ↗](https://en.wikipedia.org/wiki/Moore%27s_law)
 - **See also:** [Wirth's Law](#wirths-law) · [Gustafson's Law](#gustafsons-law) · [The Bitter Lesson](#the-bitter-lesson)
 
 ### Amara's Law
@@ -1013,8 +1013,8 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 
 - **Concept:** Waiting for everyone to agree is often slower than committing and correcting course if the call turns out wrong.
 - **Mechanism:** When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate nobody can know the answer anyway. A dissenter who keeps arguing can also half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating "do you agree" from "will you commit" lets the disagreement be stated fully and the work still go ahead at full effort.
-- **Counter:** **Dissent on One-Way Doors** — for an irreversible decision, or one with a safety or ethical risk, committing should not end the objection; escalate instead of going quiet.
-- **Guideline:** State your disagreement once, in full, with your reasons. Then say "I disagree and commit" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you.
+- **Counter:** **Groupthink** — a culture that prizes commitment teaches people to stop objecting early, and silent compliance hides the dissent that would have caught the error.
+- **Guideline:** State your disagreement once, in full, with your reasons. Then say "I disagree and commit" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you. For an irreversible decision, or one with a safety or ethical risk, do not commit quietly: escalate.
 - **Source:** Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — "use the phrase 'disagree and commit'", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and it is also attributed to Intel. — [source ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
 - **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Law of Triviality](#law-of-triviality)
 

@@ -526,7 +526,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Brooks' Law",
-      "concept": "Adding people to a late project makes it later, because ramp-up and coordination cost more than the new people add.",
+      "concept": "Adding people to a late project tends to make it later, because ramp-up and coordination cost more than they add.",
       "mechanism": "Adding people to a late project increases communication overhead quadratically (n(n-1)/2 communication channels for n people). New people take more time from veterans than they contribute.",
       "counter": {
         "name": "Scope Cutting"
@@ -536,7 +536,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ブルックスの法則",
-      "concept": "遅れたプロジェクトに人を足すと、立ち上がりと調整のコストが新しい人の寄与を上回り、さらに遅れる。",
+      "concept": "遅れたプロジェクトに人を足すと、立ち上がりと調整のコストが寄与を上回り、かえって遅れがちだ。",
       "mechanism": "遅れているプロジェクトに人を追加すると、調整コストが二次関数的に増大する（n 人で n(n-1)/2 本の通信路）。新人はベテランの手を止めるため、貢献よりも損失が上回る。",
       "counter": {
         "name": "スコープ削減"
@@ -1565,7 +1565,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "イーグルソンの法則",
-      "concept": "半年見ていない自分のコードは、他人が書いたコードと変わらない。",
+      "concept": "半年見ていない自分のコードは、他人が書いたコードも同然だ。",
       "mechanism": "「半年見ていない自分のコードは、他人が書いたも同然である。」コードそのものより遥かに速く、頭の中のメンタルモデルは蒸発する。文脈はソースには保存されない。",
       "counter": {
         "name": "ADR / 自己説明的なコード / 「なぜ」を記すコメント"
@@ -2296,7 +2296,7 @@ export const laws: Law[] = [
         "note": "the gains get spent rather than banked, and clock speed stopped rising long before transistor counts did"
       },
       "guideline": "Do not budget for the hardware bailing out a design. If the workload is single-threaded and latency-bound, next year's machine will not save it — you have to parallelise it or do less work.",
-      "source": "Gordon E. Moore, *Cramming More Components onto Integrated Circuits* (Electronics, 19 April 1965)."
+      "source": "Gordon E. Moore, *Cramming More Components onto Integrated Circuits* (Electronics, 19 April 1965), which projected a doubling every year; Moore revised it to every two years in *Progress in Digital Integrated Electronics* (IEDM, 1975)."
     },
     "ja": {
       "title": "ムーアの法則",
@@ -2307,7 +2307,7 @@ export const laws: Law[] = [
         "note": "得られた余力は貯金されず消費される。しかもクロック速度はトランジスタ数よりずっと早く頭打ちになった"
       },
       "guideline": "ハードウェアが設計を救ってくれる前提で予算を組むな。ワークロードがシングルスレッドかつレイテンシ律速なら、来年のマシンは助けにならない。並列化するか、やる仕事を減らすかだ。",
-      "source": "Gordon E. Moore『Cramming More Components onto Integrated Circuits』(Electronics, 1965年4月19日)。"
+      "source": "Gordon E. Moore『Cramming More Components onto Integrated Circuits』(Electronics, 1965年4月19日) は毎年の倍増を予測した。2年ごとへの修正は『Progress in Digital Integrated Electronics』(IEDM, 1975)。"
     }
   },
   {
@@ -2616,10 +2616,10 @@ export const laws: Law[] = [
       "concept": "Waiting for everyone to agree is often slower than committing and correcting course if the call turns out wrong.",
       "mechanism": "When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate nobody can know the answer anyway. A dissenter who keeps arguing can also half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating \"do you agree\" from \"will you commit\" lets the disagreement be stated fully and the work still go ahead at full effort.",
       "counter": {
-        "name": "Dissent on One-Way Doors",
-        "note": "for an irreversible decision, or one with a safety or ethical risk, committing should not end the objection; escalate instead of going quiet"
+        "name": "Groupthink",
+        "note": "a culture that prizes commitment teaches people to stop objecting early, and silent compliance hides the dissent that would have caught the error"
       },
-      "guideline": "State your disagreement once, in full, with your reasons. Then say \"I disagree and commit\" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you.",
+      "guideline": "State your disagreement once, in full, with your reasons. Then say \"I disagree and commit\" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you. For an irreversible decision, or one with a safety or ethical risk, do not commit quietly: escalate.",
       "source": "Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — \"use the phrase 'disagree and commit'\", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and it is also attributed to Intel."
     },
     "ja": {
@@ -2627,10 +2627,10 @@ export const laws: Law[] = [
       "concept": "全員の同意を待つより、決めて実行し、誤りなら軌道修正するほうが速いことが多い。",
       "mechanism": "合意を求める集団では、決定は最も粘る懐疑派の速度でしか進まない。しかも議論の終盤では、誰にも正解は分からない。議論に負けた反対者が、決まった方針を半端にしか実行しないこともあり、どちらが正しかったにせよ結果を悪くする。「同意するか」と「コミットするか」を分ければ、反対は全部言い切ったうえで、実行は全力で進められる。",
       "counter": {
-        "name": "一方向のドアでは反対を続ける",
-        "note": "取り返しのつかない決定や、安全・倫理上のリスクがある決定では、コミットしても異議を取り下げるべきではない。黙るのではなくエスカレーションせよ"
+        "name": "集団浅慮",
+        "note": "コミットを重んじる文化では、人は早々に反対をやめることを覚える。黙って従えば、誤りを見つけたはずの異論が表に出なくなる"
       },
-      "guideline": "反対意見は一度、理由とともに全部言え。そのうえで「反対だがコミットする」と宣言し、自分の案だったかのように実行せよ。立場が上の人も同じことをせよ。チームに自分を説得させるのではなく、チームの判断を支えよ。",
+      "guideline": "反対意見は一度、理由とともに全部言え。そのうえで「反対だがコミットする」と宣言し、自分の案だったかのように実行せよ。立場が上の人も同じことをせよ。チームに自分を説得させるのではなく、チームの判断を支えよ。ただし取り返しのつかない決定や、安全・倫理上のリスクがある決定では、黙ってコミットせずエスカレーションせよ。",
       "source": "Jeff Bezos『2016 年 株主への手紙』（Amazon.com, Inc.、2017 年）。\"use the phrase 'disagree and commit'\" と Amazon Studios の例。語句自体は Amazon 以前からある。Karen Southwick『High Noon』(1999) は Sun Microsystems の Scott McNealy がこの語を使っていたと記しており、Intel 発祥とする説もある。"
     }
   }
