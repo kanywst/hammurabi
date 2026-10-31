@@ -73,7 +73,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `08` | [Hyrum's Law](#hyrums-law) | Systems | With enough users, every observable behavior of a system, bugs included, is depended on. |
 | `09` | [Brooks' Law](#brooks-law) | Organization | Adding people to a late project tends to make it later, because ramp-up and coordination cost more than they add. |
 | `10` | [XY Problem](#xy-problem) | Cognition | People ask for help with their attempted fix instead of the problem they actually have. |
-| `11` | [Postel's Law](#postels-law) | Distributed Systems | Systems that assume every peer follows the spec exactly break on the first one that doesn't. |
+| `11` | [Postel's Law](#postels-law) | Distributed Systems | Systems that assume every peer follows the spec exactly tend to be brittle against the first one that doesn't. |
 | `12` | [Hanlon's Razor](#hanlons-razor) | Organization | We read malice into delays and bugs that are better explained by fatigue or missing context. |
 | `13` | [Hofstadter's Law](#hofstadters-law) | Estimation | Work takes longer than estimated, even when the estimate already allows for that. |
 | `14` | [Goodhart's Law](#goodharts-law) | Incentives | A number stops measuring well once people are rewarded for moving it. |
@@ -86,7 +86,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `21` | [Survivorship Bias](#survivorship-bias) | Cognition | Conclusions drawn only from successes ignore the failures that used the same strategy. |
 | `22` | [Kernighan's Law](#kernighans-law) | Maintainability | Debugging is harder than writing, so code written at your cleverest is beyond your debugging. |
 | `23` | [Cobra Effect](#cobra-effect) | Incentives | An incentive meant to reduce a problem rewards people for producing more of it. |
-| `24` | [Dunbar's Number](#dunbars-number) | Organization | People keep only about 150 stable relationships; past the size where everyone shares context, added people go into coordination. |
+| `24` | [Dunbar's Number](#dunbars-number) | Organization | People keep only about 150 stable relationships, and engineers extrapolate that past shared context, headcount goes to coordination. |
 | `25` | [Worse is Better](#worse-is-better) | Systems | A simpler design that is easy to build and adopt tends to beat a more correct but complex one. |
 | `26` | [Cunningham's Law](#cunninghams-law) | Organization | People are quicker to correct a wrong answer than to answer a question. |
 | `27` | [Bystander Effect](#bystander-effect) | Organization | The more people who see a problem, the less likely any one of them is to act on it. |
@@ -119,7 +119,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `54` | [Law of Demeter](#law-of-demeter) | Maintainability | Code that reaches through other objects' internals breaks when anything in the chain changes. |
 | `55` | [Jevons Paradox](#jevons-paradox) | Incentives | Making a resource cheaper to use can increase how much of it is used in total. |
 | `56` | [Normal Accident Theory](#normal-accident-theory) | Safety | In complex, tightly coupled systems, accidents are built into the structure. |
-| `57` | [Broken Windows Theory](#broken-windows-theory) | Safety | Visible disorder left unrepaired signals that standards are optional, inviting more. |
+| `57` | [Broken Windows Theory](#broken-windows-theory) | Safety | Visible disorder left unrepaired can signal that standards are optional, inviting more. |
 | `58` | [YAGNI](#yagni) | Maintainability | Code built for imagined future needs costs time now and rarely fits the need that arrives. |
 | `59` | [KISS Principle](#kiss-principle) | Maintainability | A system has to be simple enough for an ordinary person to fix under bad conditions. |
 | `60` | [DRY Principle](#dry-principle) | Maintainability | Knowledge kept in two places drifts apart, because nothing makes the copies change together. |
@@ -261,7 +261,7 @@ The architecture is downstream of the communication structure, not the org chart
 
 `§ 11` · Distributed Systems
 
-- **Concept:** Systems that assume every peer follows the spec exactly break on the first one that doesn't.
+- **Concept:** Systems that assume every peer follows the spec exactly tend to be brittle against the first one that doesn't.
 - **Mechanism:** In a distributed system, assuming everyone follows the spec perfectly leads to brittle failures.
 - **Counter:** **Fail-Fast (Internal only)**.
 - **Guideline:** Be conservative in what you send (strict compliance) and liberal in what you accept (handle messy inputs gracefully).
@@ -404,7 +404,7 @@ The architecture is downstream of the communication structure, not the org chart
 
 `§ 24` · Organization
 
-- **Concept:** People keep only about 150 stable relationships; past the size where everyone shares context, added people go into coordination.
+- **Concept:** People keep only about 150 stable relationships, and engineers extrapolate that past shared context, headcount goes to coordination.
 - **Mechanism:** Humans can maintain approximately 150 stable social relationships. Dunbar's result is about neocortex size and group size across primates — it is not about work teams. What engineering extrapolates from it is a separate argument: communication channels grow as n(n-1)/2, so past the size where everyone can still hold everyone else's context, added people go into coordination rather than output.
 - **Counter:** **Two-Pizza Rule / Team Topologies**.
 - **Guideline:** When a team exceeds 7±2 people, split it. If "information-sharing meetings" start multiplying, that's the symptom of exceeding the cognitive limit.
@@ -802,7 +802,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 
 `§ 57` · Safety
 
-- **Concept:** Visible disorder left unrepaired signals that standards are optional, inviting more.
+- **Concept:** Visible disorder left unrepaired can signal that standards are optional, inviting more.
 - **Mechanism:** An unrepaired broken window signals that nobody is watching, which lowers the cost of the next violation. In a codebase, one tolerated hack, one skipped test and one permanently silenced alert together announce that the standard is optional.
 - **Counter:** **Repair Is Not Free** — attention spent on paint is attention not spent on the foundation, and the criminological evidence for the original claim is contested.
 - **Guideline:** Repair the first visible defect in a file you are already touching, and give every tolerated exception an owner and a date. Do not open a refactor for a window you are not standing next to.
