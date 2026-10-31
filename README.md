@@ -442,7 +442,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 26` · Organization
 
 - **Concept:** People are quicker to correct a wrong answer than to answer a question.
-- **Mechanism:** Answering a question means admitting you have time to help a stranger; correcting a wrong answer feels like defending the record, and it costs less because the wrong answer already set out the structure. So a confident mistake draws replies that an open question does not. The law is itself an example: Cunningham disowns it, yet it still circulates under his name.
+- **Mechanism:** A plausible reading: answering a question means admitting you have time to help a stranger; correcting a wrong answer feels like defending the record, and it costs less because the wrong answer already set out the structure. So a confident mistake draws replies that an open question does not. The law is itself an example: Cunningham disowns it, yet it still circulates under his name.
 - **Counter:** **Wrong Answers Persist** — the correction does not always arrive, and the wrong answer gets copied and indexed in the meantime; in shared docs, a guess must be labeled as a guess.
 - **Guideline:** When documentation is missing, write your best understanding, mark it as unverified, and send it to the person most likely to know.
 - **Source:** Steven McGeady, comment on a New York Times blog (2010), recalling advice Ward Cunningham gave him in the early 1980s about Usenet. Cunningham disowns it: "a misquote that disproves itself by propagating through the internet as Cunningham's Law." — [source ↗](https://meta.wikimedia.org/wiki/Cunningham%27s_Law)
@@ -653,7 +653,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 - **Mechanism:** "Any code of your own that you haven't looked at for six months might as well have been written by someone else." Your mental model of the code evaporates far faster than the code does; context is not stored in the source.
 - **Counter:** **Comments Rot** — the code is the only description that is guaranteed current; a comment or ADR that is not maintained becomes a confident lie, which is worse than nothing.
 - **Guideline:** Write code and commit messages for the stranger you will become in six months. If a decision is not obvious from the code, record the *why* in a comment or an ADR — not just in your head.
-- **Source:** Programming folklore attributed to Peter Eagleson; a long-circulated adage among the cataloged "laws of software development." — [source ↗](https://wiki.c2.com/?EaglesonsLaw)
+- **Source:** Origin unknown. Programming folklore attributed to a Peter Eagleson, of whom nothing else is recorded; the line circulates in collections of programming laws, with no first publication found. — [source ↗](https://wiki.c2.com/?EaglesonsLaw)
 - **See also:** [Chesterton's Fence](#chestertons-fence) · [Kernighan's Law](#kernighans-law)
 
 ### Hick's Law
@@ -683,10 +683,10 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 46` · Cognition
 
 - **Concept:** Working memory holds only a handful of chunks (Miller said about seven; later estimates are lower).
-- **Mechanism:** "The Magical Number Seven, Plus or Minus Two" — human working memory holds only about seven chunks at once. Cross that limit and recall collapses; the brain drops items rather than slowing down.
+- **Mechanism:** Miller put the span of immediate memory at about seven chunks; later work, notably Cowan (2001), puts working memory nearer four. Either way the limit is small, and past it people drop items rather than slow down.
 - **Counter:** **Too Much Chunking** — every grouping is a level of indirection; split a short list into named groups and people now have to remember the groups as well.
 - **Guideline:** Group related items into a handful of named chunks — phone-number style — wherever a person must hold state in their head: function arguments, form fields, menu groups, on-call steps.
-- **Source:** George A. Miller, *The Magical Number Seven, Plus or Minus Two* (Psychological Review, 1956). — [source ↗](https://doi.org/10.1037/h0043158)
+- **Source:** George A. Miller, *The Magical Number Seven, Plus or Minus Two* (Psychological Review, 1956); Nelson Cowan, *The magical number 4 in short-term memory: A reconsideration of mental storage capacity* (Behavioral and Brain Sciences, 2001) — the lower estimate. — [source ↗](https://doi.org/10.1037/h0043158)
 - **See also:** [Dunbar's Number](#dunbars-number) · [Hick's Law](#hicks-law)
 
 ### Fallacies of Distributed Computing
@@ -694,7 +694,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 47` · Distributed Systems
 
 - **Concept:** Networked code quietly assumes eight things about the network that are false in production.
-- **Mechanism:** Newcomers to distributed systems silently assume the network is reliable, latency is zero, bandwidth is infinite, the network is secure, topology is stable, there is one administrator, transport cost is zero, and the network is homogeneous. Every one of these eight assumptions fails in production.
+- **Mechanism:** Newcomers to distributed systems silently assume the network is reliable, latency is zero, bandwidth is infinite, the network is secure, topology is stable, there is one administrator, transport cost is zero, and the network is homogeneous. Each of these eight can fail in production, and the code that assumed it fails with it.
 - **Counter:** **Don't Distribute** — Fowler's first law of distributed object design; the cheapest way to survive the eight fallacies is not to make the call remote in the first place.
 - **Guideline:** Before shipping any cross-process call, name which of the eight assumptions you are relying on and add an explicit timeout, retry, and failure path for each.
 - **Source:** L. Peter Deutsch drafted seven at Sun Microsystems in 1994, folding in four "Fallacies of Networked Computing" already identified there by Bill Joy and Lyon (given as Dave Lyon in the source, often as Tom Lyon); James Gosling added the eighth around 1997 — Ingrid Van Den Hoogen, *Deutsch's Fallacies, 10 Years After* (Java Developer's Journal, 2004). Arnon Rotem-Gal-Oz, *Fallacies of Distributed Computing Explained* (2006), is the standard commentary. — [source ↗](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
@@ -873,7 +873,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 62` · Cognition
 
 - **Concept:** The explanation that needs the fewest unverified assumptions is usually the right one.
-- **Mechanism:** Under incident pressure the mind reaches for the interesting hypothesis — a kernel bug, a bad disk, an attacker. The explanation requiring the fewest unverified assumptions is almost always the deploy that went out twenty minutes ago.
+- **Mechanism:** Under incident pressure the mind reaches for the interesting hypothesis — a kernel bug, a bad disk, an attacker. The explanation requiring the fewest unverified assumptions is often the deploy that went out twenty minutes ago.
 - **Counter:** **Hickam's Dictum** — a system can carry several independent faults at once, and the simplest story that fits the symptoms is not automatically the true one.
 - **Guideline:** Rank your hypotheses by how many unverified assumptions each needs, and test the cheapest first. Ask "what changed?" before "what is broken?"
 - **Source:** Attributed to William of Ockham (c. 1287–1347); the shaving metaphor and the formula *entia non sunt multiplicanda praeter necessitatem* are both later glosses on his principle of parsimony. — [source ↗](https://en.wikipedia.org/wiki/Occam%27s_razor)
@@ -906,8 +906,8 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 65` · Systems
 
 - **Concept:** After a first success, designers tend to pack the ideas they deferred into the second system.
-- **Mechanism:** The first system is built cautiously, by someone unsure of the ground. Its success converts that caution into confidence, and every idea deferred the first time is loaded into the rewrite at once. The result is over-general, late, and frequently never ships at all.
-- **Counter:** **Gall's Law** — the answer is not to freeze the first system but to grow it — a rewrite that ships in slices is not a second system.
+- **Mechanism:** The first system is built cautiously, by someone unsure of the ground. Its success converts that caution into confidence, and every idea deferred the first time is loaded into the rewrite at once. The result, Brooks warns, is the most dangerous system a designer ever builds: over-general and late.
+- **Counter:** **Dead-End Architecture** — some first systems cannot be grown: a data model, a platform or a security boundary that blocks the next step outright, and there a deliberate, scoped second system is the right call.
 - **Guideline:** When rewriting, carry forward the constraints and not just the wish list. Cut the deferred features to the few that actually blocked users, and replace the original one piece at a time.
 - **Source:** Fred Brooks, *The Mythical Man-Month* (Addison-Wesley, 1975), chapter 5. — [source ↗](https://en.wikipedia.org/wiki/Second-system_effect)
 - **See also:** [Brooks' Law](#brooks-law) · [Gall's Law](#galls-law) · [Worse is Better](#worse-is-better) · [Strangler Fig](#strangler-fig)
@@ -1060,10 +1060,10 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 79` · Distributed Systems
 
 - **Concept:** A fallback path runs only after something has already failed, so the least-tested code in the system runs under the worst conditions.
-- **Mechanism:** Fallback code sits idle in normal operation, so its bugs, its capacity limits and its stale data go unnoticed until it is needed. It then switches on in the middle of an outage, when load is unusual and other parts are degraded, and adds a new mode to a system that is already behaving strangely. A fallback that routes around a cache straight to a database, or onto a secondary service, can move load onto something never sized for it and widen a partial failure; Amazon's 2001 retail outage began that way. Amazon's conclusion is that the effort is usually better spent making the primary path more available.
+- **Mechanism:** Fallback code sits idle in normal operation, so its bugs, its capacity limits and its stale data go unnoticed until it is needed. It then switches on in the middle of an outage, when load is unusual and other parts are degraded, and adds a new mode to a system that is already behaving strangely. A fallback that routes around a cache straight to a database, or onto a secondary service, can move load onto something never sized for it and widen a partial failure; Amazon.com's outage around 2001 began that way. Amazon's conclusion is that the effort is usually better spent making the primary path more available.
 - **Counter:** **Graceful Degradation** — returning a reduced answer beats returning an error when the reduced path runs all the time, as when a recommendations panel falls back to a static list it serves anyway; the danger is the path that never runs, not degradation itself.
 - **Guideline:** Before adding a fallback, ask whether the same effort would make the primary path more available: push data to the caller ahead of time instead of pulling it at request time, add redundancy. If you keep a fallback, run it in production continuously, not only on failure, and treat its output as an equally valid source. Delete fallback paths nobody has exercised.
-- **Source:** Jacob Gabrielson, *Avoiding fallback in distributed systems* (Amazon Builders' Library, 2019) — "At Amazon, we avoid fallback in our systems because it's difficult to prove and its effectiveness is hard to test." — [source ↗](https://builder.aws.com/content/3EuS9Sakq7L3VLQIF3qzfMfke1Y/avoiding-fallback-in-distributed-systems)
+- **Source:** Jacob Gabrielson, *Avoiding fallback in distributed systems* (Amazon Builders' Library, 2019) — the Amazon.com outage of around 2001, when every web server fell back to querying the database directly once the caches failed together, and "At Amazon, we avoid fallback in our systems because it's difficult to prove and its effectiveness is hard to test." — [source ↗](https://builder.aws.com/content/3EuS9Sakq7L3VLQIF3qzfMfke1Y/avoiding-fallback-in-distributed-systems)
 - **See also:** [Static Stability](#static-stability) · [Constant Work](#constant-work) · [Ironies of Automation](#ironies-of-automation) · [Chaos Engineering](#chaos-engineering)
 
 ### Constant Work

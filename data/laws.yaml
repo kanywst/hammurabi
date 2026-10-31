@@ -983,7 +983,7 @@ laws:
       title: ダンバー数
       concept: 人が安定して保てる関係は150人ほどだ。工学ではそこから、文脈を共有できる規模を超えると増員は調整に消える、と推し量る。
       mechanism: |-
-        人間が安定した社会関係を維持できる認知限界は約150人。ダンバーの結果は霊長類全般における新皮質サイズと群れの大きさの関係についてであって、仕事のチームについてではない。エンジニアリングがそこから外挿しているのは別の議論だ——コミュニケーション経路は n(n-1)/2 で増えるので、全員が全員の文脈をまだ保持できる規模を超えた時点から、増えた人員は成果ではなく調整に消える。
+        人間が安定した社会関係を保てるのはおよそ 150 人とされる。ダンバーの結果は霊長類全般における新皮質サイズと群れの大きさの関係についてであって、仕事のチームについてではない。エンジニアリングがそこから外挿しているのは別の議論だ——コミュニケーション経路は n(n-1)/2 で増えるので、全員が全員の文脈をまだ保持できる規模を超えた時点から、増えた人員は成果ではなく調整に消える。
       counter:
         name: インタフェースによる協調
         note: |-
@@ -1036,7 +1036,7 @@ laws:
       title: Cunningham's Law
       concept: People are quicker to correct a wrong answer than to answer a question.
       mechanism: |-
-        Answering a question means admitting you have time to help a stranger; correcting a wrong answer feels like defending the record, and it costs less because the wrong answer already set out the structure. So a confident mistake draws replies that an open question does not. The law is itself an example: Cunningham disowns it, yet it still circulates under his name.
+        A plausible reading: answering a question means admitting you have time to help a stranger; correcting a wrong answer feels like defending the record, and it costs less because the wrong answer already set out the structure. So a confident mistake draws replies that an open question does not. The law is itself an example: Cunningham disowns it, yet it still circulates under his name.
       counter:
         name: Wrong Answers Persist
         note: |-
@@ -1049,7 +1049,7 @@ laws:
       title: カニンガムの法則
       concept: 人は質問に答えるより、間違った答えを訂正するほうに熱心だ。
       mechanism: |-
-        質問に答えるのは、見知らぬ人を助ける時間があると認めることだ。間違いを正すのは記録を守ることのように感じられ、しかも間違った答えがすでに骨組みを示しているので手間も少ない。だから、自信ありげな誤りには、開かれた質問には来ない返事が来る。この法則自体がその例だ。Cunningham 本人は否定しているが、今も彼の名で出回っている。
+        一つの読み方として、質問に答えるのは、見知らぬ人を助ける時間があると認めることだ。間違いを正すのは記録を守ることのように感じられ、しかも間違った答えがすでに骨組みを示しているので手間も少ない。だから、自信ありげな誤りには、開かれた質問には来ない返事が来る。この法則自体がその例だ。Cunningham 本人は否定しているが、今も彼の名で出回っている。
       counter:
         name: 誤答は残る
         note: |-
@@ -1610,7 +1610,7 @@ laws:
       guideline: |-
         Write code and commit messages for the stranger you will become in six months. If a decision is not obvious from the code, record the *why* in a comment or an ADR — not just in your head.
       source: |-
-        Programming folklore attributed to Peter Eagleson; a long-circulated adage among the cataloged "laws of software development."
+        Origin unknown. Programming folklore attributed to a Peter Eagleson, of whom nothing else is recorded; the line circulates in collections of programming laws, with no first publication found.
     ja:
       title: イーグルソンの法則
       concept: 半年見ていない自分のコードは、他人が書いたコードも同然だ。
@@ -1623,7 +1623,7 @@ laws:
       guideline: |-
         半年後に他人と化す自分のために、コードとコミットメッセージを書け。コードから自明でない判断は、その「なぜ」をコメントか ADR に残せ——頭の中だけに留めるな。
       source: |-
-        Peter Eagleson に帰される、プログラミングの口伝。カタログ化された「ソフトウェア開発の法則」群の一つとして長く流布。
+        出所は不明。Peter Eagleson という人物に帰されるプログラミングの口伝だが、その人物について他の記録はなく、初出も見つかっていない。プログラミングの法則集の中で流布している。
 
   - slug: hicks-law
     tag: interaction
@@ -1700,7 +1700,7 @@ laws:
       title: Miller's Law
       concept: Working memory holds only a handful of chunks (Miller said about seven; later estimates are lower).
       mechanism: |-
-        "The Magical Number Seven, Plus or Minus Two" — human working memory holds only about seven chunks at once. Cross that limit and recall collapses; the brain drops items rather than slowing down.
+        Miller put the span of immediate memory at about seven chunks; later work, notably Cowan (2001), puts working memory nearer four. Either way the limit is small, and past it people drop items rather than slow down.
       counter:
         name: Too Much Chunking
         note: |-
@@ -1708,12 +1708,12 @@ laws:
       guideline: |-
         Group related items into a handful of named chunks — phone-number style — wherever a person must hold state in their head: function arguments, form fields, menu groups, on-call steps.
       source: |-
-        George A. Miller, *The Magical Number Seven, Plus or Minus Two* (Psychological Review, 1956).
+        George A. Miller, *The Magical Number Seven, Plus or Minus Two* (Psychological Review, 1956); Nelson Cowan, *The magical number 4 in short-term memory: A reconsideration of mental storage capacity* (Behavioral and Brain Sciences, 2001) — the lower estimate.
     ja:
       title: ミラーの法則
       concept: 作業記憶に保てるのは数個のまとまりだけだ（Miller は7前後とし、後の研究はもっと少ないとする）。
       mechanism: |-
-        「マジカルナンバー 7 ± 2」——人間の作業記憶が一度に保持できるのは約7チャンクのみ。その限界を超えると想起は崩壊する。脳は速度を落とすのではなく、項目を捨てる。
+        Miller は即時記憶の範囲を約 7 チャンクとし、後の研究、特に Cowan (2001) は作業記憶を 4 前後とする。どちらにせよ限界は小さく、それを超えると人は速度を落とすのではなく項目を取りこぼす。
       counter:
         name: まとめすぎ
         note: |-
@@ -1721,7 +1721,7 @@ laws:
       guideline: |-
         人が頭の中で状態を保持しなければならない場所——関数の引数・フォーム項目・メニュー群・オンコール手順——では、関連する項目を電話番号のように少数の名前付きチャンクへまとめよ。
       source: |-
-        George A. Miller『The Magical Number Seven, Plus or Minus Two』(Psychological Review, 1956)。
+        George A. Miller『The Magical Number Seven, Plus or Minus Two』(Psychological Review, 1956)。低い見積りは Nelson Cowan『The magical number 4 in short-term memory: A reconsideration of mental storage capacity』(Behavioral and Brain Sciences, 2001) の出典。
 
   - slug: fallacies-of-distributed-computing
     tag: distributed-systems
@@ -1736,7 +1736,7 @@ laws:
       title: Fallacies of Distributed Computing
       concept: Networked code quietly assumes eight things about the network that are false in production.
       mechanism: |-
-        Newcomers to distributed systems silently assume the network is reliable, latency is zero, bandwidth is infinite, the network is secure, topology is stable, there is one administrator, transport cost is zero, and the network is homogeneous. Every one of these eight assumptions fails in production.
+        Newcomers to distributed systems silently assume the network is reliable, latency is zero, bandwidth is infinite, the network is secure, topology is stable, there is one administrator, transport cost is zero, and the network is homogeneous. Each of these eight can fail in production, and the code that assumed it fails with it.
       counter:
         name: Don't Distribute
         note: |-
@@ -1749,7 +1749,7 @@ laws:
       title: 分散コンピューティングの誤謬
       concept: ネットワーク越しのコードは、本番では成り立たない8つの前提を暗に置いている。
       mechanism: |-
-        分散システムに不慣れな者は、ネットワークは信頼でき、遅延はゼロ、帯域は無限、通信は安全、構成は不変、管理者は一人、転送コストはゼロ、ネットワークは均質だと暗黙に仮定する。この8つの仮定はすべて本番で崩れる。
+        分散システムに不慣れな者は、ネットワークは信頼でき、遅延はゼロ、帯域は無限、通信は安全、構成は不変、管理者は一人、転送コストはゼロ、ネットワークは均質だと暗黙に仮定する。この 8 つの仮定はどれも本番で崩れうるし、それを前提にしたコードも一緒に崩れる。
       counter:
         name: 分散させない
         note: |-
@@ -2212,7 +2212,7 @@ laws:
       title: Occam's Razor
       concept: The explanation that needs the fewest unverified assumptions is usually the right one.
       mechanism: |-
-        Under incident pressure the mind reaches for the interesting hypothesis — a kernel bug, a bad disk, an attacker. The explanation requiring the fewest unverified assumptions is almost always the deploy that went out twenty minutes ago.
+        Under incident pressure the mind reaches for the interesting hypothesis — a kernel bug, a bad disk, an attacker. The explanation requiring the fewest unverified assumptions is often the deploy that went out twenty minutes ago.
       counter:
         name: Hickam's Dictum
         note: |-
@@ -2225,7 +2225,7 @@ laws:
       title: オッカムの剃刀
       concept: 検証されていない仮定が最も少ない説明が、たいてい正しい。
       mechanism: |-
-        インシデントの圧力下では、思考は面白い仮説に手を伸ばす——カーネルのバグ、壊れたディスク、攻撃者。だが未検証の仮定を最も必要としない説明は、ほぼ常に「20分前に出たデプロイ」である。
+        インシデントの圧力下では、思考は面白い仮説に手を伸ばす——カーネルのバグ、壊れたディスク、攻撃者。だが未検証の仮定を最も必要としない説明は、しばしば「20 分前に出たデプロイ」である。
       counter:
         name: ヒッカムの格言
         note: 系は複数の独立した障害を同時に抱えうる。症状に合う最も単純な物語が、自動的に真実になるわけではない
@@ -2310,11 +2310,11 @@ laws:
       title: Second-System Effect
       concept: After a first success, designers tend to pack the ideas they deferred into the second system.
       mechanism: |-
-        The first system is built cautiously, by someone unsure of the ground. Its success converts that caution into confidence, and every idea deferred the first time is loaded into the rewrite at once. The result is over-general, late, and frequently never ships at all.
+        The first system is built cautiously, by someone unsure of the ground. Its success converts that caution into confidence, and every idea deferred the first time is loaded into the rewrite at once. The result, Brooks warns, is the most dangerous system a designer ever builds: over-general and late.
       counter:
-        name: Gall's Law
+        name: Dead-End Architecture
         note: |-
-          the answer is not to freeze the first system but to grow it — a rewrite that ships in slices is not a second system
+          some first systems cannot be grown: a data model, a platform or a security boundary that blocks the next step outright, and there a deliberate, scoped second system is the right call
       guideline: |-
         When rewriting, carry forward the constraints and not just the wish list. Cut the deferred features to the few that actually blocked users, and replace the original one piece at a time.
       source: Fred Brooks, *The Mythical Man-Month* (Addison-Wesley, 1975), chapter 5.
@@ -2322,10 +2322,10 @@ laws:
       title: セカンドシステム症候群
       concept: 最初の成功のあと、設計者は先送りしたアイデアを二作目に詰め込みがちだ。
       mechanism: |-
-        1番目のシステムは、地面の固さを測りかねている者によって慎重に作られる。その成功が慎重さを自信に変え、1回目に見送ったアイデアがすべて一度に書き直しへ流し込まれる。結果は過剰に汎用的で、遅れ、そして多くの場合そもそも出荷されない。
+        1番目のシステムは、地面の固さを測りかねている者によって慎重に作られる。その成功が慎重さを自信に変え、1回目に見送ったアイデアがすべて一度に書き直しへ流し込まれる。Brooks によれば、その結果は設計者が作る中で最も危険なシステムになる。過剰に汎用的で、遅れる。
       counter:
-        name: ガルの法則
-        note: 答えは1番目のシステムを凍結することではなく、育てることだ。分割して出荷される書き直しは「2番目のシステム」ではない
+        name: 行き止まりのアーキテクチャ
+        note: 育てようのない最初のシステムもある。データモデルやプラットフォーム、セキュリティ境界が次の一歩を真っ向から塞いでいるなら、範囲を絞って意図的に作る 2 番目のシステムが正しい判断になる
       guideline: |-
         書き直すときは、願望リストだけでなく制約も引き継げ。見送っていた機能は「実際に利用者を止めていた少数」まで削り、元のシステムを一つずつ置き換えよ。
       source: Fred Brooks『人月の神話』(Addison-Wesley, 1975) 第 5 章。
@@ -2774,7 +2774,7 @@ laws:
       concept: |-
         A fallback path runs only after something has already failed, so the least-tested code in the system runs under the worst conditions.
       mechanism: |-
-        Fallback code sits idle in normal operation, so its bugs, its capacity limits and its stale data go unnoticed until it is needed. It then switches on in the middle of an outage, when load is unusual and other parts are degraded, and adds a new mode to a system that is already behaving strangely. A fallback that routes around a cache straight to a database, or onto a secondary service, can move load onto something never sized for it and widen a partial failure; Amazon's 2001 retail outage began that way. Amazon's conclusion is that the effort is usually better spent making the primary path more available.
+        Fallback code sits idle in normal operation, so its bugs, its capacity limits and its stale data go unnoticed until it is needed. It then switches on in the middle of an outage, when load is unusual and other parts are degraded, and adds a new mode to a system that is already behaving strangely. A fallback that routes around a cache straight to a database, or onto a secondary service, can move load onto something never sized for it and widen a partial failure; Amazon.com's outage around 2001 began that way. Amazon's conclusion is that the effort is usually better spent making the primary path more available.
       counter:
         name: Graceful Degradation
         note: |-
@@ -2782,19 +2782,19 @@ laws:
       guideline: |-
         Before adding a fallback, ask whether the same effort would make the primary path more available: push data to the caller ahead of time instead of pulling it at request time, add redundancy. If you keep a fallback, run it in production continuously, not only on failure, and treat its output as an equally valid source. Delete fallback paths nobody has exercised.
       source: |-
-        Jacob Gabrielson, *Avoiding fallback in distributed systems* (Amazon Builders' Library, 2019) — "At Amazon, we avoid fallback in our systems because it's difficult to prove and its effectiveness is hard to test."
+        Jacob Gabrielson, *Avoiding fallback in distributed systems* (Amazon Builders' Library, 2019) — the Amazon.com outage of around 2001, when every web server fell back to querying the database directly once the caches failed together, and "At Amazon, we avoid fallback in our systems because it's difficult to prove and its effectiveness is hard to test."
     ja:
       title: フォールバックを避ける
       concept: フォールバック経路は何かがすでに壊れたあとでしか動かない。だから、システムでいちばん試されていないコードが最悪の条件で走る。
       mechanism: |-
-        フォールバックのコードは平常時には眠っているので、そのバグも、容量の限界も、古くなったデータも、必要になるまで誰も気づかない。そして障害の最中、負荷がいつもと違い、ほかの部分も劣化しているときに動き出し、すでにおかしな振る舞いをしているシステムに新しいモードを一つ足す。キャッシュを迂回してデータベースへ直接向かうフォールバックや、予備のサービスへのフォールバックは、その負荷を想定していない場所に負荷を移し、部分的な障害を広げることがある。Amazon の 2001 年の小売サイト障害はそうして始まった。Amazon の結論は、その労力は主経路の可用性を上げるほうに使うべきだというものだ。
+        フォールバックのコードは平常時には眠っているので、そのバグも、容量の限界も、古くなったデータも、必要になるまで誰も気づかない。そして障害の最中、負荷がいつもと違い、ほかの部分も劣化しているときに動き出し、すでにおかしな振る舞いをしているシステムに新しいモードを一つ足す。キャッシュを迂回してデータベースへ直接向かうフォールバックや、予備のサービスへのフォールバックは、その負荷を想定していない場所に負荷を移し、部分的な障害を広げることがある。Amazon.com の 2001 年頃の障害はそうして始まった。Amazon の結論は、その労力は主経路の可用性を上げるほうに使うべきだというものだ。
       counter:
         name: グレースフル・デグラデーション
         note: 縮退した経路が常に動いているなら、エラーを返すより縮退した答えを返すほうがよい。おすすめ欄が普段から出している固定リストに切り替える場合などだ。危ないのは縮退そのものではなく、普段一度も動かない経路だ
       guideline: |-
         フォールバックを足す前に、同じ労力で主経路の可用性を上げられないかを問え。リクエストのたびに取りに行くのではなく事前に呼び出し側へデータをプッシュしておく、冗長化する、といった手だ。フォールバックを残すなら、障害時だけでなく本番で常に動かし、その出力を主経路と同等に正当なデータ源として扱え。誰も動かしたことのないフォールバック経路は消せ。
       source: |-
-        Jacob Gabrielson『Avoiding fallback in distributed systems』(Amazon Builders' Library, 2019)。"At Amazon, we avoid fallback in our systems because it's difficult to prove and its effectiveness is hard to test." の出典。
+        Jacob Gabrielson『Avoiding fallback in distributed systems』(Amazon Builders' Library, 2019)。キャッシュが一斉に落ちてすべての Web サーバがデータベースへ直接問い合わせた、2001 年頃の Amazon.com の障害と、"At Amazon, we avoid fallback in our systems because it's difficult to prove and its effectiveness is hard to test." の出典。
 
   - slug: constant-work
     tag: distributed-systems
