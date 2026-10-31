@@ -3,7 +3,7 @@
 A codex of engineering laws — each with its counter-force, a field guideline, and a source.
 
 [![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=1d47b8&labelColor=17181a)](https://github.com/kanywst/hammurabi/stargazers)
-[![laws](https://img.shields.io/badge/laws-76-1d47b8?style=for-the-badge&labelColor=17181a)](#the-codex)
+[![laws](https://img.shields.io/badge/laws-91-1d47b8?style=for-the-badge&labelColor=17181a)](#the-codex)
 [![site](https://img.shields.io/badge/read-the%20codex-1d47b8?style=for-the-badge&labelColor=17181a)](https://kanywst.github.io/hammurabi/)
 [![license](https://img.shields.io/badge/content-CC%20BY--SA%204.0-5c5f64?style=for-the-badge&labelColor=17181a)](./LICENSE)
 
@@ -45,18 +45,18 @@ The `§` number is a stable display label, assigned in file order. The permanent
 
 **Start from a situation**
 
-- **Estimates keep slipping:** [Hofstadter's Law](#hofstadters-law) · [Ninety-Ninety Rule](#ninety-ninety-rule) · [Parkinson's Law](#parkinsons-law) · [Brooks' Law](#brooks-law)
-- **The team is growing:** [Brooks' Law](#brooks-law) · [Dunbar's Number](#dunbars-number) · [Ringelmann Effect](#ringelmann-effect) · [Conway's Law](#conways-law) · [Bystander Effect](#bystander-effect)
+- **Estimates keep slipping:** [Hofstadter's Law](#hofstadters-law) · [Ninety-Ninety Rule](#ninety-ninety-rule) · [Parkinson's Law](#parkinsons-law) · [Brooks' Law](#brooks-law) · [Fixed Time, Variable Scope](#fixed-time-variable-scope)
+- **The team is growing:** [Brooks' Law](#brooks-law) · [Dunbar's Number](#dunbars-number) · [Ringelmann Effect](#ringelmann-effect) · [Conway's Law](#conways-law) · [Bystander Effect](#bystander-effect) · [Context, Not Control](#context-not-control) · [Churn Rule](#churn-rule)
 - **A metric is being gamed:** [Goodhart's Law](#goodharts-law) · [Cobra Effect](#cobra-effect) · [Shirky Principle](#shirky-principle)
 - **The decision is stuck:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Disagree and Commit](#disagree-and-commit) · [Law of Triviality](#law-of-triviality) · [Sunk Cost Fallacy](#sunk-cost-fallacy)
-- **After an incident:** [Blameless Postmortem](#blameless-postmortem) · [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory) · [Hanlon's Razor](#hanlons-razor) · [Ironies of Automation](#ironies-of-automation)
-- **Reliability versus shipping speed:** [Error Budget](#error-budget) · [Toil](#toil) · [Normalization of Deviance](#normalization-of-deviance) · [Murphy's Law](#murphys-law)
+- **After an incident:** [Blameless Postmortem](#blameless-postmortem) · [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory) · [Hanlon's Razor](#hanlons-razor) · [Ironies of Automation](#ironies-of-automation) · [Five Whys](#five-whys) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions)
+- **Reliability versus shipping speed:** [Error Budget](#error-budget) · [Toil](#toil) · [Normalization of Deviance](#normalization-of-deviance) · [Murphy's Law](#murphys-law) · [You Build It, You Run It](#you-build-it-you-run-it) · [Andon (Stop the Line)](#andon-stop-the-line) · [Chaos Engineering](#chaos-engineering)
 - **Something is too slow:** [Amdahl's Law](#amdahls-law) · [Theory of Constraints](#theory-of-constraints) · [Premature Optimization](#premature-optimization) · [The Tail at Scale](#the-tail-at-scale) · [Little's Law](#littles-law)
-- **Deleting or rewriting old code:** [Chesterton's Fence](#chestertons-fence) · [Second-System Effect](#second-system-effect) · [Gall's Law](#galls-law) · [Hyrum's Law](#hyrums-law) · [Eagleson's Law](#eaglesons-law) · [Boy Scout Rule](#boy-scout-rule)
-- **Designing an API or interface:** [Hyrum's Law](#hyrums-law) · [Postel's Law](#postels-law) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Law of Leaky Abstractions](#law-of-leaky-abstractions) · [Tesler's Law](#teslers-law)
+- **Deleting or rewriting old code:** [Chesterton's Fence](#chestertons-fence) · [Second-System Effect](#second-system-effect) · [Gall's Law](#galls-law) · [Hyrum's Law](#hyrums-law) · [Eagleson's Law](#eaglesons-law) · [Boy Scout Rule](#boy-scout-rule) · [Strangler Fig](#strangler-fig) · [Beyoncé Rule](#beyoncé-rule)
+- **Designing an API or interface:** [Hyrum's Law](#hyrums-law) · [Postel's Law](#postels-law) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Law of Leaky Abstractions](#law-of-leaky-abstractions) · [Tesler's Law](#teslers-law) · [Beyoncé Rule](#beyoncé-rule)
 - **Starting something new:** [Working Backwards](#working-backwards) · [YAGNI](#yagni) · [Gall's Law](#galls-law) · [Worse is Better](#worse-is-better) · [KISS Principle](#kiss-principle) · [XY Problem](#xy-problem)
-- **Choosing a technology:** [Lindy Effect](#lindy-effect) · [Cargo Cult Engineering](#cargo-cult-engineering) · [Amara's Law](#amaras-law) · [Survivorship Bias](#survivorship-bias)
-- **Building a distributed system:** [Fallacies of Distributed Computing](#fallacies-of-distributed-computing) · [CAP Theorem](#cap-theorem) · [Two Generals Problem](#two-generals-problem) · [The Tail at Scale](#the-tail-at-scale)
+- **Choosing a technology:** [Lindy Effect](#lindy-effect) · [Cargo Cult Engineering](#cargo-cult-engineering) · [Amara's Law](#amaras-law) · [Survivorship Bias](#survivorship-bias) · [Choose Boring Technology](#choose-boring-technology)
+- **Building a distributed system:** [Fallacies of Distributed Computing](#fallacies-of-distributed-computing) · [CAP Theorem](#cap-theorem) · [Two Generals Problem](#two-generals-problem) · [The Tail at Scale](#the-tail-at-scale) · [Static Stability](#static-stability) · [Avoid Fallback](#avoid-fallback) · [Constant Work](#constant-work) · [Chaos Engineering](#chaos-engineering)
 - **Designing permissions and secrets:** [Principle of Least Privilege](#principle-of-least-privilege) · [Kerckhoffs's Principle](#kerckhoffss-principle)
 
 **All laws**
@@ -139,6 +139,21 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `74` | [Blameless Postmortem](#blameless-postmortem) | Operations | Punishing the person nearest a failure teaches people to hide what they did. |
 | `75` | [Working Backwards](#working-backwards) | Decision | Teams that start from a solution often build things no customer needed; starting from the announcement exposes that early. |
 | `76` | [Disagree and Commit](#disagree-and-commit) | Decision | Waiting for everyone to agree is often slower than committing and correcting course if the call turns out wrong. |
+| `77` | [You Build It, You Run It](#you-build-it-you-run-it) | Operations | When the team that writes a service also operates it, the cost of every operational weakness lands on the people who can fix it. |
+| `78` | [Static Stability](#static-stability) | Distributed Systems | A system that has to take new action to survive a failure depends on that action succeeding at the moment things are going wrong. |
+| `79` | [Avoid Fallback](#avoid-fallback) | Distributed Systems | A fallback path runs only after something has already failed, so the least-tested code in the system runs under the worst conditions. |
+| `80` | [Constant Work](#constant-work) | Distributed Systems | A system whose work grows with load or failure has a behaviour it only shows under stress, and that is where it breaks. |
+| `81` | [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) | Organization | Asking people to try harder after a failure changes little, because the failure happened to people who were already trying. |
+| `82` | [Andon (Stop the Line)](#andon-stop-the-line) | Operations | Letting anyone who sees an abnormality stop the line keeps a defect from travelling downstream, where it costs more to find and fix. |
+| `83` | [Five Whys](#five-whys) | Operations | The first answer to "why did this fail" is usually a symptom, and fixing a symptom leaves the cause in place to fail again. |
+| `84` | [Chaos Engineering](#chaos-engineering) | Operations | Resilience that has never been exercised is a hypothesis, and production will test it whether or not you schedule the test. |
+| `85` | [Context, Not Control](#context-not-control) | Organization | Rules and approvals scale worse than shared understanding; people given the reasons behind a goal make better local decisions than people given a procedure. |
+| `86` | [Approve What Improves Code Health](#approve-what-improves-code-health) | Maintainability | Holding every change to a standard of perfect makes review slow, and slow review leaves the codebase worse, not better. |
+| `87` | [Beyoncé Rule](#beyoncé-rule) | Maintainability | Behavior that no test checks is behavior nobody changing shared code is obliged to preserve. |
+| `88` | [Churn Rule](#churn-rule) | Organization | When the team that changes shared infrastructure can push the migration onto its users, the cost of the change multiplies by the number of users. |
+| `89` | [Fixed Time, Variable Scope](#fixed-time-variable-scope) | Estimation | When scope is fixed and time is not, a project grows to fill what it is given; fixing the time instead forces it to choose what matters. |
+| `90` | [Strangler Fig](#strangler-fig) | Maintainability | Replacing a live system piece by piece around its edges succeeds far more often than replacing it all at once. |
+| `91` | [Choose Boring Technology](#choose-boring-technology) | Decision | Every unfamiliar technology a team adopts brings unknown failure modes and a permanent operating cost, and a team can afford only a few of them. |
 
 ### Type 1 vs Type 2 Decisions
 
@@ -160,7 +175,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Counter:** **Broken Windows Theory**.
 - **Guideline:** If you see a "hack" or a bypassed alert, do not say "it worked before." Either fix it immediately or document it as high-priority technical debt.
 - **Source:** Diane Vaughan, *The Challenger Launch Decision* (1996) — coined while analyzing the NASA Challenger disaster. — [source ↗](https://en.wikipedia.org/wiki/Normalization_of_deviance)
-- **See also:** [Swiss Cheese Model](#swiss-cheese-model) · [Normal Accident Theory](#normal-accident-theory) · [Boy Scout Rule](#boy-scout-rule) · [Normalcy Bias](#normalcy-bias) · [Broken Windows Theory](#broken-windows-theory) · [Blameless Postmortem](#blameless-postmortem) · [Error Budget](#error-budget)
+- **See also:** [Swiss Cheese Model](#swiss-cheese-model) · [Normal Accident Theory](#normal-accident-theory) · [Boy Scout Rule](#boy-scout-rule) · [Normalcy Bias](#normalcy-bias) · [Broken Windows Theory](#broken-windows-theory) · [Blameless Postmortem](#blameless-postmortem) · [Error Budget](#error-budget) · [Andon (Stop the Line)](#andon-stop-the-line)
 
 ### Chesterton's Fence
 
@@ -193,7 +208,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Counter:** **Core Value Focus**.
 - **Guideline:** If a PR review spends 80% of comments on style/naming, approve immediately and move the discussion to an automated linter config.
 - **Source:** C. Northcote Parkinson, *Parkinson's Law and Other Studies in Administration* (Houghton Mifflin, 1957), in the chapter "High Finance, or the Point of Vanishing Interest" — the original bike-shed committee parable. Published in the UK as *Parkinson's Law: The Pursuit of Progress* (John Murray, 1958). — [source ↗](https://en.wikipedia.org/wiki/Law_of_triviality)
-- **See also:** [Parkinson's Law](#parkinsons-law) · [Disagree and Commit](#disagree-and-commit)
+- **See also:** [Parkinson's Law](#parkinsons-law) · [Disagree and Commit](#disagree-and-commit) · [Approve What Improves Code Health](#approve-what-improves-code-health)
 
 ### Gall's Law
 
@@ -204,7 +219,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Counter:** **The MVP (Minimum Viable Product)**.
 - **Guideline:** A complex system that works is invariably found to have evolved from a simple system that worked. Start with a working "Hello World" and evolve.
 - **Source:** John Gall, *Systemantics: How Systems Really Work and How They Fail* (1975). — [source ↗](https://en.wikipedia.org/wiki/John_Gall_(author))
-- **See also:** [Worse is Better](#worse-is-better) · [YAGNI](#yagni) · [Second-System Effect](#second-system-effect)
+- **See also:** [Worse is Better](#worse-is-better) · [YAGNI](#yagni) · [Second-System Effect](#second-system-effect) · [Strangler Fig](#strangler-fig)
 
 ### Conway's Law
 
@@ -215,7 +230,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Counter:** **Inverse Conway Maneuver**.
 - **Guideline:** If you want a modular architecture, create modular, independent teams first. Do not fight the org chart with code.
 - **Source:** Melvin E. Conway, *How Do Committees Invent?* (Datamation, April 1968). — [source ↗](https://www.melconway.com/Home/Committees_Paper.html)
-- **See also:** [Dunbar's Number](#dunbars-number) · [Brooks' Law](#brooks-law) · [Single Responsibility Principle](#single-responsibility-principle)
+- **See also:** [Dunbar's Number](#dunbars-number) · [Brooks' Law](#brooks-law) · [Single Responsibility Principle](#single-responsibility-principle) · [You Build It, You Run It](#you-build-it-you-run-it) · [Context, Not Control](#context-not-control)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/diagrams/conways-law-en-dark.svg">
@@ -233,7 +248,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Deliberate Variance** — if every observable behaviour were sacred nothing could ever change, so vary what you never promised — randomised iteration order, planned outages — and the dependency never forms.
 - **Guideline:** "Internal" doesn't exist once you have users. Version and feature-flag what you promise; deliberately vary what you do not, so nobody can build on it in the first place.
 - **Source:** Hyrum Wright, *hyrumslaw.com*; canonicalized in *Software Engineering at Google* (Winters, Manshreck, Wright, 2020). — [source ↗](https://www.hyrumslaw.com/)
-- **See also:** [Postel's Law](#postels-law) · [Principle of Least Astonishment](#principle-of-least-astonishment)
+- **See also:** [Postel's Law](#postels-law) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Beyoncé Rule](#beyoncé-rule) · [Churn Rule](#churn-rule)
 
 ### Brooks' Law
 
@@ -255,7 +270,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Five Whys**.
 - **Guideline:** When someone asks "How do I do Y?", always reply "What are you trying to achieve with Y?"
 - **Source:** Folklore from the Perl IRC and sysadmin communities; canonical write-up at *xyproblem.info*. — [source ↗](https://xyproblem.info/)
-- **See also:** [Curse of Knowledge](#curse-of-knowledge) · [Working Backwards](#working-backwards)
+- **See also:** [Curse of Knowledge](#curse-of-knowledge) · [Working Backwards](#working-backwards) · [Five Whys](#five-whys)
 
 ### Postel's Law
 
@@ -288,7 +303,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Evidence-Based Scheduling**.
 - **Guideline:** Double your most conservative estimate, then add 20%. And expect to be wrong.
 - **Source:** Douglas Hofstadter, *Gödel, Escher, Bach: an Eternal Golden Braid* (1979). — [source ↗](https://en.wikipedia.org/wiki/Hofstadter%27s_law)
-- **See also:** [Ninety-Ninety Rule](#ninety-ninety-rule) · [Parkinson's Law](#parkinsons-law)
+- **See also:** [Ninety-Ninety Rule](#ninety-ninety-rule) · [Parkinson's Law](#parkinsons-law) · [Fixed Time, Variable Scope](#fixed-time-variable-scope)
 
 ### Goodhart's Law
 
@@ -299,7 +314,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Balanced Scorecards**.
 - **Guideline:** Never use a single metric to judge performance. Observe the system's output, not its proxies.
 - **Source:** Charles Goodhart, *Problems of Monetary Management* (1975); reformulated by Marilyn Strathern (1997). — [source ↗](https://en.wikipedia.org/wiki/Goodhart%27s_law)
-- **See also:** [Cobra Effect](#cobra-effect) · [Shirky Principle](#shirky-principle) · [Error Budget](#error-budget)
+- **See also:** [Cobra Effect](#cobra-effect) · [Shirky Principle](#shirky-principle) · [Error Budget](#error-budget) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions)
 
 ### Lindy Effect
 
@@ -310,7 +325,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Hype Cycle Analysis**.
 - **Guideline:** If you need a stable system for 10 years, choose a technology that has already been around for 10 years (e.g., PostgreSQL over a new NoSQL).
 - **Source:** Coined by Albert Goldman (*New Republic*, 1964); formalized by Benoit Mandelbrot and popularized by Nassim Taleb, *Antifragile* (2012). — [source ↗](https://en.wikipedia.org/wiki/Lindy_effect)
-- **See also:** [Worse is Better](#worse-is-better) · [Amara's Law](#amaras-law)
+- **See also:** [Worse is Better](#worse-is-better) · [Amara's Law](#amaras-law) · [Choose Boring Technology](#choose-boring-technology)
 
 ### Sunk Cost Fallacy
 
@@ -321,7 +336,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Zero-Based Budgeting**.
 - **Guideline:** Ask: "If we started today with zero investment, would we choose this path?" If no, kill it.
 - **Source:** Hal R. Arkes & Catherine Blumer, *The Psychology of Sunk Cost* (Organizational Behavior and Human Decision Processes, 1985). — [source ↗](https://doi.org/10.1016/0749-5978(85)90049-4)
-- **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions)
+- **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Fixed Time, Variable Scope](#fixed-time-variable-scope)
 
 ### Cargo Cult Engineering
 
@@ -453,7 +468,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Defensive Design / Chaos Engineering**.
 - **Guideline:** Treat every external dependency, retry, and timeout as something that *will* fail in production. Build the failure path before the success path.
 - **Source:** Capt. Edward A. Murphy Jr., USAF Project MX981 (1949); popularized by Maj. John Paul Stapp. — [source ↗](https://en.wikipedia.org/wiki/Murphy%27s_law)
-- **See also:** [Normalcy Bias](#normalcy-bias) · [Fallacies of Distributed Computing](#fallacies-of-distributed-computing)
+- **See also:** [Normalcy Bias](#normalcy-bias) · [Fallacies of Distributed Computing](#fallacies-of-distributed-computing) · [Chaos Engineering](#chaos-engineering)
 
 ### Boy Scout Rule
 
@@ -464,7 +479,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **One Reason Per Diff** — cleanup riding along with a behaviour change hides the change, and a pull request that also renames forty things is one nobody reviews.
 - **Guideline:** Always leave the code cleaner than you found it, and keep the cleanup small enough to read inside the same diff — a one-line rename, a clearer comment, a deleted dead branch. Anything bigger gets its own commit.
 - **Source:** Robert C. Martin, *The Boy Scout Rule*, in Kevlin Henney (ed.), *97 Things Every Programmer Should Know* (O'Reilly, 2010) — adapting Baden-Powell's "leave this world a little better than you found it". Also stated in *Clean Code* (2008). — [source ↗](https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html)
-- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Broken Windows Theory](#broken-windows-theory)
+- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Broken Windows Theory](#broken-windows-theory) · [Approve What Improves Code Health](#approve-what-improves-code-health)
 
 ### Tesler's Law
 
@@ -497,7 +512,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **User Testing / Onboarding Buddies / Documentation Reviewers Outside the Author's Team**.
 - **Guideline:** Before shipping documentation or a public API, have someone who has never touched the system attempt the task while you watch silently. Their confusion points exactly at the assumptions you forgot to spell out.
 - **Source:** Colin Camerer, George Loewenstein & Martin Weber, *The Curse of Knowledge in Economic Settings: An Experimental Analysis* (Journal of Political Economy, 1989). — [source ↗](https://doi.org/10.1086/261651)
-- **See also:** [XY Problem](#xy-problem) · [Dunning-Kruger Effect](#dunning-kruger-effect) · [Principle of Least Astonishment](#principle-of-least-astonishment)
+- **See also:** [XY Problem](#xy-problem) · [Dunning-Kruger Effect](#dunning-kruger-effect) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Context, Not Control](#context-not-control)
 
 ### Swiss Cheese Model
 
@@ -508,7 +523,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Defense in Depth / Independent Controls / Hole-Audit at Post-Mortem**.
 - **Guideline:** During an incident review, do not stop at "the one thing that failed." Enumerate every layer that should have caught the failure and ask why each hole was open at exactly that moment. The fix is rarely a single layer; it's plugging the cheapest two.
 - **Source:** James Reason, *Human Error* (Cambridge University Press, 1990). — [source ↗](https://en.wikipedia.org/wiki/Swiss_cheese_model)
-- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory) · [Blameless Postmortem](#blameless-postmortem)
+- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory) · [Blameless Postmortem](#blameless-postmortem) · [Five Whys](#five-whys)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/diagrams/swiss-cheese-model-en-dark.svg">
@@ -606,7 +621,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 - **Counter:** **Timeboxing**.
 - **Guideline:** Set deliberately short timeboxes for open-ended work and review at the deadline. A tight box forces the scoping decisions an open one defers forever.
 - **Source:** C. Northcote Parkinson, *Parkinson's Law* (The Economist, 19 November 1955); expanded into *Parkinson's Law and Other Studies in Administration* (Houghton Mifflin, 1957). — [source ↗](https://www.economist.com/news/1955/11/19/parkinsons-law)
-- **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Law of Triviality](#law-of-triviality) · [Hofstadter's Law](#hofstadters-law)
+- **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Law of Triviality](#law-of-triviality) · [Hofstadter's Law](#hofstadters-law) · [Fixed Time, Variable Scope](#fixed-time-variable-scope)
 
 ### Wirth's Law
 
@@ -628,7 +643,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 - **Counter:** **Demo on Real Data / Hard Definition of Done**.
 - **Guideline:** When something looks "almost done," assume an entire second project remains: the last-10% of hardening, edge cases, and integration. Schedule it explicitly instead of treating it as a rounding error.
 - **Source:** Tom Cargill (Bell Labs); popularized by Jon Bentley, *Programming Pearls* (CACM, 1985). — [source ↗](https://en.wikipedia.org/wiki/Ninety%E2%80%93ninety_rule)
-- **See also:** [Hofstadter's Law](#hofstadters-law)
+- **See also:** [Hofstadter's Law](#hofstadters-law) · [Strangler Fig](#strangler-fig)
 
 ### Eagleson's Law
 
@@ -683,7 +698,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 - **Counter:** **Design for Failure** — without gold-plating against impossible modes.
 - **Guideline:** Before shipping any cross-process call, name which of the eight assumptions you are relying on and add an explicit timeout, retry, and failure path for each.
 - **Source:** L. Peter Deutsch (fallacies 5–7, 1994) and James Gosling (the 8th, ~1997), building on earlier work at Sun Microsystems. — [source ↗](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
-- **See also:** [Postel's Law](#postels-law) · [Murphy's Law](#murphys-law) · [CAP Theorem](#cap-theorem)
+- **See also:** [Postel's Law](#postels-law) · [Murphy's Law](#murphys-law) · [CAP Theorem](#cap-theorem) · [Static Stability](#static-stability) · [Chaos Engineering](#chaos-engineering)
 
 ### Ironies of Automation
 
@@ -694,7 +709,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 - **Counter:** **Human-in-the-Loop Drills** — better teaming, not less automation.
 - **Guideline:** Keep operators sharp with regular game-days and hands-on drills, and design handoffs so a human takes over with context, not cold.
 - **Source:** Lisanne Bainbridge, *Ironies of Automation* (Automatica, 1983). — [source ↗](https://doi.org/10.1016/0005-1098(83)90046-8)
-- **See also:** [Normal Accident Theory](#normal-accident-theory) · [Toil](#toil)
+- **See also:** [Normal Accident Theory](#normal-accident-theory) · [Toil](#toil) · [Avoid Fallback](#avoid-fallback)
 
 ### Principle of Least Privilege
 
@@ -789,7 +804,7 @@ A leaf that is slow one request in a hundred is invisible on its own. Fan out to
 - **Counter:** **High-Reliability Organizations** — culture, slack, and decoupling measurably beat fatalism.
 - **Guideline:** Reduce coupling — add buffers, timeouts, bulkheads, and circuit breakers — and cut complexity before adding more safety interlocks, which themselves add interactions.
 - **Source:** Charles Perrow, *Normal Accidents: Living with High-Risk Technologies* (Basic Books, 1984). — [source ↗](https://en.wikipedia.org/wiki/Normal_Accidents)
-- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Swiss Cheese Model](#swiss-cheese-model) · [Ironies of Automation](#ironies-of-automation) · [Ashby's Law of Requisite Variety](#ashbys-law-of-requisite-variety)
+- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Swiss Cheese Model](#swiss-cheese-model) · [Ironies of Automation](#ironies-of-automation) · [Ashby's Law of Requisite Variety](#ashbys-law-of-requisite-variety) · [Five Whys](#five-whys)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/diagrams/normal-accident-theory-en-dark.svg">
@@ -807,7 +822,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Repair Is Not Free** — attention spent on paint is attention not spent on the foundation, and the criminological evidence for the original claim is contested.
 - **Guideline:** Repair the first visible defect in a file you are already touching, and give every tolerated exception an owner and a date. Do not open a refactor for a window you are not standing next to.
 - **Source:** James Q. Wilson & George L. Kelling, *Broken Windows* (The Atlantic, March 1982). — [source ↗](https://www.theatlantic.com/magazine/archive/1982/03/broken-windows/304465/)
-- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Boy Scout Rule](#boy-scout-rule)
+- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Boy Scout Rule](#boy-scout-rule) · [Approve What Improves Code Health](#approve-what-improves-code-health)
 
 ### YAGNI
 
@@ -829,7 +844,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Ashby's Law of Requisite Variety** — a system simpler than the problem it has to regulate cannot cope with it, and simplicity below that floor is displaced complexity rather than less of it.
 - **Guideline:** Judge a design by who can repair it at 3 AM, not by how it reads in review. If the on-call engineer needs the author on the call, it is not simple — it is familiar to one person.
 - **Source:** Attributed to Kelly Johnson at Lockheed's Skunk Works (c. 1960), as a field-maintainability requirement for combat aircraft. — [source ↗](https://en.wikipedia.org/wiki/KISS_principle)
-- **See also:** [Kernighan's Law](#kernighans-law) · [Ashby's Law of Requisite Variety](#ashbys-law-of-requisite-variety)
+- **See also:** [Kernighan's Law](#kernighans-law) · [Ashby's Law of Requisite Variety](#ashbys-law-of-requisite-variety) · [Choose Boring Technology](#choose-boring-technology)
 
 ### DRY Principle
 
@@ -895,7 +910,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Gall's Law** — the answer is not to freeze the first system but to grow it — a rewrite that ships in slices is not a second system.
 - **Guideline:** When rewriting, carry forward the constraints and not just the wish list. Cut the deferred features to the two that actually blocked users, and replace the original one piece at a time.
 - **Source:** Fred Brooks, *The Mythical Man-Month* (Addison-Wesley, 1975), chapter 5. — [source ↗](https://en.wikipedia.org/wiki/Second-system_effect)
-- **See also:** [Brooks' Law](#brooks-law) · [Gall's Law](#galls-law) · [Worse is Better](#worse-is-better)
+- **See also:** [Brooks' Law](#brooks-law) · [Gall's Law](#galls-law) · [Worse is Better](#worse-is-better) · [Strangler Fig](#strangler-fig)
 
 ### Moore's Law
 
@@ -972,7 +987,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Normalization of Deviance** — a standing allowance for failure teaches a team that each failure is routine; the outage that should have alarmed people gets logged against the budget and never investigated.
 - **Guideline:** Agree on the SLO and the policy before the incident, not during it: while budget remains, ship; when it is spent, freeze feature releases and put the time into reliability until it recovers. Keep data loss and security outside the budget entirely.
 - **Source:** Marc Alvidrez, "Embracing Risk" (with "Motivation for Error Budgets" by Mark Roth), in Beyer, Jones, Petoff & Murphy (eds.), *Site Reliability Engineering* (O'Reilly, 2016), ch. 3 — where the error budget is defined and "100% is probably never the right reliability target" is argued. — [source ↗](https://sre.google/sre-book/embracing-risk/)
-- **See also:** [Goodhart's Law](#goodharts-law) · [The Tail at Scale](#the-tail-at-scale) · [Toil](#toil) · [Normalization of Deviance](#normalization-of-deviance)
+- **See also:** [Goodhart's Law](#goodharts-law) · [The Tail at Scale](#the-tail-at-scale) · [Toil](#toil) · [Normalization of Deviance](#normalization-of-deviance) · [Andon (Stop the Line)](#andon-stop-the-line)
 
 ### Toil
 
@@ -983,7 +998,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Ironies of Automation** — automating a task removes the practice people needed to handle it when the automation fails, and some automation costs more to build and keep alive than the toil it replaces.
 - **Guideline:** Measure the share of each person's time spent on toil and set a ceiling (Google uses 50%). When a task comes back a third time (a rule of thumb, not the book's), file it as engineering work; when it scales with users, treat it as a defect rather than a chore.
 - **Source:** Vivek Rau, "Eliminating Toil", in Beyer, Jones, Petoff & Murphy (eds.), *Site Reliability Engineering* (O'Reilly, 2016), ch. 5 — the definition of toil and the 50% cap. — [source ↗](https://sre.google/sre-book/eliminating-toil/)
-- **See also:** [Ironies of Automation](#ironies-of-automation) · [Error Budget](#error-budget)
+- **See also:** [Ironies of Automation](#ironies-of-automation) · [Error Budget](#error-budget) · [You Build It, You Run It](#you-build-it-you-run-it) · [Churn Rule](#churn-rule)
 
 ### Blameless Postmortem
 
@@ -994,7 +1009,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Diffused Ownership** — when nobody is answerable, the action items have no owner and quietly expire; some teams name a person accountable for the fix precisely because blamelessness leaves no one holding it.
 - **Guideline:** Write the postmortem as a timeline of what people saw and why each action made sense then, and end with changes to the system, not to a person, each with one named owner and a date. Ban "human error" as a root cause; ask what made the error easy to make.
 - **Source:** John Allspaw, *Blameless PostMortems and a Just Culture* (Code as Craft, Etsy, 2012); the practice is codified in Lunney & Lueder, "Postmortem Culture", *Site Reliability Engineering* (O'Reilly, 2016), ch. 15. — [source ↗](https://www.etsy.com/codeascraft/blameless-postmortems)
-- **See also:** [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Hanlon's Razor](#hanlons-razor) · [Bystander Effect](#bystander-effect)
+- **See also:** [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Hanlon's Razor](#hanlons-razor) · [Bystander Effect](#bystander-effect) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Five Whys](#five-whys)
 
 ### Working Backwards
 
@@ -1017,6 +1032,171 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Guideline:** State your disagreement once, in full, with your reasons. Then say "I disagree and commit" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you. For an irreversible decision, or one with a safety or ethical risk, do not commit quietly: escalate.
 - **Source:** Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — "use the phrase 'disagree and commit'", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and it is also attributed to Intel. — [source ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
 - **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Law of Triviality](#law-of-triviality)
+
+### You Build It, You Run It
+
+`§ 77` · Operations
+
+- **Concept:** When the team that writes a service also operates it, the cost of every operational weakness lands on the people who can fix it.
+- **Mechanism:** When software is thrown over a wall to a separate operations team, the people who take the page and face the angry customer are not the people who can change the code, so the fix arrives late or as a workaround. Developers who are paged for their own service learn which shortcuts hurt, and design for failure because they are the ones who will be woken up. Running it also puts them in daily contact with customers, which shortens the path from a complaint to a change. The incentive only works when the ownership is real: the team has to be able to change what it is paged for.
+- **Counter:** **Developer Cognitive Load** — owning the whole cycle widens what each developer must know and the priorities they juggle every week; without shared tooling and an on-call rotation it ends in burnout, and Netflix, which runs the model, steers people who want depth over breadth into other roles.
+- **Guideline:** Put the team that ships a service on its pager, and give it the authority and the deploy rights to fix what pages it. Pair that with a paved road (shared deploy, observability and alerting tooling) and a rotation, so no one person is on call for everything. Do not apply it to a team that cannot change the thing it is woken up for; that hands over the pager, not the ownership.
+- **Source:** Jim Gray, "A Conversation with Werner Vogels", *ACM Queue* 4(4) (2006) — Amazon's CTO on why every service team runs what it builds: "You build it, you run it." The trade-off is from Philip Fisher-Ogden, Greg Burrell & Dianne Marsh, *Full Cycle Developers at Netflix — Operate What You Build* (Netflix Technology Blog, 2018). — [source ↗](https://queue.acm.org/detail.cfm?id=1142065)
+- **See also:** [Conway's Law](#conways-law) · [Toil](#toil) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions)
+
+### Static Stability
+
+`§ 78` · Distributed Systems
+
+- **Concept:** A system that has to take new action to survive a failure depends on that action succeeding at the moment things are going wrong.
+- **Mechanism:** Recovering from a failure usually means doing something the system does not do in normal operation: launching replacement instances, calling a control plane, changing routes. Control planes are more complex than data planes and are the parts most likely to misbehave when the wider system is impaired, so recovery leans on whatever is weakest during the event. A statically stable design keeps working when a dependency is impaired, because the capacity and state it needs are already in place. AWS runs zonal services across three Availability Zones overprovisioned by 50 percent, so losing one leaves the other two able to carry the load without launching anything.
+- **Counter:** **Cost of Idle Capacity** — capacity held for a failure that rarely happens is paid for every day, and scaling to demand is cheaper wherever a slow recovery is acceptable; the source itself concedes that keeping zones independent adds complexity.
+- **Guideline:** List what your service must do to recover from losing a zone or a dependency. For every step that calls a control plane or launches something, decide whether to have it in place beforehand instead: spare capacity in every zone, the last good configuration cached locally, serving that continues while the control plane is down. Reserve this for paths whose failure you cannot afford; elsewhere, scale on demand.
+- **Source:** Becky Weiss & Mike Furr, *Static stability using Availability Zones* (Amazon Builders' Library, 2019) — "In a statically stable design, the overall system keeps working even when a dependency becomes impaired", with EC2's control-plane/data-plane split and the 50 percent overprovisioning across three zones. — [source ↗](https://builder.aws.com/content/3K9SiqiJ369TGkkGzqPM95BuYWI/static-stability-using-availability-zones)
+- **See also:** [Avoid Fallback](#avoid-fallback) · [Constant Work](#constant-work) · [Fallacies of Distributed Computing](#fallacies-of-distributed-computing)
+
+### Avoid Fallback
+
+`§ 79` · Distributed Systems
+
+- **Concept:** A fallback path runs only after something has already failed, so the least-tested code in the system runs under the worst conditions.
+- **Mechanism:** Fallback code sits idle in normal operation, so its bugs, its capacity limits and its stale data go unnoticed until it is needed. It then switches on in the middle of an outage, when load is unusual and other parts are degraded, and adds a new mode to a system that is already behaving strangely. A fallback to a cache or a secondary service can also move load onto something never sized for it, widening a partial failure. Amazon's conclusion is that the effort is usually better spent making the primary path more available.
+- **Counter:** **Graceful Degradation** — returning a reduced answer beats returning an error when the reduced path runs all the time, as when a recommendations panel falls back to a static list it serves anyway; the danger is the path that never runs, not degradation itself.
+- **Guideline:** Before adding a fallback, ask whether the same effort would make the primary path more available: push data to the caller ahead of time instead of pulling it at request time, add redundancy. If you keep a fallback, run it in production continuously, not only on failure, and treat its output as an equally valid source. Delete fallback paths nobody has exercised.
+- **Source:** Jacob Gabrielson, *Avoiding fallback in distributed systems* (Amazon Builders' Library, 2019) — "At Amazon, we avoid fallback in our systems because it's difficult to prove and its effectiveness is hard to test." — [source ↗](https://builder.aws.com/content/3EuS9Sakq7L3VLQIF3qzfMfke1Y/avoiding-fallback-in-distributed-systems)
+- **See also:** [Static Stability](#static-stability) · [Constant Work](#constant-work) · [Ironies of Automation](#ironies-of-automation) · [Chaos Engineering](#chaos-engineering)
+
+### Constant Work
+
+`§ 80` · Distributed Systems
+
+- **Concept:** A system whose work grows with load or failure has a behaviour it only shows under stress, and that is where it breaks.
+- **Mechanism:** Most systems do more work as conditions get worse: more retries, more changes to propagate, more health transitions to process. That extra work arrives when the system has the least headroom, and the code that handles it is the code that runs least often. A constant-work design does the same amount regardless: Route 53's health checkers send a fixed-size table of every status on a schedule, and Network Load Balancer nodes reload their full configuration from S3 every few seconds even when nothing has changed. A surge of failures produces no extra work, so there is no overload mode to discover in production.
+- **Counter:** **Elasticity** — doing the full work every cycle wastes resources when little has changed; for configuration and health status the cost is negligible, but for a web fleet the savings from scaling with load usually win over running peak capacity all day.
+- **Guideline:** For control loops that propagate configuration or health, send the whole state on a fixed schedule instead of deltas on change, and size the payload for the maximum, not the typical case. Keep the amount of work independent of how many things changed. Use it where the work is small; for request-serving capacity, scale with load and design the overload case explicitly.
+- **Source:** Colm MacCárthaigh, *Reliability, constant work, and a good cup of coffee* (Amazon Builders' Library, 2021) — the coffee-urn analogy, the Route 53 health-check and Network Load Balancer configuration examples, and the admission that physical constant work "usually come[s] at the cost of waste." — [source ↗](https://builder.aws.com/content/3F05oqNtNUWxHJ5r6L6I2HrH4rI/reliability-constant-work-and-a-good-cup-of-coffee)
+- **See also:** [Static Stability](#static-stability) · [Avoid Fallback](#avoid-fallback)
+
+### Mechanisms, Not Good Intentions
+
+`§ 81` · Organization
+
+- **Concept:** Asking people to try harder after a failure changes little, because the failure happened to people who were already trying.
+- **Mechanism:** Most mistakes are made by people who meant well and knew the rule, so telling them again adds nothing they lacked. Attention is finite and fades, so a fix that depends on someone remembering holds for a few weeks before the same error comes back. What changes behaviour is a mechanism: a tool, its actual adoption, and inspection that checks whether it works. A checklist nobody reads is not a mechanism; a gate that blocks the merge is.
+- **Counter:** **Resist Proxies** — a mechanism can harden into the goal; once following the process is what gets judged, people defend a bad outcome by saying they followed it, and nobody asks whether the process still serves the result.
+- **Guideline:** When a postmortem action item says "be more careful", "remind the team" or "double-check", replace it with a change that works without anyone remembering: a CI check, a safe default, a field that cannot be skipped. Give each one an owner and a date to inspect whether it is used and whether it worked. Retire mechanisms that no longer change outcomes.
+- **Source:** An internal Amazon saying, not a published Bezos text. Gregor Hohpe, *Strategy Is a Winding Road. Mechanisms Keep You on Track.* (AWS Enterprise Strategy blog, 2021) records "At Amazon we have a common saying: 'Good intentions don't work—mechanisms do'" and defines a mechanism as tools, adoption and inspection; attributions of the line to Jeff Bezos are secondhand. The counter-force is from Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017): "The process is not the thing." — [source ↗](https://aws.amazon.com/blogs/enterprise-strategy/strategy-is-a-winding-road-mechanisms-keep-you-on-track/)
+- **See also:** [Blameless Postmortem](#blameless-postmortem) · [Goodhart's Law](#goodharts-law) · [You Build It, You Run It](#you-build-it-you-run-it) · [Context, Not Control](#context-not-control)
+
+### Andon (Stop the Line)
+
+`§ 82` · Operations
+
+- **Concept:** Letting anyone who sees an abnormality stop the line keeps a defect from travelling downstream, where it costs more to find and fix.
+- **Mechanism:** A defect caught where it is made has one cause and an obvious fix; the same defect found three stations later is buried under work built on top of it, and the person who could explain it has moved on. Pressure to keep the line moving makes each worker discount what they saw and assume someone downstream will catch it. Toyota's jidoka moved the decision into the station: first a loom that stopped itself when a thread broke, later a cord any operator can pull to halt the line and light the andon board. The stop is not the point; it forces the abnormality to be examined while the evidence is still fresh.
+- **Counter:** **Alarm Fatigue** — when the stop signal fires often or falsely, people learn to route around it, and throughput pressure turns every pull of the cord into a cost someone has to justify.
+- **Guideline:** Make a red main-branch build, a failed canary or a breached SLO halt further merges or deploys for everyone, and let anyone pull that cord without asking permission. Keep the trigger narrow enough that it rarely fires falsely, and treat a stop that nobody investigates as a defect in the cord, not in the person who pulled it.
+- **Source:** Toyota Motor Corporation, *Toyota Production System* (official page, global.toyota) — jidoka, the andon board and the stop cord any operator can pull, traced to Sakichi Toyoda's 1896 power loom that stopped when a weft thread broke; the page credits Taiichi Ohno (1912–1990) with building the system's foundation. — [source ↗](https://global.toyota/en/company/vision-and-philosophy/production-system/)
+- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Error Budget](#error-budget) · [Five Whys](#five-whys)
+
+### Five Whys
+
+`§ 83` · Operations
+
+- **Concept:** The first answer to "why did this fail" is usually a symptom, and fixing a symptom leaves the cause in place to fail again.
+- **Mechanism:** Investigations stop at the first cause that someone could plausibly have prevented, because it closes the ticket and names an action. That cause is usually the one nearest in time (a bad config push, a full disk), and fixing it removes this instance without touching whatever produced it. Asking why again of each answer walks the chain back to a condition (a missing check, a process nobody owns) whose fix prevents a whole class of failures. Five is a rule of thumb, not a required depth.
+- **Counter:** **Swiss Cheese Model** — a single chain of whys picks one path through an accident that had several, the analyst's choice at each step decides which root cause comes out, and in complex systems there is often no single root to find.
+- **Guideline:** In the postmortem, keep asking why of each answer until you reach something the team can change that would have stopped the chain, and give that change an owner. Branch whenever an answer has more than one cause, and never stop at a person: "the engineer made a mistake" is a cue to ask why the mistake was easy to make.
+- **Source:** Taiichi Ohno, *Toyota Production System: Beyond Large-Scale Production* (Productivity Press, 1988; originally 『トヨタ生産方式』, Diamond, 1978), ch. 2 "Evolution of the Toyota Production System", section "Repeating Why Five Times" — the method as the basis of Toyota's approach to problems. — [source ↗](https://www.routledge.com/Toyota-Production-System-Beyond-Large-Scale-Production/Ohno/p/book/9780915299140)
+- **See also:** [Swiss Cheese Model](#swiss-cheese-model) · [Normal Accident Theory](#normal-accident-theory) · [Blameless Postmortem](#blameless-postmortem) · [Andon (Stop the Line)](#andon-stop-the-line) · [XY Problem](#xy-problem)
+
+### Chaos Engineering
+
+`§ 84` · Operations
+
+- **Concept:** Resilience that has never been exercised is a hypothesis, and production will test it whether or not you schedule the test.
+- **Mechanism:** Failover paths, retries and redundancy run only when something breaks, so they decay between failures: a config drifts, a dependency is added, a timeout changes, and nobody notices until the real outage. Staging cannot reproduce production's traffic, data and coupling, so a test there says little about the system people actually use. Injecting failure on purpose, in production, against a stated hypothesis about steady-state behaviour, makes those weaknesses show up on a weekday afternoon with engineers watching instead of at 3 a.m. Netflix built Chaos Monkey early in its move to AWS to kill instances at random, so every service had to survive losing one.
+- **Counter:** **Minimize Blast Radius** — experimenting in production can hurt real customers, and an experiment on a system already known to be fragile only confirms what you knew; fix it first, then start with the smallest scope that can show a result.
+- **Guideline:** Pick one dependency, write down what steady state should look like while it is down, and take it away in production during working hours with an abort switch and someone watching. Start with a small slice of traffic, widen only after the system holds, and do not experiment on a service you already expect to fall over.
+- **Source:** *Principles of Chaos Engineering* (principlesofchaos.org, last updated March 2019) — the definition, the steady-state hypothesis, running experiments in production and minimizing blast radius; Netflix Technology Blog, *5 Lessons We've Learned Using AWS* (2010) — the introduction of Chaos Monkey. — [source ↗](https://principlesofchaos.org/)
+- **See also:** [Murphy's Law](#murphys-law) · [Fallacies of Distributed Computing](#fallacies-of-distributed-computing) · [Avoid Fallback](#avoid-fallback)
+
+### Context, Not Control
+
+`§ 85` · Organization
+
+- **Concept:** Rules and approvals scale worse than shared understanding; people given the reasons behind a goal make better local decisions than people given a procedure.
+- **Mechanism:** A rule encodes someone's judgement about the cases they could foresee, so it fails on the ones they could not, and every approval step sends a decision to a person with less detail than the one asking. As a company grows, each incident adds a rule and rules accumulate faster than anyone removes them, until people follow the procedure instead of thinking about the outcome. When managers spend their effort on the why (the goal, the constraints, what good looks like), the people closest to the work can decide quickly and still pull in the same direction. Netflix calls the result "highly aligned and loosely coupled".
+- **Counter:** **Guardrails** — some failures (a leaked credential, a compliance breach, an irreversible deletion) cost too much to leave to judgement, and context does nothing for a newcomer who has not absorbed it yet.
+- **Guideline:** When a team makes a call you would have made differently, ask what context they were missing before you write a rule, and fix the context first. Keep hard controls (approval gates, enforced policy) for decisions that are irreversible, unethical or a material risk, and record why each one exists so it can be removed when the reason goes away.
+- **Source:** Netflix, *Netflix Culture Memo* (jobs.netflix.com) — "context not control", "highly aligned and loosely coupled", and keeping rules to a minimum to avoid the process creep that comes with growth. — [source ↗](https://jobs.netflix.com/culture)
+- **See also:** [Conway's Law](#conways-law) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Curse of Knowledge](#curse-of-knowledge)
+
+### Approve What Improves Code Health
+
+`§ 86` · Maintainability
+
+- **Concept:** Holding every change to a standard of perfect makes review slow, and slow review leaves the codebase worse, not better.
+- **Mechanism:** There is no perfect code, only better code, so a reviewer who waits for perfect is holding out for a bar nobody reaches while the change sits. Authors respond by batching work into large changes that get reviewed less carefully, or by not touching the code that needs it, and the improvement the change carried never lands. A bar of net improvement keeps each merge moving the codebase in the right direction, while still letting the reviewer refuse anything that makes it worse.
+- **Counter:** **Broken Windows Theory** — a reviewer who waves each small flaw through because the change is a net improvement can still leave a codebase full of tolerated flaws, each one making the next easier to accept.
+- **Guideline:** Approve a change once it definitely leaves the code healthier than before, even if you would have written it differently. Prefix polish with "Nit:" so the author can skip it, and block only on what makes the code worse: never approve a change that degrades overall code health.
+- **Source:** Google, "The Standard of Code Review", *Google Engineering Practices Documentation* (2019) — "favor approving a CL once it is in a state where it definitely improves the overall code health", "there is no such thing as 'perfect' code—there is only better code", and "Nit:" for optional comments. — [source ↗](https://google.github.io/eng-practices/review/reviewer/standard.html)
+- **See also:** [Boy Scout Rule](#boy-scout-rule) · [Broken Windows Theory](#broken-windows-theory) · [Law of Triviality](#law-of-triviality)
+
+### Beyoncé Rule
+
+`§ 87` · Maintainability
+
+- **Concept:** Behavior that no test checks is behavior nobody changing shared code is obliged to preserve.
+- **Mechanism:** A team changing infrastructure that the whole codebase uses cannot read every caller, so the only contract it can check at scale is the test suite. Whatever the suite does not exercise is invisible to them and changes without warning, not through carelessness but because nothing told them it mattered. The rule turns that blind spot into an assignment of responsibility: if an unrelated change passes all your tests and still breaks your product, the fix and the missing test are yours. It is only fair where a pervasive CI system runs everyone's tests against everyone's changes.
+- **Counter:** **Churn Rule** — a test-shaped contract tells the changer what it broke, not that breaking it was free; the team making the change still owes its users the migration.
+- **Guideline:** Write a test for every behavior your product relies on in a shared library or dependency, and make sure it runs in the CI that gates other people's changes. When something breaks and no test caught it, add that test before closing the incident. If you own the shared code, say up front that tests are the contract, and do not invoke the rule unless your changes actually run consumers' tests.
+- **Source:** Adam Bender, "Testing Overview", in Winters, Manshreck & Wright, *Software Engineering at Google* (O'Reilly, 2020), ch. 11 — "If you liked it, then you shoulda put a test on it", invoked by infrastructure teams making changes across the entire codebase. — [source ↗](https://abseil.io/resources/swe-book/html/ch11.html)
+- **See also:** [Hyrum's Law](#hyrums-law) · [Churn Rule](#churn-rule)
+
+### Churn Rule
+
+`§ 88` · Organization
+
+- **Concept:** When the team that changes shared infrastructure can push the migration onto its users, the cost of the change multiplies by the number of users.
+- **Mechanism:** Each consuming team meets the change cold: it ramps up on a problem it has never seen, solves its own instance and throws the knowledge away. Across hundreds of teams that is hundreds of shallow learning curves, and dependent projects spend progressively more effort just keeping up. The team that made the change never sees the bill, so nothing pushes it to change less often or make changes cheaper. Requiring the changer to do the migration puts the cost where the decision is made, and a few experts who learn the problem once can apply it everywhere.
+- **Counter:** **Code Ownership** — people who change a codebase they do not live in miss its local reasons, so a central migration still needs the owning team's review, and some changes only its owners can make safely.
+- **Guideline:** If you own a library, service or platform, budget the migration as part of the change: move the callers yourself, or change in place in a backward-compatible way. Do not ship a deprecation notice and a deadline as the migration plan. Invest in the tooling that makes cross-codebase changes cheap, and send each change to the owning team for review instead of landing it unseen.
+- **Source:** Titus Winters, "What Is Software Engineering?", in Winters, Manshreck & Wright, *Software Engineering at Google* (O'Reilly, 2020), ch. 1 — the 2012 "Churn Rule": "infrastructure teams must do the work to move their internal users to new versions themselves or do the update in place, in backward-compatible fashion." — [source ↗](https://abseil.io/resources/swe-book/html/ch01.html)
+- **See also:** [Beyoncé Rule](#beyoncé-rule) · [Hyrum's Law](#hyrums-law) · [Toil](#toil)
+
+### Fixed Time, Variable Scope
+
+`§ 89` · Estimation
+
+- **Concept:** When scope is fixed and time is not, a project grows to fill what it is given; fixing the time instead forces it to choose what matters.
+- **Mechanism:** An estimate starts from a design and ends with a number, and the number is wrong in the same direction every time because the unknowns only surface once the work is under way. When the date slips, the scope stays, since every item already has an advocate and asking for more time feels cheaper than cutting something. Fixing the time first (what *Shape Up* calls the appetite) turns the question from "how long will this take" into "what is the best version we can ship in this much time", so cutting scope becomes the normal move rather than an admission of failure. An overrun project that keeps getting extensions is the same force again, now fed by sunk cost.
+- **Counter:** **Quality as the Hidden Variable** — under a fixed date a team that cannot or will not cut scope cuts tests, review and error handling instead, and some work (a protocol, a compliance requirement) has a floor below which no slice is worth shipping.
+- **Guideline:** Before the work starts, decide how much time it is worth, not how long it will take, and shape the scope to fit. When the time runs out, stop by default: ship what is done if it stands on its own, otherwise reshape it and decide afresh whether to bet on it again; do not quietly extend. Cut features, never tests or review, and do not fix the time on work that cannot be sliced below a coherent minimum.
+- **Source:** Ryan Singer, *Shape Up* (Basecamp, 2019), ch. 3 "Set Boundaries" — the appetite and "fixed time, variable scope"; ch. 8 "The Betting Table" — the circuit breaker: "by default the project doesn't get an extension". Earlier, 37signals, *Getting Real* (2006), "Fix Time and Budget, Flex Scope": "Never throw more time or money at a problem, just scale back the scope." — [source ↗](https://basecamp.com/shapeup/1.2-chapter-03)
+- **See also:** [Parkinson's Law](#parkinsons-law) · [Hofstadter's Law](#hofstadters-law) · [Sunk Cost Fallacy](#sunk-cost-fallacy)
+
+### Strangler Fig
+
+`§ 90` · Maintainability
+
+- **Concept:** Replacing a live system piece by piece around its edges succeeds far more often than replacing it all at once.
+- **Mechanism:** A complete rewrite has to reproduce years of behavior nobody wrote down, while users keep needing features the old system must still deliver, so the target moves while the new system is not yet usable. Nothing reaches production until the end, so the risk and the value both land on a cutover day that often never comes. Routing one capability at a time to new code keeps each step small enough to verify and roll back, and each step starts paying back as soon as it lands. The price is transitional architecture: interception layers and adapters built to be thrown away.
+- **Counter:** **The Unfinished Migration** — the easy routes move first, the tangled core of the old system never does, and the organisation ends up running and paying for two systems indefinitely.
+- **Guideline:** Put an interception point (a proxy, router or facade) in front of the legacy system and move one slice of behavior behind it at a time, starting with one that delivers value on its own. Define "done" at the start, track the share of traffic still on the old path, and budget deleting the old code and the transitional layer as part of the project, not as cleanup for later.
+- **Source:** Martin Fowler, *Strangler Fig Application* (martinfowler.com; originally "Strangler Application", 2004; rewritten 2024) — the fig metaphor and the case that the reduced risk and earlier value of gradual modernization outweigh the cost of transitional architecture. — [source ↗](https://martinfowler.com/bliki/StranglerFigApplication.html)
+- **See also:** [Second-System Effect](#second-system-effect) · [Gall's Law](#galls-law) · [Ninety-Ninety Rule](#ninety-ninety-rule)
+
+### Choose Boring Technology
+
+`§ 91` · Decision
+
+- **Concept:** Every unfamiliar technology a team adopts brings unknown failure modes and a permanent operating cost, and a team can afford only a few of them.
+- **Mechanism:** Most of a technology's cost is paid after launch: keeping a system working reliably for years costs far more than the convenience it bought while building. With a mature tool the failure modes are well understood because someone has already hit them; with a new one the unknown unknowns are larger, and the team discovers them in production. Each addition is also one more thing to monitor, hire for and keep patched, and that cost stays after the novelty wears off. So novelty is a budget, not a free choice: McKinley gives every company about three innovation tokens.
+- **Counter:** **Fitness for Purpose** — boring is not the same as never new; when the existing stack genuinely cannot do the job, forcing it costs more than a token, and a stack that never moves becomes the legacy nobody wants to work on.
+- **Guideline:** Before adding a language, datastore or framework, write down what it would take to do the job with what you already run and why that falls short, and make the decision with everyone who will operate it, not inside one team. Spend new technology only where it sets the product apart. When you do adopt something, plan to retire what it replaces.
+- **Source:** Dan McKinley, *Choose Boring Technology* (mcfunley.com, 2015) — "every company gets about three innovation tokens", drawn from his years at Etsy. — [source ↗](https://mcfunley.com/choose-boring-technology)
+- **See also:** [KISS Principle](#kiss-principle) · [Lindy Effect](#lindy-effect)
 
 <!-- CODEX:END -->
 

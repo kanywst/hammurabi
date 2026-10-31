@@ -553,3 +553,100 @@ figures:
     logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
     license: "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc."
     page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
+  - slug: you-build-it-you-run-it
+    kind: company
+    name: "Amazon"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
+    license: "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc."
+    page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
+  - slug: static-stability
+    kind: company
+    name: "Amazon Web Services"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Amazon_Web_Services_2025.svg"
+    license: "Public domain (text logo); AWS is a trademark of Amazon.com, Inc."
+    page: "https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_2025.svg"
+  - slug: avoid-fallback
+    kind: company
+    name: "Amazon Web Services"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Amazon_Web_Services_2025.svg"
+    license: "Public domain (text logo); AWS is a trademark of Amazon.com, Inc."
+    page: "https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_2025.svg"
+  - slug: constant-work
+    kind: company
+    name: "Amazon Web Services"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Amazon_Web_Services_2025.svg"
+    license: "Public domain (text logo); AWS is a trademark of Amazon.com, Inc."
+    page: "https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_2025.svg"
+  - slug: mechanisms-not-good-intentions
+    kind: company
+    name: "Amazon"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
+    license: "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc."
+    page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
+  - slug: andon
+    kind: company
+    name: "Toyota"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Toyota_Symbol.svg"
+    license: "Public domain (text logo); Toyota is a trademark of Toyota Motor Corporation"
+    page: "https://commons.wikimedia.org/wiki/File:Toyota_Symbol.svg"
+  - slug: five-whys
+    kind: person
+    name: "Taiichi Ohno"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Ohno-Taiichi-1.jpg/500px-Ohno-Taiichi-1.jpg"
+    license: "Public domain in Japan"
+    author: "Toyota Motor Corporation company history editorial committee"
+    page: "https://commons.wikimedia.org/wiki/File:Ohno-Taiichi-1.jpg"
+    focus: { x: 0.48, y: 0.36, zoom: 1.3 }
+  - slug: chaos-engineering
+    kind: company
+    name: "Netflix"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/1/18/Netflix_2016_N_logo.svg"
+    license: "Public domain (text logo); Netflix is a trademark of Netflix, Inc."
+    page: "https://commons.wikimedia.org/wiki/File:Netflix_2016_N_logo.svg"
+  - slug: context-not-control
+    kind: company
+    name: "Netflix"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/1/18/Netflix_2016_N_logo.svg"
+    license: "Public domain (text logo); Netflix is a trademark of Netflix, Inc."
+    page: "https://commons.wikimedia.org/wiki/File:Netflix_2016_N_logo.svg"
+  - slug: code-health-standard
+    kind: company
+    name: "Google"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
+    license: "Public domain (text logo); Google is a trademark of Google LLC"
+    page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
+  - slug: beyonce-rule
+    kind: company
+    name: "Google"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
+    license: "Public domain (text logo); Google is a trademark of Google LLC"
+    page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
+  - slug: churn-rule
+    kind: company
+    name: "Google"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
+    license: "Public domain (text logo); Google is a trademark of Google LLC"
+    page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
+  - slug: fixed-time-variable-scope
+    kind: company
+    name: "37signals"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/37signals_logo.svg"
+    license: "Public domain (text logo); 37signals is a trademark of 37signals LLC"
+    page: "https://commons.wikimedia.org/wiki/File:37signals_logo.svg"
+    viewbox: "770 0 293 300"
+  - slug: strangler-fig
+    kind: person
+    name: "Martin Fowler"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Martin_Fowler_%282008%29.jpg/500px-Martin_Fowler_%282008%29.jpg"
+    license: "CC BY 2.0"
+    author: "Ade Oshineye"
+    page: "https://commons.wikimedia.org/wiki/File:Martin_Fowler_(2008).jpg"
+    focus: { x: 0.4, y: 0.38, zoom: 1.2 }
+  - slug: choose-boring-technology
+    kind: person
+    name: "Dan McKinley"
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Dan_McKinley_-_Wikimedia_Dev_Summit_2018.png"
+    license: "CC BY-SA 4.0"
+    author: "Michael Holloway"
+    page: "https://commons.wikimedia.org/wiki/File:Dan_McKinley_-_Wikimedia_Dev_Summit_2018.png"
+    focus: { x: 0.73, y: 0.43, zoom: 2.5 }
