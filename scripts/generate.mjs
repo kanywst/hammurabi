@@ -8,7 +8,7 @@
  */
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { anchor, article, heading, requireCodex, ROOT } from './lib/codex.mjs';
+import { anchor, article, heading, loadFigures, requireCodex, ROOT } from './lib/codex.mjs';
 
 /* Figures, if `npm run generate:diagrams` has been run. They are optional so a
    contributor editing a law never has to build the site to regenerate the
@@ -183,6 +183,42 @@ function spliceMarkdown(path, section, count) {
   return retallyBadge(next, count);
 }
 
+/* Pictures, from data/figures.yaml. A picture is only referenced once
+   `npm run fetch:figures` has stored it, so a figure with a source but no file
+   falls back to the monogram seal instead of a broken image. */
+const { figures } = loadFigures();
+const FIGURES_DIR = join(ROOT, 'website', 'public', 'figures');
+
+/** Two letters for the seal: first and last word of a name, or the first two
+ *  significant words of a title. */
+function monogram(text, isName) {
+  const words = text
+    .replace(/[&,.'’]/g, ' ')
+    .split(/\s+/)
+    .filter((w) => w && !/^(the|of|a|an|and|jr|to)$/i.test(w));
+  const picked = isName ? [words[0], words[words.length - 1]] : words.slice(0, 2);
+  return [...new Set(picked)].map((w) => w[0].toUpperCase()).join('');
+}
+
+function figureFor(law) {
+  const f = figures.get(law.slug) ?? { kind: 'none' };
+  const out = {
+    kind: f.kind,
+    name: f.name ?? null,
+    monogram: f.name && f.kind !== 'scene' ? monogram(f.name, f.kind === 'person') : monogram(law.en.title, false),
+    image: null,
+    logo: null,
+    credit: null,
+  };
+  if (f.image && existsSync(join(FIGURES_DIR, `${law.slug}.webp`))) out.image = `/figures/${law.slug}.webp`;
+  const logo = ['svg', 'png'].find((ext) => f.logo && existsSync(join(FIGURES_DIR, `${law.slug}.${ext}`)));
+  if (logo) out.logo = `/figures/${law.slug}.${logo}`;
+  if (out.image || out.logo) {
+    out.credit = { author: f.author ?? null, license: f.license, page: f.page ?? null };
+  }
+  return out;
+}
+
 function websiteModule(laws, tags, situations) {
   const payload = {
     tags: Object.entries(tags).map(([key, value]) => ({ key, ...value })),
@@ -193,6 +229,7 @@ function websiteModule(laws, tags, situations) {
       tag: law.tag,
       sourceUrl: law.source_url,
       seeAlso: law.see_also,
+      figure: figureFor(law),
       en: law.en,
       ja: law.ja,
     })),
@@ -216,12 +253,30 @@ export interface LawText {
   source: string;
 }
 
+export interface Credit {
+  author: string | null;
+  license: string;
+  page: string | null;
+}
+
+/** Who or what the law is pictured by: a portrait, a company mark, or a
+ *  monogram seal when there is no free image. */
+export interface Figure {
+  kind: 'person' | 'scene' | 'company' | 'none';
+  name: string | null;
+  monogram: string;
+  image: string | null;
+  logo: string | null;
+  credit: Credit | null;
+}
+
 export interface Law {
   slug: string;
   number: number;
   tag: string;
   sourceUrl: string;
   seeAlso: string[];
+  figure: Figure;
   en: LawText;
   ja: LawText;
 }

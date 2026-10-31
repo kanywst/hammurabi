@@ -6,7 +6,8 @@ import { useMemo, useState } from 'react';
 import { Search, Shuffle } from 'lucide-react';
 import { translations } from '@/translations';
 import { laws, lawBySlug, situations, tags, type Locale } from '@/data/laws';
-import { article, routeFor } from '@/lib/site';
+import { article, hueFor, routeFor } from '@/lib/site';
+import Medallion from './Medallion';
 
 /**
  * The index of the codex. Two ways in: by the situation the reader is in, or by
@@ -154,10 +155,12 @@ export default function LawsCodex({ lang }: { lang: Locale }) {
                     className="border-b border-line-soft"
                   >
                     <Link href={routeFor(lang, law.slug)} className="row">
-                      <span className="num">{article(law.number)}</span>
+                      <Medallion figure={law.figure} hue={hueFor(law.tag)} />
                       <span>
                         <span className="row__title">{text.title}</span>
                         <span className="row__tag meta block">
+                          <span className="num">§ {article(law.number)}</span>
+                          {' · '}
                           {label.get(law.tag)}
                         </span>
                       </span>

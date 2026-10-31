@@ -16,12 +16,30 @@ export interface LawText {
   source: string;
 }
 
+export interface Credit {
+  author: string | null;
+  license: string;
+  page: string | null;
+}
+
+/** Who or what the law is pictured by: a portrait, a company mark, or a
+ *  monogram seal when there is no free image. */
+export interface Figure {
+  kind: 'person' | 'scene' | 'company' | 'none';
+  name: string | null;
+  monogram: string;
+  image: string | null;
+  logo: string | null;
+  credit: Credit | null;
+}
+
 export interface Law {
   slug: string;
   number: number;
   tag: string;
   sourceUrl: string;
   seeAlso: string[];
+  figure: Figure;
   en: LawText;
   ja: LawText;
 }
@@ -270,6 +288,18 @@ export const laws: Law[] = [
       "parkinsons-law",
       "disagree-and-commit"
     ],
+    "figure": {
+      "kind": "company",
+      "name": "Amazon",
+      "monogram": "A",
+      "image": null,
+      "logo": "/figures/type-1-vs-type-2-decisions.svg",
+      "credit": {
+        "author": null,
+        "license": "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc.",
+        "page": "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
+      }
+    },
     "en": {
       "title": "Type 1 vs Type 2 Decisions",
       "concept": "Teams spend the caution meant for irreversible decisions on ones they could easily undo.",
@@ -305,6 +335,14 @@ export const laws: Law[] = [
       "blameless-postmortem",
       "error-budget"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Diane Vaughan",
+      "monogram": "DV",
+      "image": null,
+      "logo": null,
+      "credit": null
+    },
     "en": {
       "title": "Normalization of Deviance",
       "concept": "A broken rule that causes no immediate harm quietly becomes the new normal.",
@@ -335,6 +373,18 @@ export const laws: Law[] = [
       "eaglesons-law",
       "yagni"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "G. K. Chesterton",
+      "monogram": "GC",
+      "image": "/figures/chestertons-fence.webp",
+      "logo": null,
+      "credit": {
+        "author": "Ernest Herbert Mills",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Gilbert_Chesterton.jpg"
+      }
+    },
     "en": {
       "title": "Chesterton's Fence",
       "concept": "Code or rules whose origin you don't know look like clutter, which makes them tempting to delete.",
@@ -368,6 +418,18 @@ export const laws: Law[] = [
       "normalization-of-deviance",
       "occams-razor"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Amanda Ripley",
+      "monogram": "AR",
+      "image": "/figures/normalcy-bias.webp",
+      "logo": null,
+      "credit": {
+        "author": "Thatcher Cook for PopTech",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Amanda_Ripley_-_PopTech_2012.jpg"
+      }
+    },
     "en": {
       "title": "Normalcy Bias",
       "concept": "Faced with a real anomaly, people reach for the familiar, harmless explanation.",
@@ -398,6 +460,18 @@ export const laws: Law[] = [
       "parkinsons-law",
       "disagree-and-commit"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "C. Northcote Parkinson",
+      "monogram": "CP",
+      "image": "/figures/law-of-triviality.webp",
+      "logo": null,
+      "credit": {
+        "author": "Wim van Rossem for Anefo",
+        "license": "CC BY-SA 3.0 NL",
+        "page": "https://commons.wikimedia.org/wiki/File:Cyril_Northcote_Parkinson_1961.jpg"
+      }
+    },
     "en": {
       "title": "Law of Triviality",
       "concept": "Discussion goes to the parts everyone understands, not the parts that matter.",
@@ -429,6 +503,18 @@ export const laws: Law[] = [
       "yagni",
       "second-system-effect"
     ],
+    "figure": {
+      "kind": "scene",
+      "name": "Wright Flyer, first flight, 1903",
+      "monogram": "GS",
+      "image": "/figures/galls-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "John T. Daniels (Library of Congress)",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:First_flight2.jpg"
+      }
+    },
     "en": {
       "title": "Gall's Law",
       "concept": "Complex systems that work usually grew from simple systems that worked; designed ones rarely do.",
@@ -460,6 +546,14 @@ export const laws: Law[] = [
       "brooks-law",
       "single-responsibility-principle"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Melvin E. Conway",
+      "monogram": "MC",
+      "image": null,
+      "logo": null,
+      "credit": null
+    },
     "en": {
       "title": "Conway's Law",
       "concept": "Systems end up shaped like the communication paths of the teams that build them.",
@@ -490,6 +584,14 @@ export const laws: Law[] = [
       "postels-law",
       "principle-of-least-astonishment"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Hyrum Wright",
+      "monogram": "HW",
+      "image": null,
+      "logo": null,
+      "credit": null
+    },
     "en": {
       "title": "Hyrum's Law",
       "concept": "With enough users, every observable behavior of a system, bugs included, is depended on.",
@@ -524,6 +626,18 @@ export const laws: Law[] = [
       "second-system-effect",
       "metcalfes-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Fred Brooks",
+      "monogram": "FB",
+      "image": "/figures/brooks-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "SD&M (www.sdm.de)",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Fred_Brooks_(cropped_square).jpg"
+      }
+    },
     "en": {
       "title": "Brooks' Law",
       "concept": "Adding people to a late project tends to make it later, because ramp-up and coordination cost more than they add.",
@@ -554,6 +668,18 @@ export const laws: Law[] = [
       "curse-of-knowledge",
       "working-backwards"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Eric S. Raymond",
+      "monogram": "ER",
+      "image": "/figures/xy-problem.webp",
+      "logo": null,
+      "credit": {
+        "author": "jerone2 (Flickr); derivative by Bilby",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Eric_S_Raymond_portrait.jpg"
+      }
+    },
     "en": {
       "title": "XY Problem",
       "concept": "People ask for help with their attempted fix instead of the problem they actually have.",
@@ -584,6 +710,18 @@ export const laws: Law[] = [
       "hyrums-law",
       "fallacies-of-distributed-computing"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Jon Postel",
+      "monogram": "JP",
+      "image": "/figures/postels-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Carl Malamud",
+        "license": "CC BY 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Jon_Postel_sitting_in_office_(cropped).jpg"
+      }
+    },
     "en": {
       "title": "Postel's Law",
       "concept": "Systems that assume every peer follows the spec exactly tend to be brittle against the first one that doesn't.",
@@ -615,6 +753,18 @@ export const laws: Law[] = [
       "occams-razor",
       "blameless-postmortem"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Robert A. Heinlein",
+      "monogram": "RH",
+      "image": "/figures/hanlons-razor.webp",
+      "logo": null,
+      "credit": {
+        "author": "Photographer unknown, published by Doubleday",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Robert_A._Heinlein_(Doubleday_photo)_(retouched).jpg"
+      }
+    },
     "en": {
       "title": "Hanlon's Razor",
       "concept": "We read malice into delays and bugs that are better explained by fatigue or missing context.",
@@ -645,6 +795,18 @@ export const laws: Law[] = [
       "ninety-ninety-rule",
       "parkinsons-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Douglas Hofstadter",
+      "monogram": "DH",
+      "image": "/figures/hofstadters-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "null0",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Douglas_Hofstadter,_Stanford_2006_(crop).jpg"
+      }
+    },
     "en": {
       "title": "Hofstadter's Law",
       "concept": "Work takes longer than estimated, even when the estimate already allows for that.",
@@ -676,6 +838,18 @@ export const laws: Law[] = [
       "shirky-principle",
       "error-budget"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Charles Goodhart",
+      "monogram": "CG",
+      "image": "/figures/goodharts-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Jamesfranklingresham",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Charles_Goodhart_delives_the_2012_Long_Finance_conference_keynote_speech.JPG"
+      }
+    },
     "en": {
       "title": "Goodhart's Law",
       "concept": "A number stops measuring well once people are rewarded for moving it.",
@@ -706,6 +880,18 @@ export const laws: Law[] = [
       "worse-is-better",
       "amaras-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Nassim Nicholas Taleb",
+      "monogram": "NT",
+      "image": "/figures/lindy-effect.webp",
+      "logo": null,
+      "credit": {
+        "author": "Eirik Solheim / NRKbeta",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Nassim_Nicholas_Taleb_DLD_2009-012_(cropped).jpg"
+      }
+    },
     "en": {
       "title": "Lindy Effect",
       "concept": "For ideas and software, the longer something has survived, the longer it is likely to last.",
@@ -735,6 +921,18 @@ export const laws: Law[] = [
     "seeAlso": [
       "type-1-vs-type-2-decisions"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Richard H. Thaler",
+      "monogram": "RT",
+      "image": "/figures/sunk-cost-fallacy.webp",
+      "logo": null,
+      "credit": {
+        "author": "Chatham House",
+        "license": "CC BY 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Richard_Thaler_Chatham.jpg"
+      }
+    },
     "en": {
       "title": "Sunk Cost Fallacy",
       "concept": "Teams keep funding a failing project because of what they have already spent on it.",
@@ -765,6 +963,18 @@ export const laws: Law[] = [
       "survivorship-bias",
       "the-bitter-lesson"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Richard Feynman",
+      "monogram": "RF",
+      "image": "/figures/cargo-cult-engineering.webp",
+      "logo": null,
+      "credit": {
+        "author": "Tamiko Thiel",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:RichardFeynman-PaineMansionWoods1984_copyrightTamikoThiel_bw.jpg"
+      }
+    },
     "en": {
       "title": "Cargo Cult Engineering",
       "concept": "Teams copy another company's practices without the conditions that made them work.",
@@ -796,6 +1006,18 @@ export const laws: Law[] = [
       "premature-optimization",
       "theory-of-constraints"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Gene Amdahl",
+      "monogram": "GA",
+      "image": "/figures/amdahls-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Perry Kivolowitz",
+        "license": "CC BY 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Amdahl_march_13_2008.jpg"
+      }
+    },
     "en": {
       "title": "Amdahl's Law",
       "concept": "Speeding up one part of a system barely helps when the bottleneck is somewhere else.",
@@ -826,6 +1048,18 @@ export const laws: Law[] = [
       "teslers-law",
       "law-of-demeter"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Joel Spolsky",
+      "monogram": "JS",
+      "image": "/figures/leaky-abstractions.webp",
+      "logo": null,
+      "credit": {
+        "author": "Katie Chan",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Joel_Spolsky_2014-06-18_(cropped).jpg"
+      }
+    },
     "en": {
       "title": "Law of Leaky Abstractions",
       "concept": "Every non-trivial abstraction eventually exposes the details it was meant to hide.",
@@ -855,6 +1089,18 @@ export const laws: Law[] = [
     "seeAlso": [
       "premature-optimization"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Vilfredo Pareto",
+      "monogram": "VP",
+      "image": "/figures/pareto-principle.webp",
+      "logo": null,
+      "credit": {
+        "author": "Unknown author",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Vilfredo_Pareto_1870s2.jpg"
+      }
+    },
     "en": {
       "title": "Pareto Principle",
       "concept": "Most of the effect comes from a small share of the causes, such as bugs in a few modules.",
@@ -885,6 +1131,18 @@ export const laws: Law[] = [
       "cargo-cult-engineering",
       "amaras-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Abraham Wald",
+      "monogram": "AW",
+      "image": "/figures/survivorship-bias.webp",
+      "logo": null,
+      "credit": {
+        "author": "Unknown",
+        "license": "Public domain in the US",
+        "page": "https://en.wikipedia.org/wiki/File:Abraham_Wald_in_his_youth.jpg_(enwiki-local,_not_Commons)"
+      }
+    },
     "en": {
       "title": "Survivorship Bias",
       "concept": "Conclusions drawn only from successes ignore the failures that used the same strategy.",
@@ -915,6 +1173,18 @@ export const laws: Law[] = [
       "eaglesons-law",
       "kiss-principle"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Brian Kernighan",
+      "monogram": "BK",
+      "image": "/figures/kernighans-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Jw12321",
+        "license": "CC0",
+        "page": "https://commons.wikimedia.org/wiki/File:Brian_Kernighan_at_VCF_East_2.jpg"
+      }
+    },
     "en": {
       "title": "Kernighan's Law",
       "concept": "Debugging is harder than writing, so code written at your cleverest is beyond your debugging.",
@@ -945,6 +1215,18 @@ export const laws: Law[] = [
       "goodharts-law",
       "jevons-paradox"
     ],
+    "figure": {
+      "kind": "scene",
+      "name": "Indian cobra (Naja naja)",
+      "monogram": "CE",
+      "image": "/figures/cobra-effect.webp",
+      "logo": null,
+      "credit": {
+        "author": "Pavan Kumar N (Simplypavi)",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Indian_Cobra,_crop.jpg"
+      }
+    },
     "en": {
       "title": "Cobra Effect",
       "concept": "An incentive meant to reduce a problem rewards people for producing more of it.",
@@ -978,6 +1260,18 @@ export const laws: Law[] = [
       "metcalfes-law",
       "ringelmann-effect"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Robin Dunbar",
+      "monogram": "RD",
+      "image": "/figures/dunbars-number.webp",
+      "logo": null,
+      "credit": {
+        "author": "Festival della Scienza from Genova",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Robin_Dunbar_(6293027302).jpg"
+      }
+    },
     "en": {
       "title": "Dunbar's Number",
       "concept": "People keep only about 150 stable relationships. Engineers extrapolate: past shared context, added headcount goes to coordination.",
@@ -1009,6 +1303,14 @@ export const laws: Law[] = [
       "lindy-effect",
       "second-system-effect"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Richard P. Gabriel",
+      "monogram": "RG",
+      "image": null,
+      "logo": null,
+      "credit": null
+    },
     "en": {
       "title": "Worse is Better",
       "concept": "A simpler design that is easy to build and adopt tends to beat a more correct but complex one.",
@@ -1038,6 +1340,18 @@ export const laws: Law[] = [
     "seeAlso": [
       "linus-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Ward Cunningham",
+      "monogram": "WC",
+      "image": "/figures/cunninghams-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Carrigg Photography for the Wikimedia Foundation",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Ward_Cunningham_-_Commons-1_(cropped).jpg"
+      }
+    },
     "en": {
       "title": "Cunningham's Law",
       "concept": "People are quicker to correct a wrong answer than to answer a question.",
@@ -1069,6 +1383,14 @@ export const laws: Law[] = [
       "ringelmann-effect",
       "blameless-postmortem"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "John M. Darley",
+      "monogram": "JD",
+      "image": null,
+      "logo": null,
+      "credit": null
+    },
     "en": {
       "title": "Bystander Effect",
       "concept": "The more people who see a problem, the less likely any one of them is to act on it.",
@@ -1099,6 +1421,18 @@ export const laws: Law[] = [
       "normalcy-bias",
       "fallacies-of-distributed-computing"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "John Paul Stapp",
+      "monogram": "JS",
+      "image": "/figures/murphys-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "U.S. Air Force",
+        "license": "Public domain (US government work)",
+        "page": "https://commons.wikimedia.org/wiki/File:John_Stapp.triddle.jpg"
+      }
+    },
     "en": {
       "title": "Murphy's Law",
       "concept": "Given enough time and traffic, a failure mode that can happen eventually will.",
@@ -1129,6 +1463,18 @@ export const laws: Law[] = [
       "normalization-of-deviance",
       "broken-windows-theory"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Robert C. Martin",
+      "monogram": "RM",
+      "image": "/figures/boy-scout-rule.webp",
+      "logo": null,
+      "credit": {
+        "author": "Angelacleancoder",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Robert_C._Martin_surrounded_by_computers_(cropped).jpg"
+      }
+    },
     "en": {
       "title": "Boy Scout Rule",
       "concept": "Code decays because cleanup tends to be deferred to a refactor that rarely happens.",
@@ -1161,6 +1507,18 @@ export const laws: Law[] = [
       "leaky-abstractions",
       "ashbys-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Larry Tesler",
+      "monogram": "LT",
+      "image": "/figures/teslers-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Yahoo! Blog from Sunnyvale, California, USA",
+        "license": "CC BY 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Larry_Tesler_Smiles_at_Whisper.jpeg"
+      }
+    },
     "en": {
       "title": "Tesler's Law",
       "concept": "A system's inherent complexity can't be removed, only moved to someone else.",
@@ -1191,6 +1549,18 @@ export const laws: Law[] = [
       "curse-of-knowledge",
       "peter-principle"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "David Dunning",
+      "monogram": "DD",
+      "image": "/figures/dunning-kruger-effect.webp",
+      "logo": null,
+      "credit": {
+        "author": "Karl Withakay",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:David_Dunning_at_LiliCon_2026.jpg"
+      }
+    },
     "en": {
       "title": "Dunning-Kruger Effect",
       "concept": "People who are least skilled at something tend to overrate their ability the most.",
@@ -1224,6 +1594,18 @@ export const laws: Law[] = [
       "dunning-kruger-effect",
       "principle-of-least-astonishment"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "George Loewenstein",
+      "monogram": "GL",
+      "image": "/figures/curse-of-knowledge.webp",
+      "logo": null,
+      "credit": {
+        "author": "Me Judice (MeJudice)",
+        "license": "CC BY 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:George_Loewenstein_(2012).jpg"
+      }
+    },
     "en": {
       "title": "Curse of Knowledge",
       "concept": "Once you know something, you can't easily imagine what it's like not to know it.",
@@ -1255,6 +1637,18 @@ export const laws: Law[] = [
       "normal-accident-theory",
       "blameless-postmortem"
     ],
+    "figure": {
+      "kind": "scene",
+      "name": "Emmentaler cheese block",
+      "monogram": "SC",
+      "image": "/figures/swiss-cheese-model.webp",
+      "logo": null,
+      "credit": {
+        "author": "Dieter Seeger",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Emmentaler_aoc_block.jpg"
+      }
+    },
     "en": {
       "title": "Swiss Cheese Model",
       "concept": "Every safeguard has holes; accidents happen when the holes in several layers line up.",
@@ -1285,6 +1679,18 @@ export const laws: Law[] = [
       "amdahls-law",
       "pareto-principle"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Donald Knuth",
+      "monogram": "DK",
+      "image": "/figures/premature-optimization.webp",
+      "logo": null,
+      "credit": {
+        "author": "Alex Handy",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Donald_Ervin_Knuth_(cropped).jpg"
+      }
+    },
     "en": {
       "title": "Premature Optimization",
       "concept": "Optimizing before measuring spends effort on code that isn't the bottleneck.",
@@ -1314,6 +1720,18 @@ export const laws: Law[] = [
     "seeAlso": [
       "cunninghams-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Linus Torvalds",
+      "monogram": "LT",
+      "image": "/figures/linus-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Krd (photo); Von Sprat (crop)",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:LinuxCon_Europe_Linus_Torvalds_03_(cropped).jpg"
+      }
+    },
     "en": {
       "title": "Linus's Law",
       "concept": "A bug that stumps one person is often obvious to someone else looking at the same code.",
@@ -1344,6 +1762,18 @@ export const laws: Law[] = [
       "two-generals-problem",
       "fallacies-of-distributed-computing"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Eric Brewer",
+      "monogram": "EB",
+      "image": "/figures/cap-theorem.webp",
+      "logo": null,
+      "credit": {
+        "author": "Vera de Kok",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:TNW_Con_EU15_-_Eric_Brewer_(scientist)-2.jpg"
+      }
+    },
     "en": {
       "title": "CAP Theorem",
       "concept": "During a network partition, a data store must give up either consistency or availability.",
@@ -1374,6 +1804,18 @@ export const laws: Law[] = [
       "tail-at-scale",
       "theory-of-constraints"
     ],
+    "figure": {
+      "kind": "scene",
+      "name": "Checkout queue at a food store",
+      "monogram": "LS",
+      "image": "/figures/littles-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "David Shankbone",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Waiting_in_line_at_a_food_store.JPG"
+      }
+    },
     "en": {
       "title": "Little's Law",
       "concept": "In a stable system, the average number of items inside equals arrival rate times average time spent.",
@@ -1403,6 +1845,18 @@ export const laws: Law[] = [
     "seeAlso": [
       "cap-theorem"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Jim Gray",
+      "monogram": "JG",
+      "image": "/figures/two-generals-problem.webp",
+      "logo": null,
+      "credit": {
+        "author": "Microsoft Research",
+        "license": "CC BY-SA 3.0 US",
+        "page": "https://commons.wikimedia.org/wiki/File:Jim_Gray_Computing_in_the_21st_Century_2006.jpg"
+      }
+    },
     "en": {
       "title": "Two Generals Problem",
       "concept": "Over an unreliable channel, two parties can never be certain they have agreed.",
@@ -1433,6 +1887,18 @@ export const laws: Law[] = [
       "dunning-kruger-effect",
       "shirky-principle"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Laurence J. Peter",
+      "monogram": "LP",
+      "image": "/figures/peter-principle.webp",
+      "logo": null,
+      "credit": {
+        "author": "Larry Bessel",
+        "license": "CC BY 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Laurence_J._Peter,_1975.jpg"
+      }
+    },
     "en": {
       "title": "Peter Principle",
       "concept": "People tend to get promoted until they reach a role they are bad at, and stay there.",
@@ -1464,6 +1930,18 @@ export const laws: Law[] = [
       "law-of-triviality",
       "hofstadters-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "C. Northcote Parkinson",
+      "monogram": "CP",
+      "image": "/figures/parkinsons-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Wim van Rossem for Anefo",
+        "license": "CC BY-SA 3.0 NL",
+        "page": "https://commons.wikimedia.org/wiki/File:Cyril_Northcote_Parkinson_1961.jpg"
+      }
+    },
     "en": {
       "title": "Parkinson's Law",
       "concept": "Work expands to fill the time available for it.",
@@ -1494,6 +1972,18 @@ export const laws: Law[] = [
       "jevons-paradox",
       "moores-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Niklaus Wirth",
+      "monogram": "NW",
+      "image": "/figures/wirths-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Tyomitch",
+        "license": "Copyrighted free use",
+        "page": "https://commons.wikimedia.org/wiki/File:Niklaus_Wirth,_UrGU.jpg"
+      }
+    },
     "en": {
       "title": "Wirth's Law",
       "concept": "Software gets slower faster than hardware gets faster.",
@@ -1523,6 +2013,18 @@ export const laws: Law[] = [
     "seeAlso": [
       "hofstadters-law"
     ],
+    "figure": {
+      "kind": "scene",
+      "name": "Bell Laboratories, Murray Hill / New Providence, NJ",
+      "monogram": "NR",
+      "image": "/figures/ninety-ninety-rule.webp",
+      "logo": null,
+      "credit": {
+        "author": "Ken Lund",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Bell_Laboratories_at_New_Providence,_New_Jersey_(7235324892)_(cropped).jpg"
+      }
+    },
     "en": {
       "title": "Ninety-Ninety Rule",
       "concept": "The last 10% of the work tends to take as long as the first 90% did.",
@@ -1553,6 +2055,18 @@ export const laws: Law[] = [
       "chestertons-fence",
       "kernighans-law"
     ],
+    "figure": {
+      "kind": "scene",
+      "name": "Punched-card program deck (c.1969)",
+      "monogram": "ES",
+      "image": "/figures/eaglesons-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Arnold Reinhold",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Punched_card_program_deck.agr.jpg"
+      }
+    },
     "en": {
       "title": "Eagleson's Law",
       "concept": "Your own code that you haven't read in six months might as well be someone else's.",
@@ -1583,6 +2097,18 @@ export const laws: Law[] = [
       "millers-law",
       "fitts-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Ray Hyman",
+      "monogram": "RH",
+      "image": "/figures/hicks-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Rouven Schäfer",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Rayhyman.jpg"
+      }
+    },
     "en": {
       "title": "Hick's Law",
       "concept": "The more options people are given, the longer they take to choose one.",
@@ -1612,6 +2138,18 @@ export const laws: Law[] = [
     "seeAlso": [
       "hicks-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Paul M. Fitts",
+      "monogram": "PF",
+      "image": "/figures/fitts-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "University of Michigan News and Information Services (© Regents of the University of Michigan), via Bentley Historical Library",
+        "license": "CC BY 4.0",
+        "page": "https://quod.lib.umich.edu/b/bhl/x-hs15404/hs15404"
+      }
+    },
     "en": {
       "title": "Fitts's Law",
       "concept": "Small, distant targets take longer to hit and get missed more often.",
@@ -1642,6 +2180,18 @@ export const laws: Law[] = [
       "dunbars-number",
       "hicks-law"
     ],
+    "figure": {
+      "kind": "scene",
+      "name": "Rotary telephone dial (seven-digit phone numbers)",
+      "monogram": "MS",
+      "image": "/figures/millers-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "RHaworth (en.wikipedia)",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:04c093_rotary_dial_abc.jpg"
+      }
+    },
     "en": {
       "title": "Miller's Law",
       "concept": "Working memory holds only a handful of chunks (Miller said about seven; later estimates are lower).",
@@ -1673,6 +2223,18 @@ export const laws: Law[] = [
       "murphys-law",
       "cap-theorem"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "James Gosling",
+      "monogram": "JG",
+      "image": "/figures/fallacies-of-distributed-computing.webp",
+      "logo": null,
+      "credit": {
+        "author": "Peter Campbell",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:James_Gosling_2008.jpg"
+      }
+    },
     "en": {
       "title": "Fallacies of Distributed Computing",
       "concept": "Networked code quietly assumes eight things about the network that are false in production.",
@@ -1705,6 +2267,18 @@ export const laws: Law[] = [
       "normal-accident-theory",
       "toil"
     ],
+    "figure": {
+      "kind": "scene",
+      "name": "Nuclear power plant control room",
+      "monogram": "IA",
+      "image": "/figures/ironies-of-automation.webp",
+      "logo": null,
+      "credit": {
+        "author": "Nuclear Regulatory Commission from US",
+        "license": "CC BY 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Nuclear_power_plant_control_room_(15856397259).jpg"
+      }
+    },
     "en": {
       "title": "Ironies of Automation",
       "concept": "Automation leaves people only the hardest cases, after their skills have faded from disuse.",
@@ -1736,6 +2310,18 @@ export const laws: Law[] = [
     "seeAlso": [
       "kerckhoffs-principle"
     ],
+    "figure": {
+      "kind": "scene",
+      "name": "Keys",
+      "monogram": "PL",
+      "image": "/figures/principle-of-least-privilege.webp",
+      "logo": null,
+      "credit": {
+        "author": "Cindy Shebley",
+        "license": "CC BY 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Four_Skeleton_Keys_on_a_blue_background_(51865175725).jpg"
+      }
+    },
     "en": {
       "title": "Principle of Least Privilege",
       "concept": "Every permission a component doesn't need widens the damage when something goes wrong.",
@@ -1767,6 +2353,18 @@ export const laws: Law[] = [
     "seeAlso": [
       "principle-of-least-privilege"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Auguste Kerckhoffs",
+      "monogram": "AK",
+      "image": "/figures/kerckhoffs-principle.webp",
+      "logo": null,
+      "credit": {
+        "author": "Unknown author",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Auguste_Kerckhoffs.jpg"
+      }
+    },
     "en": {
       "title": "Kerckhoffs's Principle",
       "concept": "A system that is secure only while its design stays secret is not secure.",
@@ -1799,6 +2397,18 @@ export const laws: Law[] = [
       "amdahls-law",
       "moores-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "John Gustafson",
+      "monogram": "JG",
+      "image": "/figures/gustafsons-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Davisourus at English Wikipedia",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:John_L_Gustafson_CEO.jpg"
+      }
+    },
     "en": {
       "title": "Gustafson's Law",
       "concept": "When the problem grows with the machine, parallel speedup keeps growing nearly linearly.",
@@ -1831,6 +2441,18 @@ export const laws: Law[] = [
       "littles-law",
       "error-budget"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Jeffrey Dean",
+      "monogram": "JD",
+      "image": "/figures/tail-at-scale.webp",
+      "logo": null,
+      "credit": {
+        "author": "Cmichel67",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Jeff_Dean_in_2025_x.jpg"
+      }
+    },
     "en": {
       "title": "The Tail at Scale",
       "concept": "When one request fans out to many servers, the slowest one sets the response time.",
@@ -1864,6 +2486,18 @@ export const laws: Law[] = [
       "normal-accident-theory",
       "kiss-principle"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "W. Ross Ashby",
+      "monogram": "WA",
+      "image": "/figures/ashbys-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Unknown author",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:W._Ross_Ashby_(1948).jpg"
+      }
+    },
     "en": {
       "title": "Ashby's Law of Requisite Variety",
       "concept": "A controller can only handle a system if it can respond to as many states as the system has.",
@@ -1897,6 +2531,18 @@ export const laws: Law[] = [
       "dry-principle",
       "single-responsibility-principle"
     ],
+    "figure": {
+      "kind": "scene",
+      "name": "Head of the goddess Demeter (Dion, 4th c. BC)",
+      "monogram": "LD",
+      "image": "/figures/law-of-demeter.webp",
+      "logo": null,
+      "credit": {
+        "author": "Ophelia2 (Wikimedia Commons user); sculptor anonymous",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Head_of_the_Goddess_Demeter.JPG"
+      }
+    },
     "en": {
       "title": "Law of Demeter",
       "concept": "Code that reaches through other objects' internals breaks when anything in the chain changes.",
@@ -1929,6 +2575,18 @@ export const laws: Law[] = [
       "cobra-effect",
       "wirths-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "William Stanley Jevons",
+      "monogram": "WJ",
+      "image": "/figures/jevons-paradox.webp",
+      "logo": null,
+      "credit": {
+        "author": "Unknown (via University of Manchester Libraries)",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:William_Stanley_Jevons_portrait_extract.jpg"
+      }
+    },
     "en": {
       "title": "Jevons Paradox",
       "concept": "Making a resource cheaper to use can increase how much of it is used in total.",
@@ -1963,6 +2621,18 @@ export const laws: Law[] = [
       "ironies-of-automation",
       "ashbys-law"
     ],
+    "figure": {
+      "kind": "scene",
+      "name": "Three Mile Island Nuclear Generating Station",
+      "monogram": "NA",
+      "image": "/figures/normal-accident-theory.webp",
+      "logo": null,
+      "credit": {
+        "author": "United States Department of Energy",
+        "license": "Public domain (US government work)",
+        "page": "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_(color)-2.jpg"
+      }
+    },
     "en": {
       "title": "Normal Accident Theory",
       "concept": "In complex, tightly coupled systems, accidents are built into the structure.",
@@ -1995,6 +2665,18 @@ export const laws: Law[] = [
       "normalization-of-deviance",
       "boy-scout-rule"
     ],
+    "figure": {
+      "kind": "scene",
+      "name": "Broken window",
+      "monogram": "BW",
+      "image": "/figures/broken-windows-theory.webp",
+      "logo": null,
+      "credit": {
+        "author": "Tomas Castelazo",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Broken_window_large.jpg"
+      }
+    },
     "en": {
       "title": "Broken Windows Theory",
       "concept": "Visible disorder left unrepaired can signal that standards are optional, inviting more.",
@@ -2028,6 +2710,18 @@ export const laws: Law[] = [
       "galls-law",
       "working-backwards"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Ron Jeffries",
+      "monogram": "RJ",
+      "image": "/figures/yagni.webp",
+      "logo": null,
+      "credit": {
+        "author": "Michael Hüttermann (original uploader, German Wikipedia)",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Ron_Jeffries.jpg"
+      }
+    },
     "en": {
       "title": "YAGNI",
       "concept": "Code built for imagined future needs costs time now and rarely fits the need that arrives.",
@@ -2060,6 +2754,18 @@ export const laws: Law[] = [
       "kernighans-law",
       "ashbys-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Kelly Johnson",
+      "monogram": "KJ",
+      "image": "/figures/kiss-principle.webp",
+      "logo": null,
+      "credit": {
+        "author": "CIA",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:ClarenceLeonardKellyJohnson.jpg"
+      }
+    },
     "en": {
       "title": "KISS Principle",
       "concept": "A system has to be simple enough for an ordinary person to fix under bad conditions.",
@@ -2092,6 +2798,18 @@ export const laws: Law[] = [
       "law-of-demeter",
       "single-responsibility-principle"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Andy Hunt",
+      "monogram": "AH",
+      "image": "/figures/dry-principle.webp",
+      "logo": null,
+      "credit": {
+        "author": "Kittie Rue",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Andy_Hunt_programmer.jpg"
+      }
+    },
     "en": {
       "title": "DRY Principle",
       "concept": "Knowledge kept in two places drifts apart, because nothing makes the copies change together.",
@@ -2124,6 +2842,18 @@ export const laws: Law[] = [
       "amdahls-law",
       "littles-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Eliyahu M. Goldratt",
+      "monogram": "EG",
+      "image": "/figures/theory-of-constraints.webp",
+      "logo": null,
+      "credit": {
+        "author": "Francois-Xavier Dugres",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Goldratt%2BAmstrong.jpg"
+      }
+    },
     "en": {
       "title": "Theory of Constraints",
       "concept": "A system's throughput is set by its single tightest bottleneck.",
@@ -2156,6 +2886,18 @@ export const laws: Law[] = [
       "normalcy-bias",
       "hanlons-razor"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "William of Ockham",
+      "monogram": "WO",
+      "image": "/figures/occams-razor.webp",
+      "logo": null,
+      "credit": {
+        "author": "Moscarlop",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:William_of_Ockham.png"
+      }
+    },
     "en": {
       "title": "Occam's Razor",
       "concept": "The explanation that needs the fewest unverified assumptions is usually the right one.",
@@ -2189,6 +2931,18 @@ export const laws: Law[] = [
       "law-of-demeter",
       "conways-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Robert C. Martin",
+      "monogram": "RM",
+      "image": "/figures/single-responsibility-principle.webp",
+      "logo": null,
+      "credit": {
+        "author": "Angelacleancoder",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Robert_C._Martin_surrounded_by_computers_(cropped).jpg"
+      }
+    },
     "en": {
       "title": "Single Responsibility Principle",
       "concept": "A module serving two groups gets conflicting change requests from both.",
@@ -2221,6 +2975,18 @@ export const laws: Law[] = [
       "hyrums-law",
       "curse-of-knowledge"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Mike Cowlishaw",
+      "monogram": "MC",
+      "image": "/figures/principle-of-least-astonishment.webp",
+      "logo": null,
+      "credit": {
+        "author": "Mfc (Mike Cowlishaw)",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Mike_Cowlishaw_2005.jpg"
+      }
+    },
     "en": {
       "title": "Principle of Least Astonishment",
       "concept": "Behavior that surprises users costs more than behavior that is slightly worse but expected.",
@@ -2254,6 +3020,18 @@ export const laws: Law[] = [
       "galls-law",
       "worse-is-better"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Fred Brooks",
+      "monogram": "FB",
+      "image": "/figures/second-system-effect.webp",
+      "logo": null,
+      "credit": {
+        "author": "SD&M (www.sdm.de)",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Fred_Brooks_(cropped_square).jpg"
+      }
+    },
     "en": {
       "title": "Second-System Effect",
       "concept": "After a first success, designers tend to pack the ideas they deferred into the second system.",
@@ -2287,6 +3065,18 @@ export const laws: Law[] = [
       "gustafsons-law",
       "the-bitter-lesson"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Gordon Moore",
+      "monogram": "GM",
+      "image": "/figures/moores-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Intel Free Press",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Gordon_Moore_1978_(cropped).png"
+      }
+    },
     "en": {
       "title": "Moore's Law",
       "concept": "The number of transistors on a chip at lowest cost per part doubles about every two years.",
@@ -2319,6 +3109,18 @@ export const laws: Law[] = [
       "survivorship-bias",
       "lindy-effect"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Roy Amara",
+      "monogram": "RA",
+      "image": "/figures/amaras-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Rochester Institute of Technology",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Roy_Amara,_RIT_NandE_Vol12Num31_1980_Sep25_Complete.jpg"
+      }
+    },
     "en": {
       "title": "Amara's Law",
       "concept": "New technology is overrated in its first years and underrated over a decade.",
@@ -2351,6 +3153,18 @@ export const laws: Law[] = [
       "cargo-cult-engineering",
       "moores-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Richard S. Sutton",
+      "monogram": "RS",
+      "image": "/figures/the-bitter-lesson.webp",
+      "logo": null,
+      "credit": {
+        "author": "Xuthoria",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:SD_2025_-_Richard_Sutton_01_(cropped).jpg"
+      }
+    },
     "en": {
       "title": "The Bitter Lesson",
       "concept": "In AI, general methods that scale with compute have, in the long run, beaten hand-coded human knowledge.",
@@ -2383,6 +3197,18 @@ export const laws: Law[] = [
       "dunbars-number",
       "brooks-law"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Robert Metcalfe",
+      "monogram": "RM",
+      "image": "/figures/metcalfes-law.webp",
+      "logo": null,
+      "credit": {
+        "author": "Andreu Veà, WiWiW.org",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:With_Bob_Metcalfe_(cropped).jpg"
+      }
+    },
     "en": {
       "title": "Metcalfe's Law",
       "concept": "Each new node adds value to every existing one, so a network's value outgrows its size.",
@@ -2415,6 +3241,18 @@ export const laws: Law[] = [
       "bystander-effect",
       "dunbars-number"
     ],
+    "figure": {
+      "kind": "scene",
+      "name": "Tug of war, 1900 Paris Olympics",
+      "monogram": "RE",
+      "image": "/figures/ringelmann-effect.webp",
+      "logo": null,
+      "credit": {
+        "author": "Unknown photographer (source: International Olympic Committee website)",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Tug_of_war.jpg"
+      }
+    },
     "en": {
       "title": "Ringelmann Effect",
       "concept": "Each person contributes less as a group grows, most of all when no one can see who did what.",
@@ -2447,6 +3285,18 @@ export const laws: Law[] = [
       "goodharts-law",
       "peter-principle"
     ],
+    "figure": {
+      "kind": "person",
+      "name": "Clay Shirky",
+      "monogram": "CS",
+      "image": "/figures/shirky-principle.webp",
+      "logo": null,
+      "credit": {
+        "author": "James Duncan Davidson from Portland, USA",
+        "license": "CC BY 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Etech05_Clay2_(cropped).jpg"
+      }
+    },
     "en": {
       "title": "Shirky Principle",
       "concept": "Institutions tend to keep alive the problem they exist to solve.",
@@ -2481,6 +3331,18 @@ export const laws: Law[] = [
       "toil",
       "normalization-of-deviance"
     ],
+    "figure": {
+      "kind": "company",
+      "name": "Google",
+      "monogram": "G",
+      "image": null,
+      "logo": "/figures/error-budget.svg",
+      "credit": {
+        "author": null,
+        "license": "Public domain (text logo); Google is a trademark of Google LLC",
+        "page": "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
+      }
+    },
     "en": {
       "title": "Error Budget",
       "concept": "An SLO below 100% leaves a measurable allowance of failure, and that allowance can be spent.",
@@ -2513,6 +3375,18 @@ export const laws: Law[] = [
       "ironies-of-automation",
       "error-budget"
     ],
+    "figure": {
+      "kind": "company",
+      "name": "Google",
+      "monogram": "G",
+      "image": null,
+      "logo": "/figures/toil.svg",
+      "credit": {
+        "author": null,
+        "license": "Public domain (text logo); Google is a trademark of Google LLC",
+        "page": "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
+      }
+    },
     "en": {
       "title": "Toil",
       "concept": "Manual, repetitive operational work grows with the service and, left unchecked, crowds out engineering.",
@@ -2547,6 +3421,18 @@ export const laws: Law[] = [
       "hanlons-razor",
       "bystander-effect"
     ],
+    "figure": {
+      "kind": "company",
+      "name": "Etsy",
+      "monogram": "E",
+      "image": null,
+      "logo": "/figures/blameless-postmortem.png",
+      "credit": {
+        "author": null,
+        "license": "Etsy is a trademark of Etsy, Inc.; shown to identify the source",
+        "page": "https://apps.apple.com/us/app/etsy-shop-from-real-people/id477128284"
+      }
+    },
     "en": {
       "title": "Blameless Postmortem",
       "concept": "Punishing the person nearest a failure teaches people to hide what they did.",
@@ -2579,6 +3465,18 @@ export const laws: Law[] = [
       "xy-problem",
       "yagni"
     ],
+    "figure": {
+      "kind": "company",
+      "name": "Amazon",
+      "monogram": "A",
+      "image": null,
+      "logo": "/figures/working-backwards.svg",
+      "credit": {
+        "author": null,
+        "license": "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc.",
+        "page": "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
+      }
+    },
     "en": {
       "title": "Working Backwards",
       "concept": "Teams that start from a solution often build things no customer needed; starting from the announcement exposes that early.",
@@ -2611,6 +3509,18 @@ export const laws: Law[] = [
       "type-1-vs-type-2-decisions",
       "law-of-triviality"
     ],
+    "figure": {
+      "kind": "company",
+      "name": "Amazon",
+      "monogram": "A",
+      "image": null,
+      "logo": "/figures/disagree-and-commit.svg",
+      "credit": {
+        "author": null,
+        "license": "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc.",
+        "page": "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
+      }
+    },
     "en": {
       "title": "Disagree and Commit",
       "concept": "Waiting for everyone to agree is often slower than committing and correcting course if the call turns out wrong.",
