@@ -2,10 +2,10 @@
 
 A codex of engineering laws — each with its counter-force, a field guideline, and a source.
 
-[![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=c2884a&labelColor=0c0b08)](https://github.com/kanywst/hammurabi/stargazers)
-[![laws](https://img.shields.io/badge/laws-76-c2884a?style=for-the-badge&labelColor=0c0b08)](#the-codex)
-[![site](https://img.shields.io/badge/read-the%20codex-e0aa6b?style=for-the-badge&labelColor=0c0b08)](https://kanywst.github.io/hammurabi/)
-[![license](https://img.shields.io/badge/content-CC%20BY--SA%204.0-a39884?style=for-the-badge&labelColor=0c0b08)](./LICENSE)
+[![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=1d47b8&labelColor=17181a)](https://github.com/kanywst/hammurabi/stargazers)
+[![laws](https://img.shields.io/badge/laws-76-1d47b8?style=for-the-badge&labelColor=17181a)](#the-codex)
+[![site](https://img.shields.io/badge/read-the%20codex-1d47b8?style=for-the-badge&labelColor=17181a)](https://kanywst.github.io/hammurabi/)
+[![license](https://img.shields.io/badge/content-CC%20BY--SA%204.0-5c5f64?style=for-the-badge&labelColor=17181a)](./LICENSE)
 
 **English** • [日本語](./translations/ja.md)
 
