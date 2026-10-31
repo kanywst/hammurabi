@@ -161,7 +161,8 @@ export const situations: Situation[] = [
       "swiss-cheese-model",
       "normalization-of-deviance",
       "normal-accident-theory",
-      "hanlons-razor"
+      "hanlons-razor",
+      "ironies-of-automation"
     ]
   },
   {
@@ -171,8 +172,8 @@ export const situations: Situation[] = [
     "laws": [
       "error-budget",
       "toil",
-      "murphys-law",
-      "ironies-of-automation"
+      "normalization-of-deviance",
+      "murphys-law"
     ]
   },
   {
@@ -196,7 +197,8 @@ export const situations: Situation[] = [
       "second-system-effect",
       "galls-law",
       "hyrums-law",
-      "eaglesons-law"
+      "eaglesons-law",
+      "boy-scout-rule"
     ]
   },
   {
@@ -220,6 +222,7 @@ export const situations: Situation[] = [
       "yagni",
       "galls-law",
       "worse-is-better",
+      "kiss-principle",
       "xy-problem"
     ]
   },
@@ -247,7 +250,7 @@ export const situations: Situation[] = [
   },
   {
     "key": "access-control",
-    "en": "Deciding who can do what",
+    "en": "Designing permissions and secrets",
     "ja": "権限と秘密を設計する",
     "laws": [
       "principle-of-least-privilege",
@@ -299,7 +302,8 @@ export const laws: Law[] = [
       "boy-scout-rule",
       "normalcy-bias",
       "broken-windows-theory",
-      "blameless-postmortem"
+      "blameless-postmortem",
+      "error-budget"
     ],
     "en": {
       "title": "Normalization of Deviance",
@@ -396,7 +400,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Law of Triviality",
-      "concept": "Review effort goes to the parts everyone understands, not the parts that matter.",
+      "concept": "Discussion goes to the parts everyone understands, not the parts that matter.",
       "mechanism": "People provide more feedback on simple things (naming variables) than complex things (distributed consensus) because everyone understands the simple things, creating a false sense of value.",
       "counter": {
         "name": "Core Value Focus"
@@ -522,7 +526,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Brooks' Law",
-      "concept": "Adding people to a late project makes it later, because coordination cost grows faster.",
+      "concept": "Adding people to a late project makes it later, because ramp-up and coordination cost more than the new people add.",
       "mechanism": "Adding people to a late project increases communication overhead quadratically (n(n-1)/2 communication channels for n people). New people take more time from veterans than they contribute.",
       "counter": {
         "name": "Scope Cutting"
@@ -976,7 +980,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Dunbar's Number",
-      "concept": "People keep only about 150 stable relationships; past a team's shared context, people add coordination.",
+      "concept": "People keep only about 150 stable relationships; past the size where everyone shares context, added people go into coordination.",
       "mechanism": "Humans can maintain approximately 150 stable social relationships. Dunbar's result is about neocortex size and group size across primates — it is not about work teams. What engineering extrapolates from it is a separate argument: communication channels grow as n(n-1)/2, so past the size where everyone can still hold everyone else's context, added people go into coordination rather than output.",
       "counter": {
         "name": "Two-Pizza Rule / Team Topologies"
@@ -1062,7 +1066,8 @@ export const laws: Law[] = [
     "sourceUrl": "https://doi.org/10.1037/h0025589",
     "seeAlso": [
       "hanlons-razor",
-      "ringelmann-effect"
+      "ringelmann-effect",
+      "blameless-postmortem"
     ],
     "en": {
       "title": "Bystander Effect",
@@ -1371,7 +1376,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Little's Law",
-      "concept": "Items in a system equal arrival rate times time spent in it, whatever the traffic pattern.",
+      "concept": "In a stable system, items inside equal arrival rate times the time each spends there.",
       "mechanism": "In any stable system, the average number of items in the system (L) equals the average arrival rate (λ) times the average time each item spends in it (W): **L = λW**. It holds regardless of arrival distribution or service discipline.",
       "counter": {
         "name": "Backpressure / Admission Control"
@@ -2473,29 +2478,30 @@ export const laws: Law[] = [
     "seeAlso": [
       "goodharts-law",
       "tail-at-scale",
-      "toil"
+      "toil",
+      "normalization-of-deviance"
     ],
     "en": {
       "title": "Error Budget",
       "concept": "An SLO below 100% leaves a measurable allowance of failure, and that allowance can be spent.",
-      "mechanism": "Product teams are judged on velocity and operations teams on reliability, so every release becomes a negotiation decided by whoever argues harder. Users cannot tell 99.99% from 100%, but the last fraction costs the most and blocks the most change. Once the target is explicit, the gap between it and perfect is a budget: 99.9% over 30 days is about 43 minutes of failure, and both sides can see how much of it is left.",
+      "mechanism": "Product teams are judged on velocity and operations teams on reliability, so every release becomes a negotiation decided by whoever argues harder. Past a point users cannot tell the difference (someone on a 99%-reliable phone cannot tell 99.99% from 99.999%), but the last fraction costs the most and blocks the most change. Once the target is explicit, the gap between it and perfect is a budget: 99.9% over 30 days is about 43 minutes of failure, and both sides can see how much of it is left.",
       "counter": {
-        "name": "Not All Failures Are Fungible",
-        "note": "the budget counts minutes, but lost data, a security breach or a wrong charge cannot be paid for out of an uptime allowance"
+        "name": "Normalization of Deviance",
+        "note": "a standing allowance for failure teaches a team that each failure is routine; the outage that should have alarmed people gets logged against the budget and never investigated"
       },
       "guideline": "Agree on the SLO and the policy before the incident, not during it: while budget remains, ship; when it is spent, freeze feature releases and put the time into reliability until it recovers. Keep data loss and security outside the budget entirely.",
-      "source": "Marc Alvidrez, \"Embracing Risk\", in Beyer, Jones, Petoff & Murphy (eds.), *Site Reliability Engineering* (O'Reilly, 2016), ch. 3 — where the error budget is defined and \"100% is probably never the right reliability target\" is argued."
+      "source": "Marc Alvidrez, \"Embracing Risk\" (with \"Motivation for Error Budgets\" by Mark Roth), in Beyer, Jones, Petoff & Murphy (eds.), *Site Reliability Engineering* (O'Reilly, 2016), ch. 3 — where the error budget is defined and \"100% is probably never the right reliability target\" is argued."
     },
     "ja": {
       "title": "エラーバジェット",
       "concept": "100% 未満の SLO は許容できる失敗の量を決める。その量は使ってよい予算だ。",
-      "mechanism": "プロダクト開発は速度で、運用は信頼性で評価される。だからリリースのたびに交渉になり、声の大きい側が勝つ。利用者は 99.99% と 100% の違いに気づかないのに、最後のわずかな差にいちばんコストがかかり、いちばん変更を止める。目標を明示すれば、目標と完璧の差が予算になる。30 日で 99.9% なら失敗に使えるのは約 43 分で、残りがいくらかを両者が同じ数字で見られる。",
+      "mechanism": "プロダクト開発は速度で、運用は信頼性で評価される。だからリリースのたびに交渉になり、声の大きい側が勝つ。ある水準を超えると利用者は違いに気づかない（信頼性 99% のスマートフォンを使う人には 99.99% と 99.999% の差は分からない）のに、最後のわずかな差にいちばんコストがかかり、いちばん変更を止める。目標を明示すれば、目標と完璧の差が予算になる。30 日で 99.9% なら失敗に使えるのは約 43 分で、残りがいくらかを両者が同じ数字で見られる。",
       "counter": {
-        "name": "失敗はすべて交換可能ではない",
-        "note": "予算が数えるのは時間だ。データ消失、セキュリティ侵害、誤課金は稼働時間の余りでは支払えない"
+        "name": "逸脱の常態化",
+        "note": "失敗を許す枠があると、失敗は日常だとチームが学ぶ。本来なら驚くべき障害も予算から差し引かれるだけで、調べられなくなる"
       },
       "guideline": "SLO と予算を使い切ったときの方針は、障害の最中ではなく事前に合意せよ。予算が残っていればリリースし、使い切ったら機能リリースを止めて回復するまで信頼性に時間を使え。データ消失とセキュリティは予算の外に置け。",
-      "source": "Marc Alvidrez「Embracing Risk」、Beyer, Jones, Petoff & Murphy 編『Site Reliability Engineering』(O'Reilly, 2016) 第 3 章。エラーバジェットの定義と「100% はほぼ常に誤った信頼性目標だ」という主張の出典。"
+      "source": "Marc Alvidrez「Embracing Risk」（「Motivation for Error Budgets」節は Mark Roth）、Beyer, Jones, Petoff & Murphy 編『Site Reliability Engineering』(O'Reilly, 2016) 第 3 章。エラーバジェットの定義と「100% がふさわしい信頼性目標であることはおそらくない」という主張の出典。"
     }
   },
   {
@@ -2515,18 +2521,18 @@ export const laws: Law[] = [
         "name": "Ironies of Automation",
         "note": "automating a task removes the practice people needed to handle it when the automation fails, and some automation costs more to build and keep alive than the toil it replaces"
       },
-      "guideline": "Measure the share of each person's time spent on toil and set a ceiling (Google uses 50%). When a task recurs a third time, file it as engineering work; when it scales with users, treat it as a defect rather than a chore.",
+      "guideline": "Measure the share of each person's time spent on toil and set a ceiling (Google uses 50%). When a task comes back a third time (a rule of thumb, not the book's), file it as engineering work; when it scales with users, treat it as a defect rather than a chore.",
       "source": "Vivek Rau, \"Eliminating Toil\", in Beyer, Jones, Petoff & Murphy (eds.), *Site Reliability Engineering* (O'Reilly, 2016), ch. 5 — the definition of toil and the 50% cap."
     },
     "ja": {
       "title": "トイル",
       "concept": "手作業の繰り返し運用はサービスと一緒に増え、やがて開発の時間を食い尽くす。",
-      "mechanism": "トイルとは、手作業で、繰り返し発生し、自動化でき、割り込みで発生し、終えてもシステムが良くならず、トラフィックや利用者数に比例して増える作業だ。一件ずつは小さく急ぎなので、その場では必ずプロジェクト作業に勝つ。サービスとともに増えるのに開発の時間は増えないので、押し返さないチームは最後にはそれしかしなくなる。",
+      "mechanism": "トイルとは、手作業で、繰り返され、自動化でき、割り込みでやって来て、終えてもシステムが良くならず、トラフィックや利用者数に比例して増える作業だ。一件ずつは小さく急ぎなので、その場では必ずプロジェクト作業に勝つ。サービスとともに増えるのに開発の時間は増えないので、押し返さないチームは最後にはそれしかしなくなる。",
       "counter": {
         "name": "自動化の皮肉",
         "note": "作業を自動化すると、自動化が壊れたときに対処するための練習の機会が消える。作って維持するコストが、置き換えるトイルより高くつく自動化もある"
       },
-      "guideline": "一人ひとりの時間のうちトイルが占める割合を測り、上限を決めよ（Google は 50%）。同じ作業が三度目に来たら開発タスクとして起票せよ。利用者数に比例して増える作業は、雑用ではなく欠陥として扱え。",
+      "guideline": "一人ひとりの時間のうちトイルが占める割合を測り、上限を決めよ（Google は 50%）。同じ作業が三度目に来たら（本書ではなく経験則だ）開発タスクとして起票せよ。利用者数に比例して増える作業は、雑用ではなく欠陥として扱え。",
       "source": "Vivek Rau「Eliminating Toil」、Beyer, Jones, Petoff & Murphy 編『Site Reliability Engineering』(O'Reilly, 2016) 第 5 章。トイルの定義と 50% 上限の出典。"
     }
   },
@@ -2538,15 +2544,16 @@ export const laws: Law[] = [
     "seeAlso": [
       "swiss-cheese-model",
       "normalization-of-deviance",
-      "hanlons-razor"
+      "hanlons-razor",
+      "bystander-effect"
     ],
     "en": {
       "title": "Blameless Postmortem",
       "concept": "Punishing the person nearest a failure teaches everyone to hide what they did.",
-      "mechanism": "The people closest to an incident hold the only accurate account of what they saw, what they believed and why the action made sense at the time. If telling that story can cost them, they tell a shorter one, and the organisation loses the information it needs to fix the conditions that made the mistake easy. The error repeats with someone else's name on it.",
+      "mechanism": "The people closest to an incident hold the only accurate account of what they saw, what they believed and why the action made sense at the time. If telling that story can cost them, they tell a shorter one, and the organisation loses the information it needs to fix the conditions that made the mistake easy. The error repeats with someone else's name on it. Blameless is not consequence-free: a just culture still separates an honest mistake inside a bad system from knowingly disregarding a risk.",
       "counter": {
-        "name": "Accountability for Recklessness",
-        "note": "blameless is not consequence-free: a just culture still separates an honest mistake inside a bad system from knowingly disregarding a risk"
+        "name": "Diffused Ownership",
+        "note": "when nobody is answerable, the action items have no owner and quietly expire; some teams name a person accountable for the fix precisely because blamelessness leaves no one holding it"
       },
       "guideline": "Write the postmortem as a timeline of what people saw and why each action made sense then, and end with changes to the system, not to a person. Ban \"human error\" as a root cause; ask what made the error easy to make.",
       "source": "John Allspaw, *Blameless PostMortems and a Just Culture* (Code as Craft, Etsy, 2012); the practice is codified in Lunney & Lueder, \"Postmortem Culture\", *Site Reliability Engineering* (O'Reilly, 2016), ch. 15."
@@ -2554,10 +2561,10 @@ export const laws: Law[] = [
     "ja": {
       "title": "非難なきポストモーテム",
       "concept": "障害のいちばん近くにいた人を罰すると、全員が自分のしたことを隠すようになる。",
-      "mechanism": "障害の現場にいた人だけが、何を見て、何を信じ、なぜその操作がその時点で妥当に思えたかを正確に語れる。語ることで不利益を被るなら、その人は話を短くする。すると組織は、ミスを起こしやすくしていた条件を直すための情報を失う。同じ誤りが、別の人の名前で繰り返される。",
+      "mechanism": "障害の現場にいた人だけが、何を見て、何を信じ、なぜその操作がその時点で妥当に思えたかを正確に語れる。語ることで不利益を被るなら、その人は話を短くする。すると組織は、ミスを起こしやすくしていた条件を直すための情報を失う。同じ誤りが、別の人の名前で繰り返される。非難しないことは、何をしても責任を問わないことではない。公正な文化は、悪い仕組みの中での正直なミスと、リスクを承知で無視したこととを区別する。",
       "counter": {
-        "name": "無謀さへの説明責任",
-        "note": "非難しないことは、何をしても責任を問わないことではない。公正な文化は、悪い仕組みの中での正直なミスと、リスクを承知で無視したこととを区別する"
+        "name": "責任の拡散",
+        "note": "誰も責任を負わないと、対策項目に持ち主がいなくなり、いつの間にか立ち消える。だから責めないことと引き換えに、修正の担当者だけは名指しするチームもある"
       },
       "guideline": "ポストモーテムは、各人が何を見て、なぜその操作がその時点で妥当だったかの時系列として書き、人ではなく仕組みの変更で締めくくれ。根本原因に「ヒューマンエラー」と書くことを禁じ、何がその誤りを起こしやすくしたかを問え。",
       "source": "John Allspaw『Blameless PostMortems and a Just Culture』(Code as Craft, Etsy, 2012)。実践としては Lunney & Lueder「Postmortem Culture」『Site Reliability Engineering』(O'Reilly, 2016) 第 15 章にまとめられている。"
@@ -2567,7 +2574,7 @@ export const laws: Law[] = [
     "slug": "working-backwards",
     "number": 75,
     "tag": "decision",
-    "sourceUrl": "https://www.workingbackwards.com/",
+    "sourceUrl": "https://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management/answer/Ian-McAllister",
     "seeAlso": [
       "xy-problem",
       "yagni"
@@ -2606,25 +2613,25 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Disagree and Commit",
-      "concept": "Waiting for everyone to agree costs more time than most wrong decisions would.",
+      "concept": "Waiting for everyone to agree is slower than committing and correcting course if the call turns out wrong.",
       "mechanism": "When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate nobody can know the answer anyway. A dissenter who keeps arguing also tends to half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating \"do you agree\" from \"will you commit\" lets the disagreement be stated fully and the work still go ahead at full effort.",
       "counter": {
         "name": "Dissent on One-Way Doors",
         "note": "for an irreversible decision, or one with a safety or ethical risk, committing should not end the objection; escalate instead of going quiet"
       },
       "guideline": "State your disagreement once, in full, with your reasons. Then say \"I disagree and commit\" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you.",
-      "source": "Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — \"use the phrase 'disagree and commit'\", with the Amazon Studios example."
+      "source": "Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — \"use the phrase 'disagree and commit'\", with the Amazon Studios example. The phrase predates Amazon; it is associated with Scott McNealy at Sun Microsystems in the 1980s."
     },
     "ja": {
       "title": "反対してもコミットする",
-      "concept": "全員の同意を待つ時間は、たいていの誤った決定より高くつく。",
+      "concept": "全員の同意を待つより、決めて実行し、誤りなら軌道修正するほうが速い。",
       "mechanism": "合意を求める集団では、決定は最も粘る懐疑派の速度でしか進まない。しかも議論の終盤では、誰にも正解は分からない。議論に負けた反対者は、決まった方針を半端にしか実行しないことが多く、どちらが正しかったにせよ結果を悪くする。「同意するか」と「コミットするか」を分ければ、反対は全部言い切ったうえで、実行は全力で進められる。",
       "counter": {
         "name": "一方向のドアでは反対を続ける",
         "note": "取り返しのつかない決定や、安全・倫理上のリスクがある決定では、コミットしても異議を取り下げるべきではない。黙るのではなくエスカレーションせよ"
       },
       "guideline": "反対意見は一度、理由とともに全部言え。そのうえで「反対だがコミットする」と宣言し、自分の案だったかのように実行せよ。立場が上の人も同じことをせよ。チームに自分を説得させるのではなく、チームの判断を支えよ。",
-      "source": "Jeff Bezos『2016 年 株主への手紙』（Amazon.com, Inc.、2017 年）。\"use the phrase 'disagree and commit'\" と Amazon Studios の例。"
+      "source": "Jeff Bezos『2016 年 株主への手紙』（Amazon.com, Inc.、2017 年）。\"use the phrase 'disagree and commit'\" と Amazon Studios の例。語句自体は Amazon 以前からあり、1980 年代の Sun Microsystems の Scott McNealy に結びつけられている。"
     }
   }
 ];
