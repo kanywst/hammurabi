@@ -431,7 +431,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Gall's Law",
-      "concept": "Complex systems that work grew from simple systems that worked; designed ones don't.",
+      "concept": "Complex systems that work usually grew from simple systems that worked; designed ones rarely do.",
       "mechanism": "We believe we can \"architect\" a complex system from scratch. We can't. Complex systems are too chaotic to be designed top-down.",
       "counter": {
         "name": "The MVP (Minimum Viable Product)"
@@ -441,7 +441,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ガルの法則",
-      "concept": "動く複雑なシステムは、動く単純なシステムから育ったものだけだ。",
+      "concept": "動く複雑なシステムは、たいてい動く単純なシステムから育ったものだ。最初から設計したものはまず動かない。",
       "mechanism": "複雑なシステムをゼロから「設計」できるという妄想。実際には、複雑系は混沌すぎてトップダウンでは設計できない。",
       "counter": {
         "name": "MVP (実用最小限の製品)"
@@ -1081,7 +1081,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "傍観者効果",
-      "concept": "問題を目にする人が多いほど、誰も動かなくなる。",
+      "concept": "問題を目にする人が多いほど、そのうち誰かが動く可能性は下がる。",
       "mechanism": "緊急事態において、居合わせる人数が多いほど、個々人が行動を起こす可能性は低くなる。「誰かが対応するだろう」と全員が思い、結果誰も対応しない。エンジニアリングでは、グループチャンネルへのアラートは往々にして無視される。",
       "counter": {
         "name": "明示的な役割割り当て / インシデントコマンダー制"
@@ -1163,7 +1163,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Tesler's Law",
-      "concept": "Complexity can't be removed from a system, only moved to someone else.",
+      "concept": "A system's inherent complexity can't be removed, only moved to someone else.",
       "mechanism": "Every system has an irreducible amount of complexity that cannot be removed — only relocated. Hide it from the user and it lands on the developer. Hide it from the developer and it lands on the operator. Hide it from the operator and it lands on the customer at 3 AM.",
       "counter": {
         "name": "Honest Layering / Explicit Tradeoffs"
@@ -1173,7 +1173,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "テスラーの複雑性保存則",
-      "concept": "複雑さはシステムから消せない。誰か別の人に移るだけだ。",
+      "concept": "システムに本来備わる複雑さは消せない。誰か別の人に移るだけだ。",
       "mechanism": "あらゆるシステムには取り除けない本質的複雑性があり、それは消えるのではなく**移動する**だけだ。ユーザーから隠せば開発者へ、開発者から隠せば運用者へ、運用者から隠せば午前 3 時の顧客の手元に着地する。",
       "counter": {
         "name": "誠実なレイヤリング / 明示的なトレードオフ"
@@ -1193,7 +1193,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Dunning-Kruger Effect",
-      "concept": "The less skilled people are at something, the more they overrate their own ability.",
+      "concept": "People who are least skilled at something tend to overrate their ability the most.",
       "mechanism": "Lacking expertise in a domain also means lacking the meta-skill required to recognize one's own incompetence. In the original study the bottom quartile scored around the 12th percentile and placed themselves near the 60th. Top performers *under*-rated themselves, because they assumed others found the task as easy as they did.",
       "counter": {
         "name": "Calibrated Confidence",
@@ -1204,7 +1204,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ダニング・クルーガー効果",
-      "concept": "ある分野に疎い人ほど、自分の能力を高く見積もる。",
+      "concept": "ある分野に疎い人ほど、自分の能力を過大評価しがちだ。",
       "mechanism": "ある分野で専門性を欠くということは、「自分の無能さを認識するために必要なメタ的スキル」も同時に欠くということ。元の研究では、下位四分位の被験者は実際には12パーセンタイル程度でありながら、自己評価を60パーセンタイル付近に置いた。逆に上位の被験者は、他人にも同じくらい簡単なはずだと仮定して自分を過小評価した。",
       "counter": {
         "name": "較正された自信",
@@ -2581,7 +2581,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Working Backwards",
-      "concept": "Teams that start from a solution build things no customer needed; starting from the announcement exposes that early.",
+      "concept": "Teams that start from a solution often build things no customer needed; starting from the announcement exposes that early.",
       "mechanism": "Engineers start from what they can build and look for customers afterwards. A press release written before any code forces the team to state who the customer is, what problem they have and why existing options fail, in words the customer would use. If that page is hard to write, the product is unclear, and rewriting a page is far cheaper than rewriting the product.",
       "counter": {
         "name": "Build to Learn",
@@ -2592,7 +2592,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ワーキング・バックワーズ",
-      "concept": "解決策から始めると誰も必要としないものができる。発表文から始めると早く気づける。",
+      "concept": "解決策から始めると、誰も必要としないものを作ることが多い。発表文から始めれば早く気づける。",
       "mechanism": "エンジニアは作れるものから考え始め、顧客は後から探しがちだ。コードを書く前にプレスリリースを書くと、誰が顧客で、どんな問題を抱え、既存の手段がなぜ駄目なのかを、顧客自身の言葉で書かざるを得なくなる。その一枚が書きにくいなら、製品の輪郭がぼやけている。紙一枚を書き直すほうが、製品を作り直すよりずっと安い。",
       "counter": {
         "name": "作って学ぶ",
@@ -2614,7 +2614,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Disagree and Commit",
       "concept": "Waiting for everyone to agree is often slower than committing and correcting course if the call turns out wrong.",
-      "mechanism": "When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate nobody can know the answer anyway. A dissenter who keeps arguing can also half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating \"do you agree\" from \"will you commit\" lets the disagreement be stated fully and the work still go ahead at full effort.",
+      "mechanism": "When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate the answer often cannot be known anyway. A dissenter who keeps arguing can also half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating \"do you agree\" from \"will you commit\" lets the disagreement be stated fully and the work still go ahead at full effort.",
       "counter": {
         "name": "Groupthink",
         "note": "a culture that prizes commitment teaches people to stop objecting early, and silent compliance hides the dissent that would have caught the error"
@@ -2625,7 +2625,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "反対してもコミットする",
       "concept": "全員の同意を待つより、決めて実行し、誤りなら軌道修正するほうが速いことが多い。",
-      "mechanism": "合意を求める集団では、決定は最も粘る懐疑派の速度でしか進まない。しかも議論の終盤では、誰にも正解は分からない。議論に負けた反対者が、決まった方針を半端にしか実行しないこともあり、どちらが正しかったにせよ結果を悪くする。「同意するか」と「コミットするか」を分ければ、反対は全部言い切ったうえで、実行は全力で進められる。",
+      "mechanism": "合意を求める集団では、決定は最も粘る懐疑派の速度でしか進まない。しかも議論の終盤では、正解は分からないことが多い。議論に負けた反対者が、決まった方針を半端にしか実行しないこともあり、どちらが正しかったにせよ結果を悪くする。「同意するか」と「コミットするか」を分ければ、反対は全部言い切ったうえで、実行は全力で進められる。",
       "counter": {
         "name": "集団浅慮",
         "note": "コミットを重んじる文化では、人は早々に反対をやめることを覚える。黙って従えば、誤りを見つけたはずの異論が表に出なくなる"

@@ -68,7 +68,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `03` | [Chesterton's Fence](#chestertons-fence) | Systems | Code or rules whose origin you don't know look like clutter, so they get deleted. |
 | `04` | [Normalcy Bias](#normalcy-bias) | Cognition | Faced with a real anomaly, people reach for the familiar, harmless explanation. |
 | `05` | [Law of Triviality](#law-of-triviality) | Organization | Discussion goes to the parts everyone understands, not the parts that matter. |
-| `06` | [Gall's Law](#galls-law) | Systems | Complex systems that work grew from simple systems that worked; designed ones don't. |
+| `06` | [Gall's Law](#galls-law) | Systems | Complex systems that work usually grew from simple systems that worked; designed ones rarely do. |
 | `07` | [Conway's Law](#conways-law) | Organization | Systems end up shaped like the communication paths of the teams that build them. |
 | `08` | [Hyrum's Law](#hyrums-law) | Systems | With enough users, every observable behavior of a system, bugs included, is depended on. |
 | `09` | [Brooks' Law](#brooks-law) | Organization | Adding people to a late project tends to make it later, because ramp-up and coordination cost more than they add. |
@@ -92,8 +92,8 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `27` | [Bystander Effect](#bystander-effect) | Organization | The more people who see a problem, the less likely any one of them is to act on it. |
 | `28` | [Murphy's Law](#murphys-law) | Safety | Given enough time and traffic, a failure mode that can happen eventually will. |
 | `29` | [Boy Scout Rule](#boy-scout-rule) | Maintainability | Code decays because cleanup is always deferred to a refactor that never happens. |
-| `30` | [Tesler's Law](#teslers-law) | Systems | Complexity can't be removed from a system, only moved to someone else. |
-| `31` | [Dunning-Kruger Effect](#dunning-kruger-effect) | Cognition | The less skilled people are at something, the more they overrate their own ability. |
+| `30` | [Tesler's Law](#teslers-law) | Systems | A system's inherent complexity can't be removed, only moved to someone else. |
+| `31` | [Dunning-Kruger Effect](#dunning-kruger-effect) | Cognition | People who are least skilled at something tend to overrate their ability the most. |
 | `32` | [Curse of Knowledge](#curse-of-knowledge) | Cognition | Once you know something, you can't easily imagine what it's like not to know it. |
 | `33` | [Swiss Cheese Model](#swiss-cheese-model) | Safety | Every safeguard has holes; accidents happen when the holes in several layers line up. |
 | `34` | [Premature Optimization](#premature-optimization) | Performance | Optimizing before measuring spends effort on code that isn't the bottleneck. |
@@ -137,7 +137,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `72` | [Error Budget](#error-budget) | Operations | An SLO below 100% leaves a measurable allowance of failure, and that allowance can be spent. |
 | `73` | [Toil](#toil) | Operations | Manual, repetitive operational work grows with the service until it crowds out engineering. |
 | `74` | [Blameless Postmortem](#blameless-postmortem) | Operations | Punishing the person nearest a failure teaches people to hide what they did. |
-| `75` | [Working Backwards](#working-backwards) | Decision | Teams that start from a solution build things no customer needed; starting from the announcement exposes that early. |
+| `75` | [Working Backwards](#working-backwards) | Decision | Teams that start from a solution often build things no customer needed; starting from the announcement exposes that early. |
 | `76` | [Disagree and Commit](#disagree-and-commit) | Decision | Waiting for everyone to agree is often slower than committing and correcting course if the call turns out wrong. |
 
 ### Type 1 vs Type 2 Decisions
@@ -199,7 +199,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 
 `§ 06` · Systems
 
-- **Concept:** Complex systems that work grew from simple systems that worked; designed ones don't.
+- **Concept:** Complex systems that work usually grew from simple systems that worked; designed ones rarely do.
 - **Mechanism:** We believe we can "architect" a complex system from scratch. We can't. Complex systems are too chaotic to be designed top-down.
 - **Counter:** **The MVP (Minimum Viable Product)**.
 - **Guideline:** A complex system that works is invariably found to have evolved from a simple system that worked. Start with a working "Hello World" and evolve.
@@ -470,7 +470,7 @@ The architecture is downstream of the communication structure, not the org chart
 
 `§ 30` · Systems
 
-- **Concept:** Complexity can't be removed from a system, only moved to someone else.
+- **Concept:** A system's inherent complexity can't be removed, only moved to someone else.
 - **Mechanism:** Every system has an irreducible amount of complexity that cannot be removed — only relocated. Hide it from the user and it lands on the developer. Hide it from the developer and it lands on the operator. Hide it from the operator and it lands on the customer at 3 AM.
 - **Counter:** **Honest Layering / Explicit Tradeoffs**.
 - **Guideline:** When a "simple API" feels too clean, ask: who absorbed the complexity I just removed? If you can't name them, you didn't simplify — you displaced.
@@ -481,7 +481,7 @@ The architecture is downstream of the communication structure, not the org chart
 
 `§ 31` · Cognition
 
-- **Concept:** The less skilled people are at something, the more they overrate their own ability.
+- **Concept:** People who are least skilled at something tend to overrate their ability the most.
 - **Mechanism:** Lacking expertise in a domain also means lacking the meta-skill required to recognize one's own incompetence. In the original study the bottom quartile scored around the 12th percentile and placed themselves near the 60th. Top performers *under*-rated themselves, because they assumed others found the task as easy as they did.
 - **Counter:** **Calibrated Confidence** — the effect is contested — much of the classic pattern is reproduced by regression to the mean in noisy self-assessment, so treat overconfidence as a prompt to check the record rather than as a diagnosis.
 - **Guideline:** When someone declares a hard problem "easy," check their domain history before trusting the estimate. During scoping, pair confident newcomers with quiet veterans and weight the quiet voice.
@@ -1000,7 +1000,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 
 `§ 75` · Decision
 
-- **Concept:** Teams that start from a solution build things no customer needed; starting from the announcement exposes that early.
+- **Concept:** Teams that start from a solution often build things no customer needed; starting from the announcement exposes that early.
 - **Mechanism:** Engineers start from what they can build and look for customers afterwards. A press release written before any code forces the team to state who the customer is, what problem they have and why existing options fail, in words the customer would use. If that page is hard to write, the product is unclear, and rewriting a page is far cheaper than rewriting the product.
 - **Counter:** **Build to Learn** — when customers cannot judge an idea on paper (a new platform, an infrastructure change, something with no precedent) a cheap prototype tells you more than a polished press release.
 - **Guideline:** Before a project starts, write a one-page press release and an FAQ for the customer, and review them as a team. If you cannot name the customer and their problem in the first paragraph, do not start building.
@@ -1012,7 +1012,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 76` · Decision
 
 - **Concept:** Waiting for everyone to agree is often slower than committing and correcting course if the call turns out wrong.
-- **Mechanism:** When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate nobody can know the answer anyway. A dissenter who keeps arguing can also half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating "do you agree" from "will you commit" lets the disagreement be stated fully and the work still go ahead at full effort.
+- **Mechanism:** When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate the answer often cannot be known anyway. A dissenter who keeps arguing can also half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating "do you agree" from "will you commit" lets the disagreement be stated fully and the work still go ahead at full effort.
 - **Counter:** **Groupthink** — a culture that prizes commitment teaches people to stop objecting early, and silent compliance hides the dissent that would have caught the error.
 - **Guideline:** State your disagreement once, in full, with your reasons. Then say "I disagree and commit" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you. For an irreversible decision, or one with a safety or ethical risk, do not commit quietly: escalate.
 - **Source:** Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — "use the phrase 'disagree and commit'", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and it is also attributed to Intel. — [source ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
