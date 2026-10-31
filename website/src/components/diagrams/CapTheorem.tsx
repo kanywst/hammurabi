@@ -90,7 +90,7 @@ export default function CapTheorem({ lang }: { lang: Locale }) {
         cx={APEX.x}
         cy={APEX.y}
         r="5"
-        fill="var(--color-field)"
+        fill="var(--color-surface)"
         stroke={ink.line}
         strokeOpacity="0.7"
       />

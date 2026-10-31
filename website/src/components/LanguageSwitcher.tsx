@@ -24,7 +24,7 @@ export default function LanguageSwitcher({
       hrefLang={HTML_LANG[other]}
       lang={HTML_LANG[other]}
       aria-label={`${t.label}: ${t.other}`}
-      className="term"
+      className="navlink"
     >
       {t.other}
     </Link>

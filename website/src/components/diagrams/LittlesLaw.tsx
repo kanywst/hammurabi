@@ -141,7 +141,7 @@ export default function LittlesLaw({ lang }: { lang: Locale }) {
         x="300"
         y="26"
         textAnchor="middle"
-        fontFamily="var(--font-display)"
+        fontFamily="var(--font-sans)"
         fontSize="22"
         fill={ink.accentBright}
       >

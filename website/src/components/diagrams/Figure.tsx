@@ -20,8 +20,8 @@ export default function Figure({
   children: ReactNode;
 }) {
   return (
-    <figure className="my-4 max-w-[46rem]">
-      <div className="overflow-x-auto rounded-md border border-rule-soft bg-field-sunk p-5">
+    <figure className="mt-10 max-w-[46rem]">
+      <div className="overflow-x-auto rounded-md border border-line-soft bg-surface p-5">
         <svg
           viewBox={viewBox}
           role="img"
@@ -39,14 +39,14 @@ export default function Figure({
 
 /** Shared drawing constants, so the diagrams read as one set. */
 export const ink = {
-  line: 'var(--color-relief-dim)',
-  faint: 'var(--color-rule-soft)',
-  text: 'var(--color-relief)',
-  dim: 'var(--color-relief-dim)',
-  accent: 'var(--color-rubric)',
-  accentBright: 'var(--color-rubric-bright)',
-  cool: 'var(--color-relief-dim)',
-  panel: 'var(--color-field-sunk)',
+  line: 'var(--color-ink-2)',
+  faint: 'var(--color-line)',
+  text: 'var(--color-ink)',
+  dim: 'var(--color-ink-2)',
+  accent: 'var(--color-accent)',
+  accentBright: 'var(--color-accent)',
+  cool: 'var(--color-ink-3)',
+  panel: 'var(--color-surface)',
 };
 
 export const label = {
