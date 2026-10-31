@@ -1773,7 +1773,7 @@ laws:
       counter:
         name: Toil
         note: |-
-          keeping people on routine manual work just to keep them practiced costs more and fails more often than the automation; the answer is drills, not less automation
+          keeping people on routine manual work only to keep them practiced has its own cost: repetitive work that scales with load, burns time and invites slips, so the push to automate is real, and the tension is resolved by better human-machine teaming rather than by automating less
       guideline: |-
         Keep operators sharp with regular game-days and hands-on drills, and design handoffs so a human takes over with context, not cold.
       source: |-
@@ -1786,7 +1786,7 @@ laws:
       counter:
         name: トイル
         note: |-
-          腕を鈍らせないためだけに定型作業を人にやらせ続けるのは、自動化より高くつき、より多く失敗する。答えは自動化を減らすことではなく訓練だ
+          腕を鈍らせないためだけに定型作業を人に続けさせることにもコストがある。負荷に比例して増える繰り返し作業は時間を食い、ミスを招くので、自動化への圧力は本物だ。この緊張を解くのは自動化を減らすことではなく、人と機械の協調をよくすることだ
       guideline: |-
         定期的なゲームデーと実地訓練で運用者の勘を保て。何も知らないまま突然引き継ぐのではなく、状況をつかんだまま引き取れるように引き継ぎを設計せよ。
       source: |-
@@ -2978,7 +2978,7 @@ laws:
     en:
       title: Context, Not Control
       concept: |-
-        Rules and approvals scale worse than shared understanding; people given the reasons behind a goal make better local decisions than people given a procedure.
+        As an organization grows, rules and approvals tend to scale worse than shared understanding; Netflix's argument is that people given the reasons behind a goal make better local decisions than people given a procedure.
       mechanism: |-
         A rule encodes someone's judgment about the cases they could foresee, so it fails on the ones they could not, and every approval step sends a decision to a person with less detail than the one asking. As a company grows, each incident adds a rule and rules accumulate faster than anyone removes them, until people follow the procedure instead of thinking about the outcome. When managers spend their effort on the why (the goal, the constraints, what good looks like), the people closest to the work can decide quickly and still pull in the same direction. Netflix calls the result "highly aligned and loosely coupled".
       counter:
@@ -2991,7 +2991,7 @@ laws:
         Netflix, *Netflix Culture Memo* (jobs.netflix.com, current version c. 2024), with the same principles set out in Reed Hastings & Erin Meyer, *No Rules Rules: Netflix and the Culture of Reinvention* (Penguin Press, 2020) — "context not control", "highly aligned and loosely coupled", and keeping rules to a minimum to avoid the process creep that comes with growth.
     ja:
       title: 統制ではなく文脈を
-      concept: ルールと承認は、共有された理解ほどにはスケールしない。手順を渡された人より、目標の背景を渡された人のほうが、現場でよい判断をする。
+      concept: 組織が大きくなるほど、ルールと承認は共有された理解ほどにはスケールしにくい。手順を渡された人より目標の背景を渡された人のほうが現場でよい判断をする、というのが Netflix の主張だ。
       mechanism: |-
         ルールは、書いた人が予見できた場面についての判断を固めたものだ。だから予見できなかった場面では外れる。承認を一段挟むごとに、判断は、申請する側より細部を知らない人の手に渡る。会社が大きくなると、障害のたびにルールが一つ増え、減るより速く積み上がり、やがて人は手順に従うだけで、結果を考えなくなる。管理者が力を「なぜ」（目標、制約、何がよい状態か）に注げば、仕事にいちばん近い人がすばやく決め、しかも同じ方向に進める。Netflix はこの状態を「高度に整合し、疎に結合した」と呼ぶ。
       counter:
@@ -3121,7 +3121,7 @@ laws:
         note: |-
           under a fixed date a team that cannot or will not cut scope cuts tests, review and error handling instead, and some work (a protocol, a compliance requirement) has a floor below which no slice is worth shipping
       guideline: |-
-        Before the work starts, decide how much time it is worth, not how long it will take, and shape the scope to fit. When the time runs out, stop by default: ship what is done if it stands on its own, otherwise reshape it and decide afresh whether to bet on it again; do not quietly extend. Cut features, never tests or review, and do not fix the time on work that cannot be sliced below a coherent minimum.
+        Before the work starts, decide how much time it is worth, not how long it will take, and shape the scope to fit. When the time runs out, stop by default: ship what is done if it stands on its own, otherwise reshape it and decide afresh whether to bet on it again; do not quietly extend. Cut features before tests or review, and do not fix the time on work that cannot be sliced below a coherent minimum.
       source: |-
         Ryan Singer, *Shape Up* (Basecamp, 2019), ch. 3 "Set Boundaries" — the appetite and "fixed time, variable scope"; ch. 8 "The Betting Table" — the circuit breaker: "by default the project doesn't get an extension". Earlier, 37signals, *Getting Real* (2006), "Fix Time and Budget, Flex Scope": "Never throw more time or money at a problem, just scale back the scope."
     ja:
@@ -3133,7 +3133,7 @@ laws:
         name: 隠れた変数としての品質
         note: 期日が固定されてもスコープを削れない、あるいは削らないチームは、代わりにテストやレビュー、エラー処理を削る。また、プロトコルやコンプライアンス要件のように、それ以下に切っては出す意味のない下限がある仕事もある
       guideline: |-
-        作業を始める前に、どれだけかかるかではなく、どれだけの時間をかける価値があるかを決め、スコープをそれに合わせて形づくれ。時間が尽きたら原則として止めよ。できた部分が単独で成り立つなら出し、そうでなければ問題の切り方を作り直して、もう一度賭けるかを改めて決めよ。黙って延長するな。削るのは機能であって、テストやレビューではない。筋の通った最小単位より細かく切れない仕事には、時間を固定するな。
+        作業を始める前に、どれだけかかるかではなく、どれだけの時間をかける価値があるかを決め、スコープをそれに合わせて形づくれ。時間が尽きたら原則として止めよ。できた部分が単独で成り立つなら出し、そうでなければ問題の切り方を作り直して、もう一度賭けるかを改めて決めよ。黙って延長するな。テストやレビューより先に機能を削れ。筋の通った最小単位より細かく切れない仕事には、時間を固定するな。
       source: |-
         Ryan Singer『Shape Up』(Basecamp, 2019) 第 3 章「Set Boundaries」。アペタイトと "fixed time, variable scope" の出典。第 8 章「The Betting Table」のサーキットブレーカー ("by default the project doesn't get an extension")。先行して 37signals『Getting Real』(2006)「Fix Time and Budget, Flex Scope」("Never throw more time or money at a problem, just scale back the scope")。
 
