@@ -20,7 +20,7 @@ figures:
     kind: company
     name: "Amazon"
     logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
-    license: "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc."
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
   - slug: normalization-of-deviance
     kind: person
@@ -64,7 +64,7 @@ figures:
   - slug: brooks-law
     kind: person
     name: "Fred Brooks"
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Fred_Brooks_%28cropped_square%29.jpg/500px-Fred_Brooks_%28cropped_square%29.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Fred_Brooks_%28cropped_square%29.jpg"
     license: "CC BY-SA 3.0"
     author: "SD&M (www.sdm.de)"
     page: "https://commons.wikimedia.org/wiki/File:Fred_Brooks_(cropped_square).jpg"
@@ -95,14 +95,15 @@ figures:
   - slug: hofstadters-law
     kind: person
     name: "Douglas Hofstadter"
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Douglas_Hofstadter%2C_Stanford_2006_%28crop%29.jpg/500px-Douglas_Hofstadter%2C_Stanford_2006_%28crop%29.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/16/Douglas_Hofstadter%2C_Stanford_2006_%28crop%29.jpg"
     license: "CC BY-SA 2.0"
     author: "null0"
     page: "https://commons.wikimedia.org/wiki/File:Douglas_Hofstadter,_Stanford_2006_(crop).jpg"
+    focus: { x: 0.47, y: 0.33, zoom: 2 }
   - slug: goodharts-law
     kind: person
     name: "Charles Goodhart"
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Charles_Goodhart_delives_the_2012_Long_Finance_conference_keynote_speech.JPG/500px-Charles_Goodhart_delives_the_2012_Long_Finance_conference_keynote_speech.JPG"
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/94/Charles_Goodhart_delives_the_2012_Long_Finance_conference_keynote_speech.JPG"
     license: "CC BY-SA 3.0"
     author: "Jamesfranklingresham"
     page: "https://commons.wikimedia.org/wiki/File:Charles_Goodhart_delives_the_2012_Long_Finance_conference_keynote_speech.JPG"
@@ -134,7 +135,7 @@ figures:
   - slug: amdahls-law
     kind: person
     name: "Gene Amdahl"
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Amdahl_march_13_2008.jpg/500px-Amdahl_march_13_2008.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/79/Amdahl_march_13_2008.jpg"
     license: "CC BY 3.0"
     author: "Perry Kivolowitz"
     page: "https://commons.wikimedia.org/wiki/File:Amdahl_march_13_2008.jpg"
@@ -146,6 +147,7 @@ figures:
     license: "CC BY-SA 4.0"
     author: "Katie Chan"
     page: "https://commons.wikimedia.org/wiki/File:Joel_Spolsky_2014-06-18_(cropped).jpg"
+    focus: { x: 0.5, y: 0.47, zoom: 1 }
   - slug: pareto-principle
     kind: person
     name: "Vilfredo Pareto"
@@ -159,11 +161,11 @@ figures:
     image: "https://upload.wikimedia.org/wikipedia/en/0/05/Abraham_Wald_in_his_youth.jpg"
     license: "Public domain in the US"
     author: "Unknown"
-    page: "https://en.wikipedia.org/wiki/File:Abraham_Wald_in_his_youth.jpg_(enwiki-local,_not_Commons)"
+    page: "https://en.wikipedia.org/wiki/File:Abraham_Wald_in_his_youth.jpg"
   - slug: kernighans-law
     kind: person
     name: "Brian Kernighan"
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Brian_Kernighan_at_VCF_East_2.jpg/500px-Brian_Kernighan_at_VCF_East_2.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Brian_Kernighan_at_VCF_East_2.jpg"
     license: "CC0"
     author: "Jw12321"
     page: "https://commons.wikimedia.org/wiki/File:Brian_Kernighan_at_VCF_East_2.jpg"
@@ -175,7 +177,7 @@ figures:
     license: "CC BY-SA 3.0"
     author: "Pavan Kumar N (Simplypavi)"
     page: "https://commons.wikimedia.org/wiki/File:Indian_Cobra,_crop.jpg"
-    focus: { x: 0.58, y: 0.3, zoom: 1.5 }
+    focus: { x: 0.6, y: 0.36, zoom: 1.6 }
   - slug: dunbars-number
     kind: person
     name: "Robin Dunbar"
@@ -203,7 +205,7 @@ figures:
     license: "Public domain (US government work)"
     author: "U.S. Air Force"
     page: "https://commons.wikimedia.org/wiki/File:John_Stapp.triddle.jpg"
-    focus: { x: 0.5, y: 0.33, zoom: 1.4 }
+    focus: { x: 0.5, y: 0.32, zoom: 1.15 }
   - slug: boy-scout-rule
     kind: person
     name: "Robert C. Martin"
@@ -218,7 +220,7 @@ figures:
     license: "CC BY 2.0"
     author: "Yahoo! Blog from Sunnyvale, California, USA"
     page: "https://commons.wikimedia.org/wiki/File:Larry_Tesler_Smiles_at_Whisper.jpeg"
-    focus: { x: 0.7, y: 0.45, zoom: 1.2 }
+    focus: { x: 0.66, y: 0.5, zoom: 1 }
   - slug: dunning-kruger-effect
     kind: person
     name: "David Dunning"
@@ -285,6 +287,7 @@ figures:
     license: "CC BY 4.0"
     author: "Larry Bessel"
     page: "https://commons.wikimedia.org/wiki/File:Laurence_J._Peter,_1975.jpg"
+    focus: { x: 0.5, y: 0.4, zoom: 1 }
   - slug: parkinsons-law
     kind: person
     name: "C. Northcote Parkinson"
@@ -296,7 +299,7 @@ figures:
     kind: person
     name: "Niklaus Wirth"
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Niklaus_Wirth%2C_UrGU.jpg/500px-Niklaus_Wirth%2C_UrGU.jpg"
-    license: "Copyrighted free use"
+    license: "Free use with attribution"
     author: "Tyomitch"
     page: "https://commons.wikimedia.org/wiki/File:Niklaus_Wirth,_UrGU.jpg"
   - slug: ninety-ninety-rule
@@ -326,7 +329,7 @@ figures:
     name: "Paul M. Fitts"
     image: "https://quod.lib.umich.edu/cgi/i/image/api/tile/bhl:HS15404:HS15404/full/full/0/default.jpg"
     license: "CC BY 4.0"
-    author: "University of Michigan News and Information Services (© Regents of the University of Michigan), via Bentley Historical Library"
+    author: "University of Michigan / Bentley Historical Library"
     page: "https://quod.lib.umich.edu/b/bhl/x-hs15404/hs15404"
     focus: { x: 0.5, y: 0.35, zoom: 1.6 }
   - slug: millers-law
@@ -368,6 +371,7 @@ figures:
     license: "Public domain"
     author: "Unknown author"
     page: "https://commons.wikimedia.org/wiki/File:Auguste_Kerckhoffs.jpg"
+    focus: { x: 0.5, y: 0.32, zoom: 1.1 }
   - slug: gustafsons-law
     kind: person
     name: "John Gustafson"
@@ -375,6 +379,7 @@ figures:
     license: "CC BY-SA 3.0"
     author: "Davisourus at English Wikipedia"
     page: "https://commons.wikimedia.org/wiki/File:John_L_Gustafson_CEO.jpg"
+    focus: { x: 0.47, y: 0.38, zoom: 1.05 }
   - slug: tail-at-scale
     kind: person
     name: "Jeffrey Dean"
@@ -425,7 +430,7 @@ figures:
     name: "Ron Jeffries"
     image: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Ron_Jeffries.jpg"
     license: "CC BY-SA 3.0"
-    author: "Michael Hüttermann (original uploader, German Wikipedia)"
+    author: "Michael Hüttermann"
     page: "https://commons.wikimedia.org/wiki/File:Ron_Jeffries.jpg"
   - slug: kiss-principle
     kind: person
@@ -434,6 +439,7 @@ figures:
     license: "Public domain"
     author: "CIA"
     page: "https://commons.wikimedia.org/wiki/File:ClarenceLeonardKellyJohnson.jpg"
+    focus: { x: 0.58, y: 0.3, zoom: 1.8 }
   - slug: dry-principle
     kind: person
     name: "Andy Hunt"
@@ -444,11 +450,6 @@ figures:
   - slug: theory-of-constraints
     kind: person
     name: "Eliyahu M. Goldratt"
-    image: "https://upload.wikimedia.org/wikipedia/commons/4/48/Goldratt%2BAmstrong.jpg"
-    license: "CC BY-SA 4.0"
-    author: "Francois-Xavier Dugres"
-    page: "https://commons.wikimedia.org/wiki/File:Goldratt%2BAmstrong.jpg"
-    focus: { x: 0.655, y: 0.12, zoom: 5 }
   - slug: occams-razor
     kind: person
     name: "William of Ockham"
@@ -474,7 +475,7 @@ figures:
   - slug: second-system-effect
     kind: person
     name: "Fred Brooks"
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Fred_Brooks_%28cropped_square%29.jpg/500px-Fred_Brooks_%28cropped_square%29.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Fred_Brooks_%28cropped_square%29.jpg"
     license: "CC BY-SA 3.0"
     author: "SD&M (www.sdm.de)"
     page: "https://commons.wikimedia.org/wiki/File:Fred_Brooks_(cropped_square).jpg"
@@ -486,6 +487,7 @@ figures:
     license: "CC BY-SA 2.0"
     author: "Intel Free Press"
     page: "https://commons.wikimedia.org/wiki/File:Gordon_Moore_1978_(cropped).png"
+    focus: { x: 0.46, y: 0.3, zoom: 1.6 }
   - slug: amaras-law
     kind: person
     name: "Roy Amara"
@@ -508,14 +510,10 @@ figures:
     license: "CC BY-SA 3.0"
     author: "Andreu Veà, WiWiW.org"
     page: "https://commons.wikimedia.org/wiki/File:With_Bob_Metcalfe_(cropped).jpg"
+    focus: { x: 0.5, y: 0.36, zoom: 1.15 }
   - slug: ringelmann-effect
-    kind: scene
-    name: "Tug of war, 1900 Paris Olympics"
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/50/Tug_of_war.jpg"
-    license: "Public domain"
-    author: "Unknown photographer (source: International Olympic Committee website)"
-    page: "https://commons.wikimedia.org/wiki/File:Tug_of_war.jpg"
-    focus: { x: 0.26, y: 0.76, zoom: 2 }
+    kind: person
+    name: "Maximilien Ringelmann"
   - slug: shirky-principle
     kind: person
     name: "Clay Shirky"
@@ -527,67 +525,67 @@ figures:
     kind: company
     name: "Google"
     logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
-    license: "Public domain (text logo); Google is a trademark of Google LLC"
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
   - slug: toil
     kind: company
     name: "Google"
     logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
-    license: "Public domain (text logo); Google is a trademark of Google LLC"
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
   - slug: blameless-postmortem
     kind: company
     name: "Etsy"
     logo: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4d/c1/c3/4dc1c3c7-0eef-4976-1884-8a9b2d6d85a6/Placeholder.mill/1024x1024bb.png"
-    license: "Etsy is a trademark of Etsy, Inc.; shown to identify the source"
+    license: "© Etsy, Inc."
     page: "https://apps.apple.com/us/app/etsy-shop-from-real-people/id477128284"
   - slug: working-backwards
     kind: company
     name: "Amazon"
     logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
-    license: "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc."
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
   - slug: disagree-and-commit
     kind: company
     name: "Amazon"
     logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
-    license: "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc."
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
   - slug: you-build-it-you-run-it
     kind: company
     name: "Amazon"
     logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
-    license: "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc."
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
   - slug: static-stability
     kind: company
     name: "Amazon Web Services"
     logo: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Amazon_Web_Services_2025.svg"
-    license: "Public domain (text logo); AWS is a trademark of Amazon.com, Inc."
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_2025.svg"
   - slug: avoid-fallback
     kind: company
     name: "Amazon Web Services"
     logo: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Amazon_Web_Services_2025.svg"
-    license: "Public domain (text logo); AWS is a trademark of Amazon.com, Inc."
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_2025.svg"
   - slug: constant-work
     kind: company
     name: "Amazon Web Services"
     logo: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Amazon_Web_Services_2025.svg"
-    license: "Public domain (text logo); AWS is a trademark of Amazon.com, Inc."
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_2025.svg"
   - slug: mechanisms-not-good-intentions
     kind: company
     name: "Amazon"
     logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
-    license: "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc."
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
   - slug: andon
     kind: company
     name: "Toyota"
     logo: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Toyota_Symbol.svg"
-    license: "Public domain (text logo); Toyota is a trademark of Toyota Motor Corporation"
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Toyota_Symbol.svg"
   - slug: five-whys
     kind: person
@@ -601,39 +599,39 @@ figures:
     kind: company
     name: "Netflix"
     logo: "https://upload.wikimedia.org/wikipedia/commons/1/18/Netflix_2016_N_logo.svg"
-    license: "Public domain (text logo); Netflix is a trademark of Netflix, Inc."
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Netflix_2016_N_logo.svg"
   - slug: context-not-control
     kind: company
     name: "Netflix"
     logo: "https://upload.wikimedia.org/wikipedia/commons/1/18/Netflix_2016_N_logo.svg"
-    license: "Public domain (text logo); Netflix is a trademark of Netflix, Inc."
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Netflix_2016_N_logo.svg"
   - slug: code-health-standard
     kind: company
     name: "Google"
     logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
-    license: "Public domain (text logo); Google is a trademark of Google LLC"
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
   - slug: beyonce-rule
     kind: company
     name: "Google"
     logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
-    license: "Public domain (text logo); Google is a trademark of Google LLC"
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
   - slug: churn-rule
     kind: company
     name: "Google"
     logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
-    license: "Public domain (text logo); Google is a trademark of Google LLC"
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
   - slug: fixed-time-variable-scope
     kind: company
     name: "37signals"
     logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/37signals_logo.svg"
-    license: "Public domain (text logo); 37signals is a trademark of 37signals LLC"
+    license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:37signals_logo.svg"
-    viewbox: "770 0 293 300"
+    viewbox: "763 0 300 300"
   - slug: strangler-fig
     kind: person
     name: "Martin Fowler"

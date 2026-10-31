@@ -46,7 +46,8 @@ export const translations = {
       next: 'Next',
       editOnGitHub: 'Suggest a correction on GitHub',
     },
-    footer: 'Text licensed CC BY-SA 4.0. Code licensed MIT.',
+    footer:
+      'Text licensed CC BY-SA 4.0. Code licensed MIT. Photos are credited on each article under their own licences. Company logos are trademarks of their owners, shown only to say where a practice comes from.',
     switcher: { label: 'Language', other: '日本語' },
     notFound: {
       title: 'No such law',
@@ -96,7 +97,8 @@ export const translations = {
       next: '次へ',
       editOnGitHub: 'GitHub で誤りを指摘する',
     },
-    footer: '本文は CC BY-SA 4.0、コードは MIT で提供しています。',
+    footer:
+      '本文は CC BY-SA 4.0、コードは MIT で提供しています。写真は各記事に記したそれぞれのライセンスによります。企業ロゴは各社の商標で、その実践の出どころを示すためにのみ掲載しています。',
     switcher: { label: '言語', other: 'English' },
     notFound: {
       title: '該当する法則はありません',

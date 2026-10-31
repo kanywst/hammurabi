@@ -202,6 +202,17 @@ function monogram(text, isName) {
   return [...new Set(picked)].map((w) => w[0].toUpperCase()).join('');
 }
 
+/** Width over height of an SVG, from its viewBox or its width/height. A wide
+ *  wordmark gets more of the circle than a square symbol does. */
+function aspect(file) {
+  const tag = readFileSync(file, 'utf8').match(/<svg\b[^>]*>/)?.[0] ?? '';
+  const box = tag.match(/viewBox=["']([^"']+)["']/)?.[1].trim().split(/[\s,]+/).map(Number);
+  if (box?.length === 4 && box[3] > 0) return box[2] / box[3];
+  const w = parseFloat(tag.match(/\swidth=["']([\d.]+)/)?.[1]);
+  const h = parseFloat(tag.match(/\sheight=["']([\d.]+)/)?.[1]);
+  return w > 0 && h > 0 ? w / h : 1;
+}
+
 function figureFor(law) {
   const f = figures.get(law.slug) ?? { kind: 'none' };
   const out = {
@@ -210,11 +221,15 @@ function figureFor(law) {
     monogram: f.name && f.kind !== 'scene' ? monogram(f.name, f.kind === 'person') : monogram(law.en.title, false),
     image: null,
     logo: null,
+    wide: false,
     credit: null,
   };
   if (f.image && existsSync(join(FIGURES_DIR, `${law.slug}.webp`))) out.image = `/figures/${law.slug}.webp`;
   const logo = ['svg', 'png'].find((ext) => f.logo && existsSync(join(FIGURES_DIR, `${law.slug}.${ext}`)));
-  if (logo) out.logo = `/figures/${law.slug}.${logo}`;
+  if (logo) {
+    out.logo = `/figures/${law.slug}.${logo}`;
+    out.wide = logo === 'svg' && aspect(join(FIGURES_DIR, `${law.slug}.svg`)) > 1.6;
+  }
   if (out.image || out.logo) {
     out.credit = { author: f.author ?? null, license: f.license, page: f.page ?? null };
   }
@@ -269,6 +284,8 @@ export interface Figure {
   monogram: string;
   image: string | null;
   logo: string | null;
+  /** A wordmark much wider than tall, drawn larger so it stays legible. */
+  wide: boolean;
   credit: Credit | null;
 }
 

@@ -257,12 +257,15 @@ html:lang(ja) body {
       0 1px 3px color-mix(in srgb, black 12%, transparent);
   }
 
+  /* The gap between the two rings is the page colour, so the frame does not
+     glare in the dark theme. Smaller on a phone, where it sits beside its
+     caption rather than beside the title. */
   .medal--lg {
-    width: 10rem;
-    height: 10rem;
+    width: 7.5rem;
+    height: 7.5rem;
     box-shadow:
       0 0 0 1px var(--color-line),
-      0 0 0 5px var(--color-medal),
+      0 0 0 5px var(--color-paper),
       0 0 0 6px var(--color-line),
       0 6px 20px color-mix(in srgb, black 14%, transparent);
   }
@@ -273,10 +276,23 @@ html:lang(ja) body {
     object-fit: cover;
   }
 
+  @media (min-width: 40rem) {
+    .medal--lg {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+
   .medal--logo img {
     width: 68%;
     height: 68%;
     object-fit: contain;
+  }
+
+  /* A wordmark has to fill the circle's width to be read at 56px. */
+  .medal--wide img {
+    width: 88%;
+    height: 88%;
   }
 
   /* Seal: initials in a bookish serif, struck in the category's colour, so a
@@ -287,10 +303,12 @@ html:lang(ja) body {
     background:
       radial-gradient(
         circle at 32% 28%,
-        color-mix(in srgb, white 28%, transparent),
+        color-mix(in srgb, white 20%, transparent),
         transparent 62%
       ),
-      oklch(0.52 0.15 var(--seal-hue, 260));
+      /* Dark enough that the white initials stay above 4.5:1 on every hue,
+         highlight included. */
+        oklch(0.47 0.14 var(--seal-hue, 260));
   }
 
   .medal--seal::after {

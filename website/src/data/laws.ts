@@ -30,6 +30,8 @@ export interface Figure {
   monogram: string;
   image: string | null;
   logo: string | null;
+  /** A wordmark much wider than tall, drawn larger so it stays legible. */
+  wide: boolean;
   credit: Credit | null;
 }
 
@@ -310,9 +312,10 @@ export const laws: Law[] = [
       "monogram": "A",
       "image": null,
       "logo": "/figures/type-1-vs-type-2-decisions.svg",
+      "wide": true,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc.",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
       }
     },
@@ -358,6 +361,7 @@ export const laws: Law[] = [
       "monogram": "DV",
       "image": null,
       "logo": null,
+      "wide": false,
       "credit": null
     },
     "en": {
@@ -396,6 +400,7 @@ export const laws: Law[] = [
       "monogram": "GC",
       "image": "/figures/chestertons-fence.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Ernest Herbert Mills",
         "license": "Public domain",
@@ -441,6 +446,7 @@ export const laws: Law[] = [
       "monogram": "AR",
       "image": "/figures/normalcy-bias.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Thatcher Cook for PopTech",
         "license": "CC BY-SA 2.0",
@@ -484,6 +490,7 @@ export const laws: Law[] = [
       "monogram": "CP",
       "image": "/figures/law-of-triviality.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Wim van Rossem for Anefo",
         "license": "CC BY-SA 3.0 NL",
@@ -528,6 +535,7 @@ export const laws: Law[] = [
       "monogram": "GL",
       "image": "/figures/galls-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "John T. Daniels (Library of Congress)",
         "license": "Public domain",
@@ -573,6 +581,7 @@ export const laws: Law[] = [
       "monogram": "MC",
       "image": null,
       "logo": null,
+      "wide": false,
       "credit": null
     },
     "en": {
@@ -613,6 +622,7 @@ export const laws: Law[] = [
       "monogram": "HW",
       "image": null,
       "logo": null,
+      "wide": false,
       "credit": null
     },
     "en": {
@@ -655,6 +665,7 @@ export const laws: Law[] = [
       "monogram": "FB",
       "image": "/figures/brooks-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "SD&M (www.sdm.de)",
         "license": "CC BY-SA 3.0",
@@ -698,6 +709,7 @@ export const laws: Law[] = [
       "monogram": "ER",
       "image": "/figures/xy-problem.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "jerone2 (Flickr); derivative by Bilby",
         "license": "CC BY-SA 2.0",
@@ -740,6 +752,7 @@ export const laws: Law[] = [
       "monogram": "JP",
       "image": "/figures/postels-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Carl Malamud",
         "license": "CC BY 2.0",
@@ -783,6 +796,7 @@ export const laws: Law[] = [
       "monogram": "RH",
       "image": "/figures/hanlons-razor.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Photographer unknown, published by Doubleday",
         "license": "Public domain",
@@ -826,6 +840,7 @@ export const laws: Law[] = [
       "monogram": "DH",
       "image": "/figures/hofstadters-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "null0",
         "license": "CC BY-SA 2.0",
@@ -870,6 +885,7 @@ export const laws: Law[] = [
       "monogram": "CG",
       "image": "/figures/goodharts-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Jamesfranklingresham",
         "license": "CC BY-SA 3.0",
@@ -913,6 +929,7 @@ export const laws: Law[] = [
       "monogram": "NT",
       "image": "/figures/lindy-effect.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Eirik Solheim / NRKbeta",
         "license": "CC BY-SA 2.0",
@@ -955,6 +972,7 @@ export const laws: Law[] = [
       "monogram": "RT",
       "image": "/figures/sunk-cost-fallacy.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Chatham House",
         "license": "CC BY 2.0",
@@ -997,6 +1015,7 @@ export const laws: Law[] = [
       "monogram": "RF",
       "image": "/figures/cargo-cult-engineering.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Tamiko Thiel",
         "license": "CC BY-SA 3.0",
@@ -1040,6 +1059,7 @@ export const laws: Law[] = [
       "monogram": "GA",
       "image": "/figures/amdahls-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Perry Kivolowitz",
         "license": "CC BY 3.0",
@@ -1082,6 +1102,7 @@ export const laws: Law[] = [
       "monogram": "JS",
       "image": "/figures/leaky-abstractions.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Katie Chan",
         "license": "CC BY-SA 4.0",
@@ -1123,6 +1144,7 @@ export const laws: Law[] = [
       "monogram": "VP",
       "image": "/figures/pareto-principle.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Unknown author",
         "license": "Public domain",
@@ -1165,10 +1187,11 @@ export const laws: Law[] = [
       "monogram": "AW",
       "image": "/figures/survivorship-bias.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Unknown",
         "license": "Public domain in the US",
-        "page": "https://en.wikipedia.org/wiki/File:Abraham_Wald_in_his_youth.jpg_(enwiki-local,_not_Commons)"
+        "page": "https://en.wikipedia.org/wiki/File:Abraham_Wald_in_his_youth.jpg"
       }
     },
     "en": {
@@ -1207,6 +1230,7 @@ export const laws: Law[] = [
       "monogram": "BK",
       "image": "/figures/kernighans-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Jw12321",
         "license": "CC0",
@@ -1249,6 +1273,7 @@ export const laws: Law[] = [
       "monogram": "CE",
       "image": "/figures/cobra-effect.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Pavan Kumar N (Simplypavi)",
         "license": "CC BY-SA 3.0",
@@ -1294,6 +1319,7 @@ export const laws: Law[] = [
       "monogram": "RD",
       "image": "/figures/dunbars-number.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Festival della Scienza from Genova",
         "license": "CC BY-SA 2.0",
@@ -1337,6 +1363,7 @@ export const laws: Law[] = [
       "monogram": "RG",
       "image": null,
       "logo": null,
+      "wide": false,
       "credit": null
     },
     "en": {
@@ -1374,6 +1401,7 @@ export const laws: Law[] = [
       "monogram": "WC",
       "image": "/figures/cunninghams-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Carrigg Photography for the Wikimedia Foundation",
         "license": "CC BY-SA 3.0",
@@ -1417,6 +1445,7 @@ export const laws: Law[] = [
       "monogram": "JD",
       "image": null,
       "logo": null,
+      "wide": false,
       "credit": null
     },
     "en": {
@@ -1456,6 +1485,7 @@ export const laws: Law[] = [
       "monogram": "JS",
       "image": "/figures/murphys-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "U.S. Air Force",
         "license": "Public domain (US government work)",
@@ -1499,6 +1529,7 @@ export const laws: Law[] = [
       "monogram": "RM",
       "image": "/figures/boy-scout-rule.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Angelacleancoder",
         "license": "CC BY-SA 4.0",
@@ -1543,6 +1574,7 @@ export const laws: Law[] = [
       "monogram": "LT",
       "image": "/figures/teslers-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Yahoo! Blog from Sunnyvale, California, USA",
         "license": "CC BY 2.0",
@@ -1585,6 +1617,7 @@ export const laws: Law[] = [
       "monogram": "DD",
       "image": "/figures/dunning-kruger-effect.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Karl Withakay",
         "license": "CC BY-SA 4.0",
@@ -1631,6 +1664,7 @@ export const laws: Law[] = [
       "monogram": "GL",
       "image": "/figures/curse-of-knowledge.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Me Judice (MeJudice)",
         "license": "CC BY 3.0",
@@ -1675,6 +1709,7 @@ export const laws: Law[] = [
       "monogram": "SC",
       "image": "/figures/swiss-cheese-model.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Dieter Seeger",
         "license": "CC BY-SA 2.0",
@@ -1717,6 +1752,7 @@ export const laws: Law[] = [
       "monogram": "DK",
       "image": "/figures/premature-optimization.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Alex Handy",
         "license": "CC BY-SA 2.0",
@@ -1758,6 +1794,7 @@ export const laws: Law[] = [
       "monogram": "LT",
       "image": "/figures/linus-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Krd (photo); Von Sprat (crop)",
         "license": "CC BY-SA 4.0",
@@ -1800,6 +1837,7 @@ export const laws: Law[] = [
       "monogram": "EB",
       "image": "/figures/cap-theorem.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Vera de Kok",
         "license": "CC BY-SA 4.0",
@@ -1842,6 +1880,7 @@ export const laws: Law[] = [
       "monogram": "LL",
       "image": "/figures/littles-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "David Shankbone",
         "license": "CC BY-SA 3.0",
@@ -1883,6 +1922,7 @@ export const laws: Law[] = [
       "monogram": "JG",
       "image": "/figures/two-generals-problem.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Microsoft Research",
         "license": "CC BY-SA 3.0 US",
@@ -1925,6 +1965,7 @@ export const laws: Law[] = [
       "monogram": "LP",
       "image": "/figures/peter-principle.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Larry Bessel",
         "license": "CC BY 4.0",
@@ -1969,6 +2010,7 @@ export const laws: Law[] = [
       "monogram": "CP",
       "image": "/figures/parkinsons-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Wim van Rossem for Anefo",
         "license": "CC BY-SA 3.0 NL",
@@ -2011,9 +2053,10 @@ export const laws: Law[] = [
       "monogram": "NW",
       "image": "/figures/wirths-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Tyomitch",
-        "license": "Copyrighted free use",
+        "license": "Free use with attribution",
         "page": "https://commons.wikimedia.org/wiki/File:Niklaus_Wirth,_UrGU.jpg"
       }
     },
@@ -2053,6 +2096,7 @@ export const laws: Law[] = [
       "monogram": "NR",
       "image": "/figures/ninety-ninety-rule.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Ken Lund",
         "license": "CC BY-SA 2.0",
@@ -2095,6 +2139,7 @@ export const laws: Law[] = [
       "monogram": "EL",
       "image": "/figures/eaglesons-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Arnold Reinhold",
         "license": "CC BY-SA 3.0",
@@ -2137,6 +2182,7 @@ export const laws: Law[] = [
       "monogram": "RH",
       "image": "/figures/hicks-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Rouven Schäfer",
         "license": "CC BY-SA 3.0",
@@ -2178,8 +2224,9 @@ export const laws: Law[] = [
       "monogram": "PF",
       "image": "/figures/fitts-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
-        "author": "University of Michigan News and Information Services (© Regents of the University of Michigan), via Bentley Historical Library",
+        "author": "University of Michigan / Bentley Historical Library",
         "license": "CC BY 4.0",
         "page": "https://quod.lib.umich.edu/b/bhl/x-hs15404/hs15404"
       }
@@ -2220,6 +2267,7 @@ export const laws: Law[] = [
       "monogram": "ML",
       "image": "/figures/millers-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "RHaworth (en.wikipedia)",
         "license": "Public domain",
@@ -2265,6 +2313,7 @@ export const laws: Law[] = [
       "monogram": "JG",
       "image": "/figures/fallacies-of-distributed-computing.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Peter Campbell",
         "license": "CC BY-SA 4.0",
@@ -2310,6 +2359,7 @@ export const laws: Law[] = [
       "monogram": "IA",
       "image": "/figures/ironies-of-automation.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Nuclear Regulatory Commission from US",
         "license": "CC BY 2.0",
@@ -2353,6 +2403,7 @@ export const laws: Law[] = [
       "monogram": "PL",
       "image": "/figures/principle-of-least-privilege.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Cindy Shebley",
         "license": "CC BY 2.0",
@@ -2396,6 +2447,7 @@ export const laws: Law[] = [
       "monogram": "AK",
       "image": "/figures/kerckhoffs-principle.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Unknown author",
         "license": "Public domain",
@@ -2440,6 +2492,7 @@ export const laws: Law[] = [
       "monogram": "JG",
       "image": "/figures/gustafsons-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Davisourus at English Wikipedia",
         "license": "CC BY-SA 3.0",
@@ -2484,6 +2537,7 @@ export const laws: Law[] = [
       "monogram": "JD",
       "image": "/figures/tail-at-scale.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Cmichel67",
         "license": "CC BY-SA 4.0",
@@ -2529,6 +2583,7 @@ export const laws: Law[] = [
       "monogram": "WA",
       "image": "/figures/ashbys-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Unknown author",
         "license": "Public domain",
@@ -2574,6 +2629,7 @@ export const laws: Law[] = [
       "monogram": "LD",
       "image": "/figures/law-of-demeter.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Ophelia2 (Wikimedia Commons user); sculptor anonymous",
         "license": "Public domain",
@@ -2618,6 +2674,7 @@ export const laws: Law[] = [
       "monogram": "WJ",
       "image": "/figures/jevons-paradox.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Unknown (via University of Manchester Libraries)",
         "license": "CC BY-SA 4.0",
@@ -2665,6 +2722,7 @@ export const laws: Law[] = [
       "monogram": "NA",
       "image": "/figures/normal-accident-theory.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "United States Department of Energy",
         "license": "Public domain (US government work)",
@@ -2710,6 +2768,7 @@ export const laws: Law[] = [
       "monogram": "BW",
       "image": "/figures/broken-windows-theory.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Tomas Castelazo",
         "license": "CC BY-SA 3.0",
@@ -2755,8 +2814,9 @@ export const laws: Law[] = [
       "monogram": "RJ",
       "image": "/figures/yagni.webp",
       "logo": null,
+      "wide": false,
       "credit": {
-        "author": "Michael Hüttermann (original uploader, German Wikipedia)",
+        "author": "Michael Hüttermann",
         "license": "CC BY-SA 3.0",
         "page": "https://commons.wikimedia.org/wiki/File:Ron_Jeffries.jpg"
       }
@@ -2800,6 +2860,7 @@ export const laws: Law[] = [
       "monogram": "KJ",
       "image": "/figures/kiss-principle.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "CIA",
         "license": "Public domain",
@@ -2844,6 +2905,7 @@ export const laws: Law[] = [
       "monogram": "AH",
       "image": "/figures/dry-principle.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Kittie Rue",
         "license": "CC BY-SA 3.0",
@@ -2886,13 +2948,10 @@ export const laws: Law[] = [
       "kind": "person",
       "name": "Eliyahu M. Goldratt",
       "monogram": "EG",
-      "image": "/figures/theory-of-constraints.webp",
+      "image": null,
       "logo": null,
-      "credit": {
-        "author": "Francois-Xavier Dugres",
-        "license": "CC BY-SA 4.0",
-        "page": "https://commons.wikimedia.org/wiki/File:Goldratt%2BAmstrong.jpg"
-      }
+      "wide": false,
+      "credit": null
     },
     "en": {
       "title": "Theory of Constraints",
@@ -2932,6 +2991,7 @@ export const laws: Law[] = [
       "monogram": "WO",
       "image": "/figures/occams-razor.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Moscarlop",
         "license": "CC BY-SA 3.0",
@@ -2977,6 +3037,7 @@ export const laws: Law[] = [
       "monogram": "RM",
       "image": "/figures/single-responsibility-principle.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Angelacleancoder",
         "license": "CC BY-SA 4.0",
@@ -3021,6 +3082,7 @@ export const laws: Law[] = [
       "monogram": "MC",
       "image": "/figures/principle-of-least-astonishment.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Mfc (Mike Cowlishaw)",
         "license": "CC BY-SA 3.0",
@@ -3067,6 +3129,7 @@ export const laws: Law[] = [
       "monogram": "FB",
       "image": "/figures/second-system-effect.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "SD&M (www.sdm.de)",
         "license": "CC BY-SA 3.0",
@@ -3112,6 +3175,7 @@ export const laws: Law[] = [
       "monogram": "GM",
       "image": "/figures/moores-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Intel Free Press",
         "license": "CC BY-SA 2.0",
@@ -3156,6 +3220,7 @@ export const laws: Law[] = [
       "monogram": "RA",
       "image": "/figures/amaras-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Rochester Institute of Technology",
         "license": "Public domain",
@@ -3200,6 +3265,7 @@ export const laws: Law[] = [
       "monogram": "RS",
       "image": "/figures/the-bitter-lesson.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Xuthoria",
         "license": "CC BY-SA 4.0",
@@ -3244,6 +3310,7 @@ export const laws: Law[] = [
       "monogram": "RM",
       "image": "/figures/metcalfes-law.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Andreu Veà, WiWiW.org",
         "license": "CC BY-SA 3.0",
@@ -3283,16 +3350,13 @@ export const laws: Law[] = [
       "dunbars-number"
     ],
     "figure": {
-      "kind": "scene",
-      "name": "Tug of war, 1900 Paris Olympics",
-      "monogram": "RE",
-      "image": "/figures/ringelmann-effect.webp",
+      "kind": "person",
+      "name": "Maximilien Ringelmann",
+      "monogram": "MR",
+      "image": null,
       "logo": null,
-      "credit": {
-        "author": "Unknown photographer (source: International Olympic Committee website)",
-        "license": "Public domain",
-        "page": "https://commons.wikimedia.org/wiki/File:Tug_of_war.jpg"
-      }
+      "wide": false,
+      "credit": null
     },
     "en": {
       "title": "Ringelmann Effect",
@@ -3332,6 +3396,7 @@ export const laws: Law[] = [
       "monogram": "CS",
       "image": "/figures/shirky-principle.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "James Duncan Davidson from Portland, USA",
         "license": "CC BY 2.0",
@@ -3379,9 +3444,10 @@ export const laws: Law[] = [
       "monogram": "G",
       "image": null,
       "logo": "/figures/error-budget.svg",
+      "wide": false,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); Google is a trademark of Google LLC",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
       }
     },
@@ -3425,9 +3491,10 @@ export const laws: Law[] = [
       "monogram": "G",
       "image": null,
       "logo": "/figures/toil.svg",
+      "wide": false,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); Google is a trademark of Google LLC",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
       }
     },
@@ -3473,9 +3540,10 @@ export const laws: Law[] = [
       "monogram": "E",
       "image": null,
       "logo": "/figures/blameless-postmortem.png",
+      "wide": false,
       "credit": {
         "author": null,
-        "license": "Etsy is a trademark of Etsy, Inc.; shown to identify the source",
+        "license": "© Etsy, Inc.",
         "page": "https://apps.apple.com/us/app/etsy-shop-from-real-people/id477128284"
       }
     },
@@ -3517,9 +3585,10 @@ export const laws: Law[] = [
       "monogram": "A",
       "image": null,
       "logo": "/figures/working-backwards.svg",
+      "wide": true,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc.",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
       }
     },
@@ -3561,9 +3630,10 @@ export const laws: Law[] = [
       "monogram": "A",
       "image": null,
       "logo": "/figures/disagree-and-commit.svg",
+      "wide": true,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc.",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
       }
     },
@@ -3606,9 +3676,10 @@ export const laws: Law[] = [
       "monogram": "A",
       "image": null,
       "logo": "/figures/you-build-it-you-run-it.svg",
+      "wide": true,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc.",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
       }
     },
@@ -3651,9 +3722,10 @@ export const laws: Law[] = [
       "monogram": "AW",
       "image": null,
       "logo": "/figures/static-stability.svg",
+      "wide": false,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); AWS is a trademark of Amazon.com, Inc.",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_2025.svg"
       }
     },
@@ -3697,9 +3769,10 @@ export const laws: Law[] = [
       "monogram": "AW",
       "image": null,
       "logo": "/figures/avoid-fallback.svg",
+      "wide": false,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); AWS is a trademark of Amazon.com, Inc.",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_2025.svg"
       }
     },
@@ -3741,9 +3814,10 @@ export const laws: Law[] = [
       "monogram": "AW",
       "image": null,
       "logo": "/figures/constant-work.svg",
+      "wide": false,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); AWS is a trademark of Amazon.com, Inc.",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_2025.svg"
       }
     },
@@ -3787,9 +3861,10 @@ export const laws: Law[] = [
       "monogram": "A",
       "image": null,
       "logo": "/figures/mechanisms-not-good-intentions.svg",
+      "wide": true,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); Amazon is a trademark of Amazon.com, Inc.",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
       }
     },
@@ -3832,9 +3907,10 @@ export const laws: Law[] = [
       "monogram": "T",
       "image": null,
       "logo": "/figures/andon.svg",
+      "wide": false,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); Toyota is a trademark of Toyota Motor Corporation",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Toyota_Symbol.svg"
       }
     },
@@ -3879,6 +3955,7 @@ export const laws: Law[] = [
       "monogram": "TO",
       "image": "/figures/five-whys.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Toyota Motor Corporation company history editorial committee",
         "license": "Public domain in Japan",
@@ -3924,9 +4001,10 @@ export const laws: Law[] = [
       "monogram": "N",
       "image": null,
       "logo": "/figures/chaos-engineering.svg",
+      "wide": false,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); Netflix is a trademark of Netflix, Inc.",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Netflix_2016_N_logo.svg"
       }
     },
@@ -3969,9 +4047,10 @@ export const laws: Law[] = [
       "monogram": "N",
       "image": null,
       "logo": "/figures/context-not-control.svg",
+      "wide": false,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); Netflix is a trademark of Netflix, Inc.",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Netflix_2016_N_logo.svg"
       }
     },
@@ -4014,9 +4093,10 @@ export const laws: Law[] = [
       "monogram": "G",
       "image": null,
       "logo": "/figures/code-health-standard.svg",
+      "wide": false,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); Google is a trademark of Google LLC",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
       }
     },
@@ -4058,9 +4138,10 @@ export const laws: Law[] = [
       "monogram": "G",
       "image": null,
       "logo": "/figures/beyonce-rule.svg",
+      "wide": false,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); Google is a trademark of Google LLC",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
       }
     },
@@ -4103,9 +4184,10 @@ export const laws: Law[] = [
       "monogram": "G",
       "image": null,
       "logo": "/figures/churn-rule.svg",
+      "wide": false,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); Google is a trademark of Google LLC",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
       }
     },
@@ -4148,9 +4230,10 @@ export const laws: Law[] = [
       "monogram": "3",
       "image": null,
       "logo": "/figures/fixed-time-variable-scope.svg",
+      "wide": false,
       "credit": {
         "author": null,
-        "license": "Public domain (text logo); 37signals is a trademark of 37signals LLC",
+        "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:37signals_logo.svg"
       }
     },
@@ -4193,6 +4276,7 @@ export const laws: Law[] = [
       "monogram": "MF",
       "image": "/figures/strangler-fig.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Ade Oshineye",
         "license": "CC BY 2.0",
@@ -4237,6 +4321,7 @@ export const laws: Law[] = [
       "monogram": "DM",
       "image": "/figures/choose-boring-technology.webp",
       "logo": null,
+      "wide": false,
       "credit": {
         "author": "Michael Holloway",
         "license": "CC BY-SA 4.0",

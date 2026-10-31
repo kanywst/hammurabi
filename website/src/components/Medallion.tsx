@@ -26,7 +26,13 @@ export default function Medallion({
   return (
     <span
       aria-hidden
-      className={clsx('medal', `medal--${size}`, `medal--${kind}`, className)}
+      className={clsx(
+        'medal',
+        `medal--${size}`,
+        `medal--${kind}`,
+        figure.wide && 'medal--wide',
+        className
+      )}
       style={
         kind === 'seal'
           ? ({ '--seal-hue': hue } as React.CSSProperties)

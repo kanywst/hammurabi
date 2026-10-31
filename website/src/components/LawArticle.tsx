@@ -68,7 +68,7 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
           <ArrowLeft className="h-4 w-4" aria-hidden /> {t.law.backToCodex}
         </Link>
 
-        <header className="mt-8 flex flex-col-reverse gap-5 sm:flex-row sm:items-start sm:justify-between">
+        <header className="mt-8 flex flex-col-reverse gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div className="min-w-0">
             <p className="meta">
               <span className="num">§ {article(law.number)}</span>
@@ -81,7 +81,7 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
               {text.concept}
             </p>
           </div>
-          <figure className="flex shrink-0 items-center gap-3 sm:flex-col sm:gap-2">
+          <figure className="flex shrink-0 items-center gap-5 sm:flex-col sm:gap-3">
             <Medallion figure={law.figure} hue={hueFor(law.tag)} size="lg" />
             {law.figure.name ? (
               <figcaption className="meta sm:max-w-[9rem] sm:text-center">
