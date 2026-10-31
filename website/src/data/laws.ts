@@ -148,8 +148,7 @@ export const situations: Situation[] = [
       "ringelmann-effect",
       "conways-law",
       "bystander-effect",
-      "context-not-control",
-      "churn-rule"
+      "context-not-control"
     ]
   },
   {
@@ -226,7 +225,8 @@ export const situations: Situation[] = [
       "eaglesons-law",
       "boy-scout-rule",
       "strangler-fig",
-      "beyonce-rule"
+      "beyonce-rule",
+      "churn-rule"
     ]
   },
   {
@@ -3618,7 +3618,7 @@ export const laws: Law[] = [
       "mechanism": "When software is thrown over a wall to a separate operations team, the people who take the page and face the angry customer are not the people who can change the code, so the fix arrives late or as a workaround. Developers who are paged for their own service learn which shortcuts hurt, and design for failure because they are the ones who will be woken up. Running it also puts them in daily contact with customers, which shortens the path from a complaint to a change. The incentive only works when the ownership is real: the team has to be able to change what it is paged for.",
       "counter": {
         "name": "Developer Cognitive Load",
-        "note": "owning the whole cycle widens what each developer must know and the priorities they juggle every week; without shared tooling and an on-call rotation it ends in burnout, and Netflix, which runs the model, steers people who want depth over breadth into other roles"
+        "note": "owning the whole cycle widens what each developer must know and the priorities they juggle every week; without shared tooling and an on-call rotation it ends in burnout, and Netflix, which runs the model, says it supports people who want depth over breadth in finding other roles"
       },
       "guideline": "Put the team that ships a service on its pager, and give it the authority and the deploy rights to fix what pages it. Pair that with a paved road (shared deploy, observability and alerting tooling) and a rotation, so no one person is on call for everything. Do not apply it to a team that cannot change the thing it is woken up for; that hands over the pager, not the ownership.",
       "source": "Jim Gray, \"A Conversation with Werner Vogels\", *ACM Queue* 4(4) (2006) — Amazon's CTO on why every service team runs what it builds: \"You build it, you run it.\" The trade-off is from Philip Fisher-Ogden, Greg Burrell & Dianne Marsh, *Full Cycle Developers at Netflix — Operate What You Build* (Netflix Technology Blog, 2018)."
@@ -3629,9 +3629,9 @@ export const laws: Law[] = [
       "mechanism": "ソフトウェアを壁の向こうの運用チームに投げ渡すと、呼び出しを受けて怒った顧客に向き合う人と、コードを変えられる人が別々になる。だから修正は遅れるか、回避策で終わる。自分のサービスで呼び出される開発者は、どの手抜きが痛いかを身をもって知り、夜中に起こされるのが自分なので障害を前提に設計する。運用していれば顧客とも日々接するので、苦情から変更までの距離も縮まる。ただしこの動機づけが働くのは、所有が本物のときだけだ。呼び出される原因を、チーム自身が変えられなければならない。",
       "counter": {
         "name": "開発者の認知負荷",
-        "note": "全サイクルを持つと、開発者一人が知るべきことと毎週抱える優先事項が増える。共通の道具と当番制がなければ燃え尽きに行き着く。このモデルを採る Netflix も、幅より深さを求める人には別の役割を用意している"
+        "note": "開発から運用までを丸ごと持つと、開発者一人が知るべきことと毎週抱える優先事項が増える。共通の道具とオンコールのローテーションがなければ燃え尽きに行き着く。このモデルを採る Netflix も、幅より深さを求める人には、そうした役割を見つける手助けをするとしている"
       },
-      "guideline": "サービスを出荷したチームをそのサービスの呼び出し当番に就け、呼び出しの原因を直す権限とデプロイ権限も渡せ。デプロイ、可観測性、アラートの共通基盤（舗装された道）と当番制を組み合わせ、一人が全部を抱えないようにせよ。呼び出される対象を自分で変えられないチームには適用するな。それは所有ではなく、呼び出しだけを押し付けている。",
+      "guideline": "サービスをリリースしたチームをそのサービスのオンコールに就け、呼び出しの原因を直す権限とデプロイ権限も渡せ。デプロイ、可観測性、アラートの共通基盤（舗装された道）とオンコールのローテーションを組み合わせ、一人が全部を抱えないようにせよ。呼び出される対象を自分で変えられないチームには適用するな。それでは所有を渡したことにならず、呼び出しを押し付けるだけだ。",
       "source": "Jim Gray「A Conversation with Werner Vogels」『ACM Queue』4(4) (2006)。Amazon の CTO が、各サービスチームが作ったものを自分で運用する理由を語ったインタビューで、\"You build it, you run it.\" の出典。トレードオフは Philip Fisher-Ogden, Greg Burrell & Dianne Marsh『Full Cycle Developers at Netflix — Operate What You Build』(Netflix Technology Blog, 2018) から。"
     }
   },
@@ -3660,10 +3660,10 @@ export const laws: Law[] = [
     "en": {
       "title": "Static Stability",
       "concept": "A system that has to take new action to survive a failure depends on that action succeeding at the moment things are going wrong.",
-      "mechanism": "Recovering from a failure usually means doing something the system does not do in normal operation: launching replacement instances, calling a control plane, changing routes. Control planes are more complex than data planes and are the parts most likely to misbehave when the wider system is impaired, so recovery leans on whatever is weakest during the event. A statically stable design keeps working when a dependency is impaired, because the capacity and state it needs are already in place. AWS runs zonal services across three Availability Zones overprovisioned by 50 percent, so losing one leaves the other two able to carry the load without launching anything.",
+      "mechanism": "Recovering from a failure usually means doing something the system does not do in normal operation: launching replacement instances, calling a control plane, changing routes. Control planes have more moving parts than data planes and so are more likely to be impaired, which means recovery leans on the weaker half of the system at the moment it is needed most. A statically stable design keeps working when a dependency is impaired, because the capacity and state it needs are already in place. Amazon runs its stateless services across three Availability Zones overprovisioned by 50 percent, so losing one leaves the other two able to carry the load without launching anything.",
       "counter": {
         "name": "Cost of Idle Capacity",
-        "note": "capacity held for a failure that rarely happens is paid for every day, and scaling to demand is cheaper wherever a slow recovery is acceptable; the source itself concedes that keeping zones independent adds complexity"
+        "note": "capacity held for a failure that rarely happens is paid for every day, and scaling to demand is cheaper wherever a slow recovery is acceptable; the source itself concedes that building services zone by zone rather than regionally adds complexity"
       },
       "guideline": "List what your service must do to recover from losing a zone or a dependency. For every step that calls a control plane or launches something, decide whether to have it in place beforehand instead: spare capacity in every zone, the last good configuration cached locally, serving that continues while the control plane is down. Reserve this for paths whose failure you cannot afford; elsewhere, scale on demand.",
       "source": "Becky Weiss & Mike Furr, *Static stability using Availability Zones* (Amazon Builders' Library, 2019) — \"In a statically stable design, the overall system keeps working even when a dependency becomes impaired\", with EC2's control-plane/data-plane split and the 50 percent overprovisioning across three zones."
@@ -3671,10 +3671,10 @@ export const laws: Law[] = [
     "ja": {
       "title": "静的安定性",
       "concept": "障害を乗り切るために新しい動作を必要とするシステムは、まさに状況が悪いときにその動作が成功することに賭けている。",
-      "mechanism": "障害からの復旧には、普段はしないことが伴うのが普通だ。代わりのインスタンスを起動する、コントロールプレーンを呼ぶ、経路を切り替える。コントロールプレーンはデータプレーンより複雑で、システム全体が傷んでいるときにこそおかしくなりやすい。つまり復旧は、障害の最中にいちばん弱い部分に寄りかかる。静的に安定した設計では、依存先が劣化してもシステム全体は動き続ける。必要な容量と状態があらかじめそろっているからだ。AWS はゾーン単位のサービスを 3 つのアベイラビリティーゾーンに 50% の余剰を持たせて動かし、1 つを失っても残り 2 つが何も起動せずに負荷を引き受けられるようにしている。",
+      "mechanism": "障害からの復旧には、普段はしないことが伴うのが普通だ。代わりのインスタンスを起動する、コントロールプレーンを呼ぶ、経路を切り替える。コントロールプレーンはデータプレーンより可動部が多く、そのぶん劣化しやすい。つまり復旧は、いちばん必要なときに、弱いほうの半分に寄りかかる。静的に安定した設計では、依存先が劣化してもシステム全体は動き続ける。必要な容量と状態があらかじめそろっているからだ。Amazon はステートレスなサービスを 3 つのアベイラビリティーゾーンに 50% の余剰を持たせて動かし、1 つを失っても残り 2 つが何も起動せずに負荷を引き受けられるようにしている。",
       "counter": {
         "name": "遊休容量のコスト",
-        "note": "まれにしか起きない障害のための容量は、毎日支払うことになる。復旧が遅くても許される場所では、需要に合わせて伸縮させるほうが安い。ゾーンを互いに独立させれば複雑さが増すことは、出典自身も認めている"
+        "note": "まれにしか起きない障害のための容量は、毎日支払うことになる。復旧が遅くても許される場所では、需要に合わせて伸縮させるほうが安い。リージョン単位ではなくゾーン単位で作れば複雑さが増すことは、出典自身も認めている"
       },
       "guideline": "ゾーンや依存先を一つ失ったとき、サービスが復旧のために何をしなければならないかを書き出せ。コントロールプレーンを呼ぶ手順、何かを起動する手順のそれぞれについて、代わりに事前に用意しておけないかを決めよ。全ゾーンに予備の容量を置く、最後に正常だった設定を手元にキャッシュする、コントロールプレーンが落ちても配信を続ける。これは失敗が許されない経路に限れ。それ以外は需要に応じて伸縮させよ。",
       "source": "Becky Weiss & Mike Furr『Static stability using Availability Zones』(Amazon Builders' Library, 2019)。\"In a statically stable design, the overall system keeps working even when a dependency becomes impaired\" という定義、EC2 のコントロールプレーンとデータプレーンの区別、3 ゾーンでの 50% の余剰の出典。"
@@ -3706,7 +3706,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Avoid Fallback",
       "concept": "A fallback path runs only after something has already failed, so the least-tested code in the system runs under the worst conditions.",
-      "mechanism": "Fallback code sits idle in normal operation, so its bugs, its capacity limits and its stale data go unnoticed until it is needed. It then switches on in the middle of an outage, when load is unusual and other parts are degraded, and adds a new mode to a system that is already behaving strangely. A fallback to a cache or a secondary service can also move load onto something never sized for it, widening a partial failure. Amazon's conclusion is that the effort is usually better spent making the primary path more available.",
+      "mechanism": "Fallback code sits idle in normal operation, so its bugs, its capacity limits and its stale data go unnoticed until it is needed. It then switches on in the middle of an outage, when load is unusual and other parts are degraded, and adds a new mode to a system that is already behaving strangely. A fallback that routes around a cache straight to a database, or onto a secondary service, can move load onto something never sized for it and widen a partial failure; Amazon's 2001 retail outage began that way. Amazon's conclusion is that the effort is usually better spent making the primary path more available.",
       "counter": {
         "name": "Graceful Degradation",
         "note": "returning a reduced answer beats returning an error when the reduced path runs all the time, as when a recommendations panel falls back to a static list it serves anyway; the danger is the path that never runs, not degradation itself"
@@ -3717,12 +3717,12 @@ export const laws: Law[] = [
     "ja": {
       "title": "フォールバックを避ける",
       "concept": "フォールバック経路は何かがすでに壊れたあとでしか動かない。だから、システムでいちばん試されていないコードが最悪の条件で走る。",
-      "mechanism": "フォールバックのコードは平常時には眠っているので、そのバグも、容量の限界も、古くなったデータも、必要になるまで誰も気づかない。そして障害の最中、負荷がいつもと違い、ほかの部分も劣化しているときに動き出し、すでにおかしな振る舞いをしているシステムに新しいモードを一つ足す。キャッシュや予備のサービスへのフォールバックは、その負荷を想定していない場所に負荷を移し、部分的な障害を広げることもある。Amazon の結論は、その労力は主経路の可用性を上げるほうに使うべきだというものだ。",
+      "mechanism": "フォールバックのコードは平常時には眠っているので、そのバグも、容量の限界も、古くなったデータも、必要になるまで誰も気づかない。そして障害の最中、負荷がいつもと違い、ほかの部分も劣化しているときに動き出し、すでにおかしな振る舞いをしているシステムに新しいモードを一つ足す。キャッシュを迂回してデータベースへ直接向かうフォールバックや、予備のサービスへのフォールバックは、その負荷を想定していない場所に負荷を移し、部分的な障害を広げることがある。Amazon の 2001 年の小売サイト障害はそうして始まった。Amazon の結論は、その労力は主経路の可用性を上げるほうに使うべきだというものだ。",
       "counter": {
         "name": "グレースフル・デグラデーション",
         "note": "縮退した経路が常に動いているなら、エラーを返すより縮退した答えを返すほうがよい。おすすめ欄が普段から出している固定リストに切り替える場合などだ。危ないのは縮退そのものではなく、普段一度も動かない経路だ"
       },
-      "guideline": "フォールバックを足す前に、同じ労力で主経路の可用性を上げられないかを問え。リクエストのたびに取りに行くのではなく事前に呼び出し側へデータを押し込む、冗長化する、といった手だ。フォールバックを残すなら、障害時だけでなく本番で常に動かし、その出力を主経路と同等に正当なデータ源として扱え。誰も動かしたことのないフォールバック経路は消せ。",
+      "guideline": "フォールバックを足す前に、同じ労力で主経路の可用性を上げられないかを問え。リクエストのたびに取りに行くのではなく事前に呼び出し側へデータをプッシュしておく、冗長化する、といった手だ。フォールバックを残すなら、障害時だけでなく本番で常に動かし、その出力を主経路と同等に正当なデータ源として扱え。誰も動かしたことのないフォールバック経路は消せ。",
       "source": "Jacob Gabrielson『Avoiding fallback in distributed systems』(Amazon Builders' Library, 2019)。\"At Amazon, we avoid fallback in our systems because it's difficult to prove and its effectiveness is hard to test.\" の出典。"
     }
   },
@@ -3749,8 +3749,8 @@ export const laws: Law[] = [
     },
     "en": {
       "title": "Constant Work",
-      "concept": "A system whose work grows with load or failure has a behaviour it only shows under stress, and that is where it breaks.",
-      "mechanism": "Most systems do more work as conditions get worse: more retries, more changes to propagate, more health transitions to process. That extra work arrives when the system has the least headroom, and the code that handles it is the code that runs least often. A constant-work design does the same amount regardless: Route 53's health checkers send a fixed-size table of every status on a schedule, and Network Load Balancer nodes reload their full configuration from S3 every few seconds even when nothing has changed. A surge of failures produces no extra work, so there is no overload mode to discover in production.",
+      "concept": "A system whose work grows with the number of changes or failures does the most work exactly when it has the least headroom.",
+      "mechanism": "Most systems do more work as conditions get worse: more retries, more changes to propagate, more health transitions to process. That extra work arrives when the system has the least headroom, and the code that handles it is the code that runs least often. A constant-work design does the same amount regardless: Route 53's health-check aggregators send DNS servers a fixed-size table of every status every few seconds, and Network Load Balancer nodes reload their full configuration from S3 every few seconds even when nothing has changed. A surge of failures produces no extra work, so there is no overload mode to discover in production.",
       "counter": {
         "name": "Elasticity",
         "note": "doing the full work every cycle wastes resources when little has changed; for configuration and health status the cost is negligible, but for a web fleet the savings from scaling with load usually win over running peak capacity all day"
@@ -3760,14 +3760,14 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "一定の作業量",
-      "concept": "負荷や障害に応じて仕事が増えるシステムには、負荷がかかったときにしか現れない振る舞いがあり、壊れるのはそこだ。",
-      "mechanism": "多くのシステムは、状況が悪くなるほど仕事が増える。再試行が増え、伝播すべき変更が増え、処理すべきヘルス状態の遷移が増える。その追加の仕事は余力がいちばん少ないときにやって来て、それを処理するのはいちばん動いていないコードだ。一定の作業量で動く設計は、状況にかかわらず同じだけ仕事をする。Route 53 のヘルスチェッカーは全ステータスを収めた固定長の表を決まった間隔で送り、Network Load Balancer のノードは何も変わっていなくても数秒ごとに S3 から設定全体を読み込み直す。障害が一斉に起きても仕事は増えないので、本番で初めて出会う過負荷モードがない。",
+      "concept": "変更や障害の数に応じて仕事が増えるシステムは、余力がいちばん少ないときにいちばん多くの仕事をする。",
+      "mechanism": "多くのシステムは、状況が悪くなるほど仕事が増える。再試行が増え、伝播すべき変更が増え、処理すべきヘルス状態の遷移が増える。その追加の仕事は余力がいちばん少ないときにやって来て、それを処理するのは、ふだんいちばん実行されないコードだ。一定の作業量で動く設計は、状況にかかわらず同じだけ仕事をする。Route 53 ではヘルスチェックの集約役が、全ステータスを収めた固定長の表を数秒ごとに DNS サーバーへ送り、Network Load Balancer のノードは何も変わっていなくても数秒ごとに S3 から設定全体を読み込み直す。障害が一斉に起きても仕事は増えないので、本番で初めて出会う過負荷モードがない。",
       "counter": {
         "name": "伸縮性",
         "note": "毎回すべての仕事をすれば、ほとんど何も変わっていないときに資源を無駄にする。設定やヘルス状態の伝播ならコストは無視できるが、Web サーバー群では、ピーク容量を一日中動かすより負荷に合わせて伸縮させる節約のほうがたいてい勝つ"
       },
       "guideline": "設定やヘルス状態を伝播する制御ループでは、変更のたびに差分を送るのではなく、決まった間隔で状態全体を送れ。ペイロードは平均ではなく最大に合わせて設計せよ。仕事の量を、変わったものの数に依存させるな。これは仕事が小さい場所で使え。リクエストを処理する容量は負荷に応じて伸縮させ、過負荷時の振る舞いを明示的に設計せよ。",
-      "source": "Colm MacCárthaigh『Reliability, constant work, and a good cup of coffee』(Amazon Builders' Library, 2021)。コーヒーアーンのたとえ、Route 53 のヘルスチェックと Network Load Balancer の設定配布の例、物理的な一定作業は \"usually come at the cost of waste\" という認めの出典。"
+      "source": "Colm MacCárthaigh『Reliability, constant work, and a good cup of coffee』(Amazon Builders' Library, 2021)。コーヒーアーン（大型の給茶器）のたとえ、Route 53 のヘルスチェックと Network Load Balancer の設定配布の例、物理的な一定作業は \"usually come at the cost of waste\" と認めている箇所の出典。"
     }
   },
   {
@@ -3796,7 +3796,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Mechanisms, Not Good Intentions",
       "concept": "Asking people to try harder after a failure changes little, because the failure happened to people who were already trying.",
-      "mechanism": "Most mistakes are made by people who meant well and knew the rule, so telling them again adds nothing they lacked. Attention is finite and fades, so a fix that depends on someone remembering holds for a few weeks before the same error comes back. What changes behaviour is a mechanism: a tool, its actual adoption, and inspection that checks whether it works. A checklist nobody reads is not a mechanism; a gate that blocks the merge is.",
+      "mechanism": "Most mistakes are made by people who meant well and knew the rule, so telling them again adds nothing they lacked. Attention is finite and fades, so a fix that depends on someone remembering holds for a few weeks before the same error comes back. What changes behavior is a mechanism: a tool, its actual adoption, and inspection that checks whether it works. A checklist nobody reads is not a mechanism; a gate that blocks the merge is.",
       "counter": {
         "name": "Resist Proxies",
         "note": "a mechanism can harden into the goal; once following the process is what gets judged, people defend a bad outcome by saying they followed it, and nobody asks whether the process still serves the result"
@@ -3807,7 +3807,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "善意ではなく仕組み",
       "concept": "失敗のあとで「もっと気をつけろ」と求めても、ほとんど何も変わらない。失敗した人は、もともと気をつけていたからだ。",
-      "mechanism": "ミスの多くは、善意があり、ルールも知っている人が起こす。だからもう一度言い聞かせても、その人に欠けていたものは何も足されない。注意力は有限で、時間とともに薄れる。誰かが覚えていることに頼る対策は数週間はもつが、やがて同じ誤りが戻ってくる。行動を変えるのは仕組みだ。道具と、その道具が実際に使われていることと、それが機能しているかを確かめる点検の三つがそろったものを指す。誰も読まないチェックリストは仕組みではない。マージを止めるゲートは仕組みだ。",
+      "mechanism": "ミスの多くは、善意があり、ルールも知っている人が起こす。だからもう一度言い聞かせても、その人に欠けていたものは何も足されない。注意力は有限で、時間とともに薄れる。誰かが覚えていることに頼る対策は数週間はもつが、やがて同じ誤りが戻ってくる。行動を変えるのは仕組みだ。道具、その道具が実際に使われていること（採用）、機能しているかを確かめる点検（検査）の三つがそろったものだ。誰も読まないチェックリストは仕組みではない。マージを止めるゲートは仕組みだ。",
       "counter": {
         "name": "代理指標に抗う",
         "note": "仕組みは、それ自体が目的に固まりうる。プロセスに従ったかどうかで評価されるようになると、人は悪い結果を「プロセスどおりにやった」と弁護し、そのプロセスがまだ結果の役に立っているかを誰も問わなくなる"
@@ -3840,25 +3840,25 @@ export const laws: Law[] = [
     },
     "en": {
       "title": "Andon (Stop the Line)",
-      "concept": "Letting anyone who sees an abnormality stop the line keeps a defect from travelling downstream, where it costs more to find and fix.",
+      "concept": "Letting anyone who sees an abnormality stop the line keeps a defect from traveling downstream, where it costs more to find and fix.",
       "mechanism": "A defect caught where it is made has one cause and an obvious fix; the same defect found three stations later is buried under work built on top of it, and the person who could explain it has moved on. Pressure to keep the line moving makes each worker discount what they saw and assume someone downstream will catch it. Toyota's jidoka moved the decision into the station: first a loom that stopped itself when a thread broke, later a cord any operator can pull to halt the line and light the andon board. The stop is not the point; it forces the abnormality to be examined while the evidence is still fresh.",
       "counter": {
         "name": "Alarm Fatigue",
         "note": "when the stop signal fires often or falsely, people learn to route around it, and throughput pressure turns every pull of the cord into a cost someone has to justify"
       },
-      "guideline": "Make a red main-branch build, a failed canary or a breached SLO halt further merges or deploys for everyone, and let anyone pull that cord without asking permission. Keep the trigger narrow enough that it rarely fires falsely, and treat a stop that nobody investigates as a defect in the cord, not in the person who pulled it.",
-      "source": "Toyota Motor Corporation, *Toyota Production System* (official page, global.toyota) — jidoka, the andon board and the stop cord any operator can pull, traced to Sakichi Toyoda's 1896 power loom that stopped when a weft thread broke; the page credits Taiichi Ohno (1912–1990) with building the system's foundation."
+      "guideline": "Make a red main-branch build, a failed canary or a breached SLO halt further merges or deploys for everyone, and let anyone pull that cord without asking permission. Keep the trigger narrow enough that it rarely fires falsely, and treat a stop that nobody investigates as a defect in the response, not in the person who pulled it.",
+      "source": "Toyota Motor Corporation, *Toyota Production System* (official page, global.toyota) — jidoka, the andon board and the stop cord any operator can pull, traced to Sakichi Toyoda's 1896 power loom that stopped when a weft thread broke; the page credits Taiichi Ohno (1912–1990) with establishing the system and the framework of Just-in-Time."
     },
     "ja": {
       "title": "アンドン（ラインを止める）",
-      "concept": "異常に気づいた誰もがラインを止められれば、欠陥は下流に流れず、見つけるのも直すのも高くつく前に捕まる。",
-      "mechanism": "欠陥は、作られたその場で捕まえれば原因は一つで、直し方も明らかだ。三工程先で見つかった同じ欠陥は、その上に積まれた作業の下に埋もれ、事情を説明できた人はもう別の仕事をしている。ラインを動かし続けろという圧力があると、作業者は自分が見たものを軽く見積もり、下流の誰かが気づくだろうと考える。トヨタの自働化は、この判断を工程の中に移した。最初は糸が切れると自ら止まる織機、のちにはどの作業者も引けばラインを止めてアンドンを点灯させられる紐だ。止めること自体が目的なのではない。証拠が新しいうちに、異常を調べざるを得なくすることが目的だ。",
+      "concept": "異常に気づいた人が誰でもラインを止められれば、欠陥は下流に流れず、見つけるのも直すのも高くつく前に捕まる。",
+      "mechanism": "欠陥は、作られたその場で捕まえれば原因は一つで、直し方も明らかだ。三工程先で見つかった同じ欠陥は、その上に積まれた作業の下に埋もれ、事情を説明できた人はもう別の仕事をしている。ラインを動かし続けろという圧力があると、作業者は自分が見たものを軽く見積もり、下流の誰かが気づくだろうと考える。トヨタの自働化は、この判断を工程の中に移した。最初は糸が切れると自ら止まる織機、のちにはどの作業者でも引けばラインが止まり、アンドンが点灯する紐だ。止めること自体が目的なのではない。証拠が新しいうちに、異常を調べざるを得なくすることが目的だ。",
       "counter": {
         "name": "アラーム疲れ",
         "note": "停止の合図が頻繁に、あるいは誤って鳴ると、人はそれを迂回することを覚える。スループットへの圧力がかかると、紐を引くたびに誰かがその代償を説明させられるようになる"
       },
-      "guideline": "main ブランチのビルドが赤い、カナリアが失敗した、SLO を割った、といったときには、全員のマージやデプロイが止まるようにせよ。その紐は誰でも許可なく引けるようにせよ。誤発火がめったに起きない程度に条件を絞り、止めたのに誰も調べない停止は、引いた人ではなく紐の側の欠陥として扱え。",
-      "source": "トヨタ自動車「トヨタ生産方式」（global.toyota の公式ページ）。自働化、アンドン（異常表示盤）、どの作業者も引ける停止紐の出典。その源流を、緯糸が切れると止まる豊田佐吉の動力織機（1896 年）に求めている。同ページは大野耐一（1912–1990）がこの方式の基礎を築いたとしている。"
+      "guideline": "main ブランチのビルドが赤い、カナリアが失敗した、SLO を割った、といったときには、全員のマージやデプロイが止まるようにせよ。その紐は誰でも許可なく引けるようにせよ。誤発火がめったに起きない程度に条件を絞り、誰も調べない停止は、引いた人ではなく対応の側の欠陥として扱え。",
+      "source": "トヨタ自動車「トヨタ生産方式」（global.toyota の公式ページ）。自働化、アンドン（異常表示盤）、どの作業者も引ける停止紐の出典。その源流を、緯糸が切れると止まる豊田佐吉の動力織機（1896 年）に求めている。同ページは大野耐一（1912–1990）がこの方式と、ジャスト・イン・タイムの枠組みを確立したとしている。"
     }
   },
   {
@@ -3897,14 +3897,14 @@ export const laws: Law[] = [
       "source": "Taiichi Ohno, *Toyota Production System: Beyond Large-Scale Production* (Productivity Press, 1988; originally 『トヨタ生産方式』, Diamond, 1978), ch. 2 \"Evolution of the Toyota Production System\", section \"Repeating Why Five Times\" — the method as the basis of Toyota's approach to problems."
     },
     "ja": {
-      "title": "なぜなぜ五回",
+      "title": "なぜなぜ分析",
       "concept": "「なぜ失敗したか」への最初の答えはたいてい症状であり、症状だけを直せば原因は残って、また同じ失敗を起こす。",
       "mechanism": "調査は、誰かが防げたはずだと言える最初の原因で止まりがちだ。そこで止めればチケットを閉じられ、対策も一つ書けるからだ。その原因はたいてい時間的にいちばん近いもの（誤った設定の投入、ディスクの枯渇）で、直してもこの一件が消えるだけで、それを生んだものには手が付かない。答えのそれぞれに対してもう一度なぜと問えば、連鎖をさかのぼって、直せば同じ種類の失敗をまとめて防げる条件（欠けていたチェック、持ち主のいないプロセス）に行き着く。五回は目安であって、必要な深さではない。",
       "counter": {
         "name": "スイスチーズモデル",
         "note": "一本のなぜの連鎖は、複数の経路があった事故から一本だけを選び出す。各段で分析者が何を選ぶかで、出てくる根本原因が変わる。複雑なシステムでは、そもそも単一の根本原因など存在しないことが多い"
       },
-      "guideline": "ポストモーテムでは、答えのそれぞれになぜを問い続け、チームが変えられて、変えていれば連鎖を断てたものに行き着くまで進め。その変更には担当者を付けよ。一つの答えに原因が複数あるなら枝分かれさせ、人で止めるな。「エンジニアがミスをした」は、なぜそのミスが起こしやすかったかを問う合図だ。",
+      "guideline": "ポストモーテムでは、答えのそれぞれになぜを問い続け、チームが変えられるもので、しかも変えていれば連鎖を断てたはずのものに行き着くまで問い続けよ。その変更には担当者を付けよ。一つの答えに原因が複数あるなら枝分かれさせ、人で止めるな。「エンジニアがミスをした」は、なぜそのミスが起こしやすかったかを問う合図だ。",
       "source": "大野耐一『トヨタ生産方式：脱規模の経営をめざして』（ダイヤモンド社、1978 年）。英訳 *Toyota Production System: Beyond Large-Scale Production* (Productivity Press, 1988) 第 2 章「Evolution of the Toyota Production System」の節「Repeating Why Five Times」。トヨタの問題解決の基本としての「なぜを五回繰り返す」の出典。"
     }
   },
@@ -3933,10 +3933,10 @@ export const laws: Law[] = [
     "en": {
       "title": "Chaos Engineering",
       "concept": "Resilience that has never been exercised is a hypothesis, and production will test it whether or not you schedule the test.",
-      "mechanism": "Failover paths, retries and redundancy run only when something breaks, so they decay between failures: a config drifts, a dependency is added, a timeout changes, and nobody notices until the real outage. Staging cannot reproduce production's traffic, data and coupling, so a test there says little about the system people actually use. Injecting failure on purpose, in production, against a stated hypothesis about steady-state behaviour, makes those weaknesses show up on a weekday afternoon with engineers watching instead of at 3 a.m. Netflix built Chaos Monkey early in its move to AWS to kill instances at random, so every service had to survive losing one.",
+      "mechanism": "Failover paths, retries and redundancy run only when something breaks, so they decay between failures: a config drifts, a dependency is added, a timeout changes, and nobody notices until the real outage. Staging cannot reproduce production's traffic, data and coupling, so a test there says little about the system people actually use. Injecting failure on purpose, in production, against a stated hypothesis about steady-state behavior, makes those weaknesses show up on a weekday afternoon with engineers watching instead of at 3 a.m. Netflix built Chaos Monkey early in its move to AWS to kill instances at random, so every service had to survive losing one.",
       "counter": {
-        "name": "Minimize Blast Radius",
-        "note": "experimenting in production can hurt real customers, and an experiment on a system already known to be fragile only confirms what you knew; fix it first, then start with the smallest scope that can show a result"
+        "name": "First, Do No Harm",
+        "note": "deliberately degrading a system real customers depend on spends their trust, and much of the same knowledge comes cheaper from fault-injection tests, game days and design review; on a system already known to be fragile an experiment only confirms what you knew, so fix it first"
       },
       "guideline": "Pick one dependency, write down what steady state should look like while it is down, and take it away in production during working hours with an abort switch and someone watching. Start with a small slice of traffic, widen only after the system holds, and do not experiment on a service you already expect to fall over.",
       "source": "*Principles of Chaos Engineering* (principlesofchaos.org, last updated March 2019) — the definition, the steady-state hypothesis, running experiments in production and minimizing blast radius; Netflix Technology Blog, *5 Lessons We've Learned Using AWS* (2010) — the introduction of Chaos Monkey."
@@ -3946,10 +3946,10 @@ export const laws: Law[] = [
       "concept": "一度も試されていない耐障害性は仮説にすぎない。予定を組もうと組むまいと、本番がいずれそれを試す。",
       "mechanism": "フェイルオーバー、リトライ、冗長構成は、何かが壊れたときにしか動かない。だから障害と障害の間に劣化する。設定がずれ、依存が増え、タイムアウトが変わっても、本物の障害が来るまで誰も気づかない。ステージングは本番のトラフィックもデータも結合も再現できないので、そこでの試験は人が実際に使うシステムについてほとんど何も語らない。定常状態についての仮説を立てたうえで本番に意図的に障害を注入すれば、弱点は深夜 3 時ではなく、エンジニアが見ている平日の午後に表に出る。Netflix は AWS への移行初期に、インスタンスを無作為に落とす Chaos Monkey を作り、どのサービスも一台失っても生き残るよう求めた。",
       "counter": {
-        "name": "影響範囲の最小化",
-        "note": "本番での実験は実際の顧客を傷つけうる。もろいと分かっているシステムで実験しても分かっていたことを確かめるだけだ。まず直し、結果が見える最小の範囲から始めるべきだ"
+        "name": "まず害をなさない",
+        "note": "実際の顧客が頼っているシステムをわざと劣化させれば、その信頼を代償にすることになる。同じ知見の多くは、障害注入テストやゲームデイ、設計レビューでもっと安く得られる。もろいと分かっているシステムで実験しても分かっていたことを確かめるだけなので、まず直せ"
       },
-      "guideline": "依存先を一つ選び、それが落ちている間の定常状態がどうあるべきかを書き出し、業務時間中に中止スイッチと見張り役を用意したうえで、本番でそれを取り除け。小さなトラフィックの一部から始め、システムが持ちこたえてから範囲を広げよ。倒れると分かっているサービスでは実験するな。",
+      "guideline": "依存先を一つ選び、それが落ちている間の定常状態がどうあるべきかを書き出し、業務時間中に中止スイッチと見張り役を用意したうえで、本番でそれを取り除け。トラフィックのごく一部から始め、システムが持ちこたえてから範囲を広げよ。倒れると分かっているサービスでは実験するな。",
       "source": "『Principles of Chaos Engineering』（principlesofchaos.org、2019 年 3 月最終更新）。定義、定常状態の仮説、本番での実験、影響範囲の最小化の出典。Netflix Technology Blog「5 Lessons We've Learned Using AWS」(2010) は Chaos Monkey を初めて紹介した記事。"
     }
   },
@@ -3978,24 +3978,24 @@ export const laws: Law[] = [
     "en": {
       "title": "Context, Not Control",
       "concept": "Rules and approvals scale worse than shared understanding; people given the reasons behind a goal make better local decisions than people given a procedure.",
-      "mechanism": "A rule encodes someone's judgement about the cases they could foresee, so it fails on the ones they could not, and every approval step sends a decision to a person with less detail than the one asking. As a company grows, each incident adds a rule and rules accumulate faster than anyone removes them, until people follow the procedure instead of thinking about the outcome. When managers spend their effort on the why (the goal, the constraints, what good looks like), the people closest to the work can decide quickly and still pull in the same direction. Netflix calls the result \"highly aligned and loosely coupled\".",
+      "mechanism": "A rule encodes someone's judgment about the cases they could foresee, so it fails on the ones they could not, and every approval step sends a decision to a person with less detail than the one asking. As a company grows, each incident adds a rule and rules accumulate faster than anyone removes them, until people follow the procedure instead of thinking about the outcome. When managers spend their effort on the why (the goal, the constraints, what good looks like), the people closest to the work can decide quickly and still pull in the same direction. Netflix calls the result \"highly aligned and loosely coupled\".",
       "counter": {
         "name": "Guardrails",
-        "note": "some failures (a leaked credential, a compliance breach, an irreversible deletion) cost too much to leave to judgement, and context does nothing for a newcomer who has not absorbed it yet"
+        "note": "some failures (a leaked credential, a compliance breach, an irreversible deletion) cost too much to leave to judgment, and context does nothing for a newcomer who has not absorbed it yet"
       },
       "guideline": "When a team makes a call you would have made differently, ask what context they were missing before you write a rule, and fix the context first. Keep hard controls (approval gates, enforced policy) for decisions that are irreversible, unethical or a material risk, and record why each one exists so it can be removed when the reason goes away.",
-      "source": "Netflix, *Netflix Culture Memo* (jobs.netflix.com) — \"context not control\", \"highly aligned and loosely coupled\", and keeping rules to a minimum to avoid the process creep that comes with growth."
+      "source": "Netflix, *Netflix Culture Memo* (jobs.netflix.com, current version c. 2024) — \"context not control\", \"highly aligned and loosely coupled\", and keeping rules to a minimum to avoid the process creep that comes with growth."
     },
     "ja": {
       "title": "統制ではなく文脈を",
       "concept": "ルールと承認は、共有された理解ほどにはスケールしない。手順を渡された人より、目標の背景を渡された人のほうが、現場でよい判断をする。",
-      "mechanism": "ルールは、書いた人が予見できた場面についての判断を固めたものだ。だから予見できなかった場面では外れる。承認の一段一段は、判断を、頼む側より細部を知らない人へ送る。会社が大きくなると、障害のたびにルールが一つ増え、減るより速く積み上がり、やがて人は結果ではなく手順のほうを考えるようになる。管理者が力を「なぜ」（目標、制約、何がよい状態か）に注げば、仕事にいちばん近い人がすばやく決め、しかも同じ方向に進める。Netflix はこの状態を「高度に整合し、疎に結合した」と呼ぶ。",
+      "mechanism": "ルールは、書いた人が予見できた場面についての判断を固めたものだ。だから予見できなかった場面では外れる。承認を一段挟むごとに、判断は、申請する側より細部を知らない人の手に渡る。会社が大きくなると、障害のたびにルールが一つ増え、減るより速く積み上がり、やがて人は手順に従うだけで、結果を考えなくなる。管理者が力を「なぜ」（目標、制約、何がよい状態か）に注げば、仕事にいちばん近い人がすばやく決め、しかも同じ方向に進める。Netflix はこの状態を「高度に整合し、疎に結合した」と呼ぶ。",
       "counter": {
         "name": "ガードレール",
-        "note": "一部の失敗（認証情報の漏洩、コンプライアンス違反、取り消せない削除）は判断に任せるには高くつきすぎる。文脈をまだ吸収していない新人には、文脈は役に立たない"
+        "note": "一部の失敗（認証情報の漏洩、コンプライアンス違反、取り消せない削除）は判断に任せるには高くつきすぎる。まだ文脈を身につけていない新人には役に立たない"
       },
-      "guideline": "チームが自分なら違う判断をしただろう決定をしたら、ルールを書く前に、彼らに欠けていた文脈は何かを問い、まず文脈を直せ。強い統制（承認ゲート、強制されるポリシー）は、取り返しのつかない決定、倫理に反する決定、重大なリスクを伴う決定に限れ。それぞれがなぜ存在するかを書き残し、理由が消えたら外せるようにせよ。",
-      "source": "Netflix『Netflix Culture Memo』（jobs.netflix.com）。「context not control」、「highly aligned and loosely coupled」、成長に伴うプロセスの肥大を避けるためにルールを最小限に保つという方針の出典。"
+      "guideline": "自分なら別の判断をしただろうという決定をチームが下したら、ルールを書く前に、彼らに欠けていた文脈は何かを問い、まず文脈を直せ。強い統制（承認ゲート、強制されるポリシー）は、取り返しのつかない決定、倫理に反する決定、重大なリスクを伴う決定に限れ。それぞれがなぜ存在するかを書き残し、理由が消えたら外せるようにせよ。",
+      "source": "Netflix『Netflix Culture Memo』（jobs.netflix.com、2024 年頃の版）。「context not control」、「highly aligned and loosely coupled」、成長に伴うプロセスの肥大を避けるためにルールを最小限に保つという方針の出典。"
     }
   },
   {
@@ -4022,13 +4022,13 @@ export const laws: Law[] = [
     },
     "en": {
       "title": "Approve What Improves Code Health",
-      "concept": "Holding every change to a standard of perfect makes review slow, and slow review leaves the codebase worse, not better.",
+      "concept": "Holding every change to a standard of perfection makes review slow, and slow review leaves the codebase worse, not better.",
       "mechanism": "There is no perfect code, only better code, so a reviewer who waits for perfect is holding out for a bar nobody reaches while the change sits. Authors respond by batching work into large changes that get reviewed less carefully, or by not touching the code that needs it, and the improvement the change carried never lands. A bar of net improvement keeps each merge moving the codebase in the right direction, while still letting the reviewer refuse anything that makes it worse.",
       "counter": {
         "name": "Broken Windows Theory",
         "note": "a reviewer who waves each small flaw through because the change is a net improvement can still leave a codebase full of tolerated flaws, each one making the next easier to accept"
       },
-      "guideline": "Approve a change once it definitely leaves the code healthier than before, even if you would have written it differently. Prefix polish with \"Nit:\" so the author can skip it, and block only on what makes the code worse: never approve a change that degrades overall code health.",
+      "guideline": "Approve a change once it definitely leaves the code healthier than before, even if you would have written it differently. Prefix polish with \"Nit:\" so the author can skip it, and block only on what makes the code worse: never approve a change that definitely worsens overall code health.",
       "source": "Google, \"The Standard of Code Review\", *Google Engineering Practices Documentation* (2019) — \"favor approving a CL once it is in a state where it definitely improves the overall code health\", \"there is no such thing as 'perfect' code—there is only better code\", and \"Nit:\" for optional comments."
     },
     "ja": {
@@ -4039,8 +4039,8 @@ export const laws: Law[] = [
         "name": "割れ窓理論",
         "note": "正味では改善だからと小さな欠点を一つずつ通していくと、許された欠点だらけのコードベースが残り、一つ通すたびに次を通しやすくなる"
       },
-      "guideline": "変更が以前よりコードを確実に健全にするなら、自分なら違う書き方をしたとしても承認せよ。磨き込みの指摘には「Nit:」を付けて作者が見送れるようにし、ブロックするのはコードを悪くする点だけにせよ。全体としてのコードの健全性を下げる変更は決して承認するな。",
-      "source": "Google「The Standard of Code Review」『Google Engineering Practices Documentation』(2019)。「全体としてのコードの健全性を確実に改善する状態になったら承認を優先せよ」、「『完璧な』コードというものはない。より良いコードがあるだけだ」、任意の指摘に付ける「Nit:」の出典。"
+      "guideline": "変更が以前よりコードを確実に健全にするなら、自分なら違う書き方をしたとしても承認せよ。磨き込みの指摘には「Nit:」を付けて作者が見送れるようにし、ブロックするのはコードを悪くする点だけにせよ。全体としてのコードの健全性を確実に悪くする変更は決して承認するな。",
+      "source": "Google「The Standard of Code Review」『Google Engineering Practices Documentation』(2019)。\"favor approving a CL once it is in a state where it definitely improves the overall code health\"、\"there is no such thing as 'perfect' code—there is only better code\"、任意の指摘に付ける「Nit:」の出典。"
     }
   },
   {
@@ -4066,7 +4066,7 @@ export const laws: Law[] = [
     },
     "en": {
       "title": "Beyoncé Rule",
-      "concept": "Behavior that no test checks is behavior nobody changing shared code is obliged to preserve.",
+      "concept": "In a shared codebase, the behavior no test checks is the behavior that changes without warning.",
       "mechanism": "A team changing infrastructure that the whole codebase uses cannot read every caller, so the only contract it can check at scale is the test suite. Whatever the suite does not exercise is invisible to them and changes without warning, not through carelessness but because nothing told them it mattered. The rule turns that blind spot into an assignment of responsibility: if an unrelated change passes all your tests and still breaks your product, the fix and the missing test are yours. It is only fair where a pervasive CI system runs everyone's tests against everyone's changes.",
       "counter": {
         "name": "Churn Rule",
@@ -4077,7 +4077,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ビヨンセ・ルール",
-      "concept": "テストで確かめていない挙動は、共有コードを変える側が守る義務を負わない。",
+      "concept": "共有コードベースでは、どのテストも確かめていない挙動こそが予告なく変わる。",
       "mechanism": "コードベース全体が使う基盤を変えるチームは、呼び出し側をすべて読むことはできない。規模が大きくなると、確かめられる契約はテストスイートしかない。スイートが確かめていない挙動は変更する側から見えず、予告なく変わる。不注意だからではなく、それが大事だと知らせるものが何もないからだ。このルールは、その死角を責任の割り当てに変える。無関係な変更が自分たちのテストを全部通したのに製品が壊れたなら、修正も足りなかったテストも自分たちの仕事だ。これが公平に成り立つのは、誰の変更に対しても全員のテストを走らせる CI が行き渡っている場合に限られる。",
       "counter": {
         "name": "チャーンルール",
@@ -4126,7 +4126,7 @@ export const laws: Law[] = [
       "mechanism": "利用側のチームはどれも、初めて見る問題にゼロから取りかかり、自分の分だけ片づけて、得た知識を捨てる。チームが何百もあれば、浅い学習が何百回も繰り返され、依存するプロジェクトは追従するだけで年々多くの手間を取られる。変更したチームにはその請求書が届かないので、変更を減らしたり安くしたりする理由がない。移行を変更する側の仕事と決めれば、コストは決定を下した場所に戻り、一度問題を深く学んだ少数の専門家がそれをすべての箇所に適用できる。",
       "counter": {
         "name": "コードオーナーシップ",
-        "note": "普段住んでいないコードを変える人は、そのコードにある固有の事情を見落とす。だから集中して行う移行でもオーナーチームのレビューは要るし、オーナーにしか安全にできない変更もある"
+        "note": "普段触っていないコードを変える人は、そのコードにある固有の事情を見落とす。だから中央で一括して行う移行でもオーナーチームのレビューは要るし、オーナーにしか安全にできない変更もある"
       },
       "guideline": "ライブラリやサービス、プラットフォームを持つ側なら、移行作業を変更の一部として見積もれ。呼び出し側は自分で移すか、後方互換を保ったままその場で変えよ。非推奨の告知と期限だけを移行計画として出すな。コードベースをまたぐ変更を安くする道具に投資し、変更はそれぞれ黙って入れずにオーナーチームのレビューに回せ。",
       "source": "Titus Winters「What Is Software Engineering?」、Winters, Manshreck & Wright『Software Engineering at Google』(O'Reilly, 2020) 第 1 章。2012 年に定めた「Churn Rule」(\"infrastructure teams must do the work to move their internal users to new versions themselves or do the update in place, in backward-compatible fashion\") の出典。"
@@ -4156,7 +4156,7 @@ export const laws: Law[] = [
     },
     "en": {
       "title": "Fixed Time, Variable Scope",
-      "concept": "When scope is fixed and time is not, a project grows to fill what it is given; fixing the time instead forces it to choose what matters.",
+      "concept": "When scope is fixed and time is not, the date slips and the scope stays; fixing the time instead forces a choice about what matters.",
       "mechanism": "An estimate starts from a design and ends with a number, and the number is wrong in the same direction every time because the unknowns only surface once the work is under way. When the date slips, the scope stays, since every item already has an advocate and asking for more time feels cheaper than cutting something. Fixing the time first (what *Shape Up* calls the appetite) turns the question from \"how long will this take\" into \"what is the best version we can ship in this much time\", so cutting scope becomes the normal move rather than an admission of failure. An overrun project that keeps getting extensions is the same force again, now fed by sunk cost.",
       "counter": {
         "name": "Quality as the Hidden Variable",
@@ -4166,14 +4166,14 @@ export const laws: Law[] = [
       "source": "Ryan Singer, *Shape Up* (Basecamp, 2019), ch. 3 \"Set Boundaries\" — the appetite and \"fixed time, variable scope\"; ch. 8 \"The Betting Table\" — the circuit breaker: \"by default the project doesn't get an extension\". Earlier, 37signals, *Getting Real* (2006), \"Fix Time and Budget, Flex Scope\": \"Never throw more time or money at a problem, just scale back the scope.\""
     },
     "ja": {
-      "title": "時間を固定し、範囲を変える",
-      "concept": "範囲を固定して時間を固定しないと、仕事は与えられた時間いっぱいまで膨らむ。時間を固定すれば、何が大事かを選ばざるを得なくなる。",
-      "mechanism": "見積りは設計から始まって数字で終わる。そしてその数字は毎回同じ方向に外れる。未知のことは作業が進んでから初めて表に出るからだ。期日がずれても範囲は残る。どの項目にも推す人がいて、何かを削るより時間を延ばすほうが安く感じられる。先に時間を固定すると（『Shape Up』はこれを「アペタイト」と呼ぶ）、問いは「どれだけかかるか」から「この時間で出せる最良の版は何か」に変わり、範囲を削ることが失敗の告白ではなく普通の判断になる。超過したプロジェクトに延長を重ねるのも同じ力で、そこにサンクコストが燃料を足している。",
+      "title": "時間を固定し、スコープを変える",
+      "concept": "スコープを固定して時間を固定しないと、ずれるのは期日で、スコープは残る。時間を固定すれば、何が大事かを選ばざるを得なくなる。",
+      "mechanism": "見積りは設計から始まって数字で終わる。そしてその数字は毎回同じ方向に外れる。未知のことは作業が進んでから初めて表に出るからだ。期日がずれてもスコープは残る。どの項目にも推す人がいて、何かを削るより時間を延ばすほうが安く感じられる。先に時間を固定すると（『Shape Up』はこれを「アペタイト」と呼ぶ）、問いは「どれだけかかるか」から「この時間で出せる最良の版は何か」に変わり、スコープを削ることが失敗の告白ではなく普通の判断になる。超過したプロジェクトに延長を重ねるのも同じ力で、そこにサンクコストが拍車をかけている。",
       "counter": {
         "name": "隠れた変数としての品質",
-        "note": "期日が固定されても範囲を削れない、あるいは削らないチームは、代わりにテストやレビュー、エラー処理を削る。また、プロトコルやコンプライアンス要件のように、それ以下に切っては出す意味のない下限がある仕事もある"
+        "note": "期日が固定されてもスコープを削れない、あるいは削らないチームは、代わりにテストやレビュー、エラー処理を削る。また、プロトコルやコンプライアンス要件のように、それ以下に切っては出す意味のない下限がある仕事もある"
       },
-      "guideline": "作業を始める前に、どれだけかかるかではなく、どれだけの時間をかける価値があるかを決め、範囲をそれに合わせて形にせよ。時間が尽きたら原則として止めよ。できた部分が単独で成り立つなら出し、そうでなければ形を作り直して、もう一度賭けるかを改めて決めよ。黙って延長するな。削るのは機能であって、テストやレビューではない。筋の通った最小単位より細かく切れない仕事には、時間を固定するな。",
+      "guideline": "作業を始める前に、どれだけかかるかではなく、どれだけの時間をかける価値があるかを決め、スコープをそれに合わせて形づくれ。時間が尽きたら原則として止めよ。できた部分が単独で成り立つなら出し、そうでなければ問題の切り方を作り直して、もう一度賭けるかを改めて決めよ。黙って延長するな。削るのは機能であって、テストやレビューではない。筋の通った最小単位より細かく切れない仕事には、時間を固定するな。",
       "source": "Ryan Singer『Shape Up』(Basecamp, 2019) 第 3 章「Set Boundaries」。アペタイトと \"fixed time, variable scope\" の出典。第 8 章「The Betting Table」のサーキットブレーカー (\"by default the project doesn't get an extension\")。先行して 37signals『Getting Real』(2006)「Fix Time and Budget, Flex Scope」(\"Never throw more time or money at a problem, just scale back the scope\")。"
     }
   },
@@ -4201,24 +4201,24 @@ export const laws: Law[] = [
     },
     "en": {
       "title": "Strangler Fig",
-      "concept": "Replacing a live system piece by piece around its edges succeeds far more often than replacing it all at once.",
+      "concept": "Replacing a live system piece by piece around its edges is far safer than replacing it all at once.",
       "mechanism": "A complete rewrite has to reproduce years of behavior nobody wrote down, while users keep needing features the old system must still deliver, so the target moves while the new system is not yet usable. Nothing reaches production until the end, so the risk and the value both land on a cutover day that often never comes. Routing one capability at a time to new code keeps each step small enough to verify and roll back, and each step starts paying back as soon as it lands. The price is transitional architecture: interception layers and adapters built to be thrown away.",
       "counter": {
-        "name": "The Unfinished Migration",
-        "note": "the easy routes move first, the tangled core of the old system never does, and the organisation ends up running and paying for two systems indefinitely"
+        "name": "Clean Cutover",
+        "note": "when the old system cannot be intercepted cleanly, or the transitional layer would cost more than the rewrite, a single planned switch avoids the common end state of incremental migration: the easy routes move, the tangled core never does, and the organization runs and pays for two systems indefinitely"
       },
       "guideline": "Put an interception point (a proxy, router or facade) in front of the legacy system and move one slice of behavior behind it at a time, starting with one that delivers value on its own. Define \"done\" at the start, track the share of traffic still on the old path, and budget deleting the old code and the transitional layer as part of the project, not as cleanup for later.",
       "source": "Martin Fowler, *Strangler Fig Application* (martinfowler.com; originally \"Strangler Application\", 2004; rewritten 2024) — the fig metaphor and the case that the reduced risk and earlier value of gradual modernization outweigh the cost of transitional architecture."
     },
     "ja": {
       "title": "ストラングラーフィグ",
-      "concept": "稼働中のシステムは、一度に置き換えるより、周縁から少しずつ置き換えるほうがはるかに成功しやすい。",
+      "concept": "稼働中のシステムは、一度に置き換えるより、周縁から少しずつ置き換えるほうがはるかに安全だ。",
       "mechanism": "全面的な書き直しは、誰も書き残していない何年分もの挙動を再現しなければならない。その間も利用者は新しい機能を必要とし、それは古いシステムに足すしかないので、新システムが使えるようになる前に目標が動いていく。最後まで本番に何も出ないので、リスクも価値も切り替え日に一度に来る。そしてその日は来ないことが多い。機能を一つずつ新しいコードへ回せば、一歩ごとに検証も切り戻しもできる大きさに収まり、出したそばから元が取れ始める。代償は移行用のアーキテクチャだ。捨てる前提で作る振り分け層やアダプタである。",
       "counter": {
-        "name": "終わらない移行",
-        "note": "簡単な経路から移り、古いシステムの絡み合った中核はいつまでも移らない。組織は二つのシステムを運用し、その費用を払い続けることになる"
+        "name": "一括切り替え",
+        "note": "古いシステムにきれいな振り分け点を置けないときや、移行用の層が書き直しより高くつくときは、計画した一度の切り替えのほうが、段階的移行のありがちな末路を避けられる。簡単な経路だけが移り、絡み合った中核はいつまでも移らず、組織は二つのシステムを運用し、その費用を払い続ける"
       },
-      "guideline": "レガシーシステムの前に振り分け点（プロキシ、ルーター、ファサード）を置き、その裏へ挙動を一切れずつ移せ。最初はそれ単独で価値を生む一切れを選べ。「完了」の定義を最初に決め、古い経路に残るトラフィックの割合を追い、古いコードと移行用の層を消す作業は後片づけではなくプロジェクトの一部として見積もれ。",
+      "guideline": "レガシーシステムの前に振り分け点（プロキシ、ルーター、ファサード）を置き、その裏へ挙動を一部分ずつ移せ。最初は、それだけで価値を生む部分を選べ。「完了」の定義を最初に決め、古い経路に残るトラフィックの割合を追い、古いコードと移行用の層を消す作業は後片づけではなくプロジェクトの一部として見積もれ。",
       "source": "Martin Fowler『Strangler Fig Application』(martinfowler.com。原題「Strangler Application」、2004 年。2024 年に書き直し)。絞め殺しのイチジクのたとえと、段階的な刷新ではリスクの低さと早く得られる価値が移行用アーキテクチャのコストを上回るという主張の出典。"
     }
   },
@@ -4257,7 +4257,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "退屈な技術を選べ",
       "concept": "不慣れな技術を採り入れるたびに、未知の故障モードと恒久的な運用コストが付いてくる。チームが抱えられる数は多くない。",
-      "mechanism": "技術のコストの大半はリリース後に払う。システムを何年も安定して動かし続けるコストは、作る段階で得た便利さよりはるかに大きい。成熟した道具は誰かがすでに踏んでいるので故障の仕方がよく分かっているが、新しい道具は「知らないことすら知らない」領域が広く、チームはそれを本番で見つけることになる。一つ増えるたびに監視し、採用し、パッチを当て続ける対象も増え、目新しさが消えてもそのコストは残る。だから新しさは自由に選べるものではなく予算だ。McKinley は、どの会社にもイノベーショントークンはおよそ三枚しかないとする。",
+      "mechanism": "技術のコストの大半はリリース後に払う。システムを何年も安定して動かし続けるコストは、作る段階で得た便利さよりはるかに大きい。成熟した道具は誰かがすでに落とし穴を踏んでいるので、壊れ方がよく分かっているが、新しい道具は「知らないことすら知らない」領域が広く、チームはそれを本番で見つけることになる。一つ増えるたびに、監視し、扱える人を採用し、パッチを当て続けなければならない対象が増え、目新しさが消えてもそのコストは残る。だから新しさは自由に選べるものではなく予算だ。McKinley は、どの会社にもイノベーショントークンはおよそ三枚しかないとする。",
       "counter": {
         "name": "目的への適合",
         "note": "退屈とは、新しいものを決して入れないことではない。今の技術スタックでは本当に仕事ができないなら、無理に使うほうがトークン一枚より高くつく。まったく動かないスタックは、誰も触りたがらないレガシーになる"
