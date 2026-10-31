@@ -45,6 +45,9 @@ tags:
   interaction:
     en: Interaction
     ja: ヒューマンインタフェース
+  operations:
+    en: Operations
+    ja: 運用
 
 laws:
   - slug: type-1-vs-type-2-decisions
@@ -53,6 +56,7 @@ laws:
     see_also:
       - sunk-cost-fallacy
       - parkinsons-law
+      - disagree-and-commit
     en:
       title: Type 1 vs Type 2 Decisions
       concept: Reversibility of Decisions.
@@ -84,6 +88,7 @@ laws:
       - boy-scout-rule
       - normalcy-bias
       - broken-windows-theory
+      - blameless-postmortem
     en:
       title: Normalization of Deviance
       concept: The erosion of safety standards.
@@ -170,6 +175,7 @@ laws:
     source_url: https://en.wikipedia.org/wiki/Law_of_triviality
     see_also:
       - parkinsons-law
+      - disagree-and-commit
     en:
       title: Law of Triviality
       concept: Cognitive Ease — the bike-shed problem.
@@ -311,6 +317,7 @@ laws:
     source_url: https://xyproblem.info/
     see_also:
       - curse-of-knowledge
+      - working-backwards
     en:
       title: XY Problem
       concept: Goal Misalignment.
@@ -364,6 +371,7 @@ laws:
     see_also:
       - bystander-effect
       - occams-razor
+      - blameless-postmortem
     en:
       title: Hanlon's Razor
       concept: Attribution Bias.
@@ -418,6 +426,7 @@ laws:
     see_also:
       - cobra-effect
       - shirky-principle
+      - error-budget
     en:
       title: Goodhart's Law
       concept: Metric Obsolescence.
@@ -957,6 +966,7 @@ laws:
     see_also:
       - normalization-of-deviance
       - normal-accident-theory
+      - blameless-postmortem
     en:
       title: Swiss Cheese Model
       concept: Layered Defense and Aligned Holes.
@@ -1380,6 +1390,7 @@ laws:
     source_url: https://doi.org/10.1016/0005-1098(83)90046-8
     see_also:
       - normal-accident-theory
+      - toil
     en:
       title: Ironies of Automation
       concept: Automation reshapes the human role rather than removing it.
@@ -1494,6 +1505,7 @@ laws:
     source_url: https://doi.org/10.1145/2408776.2408794
     see_also:
       - littles-law
+      - error-budget
     en:
       title: The Tail at Scale
       concept: Tail latency dominates at fan-out.
@@ -1680,6 +1692,7 @@ laws:
     see_also:
       - chestertons-fence
       - galls-law
+      - working-backwards
     en:
       title: YAGNI
       concept: You aren't gonna need it — build for the case in front of you.
@@ -2117,3 +2130,170 @@ laws:
         何かを直すために作ったチームやツールには、「直った状態」がどう見えるか、いつそれを確認するかを書き出せ。自らの不要化を説明できないプラットフォームチームは、自らの生存を最適化している。
       source: |-
         Clay Shirky の言。Kevin Kelly『The Shirky Principle』(The Technium, 2010) で命名・引用された。
+
+  - slug: error-budget
+    tag: operations
+    source_url: https://sre.google/sre-book/embracing-risk/
+    see_also:
+      - goodharts-law
+      - tail-at-scale
+      - toil
+    en:
+      title: Error Budget
+      concept: |-
+        An SLO below 100% leaves a measurable allowance of failure, and that allowance can be spent.
+      mechanism: |-
+        Product teams are judged on velocity and operations teams on reliability, so every release becomes a negotiation decided by whoever argues harder. Users cannot tell 99.99% from 100%, but the last fraction costs the most and blocks the most change. Once the target is explicit, the gap between it and perfect is a budget: 99.9% over 30 days is about 43 minutes of failure, and both sides can see how much of it is left.
+      counter:
+        name: Not All Failures Are Fungible
+        note: |-
+          the budget counts minutes, but lost data, a security breach or a wrong charge cannot be paid for out of an uptime allowance
+      guideline: |-
+        Agree on the SLO and the policy before the incident, not during it: while budget remains, ship; when it is spent, freeze feature releases and put the time into reliability until it recovers. Keep data loss and security outside the budget entirely.
+      source: |-
+        Marc Alvidrez, "Embracing Risk", in Beyer, Jones, Petoff & Murphy (eds.), *Site Reliability Engineering* (O'Reilly, 2016), ch. 3 — where the error budget is defined and "100% is probably never the right reliability target" is argued.
+    ja:
+      title: エラーバジェット
+      concept: 100% 未満の SLO は許容できる失敗の量を決める。その量は使ってよい予算だ。
+      mechanism: |-
+        プロダクト開発は速度で、運用は信頼性で評価される。だからリリースのたびに交渉になり、声の大きい側が勝つ。利用者は 99.99% と 100% の違いに気づかないのに、最後のわずかな差にいちばんコストがかかり、いちばん変更を止める。目標を明示すれば、目標と完璧の差が予算になる。30 日で 99.9% なら失敗に使えるのは約 43 分で、残りがいくらかを両者が同じ数字で見られる。
+      counter:
+        name: 失敗はすべて交換可能ではない
+        note: 予算が数えるのは時間だ。データ消失、セキュリティ侵害、誤課金は稼働時間の余りでは支払えない
+      guideline: |-
+        SLO と予算を使い切ったときの方針は、障害の最中ではなく事前に合意せよ。予算が残っていればリリースし、使い切ったら機能リリースを止めて回復するまで信頼性に時間を使え。データ消失とセキュリティは予算の外に置け。
+      source: |-
+        Marc Alvidrez「Embracing Risk」、Beyer, Jones, Petoff & Murphy 編『Site Reliability Engineering』(O'Reilly, 2016) 第 3 章。エラーバジェットの定義と「100% はほぼ常に誤った信頼性目標だ」という主張の出典。
+
+  - slug: toil
+    tag: operations
+    source_url: https://sre.google/sre-book/eliminating-toil/
+    see_also:
+      - ironies-of-automation
+      - error-budget
+    en:
+      title: Toil
+      concept: |-
+        Manual, repetitive operational work grows with the service until it crowds out engineering.
+      mechanism: |-
+        Toil is work that is manual, repetitive, automatable, interrupt-driven, leaves the system no better than it found it, and scales linearly with traffic or users. Each instance is small and urgent, so it always beats project work in the moment. Because it grows with the service and engineering time does not, a team that never pushes back ends up doing nothing else.
+      counter:
+        name: Ironies of Automation
+        note: |-
+          automating a task removes the practice people needed to handle it when the automation fails, and some automation costs more to build and keep alive than the toil it replaces
+      guideline: |-
+        Measure the share of each person's time spent on toil and set a ceiling (Google uses 50%). When a task recurs a third time, file it as engineering work; when it scales with users, treat it as a defect rather than a chore.
+      source: |-
+        Vivek Rau, "Eliminating Toil", in Beyer, Jones, Petoff & Murphy (eds.), *Site Reliability Engineering* (O'Reilly, 2016), ch. 5 — the definition of toil and the 50% cap.
+    ja:
+      title: トイル
+      concept: 手作業の繰り返し運用はサービスと一緒に増え、やがて開発の時間を食い尽くす。
+      mechanism: |-
+        トイルとは、手作業で、繰り返し発生し、自動化でき、割り込みで発生し、終えてもシステムが良くならず、トラフィックや利用者数に比例して増える作業だ。一件ずつは小さく急ぎなので、その場では必ずプロジェクト作業に勝つ。サービスとともに増えるのに開発の時間は増えないので、押し返さないチームは最後にはそれしかしなくなる。
+      counter:
+        name: 自動化の皮肉
+        note: 作業を自動化すると、自動化が壊れたときに対処するための練習の機会が消える。作って維持するコストが、置き換えるトイルより高くつく自動化もある
+      guideline: |-
+        一人ひとりの時間のうちトイルが占める割合を測り、上限を決めよ（Google は 50%）。同じ作業が三度目に来たら開発タスクとして起票せよ。利用者数に比例して増える作業は、雑用ではなく欠陥として扱え。
+      source: |-
+        Vivek Rau「Eliminating Toil」、Beyer, Jones, Petoff & Murphy 編『Site Reliability Engineering』(O'Reilly, 2016) 第 5 章。トイルの定義と 50% 上限の出典。
+
+  - slug: blameless-postmortem
+    tag: operations
+    source_url: https://www.etsy.com/codeascraft/blameless-postmortems
+    see_also:
+      - swiss-cheese-model
+      - normalization-of-deviance
+      - hanlons-razor
+    en:
+      title: Blameless Postmortem
+      concept: |-
+        Punishing the person nearest a failure teaches everyone to hide what they did.
+      mechanism: |-
+        The people closest to an incident hold the only accurate account of what they saw, what they believed and why the action made sense at the time. If telling that story can cost them, they tell a shorter one, and the organisation loses the information it needs to fix the conditions that made the mistake easy. The error repeats with someone else's name on it.
+      counter:
+        name: Accountability for Recklessness
+        note: |-
+          blameless is not consequence-free: a just culture still separates an honest mistake inside a bad system from knowingly disregarding a risk
+      guideline: |-
+        Write the postmortem as a timeline of what people saw and why each action made sense then, and end with changes to the system, not to a person. Ban "human error" as a root cause; ask what made the error easy to make.
+      source: |-
+        John Allspaw, *Blameless PostMortems and a Just Culture* (Code as Craft, Etsy, 2012); the practice is codified in Lunney & Lueder, "Postmortem Culture", *Site Reliability Engineering* (O'Reilly, 2016), ch. 15.
+    ja:
+      title: 非難なきポストモーテム
+      concept: 障害のいちばん近くにいた人を罰すると、全員が自分のしたことを隠すようになる。
+      mechanism: |-
+        障害の現場にいた人だけが、何を見て、何を信じ、なぜその操作がその時点で妥当に思えたかを正確に語れる。語ることで不利益を被るなら、その人は話を短くする。すると組織は、ミスを起こしやすくしていた条件を直すための情報を失う。同じ誤りが、別の人の名前で繰り返される。
+      counter:
+        name: 無謀さへの説明責任
+        note: 非難しないことは、何をしても責任を問わないことではない。公正な文化は、悪い仕組みの中での正直なミスと、リスクを承知で無視したこととを区別する
+      guideline: |-
+        ポストモーテムは、各人が何を見て、なぜその操作がその時点で妥当だったかの時系列として書き、人ではなく仕組みの変更で締めくくれ。根本原因に「ヒューマンエラー」と書くことを禁じ、何がその誤りを起こしやすくしたかを問え。
+      source: |-
+        John Allspaw『Blameless PostMortems and a Just Culture』(Code as Craft, Etsy, 2012)。実践としては Lunney & Lueder「Postmortem Culture」『Site Reliability Engineering』(O'Reilly, 2016) 第 15 章にまとめられている。
+
+  - slug: working-backwards
+    tag: decision
+    source_url: https://www.workingbackwards.com/
+    see_also:
+      - xy-problem
+      - yagni
+    en:
+      title: Working Backwards
+      concept: |-
+        Teams that start from a solution build things no customer needed; starting from the announcement exposes that early.
+      mechanism: |-
+        Engineers start from what they can build and look for customers afterwards. A press release written before any code forces the team to state who the customer is, what problem they have and why existing options fail, in words the customer would use. If that page is hard to write, the product is unclear, and rewriting a page is far cheaper than rewriting the product.
+      counter:
+        name: Build to Learn
+        note: |-
+          when customers cannot judge an idea on paper (a new platform, an infrastructure change, something with no precedent) a cheap prototype tells you more than a polished press release
+      guideline: |-
+        Before a project starts, write a one-page press release and an FAQ for the customer, and review them as a team. If you cannot name the customer and their problem in the first paragraph, do not start building.
+      source: |-
+        Ian McAllister, answer to "What is Amazon's approach to product development and product management?" (Quora, 2010) — the first public description; Colin Bryar & Bill Carr, *Working Backwards* (St. Martin's Press, 2021) — the PR/FAQ process in full.
+    ja:
+      title: ワーキング・バックワーズ
+      concept: 解決策から始めると誰も必要としないものができる。発表文から始めると早く気づける。
+      mechanism: |-
+        エンジニアは作れるものから考え始め、顧客は後から探しがちだ。コードを書く前にプレスリリースを書くと、誰が顧客で、どんな問題を抱え、既存の手段がなぜ駄目なのかを、顧客自身の言葉で書かざるを得なくなる。その一枚が書きにくいなら、製品の輪郭がぼやけている。紙一枚を書き直すほうが、製品を作り直すよりずっと安い。
+      counter:
+        name: 作って学ぶ
+        note: 顧客が紙の上では判断できないもの（新しいプラットフォーム、基盤の変更、前例のないもの）では、磨いたプレスリリースより安い試作品のほうが多くを教えてくれる
+      guideline: |-
+        プロジェクトを始める前に、顧客向けの一枚のプレスリリースと FAQ を書き、チームでレビューせよ。最初の段落で顧客とその問題を言えないなら、作り始めるな。
+      source: |-
+        Ian McAllister による Quora の回答「What is Amazon's approach to product development and product management?」(2010) が最初の公開記述。PR/FAQ の全体像は Colin Bryar & Bill Carr『Working Backwards』(St. Martin's Press, 2021)。
+
+  - slug: disagree-and-commit
+    tag: decision
+    source_url: https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders
+    see_also:
+      - type-1-vs-type-2-decisions
+      - law-of-triviality
+    en:
+      title: Disagree and Commit
+      concept: |-
+        Waiting for everyone to agree costs more time than most wrong decisions would.
+      mechanism: |-
+        When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate nobody can know the answer anyway. A dissenter who keeps arguing also tends to half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating "do you agree" from "will you commit" lets the disagreement be stated fully and the work still go ahead at full effort.
+      counter:
+        name: Dissent on One-Way Doors
+        note: |-
+          for an irreversible decision, or one with a safety or ethical risk, committing should not end the objection; escalate instead of going quiet
+      guideline: |-
+        State your disagreement once, in full, with your reasons. Then say "I disagree and commit" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you.
+      source: |-
+        Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — "use the phrase 'disagree and commit'", with the Amazon Studios example.
+    ja:
+      title: 反対してもコミットする
+      concept: 全員の同意を待つ時間は、たいていの誤った決定より高くつく。
+      mechanism: |-
+        合意を求める集団では、決定は最も粘る懐疑派の速度でしか進まない。しかも議論の終盤では、誰にも正解は分からない。議論に負けた反対者は、決まった方針を半端にしか実行しないことが多く、どちらが正しかったにせよ結果を悪くする。「同意するか」と「コミットするか」を分ければ、反対は全部言い切ったうえで、実行は全力で進められる。
+      counter:
+        name: 一方向のドアでは反対を続ける
+        note: 取り返しのつかない決定や、安全・倫理上のリスクがある決定では、コミットしても異議を取り下げるべきではない。黙るのではなくエスカレーションせよ
+      guideline: |-
+        反対意見は一度、理由とともに全部言え。そのうえで「反対だがコミットする」と宣言し、自分の案だったかのように実行せよ。立場が上の人も同じことをせよ。チームに自分を説得させるのではなく、チームの判断を支えよ。
+      source: |-
+        Jeff Bezos『2016 年 株主への手紙』（Amazon.com, Inc.、2017 年）。"use the phrase 'disagree and commit'" と Amazon Studios の例。

@@ -3,7 +3,7 @@
 各法則に「対抗力」「現場の指針」「一次資料の出典」を添えた、エンジニアリングの法典。
 
 [![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=c2884a&labelColor=0c0b08)](https://github.com/kanywst/hammurabi/stargazers)
-[![laws](https://img.shields.io/badge/%E6%B3%95%E5%89%87-71-c2884a?style=for-the-badge&labelColor=0c0b08)](#法典)
+[![laws](https://img.shields.io/badge/%E6%B3%95%E5%89%87-76-c2884a?style=for-the-badge&labelColor=0c0b08)](#法典)
 [![site](https://img.shields.io/badge/%E6%B3%95%E5%85%B8%E3%82%92%E8%AA%AD%E3%82%80-e0aa6b?style=for-the-badge&labelColor=0c0b08)](https://kanywst.github.io/hammurabi/ja/)
 [![license](https://img.shields.io/badge/content-CC%20BY--SA%204.0-a39884?style=for-the-badge&labelColor=0c0b08)](../LICENSE)
 
@@ -116,6 +116,11 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 | `69` | [メトカーフの法則 (Metcalfe's Law)](#メトカーフの法則-metcalfes-law) | システム | ネットワークの価値は、その規模より速く増える。 |
 | `70` | [リンゲルマン効果 (Ringelmann Effect)](#リンゲルマン効果-ringelmann-effect) | 組織 | 集団が大きくなるほど、一人あたりの努力は落ちる。 |
 | `71` | [シャーキーの原理 (Shirky Principle)](#シャーキーの原理-shirky-principle) | インセンティブ | 組織は、自らが解である問題を保存しようとする。 |
+| `72` | [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) | 運用 | 100% 未満の SLO は許容できる失敗の量を決める。その量は使ってよい予算だ。 |
+| `73` | [トイル (Toil)](#トイル-toil) | 運用 | 手作業の繰り返し運用はサービスと一緒に増え、やがて開発の時間を食い尽くす。 |
+| `74` | [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) | 運用 | 障害のいちばん近くにいた人を罰すると、全員が自分のしたことを隠すようになる。 |
+| `75` | [ワーキング・バックワーズ (Working Backwards)](#ワーキングバックワーズ-working-backwards) | 意思決定 | 解決策から始めると誰も必要としないものができる。発表文から始めると早く気づける。 |
+| `76` | [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) | 意思決定 | 全員の同意を待つ時間は、たいていの誤った決定より高くつく。 |
 
 ### 意思決定の可逆性 (Type 1 vs Type 2 Decisions)
 
@@ -126,7 +131,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **「一方向のドア」フィルター**。
 - **判断の指針:** 容易にやり直しができる決定なら、24時間以内に実行してデータを得よ。数日・数週間かけるのは、やり直し不能な決定（DBスキーマの根幹、セキュリティ等）のみにせよ。
 - **出典:** Jeff Bezos『2015 年 株主への手紙』（Amazon.com, Inc.、2016 年 4 月提出）——"Type 1 / Type 2 decisions" の初出。1997 年の手紙は「Day 1」の手紙であり、この枠組みは含まれていない。 — [原典 ↗](https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm)
-- **関連:** [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy) · [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law)
+- **関連:** [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy) · [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit)
 
 ### 逸脱の常態化 (Normalization of Deviance)
 
@@ -137,7 +142,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **割れ窓理論**。
 - **判断の指針:** 「以前も大丈夫だった」を理由に調査を省略するな。その場しのぎの「ハック」を見つけたら、即座に修正するか、高優先度の技術負債として記録せよ。
 - **出典:** Diane Vaughan, *The Challenger Launch Decision* (1996) — NASA チャレンジャー号事故の分析から提唱された概念。 — [原典 ↗](https://en.wikipedia.org/wiki/Normalization_of_deviance)
-- **関連:** [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [正常性バイアス (Normalcy Bias)](#正常性バイアス-normalcy-bias) · [割れ窓理論 (Broken Windows Theory)](#割れ窓理論-broken-windows-theory)
+- **関連:** [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [正常性バイアス (Normalcy Bias)](#正常性バイアス-normalcy-bias) · [割れ窓理論 (Broken Windows Theory)](#割れ窓理論-broken-windows-theory) · [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem)
 
 ### チェスタトンの柵 (Chesterton's Fence)
 
@@ -170,7 +175,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **コア・バリューへの集中**。
 - **判断の指針:** PRレビューのコメントの8割がスタイルや命名に集中しているなら、即座に承認し、議論をリンターの設定自動化に移せ。
 - **出典:** C. Northcote Parkinson『Parkinson's Law and Other Studies in Administration』(Houghton Mifflin, 1957) 所収「High Finance, or the Point of Vanishing Interest」——自転車置き場の委員会の寓話の初出。英国版は『Parkinson's Law: The Pursuit of Progress』(John Murray, 1958)。 — [原典 ↗](https://en.wikipedia.org/wiki/Law_of_triviality)
-- **関連:** [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law)
+- **関連:** [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit)
 
 ### ガルの法則 (Gall's Law)
 
@@ -232,7 +237,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **なぜなぜ分析**。
 - **判断の指針:** 誰かが「どうやってYをすればいいか？」と聞いてきたら、常に「Yで何を達成したいのか？」と問い返せ。
 - **出典:** Perl IRC やシステム管理者コミュニティ発の口承。標準的な解説は *xyproblem.info*。 — [原典 ↗](https://xyproblem.info/)
-- **関連:** [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge)
+- **関連:** [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge) · [ワーキング・バックワーズ (Working Backwards)](#ワーキングバックワーズ-working-backwards)
 
 ### ポステルの法則 (Postel's Law)
 
@@ -254,7 +259,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **心理的安全性**。
 - **判断の指針:** 無能（知識不足や文脈欠如）で説明がつくことに、決して悪意を見出すな。人ではなくシステムをデバッグせよ。
 - **出典:** Robert J. Hanlon が *Murphy's Law Book Two* (Arthur Bloch 編, 1980) に寄稿した格言。 — [原典 ↗](https://en.wikipedia.org/wiki/Hanlon%27s_razor)
-- **関連:** [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) · [オッカムの剃刀 (Occam's Razor)](#オッカムの剃刀-occams-razor)
+- **関連:** [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) · [オッカムの剃刀 (Occam's Razor)](#オッカムの剃刀-occams-razor) · [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem)
 
 ### ホフスタッターの法則 (Hofstadter's Law)
 
@@ -276,7 +281,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **バランスト・スコアカード**。
 - **判断の指針:** 単一の指標でパフォーマンスを判断するな。システムの「出力」そのものを観察し、その代用指標（プロキシ）に固執するな。
 - **出典:** Charles Goodhart, *Problems of Monetary Management* (1975); 現代によく引用される定式化は Marilyn Strathern (1997) による。 — [原典 ↗](https://en.wikipedia.org/wiki/Goodhart%27s_law)
-- **関連:** [コブラ効果 (Cobra Effect)](#コブラ効果-cobra-effect) · [シャーキーの原理 (Shirky Principle)](#シャーキーの原理-shirky-principle)
+- **関連:** [コブラ効果 (Cobra Effect)](#コブラ効果-cobra-effect) · [シャーキーの原理 (Shirky Principle)](#シャーキーの原理-shirky-principle) · [エラーバジェット (Error Budget)](#エラーバジェット-error-budget)
 
 ### リンディ効果 (Lindy Effect)
 
@@ -485,7 +490,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **多層防御 / 独立した統制 / ポストモーテムでの「穴の監査」**。
 - **判断の指針:** インシデントレビューにおいて、「失敗した一つのもの」で止まってはならない。本来それを捉えるはずだった全層を列挙し、なぜ同じ瞬間にすべての穴が開いていたのかを問え。修正対象は単一層ではなく、最も安価に塞げる二層が答えになる。
 - **出典:** James Reason, *Human Error* (Cambridge University Press, 1990)。 — [原典 ↗](https://en.wikipedia.org/wiki/Swiss_cheese_model)
-- **関連:** [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory)
+- **関連:** [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../assets/diagrams/swiss-cheese-model-ja-dark.svg">
@@ -671,7 +676,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **人間参加型の訓練** — 自動化を減らすのではなく、協働を良くする。
 - **判断の指針:** 定期的なゲームデーと実地訓練で運用者の勘を保て。引き継ぎは、文脈なく冷えた状態でなく、状況を保持したまま人が引き取れるよう設計せよ。
 - **出典:** Lisanne Bainbridge, *Ironies of Automation* (Automatica, 1983)。 — [原典 ↗](https://doi.org/10.1016/0005-1098(83)90046-8)
-- **関連:** [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory)
+- **関連:** [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [トイル (Toil)](#トイル-toil)
 
 ### 最小権限の原則 (Principle of Least Privilege)
 
@@ -715,7 +720,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **冗長化には代償がある** — ヘッジドリクエストや連動リクエストは負荷を増やす。中央値が体感を決める場面で裾野を追うな。
 - **判断の指針:** 平均ではなく p99／p99.9 で SLO を引け。すべてのノードを均一に速くしようとするより、ヘッジドリクエストやマイクロ分割といった裾野耐性の技法を導入せよ。
 - **出典:** Jeffrey Dean & Luiz André Barroso, *The Tail at Scale* (Communications of the ACM, 2013)。 — [原典 ↗](https://doi.org/10.1145/2408776.2408794)
-- **関連:** [リトルの法則 (Little's Law)](#リトルの法則-littles-law)
+- **関連:** [リトルの法則 (Little's Law)](#リトルの法則-littles-law) · [エラーバジェット (Error Budget)](#エラーバジェット-error-budget)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../assets/diagrams/tail-at-scale-ja-dark.svg">
@@ -795,7 +800,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **チェスタトンの柵** — YAGNI が許すのは「作らないこと」だけであり、目的を確かめていないものを「消すこと」まで許してはいない。
 - **判断の指針:** 実際に手元にあるケースだけを実装せよ。一般化したくなったら、まず2つ目の具体的なケースを名指しせよ。名指しできないなら、それはパターンではなく当て推量だ。
 - **出典:** Ron Jeffries による Extreme Programming の実践ノート。"You Aren't Gonna Need It" として命名され、Kent Beck『Extreme Programming Explained』(1999) で広まった。 — [原典 ↗](https://ronjeffries.com/xprog/articles/practices/pracnotneed/)
-- **関連:** [チェスタトンの柵 (Chesterton's Fence)](#チェスタトンの柵-chestertons-fence) · [ガルの法則 (Gall's Law)](#ガルの法則-galls-law)
+- **関連:** [チェスタトンの柵 (Chesterton's Fence)](#チェスタトンの柵-chestertons-fence) · [ガルの法則 (Gall's Law)](#ガルの法則-galls-law) · [ワーキング・バックワーズ (Working Backwards)](#ワーキングバックワーズ-working-backwards)
 
 ### KISS の原則 (KISS Principle)
 
@@ -939,6 +944,61 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **判断の指針:** 何かを直すために作ったチームやツールには、「直った状態」がどう見えるか、いつそれを確認するかを書き出せ。自らの不要化を説明できないプラットフォームチームは、自らの生存を最適化している。
 - **出典:** Clay Shirky の言。Kevin Kelly『The Shirky Principle』(The Technium, 2010) で命名・引用された。 — [原典 ↗](https://kk.org/thetechnium/the-shirky-prin/)
 - **関連:** [グッドハートの法則 (Goodhart's Law)](#グッドハートの法則-goodharts-law) · [ピーターの法則 (Peter Principle)](#ピーターの法則-peter-principle)
+
+### エラーバジェット (Error Budget)
+
+`§ 72` · 運用
+
+- **概念:** 100% 未満の SLO は許容できる失敗の量を決める。その量は使ってよい予算だ。
+- **メカニズム:** プロダクト開発は速度で、運用は信頼性で評価される。だからリリースのたびに交渉になり、声の大きい側が勝つ。利用者は 99.99% と 100% の違いに気づかないのに、最後のわずかな差にいちばんコストがかかり、いちばん変更を止める。目標を明示すれば、目標と完璧の差が予算になる。30 日で 99.9% なら失敗に使えるのは約 43 分で、残りがいくらかを両者が同じ数字で見られる。
+- **対立概念:** **失敗はすべて交換可能ではない** — 予算が数えるのは時間だ。データ消失、セキュリティ侵害、誤課金は稼働時間の余りでは支払えない。
+- **判断の指針:** SLO と予算を使い切ったときの方針は、障害の最中ではなく事前に合意せよ。予算が残っていればリリースし、使い切ったら機能リリースを止めて回復するまで信頼性に時間を使え。データ消失とセキュリティは予算の外に置け。
+- **出典:** Marc Alvidrez「Embracing Risk」、Beyer, Jones, Petoff & Murphy 編『Site Reliability Engineering』(O'Reilly, 2016) 第 3 章。エラーバジェットの定義と「100% はほぼ常に誤った信頼性目標だ」という主張の出典。 — [原典 ↗](https://sre.google/sre-book/embracing-risk/)
+- **関連:** [グッドハートの法則 (Goodhart's Law)](#グッドハートの法則-goodharts-law) · [スケールの裾野 (The Tail at Scale)](#スケールの裾野-the-tail-at-scale) · [トイル (Toil)](#トイル-toil)
+
+### トイル (Toil)
+
+`§ 73` · 運用
+
+- **概念:** 手作業の繰り返し運用はサービスと一緒に増え、やがて開発の時間を食い尽くす。
+- **メカニズム:** トイルとは、手作業で、繰り返し発生し、自動化でき、割り込みで発生し、終えてもシステムが良くならず、トラフィックや利用者数に比例して増える作業だ。一件ずつは小さく急ぎなので、その場では必ずプロジェクト作業に勝つ。サービスとともに増えるのに開発の時間は増えないので、押し返さないチームは最後にはそれしかしなくなる。
+- **対立概念:** **自動化の皮肉** — 作業を自動化すると、自動化が壊れたときに対処するための練習の機会が消える。作って維持するコストが、置き換えるトイルより高くつく自動化もある。
+- **判断の指針:** 一人ひとりの時間のうちトイルが占める割合を測り、上限を決めよ（Google は 50%）。同じ作業が三度目に来たら開発タスクとして起票せよ。利用者数に比例して増える作業は、雑用ではなく欠陥として扱え。
+- **出典:** Vivek Rau「Eliminating Toil」、Beyer, Jones, Petoff & Murphy 編『Site Reliability Engineering』(O'Reilly, 2016) 第 5 章。トイルの定義と 50% 上限の出典。 — [原典 ↗](https://sre.google/sre-book/eliminating-toil/)
+- **関連:** [自動化の皮肉 (Ironies of Automation)](#自動化の皮肉-ironies-of-automation) · [エラーバジェット (Error Budget)](#エラーバジェット-error-budget)
+
+### 非難なきポストモーテム (Blameless Postmortem)
+
+`§ 74` · 運用
+
+- **概念:** 障害のいちばん近くにいた人を罰すると、全員が自分のしたことを隠すようになる。
+- **メカニズム:** 障害の現場にいた人だけが、何を見て、何を信じ、なぜその操作がその時点で妥当に思えたかを正確に語れる。語ることで不利益を被るなら、その人は話を短くする。すると組織は、ミスを起こしやすくしていた条件を直すための情報を失う。同じ誤りが、別の人の名前で繰り返される。
+- **対立概念:** **無謀さへの説明責任** — 非難しないことは、何をしても責任を問わないことではない。公正な文化は、悪い仕組みの中での正直なミスと、リスクを承知で無視したこととを区別する。
+- **判断の指針:** ポストモーテムは、各人が何を見て、なぜその操作がその時点で妥当だったかの時系列として書き、人ではなく仕組みの変更で締めくくれ。根本原因に「ヒューマンエラー」と書くことを禁じ、何がその誤りを起こしやすくしたかを問え。
+- **出典:** John Allspaw『Blameless PostMortems and a Just Culture』(Code as Craft, Etsy, 2012)。実践としては Lunney & Lueder「Postmortem Culture」『Site Reliability Engineering』(O'Reilly, 2016) 第 15 章にまとめられている。 — [原典 ↗](https://www.etsy.com/codeascraft/blameless-postmortems)
+- **関連:** [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor)
+
+### ワーキング・バックワーズ (Working Backwards)
+
+`§ 75` · 意思決定
+
+- **概念:** 解決策から始めると誰も必要としないものができる。発表文から始めると早く気づける。
+- **メカニズム:** エンジニアは作れるものから考え始め、顧客は後から探しがちだ。コードを書く前にプレスリリースを書くと、誰が顧客で、どんな問題を抱え、既存の手段がなぜ駄目なのかを、顧客自身の言葉で書かざるを得なくなる。その一枚が書きにくいなら、製品の輪郭がぼやけている。紙一枚を書き直すほうが、製品を作り直すよりずっと安い。
+- **対立概念:** **作って学ぶ** — 顧客が紙の上では判断できないもの（新しいプラットフォーム、基盤の変更、前例のないもの）では、磨いたプレスリリースより安い試作品のほうが多くを教えてくれる。
+- **判断の指針:** プロジェクトを始める前に、顧客向けの一枚のプレスリリースと FAQ を書き、チームでレビューせよ。最初の段落で顧客とその問題を言えないなら、作り始めるな。
+- **出典:** Ian McAllister による Quora の回答「What is Amazon's approach to product development and product management?」(2010) が最初の公開記述。PR/FAQ の全体像は Colin Bryar & Bill Carr『Working Backwards』(St. Martin's Press, 2021)。 — [原典 ↗](https://www.workingbackwards.com/)
+- **関連:** [XY問題 (XY Problem)](#xy問題-xy-problem) · [YAGNI (YAGNI)](#yagni-yagni)
+
+### 反対してもコミットする (Disagree and Commit)
+
+`§ 76` · 意思決定
+
+- **概念:** 全員の同意を待つ時間は、たいていの誤った決定より高くつく。
+- **メカニズム:** 合意を求める集団では、決定は最も粘る懐疑派の速度でしか進まない。しかも議論の終盤では、誰にも正解は分からない。議論に負けた反対者は、決まった方針を半端にしか実行しないことが多く、どちらが正しかったにせよ結果を悪くする。「同意するか」と「コミットするか」を分ければ、反対は全部言い切ったうえで、実行は全力で進められる。
+- **対立概念:** **一方向のドアでは反対を続ける** — 取り返しのつかない決定や、安全・倫理上のリスクがある決定では、コミットしても異議を取り下げるべきではない。黙るのではなくエスカレーションせよ。
+- **判断の指針:** 反対意見は一度、理由とともに全部言え。そのうえで「反対だがコミットする」と宣言し、自分の案だったかのように実行せよ。立場が上の人も同じことをせよ。チームに自分を説得させるのではなく、チームの判断を支えよ。
+- **出典:** Jeff Bezos『2016 年 株主への手紙』（Amazon.com, Inc.、2017 年）。"use the phrase 'disagree and commit'" と Amazon Studios の例。 — [原典 ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
+- **関連:** [意思決定の可逆性 (Type 1 vs Type 2 Decisions)](#意思決定の可逆性-type-1-vs-type-2-decisions) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality)
 
 <!-- CODEX:END -->
 

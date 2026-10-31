@@ -3,7 +3,7 @@
 A codex of engineering laws — each with its counter-force, a field guideline, and a source.
 
 [![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=c2884a&labelColor=0c0b08)](https://github.com/kanywst/hammurabi/stargazers)
-[![laws](https://img.shields.io/badge/laws-71-c2884a?style=for-the-badge&labelColor=0c0b08)](#the-codex)
+[![laws](https://img.shields.io/badge/laws-76-c2884a?style=for-the-badge&labelColor=0c0b08)](#the-codex)
 [![site](https://img.shields.io/badge/read-the%20codex-e0aa6b?style=for-the-badge&labelColor=0c0b08)](https://kanywst.github.io/hammurabi/)
 [![license](https://img.shields.io/badge/content-CC%20BY--SA%204.0-a39884?style=for-the-badge&labelColor=0c0b08)](./LICENSE)
 
@@ -116,6 +116,11 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `69` | [Metcalfe's Law](#metcalfes-law) | Systems | A network's value grows faster than its size. |
 | `70` | [Ringelmann Effect](#ringelmann-effect) | Organization | Effort per person falls as the group grows. |
 | `71` | [Shirky Principle](#shirky-principle) | Incentives | Institutions will try to preserve the problem to which they are the solution. |
+| `72` | [Error Budget](#error-budget) | Operations | An SLO below 100% leaves a measurable allowance of failure, and that allowance can be spent. |
+| `73` | [Toil](#toil) | Operations | Manual, repetitive operational work grows with the service until it crowds out engineering. |
+| `74` | [Blameless Postmortem](#blameless-postmortem) | Operations | Punishing the person nearest a failure teaches everyone to hide what they did. |
+| `75` | [Working Backwards](#working-backwards) | Decision | Teams that start from a solution build things no customer needed; starting from the announcement exposes that early. |
+| `76` | [Disagree and Commit](#disagree-and-commit) | Decision | Waiting for everyone to agree costs more time than most wrong decisions would. |
 
 ### Type 1 vs Type 2 Decisions
 
@@ -126,7 +131,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Counter:** **The "One-Way Door" Filter**.
 - **Guideline:** If a decision is easily reversible (two-way door), ship within 24 hours to gain data. Only spend days/weeks on "one-way doors" (e.g., core database schema, security protocols).
 - **Source:** Jeff Bezos, *2015 Letter to Shareholders* (Amazon.com, Inc., filed April 2016) — the letter that introduced the "Type 1 / Type 2 decisions" framing. The 1997 letter is the "Day 1" letter and does not contain it. — [source ↗](https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm)
-- **See also:** [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Parkinson's Law](#parkinsons-law)
+- **See also:** [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Parkinson's Law](#parkinsons-law) · [Disagree and Commit](#disagree-and-commit)
 
 ### Normalization of Deviance
 
@@ -137,7 +142,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Counter:** **Broken Windows Theory**.
 - **Guideline:** If you see a "hack" or a bypassed alert, do not say "it worked before." Either fix it immediately or document it as high-priority technical debt.
 - **Source:** Diane Vaughan, *The Challenger Launch Decision* (1996) — coined while analyzing the NASA Challenger disaster. — [source ↗](https://en.wikipedia.org/wiki/Normalization_of_deviance)
-- **See also:** [Swiss Cheese Model](#swiss-cheese-model) · [Normal Accident Theory](#normal-accident-theory) · [Boy Scout Rule](#boy-scout-rule) · [Normalcy Bias](#normalcy-bias) · [Broken Windows Theory](#broken-windows-theory)
+- **See also:** [Swiss Cheese Model](#swiss-cheese-model) · [Normal Accident Theory](#normal-accident-theory) · [Boy Scout Rule](#boy-scout-rule) · [Normalcy Bias](#normalcy-bias) · [Broken Windows Theory](#broken-windows-theory) · [Blameless Postmortem](#blameless-postmortem)
 
 ### Chesterton's Fence
 
@@ -170,7 +175,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Counter:** **Core Value Focus**.
 - **Guideline:** If a PR review spends 80% of comments on style/naming, approve immediately and move the discussion to an automated linter config.
 - **Source:** C. Northcote Parkinson, *Parkinson's Law and Other Studies in Administration* (Houghton Mifflin, 1957), in the chapter "High Finance, or the Point of Vanishing Interest" — the original bike-shed committee parable. Published in the UK as *Parkinson's Law: The Pursuit of Progress* (John Murray, 1958). — [source ↗](https://en.wikipedia.org/wiki/Law_of_triviality)
-- **See also:** [Parkinson's Law](#parkinsons-law)
+- **See also:** [Parkinson's Law](#parkinsons-law) · [Disagree and Commit](#disagree-and-commit)
 
 ### Gall's Law
 
@@ -232,7 +237,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Five Whys**.
 - **Guideline:** When someone asks "How do I do Y?", always reply "What are you trying to achieve with Y?"
 - **Source:** Folklore from the Perl IRC and sysadmin communities; canonical write-up at *xyproblem.info*. — [source ↗](https://xyproblem.info/)
-- **See also:** [Curse of Knowledge](#curse-of-knowledge)
+- **See also:** [Curse of Knowledge](#curse-of-knowledge) · [Working Backwards](#working-backwards)
 
 ### Postel's Law
 
@@ -254,7 +259,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Psychological Safety**.
 - **Guideline:** Never attribute to malice that which is adequately explained by stupidity or lack of context. Focus on the system, not the person.
 - **Source:** Robert J. Hanlon, contributed to *Murphy's Law Book Two* (Arthur Bloch, 1980). — [source ↗](https://en.wikipedia.org/wiki/Hanlon%27s_razor)
-- **See also:** [Bystander Effect](#bystander-effect) · [Occam's Razor](#occams-razor)
+- **See also:** [Bystander Effect](#bystander-effect) · [Occam's Razor](#occams-razor) · [Blameless Postmortem](#blameless-postmortem)
 
 ### Hofstadter's Law
 
@@ -276,7 +281,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Balanced Scorecards**.
 - **Guideline:** Never use a single metric to judge performance. Observe the system's output, not its proxies.
 - **Source:** Charles Goodhart, *Problems of Monetary Management* (1975); reformulated by Marilyn Strathern (1997). — [source ↗](https://en.wikipedia.org/wiki/Goodhart%27s_law)
-- **See also:** [Cobra Effect](#cobra-effect) · [Shirky Principle](#shirky-principle)
+- **See also:** [Cobra Effect](#cobra-effect) · [Shirky Principle](#shirky-principle) · [Error Budget](#error-budget)
 
 ### Lindy Effect
 
@@ -485,7 +490,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Defense in Depth / Independent Controls / Hole-Audit at Post-Mortem**.
 - **Guideline:** During an incident review, do not stop at "the one thing that failed." Enumerate every layer that should have caught the failure and ask why each hole was open at exactly that moment. The fix is rarely a single layer; it's plugging the cheapest two.
 - **Source:** James Reason, *Human Error* (Cambridge University Press, 1990). — [source ↗](https://en.wikipedia.org/wiki/Swiss_cheese_model)
-- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory)
+- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory) · [Blameless Postmortem](#blameless-postmortem)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/diagrams/swiss-cheese-model-en-dark.svg">
@@ -671,7 +676,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 - **Counter:** **Human-in-the-Loop Drills** — better teaming, not less automation.
 - **Guideline:** Keep operators sharp with regular game-days and hands-on drills, and design handoffs so a human takes over with context, not cold.
 - **Source:** Lisanne Bainbridge, *Ironies of Automation* (Automatica, 1983). — [source ↗](https://doi.org/10.1016/0005-1098(83)90046-8)
-- **See also:** [Normal Accident Theory](#normal-accident-theory)
+- **See also:** [Normal Accident Theory](#normal-accident-theory) · [Toil](#toil)
 
 ### Principle of Least Privilege
 
@@ -715,7 +720,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 - **Counter:** **Redundancy Has a Price** — hedged and tied requests add load; don't chase the tail where the median is what users feel.
 - **Guideline:** Set SLOs on p99/p99.9, not the mean, and deploy tail-tolerance — hedged requests, micro-partitioning — instead of trying to make every node uniformly fast.
 - **Source:** Jeffrey Dean & Luiz André Barroso, *The Tail at Scale* (Communications of the ACM, 2013). — [source ↗](https://doi.org/10.1145/2408776.2408794)
-- **See also:** [Little's Law](#littles-law)
+- **See also:** [Little's Law](#littles-law) · [Error Budget](#error-budget)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/diagrams/tail-at-scale-en-dark.svg">
@@ -795,7 +800,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Chesterton's Fence** — YAGNI licenses you not to build something; it never licenses you to delete something whose purpose you have not established.
 - **Guideline:** Implement the case you actually have. When you feel the pull to generalise, name the second concrete case first — if you cannot, you do not have a pattern, you have a guess.
 - **Source:** Ron Jeffries, Extreme Programming practice notes; named "You Aren't Gonna Need It" and popularised in Kent Beck, *Extreme Programming Explained* (1999). — [source ↗](https://ronjeffries.com/xprog/articles/practices/pracnotneed/)
-- **See also:** [Chesterton's Fence](#chestertons-fence) · [Gall's Law](#galls-law)
+- **See also:** [Chesterton's Fence](#chestertons-fence) · [Gall's Law](#galls-law) · [Working Backwards](#working-backwards)
 
 ### KISS Principle
 
@@ -939,6 +944,61 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Guideline:** For any team or tool created to fix something, write down what "fixed" looks like and when you will check. A platform team that cannot describe its own obsolescence is optimising for its own survival.
 - **Source:** Clay Shirky, named and quoted in Kevin Kelly, *The Shirky Principle* (The Technium, 2010). — [source ↗](https://kk.org/thetechnium/the-shirky-prin/)
 - **See also:** [Goodhart's Law](#goodharts-law) · [Peter Principle](#peter-principle)
+
+### Error Budget
+
+`§ 72` · Operations
+
+- **Concept:** An SLO below 100% leaves a measurable allowance of failure, and that allowance can be spent.
+- **Mechanism:** Product teams are judged on velocity and operations teams on reliability, so every release becomes a negotiation decided by whoever argues harder. Users cannot tell 99.99% from 100%, but the last fraction costs the most and blocks the most change. Once the target is explicit, the gap between it and perfect is a budget: 99.9% over 30 days is about 43 minutes of failure, and both sides can see how much of it is left.
+- **Counter:** **Not All Failures Are Fungible** — the budget counts minutes, but lost data, a security breach or a wrong charge cannot be paid for out of an uptime allowance.
+- **Guideline:** Agree on the SLO and the policy before the incident, not during it: while budget remains, ship; when it is spent, freeze feature releases and put the time into reliability until it recovers. Keep data loss and security outside the budget entirely.
+- **Source:** Marc Alvidrez, "Embracing Risk", in Beyer, Jones, Petoff & Murphy (eds.), *Site Reliability Engineering* (O'Reilly, 2016), ch. 3 — where the error budget is defined and "100% is probably never the right reliability target" is argued. — [source ↗](https://sre.google/sre-book/embracing-risk/)
+- **See also:** [Goodhart's Law](#goodharts-law) · [The Tail at Scale](#the-tail-at-scale) · [Toil](#toil)
+
+### Toil
+
+`§ 73` · Operations
+
+- **Concept:** Manual, repetitive operational work grows with the service until it crowds out engineering.
+- **Mechanism:** Toil is work that is manual, repetitive, automatable, interrupt-driven, leaves the system no better than it found it, and scales linearly with traffic or users. Each instance is small and urgent, so it always beats project work in the moment. Because it grows with the service and engineering time does not, a team that never pushes back ends up doing nothing else.
+- **Counter:** **Ironies of Automation** — automating a task removes the practice people needed to handle it when the automation fails, and some automation costs more to build and keep alive than the toil it replaces.
+- **Guideline:** Measure the share of each person's time spent on toil and set a ceiling (Google uses 50%). When a task recurs a third time, file it as engineering work; when it scales with users, treat it as a defect rather than a chore.
+- **Source:** Vivek Rau, "Eliminating Toil", in Beyer, Jones, Petoff & Murphy (eds.), *Site Reliability Engineering* (O'Reilly, 2016), ch. 5 — the definition of toil and the 50% cap. — [source ↗](https://sre.google/sre-book/eliminating-toil/)
+- **See also:** [Ironies of Automation](#ironies-of-automation) · [Error Budget](#error-budget)
+
+### Blameless Postmortem
+
+`§ 74` · Operations
+
+- **Concept:** Punishing the person nearest a failure teaches everyone to hide what they did.
+- **Mechanism:** The people closest to an incident hold the only accurate account of what they saw, what they believed and why the action made sense at the time. If telling that story can cost them, they tell a shorter one, and the organisation loses the information it needs to fix the conditions that made the mistake easy. The error repeats with someone else's name on it.
+- **Counter:** **Accountability for Recklessness** — blameless is not consequence-free: a just culture still separates an honest mistake inside a bad system from knowingly disregarding a risk.
+- **Guideline:** Write the postmortem as a timeline of what people saw and why each action made sense then, and end with changes to the system, not to a person. Ban "human error" as a root cause; ask what made the error easy to make.
+- **Source:** John Allspaw, *Blameless PostMortems and a Just Culture* (Code as Craft, Etsy, 2012); the practice is codified in Lunney & Lueder, "Postmortem Culture", *Site Reliability Engineering* (O'Reilly, 2016), ch. 15. — [source ↗](https://www.etsy.com/codeascraft/blameless-postmortems)
+- **See also:** [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Hanlon's Razor](#hanlons-razor)
+
+### Working Backwards
+
+`§ 75` · Decision
+
+- **Concept:** Teams that start from a solution build things no customer needed; starting from the announcement exposes that early.
+- **Mechanism:** Engineers start from what they can build and look for customers afterwards. A press release written before any code forces the team to state who the customer is, what problem they have and why existing options fail, in words the customer would use. If that page is hard to write, the product is unclear, and rewriting a page is far cheaper than rewriting the product.
+- **Counter:** **Build to Learn** — when customers cannot judge an idea on paper (a new platform, an infrastructure change, something with no precedent) a cheap prototype tells you more than a polished press release.
+- **Guideline:** Before a project starts, write a one-page press release and an FAQ for the customer, and review them as a team. If you cannot name the customer and their problem in the first paragraph, do not start building.
+- **Source:** Ian McAllister, answer to "What is Amazon's approach to product development and product management?" (Quora, 2010) — the first public description; Colin Bryar & Bill Carr, *Working Backwards* (St. Martin's Press, 2021) — the PR/FAQ process in full. — [source ↗](https://www.workingbackwards.com/)
+- **See also:** [XY Problem](#xy-problem) · [YAGNI](#yagni)
+
+### Disagree and Commit
+
+`§ 76` · Decision
+
+- **Concept:** Waiting for everyone to agree costs more time than most wrong decisions would.
+- **Mechanism:** When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate nobody can know the answer anyway. A dissenter who keeps arguing also tends to half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating "do you agree" from "will you commit" lets the disagreement be stated fully and the work still go ahead at full effort.
+- **Counter:** **Dissent on One-Way Doors** — for an irreversible decision, or one with a safety or ethical risk, committing should not end the objection; escalate instead of going quiet.
+- **Guideline:** State your disagreement once, in full, with your reasons. Then say "I disagree and commit" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you.
+- **Source:** Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — "use the phrase 'disagree and commit'", with the Amazon Studios example. — [source ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
+- **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Law of Triviality](#law-of-triviality)
 
 <!-- CODEX:END -->
 
