@@ -596,7 +596,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ポステルの法則",
-      "concept": "相手が仕様どおりに動く前提のシステムは、最初の逸脱にもろい。",
+      "concept": "相手が仕様どおりに動く前提のシステムは、最初の逸脱にもろくなりがちだ。",
       "mechanism": "分散システムで全員が仕様を完璧に守ると想定すると、脆い失敗を招く。",
       "counter": {
         "name": "フェイルファスト (内部エラー限定)"
@@ -980,7 +980,7 @@ export const laws: Law[] = [
     ],
     "en": {
       "title": "Dunbar's Number",
-      "concept": "People keep only about 150 stable relationships, and engineers extrapolate that past shared context, headcount goes to coordination.",
+      "concept": "People keep only about 150 stable relationships. Engineers extrapolate: past shared context, added headcount goes to coordination.",
       "mechanism": "Humans can maintain approximately 150 stable social relationships. Dunbar's result is about neocortex size and group size across primates — it is not about work teams. What engineering extrapolates from it is a separate argument: communication channels grow as n(n-1)/2, so past the size where everyone can still hold everyone else's context, added people go into coordination rather than output.",
       "counter": {
         "name": "Two-Pizza Rule / Team Topologies"
@@ -990,7 +990,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "ダンバー数",
-      "concept": "人が安定して保てる関係は150人ほどだ。そこから、文脈を共有できる規模を超えると増員は調整に消える、と工学では推し量る。",
+      "concept": "人が安定して保てる関係は150人ほどだ。工学ではそこから、文脈を共有できる規模を超えると増員は調整に消える、と推し量る。",
       "mechanism": "人間が安定した社会関係を維持できる認知限界は約150人。ダンバーの結果は霊長類全般における新皮質サイズと群れの大きさの関係についてであって、仕事のチームについてではない。エンジニアリングがそこから外挿しているのは別の議論だ——コミュニケーション経路は n(n-1)/2 で増えるので、全員が全員の文脈をまだ保持できる規模を超えた時点から、増えた人員は成果ではなく調整に消える。",
       "counter": {
         "name": "ツー・ピザ・ルール / チームトポロジー"

@@ -86,7 +86,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `21` | [Survivorship Bias](#survivorship-bias) | Cognition | Conclusions drawn only from successes ignore the failures that used the same strategy. |
 | `22` | [Kernighan's Law](#kernighans-law) | Maintainability | Debugging is harder than writing, so code written at your cleverest is beyond your debugging. |
 | `23` | [Cobra Effect](#cobra-effect) | Incentives | An incentive meant to reduce a problem rewards people for producing more of it. |
-| `24` | [Dunbar's Number](#dunbars-number) | Organization | People keep only about 150 stable relationships, and engineers extrapolate that past shared context, headcount goes to coordination. |
+| `24` | [Dunbar's Number](#dunbars-number) | Organization | People keep only about 150 stable relationships. Engineers extrapolate: past shared context, added headcount goes to coordination. |
 | `25` | [Worse is Better](#worse-is-better) | Systems | A simpler design that is easy to build and adopt tends to beat a more correct but complex one. |
 | `26` | [Cunningham's Law](#cunninghams-law) | Organization | People are quicker to correct a wrong answer than to answer a question. |
 | `27` | [Bystander Effect](#bystander-effect) | Organization | The more people who see a problem, the less likely any one of them is to act on it. |
@@ -404,7 +404,7 @@ The architecture is downstream of the communication structure, not the org chart
 
 `§ 24` · Organization
 
-- **Concept:** People keep only about 150 stable relationships, and engineers extrapolate that past shared context, headcount goes to coordination.
+- **Concept:** People keep only about 150 stable relationships. Engineers extrapolate: past shared context, added headcount goes to coordination.
 - **Mechanism:** Humans can maintain approximately 150 stable social relationships. Dunbar's result is about neocortex size and group size across primates — it is not about work teams. What engineering extrapolates from it is a separate argument: communication channels grow as n(n-1)/2, so past the size where everyone can still hold everyone else's context, added people go into coordination rather than output.
 - **Counter:** **Two-Pizza Rule / Team Topologies**.
 - **Guideline:** When a team exceeds 7±2 people, split it. If "information-sharing meetings" start multiplying, that's the symptom of exceeding the cognitive limit.
