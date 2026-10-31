@@ -22,7 +22,7 @@ export default function Header({
         <Link href={home} className="font-bold">
           Hammurabi
         </Link>
-        <nav className="flex items-center gap-5">
+        <nav className="flex items-center gap-4 whitespace-nowrap sm:gap-5">
           <Link href={`${home}#laws`} className="navlink">
             {t.nav.laws}
           </Link>

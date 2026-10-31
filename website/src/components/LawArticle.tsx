@@ -72,7 +72,7 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
         </header>
 
         <div className="todo mt-8">
-          <p className="todo__label">{t.law.whatToDo}</p>
+          <h2 className="todo__label">{t.law.whatToDo}</h2>
           <p className="todo__body">
             <RichText>{text.guideline}</RichText>
           </p>

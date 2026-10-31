@@ -57,7 +57,7 @@ export const translations = {
         `エンジニアリングの法則 ${count} 本。それぞれに、どう動けばよいか、どこで当てはまらなくなるか、最初にどこで書かれたかを添えた。`,
     },
     nav: {
-      laws: '法則一覧',
+      laws: '法則',
       github: 'GitHub',
     },
     ui: {

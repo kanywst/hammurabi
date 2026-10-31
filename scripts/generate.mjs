@@ -151,12 +151,9 @@ function codexSection(laws, tags, situations, locale, depth) {
   return [
     WARNING,
     '',
-    `**${t.bySituation}**`,
-    '',
-    situationList(situations, bySlug, locale),
-    '',
-    `**${t.allLaws}**`,
-    '',
+    ...(situations.length > 0
+      ? [`**${t.bySituation}**`, '', situationList(situations, bySlug, locale), '', `**${t.allLaws}**`, '']
+      : []),
     indexTable(laws, tags, locale),
     '',
     ...laws.flatMap((law) => [entry(law, tags, locale, bySlug, depth), '']),

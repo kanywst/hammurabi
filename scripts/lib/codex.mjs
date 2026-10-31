@@ -50,7 +50,10 @@ export function loadCodex({ file = join(ROOT, 'data', 'laws.yaml') } = {}) {
   if (!raw || typeof raw !== 'object') fail('laws.yaml did not parse to an object');
   const tags = raw?.tags ?? {};
   const laws = raw?.laws ?? [];
-  const situations = raw?.situations ?? [];
+  const situations = Array.isArray(raw?.situations) ? raw.situations : [];
+  // The site's index always shows the situations, so an empty list would
+  // leave an empty sidebar rather than no sidebar.
+  if (!Array.isArray(raw?.situations) || raw.situations.length === 0) fail('situations: expected a non-empty list');
 
   if (!Array.isArray(laws) || laws.length === 0) fail('laws: expected a non-empty list');
 
@@ -141,8 +144,11 @@ export function loadCodex({ file = join(ROOT, 'data', 'laws.yaml') } = {}) {
       if (typeof situation?.[locale] !== 'string' || !situation[locale].trim()) fail(`${at}.${locale} is missing`);
     }
     if (!Array.isArray(situation?.laws) || situation.laws.length === 0) fail(`${at}: laws must be a non-empty list`);
+    const listed = new Set();
     for (const ref of situation?.laws ?? []) {
       if (!seenSlugs.has(ref)) fail(`${at}: law "${ref}" matches no law`);
+      if (listed.has(ref)) fail(`${at}: law "${ref}" is listed twice`);
+      listed.add(ref);
     }
   });
 

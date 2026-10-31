@@ -91,7 +91,7 @@ export default function LawsCodex({ lang }: { lang: Locale }) {
 
       <details className="mt-6 rounded-md border border-line-soft lg:hidden">
         <summary className="cursor-pointer px-4 py-3 font-bold">
-          {t.ui.situationsHeading}
+          <h2 className="inline">{t.ui.situationsHeading}</h2>
         </summary>
         <div className="px-4 pb-4">
           <Situations lang={lang} />
