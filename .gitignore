@@ -39,3 +39,6 @@ CLAUDE.local.md
 
 # Playwright MCP screenshots and traces
 .playwright-mcp/
+
+# Original portraits, cached by scripts/fetch-figures.mjs
+.cache/

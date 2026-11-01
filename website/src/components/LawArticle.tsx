@@ -2,7 +2,8 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { translations } from '@/translations';
 import { laws, lawBySlug, tags, type Law, type Locale } from '@/data/laws';
-import { article, DATA_URL, routeFor } from '@/lib/site';
+import { article, DATA_URL, hueFor, routeFor } from '@/lib/site';
+import Medallion from './Medallion';
 import RichText from './RichText';
 import LawDiagram from './diagrams';
 
@@ -12,6 +13,15 @@ function sentence(note: string, lang: Locale): string {
   return /[.!?。！？]$/.test(note)
     ? note
     : `${note}${lang === 'ja' ? '。' : '.'}`;
+}
+
+/** Where a picture's credit links to, named for the reader. */
+function creditSite(page: string): string {
+  const host = new URL(page).hostname;
+  if (host === 'commons.wikimedia.org') return 'Wikimedia Commons';
+  if (host.endsWith('wikipedia.org')) return 'Wikipedia';
+  if (host === 'apps.apple.com') return 'App Store';
+  return host;
 }
 
 /** A titled part of the article. Plain headings, so a reader scanning down the
@@ -58,17 +68,27 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
           <ArrowLeft className="h-4 w-4" aria-hidden /> {t.law.backToCodex}
         </Link>
 
-        <header className="mt-8">
-          <p className="meta">
-            <span className="num">§ {article(law.number)}</span>
-            {tag ? <span> · {tag[lang]}</span> : null}
-          </p>
-          <h1 className="mt-1 text-[clamp(1.875rem,5vw,2.375rem)] font-bold leading-tight tracking-[-0.015em]">
-            {text.title}
-          </h1>
-          <p className="mt-3 text-[1.1875rem] leading-relaxed text-ink-2">
-            {text.concept}
-          </p>
+        <header className="mt-8 flex flex-col-reverse gap-6 sm:flex-row sm:items-start sm:justify-between">
+          <div className="min-w-0">
+            <p className="meta">
+              <span className="num">§ {article(law.number)}</span>
+              {tag ? <span> · {tag[lang]}</span> : null}
+            </p>
+            <h1 className="mt-1 text-[clamp(1.875rem,5vw,2.375rem)] font-bold leading-tight tracking-[-0.015em]">
+              {text.title}
+            </h1>
+            <p className="mt-3 text-[1.1875rem] leading-relaxed text-ink-2">
+              {text.concept}
+            </p>
+          </div>
+          <figure className="flex shrink-0 items-center gap-5 sm:flex-col sm:gap-3">
+            <Medallion figure={law.figure} hue={hueFor(law.tag)} size="lg" />
+            {law.figure.name ? (
+              <figcaption className="meta sm:max-w-[9rem] sm:text-center">
+                {law.figure.name}
+              </figcaption>
+            ) : null}
+          </figure>
         </header>
 
         <div className="todo mt-8">
@@ -113,6 +133,32 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
             {t.law.sourceLink}
             <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden />
           </a>
+          {law.figure.credit ? (
+            <p className="meta mt-4">
+              {law.figure.logo
+                ? t.law.logoCredit
+                : law.figure.kind === 'person'
+                  ? t.law.portraitCredit
+                  : t.law.imageCredit}
+              {lang === 'ja' ? '：' : ': '}
+              {[law.figure.credit.author, law.figure.credit.license]
+                .filter(Boolean)
+                .join(', ')}
+              {law.figure.credit.page ? (
+                <>
+                  {' · '}
+                  <a
+                    href={law.figure.credit.page}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="link"
+                  >
+                    {creditSite(law.figure.credit.page)}
+                  </a>
+                </>
+              ) : null}
+            </p>
+          ) : null}
         </Part>
 
         {related.length > 0 && (

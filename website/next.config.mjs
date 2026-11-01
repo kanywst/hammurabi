@@ -1,3 +1,6 @@
+// GitHub Pages serves the site under the repository name.
+const basePath = process.env.NODE_ENV === 'production' ? '/hammurabi' : '';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
@@ -14,9 +17,11 @@ const nextConfig = {
   // reliably; without this the export emits `ja.html` and every nested route
   // becomes a coin flip.
   trailingSlash: true,
-  // GitHub Pages のサブパス（リポジトリ名）に合わせて設定
-  basePath: process.env.NODE_ENV === 'production' ? '/hammurabi' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/hammurabi/' : '',
+  basePath,
+  assetPrefix: basePath ? `${basePath}/` : '',
+  // next/link adds basePath to routes, but a plain <img src> does not; this is
+  // what asset() in src/lib/site.ts prefixes files under public/ with.
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
 };
 
 export default nextConfig;

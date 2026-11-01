@@ -19,6 +19,10 @@
   --color-accent: #1d47b8;
   --color-accent-soft: #e6ecfa;
 
+  /* The ground behind a portrait or a company mark. White in both themes,
+     because logos are drawn for a white background. */
+  --color-medal: #ffffff;
+
   --font-sans:
     var(--font-text-face), 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
     'Noto Sans JP', 'Yu Gothic', system-ui, sans-serif;
@@ -164,12 +168,14 @@ html:lang(ja) body {
     opacity: 0.8;
   }
 
-  /* One law, one row: number, name, the claim, the category. The whole row is
-     the link, so the target is the full width rather than the name alone. */
+  /* One law, one row: its medallion, the name with its § number and category,
+     then the claim. The whole row is the link, so the target is the full
+     width rather than the name alone. */
   .row {
     display: grid;
-    grid-template-columns: 2rem minmax(0, 1fr);
-    column-gap: 0.75rem;
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    column-gap: 0.875rem;
+    align-items: start;
     padding: 0.75rem 0.5rem;
     margin: 0 -0.5rem;
     border-radius: 4px;
@@ -200,8 +206,8 @@ html:lang(ja) body {
 
   @media (min-width: 56rem) {
     .row {
-      grid-template-columns: 2.25rem 15rem minmax(0, 1fr);
-      align-items: baseline;
+      grid-template-columns: 3.5rem 15rem minmax(0, 1fr);
+      align-items: center;
     }
   }
 
@@ -230,6 +236,114 @@ html:lang(ja) body {
   :lang(ja) .todo__body {
     font-size: 1.125rem;
     line-height: 1.8;
+  }
+}
+
+@layer components {
+  /* The face of a law: a round frame around a portrait in its own colours, a
+     company mark on white, or a seal in the law's category colour. */
+  .medal {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 999px;
+    overflow: hidden;
+    background: var(--color-medal);
+    box-shadow:
+      0 0 0 1px var(--color-line),
+      0 1px 3px color-mix(in srgb, black 12%, transparent);
+  }
+
+  /* The gap between the two rings is the page colour, so the frame does not
+     glare in the dark theme. Smaller on a phone, where it sits beside its
+     caption rather than beside the title. */
+  .medal--lg {
+    width: 7.5rem;
+    height: 7.5rem;
+    box-shadow:
+      0 0 0 1px var(--color-line),
+      0 0 0 5px var(--color-paper),
+      0 0 0 6px var(--color-line),
+      0 6px 20px color-mix(in srgb, black 14%, transparent);
+  }
+
+  .medal--portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: 40rem) {
+    .medal--lg {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+
+  .medal--logo img {
+    width: 68%;
+    height: 68%;
+    object-fit: contain;
+  }
+
+  /* A wordmark has to fill the circle's width to be read at 56px. */
+  .medal--wide img {
+    width: 88%;
+    height: 88%;
+  }
+
+  /* Seal: initials in a bookish serif, struck in the category's colour, so a
+     law without a picture still reads as a coin rather than an empty slot.
+     --seal-hue is set per category by the component. */
+  .medal--seal {
+    color: white;
+    background:
+      radial-gradient(
+        circle at 32% 28%,
+        color-mix(in srgb, white 20%, transparent),
+        transparent 62%
+      ),
+      /* Dark enough that the white initials stay above 4.5:1 on every hue,
+         highlight included. */
+        oklch(0.47 0.14 var(--seal-hue, 260));
+  }
+
+  .medal--seal::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: inherit;
+    border: 1px solid color-mix(in srgb, white 55%, transparent);
+    pointer-events: none;
+  }
+
+  .medal--lg.medal--seal::after {
+    inset: 8px;
+    border-width: 2px;
+  }
+
+  .medal__mono {
+    font-family:
+      'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia,
+      serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    text-shadow: 0 1px 1px color-mix(in srgb, black 25%, transparent);
+  }
+
+  .medal--lg .medal__mono {
+    font-size: 3.25rem;
+  }
+
+  .row:hover .medal,
+  .row:focus-visible .medal {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
   }
 }
 

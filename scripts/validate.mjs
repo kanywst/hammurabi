@@ -6,10 +6,20 @@
  * numbering in the markdown and the numbering on the site disagreed. This is the
  * check that makes that class of bug impossible to commit.
  */
-import { loadCodex, LOCALES } from './lib/codex.mjs';
+import { loadCodex, loadFigures, LOCALES } from './lib/codex.mjs';
 
 const { tags, laws, problems } = loadCodex();
 const warnings = [];
+
+// Every law is pictured by something, and every picture belongs to a law.
+const figureCheck = loadFigures();
+problems.push(...figureCheck.problems);
+for (const law of laws) {
+  if (!figureCheck.figures.has(law.slug)) problems.push(`${law.slug}: missing from data/figures.yaml`);
+}
+for (const slug of figureCheck.figures.keys()) {
+  if (!laws.some((l) => l.slug === slug)) problems.push(`figures.yaml: ${slug} is not a law`);
+}
 
 // Every declared category should be in use; an orphan is nearly always a typo
 // in a law's tag rather than a deliberately empty category.
