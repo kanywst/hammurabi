@@ -608,6 +608,7 @@ laws:
   - slug: hanlons-razor
     tag: organization
     source_url: https://en.wikipedia.org/wiki/Hanlon%27s_razor
+    example_url: "https://blog.cloudflare.com/18-november-2025-outage/"
     see_also:
       - bystander-effect
       - occams-razor
@@ -623,6 +624,8 @@ laws:
           some failures are malicious, and an attacker relies on looking like an honest mistake; the xz utils backdoor (2024) came from a helpful, patient contributor
       guideline: |-
         Before you attribute a failure to intent, find out what the person could see at the time, and fix what was missing. Raise intent only with evidence, and then privately.
+      example: |-
+        When Cloudflare's network began failing on November 18, 2025, the team at first suspected a hyper-scale DDoS attack, a suspicion strengthened when its separately hosted status page went down at the same time by coincidence. The real cause was a database permissions change that made a query return duplicate rows, doubling a Bot Management feature file past a size limit in the routing software. Cloudflare's postmortem states the outage was not caused by any attack or malicious activity.
       source: |-
         Robert J. Hanlon, contributed to *Murphy's Law Book Two* (Arthur Bloch, 1980).
     ja:
@@ -636,6 +639,8 @@ laws:
           悪意による失敗もあり、攻撃者は正直なミスに見えることを当てにしている。xz utils のバックドア（2024年）は、親切で辛抱強い貢献者が持ち込んだものだった
       guideline: |-
         失敗を意図のせいにする前に、その人がその時点で何を見られたかを確かめ、欠けていたものを補う。意図を問題にするのは証拠があるときだけにし、その場合も一対一で話す。
+      example: |-
+        2025年11月18日に Cloudflare のネットワークが障害を起こしたとき、チームは当初、超大規模な DDoS 攻撃を疑った。別の場所で運用していたステータスページが偶然同時に落ちたことで、その疑いは強まった。実際の原因はデータベースの権限変更で、クエリが重複行を返すようになり、Bot Management の特徴量ファイルが倍の大きさになってルーティングソフトウェアのサイズ上限を超えた。Cloudflare の事後報告は、攻撃や悪意ある行為によるものではなかったと明記している。
       source: |-
         Robert J. Hanlon が『Murphy's Law Book Two』(Arthur Bloch 編, 1980) に寄稿した格言。
 
@@ -2416,7 +2421,6 @@ laws:
   - slug: occams-razor
     tag: cognition
     source_url: https://en.wikipedia.org/wiki/Occam%27s_razor
-    example_url: "https://blog.cloudflare.com/18-november-2025-outage/"
     see_also:
       - normalcy-bias
       - hanlons-razor
@@ -2431,8 +2435,6 @@ laws:
           a system can carry several independent faults at once, and the simplest story that fits the symptoms is not automatically the true one
       guideline: |-
         Rank your hypotheses by how many unverified assumptions each needs, and test the cheapest first. Ask "what changed?" before "what is broken?"
-      example: |-
-        When Cloudflare's network started failing on November 18, 2025, its status page, hosted outside Cloudflare, went down at the same time, and the team suspected a large DDoS attack aimed at both. The cause was a database permissions change that made a query emit duplicate rows, doubling a Bot Management feature file that then crashed the proxy software across the network. The status page outage was a coincidence.
       source: |-
         Attributed to William of Ockham (c. 1287–1347); the shaving metaphor and the formula *entia non sunt multiplicanda praeter necessitatem* are both later glosses on his principle of parsimony.
     ja:
@@ -2446,8 +2448,6 @@ laws:
           システムは独立した障害を同時にいくつも抱えることがある。症状に合ういちばん単純な説明が、そのまま真実とは限らない
       guideline: |-
         仮説を「未検証の仮定がいくつ必要か」で並べ、安く確かめられるものから検証する。「何が壊れたか」より先に「何が変わったか」を聞く。
-      example: |-
-        2025年11月18日に Cloudflare のネットワークが障害を起こし始めたとき、Cloudflare の外でホストしているステータスページも同時に落ちたため、チームは両方を狙った大規模な DDoS 攻撃を疑った。実際の原因はデータベースの権限変更だった。これでクエリが重複した行を返し、Bot Management の特徴量ファイルが倍の大きさになり、ネットワーク全体でプロキシのソフトウェアを落とした。ステータスページの停止はただの偶然だった。
       source: |-
         オッカムのウィリアム (1287 年頃–1347) に帰される。「剃刀」の比喩も、定式 *entia non sunt multiplicanda praeter necessitatem* も、彼の倹約の原理に対する後世の注釈である。
 
@@ -2754,7 +2754,7 @@ laws:
       guideline: |-
         For any team or tool created to fix something, write down what "fixed" looks like and when you will check. A platform team that cannot describe its own obsolescence is optimizing for its own survival.
       example: |-
-        ProPublica reported in October 2019, from Intuit's internal documents, that the maker of TurboTax had spent two decades fighting proposals to make US tax filing free and simple, including a government-run free filing option and return-free filing where the IRS pre-fills returns. A 2007 Intuit board presentation said: "For a decade proposals have sought to create IRS tax software or a ReturnFree Tax System; All were stopped." A company that sells help with a complicated chore worked to keep the chore complicated.
+        ProPublica reported in October 2019, from Intuit's internal documents, that the maker of TurboTax had spent two decades fighting proposals to make US tax filing free and simple, including a government-run free filing option and return-free filing where the IRS pre-fills returns. A 2007 Intuit board presentation said: "For a decade proposals have sought to create IRS tax software or a ReturnFree Tax System; All were stopped." In ProPublica's reading, a company that sells help with a complicated chore worked to keep the chore complicated.
       source: |-
         Clay Shirky, named and quoted in Kevin Kelly, *The Shirky Principle* (The Technium, 2010).
     ja:
@@ -2770,7 +2770,7 @@ laws:
       guideline: |-
         何かを直すために作ったチームやツールには、「直った」とはどういう状態か、いつそれを確かめるかを書き出しておく。自分たちが不要になる条件を説明できないプラットフォームチームは、自分たちの存続を目的にしている。
       example: |-
-        ProPublica は2019年10月、Intuit の社内文書をもとに、TurboTax を売るこの会社が20年にわたり米国の確定申告を無料で簡単にする提案に反対してきたと報じた。対象には政府が運営する無料の申告手段や、IRS が申告書を事前に記入しておく方式も含まれる。2007年の取締役会資料には「10年間、IRS の税務ソフトや ReturnFree Tax System を作る提案が出てきたが、すべて止めた」とある。面倒な手続きの手助けを売る会社が、その手続きを面倒なままにしようとしていた。
+        ProPublica は2019年10月、Intuit の社内文書をもとに、TurboTax を売るこの会社が20年にわたり米国の確定申告を無料で簡単にする提案に反対してきたと報じた。対象には政府が運営する無料の申告手段や、IRS が申告書を事前に記入しておく方式も含まれる。2007年の取締役会資料には「10年間、IRS の税務ソフトや ReturnFree Tax System を作る提案が出てきたが、すべて止めた」とある。ProPublica の見立てでは、面倒な手続きの手助けを売る会社が、その手続きを面倒なままにしようとしていた。
       source: |-
         Clay Shirky の言。Kevin Kelly『The Shirky Principle』(The Technium, 2010) で命名・引用された。
 
@@ -3608,7 +3608,7 @@ laws:
       concept: |-
         The fewer people who can keep a system running, the more its future depends on each of them staying.
       mechanism: |-
-        Knowledge concentrates on its own: whoever wrote a part fixes it fastest, so the next change goes to them too, and every round widens the gap. Nobody decides to make one person indispensable; it is the cheapest choice each time, and the risk stays invisible until that person leaves, falls ill or simply goes on vacation. In a sample of 133 popular GitHub projects, Avelino and colleagues found that 65% have a truck factor of two or less, meaning that losing at most two developers would leave most of their files without an active author. Spreading knowledge spends time now against a loss that may never come, so it loses every scheduling argument unless someone makes it an explicit goal.
+        Knowledge tends to concentrate on its own: whoever wrote a part fixes it fastest, so the next change goes to them too, and every round widens the gap. Nobody decides to make one person indispensable; it is the cheapest choice each time, and the risk stays invisible until that person leaves, falls ill or simply goes on vacation. In a sample of 133 popular GitHub projects, Avelino and colleagues found that 65% have a truck factor of two or less, meaning that losing at most two developers would leave most of their files without an active author. Spreading knowledge spends time now against a loss that may never come, so it usually loses the scheduling argument unless someone makes it an explicit goal.
       counter:
         name: Depth of Ownership
         note: |-
@@ -3623,7 +3623,7 @@ laws:
       title: バス係数
       concept: システムを動かし続けられる人が少ないほど、その将来は一人ひとりが辞めずにいることにかかってくる。
       mechanism: |-
-        知識は放っておくと偏る。ある部分を書いた人が一番速く直せるので、次の変更もその人に回り、そのたびに差が開く。誰か一人を欠かせない存在にしようと決めた人はいない。その都度いちばん安い選択をした結果で、そのリスクは本人が辞めるか、病気になるか、ただ休暇を取るまで見えない。Avelino らが GitHub の人気プロジェクト133件を調べたところ、65%はトラック係数が2以下だった。開発者が一人か二人抜けるだけで、大半のファイルを書いた人がいなくなる。知識を広げるのは、来ないかもしれない損失に備えて今の時間を使うことなので、誰かがはっきり目標に掲げない限り、スケジュールの議論では毎回負ける。
+        知識は放っておくと偏りやすい。ある部分を書いた人が一番速く直せるので、次の変更もその人に回り、そのたびに差が開く。誰か一人を欠かせない存在にしようと決めた人はいない。その都度いちばん安い選択をした結果で、そのリスクは本人が辞めるか、病気になるか、ただ休暇を取るまで見えない。Avelino らが GitHub の人気プロジェクト133件を調べたところ、65%はトラック係数が2以下だった。開発者が一人か二人抜けるだけで、大半のファイルを書いた人がいなくなる。知識を広げるのは、来ないかもしれない損失に備えて今の時間を使うことなので、誰かがはっきり目標に掲げない限り、スケジュールの議論ではたいてい負ける。
       counter:
         name: 所有の深さ
         note: |-
