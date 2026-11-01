@@ -380,3 +380,97 @@ html:lang(ja) body {
     scroll-behavior: smooth;
   }
 }
+
+/* Print layouts: the card deck and the poster. On screen the sheets are shown
+   as paper so the layout can be checked before printing. */
+@layer components {
+  .sheet {
+    display: grid;
+    grid-template-columns: repeat(3, 63mm);
+    grid-auto-rows: 88mm;
+    justify-content: center;
+    align-content: start;
+    width: 210mm;
+    min-height: 297mm;
+    padding-top: 10mm;
+    margin: 0 auto 2rem;
+    background: white;
+    color: #17181a;
+    box-shadow: 0 0 0 1px var(--color-line);
+  }
+
+  .card {
+    padding: 4mm;
+    outline: 0.2mm dashed #c9ccc8;
+    overflow: hidden;
+  }
+
+  .card--back {
+    background: #f6f7f4;
+  }
+
+  .poster {
+    width: 420mm;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 12mm;
+    background: white;
+    color: #17181a;
+    box-shadow: 0 0 0 1px var(--color-line);
+  }
+
+  .poster__head {
+    display: flex;
+    align-items: baseline;
+    gap: 6mm;
+    border-bottom: 0.4mm solid #17181a;
+    padding-bottom: 3mm;
+    margin-bottom: 5mm;
+  }
+
+  .poster__list {
+    columns: 4;
+    column-gap: 8mm;
+    font-size: 8pt;
+    line-height: 1.35;
+  }
+
+  .poster__item {
+    break-inside: avoid;
+    margin-bottom: 2.2mm;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0;
+  }
+
+  header,
+  footer,
+  .no-print,
+  button[aria-label] {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  /* The sheet is the page: no wrapper padding, so fronts and backs land at
+     the same place on paper. */
+  .print-root {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  .sheet {
+    box-shadow: none;
+    margin: 0;
+    break-after: page;
+  }
+
+  .poster {
+    box-shadow: none;
+  }
+}

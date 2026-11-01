@@ -56,6 +56,28 @@ export function lawJsonLd(law: Law, locale: Locale) {
       name: law[locale].source,
       url: law.sourceUrl,
     },
-    image: `${SITE_URL}/banner.jpg`,
+    image: `${SITE_URL}/og/${locale}/${law.slug}.png`,
+  };
+}
+
+/** Codex > article, so a search result can show where the page sits. */
+export function lawBreadcrumbJsonLd(law: Law, locale: Locale) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Hammurabi',
+        item: urlFor(locale),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: law[locale].title,
+        item: urlFor(locale, law.slug),
+      },
+    ],
   };
 }

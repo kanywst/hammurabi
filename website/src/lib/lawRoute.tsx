@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import LawArticle from '@/components/LawArticle';
 import PageShell from '@/components/PageShell';
 import JsonLd from '@/components/JsonLd';
-import { lawJsonLd } from './jsonld';
+import { lawBreadcrumbJsonLd, lawJsonLd } from './jsonld';
 import { alternatesFor, OG_LOCALE, routeFor, SITE_URL, urlFor } from './site';
 import { laws, lawBySlug, type Locale } from '@/data/laws';
 
@@ -72,6 +72,7 @@ export function makeLawRoute(locale: Locale) {
     return (
       <PageShell lang={locale} counterpart={routeFor(other, law.slug)}>
         <JsonLd data={lawJsonLd(law, locale)} />
+        <JsonLd data={lawBreadcrumbJsonLd(law, locale)} />
         <LawArticle law={law} lang={locale} />
       </PageShell>
     );
