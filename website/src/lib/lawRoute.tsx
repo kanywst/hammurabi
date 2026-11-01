@@ -4,7 +4,7 @@ import LawArticle from '@/components/LawArticle';
 import PageShell from '@/components/PageShell';
 import JsonLd from '@/components/JsonLd';
 import { lawJsonLd } from './jsonld';
-import { alternatesFor, OG_LOCALE, routeFor, urlFor } from './site';
+import { alternatesFor, OG_LOCALE, routeFor, SITE_URL, urlFor } from './site';
 import { laws, lawBySlug, type Locale } from '@/data/laws';
 
 type Params = { slug: string };
@@ -31,7 +31,16 @@ export function makeLawRoute(locale: Locale) {
 
     const text = law[locale];
     const title = text.title;
-    const description = `${text.concept} ${text.mechanism}`.slice(0, 200);
+    // The claim alone: it is one sentence, so nothing is cut mid-word.
+    const description = text.concept;
+    // Drawn by scripts/og.mjs after the build. Setting openGraph here replaces
+    // the root's, so the image and site name have to be given again.
+    const image = {
+      url: `${SITE_URL}/og/${locale}/${law.slug}.png`,
+      width: 1200,
+      height: 630,
+      alt: title,
+    };
 
     return {
       title,
@@ -41,10 +50,17 @@ export function makeLawRoute(locale: Locale) {
         type: 'article',
         url: urlFor(locale, law.slug),
         locale: OG_LOCALE[locale],
+        siteName: 'Hammurabi',
         title,
         description,
+        images: [image],
       },
-      twitter: { card: 'summary_large_image', title, description },
+      twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
+        images: [image.url],
+      },
     };
   }
 

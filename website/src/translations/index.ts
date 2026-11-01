@@ -48,6 +48,11 @@ export const translations = {
       next: 'Next',
       editOnGitHub: 'Suggest a correction on GitHub',
     },
+    share: { copy: 'Copy link', copied: 'Copied', hatena: 'Hatena' },
+    cite: {
+      heading: 'Cite this',
+      note: 'Text under CC BY-SA 4.0: credit Hammurabi and link the article.',
+    },
     footer:
       'Text licensed CC BY-SA 4.0. Code licensed MIT. Photos are credited on each article under their own licences. Company logos are trademarks of their owners, shown only to say where a practice comes from.',
     switcher: { label: 'Language', other: '日本語' },
@@ -100,6 +105,15 @@ export const translations = {
       previous: '前へ',
       next: '次へ',
       editOnGitHub: 'GitHub で誤りを指摘する',
+    },
+    share: {
+      copy: 'リンクをコピー',
+      copied: 'コピーしました',
+      hatena: 'はてブ',
+    },
+    cite: {
+      heading: '引用するとき',
+      note: '本文は CC BY-SA 4.0 です。Hammurabi の名前と記事へのリンクを添えてください。',
     },
     footer:
       '本文は CC BY-SA 4.0、コードは MIT です。写真のライセンスは各記事に書いています。企業ロゴは各社の商標で、どこから来た考えかを示すためだけに載せています。',

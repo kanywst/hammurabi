@@ -41,6 +41,10 @@ export function alternatesFor(locale: Locale, slug?: string) {
       ja: urlFor('ja', slug),
       'x-default': urlFor(DEFAULT_LOCALE, slug),
     },
+    // Lets a feed reader find the RSS feed from any page.
+    types: {
+      'application/rss+xml': `${urlFor(locale)}feed.xml`,
+    },
   };
 }
 

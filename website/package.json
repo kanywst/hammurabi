@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/postbuild.mjs",
+    "build": "next build && node scripts/postbuild.mjs && node scripts/feeds.mjs && node scripts/og.mjs",
     "start": "next start",
     "lint": "eslint .",
     "format:check": "prettier --check .",
