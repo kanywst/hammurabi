@@ -13,6 +13,8 @@ export interface LawText {
   mechanism: string;
   counter: Counter;
   guideline: string;
+  /** "In practice": a real, documented case, when one has been found. */
+  example?: string;
   source: string;
 }
 
@@ -40,6 +42,7 @@ export interface Law {
   number: number;
   tag: string;
   sourceUrl: string;
+  exampleUrl: string | null;
   seeAlso: string[];
   /** One of the editor's picks, shown at the top of the index. */
   featured: boolean;
@@ -303,6 +306,7 @@ export const laws: Law[] = [
     "number": 1,
     "tag": "decision",
     "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm",
+    "exampleUrl": null,
     "seeAlso": [
       "sunk-cost-fallacy",
       "parkinsons-law",
@@ -350,6 +354,7 @@ export const laws: Law[] = [
     "number": 2,
     "tag": "safety",
     "sourceUrl": "https://www.press.uchicago.edu/ucp/books/book/chicago/C/bo22781921.html",
+    "exampleUrl": null,
     "seeAlso": [
       "swiss-cheese-model",
       "normal-accident-theory",
@@ -398,6 +403,7 @@ export const laws: Law[] = [
     "number": 3,
     "tag": "systems",
     "sourceUrl": "https://www.chesterton.org/taking-a-fence-down/",
+    "exampleUrl": null,
     "seeAlso": [
       "eaglesons-law",
       "yagni"
@@ -444,6 +450,7 @@ export const laws: Law[] = [
     "number": 4,
     "tag": "cognition",
     "sourceUrl": "https://en.wikipedia.org/wiki/Normalcy_bias",
+    "exampleUrl": null,
     "seeAlso": [
       "murphys-law",
       "normalization-of-deviance",
@@ -491,6 +498,7 @@ export const laws: Law[] = [
     "number": 5,
     "tag": "organization",
     "sourceUrl": "https://en.wikipedia.org/wiki/Law_of_triviality",
+    "exampleUrl": null,
     "seeAlso": [
       "parkinsons-law",
       "disagree-and-commit",
@@ -538,6 +546,7 @@ export const laws: Law[] = [
     "number": 6,
     "tag": "systems",
     "sourceUrl": "https://en.wikipedia.org/wiki/John_Gall_(author)",
+    "exampleUrl": null,
     "seeAlso": [
       "worse-is-better",
       "yagni",
@@ -586,6 +595,7 @@ export const laws: Law[] = [
     "number": 7,
     "tag": "organization",
     "sourceUrl": "https://www.melconway.com/Home/Committees_Paper.html",
+    "exampleUrl": null,
     "seeAlso": [
       "dunbars-number",
       "brooks-law",
@@ -631,6 +641,7 @@ export const laws: Law[] = [
     "number": 8,
     "tag": "systems",
     "sourceUrl": "https://www.hyrumslaw.com/",
+    "exampleUrl": null,
     "seeAlso": [
       "postels-law",
       "principle-of-least-astonishment",
@@ -675,6 +686,7 @@ export const laws: Law[] = [
     "number": 9,
     "tag": "organization",
     "sourceUrl": "https://en.wikipedia.org/wiki/Brooks%27s_law",
+    "exampleUrl": null,
     "seeAlso": [
       "conways-law",
       "dunbars-number",
@@ -723,6 +735,7 @@ export const laws: Law[] = [
     "number": 10,
     "tag": "cognition",
     "sourceUrl": "https://xyproblem.info/",
+    "exampleUrl": null,
     "seeAlso": [
       "curse-of-knowledge",
       "working-backwards",
@@ -770,6 +783,7 @@ export const laws: Law[] = [
     "number": 11,
     "tag": "distributed-systems",
     "sourceUrl": "https://www.rfc-editor.org/rfc/rfc761",
+    "exampleUrl": null,
     "seeAlso": [
       "hyrums-law",
       "fallacies-of-distributed-computing"
@@ -816,6 +830,7 @@ export const laws: Law[] = [
     "number": 12,
     "tag": "organization",
     "sourceUrl": "https://en.wikipedia.org/wiki/Hanlon%27s_razor",
+    "exampleUrl": null,
     "seeAlso": [
       "bystander-effect",
       "occams-razor",
@@ -863,6 +878,7 @@ export const laws: Law[] = [
     "number": 13,
     "tag": "estimation",
     "sourceUrl": "https://en.wikipedia.org/wiki/Hofstadter%27s_law",
+    "exampleUrl": null,
     "seeAlso": [
       "ninety-ninety-rule",
       "parkinsons-law",
@@ -910,6 +926,7 @@ export const laws: Law[] = [
     "number": 14,
     "tag": "incentives",
     "sourceUrl": "https://en.wikipedia.org/wiki/Goodhart%27s_law",
+    "exampleUrl": null,
     "seeAlso": [
       "cobra-effect",
       "shirky-principle",
@@ -958,6 +975,7 @@ export const laws: Law[] = [
     "number": 15,
     "tag": "systems",
     "sourceUrl": "https://en.wikipedia.org/wiki/Lindy_effect",
+    "exampleUrl": null,
     "seeAlso": [
       "worse-is-better",
       "amaras-law",
@@ -1005,6 +1023,7 @@ export const laws: Law[] = [
     "number": 16,
     "tag": "decision",
     "sourceUrl": "https://doi.org/10.1016/0749-5978(85)90049-4",
+    "exampleUrl": null,
     "seeAlso": [
       "type-1-vs-type-2-decisions",
       "fixed-time-variable-scope"
@@ -1051,6 +1070,7 @@ export const laws: Law[] = [
     "number": 17,
     "tag": "cognition",
     "sourceUrl": "https://calteches.library.caltech.edu/51/2/CargoCult.htm",
+    "exampleUrl": null,
     "seeAlso": [
       "survivorship-bias",
       "the-bitter-lesson"
@@ -1097,6 +1117,7 @@ export const laws: Law[] = [
     "number": 18,
     "tag": "performance",
     "sourceUrl": "https://doi.org/10.1145/1465482.1465560",
+    "exampleUrl": null,
     "seeAlso": [
       "gustafsons-law",
       "premature-optimization",
@@ -1144,6 +1165,7 @@ export const laws: Law[] = [
     "number": 19,
     "tag": "systems",
     "sourceUrl": "https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/",
+    "exampleUrl": null,
     "seeAlso": [
       "teslers-law",
       "law-of-demeter"
@@ -1190,6 +1212,7 @@ export const laws: Law[] = [
     "number": 20,
     "tag": "decision",
     "sourceUrl": "https://en.wikipedia.org/wiki/Pareto_principle",
+    "exampleUrl": null,
     "seeAlso": [
       "premature-optimization"
     ],
@@ -1235,6 +1258,7 @@ export const laws: Law[] = [
     "number": 21,
     "tag": "cognition",
     "sourceUrl": "https://en.wikipedia.org/wiki/Survivorship_bias",
+    "exampleUrl": null,
     "seeAlso": [
       "cargo-cult-engineering",
       "amaras-law"
@@ -1281,6 +1305,7 @@ export const laws: Law[] = [
     "number": 22,
     "tag": "maintainability",
     "sourceUrl": "https://en.wikipedia.org/wiki/The_Elements_of_Programming_Style",
+    "exampleUrl": null,
     "seeAlso": [
       "eaglesons-law",
       "kiss-principle"
@@ -1327,6 +1352,7 @@ export const laws: Law[] = [
     "number": 23,
     "tag": "incentives",
     "sourceUrl": "https://en.wikipedia.org/wiki/Perverse_incentive",
+    "exampleUrl": null,
     "seeAlso": [
       "goodharts-law",
       "jevons-paradox"
@@ -1373,6 +1399,7 @@ export const laws: Law[] = [
     "number": 24,
     "tag": "organization",
     "sourceUrl": "https://doi.org/10.1016/0047-2484(92)90081-J",
+    "exampleUrl": null,
     "seeAlso": [
       "conways-law",
       "brooks-law",
@@ -1422,6 +1449,7 @@ export const laws: Law[] = [
     "number": 25,
     "tag": "systems",
     "sourceUrl": "https://www.dreamsongs.com/RiseOfWorseIsBetter.html",
+    "exampleUrl": null,
     "seeAlso": [
       "galls-law",
       "lindy-effect",
@@ -1465,6 +1493,7 @@ export const laws: Law[] = [
     "number": 26,
     "tag": "organization",
     "sourceUrl": "https://meta.wikimedia.org/wiki/Cunningham%27s_Law",
+    "exampleUrl": null,
     "seeAlso": [
       "linus-law"
     ],
@@ -1510,6 +1539,7 @@ export const laws: Law[] = [
     "number": 27,
     "tag": "organization",
     "sourceUrl": "https://doi.org/10.1037/h0025589",
+    "exampleUrl": null,
     "seeAlso": [
       "hanlons-razor",
       "ringelmann-effect",
@@ -1553,6 +1583,7 @@ export const laws: Law[] = [
     "number": 28,
     "tag": "safety",
     "sourceUrl": "https://en.wikipedia.org/wiki/Murphy%27s_law",
+    "exampleUrl": null,
     "seeAlso": [
       "normalcy-bias",
       "fallacies-of-distributed-computing",
@@ -1600,6 +1631,7 @@ export const laws: Law[] = [
     "number": 29,
     "tag": "maintainability",
     "sourceUrl": "https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html",
+    "exampleUrl": null,
     "seeAlso": [
       "normalization-of-deviance",
       "broken-windows-theory",
@@ -1647,6 +1679,7 @@ export const laws: Law[] = [
     "number": 30,
     "tag": "systems",
     "sourceUrl": "https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity",
+    "exampleUrl": null,
     "seeAlso": [
       "leaky-abstractions",
       "ashbys-law"
@@ -1693,6 +1726,7 @@ export const laws: Law[] = [
     "number": 31,
     "tag": "cognition",
     "sourceUrl": "https://doi.org/10.1037/0022-3514.77.6.1121",
+    "exampleUrl": null,
     "seeAlso": [
       "curse-of-knowledge",
       "peter-principle"
@@ -1739,6 +1773,7 @@ export const laws: Law[] = [
     "number": 32,
     "tag": "cognition",
     "sourceUrl": "https://doi.org/10.1086/261651",
+    "exampleUrl": null,
     "seeAlso": [
       "xy-problem",
       "dunning-kruger-effect",
@@ -1787,6 +1822,7 @@ export const laws: Law[] = [
     "number": 33,
     "tag": "safety",
     "sourceUrl": "https://doi.org/10.1136/bmj.320.7237.768",
+    "exampleUrl": null,
     "seeAlso": [
       "normalization-of-deviance",
       "normal-accident-theory",
@@ -1835,6 +1871,7 @@ export const laws: Law[] = [
     "number": 34,
     "tag": "performance",
     "sourceUrl": "https://doi.org/10.1145/356635.356640",
+    "exampleUrl": null,
     "seeAlso": [
       "amdahls-law",
       "pareto-principle"
@@ -1881,6 +1918,7 @@ export const laws: Law[] = [
     "number": 35,
     "tag": "maintainability",
     "sourceUrl": "https://web.archive.org/web/2024/http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/",
+    "exampleUrl": null,
     "seeAlso": [
       "cunninghams-law"
     ],
@@ -1926,6 +1964,7 @@ export const laws: Law[] = [
     "number": 36,
     "tag": "distributed-systems",
     "sourceUrl": "https://doi.org/10.1145/564585.564601",
+    "exampleUrl": null,
     "seeAlso": [
       "two-generals-problem",
       "fallacies-of-distributed-computing"
@@ -1972,6 +2011,7 @@ export const laws: Law[] = [
     "number": 37,
     "tag": "performance",
     "sourceUrl": "https://doi.org/10.1287/opre.9.3.383",
+    "exampleUrl": null,
     "seeAlso": [
       "tail-at-scale",
       "theory-of-constraints"
@@ -2018,6 +2058,7 @@ export const laws: Law[] = [
     "number": 38,
     "tag": "distributed-systems",
     "sourceUrl": "https://doi.org/10.1145/800213.806523",
+    "exampleUrl": null,
     "seeAlso": [
       "cap-theorem"
     ],
@@ -2063,6 +2104,7 @@ export const laws: Law[] = [
     "number": 39,
     "tag": "organization",
     "sourceUrl": "https://en.wikipedia.org/wiki/Peter_principle",
+    "exampleUrl": null,
     "seeAlso": [
       "dunning-kruger-effect",
       "shirky-principle"
@@ -2109,6 +2151,7 @@ export const laws: Law[] = [
     "number": 40,
     "tag": "organization",
     "sourceUrl": "https://www.economist.com/news/1955/11/19/parkinsons-law",
+    "exampleUrl": null,
     "seeAlso": [
       "type-1-vs-type-2-decisions",
       "law-of-triviality",
@@ -2157,6 +2200,7 @@ export const laws: Law[] = [
     "number": 41,
     "tag": "performance",
     "sourceUrl": "https://doi.org/10.1109/2.348001",
+    "exampleUrl": null,
     "seeAlso": [
       "jevons-paradox",
       "moores-law"
@@ -2203,6 +2247,7 @@ export const laws: Law[] = [
     "number": 42,
     "tag": "estimation",
     "sourceUrl": "https://en.wikipedia.org/wiki/Ninety%E2%80%93ninety_rule",
+    "exampleUrl": null,
     "seeAlso": [
       "hofstadters-law",
       "strangler-fig"
@@ -2249,6 +2294,7 @@ export const laws: Law[] = [
     "number": 43,
     "tag": "maintainability",
     "sourceUrl": "https://wiki.c2.com/?EaglesonsLaw",
+    "exampleUrl": null,
     "seeAlso": [
       "chestertons-fence",
       "kernighans-law"
@@ -2295,6 +2341,7 @@ export const laws: Law[] = [
     "number": 44,
     "tag": "interaction",
     "sourceUrl": "https://doi.org/10.1080/17470215208416600",
+    "exampleUrl": null,
     "seeAlso": [
       "millers-law",
       "fitts-law"
@@ -2341,6 +2388,7 @@ export const laws: Law[] = [
     "number": 45,
     "tag": "interaction",
     "sourceUrl": "https://doi.org/10.1037/h0055392",
+    "exampleUrl": null,
     "seeAlso": [
       "hicks-law"
     ],
@@ -2386,6 +2434,7 @@ export const laws: Law[] = [
     "number": 46,
     "tag": "cognition",
     "sourceUrl": "https://doi.org/10.1037/h0043158",
+    "exampleUrl": null,
     "seeAlso": [
       "dunbars-number",
       "hicks-law"
@@ -2432,6 +2481,7 @@ export const laws: Law[] = [
     "number": 47,
     "tag": "distributed-systems",
     "sourceUrl": "https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing",
+    "exampleUrl": null,
     "seeAlso": [
       "postels-law",
       "murphys-law",
@@ -2481,6 +2531,7 @@ export const laws: Law[] = [
     "number": 48,
     "tag": "safety",
     "sourceUrl": "https://doi.org/10.1016/0005-1098(83)90046-8",
+    "exampleUrl": null,
     "seeAlso": [
       "normal-accident-theory",
       "toil",
@@ -2528,6 +2579,7 @@ export const laws: Law[] = [
     "number": 49,
     "tag": "security",
     "sourceUrl": "https://web.mit.edu/Saltzer/www/publications/protection/",
+    "exampleUrl": null,
     "seeAlso": [
       "kerckhoffs-principle"
     ],
@@ -2573,6 +2625,7 @@ export const laws: Law[] = [
     "number": 50,
     "tag": "security",
     "sourceUrl": "https://www.petitcolas.net/kerckhoffs/",
+    "exampleUrl": null,
     "seeAlso": [
       "principle-of-least-privilege"
     ],
@@ -2618,6 +2671,7 @@ export const laws: Law[] = [
     "number": 51,
     "tag": "performance",
     "sourceUrl": "https://doi.org/10.1145/42411.42415",
+    "exampleUrl": null,
     "seeAlso": [
       "amdahls-law",
       "moores-law"
@@ -2664,6 +2718,7 @@ export const laws: Law[] = [
     "number": 52,
     "tag": "distributed-systems",
     "sourceUrl": "https://doi.org/10.1145/2408776.2408794",
+    "exampleUrl": null,
     "seeAlso": [
       "littles-law",
       "error-budget"
@@ -2710,6 +2765,7 @@ export const laws: Law[] = [
     "number": 53,
     "tag": "systems",
     "sourceUrl": "https://archive.org/details/introductiontocy00ashb",
+    "exampleUrl": null,
     "seeAlso": [
       "teslers-law",
       "normal-accident-theory",
@@ -2757,6 +2813,7 @@ export const laws: Law[] = [
     "number": 54,
     "tag": "maintainability",
     "sourceUrl": "https://doi.org/10.1109/52.35588",
+    "exampleUrl": null,
     "seeAlso": [
       "leaky-abstractions",
       "dry-principle",
@@ -2804,6 +2861,7 @@ export const laws: Law[] = [
     "number": 55,
     "tag": "incentives",
     "sourceUrl": "https://archive.org/details/in.ernet.dli.2015.224624",
+    "exampleUrl": null,
     "seeAlso": [
       "cobra-effect",
       "wirths-law"
@@ -2850,6 +2908,7 @@ export const laws: Law[] = [
     "number": 56,
     "tag": "safety",
     "sourceUrl": "https://en.wikipedia.org/wiki/Normal_Accidents",
+    "exampleUrl": null,
     "seeAlso": [
       "normalization-of-deviance",
       "swiss-cheese-model",
@@ -2899,6 +2958,7 @@ export const laws: Law[] = [
     "number": 57,
     "tag": "safety",
     "sourceUrl": "https://www.theatlantic.com/magazine/archive/1982/03/broken-windows/304465/",
+    "exampleUrl": null,
     "seeAlso": [
       "normalization-of-deviance",
       "boy-scout-rule",
@@ -2946,6 +3006,7 @@ export const laws: Law[] = [
     "number": 58,
     "tag": "maintainability",
     "sourceUrl": "https://ronjeffries.com/xprog/articles/practices/pracnotneed/",
+    "exampleUrl": null,
     "seeAlso": [
       "chestertons-fence",
       "galls-law",
@@ -2993,6 +3054,7 @@ export const laws: Law[] = [
     "number": 59,
     "tag": "maintainability",
     "sourceUrl": "https://en.wikipedia.org/wiki/KISS_principle",
+    "exampleUrl": null,
     "seeAlso": [
       "kernighans-law",
       "ashbys-law",
@@ -3040,6 +3102,7 @@ export const laws: Law[] = [
     "number": 60,
     "tag": "maintainability",
     "sourceUrl": "https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/",
+    "exampleUrl": null,
     "seeAlso": [
       "law-of-demeter",
       "single-responsibility-principle"
@@ -3086,6 +3149,7 @@ export const laws: Law[] = [
     "number": 61,
     "tag": "performance",
     "sourceUrl": "https://en.wikipedia.org/wiki/Theory_of_constraints",
+    "exampleUrl": null,
     "seeAlso": [
       "amdahls-law",
       "littles-law"
@@ -3128,6 +3192,7 @@ export const laws: Law[] = [
     "number": 62,
     "tag": "cognition",
     "sourceUrl": "https://en.wikipedia.org/wiki/Occam%27s_razor",
+    "exampleUrl": null,
     "seeAlso": [
       "normalcy-bias",
       "hanlons-razor"
@@ -3174,6 +3239,7 @@ export const laws: Law[] = [
     "number": 63,
     "tag": "maintainability",
     "sourceUrl": "https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html",
+    "exampleUrl": null,
     "seeAlso": [
       "dry-principle",
       "law-of-demeter",
@@ -3221,6 +3287,7 @@ export const laws: Law[] = [
     "number": 64,
     "tag": "interaction",
     "sourceUrl": "https://en.wikipedia.org/wiki/Principle_of_least_astonishment",
+    "exampleUrl": null,
     "seeAlso": [
       "hyrums-law",
       "curse-of-knowledge"
@@ -3267,6 +3334,7 @@ export const laws: Law[] = [
     "number": 65,
     "tag": "systems",
     "sourceUrl": "https://en.wikipedia.org/wiki/Second-system_effect",
+    "exampleUrl": null,
     "seeAlso": [
       "brooks-law",
       "galls-law",
@@ -3315,6 +3383,7 @@ export const laws: Law[] = [
     "number": 66,
     "tag": "performance",
     "sourceUrl": "https://doi.org/10.1109/N-SSC.2006.4785860",
+    "exampleUrl": null,
     "seeAlso": [
       "wirths-law",
       "gustafsons-law",
@@ -3362,6 +3431,7 @@ export const laws: Law[] = [
     "number": 67,
     "tag": "estimation",
     "sourceUrl": "https://en.wikipedia.org/wiki/Roy_Amara",
+    "exampleUrl": null,
     "seeAlso": [
       "survivorship-bias",
       "lindy-effect"
@@ -3408,6 +3478,7 @@ export const laws: Law[] = [
     "number": 68,
     "tag": "systems",
     "sourceUrl": "https://web.archive.org/web/2024/http://www.incompleteideas.net/IncIdeas/BitterLesson.html",
+    "exampleUrl": null,
     "seeAlso": [
       "cargo-cult-engineering",
       "moores-law"
@@ -3454,6 +3525,7 @@ export const laws: Law[] = [
     "number": 69,
     "tag": "systems",
     "sourceUrl": "https://en.wikipedia.org/wiki/Metcalfe%27s_law",
+    "exampleUrl": null,
     "seeAlso": [
       "dunbars-number",
       "brooks-law"
@@ -3500,6 +3572,7 @@ export const laws: Law[] = [
     "number": 70,
     "tag": "organization",
     "sourceUrl": "https://en.wikipedia.org/wiki/Ringelmann_effect",
+    "exampleUrl": null,
     "seeAlso": [
       "bystander-effect",
       "dunbars-number"
@@ -3542,6 +3615,7 @@ export const laws: Law[] = [
     "number": 71,
     "tag": "incentives",
     "sourceUrl": "https://kk.org/thetechnium/the-shirky-prin/",
+    "exampleUrl": null,
     "seeAlso": [
       "goodharts-law",
       "peter-principle"
@@ -3588,6 +3662,7 @@ export const laws: Law[] = [
     "number": 72,
     "tag": "operations",
     "sourceUrl": "https://sre.google/sre-book/embracing-risk/",
+    "exampleUrl": null,
     "seeAlso": [
       "goodharts-law",
       "tail-at-scale",
@@ -3637,6 +3712,7 @@ export const laws: Law[] = [
     "number": 73,
     "tag": "operations",
     "sourceUrl": "https://sre.google/sre-book/eliminating-toil/",
+    "exampleUrl": null,
     "seeAlso": [
       "ironies-of-automation",
       "error-budget",
@@ -3685,6 +3761,7 @@ export const laws: Law[] = [
     "number": 74,
     "tag": "operations",
     "sourceUrl": "https://www.etsy.com/codeascraft/blameless-postmortems",
+    "exampleUrl": null,
     "seeAlso": [
       "swiss-cheese-model",
       "normalization-of-deviance",
@@ -3735,6 +3812,7 @@ export const laws: Law[] = [
     "number": 75,
     "tag": "decision",
     "sourceUrl": "https://www.allthingsdistributed.com/2006/11/working_backwards.html",
+    "exampleUrl": null,
     "seeAlso": [
       "xy-problem",
       "yagni"
@@ -3781,6 +3859,7 @@ export const laws: Law[] = [
     "number": 76,
     "tag": "decision",
     "sourceUrl": "https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders",
+    "exampleUrl": null,
     "seeAlso": [
       "type-1-vs-type-2-decisions",
       "law-of-triviality"
@@ -3827,6 +3906,7 @@ export const laws: Law[] = [
     "number": 77,
     "tag": "operations",
     "sourceUrl": "https://queue.acm.org/detail.cfm?id=1142065",
+    "exampleUrl": null,
     "seeAlso": [
       "conways-law",
       "toil",
@@ -3874,6 +3954,7 @@ export const laws: Law[] = [
     "number": 78,
     "tag": "distributed-systems",
     "sourceUrl": "https://builder.aws.com/content/3K9SiqiJ369TGkkGzqPM95BuYWI/static-stability-using-availability-zones",
+    "exampleUrl": null,
     "seeAlso": [
       "avoid-fallback",
       "constant-work",
@@ -3921,6 +4002,7 @@ export const laws: Law[] = [
     "number": 79,
     "tag": "distributed-systems",
     "sourceUrl": "https://builder.aws.com/content/3EuS9Sakq7L3VLQIF3qzfMfke1Y/avoiding-fallback-in-distributed-systems",
+    "exampleUrl": null,
     "seeAlso": [
       "static-stability",
       "constant-work",
@@ -3969,6 +4051,7 @@ export const laws: Law[] = [
     "number": 80,
     "tag": "distributed-systems",
     "sourceUrl": "https://builder.aws.com/content/3F05oqNtNUWxHJ5r6L6I2HrH4rI/reliability-constant-work-and-a-good-cup-of-coffee",
+    "exampleUrl": null,
     "seeAlso": [
       "static-stability",
       "avoid-fallback"
@@ -4015,6 +4098,7 @@ export const laws: Law[] = [
     "number": 81,
     "tag": "organization",
     "sourceUrl": "https://aws.amazon.com/blogs/enterprise-strategy/strategy-is-a-winding-road-mechanisms-keep-you-on-track/",
+    "exampleUrl": null,
     "seeAlso": [
       "blameless-postmortem",
       "goodharts-law",
@@ -4063,6 +4147,7 @@ export const laws: Law[] = [
     "number": 82,
     "tag": "operations",
     "sourceUrl": "https://global.toyota/en/company/vision-and-philosophy/production-system/",
+    "exampleUrl": null,
     "seeAlso": [
       "normalization-of-deviance",
       "error-budget",
@@ -4110,6 +4195,7 @@ export const laws: Law[] = [
     "number": 83,
     "tag": "operations",
     "sourceUrl": "https://www.routledge.com/Toyota-Production-System-Beyond-Large-Scale-Production/Ohno/p/book/9780915299140",
+    "exampleUrl": null,
     "seeAlso": [
       "swiss-cheese-model",
       "normal-accident-theory",
@@ -4159,6 +4245,7 @@ export const laws: Law[] = [
     "number": 84,
     "tag": "operations",
     "sourceUrl": "https://principlesofchaos.org/",
+    "exampleUrl": null,
     "seeAlso": [
       "murphys-law",
       "fallacies-of-distributed-computing",
@@ -4206,6 +4293,7 @@ export const laws: Law[] = [
     "number": 85,
     "tag": "organization",
     "sourceUrl": "https://jobs.netflix.com/culture",
+    "exampleUrl": null,
     "seeAlso": [
       "conways-law",
       "mechanisms-not-good-intentions",
@@ -4253,6 +4341,7 @@ export const laws: Law[] = [
     "number": 86,
     "tag": "maintainability",
     "sourceUrl": "https://google.github.io/eng-practices/review/reviewer/standard.html",
+    "exampleUrl": null,
     "seeAlso": [
       "boy-scout-rule",
       "broken-windows-theory",
@@ -4300,6 +4389,7 @@ export const laws: Law[] = [
     "number": 87,
     "tag": "maintainability",
     "sourceUrl": "https://abseil.io/resources/swe-book/html/ch11.html",
+    "exampleUrl": null,
     "seeAlso": [
       "hyrums-law",
       "churn-rule"
@@ -4346,6 +4436,7 @@ export const laws: Law[] = [
     "number": 88,
     "tag": "organization",
     "sourceUrl": "https://abseil.io/resources/swe-book/html/ch01.html",
+    "exampleUrl": null,
     "seeAlso": [
       "beyonce-rule",
       "hyrums-law",
@@ -4393,6 +4484,7 @@ export const laws: Law[] = [
     "number": 89,
     "tag": "estimation",
     "sourceUrl": "https://basecamp.com/shapeup/1.2-chapter-03",
+    "exampleUrl": null,
     "seeAlso": [
       "parkinsons-law",
       "hofstadters-law",
@@ -4440,6 +4532,7 @@ export const laws: Law[] = [
     "number": 90,
     "tag": "maintainability",
     "sourceUrl": "https://martinfowler.com/bliki/StranglerFigApplication.html",
+    "exampleUrl": null,
     "seeAlso": [
       "second-system-effect",
       "galls-law",
@@ -4487,6 +4580,7 @@ export const laws: Law[] = [
     "number": 91,
     "tag": "decision",
     "sourceUrl": "https://mcfunley.com/choose-boring-technology",
+    "exampleUrl": null,
     "seeAlso": [
       "kiss-principle",
       "lindy-effect"

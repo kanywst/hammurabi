@@ -75,6 +75,7 @@ Notes on the fields:
 - **`see_also`** must be reciprocated. If A lists B, B lists A — `npm run validate` warns when it is not.
 - **`ja`** is required. A law that only exists in one language leaves the two codices asserting different things, which is exactly the drift this repository is built to prevent. If you cannot write the Japanese, say so in the pull request and it can be filled in for you.
 
+- **`example_url`** with an `example` in both `en` and `ja`: one real, documented case where the law played out (a public postmortem, an official report, the company's own write-up), in two or three sentences. Not a hypothetical. The link goes to the account itself, and the text says only what that account says. Optional, but all-or-nothing: `npm run validate` fails on a link without both texts or a text without a link.
 - **`featured: true`** puts a law in the "Editor's picks" at the top of the site. It is the maintainer's call; leave it out of contributed entries.
 - **`situations`** (top of the file) are the "start from a situation" entry points: a label in each locale and the laws worth reading for it. When a new law answers a situation that is already listed, add its slug there.
 

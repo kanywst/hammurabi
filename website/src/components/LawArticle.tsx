@@ -114,6 +114,23 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
           </p>
         </Part>
 
+        {text.example && law.exampleUrl ? (
+          <Part title={t.law.inPractice}>
+            <p>
+              <RichText>{text.example}</RichText>
+            </p>
+            <a
+              href={law.exampleUrl}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="link mt-2 inline-flex items-center gap-1"
+            >
+              {t.law.exampleLink}
+              <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden />
+            </a>
+          </Part>
+        ) : null}
+
         <Part title={t.law.whenNot}>
           <p>
             <strong className="text-ink">{text.counter.name}</strong>

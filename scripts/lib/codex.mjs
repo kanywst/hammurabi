@@ -87,6 +87,16 @@ export function loadCodex({ file = join(ROOT, 'data', 'laws.yaml') } = {}) {
 
     if (law?.featured !== undefined && typeof law.featured !== 'boolean') fail(`${at}: featured must be true or false`);
 
+    // "In practice": a real, documented case. Optional while the codex is
+    // being filled in, but all-or-nothing per law: a link with no text, or text
+    // in one language only, is a half-finished edit.
+    if (law?.example_url !== undefined && !/^https:\/\/\S+$/.test(law.example_url)) fail(`${at}: example_url must be an https URL`);
+    for (const locale of LOCALES) {
+      const ex = law?.[locale]?.example;
+      if (law?.example_url && (typeof ex !== 'string' || !ex.trim())) fail(`${at}.${locale}.example is missing but example_url is set`);
+      if (!law?.example_url && ex !== undefined) fail(`${at}.${locale}.example has no example_url`);
+    }
+
     for (const locale of LOCALES) {
       const loc = law?.[locale];
       if (!loc) {
