@@ -1,6 +1,6 @@
 <img src="./website/public/banner.jpg" alt="Hammurabi — Laws Every Engineer Should Know" width="100%" />
 
-A codex of engineering laws — each with its counter-force, a field guideline, and a source.
+**Engineering laws, each with its counter-force.** Every article also carries a field guideline and a primary source.
 
 [![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=1d47b8&labelColor=17181a)](https://github.com/kanywst/hammurabi/stargazers)
 [![laws](https://img.shields.io/badge/laws-91-1d47b8?style=for-the-badge&labelColor=17181a)](#the-codex)
