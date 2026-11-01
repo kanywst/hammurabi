@@ -48,6 +48,19 @@ export const translations = {
       next: 'Next',
       editOnGitHub: 'Suggest a correction on GitHub',
     },
+    print: {
+      cardsTitle: 'Card deck',
+      cardsHow:
+        'Print on A4 at 100% scale, double-sided, flipping on the long edge, then cut along the faint lines. Each card has the law on the front and its counter-force and what to do on the back.',
+      posterTitle: 'Poster',
+      posterHow:
+        'Print on A3, landscape, at 100% scale: every law with the force that stops it.',
+      front: 'Fronts, sheet',
+      back: 'Backs, sheet',
+      counter: 'Counter-force',
+      guideline: 'What to do',
+      links: 'Print: card deck, poster',
+    },
     share: { copy: 'Copy link', copied: 'Copied', hatena: 'Hatena' },
     cite: {
       heading: 'Cite this',
@@ -105,6 +118,19 @@ export const translations = {
       previous: '前へ',
       next: '次へ',
       editOnGitHub: 'GitHub で誤りを指摘する',
+    },
+    print: {
+      cardsTitle: 'カードデッキ',
+      cardsHow:
+        'A4 に倍率 100% で両面印刷し（長辺とじ）、薄い線に沿って切る。表が法則、裏が歯止めとどうするか。',
+      posterTitle: 'ポスター',
+      posterHow:
+        'A3 横に倍率 100% で印刷する。全法則と、それぞれの歯止めの一覧。',
+      front: '表面 シート',
+      back: '裏面 シート',
+      counter: '歯止め',
+      guideline: 'どうするか',
+      links: '印刷用：カードデッキ、ポスター',
     },
     share: {
       copy: 'リンクをコピー',
