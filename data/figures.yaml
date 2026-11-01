@@ -662,6 +662,7 @@ figures:
     license: "CC BY-SA 4.0"
     author: "Hilehman"
     page: "https://commons.wikimedia.org/wiki/File:Meir_Manny_Lehman.jpg"
+    focus: { x: 0.33, y: 0.47, zoom: 1.8 }
   - slug: bus-factor
     kind: none
   - slug: pesticide-paradox
