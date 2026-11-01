@@ -4850,7 +4850,7 @@ export const laws: Law[] = [
         "note": "a specialist who owns an area works far faster and notices more than a rotation of people who each know a little, and a small team that copies everything into a second head spends time it does not have"
       },
       "guideline": "List the parts of your system that only one person can change or operate. For each, pair a second person on the next real change instead of writing a handover document nobody reads. Rotate on-call and code review so knowledge moves as a side effect of normal work. Treat a planned absence as a drill: if a week away stalls a system, fix that before someone leaves for good.",
-      "source": "Folklore: the question of what becomes of a project if a key person is \"hit by a bus\" was in circulation by 1994, when Michael McLay posted \"If Guido was hit by a bus?\" to the Python mailing list on 29 June 1994 (https://legacy.python.org/search/hypermail/python-1994q2/1040.html). Measured in Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente, *A Novel Approach for Estimating Truck Factors* (ICPC, 2016) — the truck factor as \"the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated\", and the finding that \"the majority of our target systems (65%) have TF ≤ 2\"."
+      "source": "Folklore: the question of what becomes of a project if a key person is \"hit by a bus\" was in circulation by 1994, when Michael McLay posted \"If Guido was hit by a bus?\" to the Python mailing list on 29 June 1994 (python.org mailing-list archive, python-1994q2, message 1040). Measured in Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente, *A Novel Approach for Estimating Truck Factors* (ICPC, 2016) — the truck factor as \"the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated\", and the finding that \"the majority of our target systems (65%) have TF ≤ 2\"."
     },
     "ja": {
       "title": "バス係数",
@@ -4861,7 +4861,7 @@ export const laws: Law[] = [
         "note": "ある領域を持つ専門家は、少しずつ知っている人の持ち回りよりずっと速く動き、問題にも多く気づく。小さなチームがあらゆる知識を二人目にも持たせようとすると、ない時間を使うことになる"
       },
       "guideline": "一人しか変更も運用もできない箇所を洗い出す。それぞれについて、誰も読まない引き継ぎ文書を書くのではなく、次の実際の変更で二人目をペアにつける。オンコールとコードレビューを持ち回りにして、普段の仕事のついでに知識が移るようにする。予定された不在は訓練として扱う。一週間の休みでシステムが止まるなら、誰かが本当に辞める前に直す。",
-      "source": "出所は口伝。主要人物が「バスにはねられたら」プロジェクトはどうなるのかという問いは 1994 年には出回っており、この年 Michael McLay が Python のメーリングリストに「If Guido was hit by a bus?」を投稿している (1994 年 6 月 29 日、https://legacy.python.org/search/hypermail/python-1994q2/1040.html)。計測は Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente『A Novel Approach for Estimating Truck Factors』(ICPC, 2016)。トラック係数の定義 (\"the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated\") と、\"the majority of our target systems (65%) have TF ≤ 2\" という結果の出典。"
+      "source": "出所は口伝。主要人物が「バスにはねられたら」プロジェクトはどうなるのかという問いは 1994 年には出回っており、この年 Michael McLay が Python のメーリングリストに「If Guido was hit by a bus?」を投稿している (1994 年 6 月 29 日。python.org のメーリングリストアーカイブ python-1994q2 の 1040 番)。計測は Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente『A Novel Approach for Estimating Truck Factors』(ICPC, 2016)。トラック係数の定義 (\"the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated\") と、\"the majority of our target systems (65%) have TF ≤ 2\" という結果の出典。"
     }
   },
   {
