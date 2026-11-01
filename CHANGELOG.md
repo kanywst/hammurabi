@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/kanywst/hammurabi/compare/v2.1.0...v2.2.0) (2026-11-01)
+
+
+### Added to the codex
+
+* **figures:** Meir M. Lehman's portrait for Lehman's laws ([#161](https://github.com/kanywst/hammurabi/issues/161)) ([80ddc8e](https://github.com/kanywst/hammurabi/commit/80ddc8e1f3bcace71cbf26bd514bda01e67185d8))
+
 ## [2.1.0](https://github.com/kanywst/hammurabi/compare/v2.0.0...v2.1.0) (2026-11-01)
 
 
