@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.1.0](https://github.com/kanywst/hammurabi/compare/v2.0.0...v2.1.0) (2026-11-01)
+
+
+### Added to the codex
+
+* **codex:** In practice cases for 42 laws, and four new laws ([#159](https://github.com/kanywst/hammurabi/issues/159)) ([f22863e](https://github.com/kanywst/hammurabi/commit/f22863e1b004ef52dcb97fa5db82be95c0552372))
+* natural Japanese for all 91 laws, and a statute-book typography ([#153](https://github.com/kanywst/hammurabi/issues/153)) ([5efd8b4](https://github.com/kanywst/hammurabi/commit/5efd8b40c3df2bec16f5a06f95f86567071c3fda))
+* picture every law, add 15 company laws, audit the codex ([#151](https://github.com/kanywst/hammurabi/issues/151)) ([c0021c1](https://github.com/kanywst/hammurabi/commit/c0021c1d7cf3ae6947e683169e20197081ed4612))
+* **site:** one tagline everywhere: engineering laws, each with its counter-force ([#155](https://github.com/kanywst/hammurabi/issues/155)) ([8f5ba06](https://github.com/kanywst/hammurabi/commit/8f5ba068dba92927e3ae57a48e2a6d1faf5febe4))
+* **site:** printable card deck and poster, breadcrumbs and card images in JSON-LD ([#158](https://github.com/kanywst/hammurabi/issues/158)) ([4393011](https://github.com/kanywst/hammurabi/commit/4393011558cf61e566935ed5cf7a2294836ec422))
+* **site:** share cards, open data, and ways to share and cite ([#157](https://github.com/kanywst/hammurabi/issues/157)) ([e348633](https://github.com/kanywst/hammurabi/commit/e348633cd1f45b7950268002ff6ce99ee0fb1feb))
+
+
+### Corrections
+
+* **codex:** en/ja parity after review of [#153](https://github.com/kanywst/hammurabi/issues/153) and [#154](https://github.com/kanywst/hammurabi/issues/154) ([#156](https://github.com/kanywst/hammurabi/issues/156)) ([f564af1](https://github.com/kanywst/hammurabi/commit/f564af1b214372fc92494ae15b8a3ff7d93525e1))
+
+
+### Documentation
+
+* **codex:** drop stiff nouns from the Japanese (中核, 寄与, 貢献, 実質的) ([#154](https://github.com/kanywst/hammurabi/issues/154)) ([6033dfa](https://github.com/kanywst/hammurabi/commit/6033dfaed68a165803c2249f7d5c38ad2d37718b))
+
 ## [2.0.0](https://github.com/kanywst/hammurabi/compare/v1.1.1...v2.0.0) (2026-10-31)
 
 
