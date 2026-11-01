@@ -1967,7 +1967,7 @@ laws:
       guideline: |-
         Default every process, service account, and token to deny, then add only the minimal scopes the job provably needs; re-audit the grants whenever the job changes.
       example: |-
-        In the 2019 Capital One breach, a firewall misconfiguration let an outsider run commands on one server and obtain credentials for an account named *****-WAF-Role. That role, belonging to a web application firewall, could list more than 700 folders or buckets of data in Capital One's cloud storage and copy out the ones it had permissions for. A firewall's identity should never have been able to read customer data at that scale.
+        In the 2019 Capital One breach, a firewall misconfiguration let an outsider run commands on one server and obtain credentials for the role used by its web application firewall. According to the DOJ complaint, that role could list more than 700 folders or buckets of data in Capital One's cloud storage and copy out the ones it had permissions for.
       source: |-
         Jerome Saltzer & Michael Schroeder, *The Protection of Information in Computer Systems* (Proceedings of the IEEE, 1975).
     ja:
@@ -1981,7 +1981,7 @@ laws:
       guideline: |-
         プロセス、サービスアカウント、トークンはすべて既定で拒否にし、その仕事に必要だと確かめられた最小限のスコープだけを加える。仕事の内容が変わったら、そのたびに権限を監査し直す。
       example: |-
-        2019年の Capital One の情報流出では、ファイアウォールの設定ミスにより、外部の人物が一つのサーバ上でコマンドを実行し、*****-WAF-Role というアカウントの認証情報を手に入れた。Web アプリケーションファイアウォール用のこのロールは、Capital One のクラウドストレージにある700を超えるフォルダやバケットを一覧でき、権限のあるものからデータをコピーできた。ファイアウォールの権限で、これほどの規模の顧客データを読めてはならなかった。
+        2019年の Capital One の情報流出では、ファイアウォールの設定ミスにより、外部の人物が一つのサーバ上でコマンドを実行し、Web アプリケーションファイアウォールが使うロールの認証情報を手に入れた。司法省の訴状によれば、このロールはCapital One のクラウドストレージにある700を超えるフォルダやバケットを一覧でき、権限のあるものからデータをコピーできた。
       source: |-
         Jerome Saltzer & Michael Schroeder『The Protection of Information in Computer Systems』(Proceedings of the IEEE, 1975)。
 
@@ -2626,7 +2626,6 @@ laws:
   - slug: the-bitter-lesson
     tag: systems
     source_url: https://web.archive.org/web/2024/http://www.incompleteideas.net/IncIdeas/BitterLesson.html
-    example_url: "https://stockfishchess.org/blog/2020/introducing-nnue-evaluation/"
     see_also:
       - cargo-cult-engineering
       - moores-law
@@ -2641,8 +2640,6 @@ laws:
           inside a fixed budget domain knowledge is often the only lever you have, and the lesson describes the trajectory of a field rather than the right move this quarter
       guideline: |-
         When choosing between encoding what you know and building something that learns from more data or more compute, ask which one improves on its own when the budget doubles. Bet on that one for anything with a multi-year horizon.
-      example: |-
-        Stockfish, an open-source chess engine, long judged positions with a handcrafted evaluation function. In August 2020 it added an efficiently updatable neural network (NNUE) evaluation, which tested more than 80 Elo stronger. In February 2024, Stockfish 16.1 removed the handcrafted evaluation entirely and relies only on the network.
       source: Richard S. Sutton, *The Bitter Lesson* (13 March 2019).
     ja:
       title: 苦い教訓
@@ -2655,8 +2652,6 @@ laws:
           予算が固定されていれば、使える手段が領域知識しかないことも多い。この教訓は分野がたどってきた流れを述べたもので、今四半期に何をすべきかを示すものではない
       guideline: |-
         知っていることを組み込むか、より多くのデータや計算から学ぶものを作るかで迷ったら、予算が倍になったときに手を加えなくても良くなるのはどちらかを考える。数年単位の取り組みなら、そちらに賭ける。
-      example: |-
-        オープンソースのチェスエンジン Stockfish は、局面の評価に人手で作り込んだ評価関数を使ってきた。2020年8月、効率よく更新できるニューラルネットワーク（NNUE）による評価を加えると、テストで80 Elo を超えて強くなった。2024年2月の Stockfish 16.1 では手作りの評価を完全に取り除き、ネットワークだけに頼るようになった。
       source: Richard S. Sutton『The Bitter Lesson』(2019 年 3 月 13 日)。
 
   - slug: metcalfes-law
@@ -2678,7 +2673,7 @@ laws:
       guideline: |-
         For a product whose value comes from other users, spend early effort on the smallest network that is already useful to its own members, not on features. For a team, do the opposite and cut connections.
       example: |-
-        In 2015 researchers at the Chinese Academy of Sciences tested four proposed network-value laws against real financial and user data from Tencent and Facebook. Metcalfe's law, value proportional to the square of the number of users, fit both companies' data far better than the alternatives, and their costs also grew with the square of network size rather than linearly.
+        In 2015 researchers at the Chinese Academy of Sciences tested four proposed network-value laws against real financial and user data from Tencent and Facebook. Metcalfe's law, value proportional to the square of the number of users, fit both companies' data better than the alternatives they tested, and the paper reports that costs also grew with the square of network size. It is one fit on two social platforms; the n log n critique by Briscoe, Odlyzko and Tilly still stands.
       source: |-
         Attributed to Robert Metcalfe (c. 1980); the n log n critique is Bob Briscoe, Andrew Odlyzko & Benjamin Tilly, *Metcalfe's Law is Wrong* (IEEE Spectrum, July 2006).
     ja:
@@ -2692,7 +2687,7 @@ laws:
       guideline: |-
         他の利用者から価値が生まれるプロダクトでは、初期の労力を機能ではなく、参加者にとってすでに役に立つ最小のネットワークづくりに注ぐ。チームでは逆に、接続を減らす。
       example: |-
-        2015年、中国科学院の研究者たちは、ネットワークの価値に関する4つの法則を、Tencent と Facebook の実際の財務データと利用者数で検証した。価値は利用者数の2乗に比例するというメトカーフの法則が、両社のデータに他の法則よりはるかによく当てはまった。両社のコストもネットワークの規模に比例するのではなく、その2乗に比例して増えていた。
+        2015年、中国科学院の研究者たちは、ネットワークの価値に関する4つの法則を、Tencent と Facebook の実際の財務データと利用者数で検証した。価値は利用者数の2乗に比例するというメトカーフの法則が、両社のデータに、検証したほかの法則よりよく当てはまった。論文はコストも規模の2乗で増えていたと報告している。ただしこれは二つのソーシャル基盤での当てはめで、Briscoe、Odlyzko、Tilly による n log n の反論は今も残っている。
       source: |-
         Robert Metcalfe に帰される (1980 年頃)。n log n による批判は Bob Briscoe, Andrew Odlyzko & Benjamin Tilly『Metcalfe's Law is Wrong』(IEEE Spectrum, 2006 年 7 月)。
 
@@ -3450,7 +3445,6 @@ laws:
   - slug: strangler-fig
     tag: maintainability
     source_url: https://martinfowler.com/bliki/StranglerFigApplication.html
-    example_url: "https://shopify.engineering/refactoring-legacy-code-strangler-fig-pattern"
     see_also:
       - second-system-effect
       - galls-law
@@ -3468,8 +3462,6 @@ laws:
           when the old system cannot be intercepted cleanly, or the transitional layer would cost more than the rewrite, a single planned switch avoids the common end state of incremental migration: the easy routes move, the tangled core never does, and the organization runs and pays for two systems indefinitely
       guideline: |-
         Put an interception point (a proxy, router or facade) in front of the legacy system and move one slice of behavior behind it at a time, starting with one that delivers value on its own. Define "done" at the start, track the share of traffic still on the old path, and budget deleting the old code and the transitional layer as part of the project, not as cleanup for later.
-      example: |-
-        Shopify's Shop model, a Rails class of more than 3,000 lines, held store settings that had become hard to change. In 2020 the team moved one setting, the locked settings used for Shopify Capital loans, out piece by piece: a new interface still reading from Shop, callers switched to it, a new table written alongside the old column, a backfill, readers switched over, and finally the old column dropped. The old path stayed in place until the new one was confirmed to work.
       source: |-
         Martin Fowler, *Strangler Fig Application* (martinfowler.com; originally "Strangler Application", 2004; rewritten 2024) — the fig metaphor and the case that the reduced risk and earlier value of gradual modernization outweigh the cost of transitional architecture.
     ja:
@@ -3482,8 +3474,6 @@ laws:
         note: 古いシステムにきれいな振り分け点を置けないときや、移行用の層が書き直しより高くつくときは、計画した一度の切り替えのほうが、段階的移行のありがちな末路を避けられる。簡単な経路だけが移り、いちばん絡み合った部分はいつまでも移らず、組織は二つのシステムを運用し、その費用を払い続ける
       guideline: |-
         レガシーシステムの前に振り分け点（プロキシ、ルーター、ファサード）を置き、挙動を一部分ずつその裏へ移す。最初は、それだけで価値を生む部分を選ぶ。「完了」の定義を最初に決め、古い経路に残っているトラフィックの割合を追う。古いコードと移行用の層を消す作業は、後片づけではなくプロジェクトの一部として見積もる。
-      example: |-
-        Shopify の Shop モデルは3,000行を超える Rails のクラスで、店舗設定を抱え込んで手を入れにくくなっていた。2020年、チームはその一つ、Shopify Capital の融資に使う「ロックされた設定」を少しずつ外へ移した。まず Shop を読むままの新しいインターフェースを作って呼び出し側を切り替え、新しいテーブルに古いカラムと並行して書き込み、既存データを埋め、読み込み側を移し、最後に古いカラムを消した。新しい経路が動くと確かめられるまで、古い経路は残しておいた。
       source: |-
         Martin Fowler『Strangler Fig Application』(martinfowler.com。原題「Strangler Application」、2004 年。2024 年に書き直し)。絞め殺しのイチジクのたとえと、段階的な刷新ではリスクの低さと早く得られる価値が移行用アーキテクチャのコストを上回るという主張の出典。
 
@@ -3535,9 +3525,9 @@ laws:
       mechanism: |-
         The first version of a program records what the team understood when it wrote it, and that understanding keeps improving after the code stops changing. Every later change has to work around the gap between the two, and the extra effort recurs on each change the way interest recurs on a loan. The cost is spread thin and lands on whoever touches the code next, so no single change makes repaying it look worthwhile, and the balance grows until the whole team slows down. Cunningham did not object to the shortcut itself; his warning was about debt that is not paid back with a rewrite while it is still small.
       counter:
-        name: Prudent Debt
+        name: Premature Repayment
         note: |-
-          shipping earlier can be worth more than the interest, and debt in code that is about to be deleted or will never change again never comes due, so paying it down there buys nothing
+          paying down debt early spends time on code whose design may still change or that may be deleted before anyone touches it again, so cleaning up ahead of the next change can cost more than the interest it saves
       guideline: |-
         Treat a shortcut as a loan: write down where it is and what repaying it would take, and schedule the rewrite while the code is still fresh in someone's head. Repay first where the team changes code most often, not where the code merely looks worst. Do not let debt pile up unrecorded.
       source: |-
@@ -3548,9 +3538,9 @@ laws:
       mechanism: |-
         プログラムの最初の版には、書いた時点でチームが理解していたことが刻まれる。コードが変わらなくなった後も、理解は深まり続ける。その後の変更はどれも両者のずれをよけて進めることになり、その余計な手間は、借金の利息のように変更のたびにかかる。コストは薄く広がって次にそのコードに触る人にかかるので、どの変更から見ても返すほどではないように見え、残高はチーム全体が遅くなるまで増えていく。Cunningham は手抜きそのものを責めてはいない。問題にしたのは、小さいうちに書き直して返さない負債だ。
       counter:
-        name: 慎重な負債
+        name: 早すぎる返済
         note: |-
-          早く出す価値が利息を上回ることはある。まもなく消すコードや二度と変えないコードの負債は返済期日が来ないので、そこを返しても何も得られない
+          負債を早く返すと、設計がまだ変わるかもしれないコードや、次に誰かが触る前に消えるかもしれないコードに時間を使うことになる。次の変更の前に片づけるほうが、節約できる利息より高くつくこともある
       guideline: |-
         手抜きは借金として扱う。どこにあり、返すには何が要るかを書き残し、コードが誰かの記憶に新しいうちに書き直しの予定を立てる。返済は、見た目が一番ひどいコードではなく、チームが一番よく変えるコードから始める。記録のないまま負債をためない。
       source: |-
