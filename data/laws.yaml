@@ -3539,7 +3539,6 @@ laws:
   - slug: technical-debt
     tag: maintainability
     source_url: https://c2.com/doc/oopsla92.html
-    example_url: "https://www.sec.gov/litigation/admin/2013/34-70694.pdf"
     see_also:
       - lehmans-laws
       - boy-scout-rule
@@ -3556,8 +3555,6 @@ laws:
           shipping earlier can be worth more than the interest, and debt in code that is about to be deleted or will never change again never comes due, so paying it down there buys nothing
       guideline: |-
         Treat a shortcut as a loan: write down where it is and what repaying it would take, and schedule the rewrite while the code is still fresh in someone's head. Repay first where the team changes code most often, not where the code merely looks worst. Do not let debt pile up unrecorded.
-      example: |-
-        Knight Capital stopped using its "Power Peg" trading code in 2003 but left it on its production servers, and in 2005 moved a function it depended on without retesting it. On August 1, 2012, new code reused the old Power Peg flag; one of eight servers had not received the new code, so the flag woke the dead code, which sent millions of orders in about 45 minutes. Knight lost more than $460 million, and the SEC's order named the decision to leave the unused code in place as one of the failures.
       source: |-
         Ward Cunningham, *The WyCash Portfolio Management System* (OOPSLA '92 Experience Report, 1992) — "Shipping first time code is like going into debt. A little debt speeds development so long as it is paid back promptly with a rewrite." and "Every minute spent on not-quite-right code counts as interest on that debt." The prudent/reckless distinction is from Martin Fowler, *Technical Debt Quadrant* (martinfowler.com, 2009).
     ja:
@@ -3571,8 +3568,6 @@ laws:
           早く出す価値が利息を上回ることはある。まもなく消すコードや二度と変えないコードの負債は返済期日が来ないので、そこを返しても何も得られない
       guideline: |-
         手抜きは借金として扱う。どこにあり、返すには何が要るかを書き残し、コードが誰かの記憶に新しいうちに書き直しの予定を立てる。返済は、見た目が一番ひどいコードではなく、チームが一番よく変えるコードから始める。記録のないまま負債をためない。
-      example: |-
-        Knight Capital は取引用の「Power Peg」コードを2003年に使わなくなったが、本番サーバーに残したままにし、2005年にはそれが依存する機能を再テストせずに移した。2012年8月1日、新しいコードが古い Power Peg のフラグを流用した。8台のサーバーのうち1台に新コードが入っておらず、フラグが眠っていたコードを起こし、約45分で数百万件の注文を出した。Knight は4億6,000万ドル超を失い、SEC（米証券取引委員会）の命令書は使わないコードを残した判断を不備の一つに挙げた。
       source: |-
         Ward Cunningham『The WyCash Portfolio Management System』(OOPSLA '92 Experience Report, 1992)。"Shipping first time code is like going into debt. A little debt speeds development so long as it is paid back promptly with a rewrite." と "Every minute spent on not-quite-right code counts as interest on that debt." の出典。慎重な負債と無謀な負債の区別は Martin Fowler『Technical Debt Quadrant』(martinfowler.com, 2009)。
 
@@ -3588,7 +3583,7 @@ laws:
       concept: |-
         A program in real use must keep changing or grow less useful, and each change makes it more complex unless work is spent to simplify it.
       mechanism: |-
-        A program that automates part of the world is a model of that world, and the world keeps moving: users' needs shift, the business changes, and the program's own arrival changes how people work. So the program is never finished, and each release reopens the gap between the model and what it models. Changes are made under pressure by people who do not hold the whole design in mind, so special cases and dependencies are added faster than they are removed, and the structure decays. Lehman drew the laws from release data on large systems over many years, and he was clear that they come from the habits of people and organizations, not from physics.
+        A program that automates part of the world is a model of that world, and the world keeps moving: users' needs shift, the business changes, and the program's own arrival changes how people work. So the program is never finished, and each release reopens the gap between the model and what it models. Changes are made under pressure by people who do not hold the whole design in mind, so special cases and dependencies are added faster than they are removed, and the structure decays. Lehman drew the laws from watching large systems evolve over many releases, and in the same paper describes them as arising from the habits and practices of people and organizations rather than being immutable like the laws of physics.
       counter:
         name: Stability Is a Feature
         note: |-
@@ -3596,12 +3591,12 @@ laws:
       guideline: |-
         Budget ongoing change as the normal cost of a program in use, not as an exception after launch. Reserve part of every cycle for work that reduces complexity, such as deleting dead paths and merging special cases, and track a complexity measure across releases so you see the trend before it stalls you. Freeze only what other people build on, and say so when you do.
       source: |-
-        Meir M. Lehman, *Programs, Life Cycles, and Laws of Software Evolution* (Proceedings of the IEEE, vol. 68, no. 9, 1980), Table I — Continuing Change: "A program that is used and that as an implementation of its specification reflects some other reality, undergoes continual change or becomes progressively less useful."; Increasing Complexity: "As an evolving program is continually changed, its complexity, reflecting deteriorating structure, increases unless work is done to maintain or reduce it."
+        Meir M. Lehman, *Programs, Life Cycles, and Laws of Software Evolution* (Proceedings of the IEEE, vol. 68, no. 9, 1980), Table I — Continuing Change: "A program that is used and that as an implementation of its specification reflects some other reality, undergoes continual change or becomes progressively less useful."; Increasing Complexity: "As an evolving program is continually changed, its complexity, reflecting deteriorating structure, increases unless work is done to maintain or reduce it." p. 1069: the laws are "clearly not immutable, as for example, are the laws of physics" and "arise from the habits and practices of people and organizations".
     ja:
-      title: リーマンのソフトウェア進化の法則
+      title: レーマンのソフトウェア進化の法則
       concept: 実際に使われているプログラムは、変わり続けなければ役に立たなくなる。そして変えるたびに、手をかけて単純にしない限り複雑になっていく。
       mechanism: |-
-        世の中の仕事の一部を自動化するプログラムは、その世界のモデルであり、世界は動き続ける。利用者の求めるものは移り、業務は変わり、プログラムが入ったこと自体が人の働き方を変える。だからプログラムが完成することはなく、リリースのたびにモデルと現実のずれがまた開く。変更は時間に追われ、設計の全体を頭に入れていない人の手で入るので、例外処理や依存は減るより速く増え、構造は傷んでいく。Lehman はこれらの法則を大規模システムの長年のリリースデータから導き、物理法則ではなく人と組織の習慣から生まれるものだと明言している。
+        世の中の仕事の一部を自動化するプログラムは、その世界のモデルであり、世界は動き続ける。利用者の求めるものは移り、業務は変わり、プログラムが入ったこと自体が人の働き方を変える。だからプログラムが完成することはなく、リリースのたびにモデルと現実のずれがまた開く。変更は時間に追われ、設計の全体を頭に入れていない人の手で入るので、例外処理や依存は減るより速く増え、構造は傷んでいく。Lehman はこれらの法則を、大規模システムが何度ものリリースを経て変わっていく様子から導いた。同じ論文で、物理法則のように不変なものではなく、人と組織の習慣ややり方から生まれるものだと述べている。
       counter:
         name: 安定も機能のうち
         note: |-
@@ -3609,7 +3604,7 @@ laws:
       guideline: |-
         継続的な変更は、リリース後の例外ではなく、使われているプログラムの通常のコストとして予算に入れる。毎回のサイクルの一部を、使われない経路の削除や例外処理の統合など、複雑さを減らす作業にあてる。複雑さの指標をリリースごとに追い、身動きが取れなくなる前に傾向をつかむ。凍結するのは他人がその上に作るものだけにし、凍結するときはそう明言する。
       source: |-
-        Meir M. Lehman『Programs, Life Cycles, and Laws of Software Evolution』(Proceedings of the IEEE, vol. 68, no. 9, 1980) の表 I。継続的変化 ("A program that is used and that as an implementation of its specification reflects some other reality, undergoes continual change or becomes progressively less useful.") と複雑さの増大 ("As an evolving program is continually changed, its complexity, reflecting deteriorating structure, increases unless work is done to maintain or reduce it.") の出典。
+        Meir M. Lehman『Programs, Life Cycles, and Laws of Software Evolution』(Proceedings of the IEEE, vol. 68, no. 9, 1980) の表 I。継続的変化 ("A program that is used and that as an implementation of its specification reflects some other reality, undergoes continual change or becomes progressively less useful.") と複雑さの増大 ("As an evolving program is continually changed, its complexity, reflecting deteriorating structure, increases unless work is done to maintain or reduce it.") の出典。p. 1069 の "clearly not immutable, as for example, are the laws of physics" と "arise from the habits and practices of people and organizations" も同じ論文から。
 
   - slug: bus-factor
     tag: organization
@@ -3623,7 +3618,7 @@ laws:
       concept: |-
         The fewer people who can keep a system running, the more its future depends on each of them staying.
       mechanism: |-
-        Knowledge concentrates on its own: whoever wrote a part fixes it fastest, so the next change goes to them too, and every round widens the gap. Nobody decides to make one person indispensable; it is the cheapest choice each time, and the risk stays invisible until that person leaves, falls ill or simply goes on vacation. In open source it is the norm: Avelino and colleagues found that 65% of 133 popular GitHub projects have a truck factor of two or less, meaning that losing at most two developers would leave most of their files without an active author. Spreading knowledge spends time now against a loss that may never come, so it loses every scheduling argument unless someone makes it an explicit goal.
+        Knowledge concentrates on its own: whoever wrote a part fixes it fastest, so the next change goes to them too, and every round widens the gap. Nobody decides to make one person indispensable; it is the cheapest choice each time, and the risk stays invisible until that person leaves, falls ill or simply goes on vacation. In a sample of 133 popular GitHub projects, Avelino and colleagues found that 65% have a truck factor of two or less, meaning that losing at most two developers would leave most of their files without an active author. Spreading knowledge spends time now against a loss that may never come, so it loses every scheduling argument unless someone makes it an explicit goal.
       counter:
         name: Depth of Ownership
         note: |-
@@ -3631,14 +3626,14 @@ laws:
       guideline: |-
         List the parts of your system that only one person can change or operate. For each, pair a second person on the next real change instead of writing a handover document nobody reads. Rotate on-call and code review so knowledge moves as a side effect of normal work. Treat a planned absence as a drill: if a week away stalls a system, fix that before someone leaves for good.
       example: |-
-        XZ Utils, a compression library shipped in most Linux distributions, was maintained largely by one volunteer, Lasse Collin. In June 2022 he wrote on the project list that "this is an unpaid hobby project," that long-term mental health issues had limited his ability to care for it, and that a contributor named Jia Tan might "have a bigger role in the future." Jia Tan became a co-maintainer and in 2024 created and signed the 5.6.0 and 5.6.1 release tarballs, which contained a backdoor.
+        XZ Utils, a compression library shipped in most Linux distributions, was maintained largely by one volunteer, Lasse Collin. In June 2022 he wrote on the project list that "this is an unpaid hobby project," that long-term mental health issues had limited his ability to care for it, and that a contributor named Jia Tan might "have a bigger role in the future." Jia Tan became a co-maintainer and in 2024 created and signed the 5.6.0 and 5.6.1 release tarballs, which contained a backdoor. It shows the risk of concentration, not a project lost when someone left.
       source: |-
         Folklore: the question of what becomes of a project if a key person is "hit by a bus" was in circulation by 1994, when Michael McLay posted "If Guido was hit by a bus?" to the Python mailing list. Measured in Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente, *A Novel Approach for Estimating Truck Factors* (ICPC, 2016) — the truck factor as "the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated", and the finding that "the majority of our target systems (65%) have TF ≤ 2".
     ja:
       title: バス係数
       concept: システムを動かし続けられる人が少ないほど、その将来は一人ひとりが辞めずにいることにかかってくる。
       mechanism: |-
-        知識は放っておくと偏る。ある部分を書いた人が一番速く直せるので、次の変更もその人に回り、そのたびに差が開く。誰か一人を欠かせない存在にしようと決めた人はいない。その都度いちばん安い選択をした結果で、そのリスクは本人が辞めるか、病気になるか、ただ休暇を取るまで見えない。オープンソースではむしろ普通のことで、Avelino らによると、GitHub の人気プロジェクト133件のうち65%はトラック係数が2以下だった。開発者が二人抜けるだけで、大半のファイルを書いた人がいなくなる。知識を広げるのは、来ないかもしれない損失に備えて今の時間を使うことなので、誰かがはっきり目標に掲げない限り、スケジュールの議論では毎回負ける。
+        知識は放っておくと偏る。ある部分を書いた人が一番速く直せるので、次の変更もその人に回り、そのたびに差が開く。誰か一人を欠かせない存在にしようと決めた人はいない。その都度いちばん安い選択をした結果で、そのリスクは本人が辞めるか、病気になるか、ただ休暇を取るまで見えない。Avelino らが GitHub の人気プロジェクト133件を調べたところ、65%はトラック係数が2以下だった。開発者が二人抜けるだけで、大半のファイルを書いた人がいなくなる。知識を広げるのは、来ないかもしれない損失に備えて今の時間を使うことなので、誰かがはっきり目標に掲げない限り、スケジュールの議論では毎回負ける。
       counter:
         name: 所有の深さ
         note: |-
@@ -3646,7 +3641,7 @@ laws:
       guideline: |-
         一人しか変更も運用もできない箇所を洗い出す。それぞれについて、誰も読まない引き継ぎ文書を書くのではなく、次の実際の変更で二人目をペアにつける。オンコールとコードレビューを持ち回りにして、普段の仕事のついでに知識が移るようにする。予定された不在は訓練として扱う。一週間の休みでシステムが止まるなら、誰かが本当に辞める前に直す。
       example: |-
-        XZ Utils は多くの Linux ディストリビューションに入っている圧縮ライブラリで、保守はほぼ Lasse Collin というボランティア一人が担っていた。2022年6月、彼はメーリングリストに「これは無報酬の趣味のプロジェクトだ」と書き、長く続く心の不調で手をかけられる余裕が限られていること、Jia Tan という協力者が「今後もっと大きな役割を担うかもしれない」ことを伝えた。Jia Tan は共同メンテナーになり、2024年にバックドア入りの5.6.0と5.6.1のリリース tarball を作って署名した。
+        XZ Utils は多くの Linux ディストリビューションに入っている圧縮ライブラリで、保守はほぼ Lasse Collin というボランティア一人が担っていた。2022年6月、彼はメーリングリストに「これは無報酬の趣味のプロジェクトだ」と書き、長く続く心の不調で手をかけられる余裕が限られていること、Jia Tan という協力者が「今後もっと大きな役割を担うかもしれない」ことを伝えた。Jia Tan は共同メンテナーになり、2024年にバックドア入りの5.6.0と5.6.1のリリース tarball を作って署名した。人が抜けた損失ではなく、一人に集中していることの危うさを示す例だ。
       source: |-
         出所は口伝。主要人物が「バスにはねられたら」プロジェクトはどうなるのかという問いは 1994 年には出回っており、この年 Michael McLay が Python のメーリングリストに「If Guido was hit by a bus?」を投稿している。計測は Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente『A Novel Approach for Estimating Truck Factors』(ICPC, 2016)。トラック係数の定義 ("the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated") と、"the majority of our target systems (65%) have TF ≤ 2" という結果の出典。
 
