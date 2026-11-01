@@ -3381,7 +3381,6 @@ laws:
   - slug: churn-rule
     tag: organization
     source_url: https://abseil.io/resources/swe-book/html/ch01.html
-    example_url: "https://www.python.org/doc/sunset-python-2/"
     see_also:
       - beyonce-rule
       - hyrums-law
@@ -3398,8 +3397,6 @@ laws:
           people who change a codebase they do not live in miss its local reasons, so a central migration still needs the owning team's review, and some changes only its owners can make safely
       guideline: |-
         If you own a library, service or platform, budget the migration as part of the change: move the callers yourself, or change in place in a backward-compatible way. Do not ship a deprecation notice and a deadline as the migration plan. Invest in the tooling that makes cross-codebase changes cheap, and send each change to the owning team for review instead of landing it unseen.
-      example: |-
-        Python's core developers shipped Python 3 as a break that every user had to migrate to on their own. In 2008 they announced that Python 2 would be retired in 2015, but by then many users had not moved, so in 2014 they extended the deadline to 2020; in their own words, "Many people did not upgrade, and we did not want to hurt them." Leaving the migration to each project stretched the transition to more than a decade.
       source: |-
         Titus Winters, "What Is Software Engineering?", in Winters, Manshreck & Wright, *Software Engineering at Google* (O'Reilly, 2020), ch. 1 — the 2012 "Churn Rule": "infrastructure teams must do the work to move their internal users to new versions themselves or do the update in place, in backward-compatible fashion."
     ja:
@@ -3412,8 +3409,6 @@ laws:
         note: 普段触っていないコードを変える人は、そのコードにある固有の事情を見落とす。だから中央で一括して行う移行でもオーナーチームのレビューは要るし、オーナーにしか安全にできない変更もある
       guideline: |-
         ライブラリやサービス、プラットフォームを持つ側なら、移行作業を変更の一部として見積もる。呼び出し側は自分たちで移すか、後方互換を保ったままその場で変える。非推奨の告知と期限だけを移行計画として出さない。コードベースをまたぐ変更を安くする道具に投資し、変更は黙って入れず、一つずつオーナーチームのレビューに回す。
-      example: |-
-        Python のコア開発者は、Python 3を、利用者がそれぞれ自力で移行するしかない互換性のない変更として出した。2008年に Python 2を2015年で終えると発表したが、その時点でも移っていない利用者が多く、2014年に期限を2020年へ延ばした。本人たちの言葉では「多くの人がアップグレードしておらず、その人たちを困らせたくなかった」。移行を各プロジェクトに任せたことで、切り替えには10年以上かかった。
       source: |-
         Titus Winters「What Is Software Engineering?」、Winters, Manshreck & Wright『Software Engineering at Google』(O'Reilly, 2020) 第 1 章。2012 年に定めた「Churn Rule」("infrastructure teams must do the work to move their internal users to new versions themselves or do the update in place, in backward-compatible fashion") の出典。
 
@@ -3599,7 +3594,6 @@ laws:
   - slug: bus-factor
     tag: organization
     source_url: https://doi.org/10.1109/ICPC.2016.7503718
-    example_url: "https://www.mail-archive.com/xz-devel@tukaani.org/msg00567.html"
     see_also:
       - bystander-effect
       - curse-of-knowledge
@@ -3615,10 +3609,8 @@ laws:
           a specialist who owns an area works far faster and notices more than a rotation of people who each know a little, and a small team that copies everything into a second head spends time it does not have
       guideline: |-
         List the parts of your system that only one person can change or operate. For each, pair a second person on the next real change instead of writing a handover document nobody reads. Rotate on-call and code review so knowledge moves as a side effect of normal work. Treat a planned absence as a drill: if a week away stalls a system, fix that before someone leaves for good.
-      example: |-
-        XZ Utils, a compression library shipped in most Linux distributions, was maintained largely by one volunteer, Lasse Collin. In June 2022 he wrote on the project list that "this is an unpaid hobby project," that long-term mental health issues had limited his ability to care for it, and that a contributor named Jia Tan might "have a bigger role in the future." Jia Tan became a co-maintainer and in 2024 created and signed the 5.6.0 and 5.6.1 release tarballs, which contained a backdoor. It shows the risk of concentration, not a project lost when someone left.
       source: |-
-        Folklore: the question of what becomes of a project if a key person is "hit by a bus" was in circulation by 1994, when Michael McLay posted "If Guido was hit by a bus?" to the Python mailing list. Measured in Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente, *A Novel Approach for Estimating Truck Factors* (ICPC, 2016) — the truck factor as "the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated", and the finding that "the majority of our target systems (65%) have TF ≤ 2".
+        Folklore: the question of what becomes of a project if a key person is "hit by a bus" was in circulation by 1994, when Michael McLay posted "If Guido was hit by a bus?" to the Python mailing list on 29 June 1994 (https://legacy.python.org/search/hypermail/python-1994q2/1040.html). Measured in Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente, *A Novel Approach for Estimating Truck Factors* (ICPC, 2016) — the truck factor as "the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated", and the finding that "the majority of our target systems (65%) have TF ≤ 2".
     ja:
       title: バス係数
       concept: システムを動かし続けられる人が少ないほど、その将来は一人ひとりが辞めずにいることにかかってくる。
@@ -3630,10 +3622,8 @@ laws:
           ある領域を持つ専門家は、少しずつ知っている人の持ち回りよりずっと速く動き、問題にも多く気づく。小さなチームがあらゆる知識を二人目にも持たせようとすると、ない時間を使うことになる
       guideline: |-
         一人しか変更も運用もできない箇所を洗い出す。それぞれについて、誰も読まない引き継ぎ文書を書くのではなく、次の実際の変更で二人目をペアにつける。オンコールとコードレビューを持ち回りにして、普段の仕事のついでに知識が移るようにする。予定された不在は訓練として扱う。一週間の休みでシステムが止まるなら、誰かが本当に辞める前に直す。
-      example: |-
-        XZ Utils は多くの Linux ディストリビューションに入っている圧縮ライブラリで、保守はほぼ Lasse Collin というボランティア一人が担っていた。2022年6月、彼はメーリングリストに「これは無報酬の趣味のプロジェクトだ」と書き、長く続く心の不調で手をかけられる余裕が限られていること、Jia Tan という協力者が「今後もっと大きな役割を担うかもしれない」ことを伝えた。Jia Tan は共同メンテナーになり、2024年にバックドア入りの5.6.0と5.6.1のリリース tarball を作って署名した。人が抜けた損失ではなく、一人に集中していることの危うさを示す例だ。
       source: |-
-        出所は口伝。主要人物が「バスにはねられたら」プロジェクトはどうなるのかという問いは 1994 年には出回っており、この年 Michael McLay が Python のメーリングリストに「If Guido was hit by a bus?」を投稿している。計測は Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente『A Novel Approach for Estimating Truck Factors』(ICPC, 2016)。トラック係数の定義 ("the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated") と、"the majority of our target systems (65%) have TF ≤ 2" という結果の出典。
+        出所は口伝。主要人物が「バスにはねられたら」プロジェクトはどうなるのかという問いは 1994 年には出回っており、この年 Michael McLay が Python のメーリングリストに「If Guido was hit by a bus?」を投稿している (1994 年 6 月 29 日、https://legacy.python.org/search/hypermail/python-1994q2/1040.html)。計測は Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente『A Novel Approach for Estimating Truck Factors』(ICPC, 2016)。トラック係数の定義 ("the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated") と、"the majority of our target systems (65%) have TF ≤ 2" という結果の出典。
 
   - slug: pesticide-paradox
     tag: maintainability
