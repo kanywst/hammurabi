@@ -438,7 +438,7 @@ laws:
       guideline: |-
         If you want a modular architecture, create modular, independent teams first. Do not fight the org chart with code.
       example: |-
-        In a 2008 Harvard Business School study, Alan MacCormack, John Rusnak and Carliss Baldwin compared pairs of software products that do the same job, one built by a tightly coupled commercial firm and one by a loosely coupled open source community. In every pair the open source product was significantly more modular, and a change to one component in the commercial product could spread to others up to eight times as much. The authors read this as strong evidence that a product's architecture mirrors the organization that builds it.
+        In a 2008 Harvard Business School study, Alan MacCormack, John Rusnak and Carliss Baldwin compared pairs of software products that do the same job, one built by a tightly coupled commercial firm and one by a loosely coupled open source community. In every pair the open source product was significantly more modular, and a change to one component in the commercial product could spread to others up to eight times as much. The authors read this as evidence consistent with a product's architecture mirroring the organization that builds it.
       source: |-
         Melvin E. Conway, *How Do Committees Invent?* (Datamation, April 1968).
     ja:
@@ -453,7 +453,7 @@ laws:
       guideline: |-
         モジュール化されたアーキテクチャが欲しいなら、先にチームを独立したモジュールとして編成する。組織構造にコードで逆らわない。
       example: |-
-        2008年、ハーバード・ビジネス・スクールの Alan MacCormack、John Rusnak、Carliss Baldwin は、同じ役割を果たすソフトウェアを対にして比べた。一方は結びつきの強い商用企業が、もう一方は結びつきの緩いオープンソースのコミュニティが作ったものだ。どの対でもオープンソース側のほうがはっきりモジュール化されており、ある部品への変更が他へ波及する度合いは商用側で最大8倍あった。著者らはこれを、製品の構造が作り手の組織構造を映すことの強い証拠とした。
+        2008年、ハーバード・ビジネス・スクールの Alan MacCormack、John Rusnak、Carliss Baldwin は、同じ役割を果たすソフトウェアを対にして比べた。一方は結びつきの強い商用企業が、もう一方は結びつきの緩いオープンソースのコミュニティが作ったものだ。どの対でもオープンソース側のほうがはっきりモジュール化されており、ある部品への変更が他へ波及する度合いは商用側で最大8倍あった。著者らはこれを、製品の構造が作り手の組織構造を映すことと整合する証拠とした。
       source: |-
         Melvin E. Conway『How Do Committees Invent?』(Datamation, 1968 年 4 月号)。
 
@@ -2181,7 +2181,7 @@ laws:
       guideline: |-
         When you make something cheaper — compute, storage, an internal API — expect demand to balloon; provision and budget for the rebound instead of assuming a net reduction.
       example: |-
-        Sandia National Laboratories researcher Jeff Tsao and colleagues compiled lighting data spanning three centuries, six continents and five lighting technologies. Each gain in efficiency was met by consuming more light, so global energy use for lighting showed a 100% rebound. The authors still argue for better lighting, and say their result is misread as proof that efficiency is counterproductive.
+        Sandia National Laboratories researcher Jeff Tsao and colleagues compiled lighting data spanning three centuries, six continents and five lighting technologies. Each gain in efficiency was met by consuming more light, so global energy use for lighting showed a 100% rebound: the efficiency gains were fully offset, and energy use for lighting did not fall. The authors still argue for better lighting, and say their result is misread as proof that efficiency is counterproductive.
       source: |-
         William Stanley Jevons, *The Coal Question* (Macmillan, 1865), ch. 7 — "It is wholly a confusion of ideas to suppose that the economical use of fuel is equivalent to a diminished consumption."
     ja:
@@ -2196,7 +2196,7 @@ laws:
       guideline: |-
         計算資源、ストレージ、社内 API などを安くしたら、需要が大きく膨らむと見込む。全体として減ると決めつけず、反動を見込んで容量と予算を確保する。
       example: |-
-        サンディア国立研究所の Jeff Tsao らは、3世紀、6大陸、5つの照明技術にわたる照明のデータを集めた。効率が上がるたびに使う光の量が増え、照明に使う世界のエネルギーは100%のリバウンドを示した。それでも著者らは照明技術の改良を進めるべきだとし、この結果が効率化は逆効果だという意味に誤読されていると述べている。
+        サンディア国立研究所の Jeff Tsao らは、3世紀、6大陸、5つの照明技術にわたる照明のデータを集めた。効率が上がるたびに使う光の量が増え、照明に使う世界のエネルギーは100%のリバウンドを示した。効率化の分はすべて相殺され、照明のエネルギー消費は減らなかった。それでも著者らは照明技術の改良を進めるべきだとし、この結果が効率化は逆効果だという意味に誤読されていると述べている。
       source: |-
         William Stanley Jevons『The Coal Question』(Macmillan, 1865) 第 7 章。「燃料を経済的に使うことが消費の減少に等しいと考えるのは、まったくの考え違いである」の出典。
 
@@ -3529,7 +3529,7 @@ laws:
         note: |-
           paying down debt early spends time on code whose design may still change or that may be deleted before anyone touches it again, so cleaning up ahead of the next change can cost more than the interest it saves
       guideline: |-
-        Treat a shortcut as a loan: write down where it is and what repaying it would take, and schedule the rewrite while the code is still fresh in someone's head. Repay first where the team changes code most often, not where the code merely looks worst. Do not let debt pile up unrecorded.
+        Treat code written before the team fully understood the problem as a loan: write down where it is and what repaying it would take, and schedule the rewrite while the code is still fresh in someone's head. Repay first where the team changes code most often, not where the code merely looks worst. Do not let debt pile up unrecorded.
       source: |-
         Ward Cunningham, *The WyCash Portfolio Management System* (OOPSLA '92 Experience Report, 1992) — "Shipping first time code is like going into debt. A little debt speeds development so long as it is paid back promptly with a rewrite." and "Every minute spent on not-quite-right code counts as interest on that debt." The prudent/reckless distinction is from Martin Fowler, *Technical Debt Quadrant* (martinfowler.com, 2009).
     ja:
@@ -3542,7 +3542,7 @@ laws:
         note: |-
           負債を早く返すと、設計がまだ変わるかもしれないコードや、次に誰かが触る前に消えるかもしれないコードに時間を使うことになる。次の変更の前に片づけるほうが、節約できる利息より高くつくこともある
       guideline: |-
-        手抜きは借金として扱う。どこにあり、返すには何が要るかを書き残し、コードが誰かの記憶に新しいうちに書き直しの予定を立てる。返済は、見た目が一番ひどいコードではなく、チームが一番よく変えるコードから始める。記録のないまま負債をためない。
+        問題を十分に理解する前に書いたコードは借金として扱う。どこにあり、返すには何が要るかを書き残し、コードが誰かの記憶に新しいうちに書き直しの予定を立てる。返済は、見た目が一番ひどいコードではなく、チームが一番よく変えるコードから始める。記録のないまま負債をためない。
       source: |-
         Ward Cunningham『The WyCash Portfolio Management System』(OOPSLA '92 Experience Report, 1992)。"Shipping first time code is like going into debt. A little debt speeds development so long as it is paid back promptly with a rewrite." と "Every minute spent on not-quite-right code counts as interest on that debt." の出典。慎重な負債と無謀な負債の区別は Martin Fowler『Technical Debt Quadrant』(martinfowler.com, 2009)。
 
