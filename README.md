@@ -356,7 +356,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Concept:** Speeding up one part of a system barely helps when the bottleneck is somewhere else.
 - **Mechanism:** If a fraction s of the work cannot be parallelized or sped up, the whole job can never run faster than 1/s, however much the rest improves. With 5% serial work, even infinite processors give at most a 20× speedup. Effort spent on the parallel part has diminishing returns, and the serial part sets the ceiling.
 - **Counter:** **Gustafson's Law** — when the problem grows with the machine, the serial fraction shrinks and speedup keeps climbing.
-- **Guideline:** Find the 1% of the code that takes 90% of the time. Only optimize that. Ignore the rest.
+- **Guideline:** Profile first; time usually concentrates in a small part of the code, often around 1% of it taking 90% of the time. Optimize that part only, and ignore the rest.
 - **Source:** Gene Amdahl, *Validity of the Single Processor Approach to Achieving Large Scale Computing Capabilities* (AFIPS, 1967). — [source ↗](https://doi.org/10.1145/1465482.1465560)
 - **See also:** [Gustafson's Law](#gustafsons-law) · [Premature Optimization](#premature-optimization) · [Theory of Constraints](#theory-of-constraints)
 
@@ -674,7 +674,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 - **Concept:** Small, distant targets take longer to hit and get missed more often.
 - **Mechanism:** The time to move to a target depends on its distance and size: distant, small targets are slow and error-prone; near, large targets are fast. Pointing is a physical act with a measurable cost.
 - **Counter:** **Deliberate Friction** — the same law that makes a button easy to hit makes it easy to hit by accident; for irreversible actions a slower, harder target is the point.
-- **Guideline:** Make frequent actions big and close to where the pointer already is; make destructive ones small, far from the frequent ones, and behind a confirmation. Screen edges and corners are effectively infinite targets, so put primary actions there.
+- **Guideline:** Make frequent actions big and close to where the pointer already is; make destructive ones small, far from the frequent ones, and behind a confirmation. Screen edges and corners are effectively infinite targets, because the pointer stops there, so put primary actions there.
 - **Source:** Paul M. Fitts, *The Information Capacity of the Human Motor System in Controlling the Amplitude of Movement* (Journal of Experimental Psychology, 1954). — [source ↗](https://doi.org/10.1037/h0055392)
 - **See also:** [Hick's Law](#hicks-law)
 
