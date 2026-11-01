@@ -21,6 +21,9 @@ export default function LanguageSwitcher({
   return (
     <Link
       href={counterpart}
+      // Prefetching the other language would also pull in its display font,
+      // which for Japanese is the whole Mincho stylesheet.
+      prefetch={false}
       hrefLang={HTML_LANG[other]}
       lang={HTML_LANG[other]}
       aria-label={`${t.label}: ${t.other}`}
