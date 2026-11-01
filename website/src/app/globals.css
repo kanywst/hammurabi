@@ -1,3 +1,8 @@
+/* The display face: Shippori Mincho B1, a Mincho with Latin drawn to match,
+   so headings and article numbers read like a statute book in both languages.
+   Loaded as CSS, so the static build fetches nothing; until it arrives, the
+   system Mincho stands in. */
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&display=swap');
 @import 'tailwindcss';
 
 /* A reference you consult, set for reading.
@@ -22,6 +27,10 @@
   /* The ground behind a portrait or a company mark. White in both themes,
      because logos are drawn for a white background. */
   --color-medal: #ffffff;
+
+  --font-display:
+    'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP',
+    Georgia, serif;
 
   --font-sans:
     var(--font-text-face), 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
@@ -83,6 +92,25 @@ html:lang(ja) body {
 }
 
 @layer components {
+  /* Headings, the wordmark and article numbers are set like a statute book;
+     everything that is read at length stays in the text face. */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    font-feature-settings: 'palt';
+  }
+
+  /* The article number before a law's name: the code's own numbering, so it
+     is set in the display face and kept quieter than the name. */
+  .art {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--color-ink-3);
+    font-variant-numeric: lining-nums tabular-nums;
+    margin-right: 0.5em;
+  }
+
   /* The reading column: ~68 Latin characters, ~38 full-width ones. */
   .measure {
     max-width: 40rem;

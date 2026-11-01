@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { translations } from '@/translations';
 import { laws, lawBySlug, tags, type Law, type Locale } from '@/data/laws';
-import { article, DATA_URL, hueFor, routeFor } from '@/lib/site';
+import { article, articleLabel, DATA_URL, hueFor, routeFor } from '@/lib/site';
 import Medallion from './Medallion';
 import RichText from './RichText';
 import LawDiagram from './diagrams';
@@ -35,7 +35,7 @@ function Part({
 }) {
   return (
     <section className="mt-10">
-      <h2 className="text-[1.125rem] font-bold leading-snug">{title}</h2>
+      <h2 className="display text-[1.1875rem] leading-snug">{title}</h2>
       <div className="mt-2 text-ink-2">{children}</div>
     </section>
   );
@@ -70,11 +70,13 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
 
         <header className="mt-8 flex flex-col-reverse gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div className="min-w-0">
-            <p className="meta">
-              <span className="num">§ {article(law.number)}</span>
-              {tag ? <span> · {tag[lang]}</span> : null}
+            <p className="flex items-baseline gap-3">
+              <span className="display text-[1.125rem] text-accent">
+                {articleLabel(lang, law.number)}
+              </span>
+              {tag ? <span className="meta">{tag[lang]}</span> : null}
             </p>
-            <h1 className="mt-1 text-[clamp(1.875rem,5vw,2.375rem)] font-bold leading-tight tracking-[-0.015em]">
+            <h1 className="display mt-2 text-[clamp(2rem,5.5vw,2.75rem)] leading-[1.15]">
               {text.title}
             </h1>
             <p className="mt-3 text-[1.1875rem] leading-relaxed text-ink-2">

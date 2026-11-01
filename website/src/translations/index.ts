@@ -59,7 +59,7 @@ export const translations = {
     intro: {
       title: 'Hammurabi',
       lede: (count: number) =>
-        `エンジニアリングの法則 ${count} 本。それぞれに、どう動けばよいか、どこで当てはまらなくなるか、最初にどこで書かれたかを添えた。`,
+        `開発の現場で何度も起きることを、法則として ${count} 本まとめた。どの法則にも、どうすればいいか、当てはまらないのはどんなときか、最初にどこで書かれたかを付けている。`,
     },
     nav: {
       laws: '法則',
@@ -68,14 +68,14 @@ export const translations = {
     ui: {
       metaTitle: 'Hammurabi — エンジニアが知るべき法則集',
       metaDescription:
-        'エンジニアリングの法則集。各法則に、取るべき行動、それを制限する対抗力、一次資料の出典を添えた。',
+        'エンジニアリングの法則集。各法則に、どうすればいいか、当てはまらないのはどんなときか、一次資料の出典を付けている。',
       situationsHeading: '状況から引く',
       allHeading: 'すべての法則',
       picksHeading: '編者のおすすめ',
       filterAll: 'すべて',
       filterGroupLabel: 'カテゴリで法則を絞り込む',
       searchLabel: '法則を検索',
-      searchPlaceholder: '名前や内容で検索（例: 指標、見積り）',
+      searchPlaceholder: '名前や内容で探す（例: 指標、見積り）',
       random: 'ランダムに開く',
       resultsNone:
         '該当する法則がありません。短い語で探すか、「すべて」を選んでください。',
@@ -84,7 +84,7 @@ export const translations = {
       backToTop: 'ページの先頭へ',
     },
     law: {
-      whatToDo: 'どう動くか',
+      whatToDo: 'どうするか',
       why: 'なぜ起きるか',
       whenNot: '当てはまらなくなるとき',
       source: '出典',
@@ -100,7 +100,7 @@ export const translations = {
       editOnGitHub: 'GitHub で誤りを指摘する',
     },
     footer:
-      '本文は CC BY-SA 4.0、コードは MIT で提供しています。写真は各記事に記したそれぞれのライセンスによります。企業ロゴは各社の商標で、その実践の出どころを示すためにのみ掲載しています。',
+      '本文は CC BY-SA 4.0、コードは MIT です。写真のライセンスは各記事に書いています。企業ロゴは各社の商標で、どこから来た考えかを示すためだけに載せています。',
     switcher: { label: '言語', other: 'English' },
     notFound: {
       title: '該当する法則はありません',

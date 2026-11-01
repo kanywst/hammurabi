@@ -16,10 +16,10 @@ export default function HomePage({ lang }: { lang: Locale }) {
   return (
     <div className="mx-auto max-w-[72rem] px-4 sm:px-6">
       <section className="pb-8 pt-10 sm:pt-14">
-        <h1 className="text-[2rem] font-bold leading-tight tracking-[-0.01em]">
+        <h1 className="display text-[clamp(2.5rem,7vw,3.75rem)] leading-[1.05]">
           {t.intro.title}
         </h1>
-        <p className="measure mt-2 text-ink-2">{t.intro.lede(laws.length)}</p>
+        <p className="measure mt-5 text-ink-2">{t.intro.lede(laws.length)}</p>
       </section>
       <Picks lang={lang} />
       <LawsCodex lang={lang} />
@@ -34,7 +34,7 @@ function Picks({ lang }: { lang: Locale }) {
   if (picks.length === 0) return null;
   return (
     <section aria-labelledby="picks-heading" className="pb-6">
-      <h2 id="picks-heading" className="text-[1.25rem] font-bold leading-snug">
+      <h2 id="picks-heading" className="display text-[1.375rem] leading-snug">
         {translations[lang].ui.picksHeading}
       </h2>
       <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
