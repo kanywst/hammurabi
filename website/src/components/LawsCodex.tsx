@@ -6,7 +6,7 @@ import { useMemo, useState } from 'react';
 import { Search, Shuffle } from 'lucide-react';
 import { translations } from '@/translations';
 import { laws, lawBySlug, situations, tags, type Locale } from '@/data/laws';
-import { article, hueFor, routeFor } from '@/lib/site';
+import { articleLabel, hueFor, routeFor } from '@/lib/site';
 import Medallion from './Medallion';
 
 /**
@@ -104,7 +104,7 @@ export default function LawsCodex({ lang }: { lang: Locale }) {
           <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
             <h2
               id="laws-heading"
-              className="text-[1.25rem] font-bold leading-snug"
+              className="display text-[1.375rem] leading-snug"
             >
               {t.ui.allHeading}
             </h2>
@@ -157,10 +157,13 @@ export default function LawsCodex({ lang }: { lang: Locale }) {
                     <Link href={routeFor(lang, law.slug)} className="row">
                       <Medallion figure={law.figure} hue={hueFor(law.tag)} />
                       <span>
-                        <span className="row__title">{text.title}</span>
+                        <span className="row__title">
+                          <span className="art">
+                            {articleLabel(lang, law.number)}
+                          </span>
+                          {text.title}
+                        </span>
                         <span className="row__tag meta block">
-                          <span className="num">§ {article(law.number)}</span>
-                          {' · '}
                           {label.get(law.tag)}
                         </span>
                       </span>
@@ -179,7 +182,7 @@ export default function LawsCodex({ lang }: { lang: Locale }) {
           <div className="sticky top-16 max-h-[calc(100vh-5rem)] overflow-y-auto pb-4">
             <h2
               id="situations-heading"
-              className="text-[1.25rem] font-bold leading-snug"
+              className="display text-[1.375rem] leading-snug"
             >
               {t.ui.situationsHeading}
             </h2>

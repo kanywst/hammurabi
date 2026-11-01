@@ -19,7 +19,7 @@ export default function Header({
   return (
     <header className="sticky top-0 z-50 border-b border-line-soft bg-paper">
       <div className="mx-auto flex max-w-[72rem] items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link href={home} className="font-bold">
+        <Link href={home} className="display text-[1.25rem] leading-none">
           Hammurabi
         </Link>
         <nav className="flex items-center gap-4 whitespace-nowrap sm:gap-5">

@@ -44,6 +44,12 @@ export function alternatesFor(locale: Locale, slug?: string) {
   };
 }
 
+/** How an article is numbered in each language, as a statute book would:
+ *  "§ 7" in English, "第7条" in Japanese. Display only; the slug is the identity. */
+export function articleLabel(locale: Locale, number: number): string {
+  return locale === 'ja' ? `第${number}条` : `§ ${number}`;
+}
+
 /** § 07 — display only. */
 export function article(number: number): string {
   return String(number).padStart(2, '0');
