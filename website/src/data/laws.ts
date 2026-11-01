@@ -1121,7 +1121,7 @@ export const laws: Law[] = [
         "note": "deriving everything from first principles throws away other people's hard-won lessons; copying a practice that is widely known to work is usually cheaper than reinventing it"
       },
       "guideline": "Do not adopt a tool/process because Google uses it. Adopt it because you have the exact problem Google had at that scale.",
-      "example": "In 2012 Spotify published the \"Scaling Agile @ Spotify\" whitepaper on squads, tribes, chapters and guilds, and many companies adopted the model. In 2020 former Spotify product manager Jeremiah Lee wrote that the model was \"only ever aspirational and never fully implemented,\" quoting Spotify agile coach Joakim Sundén: \"Even at the time we wrote it, we weren't doing it.\" The whitepaper's co-author Anders Ivarsson had warned against treating it as a framework to copy.",
+      "example": "In 2012 Spotify published the \"Scaling Agile @ Spotify\" whitepaper on squads, tribes, chapters and guilds, and many companies adopted the model. In 2020 former Spotify product manager Jeremiah Lee wrote that the model was \"only ever aspirational and never fully implemented.\" According to Lee, Spotify agile coach Joakim Sundén said \"Even at the time we wrote it, we weren't doing it,\" and the whitepaper's co-author Anders Ivarsson had warned against treating it as a framework to copy.",
       "source": "Richard P. Feynman, *Cargo Cult Science* (Caltech commencement address, 1974)."
     },
     "ja": {
@@ -1133,7 +1133,7 @@ export const laws: Law[] = [
         "note": "すべてを第一原理から導くと、他人が苦労して得た教訓を捨てることになる。うまくいくと広く知られたやり方を真似るほうが、作り直すよりたいてい安い"
       },
       "guideline": "Google が使っているという理由で道具やプロセスを導入しない。導入するのは、Google があの規模で抱えていたのと同じ問題を自分たちが抱えているときに限る。",
-      "example": "2012年、Spotify はスクワッド、トライブ、チャプター、ギルドからなる組織を紹介したホワイトペーパー「Scaling Agile @ Spotify」を公開し、多くの企業がこのモデルを取り入れた。2020年、元 Spotify のプロダクトマネージャー Jeremiah Lee は、このモデルは「理想にすぎず、一度も完全には実施されなかった」と書き、Spotify のアジャイルコーチだった Joakim Sundén の「書いた当時でさえ、私たちはそうやっていなかった」という言葉を引いた。ホワイトペーパー共著者の Anders Ivarsson も、そのまま真似できるフレームワークとして扱うことに懸念を示していた。",
+      "example": "2012年、Spotify はスクワッド、トライブ、チャプター、ギルドからなる組織を紹介したホワイトペーパー「Scaling Agile @ Spotify」を公開し、多くの企業がこのモデルを取り入れた。2020年、元 Spotify のプロダクトマネージャー Jeremiah Lee は、このモデルは「理想にすぎず、一度も完全には実施されなかった」と書いた。Lee によれば、Spotify のアジャイルコーチだった Joakim Sundén は「書いた当時でさえ、私たちはそうやっていなかった」と語り、ホワイトペーパー共著者の Anders Ivarsson は、そのまま真似できるフレームワークとして扱わないよう警告していた。",
       "source": "Richard P. Feynman『Cargo Cult Science』(Caltech 卒業式講演, 1974)。"
     }
   },
@@ -1430,7 +1430,7 @@ export const laws: Law[] = [
     "number": 24,
     "tag": "organization",
     "sourceUrl": "https://doi.org/10.1016/0047-2484(92)90081-J",
-    "exampleUrl": "https://blog.crisp.se/wp-content/uploads/2012/11/SpotifyScaling.pdf",
+    "exampleUrl": null,
     "seeAlso": [
       "conways-law",
       "brooks-law",
@@ -1461,7 +1461,6 @@ export const laws: Law[] = [
         "note": "large groups do ship coherent systems (the Linux kernel has thousands of contributors) when the interfaces between parts are stable enough that most people never need each other's context"
       },
       "guideline": "Watch for the symptom, not a number: when the people on one team can no longer say what everyone else is working on, or status meetings start multiplying, split along the seams of the system. Treat any specific size limit as a convention, not a finding.",
-      "example": "When Spotify described its engineering organization in 2012, it said it sized each tribe, a group of squads sharing one office, using the Dunbar number and kept tribes under about 100 people. The stated reason was that once groups get too big, restrictive rules, bureaucracy, politics and extra management layers start to appear.",
       "source": "Robin I. M. Dunbar, *Neocortex size as a constraint on group size in primates* (Journal of Human Evolution, 1992). The smaller team-size figures usually quoted alongside it — 7±2, the two-pizza rule — are folklore rather than Dunbar's finding."
     },
     "ja": {
@@ -1473,7 +1472,6 @@ export const laws: Law[] = [
         "note": "部品間のインタフェースが十分に安定していて、ほとんどの人が互いの文脈を必要としないなら、大きな集団でも一貫したシステムを出せる（Linux カーネルには数千人の貢献者がいる）"
       },
       "guideline": "人数ではなく症状を見る。チームの誰もが他の全員の作業内容を言えなくなったり、状況共有の会議が増え始めたりしたら、システムの継ぎ目に沿ってチームを分ける。具体的な人数の上限は、知見ではなく慣習として扱う。",
-      "example": "Spotify は2012年に自社のエンジニア組織を説明した文書で、同じオフィスに並ぶ複数のスクワッドをまとめたトライブの人数をダンバー数をもとに決め、およそ100人以内に抑えていると書いた。理由として挙げたのは、集団が大きくなりすぎると、窮屈なルールや官僚主義、社内政治、余計な管理階層が出てくることだった。",
       "source": "Robin I. M. Dunbar『Neocortex size as a constraint on group size in primates』(Journal of Human Evolution, 1992)。併せて引かれる小さいチーム規模の数字 (7±2、ツー・ピザ・ルール) はダンバーの知見ではなく、通俗的な外挿である。"
     }
   },
@@ -3415,7 +3413,7 @@ export const laws: Law[] = [
     "number": 65,
     "tag": "systems",
     "sourceUrl": "https://en.wikipedia.org/wiki/Second-system_effect",
-    "exampleUrl": "https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/",
+    "exampleUrl": null,
     "seeAlso": [
       "brooks-law",
       "galls-law",
@@ -3445,7 +3443,6 @@ export const laws: Law[] = [
         "note": "some first systems cannot be grown: a data model, a platform or a security boundary that blocks the next step outright, and there a deliberate, scoped second system is the right call"
       },
       "guideline": "When rewriting, carry forward the constraints and not just the wish list. Cut the deferred features to the few that actually blocked users, and replace the original one piece at a time.",
-      "example": "Netscape chose to rewrite its browser from scratch after version 4.0, skipped version 5.0, and had Netscape 6.0 only entering its first public beta almost three years later. Joel Spolsky, writing in April 2000, called the rewrite the single worst strategic mistake a software company can make, and noted that Netscape watched its market share fall while it had no shippable new code.",
       "source": "Fred Brooks, *The Mythical Man-Month* (Addison-Wesley, 1975), chapter 5."
     },
     "ja": {
@@ -3457,7 +3454,6 @@ export const laws: Law[] = [
         "note": "育てようのない最初のシステムもある。データモデル、プラットフォーム、セキュリティ境界が次の一歩を完全に塞いでいるなら、範囲を絞って意図的に作る2番目のシステムが正しい判断になる"
       },
       "guideline": "書き直すときは、やりたいことの一覧だけでなく制約も引き継ぐ。見送っていた機能は、実際に利用者の妨げになっていた少数まで削り、元のシステムを一つずつ置き換える。",
-      "example": "Netscape はバージョン4.0 の後にブラウザをゼロから書き直すことを選び、5.0 を飛ばした。Netscape 6.0 が最初の公開ベータに入ったのは、4.0 からほぼ3年後だった。Joel Spolsky は2000年4月の記事で、この書き直しをソフトウェア会社が犯しうる最悪の戦略的な誤りと呼び、出荷できる新しいコードがない間に Netscape のシェアが落ちていったと書いた。",
       "source": "Fred Brooks『人月の神話』(Addison-Wesley, 1975) 第 5 章。"
     }
   },
@@ -4762,7 +4758,7 @@ export const laws: Law[] = [
     },
     "en": {
       "title": "Technical Debt",
-      "concept": "Code shipped before the team fully understands the problem charges extra on every later change until someone rewrites it.",
+      "concept": "Code shipped before the team fully understands the problem charges extra on later changes to that code until someone rewrites it.",
       "mechanism": "The first version of a program records what the team understood when it wrote it, and that understanding keeps improving after the code stops changing. Every later change has to work around the gap between the two, and the extra effort recurs on each change the way interest recurs on a loan. The cost is spread thin and lands on whoever touches the code next, so no single change makes repaying it look worthwhile, and the balance grows until the whole team slows down. Cunningham did not object to the shortcut itself; his warning was about debt that is not paid back with a rewrite while it is still small.",
       "counter": {
         "name": "Prudent Debt",
@@ -4773,7 +4769,7 @@ export const laws: Law[] = [
     },
     "ja": {
       "title": "技術的負債",
-      "concept": "問題を十分に理解する前に出したコードは、誰かが書き直すまで、その後の変更のたびに余計なコストを生む。",
+      "concept": "問題を十分に理解する前に出したコードは、誰かが書き直すまで、そのコードをその後変えるたびに余計なコストを生む。",
       "mechanism": "プログラムの最初の版には、書いた時点でチームが理解していたことが刻まれる。コードが変わらなくなった後も、理解は深まり続ける。その後の変更はどれも両者のずれをよけて進めることになり、その余計な手間は、借金の利息のように変更のたびにかかる。コストは薄く広がって次にそのコードに触る人にかかるので、どの変更から見ても返すほどではないように見え、残高はチーム全体が遅くなるまで増えていく。Cunningham は手抜きそのものを責めてはいない。問題にしたのは、小さいうちに書き直して返さない負債だ。",
       "counter": {
         "name": "慎重な負債",
@@ -4862,7 +4858,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "バス係数",
       "concept": "システムを動かし続けられる人が少ないほど、その将来は一人ひとりが辞めずにいることにかかってくる。",
-      "mechanism": "知識は放っておくと偏る。ある部分を書いた人が一番速く直せるので、次の変更もその人に回り、そのたびに差が開く。誰か一人を欠かせない存在にしようと決めた人はいない。その都度いちばん安い選択をした結果で、そのリスクは本人が辞めるか、病気になるか、ただ休暇を取るまで見えない。Avelino らが GitHub の人気プロジェクト133件を調べたところ、65%はトラック係数が2以下だった。開発者が二人抜けるだけで、大半のファイルを書いた人がいなくなる。知識を広げるのは、来ないかもしれない損失に備えて今の時間を使うことなので、誰かがはっきり目標に掲げない限り、スケジュールの議論では毎回負ける。",
+      "mechanism": "知識は放っておくと偏る。ある部分を書いた人が一番速く直せるので、次の変更もその人に回り、そのたびに差が開く。誰か一人を欠かせない存在にしようと決めた人はいない。その都度いちばん安い選択をした結果で、そのリスクは本人が辞めるか、病気になるか、ただ休暇を取るまで見えない。Avelino らが GitHub の人気プロジェクト133件を調べたところ、65%はトラック係数が2以下だった。開発者が一人か二人抜けるだけで、大半のファイルを書いた人がいなくなる。知識を広げるのは、来ないかもしれない損失に備えて今の時間を使うことなので、誰かがはっきり目標に掲げない限り、スケジュールの議論では毎回負ける。",
       "counter": {
         "name": "所有の深さ",
         "note": "ある領域を持つ専門家は、少しずつ知っている人の持ち回りよりずっと速く動き、問題にも多く気づく。小さなチームがあらゆる知識を二人目にも持たせようとすると、ない時間を使うことになる"
