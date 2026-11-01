@@ -19,6 +19,9 @@ export default function HomePage({ lang }: { lang: Locale }) {
         <h1 className="display text-[clamp(2.5rem,7vw,3.75rem)] leading-[1.05]">
           {t.intro.title}
         </h1>
+        <p className="display mt-3 text-[clamp(1.25rem,3vw,1.625rem)] leading-snug text-ink-2">
+          {t.intro.tagline}
+        </p>
         <p className="measure mt-5 text-ink-2">{t.intro.lede(laws.length)}</p>
       </section>
       <Picks lang={lang} />

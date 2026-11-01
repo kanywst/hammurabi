@@ -1,6 +1,6 @@
 <img src="../website/public/banner.jpg" alt="Hammurabi — Laws Every Engineer Should Know" width="100%" />
 
-各法則に「対抗力」「現場の指針」「一次資料の出典」を添えた、エンジニアリングの法典。
+**エンジニアリングの法則と、その歯止め。** どの条にも、現場での指針と一次資料の出典を付けている。
 
 [![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=1d47b8&labelColor=17181a)](https://github.com/kanywst/hammurabi/stargazers)
 [![laws](https://img.shields.io/badge/%E6%B3%95%E5%89%87-91-1d47b8?style=for-the-badge&labelColor=17181a)](#法典)

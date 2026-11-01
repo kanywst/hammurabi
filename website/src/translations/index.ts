@@ -6,6 +6,7 @@ export const translations = {
   en: {
     intro: {
       title: 'Hammurabi',
+      tagline: 'Engineering laws, each with its counter-force.',
       lede: (count: number) =>
         `${count} engineering laws. Each one says what to do about it, when it stops applying, and where it was first written down.`,
     },
@@ -14,7 +15,7 @@ export const translations = {
       github: 'GitHub',
     },
     ui: {
-      metaTitle: 'Hammurabi — Laws Every Engineer Should Know',
+      metaTitle: 'Hammurabi — engineering laws, each with its counter-force',
       metaDescription:
         'Engineering laws, each with what to do about it, the counter-force that limits it, and its primary source.',
       situationsHeading: 'Start from a situation',
@@ -58,6 +59,7 @@ export const translations = {
   ja: {
     intro: {
       title: 'Hammurabi',
+      tagline: 'エンジニアリングの法則と、その歯止め。',
       lede: (count: number) =>
         `開発の現場で何度も起きることを、法則として ${count} 本まとめた。どの法則にも、どうすればいいか、当てはまらないのはどんなときか、最初にどこで書かれたかを付けている。`,
     },
@@ -66,7 +68,7 @@ export const translations = {
       github: 'GitHub',
     },
     ui: {
-      metaTitle: 'Hammurabi — エンジニアが知るべき法則集',
+      metaTitle: 'Hammurabi — エンジニアリングの法則と、その歯止め',
       metaDescription:
         'エンジニアリングの法則集。各法則に、どうすればいいか、当てはまらないのはどんなときか、一次資料の出典を付けている。',
       situationsHeading: '状況から引く',
