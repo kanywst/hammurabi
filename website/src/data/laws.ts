@@ -477,7 +477,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "正常性バイアス",
       "concept": "本物の異常を前にしても、人はいつもの無害な説明に飛びつく。",
-      "mechanism": "たいていの異常は本当にいつものことなので、いつもの説明はたいてい当たる。だから人はその説明に飛びつく癖がつく。本物の緊急事態では、この癖が対応を遅らせる。人は確証を探し、周りに確かめ、やりかけの作業を片付けてから動く。障害対応では、データベースの破損が進んでいる最中に「たぶん一時的なネットワークの瞬断だろう」と言っている。",
+      "mechanism": "たいていの異常は本当にいつものことなので、いつもの説明はたいてい当たる。だから人はその説明に飛びつく癖がつく。本物の緊急事態では、この癖が対応を遅らせる。人は確証を探し、周りに確かめ、やりかけの作業を片付けてから動く。障害対応では、データベースの破損が進んでいる最中に「たぶん一時的なネットワークの瞬断だろう」という声が上がる。",
       "counter": {
         "name": "アラーム疲れ",
         "note": "異常のたびに崩壊の始まりとして扱えばオンコールが燃え尽き、何でもエスカレーションする人はやがて相手にされなくなる。たいていの異常は本当にいつものことだ"
@@ -802,7 +802,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "ポステルの法則",
       "concept": "相手が仕様どおりに動く前提のシステムは、最初の逸脱にもろくなりがちだ。",
-      "mechanism": "仕様は不完全で、実装は別々の人が別々の時期に書く。少しでも外れた入力を拒む受信側は、仕様を違うふうに読んだ最初の相手との間で使えなくなる。仕様のうち誰もが同じに読む部分だけを送る送信側は、受信側が解釈で食い違う余地をいちばん小さくする。Postel のこの非対称な原則は、仕様が固まる前の初期インターネットで、実装同士の相互運用を助けた。",
+      "mechanism": "仕様は不完全で、実装は別々の人が別々の時期に書く。少しでも外れた入力を拒む受信側は、仕様を違うふうに読んだ最初の相手に対して動かなくなる。仕様に厳密に沿った部分だけを送る送信側は、受信側が解釈で食い違う余地をいちばん小さくする。Postel のこの非対称な原則は、仕様が固まる前の初期インターネットで、実装同士の相互運用を助けた。",
       "counter": {
         "name": "堅牢なプロトコルの維持（RFC 9413）",
         "note": "不正な入力を許すと、壊れた送信側がそのまま出荷される。受信側はみな同じ寛容さを真似るしかなくなり、事実上のプロトコルが仕様から離れていく。IAB は現在、寛容さが恒久化しないよう仕様を保守し続けることを設計者に求めており、不正な入力を無視するのはほぼ常に誤った対処だとしている"
@@ -1124,7 +1124,7 @@ export const laws: Law[] = [
         "name": "Gustafson's Law",
         "note": "when the problem grows with the machine, the serial fraction shrinks and speedup keeps climbing"
       },
-      "guideline": "Find the 1% of the code that takes 90% of the time. Only optimize that. Ignore the rest.",
+      "guideline": "Profile first; time usually concentrates in a small part of the code, often around 1% of it taking 90% of the time. Optimize that part only, and ignore the rest.",
       "source": "Gene Amdahl, *Validity of the Single Processor Approach to Achieving Large Scale Computing Capabilities* (AFIPS, 1967)."
     },
     "ja": {
@@ -1135,7 +1135,7 @@ export const laws: Law[] = [
         "name": "グスタフソンの法則",
         "note": "問題の規模が計算機とともに大きくなるなら、逐次部分の割合は縮み、速度向上は伸び続ける"
       },
-      "guideline": "実行時間の90%を占める1%のコードを見つけ、そこだけを最適化する。残りには手を付けない。",
+      "guideline": "まずプロファイルを取る。時間はたいていコードのごく一部に集中していて、1%のコードが90%の時間を占めることも多い。最適化するのはその部分だけにして、残りは気にしなくてよい。",
       "source": "Gene Amdahl『Validity of the Single Processor Approach to Achieving Large Scale Computing Capabilities』(AFIPS, 1967)。"
     }
   },
@@ -2366,7 +2366,7 @@ export const laws: Law[] = [
         "name": "Deliberate Friction",
         "note": "the same law that makes a button easy to hit makes it easy to hit by accident; for irreversible actions a slower, harder target is the point"
       },
-      "guideline": "Make frequent actions big and close to where the pointer already is; make destructive ones small, far from the frequent ones, and behind a confirmation. Screen edges and corners are effectively infinite targets, so put primary actions there.",
+      "guideline": "Make frequent actions big and close to where the pointer already is; make destructive ones small, far from the frequent ones, and behind a confirmation. Screen edges and corners are effectively infinite targets, because the pointer stops there, so put primary actions there.",
       "source": "Paul M. Fitts, *The Information Capacity of the Human Motor System in Controlling the Amplitude of Movement* (Journal of Experimental Psychology, 1954)."
     },
     "ja": {
@@ -2377,7 +2377,7 @@ export const laws: Law[] = [
         "name": "意図的な摩擦",
         "note": "ボタンが押しやすくなれば、同じ理屈で誤って押すことも増える。取り消せない操作では、遅くて押しにくいことこそが狙いだ"
       },
-      "guideline": "よく使う操作は大きくし、ポインタが今ある場所の近くに置く。破壊的な操作は小さくし、よく使う操作から離して、確認を挟む。画面の端と角はカーソルがそこで止まるので、事実上いくらでも大きいターゲットになる。だから主要な操作はそこに置く。",
+      "guideline": "よく使う操作は大きくし、ポインタが今ある場所の近くに置く。破壊的な操作は小さくし、よく使う操作から離して、確認を挟む。画面の端と角はカーソルがそこで止まるので、無限に大きいターゲットに近くなる。だから主要な操作はそこに置く。",
       "source": "Paul M. Fitts『The Information Capacity of the Human Motor System in Controlling the Amplitude of Movement』(Journal of Experimental Psychology, 1954)。"
     }
   },
