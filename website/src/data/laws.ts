@@ -4783,10 +4783,14 @@ export const laws: Law[] = [
       "kind": "person",
       "name": "Meir M. Lehman",
       "monogram": "ML",
-      "image": null,
+      "image": "/figures/lehmans-laws.webp",
       "logo": null,
       "wide": false,
-      "credit": null
+      "credit": {
+        "author": "Hilehman",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Meir_Manny_Lehman.jpg"
+      }
     },
     "en": {
       "title": "Lehman's Laws of Software Evolution",
