@@ -794,7 +794,6 @@ laws:
   - slug: cargo-cult-engineering
     tag: cognition
     source_url: https://calteches.library.caltech.edu/51/2/CargoCult.htm
-    example_url: "https://www.jeremiahlee.com/posts/failed-squad-goals/"
     see_also:
       - survivorship-bias
       - the-bitter-lesson
@@ -809,8 +808,6 @@ laws:
           deriving everything from first principles throws away other people's hard-won lessons; copying a practice that is widely known to work is usually cheaper than reinventing it
       guideline: |-
         Do not adopt a tool/process because Google uses it. Adopt it because you have the exact problem Google had at that scale.
-      example: |-
-        In 2012 Spotify published the "Scaling Agile @ Spotify" whitepaper on squads, tribes, chapters and guilds, and many companies adopted the model. In 2020 former Spotify product manager Jeremiah Lee wrote that the model was "only ever aspirational and never fully implemented." According to Lee, Spotify agile coach Joakim Sundén said "Even at the time we wrote it, we weren't doing it," and the whitepaper's co-author Anders Ivarsson had warned against treating it as a framework to copy.
       source: |-
         Richard P. Feynman, *Cargo Cult Science* (Caltech commencement address, 1974).
     ja:
@@ -824,8 +821,6 @@ laws:
           すべてを第一原理から導くと、他人が苦労して得た教訓を捨てることになる。うまくいくと広く知られたやり方を真似るほうが、作り直すよりたいてい安い
       guideline: |-
         Google が使っているという理由で道具やプロセスを導入しない。導入するのは、Google があの規模で抱えていたのと同じ問題を自分たちが抱えているときに限る。
-      example: |-
-        2012年、Spotify はスクワッド、トライブ、チャプター、ギルドからなる組織を紹介したホワイトペーパー「Scaling Agile @ Spotify」を公開し、多くの企業がこのモデルを取り入れた。2020年、元 Spotify のプロダクトマネージャー Jeremiah Lee は、このモデルは「理想にすぎず、一度も完全には実施されなかった」と書いた。Lee によれば、Spotify のアジャイルコーチだった Joakim Sundén は「書いた当時でさえ、私たちはそうやっていなかった」と語り、ホワイトペーパー共著者の Anders Ivarsson は、そのまま真似できるフレームワークとして扱わないよう警告していた。
       source: |-
         Richard P. Feynman『Cargo Cult Science』(Caltech 卒業式講演, 1974)。
 
@@ -1671,7 +1666,6 @@ laws:
   - slug: wirths-law
     tag: performance
     source_url: https://doi.org/10.1109/2.348001
-    example_url: "https://danluu.com/input-lag/"
     see_also:
       - jevons-paradox
       - moores-law
@@ -1686,8 +1680,6 @@ laws:
           hardware is cheap and engineers are not; much of the "bloat" is abstraction that let a feature ship in weeks instead of months
       guideline: |-
         Treat the speed a faster machine buys you as a budget to protect, not a license to spend. Set a performance budget and fail the build when a release regresses against it.
-      example: |-
-        In 2017 Dan Luu measured the time from pressing a key to the character appearing on screen across computers from several decades. An Apple IIe from 1983 took 30 ms, while a 2014 MacBook Pro took 100 ms and a 2016 Lenovo X1 Carbon took 110 to 150 ms depending on the OS. He concluded that almost every computer people buy today is slower, by this measure, than common machines from the 1970s and 1980s.
       source: |-
         Niklaus Wirth, *A Plea for Lean Software* (IEEE Computer, February 1995) — where Wirth quotes the line as "Reiser's law", crediting his colleague Martin Reiser; the name Wirth's Law was attached later.
     ja:
@@ -1701,8 +1693,6 @@ laws:
           ハードウェアは安く、エンジニアは高い。「肥大」の多くは、機能を数か月ではなく数週間で出すための抽象化だ
       guideline: |-
         マシンが速くなって得た余裕は、使ってよい分ではなく守るべき予算として扱う。性能予算を決め、リリースがそれより遅くなったらビルドを失敗させる。
-      example: |-
-        2017年、Dan Luu はキーを押してから文字が画面に出るまでの時間を、数十年分のコンピュータで計測した。1983年の Apple IIe は30ミリ秒だったが、2014年の MacBook Pro は100ミリ秒、2016年の Lenovo X1 Carbon は OS によって110〜150ミリ秒かかった。彼は、いま買えるほとんどのコンピュータは、この尺度では1970〜80年代のよくある機種より遅いと結論づけた。
       source: |-
         Niklaus Wirth『A Plea for Lean Software』(IEEE Computer, 1995 年 2 月)。Wirth 自身は同僚 Martin Reiser の言葉として「Reiser の法則」の名で引いている。「Wirth の法則」という呼び名は後から付いた。
 
@@ -2203,7 +2193,6 @@ laws:
   - slug: normal-accident-theory
     tag: safety
     source_url: https://en.wikipedia.org/wiki/Normal_Accidents
-    example_url: "https://www.energy.gov/sites/default/files/oeprod/DocumentsandMedia/BlackoutFinal-Web.pdf"
     see_also:
       - normalization-of-deviance
       - swiss-cheese-model
@@ -2221,8 +2210,6 @@ laws:
           organizations such as aircraft carriers and air-traffic control run tightly coupled, complex systems with very few accidents, through redundancy, deference to expertise and constant attention to small failures
       guideline: |-
         Reduce coupling — add buffers, timeouts, bulkheads, and circuit breakers — and cut complexity before adding more safety interlocks, which themselves add interactions.
-      example: |-
-        On August 14, 2003, a blackout cut power to about 50 million people across the US Midwest, Northeast and Ontario. The joint US-Canada task force traced it to several ordinary faults that interacted: a regional monitoring tool fed bad data, FirstEnergy's control-room alarm system failed shortly after 14:14, and its 345 kV lines began tripping on overgrown trees. Operators did not see the lines go, and the losses cascaded through a tightly linked grid.
       source: |-
         Charles Perrow, *Normal Accidents: Living with High-Risk Technologies* (Basic Books, 1984).
     ja:
@@ -2236,8 +2223,6 @@ laws:
           空母や航空管制のような組織は、冗長性、専門性への敬意、小さな失敗への絶え間ない注意によって、密結合で複雑な系をごく少ない事故で動かしている
       guideline: |-
         安全のための連動装置を足す前に、バッファ、タイムアウト、バルクヘッド、サーキットブレーカで結合を緩め、複雑さを減らす。連動装置そのものも相互作用を増やす。
-      example: |-
-        2003年8月14日、米国中西部と北東部、カナダのオンタリオ州で大停電が起き、約5000万人が電力を失った。米加合同のタスクフォースによると、原因はよくある不具合がいくつも重なったことだった。地域の監視ツールに誤ったデータが入り、FirstEnergy の制御室の警報システムが14時14分過ぎに止まり、345 kV の送電線が伸びすぎた木に触れて次々に落ちた。運転員は送電線の脱落に気づかず、停止は密に結びついた送電網を連鎖的に広がった。
       source: |-
         Charles Perrow『Normal Accidents: Living with High-Risk Technologies』(Basic Books, 1984)。
 
