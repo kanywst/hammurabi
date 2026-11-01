@@ -2,9 +2,17 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { translations } from '@/translations';
 import { laws, lawBySlug, tags, type Law, type Locale } from '@/data/laws';
-import { article, articleLabel, DATA_URL, hueFor, routeFor } from '@/lib/site';
+import {
+  article,
+  articleLabel,
+  DATA_URL,
+  hueFor,
+  routeFor,
+  urlFor,
+} from '@/lib/site';
 import Medallion from './Medallion';
 import RichText from './RichText';
+import ShareBar from './ShareBar';
 import LawDiagram from './diagrams';
 
 /** Counter notes are authored as clauses; the markdown generator closes them
@@ -161,6 +169,32 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
               ) : null}
             </p>
           ) : null}
+        </Part>
+
+        <Part title={t.cite.heading}>
+          <p className="text-[0.9375rem]">
+            {lang === 'ja'
+              ? `Hammurabi『${articleLabel(lang, law.number)} ${text.title}』`
+              : `Hammurabi, ${articleLabel(lang, law.number)}, “${text.title}.”`}{' '}
+            <span className="break-all">{urlFor(lang, law.slug)}</span>
+          </p>
+          <details className="mt-2">
+            <summary className="navlink cursor-pointer">BibTeX</summary>
+            <pre className="mt-2 overflow-x-auto rounded-md bg-surface p-3 text-[0.8125rem] leading-relaxed">{`@misc{hammurabi-${law.slug},
+  title  = {${text.title}},
+  author = {{Hammurabi contributors}},
+  note   = {Hammurabi, ${articleLabel('en', law.number)}},
+  url    = {${urlFor(lang, law.slug)}}
+}`}</pre>
+          </details>
+          <p className="meta mt-2">{t.cite.note}</p>
+          <div className="mt-4">
+            <ShareBar
+              url={urlFor(lang, law.slug)}
+              title={text.title}
+              lang={lang}
+            />
+          </div>
         </Part>
 
         {related.length > 0 && (

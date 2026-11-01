@@ -11,6 +11,8 @@
 
 ---
 
+**データとして使う:** すべての法則を [JSON](https://kanywst.github.io/hammurabi/api/laws.json)、Markdown (`/ja/laws/<slug>/index.md`)、[llms.txt](https://kanywst.github.io/hammurabi/llms.txt)、[RSS](https://kanywst.github.io/hammurabi/ja/feed.xml) で公開している。どれも CC BY-SA 4.0。
+
 ## Hammurabi とは？
 
 複雑性が増し続ける現代において、エンジニアリングの最大のボトルネックは「コード」ではなく、**「不確実な状況下での意思決定」** です。

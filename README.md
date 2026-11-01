@@ -11,6 +11,8 @@
 
 ---
 
+**Use the data:** every law is published as [JSON](https://kanywst.github.io/hammurabi/api/laws.json), as Markdown (`/laws/<slug>/index.md`), in [llms.txt](https://kanywst.github.io/hammurabi/llms.txt) and as an [RSS feed](https://kanywst.github.io/hammurabi/feed.xml), all under CC BY-SA 4.0.
+
 ## What is Hammurabi?
 
 In a world of increasing complexity, the primary bottleneck in engineering is no longer **code**, but **decision-making under uncertainty**.
