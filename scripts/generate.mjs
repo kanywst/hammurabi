@@ -55,6 +55,8 @@ const COPY = {
     mechanism: 'Mechanism',
     counter: 'Counter',
     guideline: 'Guideline',
+    example: 'In practice',
+    exampleLink: 'account ↗',
     source: 'Source',
     seeAlso: 'See also',
     sourceLink: 'source ↗',
@@ -70,6 +72,8 @@ const COPY = {
     mechanism: 'メカニズム',
     counter: '対立概念',
     guideline: '判断の指針',
+    example: '実例',
+    exampleLink: '記録 ↗',
     source: '出典',
     seeAlso: '関連',
     sourceLink: '原典 ↗',
@@ -115,6 +119,7 @@ function entry(law, tags, locale, bySlug, depth) {
     `- **${t.mechanism}:** ${loc.mechanism}`,
     `- **${t.counter}:** ${counter}`,
     `- **${t.guideline}:** ${loc.guideline}`,
+    ...(loc.example ? [`- **${t.example}:** ${loc.example} [${t.exampleLink}](${law.example_url})`] : []),
     `- **${t.source}:** ${loc.source} — [${t.sourceLink}](${law.source_url})`,
   ];
 
@@ -245,6 +250,7 @@ function websiteModule(laws, tags, situations) {
       number: law.number,
       tag: law.tag,
       sourceUrl: law.source_url,
+      exampleUrl: law.example_url ?? null,
       seeAlso: law.see_also,
       featured: law.featured,
       figure: figureFor(law),
@@ -268,6 +274,8 @@ export interface LawText {
   mechanism: string;
   counter: Counter;
   guideline: string;
+  /** "In practice": a real, documented case, when one has been found. */
+  example?: string;
   source: string;
 }
 
@@ -295,6 +303,7 @@ export interface Law {
   number: number;
   tag: string;
   sourceUrl: string;
+  exampleUrl: string | null;
   seeAlso: string[];
   /** One of the editor's picks, shown at the top of the index. */
   featured: boolean;

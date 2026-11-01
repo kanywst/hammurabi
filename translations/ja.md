@@ -3,7 +3,7 @@
 **エンジニアリングの法則と、その歯止め。** どの条にも、現場での指針と一次資料の出典を付けている。
 
 [![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=1d47b8&labelColor=17181a)](https://github.com/kanywst/hammurabi/stargazers)
-[![laws](https://img.shields.io/badge/%E6%B3%95%E5%89%87-91-1d47b8?style=for-the-badge&labelColor=17181a)](#法典)
+[![laws](https://img.shields.io/badge/%E6%B3%95%E5%89%87-95-1d47b8?style=for-the-badge&labelColor=17181a)](#法典)
 [![site](https://img.shields.io/badge/%E6%B3%95%E5%85%B8%E3%82%92%E8%AA%AD%E3%82%80-1d47b8?style=for-the-badge&labelColor=17181a)](https://kanywst.github.io/hammurabi/ja/)
 [![license](https://img.shields.io/badge/content-CC%20BY--SA%204.0-5c5f64?style=for-the-badge&labelColor=17181a)](../LICENSE)
 
@@ -48,13 +48,13 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 **状況から引く**
 
 - **見積りが毎回ずれる:** [ホフスタッターの法則 (Hofstadter's Law)](#ホフスタッターの法則-hofstadters-law) · [90対90の法則 (Ninety-Ninety Rule)](#90対90の法則-ninety-ninety-rule) · [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) · [時間を固定し、スコープを変える (Fixed Time, Variable Scope)](#時間を固定しスコープを変える-fixed-time-variable-scope)
-- **チームが大きくなってきた:** [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) · [ダンバー数 (Dunbar's Number)](#ダンバー数-dunbars-number) · [リンゲルマン効果 (Ringelmann Effect)](#リンゲルマン効果-ringelmann-effect) · [コンウェイの法則 (Conway's Law)](#コンウェイの法則-conways-law) · [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control)
+- **チームが大きくなってきた:** [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) · [ダンバー数 (Dunbar's Number)](#ダンバー数-dunbars-number) · [リンゲルマン効果 (Ringelmann Effect)](#リンゲルマン効果-ringelmann-effect) · [コンウェイの法則 (Conway's Law)](#コンウェイの法則-conways-law) · [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control) · [バス係数 (Bus Factor)](#バス係数-bus-factor)
 - **指標が数字合わせになっている:** [グッドハートの法則 (Goodhart's Law)](#グッドハートの法則-goodharts-law) · [コブラ効果 (Cobra Effect)](#コブラ効果-cobra-effect) · [シャーキーの原理 (Shirky Principle)](#シャーキーの原理-shirky-principle)
 - **決めきれない:** [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality) · [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy)
-- **障害が起きた後:** [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor) · [自動化の皮肉 (Ironies of Automation)](#自動化の皮肉-ironies-of-automation) · [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions)
-- **信頼性と開発速度がぶつかる:** [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) · [トイル (Toil)](#トイル-toil) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [マーフィーの法則 (Murphy's Law)](#マーフィーの法則-murphys-law) · [作った者が運用する (You Build It, You Run It)](#作った者が運用する-you-build-it-you-run-it) · [アンドン（ラインを止める） (Andon (Stop the Line))](#アンドンラインを止める-andon-stop-the-line) · [カオスエンジニアリング (Chaos Engineering)](#カオスエンジニアリング-chaos-engineering)
+- **障害が起きた後:** [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor) · [自動化の皮肉 (Ironies of Automation)](#自動化の皮肉-ironies-of-automation) · [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions) · [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox)
+- **信頼性と開発速度がぶつかる:** [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) · [トイル (Toil)](#トイル-toil) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [マーフィーの法則 (Murphy's Law)](#マーフィーの法則-murphys-law) · [作った者が運用する (You Build It, You Run It)](#作った者が運用する-you-build-it-you-run-it) · [アンドン（ラインを止める） (Andon (Stop the Line))](#アンドンラインを止める-andon-stop-the-line) · [カオスエンジニアリング (Chaos Engineering)](#カオスエンジニアリング-chaos-engineering) · [技術的負債 (Technical Debt)](#技術的負債-technical-debt)
 - **何かが遅い:** [アムダールの法則 (Amdahl's Law)](#アムダールの法則-amdahls-law) · [制約理論 (Theory of Constraints)](#制約理論-theory-of-constraints) · [早すぎる最適化 (Premature Optimization)](#早すぎる最適化-premature-optimization) · [スケールの裾野 (The Tail at Scale)](#スケールの裾野-the-tail-at-scale) · [リトルの法則 (Little's Law)](#リトルの法則-littles-law)
-- **古いコードを消す・作り直す:** [チェスタトンの柵 (Chesterton's Fence)](#チェスタトンの柵-chestertons-fence) · [セカンドシステム症候群 (Second-System Effect)](#セカンドシステム症候群-second-system-effect) · [ガルの法則 (Gall's Law)](#ガルの法則-galls-law) · [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [イーグルソンの法則 (Eagleson's Law)](#イーグルソンの法則-eaglesons-law) · [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [ストラングラーフィグ (Strangler Fig)](#ストラングラーフィグ-strangler-fig) · [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule)
+- **古いコードを消す・作り直す:** [チェスタトンの柵 (Chesterton's Fence)](#チェスタトンの柵-chestertons-fence) · [セカンドシステム症候群 (Second-System Effect)](#セカンドシステム症候群-second-system-effect) · [ガルの法則 (Gall's Law)](#ガルの法則-galls-law) · [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [イーグルソンの法則 (Eagleson's Law)](#イーグルソンの法則-eaglesons-law) · [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [ストラングラーフィグ (Strangler Fig)](#ストラングラーフィグ-strangler-fig) · [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule) · [技術的負債 (Technical Debt)](#技術的負債-technical-debt) · [レーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)](#レーマンのソフトウェア進化の法則-lehmans-laws-of-software-evolution)
 - **API やインタフェースを設計する:** [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [ポステルの法則 (Postel's Law)](#ポステルの法則-postels-law) · [驚き最小の原則 (Principle of Least Astonishment)](#驚き最小の原則-principle-of-least-astonishment) · [リーキー・アブストラクション (Law of Leaky Abstractions)](#リーキーアブストラクション-law-of-leaky-abstractions) · [テスラーの複雑性保存則 (Tesler's Law)](#テスラーの複雑性保存則-teslers-law) · [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule)
 - **新しいものを作り始める:** [ワーキング・バックワーズ (Working Backwards)](#ワーキングバックワーズ-working-backwards) · [YAGNI (YAGNI)](#yagni-yagni) · [ガルの法則 (Gall's Law)](#ガルの法則-galls-law) · [劣っている方が勝つ (Worse is Better)](#劣っている方が勝つ-worse-is-better) · [KISS の原則 (KISS Principle)](#kiss-の原則-kiss-principle) · [XY問題 (XY Problem)](#xy問題-xy-problem)
 - **技術を選ぶ:** [リンディ効果 (Lindy Effect)](#リンディ効果-lindy-effect) · [カーゴ・カルト・エンジニアリング (Cargo Cult Engineering)](#カーゴカルトエンジニアリング-cargo-cult-engineering) · [アマラの法則 (Amara's Law)](#アマラの法則-amaras-law) · [生存者バイアス (Survivorship Bias)](#生存者バイアス-survivorship-bias) · [退屈な技術を選べ (Choose Boring Technology)](#退屈な技術を選べ-choose-boring-technology)
@@ -156,6 +156,10 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 | `89` | [時間を固定し、スコープを変える (Fixed Time, Variable Scope)](#時間を固定しスコープを変える-fixed-time-variable-scope) | 見積り | スコープを固定して時間を固定しないと、ずれるのは期日で、スコープは残る。時間を固定すれば、何が大事かを選ばざるを得なくなる。 |
 | `90` | [ストラングラーフィグ (Strangler Fig)](#ストラングラーフィグ-strangler-fig) | 保守性 | 稼働中のシステムは、一度に置き換えるより、周縁から少しずつ置き換えるほうがたいてい安全だ。 |
 | `91` | [退屈な技術を選べ (Choose Boring Technology)](#退屈な技術を選べ-choose-boring-technology) | 意思決定 | 不慣れな技術を採り入れるたびに、未知の故障モードと恒久的な運用コストが付いてくる。チームが抱えられる数は多くない。 |
+| `92` | [技術的負債 (Technical Debt)](#技術的負債-technical-debt) | 保守性 | 問題を十分に理解する前に出したコードは、誰かが書き直すまで、そのコードをその後変えるたびに余計なコストを生む。 |
+| `93` | [レーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)](#レーマンのソフトウェア進化の法則-lehmans-laws-of-software-evolution) | 保守性 | 実際に使われているプログラムは、変わり続けなければ役に立たなくなる。そして変えるたびに、手をかけて単純にしない限り複雑になっていく。 |
+| `94` | [バス係数 (Bus Factor)](#バス係数-bus-factor) | 組織 | システムを動かし続けられる人が少ないほど、その将来は一人ひとりが辞めずにいることにかかってくる。 |
+| `95` | [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox) | 保守性 | バグを見つける方法はどれも、その方法では見つからないバグを残す。だから変わらないテストスイートが見つけるバグは減っていく。 |
 
 ### タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)
 
@@ -176,6 +180,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** Vaughan が NASA で見つけたのは、ルールを破る悪人ではなかった。O リングの侵食が見つかってもシャトルが無事に戻るたびに、技術者はそれを記録し、許容範囲内と判断し、次の飛行で許容する範囲を広げた。どの段階にも理由があり、承認も通っていた。逸脱は組織の通常の手続きを経て標準になったので、誰もリスクを取っているとは感じなかった。
 - **対立概念:** **エラーバジェット** — 逸脱がすべて前兆とは限らない。一つ残らず調べるチームは出荷が止まり、やがて調査そのものを無視し始める。許容量を合意しておけば、本物の警報が埋もれない。
 - **判断の指針:** チェックが失敗したまま出荷するなら、誰がなぜ決めたか、いつ見直すかを書き残す。ポストモーテムでは、過去のどの例外のせいで今回が当たり前に見えたのかを問う。
+- **実例:** 2003年のスペースシャトル・コロンビア喪失を調べた事故調査委員会は、断熱材の剥落がそれ以前の多くの飛行で起きており、目視で確認できた飛行の10%では左バイポッド部の断熱材が剥がれていたと指摘した。NASA はこれを普通のことと見なすようになっていた。2002年10月の STS-112 で大きな断熱材片が固体ロケットブースターに当たったときも、経営陣は飛行中異常に指定せず、格下げした「対応事項」として扱った。 [記録 ↗](https://govinfo.library.unt.edu/caib/news/report/pdf/vol1/chapters/chapter8.pdf)
 - **出典:** Diane Vaughan『The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA』(University of Chicago Press, 1996、増補版 2016、本項のリンク先)。チャレンジャー号の O リングをめぐる判断の分析から生まれたこの用語の出典。 — [原典 ↗](https://www.press.uchicago.edu/ucp/books/book/chicago/C/bo22781921.html)
 - **関連:** [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [正常性バイアス (Normalcy Bias)](#正常性バイアス-normalcy-bias) · [割れ窓理論 (Broken Windows Theory)](#割れ窓理論-broken-windows-theory) · [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) · [アンドン（ラインを止める） (Andon (Stop the Line))](#アンドンラインを止める-andon-stop-the-line)
 
@@ -187,6 +192,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** ルールやコードの分岐に残っているのは問題への答えで、問題そのものは残っていない。それが防いでいる障害も、誰のために書かれたかも、誰が足したかも、ファイルにはまず書かれていないので、答えは雑音に見える。消すのは安く、一瞬で済む。そのコストは、元の問題が戻ってきたときに、たいてい別の誰かに回ってくる。
 - **対立概念:** **期限付きの経緯調査** — この規則を絶対視すると何ひとつ消せなくなる。理由を知っていた人がいなくなり、理由ごと失われていることもあるからだ。
 - **判断の指針:** その「柵」（コードやルール）がなぜ立てられたのかを説明できるまで、取り除かない。ただし調べる期限は決めておく。期限が来たら、ロールバックを用意してフラグの裏で外し、どこから苦情が出るかを見る。
+- **実例:** 2006年、Debian のメンテナが OpenSSL の乱数生成器から1行を削除した。Valgrind が未初期化メモリの読み取りとして警告していたからで、本人は「乱数生成器に実際どう影響するのか見当がつかない」と書いていた。その行こそが呼び出し側のデータをエントロピープールに加える処理で、削除後に予測不能な入力として残ったのはプロセス ID だけだった。2008年5月に欠陥が公表されるまで、Debian 系の ssh-keygen は鍵の種類と長さごとに約32,767通りの鍵しか作れなかった。 [記録 ↗](https://research.swtch.com/openssl)
 - **出典:** G. K. Chesterton『The Thing』(1929)。道に立つ柵の寓話の出典。 — [原典 ↗](https://www.chesterton.org/taking-a-fence-down/)
 - **関連:** [イーグルソンの法則 (Eagleson's Law)](#イーグルソンの法則-eaglesons-law) · [YAGNI (YAGNI)](#yagni-yagni)
 
@@ -209,6 +215,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** Parkinson の委員会は原子炉の計画を数分で承認し、自転車置き場には45分かける。自転車置き場なら誰でも思い描けるが、原子炉を判断できる人は少ないからだ。分かることに口を出すと役に立った気になれるし、議論のコストは議題によらず変わらない。そのため注意は、最も重要な議題ではなく、最も口を出しやすい議題に流れる。
 - **対立概念:** **名前はインタフェースである** — 議論しやすい小さなことが、後から変えられないこともある。公開 API の名前や設定キーは、議論するのは安いが、リリース後に変えるのは高くつく。
 - **判断の指針:** ツールで決められること（整形、import の順序、lint ルール）は人のレビューから外す。レビューのやり取りがスタイルの話ばかりになったら打ち切り、変更のうち最もリスクの高い部分について一つ質問する。会議では、金額やリスクの最も大きい議題を最初に置く。
+- **実例:** 1999年10月2日、FreeBSD 開発者の Poul-Henning Kamp は、sleep(1)に小数の秒数を渡せるようにするかで延々と続いた議論のあと、プロジェクトのメーリングリストに投稿した。彼はこのスレッドを「FreeBSD でこれまでにあった中で最もあからさまな自転車置き場の議論」と呼び、誰でもわかる小さな変更ほど議論が尽きず、複雑な変更はほとんど意見が出ないまま通ると書いた。 [記録 ↗](https://phk.freebsd.dk/sagas/bikeshed/)
 - **出典:** C. Northcote Parkinson『Parkinson's Law and Other Studies in Administration』(Houghton Mifflin, 1957) 所収「High Finance, or the Point of Vanishing Interest」。自転車置き場の委員会の寓話の出典。英国版は『Parkinson's Law: The Pursuit of Progress』(John Murray, 1958)。 — [原典 ↗](https://en.wikipedia.org/wiki/Law_of_triviality)
 - **関連:** [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [コードの健全性を上げるなら承認する (Approve What Improves Code Health)](#コードの健全性を上げるなら承認する-approve-what-improves-code-health)
 
@@ -220,6 +227,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** ゼロから書いた設計は、部品同士のあらゆる相互作用を前もって見込んでおく必要がある。だが複雑なシステムでは、相互作用のほとんどは動かしてみて初めて分かる。うまく動く単純なシステムは、使われるなかで相互作用がすでに試されており、そこに何かを足すのは分かっているものへの小さな変更で済む。丸ごと設計したシステムは、投資を済ませた後で、すべての相互作用を一度に見つけることになる。
 - **対立概念:** **おもちゃから育てられないシステムもある** — 決済の元帳、安全インターロック、独立した実装が多いプロトコルは、最初の版から正しくなければならない。こうしたものを本番で育てると、誤った版を本物のお金や人に対して動かすことになる。
 - **判断の指針:** 本物の仕事を端から端まで一つこなせる最小の版を出し、動く状態を保ったまま段階的に育てる。書き直しが提案されたら、どの動いているシステムから育てるのかを問う。
+- **実例:** 2005年3月、FBI は Virtual Case File を打ち切った。紙中心の事件管理を一つのシステムで置き換えようとした3年がかり、1億7000万ドルの計画で、ある支局での試験運用でもうまくいかないことが確かめられていた。司法省監察総監の報告によれば、後継の Sentinel はそれぞれ別の機能を提供する4つの段階に分けて、まず Web ポータルから順に作る方針に変わった。 [記録 ↗](https://oig.justice.gov/sites/default/files/legacy/reports/FBI/a0614/final.pdf)
 - **出典:** John Gall『General Systemantics: An Essay on How Systems Work, and Especially How They Fail』(General Systemantics Press, 1975)。『Systemantics: How Systems Work and Especially How They Fail』(Quadrangle, 1977) として再刊。「うまく動く複雑なシステムは、例外なく、うまく動く単純なシステムから進化したものである」の出典。 — [原典 ↗](https://en.wikipedia.org/wiki/John_Gall_(author))
 - **関連:** [劣っている方が勝つ (Worse is Better)](#劣っている方が勝つ-worse-is-better) · [YAGNI (YAGNI)](#yagni-yagni) · [セカンドシステム症候群 (Second-System Effect)](#セカンドシステム症候群-second-system-effect) · [ストラングラーフィグ (Strangler Fig)](#ストラングラーフィグ-strangler-fig)
 
@@ -231,6 +239,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** システムのインタフェースは、どれもその両側にいる人たちの合意で決まる。毎日話す相手となら、インタフェースは細かくでき、頻繁に変えられる。めったに話さない相手となら、粗く、形式張った、変えにくいものになる。だから作りやすい境界は意思疎通の経路に沿った境界で、誰かが意図したかどうかに関係なく、設計はそこに落ち着く。
 - **対立概念:** **まずモノリス** — チームごとにサービスを持たせると、分散システムのコストまで抱え込む。組織図がどうであれ、一つのチームが一つのデプロイ単位を持つべき場合もある。
 - **判断の指針:** モジュール化されたアーキテクチャが欲しいなら、先にチームを独立したモジュールとして編成する。組織構造にコードで逆らわない。
+- **実例:** 2008年、ハーバード・ビジネス・スクールの Alan MacCormack、John Rusnak、Carliss Baldwin は、同じ役割を果たすソフトウェアを対にして比べた。一方は結びつきの強い商用企業が、もう一方は結びつきの緩いオープンソースのコミュニティが作ったものだ。どの対でもオープンソース側のほうがはっきりモジュール化されており、ある部品への変更が他へ波及する度合いは商用側で最大8倍あった。著者らはこれを、製品の構造が作り手の組織構造を映すことと整合する証拠とした。 [記録 ↗](https://ideas.repec.org/p/hbs/wpaper/08-039.html)
 - **出典:** Melvin E. Conway『How Do Committees Invent?』(Datamation, 1968 年 4 月号)。 — [原典 ↗](https://www.melconway.com/Home/Committees_Paper.html)
 - **関連:** [ダンバー数 (Dunbar's Number)](#ダンバー数-dunbars-number) · [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) · [単一責任の原則 (Single Responsibility Principle)](#単一責任の原則-single-responsibility-principle) · [作った者が運用する (You Build It, You Run It)](#作った者が運用する-you-build-it-you-run-it) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control)
 
@@ -249,6 +258,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** 契約に書かれているのは約束したことで、利用者が見ているのは実際に起きていることだ。応答の順序、タイミング、エラーメッセージの文面、丸め方の細部は、どれも外から観測できる。利用者が十分に多ければ、そのどれかに依存する人が出てくる。たいていは、それが約束されていなかったことを知らないままだ。コストを負うのは保守する側で、「安全な」はずの内部変更で顧客側が動かなくなって初めて依存に気づく。
 - **対立概念:** **意図的なゆらぎ** — 観測できる挙動をすべて不可侵にすると、何も変えられなくなる。約束していない部分は、反復順序のランダム化や計画的な停止のように意図的に揺らしておく。そうすれば依存はそもそも生まれない。
 - **判断の指針:** 利用者がいる以上、「内部実装」というものはない。約束した部分はバージョニングと機能フラグで守り、約束していない部分は意図的に揺らして、そもそも依存されないようにする。
+- **実例:** 2010年、Fedora 14開発版の glibc に、一部の Intel CPU 向けに後ろからコピーする高速な memcpy が入ると、Adobe の64ビット版 Flash プラグインの音声がノイズになった。Flash は重なり合うバッファに memcpy を使っていた。C 標準では未定義の動作だが、以前の前からコピーする実装ではたまたま動いていた。バグ報告では、glibc が古い挙動を守るべきかで意見が割れ、Linus Torvalds は memcpy を memmove と同じように動かせばよいと主張した。 [記録 ↗](https://bugzilla.redhat.com/show_bug.cgi?id=638477)
 - **出典:** Hyrum Wright『hyrumslaw.com』。『Software Engineering at Google』(Winters, Manshreck, Wright, 2020) で正式化された。 — [原典 ↗](https://www.hyrumslaw.com/)
 - **関連:** [ポステルの法則 (Postel's Law)](#ポステルの法則-postels-law) · [驚き最小の原則 (Principle of Least Astonishment)](#驚き最小の原則-principle-of-least-astonishment) · [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule)
 
@@ -282,6 +292,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** 仕様は不完全で、実装は別々の人が別々の時期に書く。少しでも外れた入力を拒む受信側は、仕様を違うふうに読んだ最初の相手に対して動かなくなる。仕様に厳密に沿った部分だけを送る送信側は、受信側が解釈で食い違う余地をいちばん小さくする。Postel のこの非対称な原則は、仕様が固まる前の初期インターネットで、実装同士の相互運用を助けた。
 - **対立概念:** **堅牢なプロトコルの維持（RFC 9413）** — 不正な入力を許すと、壊れた送信側がそのまま出荷される。受信側はみな同じ寛容さを真似るしかなくなり、事実上のプロトコルが仕様から離れていく。IAB は現在、寛容さが恒久化しないよう仕様を保守し続けることを設計者に求めており、不正な入力を無視するのはほぼ常に誤った対処だとしている。
 - **判断の指針:** 送るものは仕様どおりにする。受け取る側の小さな逸脱は、文書化してログに残すときに限って境界で受け入れ、受け入れをやめる期日を決めておく。
+- **実例:** 堅牢性原則を見直すために2023年に Martin Thomson と David Schinazi が書いた RFC 9413は、広く使われていた一部の TLS サーバーが、空の拡張で終わる ClientHello を受け取ると接続を切っていた例を挙げている。TLS では拡張をどの順序で並べてもよいことになっている。仕様どおりに動くクライアントはこうしたサーバーとつながらず、その並び順を避けて回避するしかなかった。 [記録 ↗](https://www.rfc-editor.org/rfc/rfc9413.html)
 - **出典:** Jon Postel『RFC 761』(DoD Standard TCP, 1980 年 1 月) §2.10。"be conservative in what you do, be liberal in what you accept from others" の出典。同じ趣旨は『RFC 760』(IP) §3.2 に別の言い回しで、『RFC 793』(1981) に同文で再掲される。 — [原典 ↗](https://www.rfc-editor.org/rfc/rfc761)
 - **関連:** [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [分散コンピューティングの誤謬 (Fallacies of Distributed Computing)](#分散コンピューティングの誤謬-fallacies-of-distributed-computing)
 
@@ -293,6 +304,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** チームの中では、自分の仕事に影響する人たちの事情はほとんど見えない。見えるのは壊れたビルドで、午前4時に彼らを起こした呼び出しや、彼らが知らされていなかった要件は見えない。見えない部分は意図で補われ、いちばん思い浮かびやすい意図が悪意だ。悪意を前提に動くと、直せたはずの文脈の欠落が、人と人との対立に変わる。
 - **対立概念:** **侵害を前提にする** — 悪意による失敗もあり、攻撃者は正直なミスに見えることを当てにしている。xz utils のバックドア（2024年）は、親切で辛抱強い貢献者が持ち込んだものだった。
 - **判断の指針:** 失敗を意図のせいにする前に、その人がその時点で何を見られたかを確かめ、欠けていたものを補う。意図を問題にするのは証拠があるときだけにし、その場合も一対一で話す。
+- **実例:** 2025年11月18日に Cloudflare のネットワークが障害を起こしたとき、チームは当初、超大規模な DDoS 攻撃を疑った。別の場所で運用していたステータスページが偶然同時に落ちたことで、その疑いは強まった。実際の原因はデータベースの権限変更で、クエリが重複行を返すようになり、Bot Management の特徴量ファイルが倍の大きさになってルーティングソフトウェアのサイズ上限を超えた。Cloudflare の事後報告は、攻撃や悪意ある行為によるものではなかったと明記している。 [記録 ↗](https://blog.cloudflare.com/18-november-2025-outage/)
 - **出典:** Robert J. Hanlon が『Murphy's Law Book Two』(Arthur Bloch 編, 1980) に寄稿した格言。 — [原典 ↗](https://en.wikipedia.org/wiki/Hanlon%27s_razor)
 - **関連:** [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) · [オッカムの剃刀 (Occam's Razor)](#オッカムの剃刀-occams-razor) · [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem)
 
@@ -304,6 +316,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** 「ホフスタッターの法則を考慮に入れても、いつも予想より長くかかる」。見積りは思い描ける手順から組み立てるので、思い描けない手順（統合時の想定外、手戻り、他人待ち）がそっくり抜け落ちる。見積もる本人がそれを補正しようとしても、同じ理由でうまくいかない。補正できるのは、すでに想像できる想定外だけだからだ。
 - **対立概念:** **パーキンソンの法則** — 見積りに余裕を足しても、その余裕は貯金されない。仕事のほうが膨らんで埋めるので、余裕のある見積りもきつい見積りと同じくらい遅れる。
 - **判断の指針:** 見積りは、今どう見えるかではなく、似た過去の作業に実際にかかった時間から出す。期限が危うくなったときに削るスコープは最初に書いておく。終盤だけでなく、マイルストーンを終えるたびに見積り直す。
+- **実例:** 2011年に NASA がジェイムズ・ウェッブ宇宙望遠鏡の計画を立て直したとき、打ち上げを2018年10月とし、予算の裏づけのある13か月のスケジュール予備を組み込んだ。予備はのちに14か月に増えた。それでも2018年初めの GAO 報告によれば、振動試験での異常などの技術的問題で予備を使い切り、打ち上げは少なくとも5か月遅い時期にずれ込み、さらに遅れる見込みだった。 [記録 ↗](https://www.gao.gov/assets/gao-18-273.pdf)
 - **出典:** Douglas Hofstadter『ゲーデル、エッシャー、バッハ — あるいは不思議の環 (Gödel, Escher, Bach)』(Basic Books, 1979)。この法則が述べられた箇所の出典。 — [原典 ↗](https://en.wikipedia.org/wiki/Hofstadter%27s_law)
 - **関連:** [90対90の法則 (Ninety-Ninety Rule)](#90対90の法則-ninety-ninety-rule) · [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [時間を固定し、スコープを変える (Fixed Time, Variable Scope)](#時間を固定しスコープを変える-fixed-time-variable-scope)
 
@@ -315,6 +328,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** Marilyn Strathern の言い方では「ある指標が目標になると、それは良い指標ではなくなる」。数字が役に立つのは、気にしている実態と一緒に動くからだ。数字に報酬がつくと、人は実態を変えずに数字だけを動かす安上がりな方法を見つける。「コミット数」で評価すれば、意味のない小さなコミットが量産される。
 - **対立概念:** **バランスト・スコアカード** — それでも数字なしでは舵を取れない。まとめて操作するのが難しい複数の指標を、仕事そのものと並べて読めば、測るのをやめるよりも長く信号を保てる。
 - **判断の指針:** 単一の指標で成果を評価しない。代わりの指標ではなく、システムが実際に出しているものを見る。
+- **実例:** 2016年9月、米消費者金融保護局(CFPB)は Wells Fargo に1億ドルの制裁金を科した。銀行自身の分析で、顧客が承認していない可能性のある預金口座とクレジットカード口座が200万件以上、従業員によって開設されていたことがわかったからだ。CFPB はこの行為が販売目標と報酬のインセンティブに後押しされたもので、従業員は販売目標を達成すると報酬を得ていたとした。 [記録 ↗](https://www.consumerfinance.gov/about-us/newsroom/consumer-financial-protection-bureau-fines-wells-fargo-100-million-widespread-illegal-practice-secretly-opening-unauthorized-accounts/)
 - **出典:** Charles Goodhart『Problems of Monetary Management: The U.K. Experience』(Papers in Monetary Economics, Reserve Bank of Australia, 1975)。元の法則の出典。よく引用される「指標が目標になると」の言い回しは Marilyn Strathern『'Improving ratings': audit in the British University system』(European Review, 1997) による。 — [原典 ↗](https://en.wikipedia.org/wiki/Goodhart%27s_law)
 - **関連:** [コブラ効果 (Cobra Effect)](#コブラ効果-cobra-effect) · [シャーキーの原理 (Shirky Principle)](#シャーキーの原理-shirky-principle) · [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions)
 
@@ -370,6 +384,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** 抽象化は、下の層がおとなしく動くと仮定して詳細を隠す。だが下の層がおとなしいのは、たいていの場合に限られる。TCP はケーブルが切れるまでパケットの喪失を隠し、SQL はインデックスがなくてクエリが数ミリ秒から数分になるまでアクセス経路を隠す。仮定が崩れると、問題は隠していた層の言葉で現れ、それを読めるのはその層を理解している人だけだ。
 - **対立概念:** **情報隠蔽** — 抽象化の利用者のほとんどは漏れに出くわさない。下に何があるかを大半の人が学ばずに済むことが、層を設ける意味だ（Parnas, 1972）。
 - **判断の指針:** 抽象化を使って速く進める。ただし、その下の層を理解している人をチームに少なくとも一人置く。
+- **実例:** 2017年1月1日0時(UTC)、うるう秒で時計が巻き戻り、Cloudflare の DNS ソフトウェア RRDNS が負の応答時間を計算した。開始時刻を Go の time.Now()から引いて測っていたが、当時の time.Now()は単調増加を保証していなかった。負の値はやがて rand.Int63n()に渡ってパニックを起こし、CNAME レコードを使う顧客の一部で DNS 解決が失敗した。ピーク時には問い合わせの約0.2%が失敗した。 [記録 ↗](https://blog.cloudflare.com/how-and-why-the-leap-second-affected-cloudflare-dns/)
 - **出典:** Joel Spolsky『The Law of Leaky Abstractions』(Joel on Software, 2002)。 — [原典 ↗](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/)
 - **関連:** [テスラーの複雑性保存則 (Tesler's Law)](#テスラーの複雑性保存則-teslers-law) · [デメテルの法則 (Law of Demeter)](#デメテルの法則-law-of-demeter)
 
@@ -381,6 +396,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** 原因が均等に散らばることはめったにない。Pareto はイタリアの土地所有でこれに気づき、Juran は品質管理に一般化して「重要な少数と些細な多数」と呼んだ。ソフトウェアでも、欠陥や負荷、問い合わせは一部のモジュール、エンドポイント、顧客に集中しやすい。比率がちょうど80対20になることはまれだが、偏りはたいてい大きいので、均等に手をかけるより順位を付けて取り組むほうが効果が大きい。
 - **対立概念:** **ロングテール** — 小さな原因も数が多ければ、少数の大きな原因を合計で上回ることがある。可用性やセキュリティでは、後回しにしたまれな経路から障害や侵害が起きる。
 - **判断の指針:** 品質改善を始める前に、直近の四半期の欠陥やインシデントの件数でモジュールを並べ、上から手を付ける。重要な少数は入れ替わるので、順位は四半期ごとに付け直す。
+- **実例:** 約10億台のマシンから集まるクラッシュ報告をもとにした Microsoft の2009年の SOSP 論文は、Windows Error Reporting のエラー報告が「パレート分布に従い、少数のバグが報告の大半を占める」と述べている。Windows Vista では上位500のバケットが全エラー報告の65%を占め、件数順に並べると報告の最初の4分の1は全バケットの1%にはるかに満たない数から来ていた。 [記録 ↗](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/sosp153-glerum-web.pdf)
 - **出典:** Vilfredo Pareto『Cours d'Économie Politique』(1896)。品質工学への応用は Joseph M. Juran『Quality Control Handbook』(1951)。 — [原典 ↗](https://en.wikipedia.org/wiki/Pareto_principle)
 - **関連:** [早すぎる最適化 (Premature Optimization)](#早すぎる最適化-premature-optimization)
 
@@ -414,6 +430,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** 報奨金が支払われるのは問題の証拠に対してで、問題が消えたことに対してではない。そして証拠は、たいてい成果より安く作れる。Siebert はこの効果を、英領インドのデリーでコブラに懸賞金をかけたら養殖が始まったという逸話から名付けたが、この逸話には記録上の裏付けがない。記録に残っている例は1902年のハノイだ。フランス当局がネズミの尻尾に報奨金を出すと、人々は尻尾だけを切ってネズミを放し、繁殖させた。市外ではネズミの養殖まで始まった。報奨金をやめると、それまでに増やされた分が放たれ、問題は前より大きくなる。
 - **対立概念:** **インセンティブはたいてい効く** — 報奨金や目標の多くは、意図した方向に行動を動かす。悪用されうるからといって成果に報いなければ、問題の解決に誰もお金を払わないままになる。
 - **判断の指針:** インセンティブを作るたびに、問題を直さずに報酬を得る方法がないかを考える。できるなら証拠ではなく成果に支払い、終わらせ方を先に決めておく。
+- **実例:** 京都議定書のクリーン開発メカニズム(CDM)では、冷媒 HCFC-22 を作る工場が、その製造で出る強力な温室効果ガス HFC-23 を破壊すると排出削減クレジットを得られた。Lambert Schneider が2011年に Climate Policy 誌で発表した研究によれば、こうした工場はクレジットを請求できない期間には HFC-23 の発生量がはっきり少なく、HCFC-22 の生産量もおもに CDM のルールで決まっているように見えた。Schneider は、この制度が HFC-23 を余計に生み出すゆがんだ動機を与えていると結論づけた。 [記録 ↗](https://ideas.repec.org/a/taf/tcpoxx/v11y2011i2p851-864.html)
 - **出典:** Horst Siebert『Der Kobra-Effekt: Wie man Irrwege der Wirtschaftspolitik vermeidet』(DVA, 2001)。この効果の命名の出典。記録に残るハノイの例は Michael G. Vann『Of Rats, Rice, and Race: The Great Hanoi Rat Massacre』(French Colonial History, 2003) による。 — [原典 ↗](https://en.wikipedia.org/wiki/Perverse_incentive)
 - **関連:** [グッドハートの法則 (Goodhart's Law)](#グッドハートの法則-goodharts-law) · [ジェヴォンズのパラドックス (Jevons Paradox)](#ジェヴォンズのパラドックス-jevons-paradox)
 
@@ -436,6 +453,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** 実装しやすく広めやすい、単純で「劣った」設計は、理論的には「正しい」が複雑な設計に、現実では勝つ。Unix は Lisp に勝ち、HTTP は CORBA に勝った。
 - **対立概念:** **正しいもの（The Right Thing）** — Gabriel 自身が対置した考え方。プロトコル、ファイル形式、セキュリティ境界のように後から変えにくいインタフェースでは、先に出すことより先に正しく作ることのほうが大事になる場合がある。
 - **判断の指針:** 利用者がその上に何かを作るものは、何年も付き合えるインタフェースを備えた最も単純な版で出す。実装は単純に保ち、手間はインタフェースにかける。
+- **実例:** 1980年代、OSI のネットワーク標準は国際委員会が作っていた。委員会はコンピュータ業界と通信業界の対立を解消できず、両方の設計を選択肢として標準に盛り込んだため、規格は大きく複雑になった。一方の TCP/IP はすでに ARPA のネットワークで動いており、仕様は無料で手に入った。OSI の文書は ISO から1部ずつ買う必要があった。1990年代初めには TCP/IP が勝ち、1992年には IP の後継として提案された ISO のプロトコルをインターネットの技術者たちが強く拒んだ。 [記録 ↗](https://spectrum.ieee.org/osi-the-internet-that-wasnt)
 - **出典:** Richard P. Gabriel『Lisp: Good News, Bad News, How to Win Big』(1991)。「Worse is Better」の節の出典。 — [原典 ↗](https://www.dreamsongs.com/RiseOfWorseIsBetter.html)
 - **関連:** [ガルの法則 (Gall's Law)](#ガルの法則-galls-law) · [リンディ効果 (Lindy Effect)](#リンディ効果-lindy-effect) · [セカンドシステム症候群 (Second-System Effect)](#セカンドシステム症候群-second-system-effect)
 
@@ -459,7 +477,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **単一障害点** — 毎回一人を名指しすると、その人がボトルネックになり、いなくなれば止まる。担当者は対応を調整する役であって、全部を自分でやる役ではない。
 - **判断の指針:** 「誰か見てもらえますか」とは言わない。「@名前 さん、これの調査をお願いします」と名指しで頼む。インシデントには必ず、名前のついた担当者を一人割り当てる。
 - **出典:** John M. Darley & Bibb Latané『Bystander Intervention in Emergencies: Diffusion of Responsibility』(Journal of Personality and Social Psychology, 1968)。 — [原典 ↗](https://doi.org/10.1037/h0025589)
-- **関連:** [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor) · [リンゲルマン効果 (Ringelmann Effect)](#リンゲルマン効果-ringelmann-effect) · [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem)
+- **関連:** [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor) · [リンゲルマン効果 (Ringelmann Effect)](#リンゲルマン効果-ringelmann-effect) · [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [バス係数 (Bus Factor)](#バス係数-bus-factor)
 
 ### マーフィーの法則 (Murphy's Law)
 
@@ -469,6 +487,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** よく知られた形は「うまくいかない可能性のあることは、必ずうまくいかない」だ。時間、トラフィック、想定外の入力が十分にあれば、潜んでいる故障モードはいずれ必ず表に出る。ハッピーパスだけを設計するエンジニアは、ネットワークが一瞬揺れただけで崩れるシステムを作る。
 - **対立概念:** **リスクの予算化** — 考えうる故障すべてに備えると、故障の一部が起きたときの損失より高くつく。故障モードを起こりやすさとコストで並べ、安くてまれなものは受け入れる。
 - **判断の指針:** 外部依存、リトライ、タイムアウトはすべて、本番でいつか必ず失敗するものとして扱う。成功パスより先に失敗パスを作る。
+- **実例:** 2017年2月28日、AWS のエンジニアが US-EAST-1 の S3 課金系サブシステムから数台のサーバーを外す手順を実行した際、入力を1つ打ち間違え、コマンドは S3 のインデックスと配置のサブシステムが頼るサーバーまで大量に外してしまった。そのリージョンの S3 は、これらのサブシステムが再起動するまでおよそ4時間リクエストを処理できなかった。AWS はツールを改め、容量の削除をゆっくりにし、どのサブシステムも必要最小限の容量を下回るような削除は拒むようにした。 [記録 ↗](https://aws.amazon.com/message/41926/)
 - **出典:** Capt. Edward A. Murphy Jr. (USAF MX981 計画, 1949)。Maj. John Paul Stapp により広まった。原文の言い回しについては証言が食い違う。Nick T. Spark『A History of Murphy's Law』(2006) を参照。 — [原典 ↗](https://en.wikipedia.org/wiki/Murphy%27s_law)
 - **関連:** [正常性バイアス (Normalcy Bias)](#正常性バイアス-normalcy-bias) · [分散コンピューティングの誤謬 (Fallacies of Distributed Computing)](#分散コンピューティングの誤謬-fallacies-of-distributed-computing) · [カオスエンジニアリング (Chaos Engineering)](#カオスエンジニアリング-chaos-engineering)
 
@@ -481,7 +500,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **1つの差分に1つの理由** — 振る舞いの変更に片付けが相乗りすると、変更そのものが埋もれる。ついでに40箇所をリネームした PR は、誰もレビューしない。
 - **判断の指針:** コードは必ず来たときよりもきれいにして去る。ただし片付けは、同じ差分の中で読み切れる大きさにとどめる。1行のリネーム、分かりやすくしたコメント、使われていない分岐の削除くらいだ。それより大きい片付けは別のコミットにする。
 - **出典:** Robert C. Martin『The Boy Scout Rule』(Kevlin Henney 編『97 Things Every Programmer Should Know』O'Reilly, 2010 所収)。ベーデン＝パウエルの「この世界を来たときより少しだけ良くして去れ」を翻案した規則の出典。『Clean Code』(2008) にも記述がある。 — [原典 ↗](https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html)
-- **関連:** [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [割れ窓理論 (Broken Windows Theory)](#割れ窓理論-broken-windows-theory) · [コードの健全性を上げるなら承認する (Approve What Improves Code Health)](#コードの健全性を上げるなら承認する-approve-what-improves-code-health)
+- **関連:** [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [割れ窓理論 (Broken Windows Theory)](#割れ窓理論-broken-windows-theory) · [コードの健全性を上げるなら承認する (Approve What Improves Code Health)](#コードの健全性を上げるなら承認する-approve-what-improves-code-health) · [技術的負債 (Technical Debt)](#技術的負債-technical-debt) · [レーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)](#レーマンのソフトウェア進化の法則-lehmans-laws-of-software-evolution)
 
 ### テスラーの複雑性保存則 (Tesler's Law)
 
@@ -514,7 +533,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **読み手に合わせて書く** — 何もかも説明する文書では、熟練した読み手が必要な情報にたどり着けない。午前3時の運用担当に必要なのはチュートリアルではなくコマンドだ。
 - **判断の指針:** ドキュメントや公開 API を出す前に、システムを触ったことのない人にその作業を実際にやってもらい、自分は黙って見る。その人がつまずいた箇所が、そのまま書き忘れた前提を示している。
 - **出典:** Colin Camerer, George Loewenstein & Martin Weber『The Curse of Knowledge in Economic Settings: An Experimental Analysis』(Journal of Political Economy, 1989)。 — [原典 ↗](https://doi.org/10.1086/261651)
-- **関連:** [XY問題 (XY Problem)](#xy問題-xy-problem) · [ダニング・クルーガー効果 (Dunning-Kruger Effect)](#ダニングクルーガー効果-dunning-kruger-effect) · [驚き最小の原則 (Principle of Least Astonishment)](#驚き最小の原則-principle-of-least-astonishment) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control)
+- **関連:** [XY問題 (XY Problem)](#xy問題-xy-problem) · [ダニング・クルーガー効果 (Dunning-Kruger Effect)](#ダニングクルーガー効果-dunning-kruger-effect) · [驚き最小の原則 (Principle of Least Astonishment)](#驚き最小の原則-principle-of-least-astonishment) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control) · [バス係数 (Bus Factor)](#バス係数-bus-factor)
 
 ### スイスチーズモデル (Swiss Cheese Model)
 
@@ -524,6 +543,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** レビュー、テスト、アラート、ランブック、ロールバックといった防御層には、どれも穴がある。事故は、独立した複数の層の穴がたまたま一列にそろったときに起きる。どの層も完璧にはできないので、信頼性は、それぞれ別の理由で失敗する層を重ねることで得る。
 - **対立概念:** **通常事故理論** — 層は互いに独立しておらず、層を足すたびにその層の相互作用も増える。ある程度を超えると、安全策を一つ足すことは失敗の経路を一つ足すことになる。
 - **判断の指針:** インシデントレビューでは「失敗した一か所」で終わらせない。その失敗を止めるはずだった層をすべて挙げ、なぜその瞬間に各層の穴が開いていたのかを問う。一つの層を直すだけで済むことはまれだ。層同士が互いに独立して失敗するようにする変更を優先する。
+- **実例:** 2017年1月31日、GitLab.com のエンジニアは遅れていた PostgreSQL のレプリカのデータディレクトリを消すつもりで、プライマリで消してしまった。そこから先の防御にもそれぞれ穴があった。毎日の pg_dump バックアップはバージョンの不一致で失敗し続けており、その失敗通知のメールは受信側で拒否されて誰も気づかず、データベースサーバーではディスクのスナップショットも有効になっていなかった。GitLab は6時間前のステージング用スナップショットから復旧し、その間に作られた約5,000のプロジェクト、約5,000のコメント、約700のユーザーアカウントを失った。 [記録 ↗](https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31/)
 - **出典:** James Reason『Human Error』(Cambridge University Press, 1990) が多層防護のモデルを示した。スイスチーズの図は Reason『Human error: models and management』(BMJ, 2000、本項のリンク先) から。チーズの比喩そのものは Rob Lee によるものだと Larouzée & Le Coze (Safety Science, 2020) が跡づけている。 — [原典 ↗](https://doi.org/10.1136/bmj.320.7237.768)
 - **関連:** [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys)
 
@@ -542,6 +562,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** Knuth の原文は「小さな効率のことは、まあ 97% の場面では忘れるべきだ。早すぎる最適化は諸悪の根源である。とはいえ、決定的な 3% での機会は逃すべきではない」だ。時間がどこで使われているかの勘はたいてい外れるので、計測前の最適化はホットでないコードに工数を使うことになる。そのうえ複雑さが増え、ホットパスとコールドパスが絡み合って、本当に必要な最適化が後からやりにくくなる。
 - **対立概念:** **性能は設計で決まる** — 性能の一部は初期の設計（データ配置、往復回数、同期か非同期か）で決まり、後からプロファイルしても直せない。そうした判断では、測れるものができる前から速さを考える。
 - **判断の指針:** まず素直なコードを書く。最適化するのは、プロファイラでボトルネックだと確かめたホットパスだけにする。残り97%のクリティカルでないコードは単純なまま残す。次のメンテナーが日々触るのはそこだ。
+- **実例:** GTA Online は長年、読み込みに何分もかかっていた。2021年、t0st と名乗るプレイヤーがプロファイルを取ると、時間のほとんどは平凡な2か所のコードで使われていた。10MB の JSON を読むパーサーが sscanf を、その中で strlen を何度も呼んでいたことと、6万3,000件の項目を1件ずつそれまでの全項目と比べる重複チェックだ。この2か所を直すだけで読み込みは約6分から1分50秒に縮み、Rockstar も2021年3月に修正を出した。 [記録 ↗](https://nee.lv/2021/02/28/How-I-cut-GTA-Online-loading-times-by-70/)
 - **出典:** Donald E. Knuth『Structured Programming with go to Statements』(Computing Surveys, 1974)。 — [原典 ↗](https://doi.org/10.1145/356635.356640)
 - **関連:** [アムダールの法則 (Amdahl's Law)](#アムダールの法則-amdahls-law) · [パレートの法則 (Pareto Principle)](#パレートの法則-pareto-principle)
 
@@ -553,6 +574,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** 「十分な目玉があれば、あらゆるバグは浅い。」一人では手に負えないように見える欠陥も、独立した多くの視点が加わると簡単な問題に変わることが多い。ただし、その人たちが実際にコードを見られることが前提だ。
 - **対立概念:** **目は多くても見ていない** — 公開されていることとレビューされていることは別だ。Heartbleed のバグは2014年に公表されるまで、2年間 OpenSSL の公開ソースに残っていた。コードによっては、気軽に眺める大勢より、報酬を受けた少数の専門家の目が必要になる。
 - **判断の指針:** 同じ種類のバグが何度もすり抜けるなら、同じ人がもっと慎重にレビューしても解決しない。視点の違う多くの人にコードを見せる。レビュアーを入れ替え、社内ライブラリを公開し、バグバウンティを実施する。
+- **実例:** Heartbleed のバグは2011年12月に OpenSSL に入り、2012年3月の OpenSSL 1.0.1 で出荷された。誰でも読めるコードで、ウェブの多くのサーバーで動いていた。それでも公になったのは2014年4月7日で、Codenomicon のエンジニアたちと Google Security の Neel Mehta がそれぞれ独立に見つけてからだった。読める目が多いことと、実際に読む人が多いことは違う。 [記録 ↗](https://heartbleed.com/)
 - **出典:** Eric S. Raymond『The Cathedral and the Bazaar』(1999)。Linus Torvalds にちなんで名付けられた法則の出典。 — [原典 ↗](https://web.archive.org/web/2024/http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/)
 - **関連:** [カニンガムの法則 (Cunningham's Law)](#カニンガムの法則-cunninghams-law)
 
@@ -564,6 +586,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** ネットワーク越しに使うデータストアは、**一貫性 (C)**・**可用性 (A)**・**分断耐性 (P)** を同時には保証できない。現実にはネットワーク分断を避けられないので、実際に選ぶのは*分断が起きたときに*一貫性と可用性のどちらを取るかだ。
 - **対立概念:** **PACELC / 調整可能な一貫性** — 分断はまれだ。毎日払っているのは、レイテンシと一貫性のトレードオフのほうだ（Abadi, 2012）。CAP の言葉だけで議論した設計は、平常時を考えていない。
 - **判断の指針:** 障害が起きる*前*に、操作ごとに一貫性と可用性のどちらを優先するかを決めておく。分断はいずれ起きる。問題は、そのときシステムがどう動くかだけだ。
+- **実例:** 2018年10月21日、GitHub の東海岸のネットワーク拠点と東海岸のメインのデータセンターの間で通信が43秒途切れ、MySQL のフェイルオーバーの仕組みが西海岸のデータベースを昇格させた。その結果、両方のサイトに相手にない書き込みが残った。GitHub はサイトを完全に動かし続けるよりデータの一貫性を守ることを選び、Webhook と Pages のビルドを止め、データを突き合わせる間、24時間11分にわたって機能を落として運用した。ポストモーテムには、長い機能低下はユーザーのデータの一貫性を守るためなら払う価値があったと書かれている。 [記録 ↗](https://github.blog/news-insights/company-news/oct21-post-incident-analysis/)
 - **出典:** Eric Brewer『Towards Robust Distributed Systems』(PODC 基調講演, 2000)。Seth Gilbert & Nancy Lynch が証明した (SIGACT News, 2002)。 — [原典 ↗](https://doi.org/10.1145/564585.564601)
 - **関連:** [二人の将軍問題 (Two Generals Problem)](#二人の将軍問題-two-generals-problem) · [分散コンピューティングの誤謬 (Fallacies of Distributed Computing)](#分散コンピューティングの誤謬-fallacies-of-distributed-computing)
 
@@ -582,6 +605,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** 安定したシステムでは、系内の平均件数 (L) は平均到着率 (λ) と平均滞在時間 (W) の積に等しく、**L = λW** となる。到着の分布やサービス規律に関係なく成り立つ。
 - **対立概念:** **稼働率** — 仕掛りを削りすぎると到着の合間にサーバが遊び、スループットが落ちる。断った仕事も、どこかで誰かがやらなければならない。
 - **判断の指針:** 容量を増やさずに滞在時間を縮めたいなら、始める仕事を減らす。仕掛りに上限を設け、上限を超えた分は捨てるか断るか後回しにする。そうすれば超過分は行列で長く待たされず、すぐに断られる。捨てずに上限だけ設けても、行列は測っていない場所に移るだけだ。
+- **実例:** Netflix は以前、サービスごとの同時実行数の上限を手間のかかる性能試験で決めて固定していた。だがオートスケールする環境ではその値がすぐ古くなり、サービスは余分な負荷を捨てられずに落ちることがあった。そこでオープンソースの concurrency-limits ライブラリでは、リトルの法則（上限 = 平均 RPS × 平均レイテンシ）から上限を求め、計測したレイテンシをもとに実行中に調整するようにした。 [記録 ↗](https://github.com/Netflix/concurrency-limits)
 - **出典:** John D. C. Little『A Proof for the Queuing Formula L = λW』(Operations Research, 1961)。 — [原典 ↗](https://doi.org/10.1287/opre.9.3.383)
 - **関連:** [スケールの裾野 (The Tail at Scale)](#スケールの裾野-the-tail-at-scale) · [制約理論 (Theory of Constraints)](#制約理論-theory-of-constraints)
 
@@ -600,6 +624,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** 信頼できない通信路でやりとりする二者は、合意できたと決して*確信*できない。どのメッセージにも確認応答が要り、その応答にも確認応答が要り、これが永遠に続く。何往復しても共有知識には届かない。
 - **対立概念:** **十分な確からしさ** — 確実さは得られないが、必要になることもまれだ。TCP も決済もあらゆる RPC も、高い確率と後から突き合わせる手段で動いている。証明を待っていたら何もできない。
 - **判断の指針:** 「送ったから届いた」とは決して考えない。ネットワークをまたぐ操作はすべて安全に再試行できるようにべき等にし、一往復の結果を信じるのではなく状態を突き合わせる。
+- **実例:** Stripe が2017年に書いた API の冪等性についての記事は、クライアントには判断のつかない状況から始まる。サーバー側では呼び出しが成功していても、応答が届く前に接続が切れれば、クライアントには課金が済んだかどうか分からない。Stripe は確実さを得ようとするのをやめ、クライアントにリクエストごとの冪等キーを送らせる。同じキーで再送すれば、二重に課金せず保存済みの結果を返す。 [記録 ↗](https://stripe.com/blog/idempotency)
 - **出典:** E. A. Akkoyunlu, K. Ekanadham & R. V. Huber『Some Constraints and Tradeoffs in the Design of Network Communications』(SOSP, 1975)。この問題を初めて述べた論文。「二人の将軍問題」と名付け、データベースの問題として定式化したのは Jim Gray『Notes on Data Base Operating Systems』(1978)。 — [原典 ↗](https://doi.org/10.1145/800213.806523)
 - **関連:** [CAP定理 (CAP Theorem)](#cap定理-cap-theorem)
 
@@ -611,6 +636,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** 階層組織では、人は*一つ上*の職務ではなく*今の*職務の成績で昇進する。そのため誰もが、自分に向かない職位に着くまで昇進を続け、そこにとどまる。有能な人は昇進して今の職務からいなくなり、無能が積み上がっていく。
 - **対立概念:** **人は役職に合わせて育つ** — 一つ上の職務ですでに実績がある人しか昇進させなければ、誰もその職務を学ぶ機会を得られない。良いマネージャーの多くは、支援と戻り道のある背伸びの役割から育ってきた。
 - **判断の指針:** 一番優秀なエンジニアを、褒美としてマネジメントに昇進させない。優秀なエンジニアを一人失ううえに、力不足のマネージャーを生むおそれがある。技術職のキャリアラダーを用意し、候補者は、すでに習熟した職務ではなく一つ上の職務への適性で評価する。
+- **実例:** Alan Benson、Danielle Li、Kelly Shue の3人は米国131社の営業職のデータを分析し、2019年に結果を発表した。企業は、管理職としての適性をよく予測する別の特徴があっても、売上の高い営業担当者を管理職に昇進させていた。管理職としての適性が低い人を昇進させるコストは大きいと推計している。管理職の責任が重い場合には、企業は売上の数字に頼る度合いを下げていた。 [記録 ↗](https://doi.org/10.1093/qje/qjz017)
 - **出典:** Laurence J. Peter & Raymond Hull『The Peter Principle』(1969)。 — [原典 ↗](https://en.wikipedia.org/wiki/Peter_principle)
 - **関連:** [ダニング・クルーガー効果 (Dunning-Kruger Effect)](#ダニングクルーガー効果-dunning-kruger-effect) · [シャーキーの原理 (Shirky Principle)](#シャーキーの原理-shirky-principle)
 
@@ -677,6 +703,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** ターゲットまで動かす時間は、その距離と大きさで決まる。遠くて小さいターゲットは時間がかかって外しやすく、近くて大きいターゲットは速い。ポインティングは、測れるコストを伴う身体の動作だ。
 - **対立概念:** **意図的な摩擦** — ボタンが押しやすくなれば、同じ理屈で誤って押すことも増える。取り消せない操作では、遅くて押しにくいことこそが狙いだ。
 - **判断の指針:** よく使う操作は大きくし、ポインタが今ある場所の近くに置く。破壊的な操作は小さくし、よく使う操作から離して、確認を挟む。画面の端と角はカーソルがそこで止まるので、無限に大きいターゲットに近くなる。だから主要な操作はそこに置く。
+- **実例:** Apple は Macintosh のメニューバーを画面の上端に置き、Microsoft や Sun などはメニューバーをウィンドウごとに付けた。Apple の初期のインターフェースガイドラインを書いた Bruce Tognazzini は1999年、画面の端にあるメニューはポインタがそこで止まるので実質的に高さが無限になり、狙わずにマウスを上へ放り投げればよいと説明し、Mac のメニューには少なくとも5倍速く届くと書いた。彼が Apple で行った試験では、上にもう1台モニタを重ねてメニューバーが端でなくなると、利用者は行き過ぎてから減速するようになり、操作時間は Windows の利用者並みに落ちた。 [記録 ↗](https://www.asktog.com/columns/022DesignedToGiveFitts.html)
 - **出典:** Paul M. Fitts『The Information Capacity of the Human Motor System in Controlling the Amplitude of Movement』(Journal of Experimental Psychology, 1954)。 — [原典 ↗](https://doi.org/10.1037/h0055392)
 - **関連:** [ヒックの法則 (Hick's Law)](#ヒックの法則-hicks-law)
 
@@ -710,6 +737,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** 作業の定型部分を自動化すると、人には一番まれで難しい例外だけが残る。しかも手作業の技能と状況の把握は、使わないうちに衰えていく。自動化システムが失敗して制御を人に返すのは、ちょうどそういうときだ。
 - **対立概念:** **トイル** — 腕を鈍らせないためだけに定型作業を人に続けさせるのにもコストがある。負荷に比例して増える繰り返し作業は時間を食い、ミスを招くので、自動化を進める理由は確かにある。この対立は、自動化を減らすことではなく、人と機械の連携をよくすることで解く。
 - **判断の指針:** 定期的なゲームデーと実地訓練で、運用担当の勘を保つ。引き継ぎは、人が何も知らないままいきなり引き取るのではなく、状況を把握したうえで引き取れるように設計する。
+- **実例:** 2009年6月1日、大西洋上のエールフランス447便で、ピトー管が氷晶でふさがったとみられ、速度の計測値が食い違って自動操縦が切れた。乗員の手動操作は飛行経路を不安定にし、その後の失速にも気づかなかった。フランスの事故調査機関 BEA は、高高度での手動操縦の訓練がなかったことを原因の一つに挙げた。 [記録 ↗](https://bea.aero/fileadmin/uploads/tx_elyextendttnews/presentation.rapport.final.05juillet2012.en_04.pdf)
 - **出典:** Lisanne Bainbridge『Ironies of Automation』(Automatica, 1983)。 — [原典 ↗](https://doi.org/10.1016/0005-1098(83)90046-8)
 - **関連:** [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [トイル (Toil)](#トイル-toil) · [フォールバックを避ける (Avoid Fallback)](#フォールバックを避ける-avoid-fallback)
 
@@ -721,6 +749,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** 必要な分を超える権限を与えられた部品は、バグや侵害、事故が起きたときの被害範囲を広げ、監査する人が考えなければならない相互作用も増やす。
 - **対立概念:** **心理的受容性** — 利用者が回避するほど厳しい制限は、かえって守りを崩す。
 - **判断の指針:** プロセス、サービスアカウント、トークンはすべて既定で拒否にし、その仕事に必要だと確かめられた最小限のスコープだけを加える。仕事の内容が変わったら、そのたびに権限を監査し直す。
+- **実例:** 2019年の Capital One の情報流出では、ファイアウォールの設定ミスにより、外部の人物が一つのサーバ上でコマンドを実行し、Web アプリケーションファイアウォールが使うロールの認証情報を手に入れた。司法省の訴状によれば、このロールはCapital One のクラウドストレージにある700を超えるフォルダやバケットを一覧でき、権限のあるものからデータをコピーできた。 [記録 ↗](https://www.justice.gov/media/1019711/dl?inline)
 - **出典:** Jerome Saltzer & Michael Schroeder『The Protection of Information in Computer Systems』(Proceedings of the IEEE, 1975)。 — [原典 ↗](https://web.mit.edu/Saltzer/www/publications/protection/)
 - **関連:** [ケルクホフスの原理 (Kerckhoffs's Principle)](#ケルクホフスの原理-kerckhoffss-principle)
 
@@ -732,6 +761,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** 暗号方式は、鍵以外のすべてが公開されても安全であるべきだ。アルゴリズムを秘密にして守るやり方はもろい。仕組みは漏れるし、リバースエンジニアリングされるし、他のシステムで使い回される。
 - **対立概念:** **多層防御** — 秘匿は薄い追加の一層にはなっても、土台には決してならない。
 - **判断の指針:** 攻撃者はソースコードも設計もすべて手にしている前提で考える。秘密はすべて交換できる鍵に寄せ、隠したアルゴリズムで何かを守ろうとしない。
+- **実例:** NXP は MIFARE Classic カードに使う48ビットの暗号 CRYPTO1 の設計を非公開にしていた。このカードはロンドンの Oyster カードやオランダの OV-chipkaart などの交通システムで使われていた。2008年、ラドバウド大学ナイメーヘンの研究者たちはカードと読み取り機の通信を記録して暗号と認証プロトコルを解析した。本物の読み取り機との1、2回の認証から1秒足らずで秘密鍵を取り出せる攻撃を示し、カードの複製も可能になった。 [記録 ↗](https://doi.org/10.1007/978-3-540-88313-5_7)
 - **出典:** Auguste Kerckhoffs『La cryptographie militaire』(Journal des sciences militaires, 1883 年 1 月・2 月)。6 つの要件の 2 番目としてこの原理を述べた論文の出典。リンク先に両号のスキャンがある。 — [原典 ↗](https://www.petitcolas.net/kerckhoffs/)
 - **関連:** [最小権限の原則 (Principle of Least Privilege)](#最小権限の原則-principle-of-least-privilege)
 
@@ -743,6 +773,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** 使える時間を固定すると、大きな計算機ではそれに比例して大きな問題を解ける。そのため規模が大きくなるほど逐次部分の割合は小さくなり、速度向上はほぼ線形に伸びる。作業量を固定して考えるアムダールの悲観的な見方に対する、楽観的な側の見方だ。
 - **対立概念:** **アムダールの法則** — 作業量の大きさが固定なら、やはり逐次部分が速度向上の上限を決める。
 - **判断の指針:** コアの追加を求める前に、問題の規模がハードウェアに合わせて大きくなるかを確かめる。作業量が固定ならアムダールで考え、規模とともに増えるならグスタフソンで考える。
+- **実例:** 2023年の論文で、AMD の技術者たちはスーパーコンピュータ Frontier 向けの Linpack 実装 rocHPL を、Frontier の先行利用システム Crusher の1から128ノードで動かした。ノード数を増やすたびに、問題サイズ N を固定せず、GPU のメモリをまた埋めるところまで大きくした。性能は1ノードの153 TFLOPS から128ノードの17.75 PFLOPS まで伸び、弱スケーリング効率は90%を超えた。 [記録 ↗](https://arxiv.org/abs/2304.10397)
 - **出典:** John L. Gustafson『Reevaluating Amdahl's Law』(Communications of the ACM, 1988)。 — [原典 ↗](https://doi.org/10.1145/42411.42415)
 - **関連:** [アムダールの法則 (Amdahl's Law)](#アムダールの法則-amdahls-law) · [ムーアの法則 (Moore's Law)](#ムーアの法則-moores-law)
 
@@ -754,6 +785,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** 多数の部品に処理を広げるサービスでは、ノードごとにはまれな遅延（GC の停止、競合、故障しかけのディスク）が、ほぼすべてのリクエストでどこかのノードに当たる。そのため中央値が健全に見えても、テールレイテンシ（p99、p99.9）が利用者の体感を左右する。
 - **対立概念:** **冗長化には代償がある** — ヘッジドリクエストや連動リクエストは負荷を増やす。利用者の体感を決めるのが中央値なら、テールを追いかけない。
 - **判断の指針:** SLO は平均ではなく p99／p99.9 に設定する。すべてのノードを同じように速くしようとするのではなく、ヘッジドリクエストやマイクロパーティショニングのようなテール対策を入れる。
+- **実例:** 2021年8月、Grafana のトレーシング基盤 Tempo 1.1 はヘッジドリクエストを加えた。オブジェクトストレージへの読み出しが設定したしきい値より長くかかると、もう一度リクエストを送り、先に返ってきた方を使う。しきい値をバックエンドの p99 にすれば、再送されるのは最も遅い1%のリクエストだけになる。Grafana によると、p99 は約4.5秒から2.5秒に下がり、45%改善した。 [記録 ↗](https://grafana.com/blog/2021/08/27/grafana-tempo-1.1-released-new-hedged-requests-reduce-latency-by-45/)
 - **出典:** Jeffrey Dean & Luiz André Barroso『The Tail at Scale』(Communications of the ACM, 2013)。 — [原典 ↗](https://doi.org/10.1145/2408776.2408794)
 - **関連:** [リトルの法則 (Little's Law)](#リトルの法則-littles-law) · [エラーバジェット (Error Budget)](#エラーバジェット-error-budget)
 
@@ -794,6 +826,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** 資源を単位あたり安く使えるようになると実効価格が下がり、総消費量は減るどころか増えることがある。効率化で浮いた分は節約として残らず、さらなる利用に回る。
 - **対立概念:** **反動に上限を設ける** — 効率化には割当、上限、価格シグナルを組み合わせ、節約分を実際に手元に残す。
 - **判断の指針:** 計算資源、ストレージ、社内 API などを安くしたら、需要が大きく膨らむと見込む。全体として減ると決めつけず、反動を見込んで容量と予算を確保する。
+- **実例:** サンディア国立研究所の Jeff Tsao らは、3世紀、6大陸、5つの照明技術にわたる照明のデータを集めた。効率が上がるたびに使う光の量が増え、照明に使う世界のエネルギーは100%のリバウンドを示した。効率化の分はすべて相殺され、照明のエネルギー消費は減らなかった。それでも著者らは照明技術の改良を進めるべきだとし、この結果が効率化は逆効果だという意味に誤読されていると述べている。 [記録 ↗](https://www.sandia.gov/-jytsao/energy/)
 - **出典:** William Stanley Jevons『The Coal Question』(Macmillan, 1865) 第 7 章。「燃料を経済的に使うことが消費の減少に等しいと考えるのは、まったくの考え違いである」の出典。 — [原典 ↗](https://archive.org/details/in.ernet.dli.2015.224624)
 - **関連:** [コブラ効果 (Cobra Effect)](#コブラ効果-cobra-effect) · [ヴィルトの法則 (Wirth's Law)](#ヴィルトの法則-wirths-law)
 
@@ -823,6 +856,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** 割れたまま放置された窓は「誰も見ていない」という合図になり、次の違反のハードルを下げる。コードベースでも、見逃されたハック、飛ばされたテスト、ずっとミュートされたままのアラートが一つずつあれば、合わせて「この基準は守らなくてよい」と知らせることになる。
 - **対立概念:** **修繕もタダではない** — 塗装に注意を向ければ、その分だけ土台への注意が減る。そもそも元の犯罪学的な主張を裏づける証拠には異論がある。
 - **判断の指針:** いま触っているファイルに目に見える欠陥があれば、最初の一つを直す。黙認する例外にはすべて担当者と期限を付ける。自分がいま手を入れていない場所の窓を直すために、リファクタリングを始めない。
+- **実例:** 2008年、オランダのフローニンゲンで行われた実地実験では、ゴミ箱のない路地に停めた自転車にチラシを付け、壁の状態だけを変えた。壁がきれいなときと、落書き禁止の掲示の横に落書きがあるときである。壁がきれいなときにチラシを捨てたのは33%、落書きがあるときは69%だった。目に見える違反が一つあると、人は別のルールも破りやすくなった。 [記録 ↗](https://www.rug.nl/staff/e.m.steg/keizerlindenbergstegdisorder.pdf)
 - **出典:** James Q. Wilson & George L. Kelling『Broken Windows』(The Atlantic, 1982 年 3 月号)。 — [原典 ↗](https://www.theatlantic.com/magazine/archive/1982/03/broken-windows/304465/)
 - **関連:** [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [コードの健全性を上げるなら承認する (Approve What Improves Code Health)](#コードの健全性を上げるなら承認する-approve-what-improves-code-health)
 
@@ -867,6 +901,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** 鎖には必ずいちばん弱い環が一つある。それ以外のどこを改善しても、その場所の効率は上がるが、全体のスループットは変わらない。むしろ悪化することが多い。速くなった上流工程が、本当のボトルネックの前に仕掛品をさらに積み上げるからだ。
 - **対立概念:** **制約は移動する** — 一つを緩めれば別のものが制約になる。昨日のボトルネックに合わせて恒久的に最適化した工程は、新しい制約の前で立ち往生する。
 - **判断の指針:** 制約を特定し、能力を買い足す前にまずそれを目一杯使い切り、他の全工程をそれに従わせる。そのあと測り直す。今の改善で、別の場所に新しいボトルネックができているからだ。
+- **実例:** 2001年、ジョージア州オールバニの海兵隊整備センターは、月10台の需要に対して大型輸送車両 MK-48 を月5台しか整備できず、ほぼすべての工程がボトルネックだと思われていた。制約理論による分析では、物理的な能力は十分にあり、本当の制約は資源の状況に関係なく作業を投入するプッシュ型の計画方針だった。プル型の計画に切り替えると、MK-48 の修理リードタイムは平均167日から58日に縮んだ。 [記録 ↗](https://www.dbrmfg.co.nz/Critical%20Chain%20in%20Marine%20Corps%20Depot.pdf)
 - **出典:** Eliyahu M. Goldratt & Jeff Cox『The Goal: A Process of Ongoing Improvement』(North River Press, 1984)。 — [原典 ↗](https://en.wikipedia.org/wiki/Theory_of_constraints)
 - **関連:** [アムダールの法則 (Amdahl's Law)](#アムダールの法則-amdahls-law) · [リトルの法則 (Little's Law)](#リトルの法則-littles-law)
 
@@ -900,6 +935,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** 利用者は、これまで使ってきた似たものすべてから組み立てたモデルを持ってやって来る。筋は通っていても意外な挙動は、少し劣っていても予想どおりの挙動より高くつく。驚きのコストは、すべての利用者が毎回、いつまでも払い続けるからだ。
 - **対立概念:** **驚きは相対的である** — 今日の期待だけに合わせて設計すると、悪い慣習がそのまま固定される。移行手順を用意したうえで、一度だけ大々的に全員を驚かせるのが正しいこともある。
 - **判断の指針:** 2つの設計が拮抗したら、フラグ名、終了コード、並び順など、利用者がすでに知っている慣習に合うほうを選ぶ。意図した驚きは、告知するコストを払える場所でだけ使う。
+- **実例:** 2020年8月11日、Citibank は Revlon の貸し手に利息だけを払うつもりで、元本約8億9400万ドルを含む約9億ドルを送金してしまった。同行の Flexcube というソフトでは、元本の支払いを止めるには FRONT、FUND、PRINCIPAL の三つの欄をすべて社内の振替口座に設定する必要があった。しかし支払いを作成し承認した3人とも、PRINCIPAL だけを設定すれば足りると思っていた。承認者は「元本は振替口座へ回る」と書いていた。 [記録 ↗](https://www.nysd.uscourts.gov/sites/default/files/2021-02/20cv6539%20Citibank%20Opinion.pdf)
 - **出典:** 言語・インタフェース設計の古くからの言い伝え。Michael F. Cowlishaw『The Design of the REXX Language』(IBM Systems Journal, 1984) に明示的な記述がある。 — [原典 ↗](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)
 - **関連:** [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge)
 
@@ -955,6 +991,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** n ノードのネットワークには n(n−1)/2 通りの接続がありうるので、価値は n² に比例すると言われた。指数には異論があり、実際のネットワークには n log n のほうがよく合う。それでも形は変わらない。新しいノードは既存の全ノードに価値を足す。だからネットワークは滑らかには育たず、ある時点で一気に傾く。
 - **対立概念:** **同じ二次関数はコストでもある** — 接続は利用者どうしでは資産だが、同僚どうしでは負債になる。ブルックスの法則はメトカーフの法則の符号を反転させたものだ。
 - **判断の指針:** 他の利用者から価値が生まれるプロダクトでは、初期の労力を機能ではなく、参加者にとってすでに役に立つ最小のネットワークづくりに注ぐ。チームでは逆に、接続を減らす。
+- **実例:** 2015年、中国科学院の研究者たちは、ネットワークの価値に関する4つの法則を、Tencent と Facebook の実際の財務データと利用者数で検証した。価値は利用者数の2乗に比例するというメトカーフの法則が、両社のデータに、検証したほかの法則よりよく当てはまった。論文はコストも規模の2乗で増えていたと報告している。ただしこれは二つのソーシャル基盤での当てはめで、Briscoe、Odlyzko、Tilly による n log n の反論は今も残っている。 [記録 ↗](https://doi.org/10.1007/s11390-015-1518-1)
 - **出典:** Robert Metcalfe に帰される (1980 年頃)。n log n による批判は Bob Briscoe, Andrew Odlyzko & Benjamin Tilly『Metcalfe's Law is Wrong』(IEEE Spectrum, 2006 年 7 月)。 — [原典 ↗](https://en.wikipedia.org/wiki/Metcalfe%27s_law)
 - **関連:** [ダンバー数 (Dunbar's Number)](#ダンバー数-dunbars-number) · [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law)
 
@@ -966,6 +1003,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** リンゲルマンは、綱を一人で引かせた場合とチームで引かせた場合の力を測った。人を増やすたびに、一人あたりの力は単独のときより小さくなった。一部は連携のロスで、一部は誰がどれだけやったか分からなくなったとたんに個人の努力が減ることによる。成果が合算され、誰がどの部分を出したか見えない場所なら、どこでも起きる。
 - **対立概念:** **一人ずつの仕事を見えるようにする** — この効果は人の性質ではなく、仕事の測り方から生まれる。誰がどれだけやったかが見えるようにすれば、効果の大半は消える。
 - **判断の指針:** 作業の流れごとに、名前の分かる担当者を一人と、目に見える成果物を決める。結果のどの部分を誰が出したか言えないなら、その集団は全員の力の合計より少ない成果しか出さないと見ておく。
+- **実例:** 1979年、オハイオ州立大学の Latané、Williams、Harkins は、学生に一人で、または集団で、できるだけ大きな声を出させた。2人組では一人のときの能力の66%、6人組では36%しか出なかった。目隠しとヘッドホンをつけ、他の人も叫んでいると思い込ませただけの条件でも、声の強さは一人のときの82%（相手が1人）と74%（相手が5人）に落ちた。損失のおよそ半分は連携のずれではなく、努力の減少から来ていた。 [記録 ↗](https://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Group_Dynamics/required_reading/4Latane_et_al_1979_Many_hands_make_light_the_work.pdf)
 - **出典:** Maximilien Ringelmann『Recherches sur les moteurs animés: Travail de l'homme』(Annales de l'Institut National Agronomique, 1913)。 — [原典 ↗](https://en.wikipedia.org/wiki/Ringelmann_effect)
 - **関連:** [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) · [ダンバー数 (Dunbar's Number)](#ダンバー数-dunbars-number)
 
@@ -977,6 +1015,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** ある問題を解くために作られた組織は、その問題が残り続けることで予算、人員、地位を得る。これが起きるのに、誰かが冷笑的である必要はない。チームを不要にする方向には、インセンティブが一度も向かないだけだ。時間が経つうちに、解決策はいつの間にか問題を残しておく理由に変わっていく。
 - **対立概念:** **なくならない問題もある** — 長く続くチームをすべて自己保身だとみなすと、必要な保守をしているチームまでなくしてしまう。保守は、うまくいっているときほど目に見えない。
 - **判断の指針:** 何かを直すために作ったチームやツールには、「直った」とはどういう状態か、いつそれを確かめるかを書き出しておく。自分たちが不要になる条件を説明できないプラットフォームチームは、自分たちの存続を目的にしている。
+- **実例:** ProPublica は2019年10月、Intuit の社内文書をもとに、TurboTax を売るこの会社が20年にわたり米国の確定申告を無料で簡単にする提案に反対してきたと報じた。対象には政府が運営する無料の申告手段や、IRS が申告書を事前に記入しておく方式も含まれる。2007年の取締役会資料には「10年間、IRS の税務ソフトや ReturnFree Tax System を作る提案が出てきたが、すべて止めた」とある。ProPublica の見立てでは、面倒な手続きの手助けを売る会社が、その手続きを面倒なままにしようとしていた。 [記録 ↗](https://www.propublica.org/article/inside-turbotax-20-year-fight-to-stop-americans-from-filing-their-taxes-for-free)
 - **出典:** Clay Shirky の言。Kevin Kelly『The Shirky Principle』(The Technium, 2010) で命名・引用された。 — [原典 ↗](https://kk.org/thetechnium/the-shirky-prin/)
 - **関連:** [グッドハートの法則 (Goodhart's Law)](#グッドハートの法則-goodharts-law) · [ピーターの法則 (Peter Principle)](#ピーターの法則-peter-principle)
 
@@ -988,6 +1027,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** プロダクト開発は速度で、運用は信頼性で評価される。だからリリースのたびに交渉になり、声の大きい側が勝つ。ある水準を超えると利用者は違いに気づかない（信頼性 99% のスマートフォンを使う人には 99.99% と 99.999% の差は分からない）のに、最後のわずかな差にいちばんコストがかかり、いちばん変更を止める。目標を明示すれば、目標と完璧の差が予算になる。30日で 99.9% なら失敗に使えるのは約43分で、残りがいくらかを両者が同じ数字で見られる。
 - **対立概念:** **逸脱の常態化** — 失敗を許す枠があると、チームは失敗をいつものことだと覚える。本来なら騒ぎになるはずの障害も予算から差し引かれるだけで、調べられずに終わる。
 - **判断の指針:** SLO と、予算を使い切ったときの方針は、障害の最中ではなく事前に合意しておく。予算が残っていればリリースし、使い切ったら機能リリースを止め、回復するまで信頼性に時間を使う。データ消失とセキュリティは、そもそも予算の外に置く。
+- **実例:** Evernote は Google Cloud へ移ったあと、一部のサービスに暦月ごとの稼働率99.95%という最初の SLO を置き、メンテナンス時間も停止として数えた。SLO とエラーバジェットを使って開発の手をどこに割くか決め、Google と月に一度その実績を見直したという。2017年に複雑なバグを追っていたときは、SLO の計算で顧客への影響を数字にし、週のリリース枠を5回から2回に減らした。 [記録 ↗](https://sre.google/workbook/slo-engineering-case-studies/)
 - **出典:** Marc Alvidrez「Embracing Risk」(「Motivation for Error Budgets」節は Mark Roth)、Beyer, Jones, Petoff & Murphy 編『Site Reliability Engineering』(O'Reilly, 2016) 第 3 章。エラーバジェットの定義と「100% がふさわしい信頼性目標であることはおそらくない」という主張の出典。 — [原典 ↗](https://sre.google/sre-book/embracing-risk/)
 - **関連:** [グッドハートの法則 (Goodhart's Law)](#グッドハートの法則-goodharts-law) · [スケールの裾野 (The Tail at Scale)](#スケールの裾野-the-tail-at-scale) · [トイル (Toil)](#トイル-toil) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [アンドン（ラインを止める） (Andon (Stop the Line))](#アンドンラインを止める-andon-stop-the-line)
 
@@ -999,6 +1039,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** トイルとは、手作業で、繰り返し発生し、自動化でき、割り込みでやって来て、片づけてもシステムが良くならず、トラフィックや利用者数に比例して増える作業だ。一件ずつは小さく急ぎなので、その場では必ずプロジェクト作業より優先される。サービスとともに増えるのに開発の時間は増えないので、押し返さないチームは、最後にはトイルしかしなくなる。
 - **対立概念:** **自動化の皮肉** — 作業を自動化すると、自動化がうまく動かなくなったときに人が対処するための慣れが失われる。作って動かし続けるコストが、置き換えたトイルより高くつく自動化もある。
 - **判断の指針:** 一人ひとりの時間のうちトイルが占める割合を測り、上限を決める（Google は 50%）。同じ作業が三度目に来たら（本書ではなく経験則）開発タスクとして起票する。利用者数に比例して増える作業は、雑用ではなく欠陥として扱う。
+- **実例:** Google のデータセンターネットワークでは、Saturn と Jupiter のスイッチで故障したラインカードを一枚ずつ手で処理していた。トラフィックを移せるか確かめ、スイッチを切り離し、カードを再起動か交換して、元に戻す。Jupiter はそれまでのどのファブリックより6倍以上大きく、修理の件数も同じように増えた。チームは手順を自動化し（1回目は再起動と再インストール、2回目で交換）、エンジニアを別の仕事に回せるようにした。自動化の前にメモリエラーの分析へ3年近く（2012年から2015年）かけたのは不要だったとも結論づけている。 [記録 ↗](https://sre.google/workbook/eliminating-toil/)
 - **出典:** Vivek Rau「Eliminating Toil」、Beyer, Jones, Petoff & Murphy 編『Site Reliability Engineering』(O'Reilly, 2016) 第 5 章。トイルの定義と 50% 上限の出典。 — [原典 ↗](https://sre.google/sre-book/eliminating-toil/)
 - **関連:** [自動化の皮肉 (Ironies of Automation)](#自動化の皮肉-ironies-of-automation) · [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) · [作った者が運用する (You Build It, You Run It)](#作った者が運用する-you-build-it-you-run-it) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule)
 
@@ -1054,6 +1095,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** 障害からの復旧には、普段はしない操作がつきものだ。代わりのインスタンスを起動する、コントロールプレーンを呼ぶ、経路を切り替える、などだ。コントロールプレーンはデータプレーンより可動部が多く、そのぶん劣化しやすい。つまり復旧は、いちばん必要なときに、システムの弱いほうに頼ることになる。静的に安定した設計では、依存先が劣化しても動き続ける。必要な容量と状態が前もってそろっているからだ。Amazon はステートレスなサービスを3つのアベイラビリティーゾーンで50%の余剰を持たせて動かしており、1つを失っても残りの2つが何も起動せずに負荷を引き受けられる。
 - **対立概念:** **遊休容量のコスト** — まれにしか起きない障害のための容量にも、毎日お金がかかる。復旧が遅くても許される場所では、需要に合わせて伸縮させるほうが安い。リージョン単位ではなくゾーン単位でサービスを作ると複雑さが増すことは、出典自身も認めている。
 - **判断の指針:** ゾーンや依存先を一つ失ったとき、サービスが復旧のために何をしなければならないかを書き出す。コントロールプレーンを呼ぶ手順や何かを起動する手順ごとに、代わりに前もって用意しておけないかを判断する。たとえば全ゾーンに予備の容量を置く、最後に正常だった設定を手元にキャッシュする、コントロールプレーンが落ちても配信を続ける、といった形だ。これは失敗が許されない経路に限り、それ以外は需要に応じて伸縮させる。
+- **実例:** 2021年12月7日、AWS の us-east-1 で内部ネットワークの障害が起き、インスタンスを起動したり一覧したりする EC2 の API が数時間使えなくなった。新規起動が戻ったのは太平洋標準時の14時40分だった。AWS のまとめには「稼働中の EC2 インスタンスはこの事象の影響を受けなかった」とある。データプレーンは止まったコントロールプレーンを必要としないので、すでに動いていたものは動き続け、回復に新しい容量の起動を必要とするものだけが止まった。 [記録 ↗](https://aws.amazon.com/message/12721/)
 - **出典:** Becky Weiss & Mike Furr『Static stability using Availability Zones』(Amazon Builders' Library, 2019)。"In a statically stable design, the overall system keeps working even when a dependency becomes impaired" という定義、EC2 のコントロールプレーンとデータプレーンの区別、3 ゾーンでの 50% の余剰の出典。 — [原典 ↗](https://builder.aws.com/content/3K9SiqiJ369TGkkGzqPM95BuYWI/static-stability-using-availability-zones)
 - **関連:** [フォールバックを避ける (Avoid Fallback)](#フォールバックを避ける-avoid-fallback) · [一定の作業量 (Constant Work)](#一定の作業量-constant-work) · [分散コンピューティングの誤謬 (Fallacies of Distributed Computing)](#分散コンピューティングの誤謬-fallacies-of-distributed-computing)
 
@@ -1065,6 +1107,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** フォールバックのコードは平常時には使われないので、そのバグも、容量の限界も、データが古くなっていることも、必要になるまで誰も気づかない。そのコードが、障害の最中、つまり負荷がいつもと違い、ほかの部分も劣化しているときに動き出し、すでに挙動のおかしいシステムに新しい動作モードを一つ加える。キャッシュを迂回してデータベースへ直接向かうフォールバックや、予備のサービスに切り替えるフォールバックは、その負荷を想定していない場所に負荷を移し、部分的な障害を広げることがある。2001年頃の Amazon.com の障害はそうして始まった。Amazon は、その労力はたいてい主経路の可用性を上げるほうに使ったほうがよいと結論づけている。
 - **対立概念:** **グレースフル・デグラデーション** — 縮退した経路が普段から動いているなら、エラーを返すより縮退した答えを返すほうがよい。おすすめ欄が、普段から出している固定リストに切り替える場合などだ。危ないのは縮退そのものではなく、普段一度も動かない経路のほうだ。
 - **判断の指針:** フォールバックを足す前に、同じ労力で主経路の可用性を上げられないかを考える。リクエストのたびに取りに行く代わりに呼び出し側へ前もってデータをプッシュしておく、冗長化する、といった方法がある。フォールバックを残すなら、障害時だけでなく本番で常に動かし、その出力を主経路と同等に正当なデータ源として扱う。誰も動かしたことのないフォールバック経路は消す。
+- **実例:** 2023年11月2日、Cloudflare のポートランドの主要データセンターで電源が落ち、コントロールプレーンと分析機能が止まった。Cloudflare は欧州の災害復旧サイトに切り替えたが、この退避がその規模で試されたことはなかった。「PDX-04 の施設全体を落とす試験はしたことがなかった」うえ、一部の新しい製品には試験済みの復旧手順がなく、ログ処理は復旧サイトでそもそも動かず、立ち上がったサービスにはクライアントの再試行が殺到した。完全な復旧は11月4日までかかった。 [記録 ↗](https://blog.cloudflare.com/post-mortem-on-cloudflare-control-plane-and-analytics-outage/)
 - **出典:** Jacob Gabrielson『Avoiding fallback in distributed systems』(Amazon Builders' Library, 2019)。キャッシュが一斉に落ちてすべての Web サーバがデータベースへ直接問い合わせた、2001 年頃の Amazon.com の障害と、"At Amazon, we avoid fallback in our systems because it's difficult to prove and its effectiveness is hard to test." の出典。 — [原典 ↗](https://builder.aws.com/content/3EuS9Sakq7L3VLQIF3qzfMfke1Y/avoiding-fallback-in-distributed-systems)
 - **関連:** [静的安定性 (Static Stability)](#静的安定性-static-stability) · [一定の作業量 (Constant Work)](#一定の作業量-constant-work) · [自動化の皮肉 (Ironies of Automation)](#自動化の皮肉-ironies-of-automation) · [カオスエンジニアリング (Chaos Engineering)](#カオスエンジニアリング-chaos-engineering)
 
@@ -1087,6 +1130,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** ミスの多くは、善意があってルールも知っている人が起こす。だから言い聞かせ直しても、その人に足りなかったものは何も増えない。注意力には限りがあり、時間とともに薄れる。誰かが覚えていることに頼る対策もしばしば薄れ、同じ誤りがまた起きる。行動を変えるのは仕組みだ。ここでいう仕組みは、道具、その道具が実際に使われていること（採用）、機能しているかを確かめる点検（検査）の三つがそろったものを指す。誰も読まないチェックリストは仕組みではないが、マージを止めるゲートは仕組みだ。
 - **対立概念:** **代理指標に抗う** — 仕組みは、それ自体が目的として固まることがある。プロセスに従ったかどうかで評価されるようになると、人は悪い結果を「プロセスどおりにやった」と弁護し、そのプロセスがまだ結果の役に立っているかを誰も問わなくなる。
 - **判断の指針:** ポストモーテムの対策項目が「注意する」「チームに周知する」「ダブルチェックする」なら、誰も覚えていなくても働く変更に置き換える。CI のチェック、安全な既定値、飛ばせない入力欄などだ。それぞれに担当者と、使われているか、効果があったかを点検する期日を付ける。もう結果を変えていない仕組みは廃止する。
+- **実例:** 2019年7月2日、Cloudflare の WAF ルールに入っていた正規表現ひとつが破滅的なバックトラックを起こし、世界中の HTTP 処理用の CPU を使い切って、27分間トラフィックを止めた。Cloudflare は「もっと安全な正規表現を書こう」と呼びかけるかわりに、仕組みで直した。実行時間が保証される re2 か Rust の正規表現エンジンへの切り替え、全ルールの性能測定をテストに組み込むこと、外されていた CPU 使用量の保護を戻すこと、ルールの段階的なリリースの義務化である。 [記録 ↗](https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/)
 - **出典:** Amazon 社内の言い回しで、Bezos の公表文書が出典ではない。Gregor Hohpe『Strategy Is a Winding Road. Mechanisms Keep You on Track.』(AWS Enterprise Strategy blog, 2021) が "At Amazon we have a common saying: 'Good intentions don't work—mechanisms do'" と記録し、仕組みを道具・採用・点検からなるものと定義している。Jeff Bezos の言葉とする説は二次資料による。対抗する力は Jeff Bezos『2016 年 株主への手紙』(Amazon.com, Inc., 2017 年) の "The process is not the thing." から。 — [原典 ↗](https://aws.amazon.com/blogs/enterprise-strategy/strategy-is-a-winding-road-mechanisms-keep-you-on-track/)
 - **関連:** [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [グッドハートの法則 (Goodhart's Law)](#グッドハートの法則-goodharts-law) · [作った者が運用する (You Build It, You Run It)](#作った者が運用する-you-build-it-you-run-it) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control)
 
@@ -1098,6 +1142,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** 欠陥は、作られたその場で捕まえれば原因は一つで、直し方も明らかだ。三工程先で見つかった同じ欠陥は、その上に積まれた作業の下に埋もれ、事情を説明できた人はもう別の仕事をしている。ラインを動かし続けろという圧力があると、作業者は自分が見たものを軽く見積もり、下流の誰かが気づくだろうと考える。トヨタの自働化は、この判断を工程の中に移した。最初は糸が切れると自動で止まる織機で、のちには、どの作業者でも引けばラインが止まってアンドンが点灯する紐になった。止めること自体が目的なのではない。証拠が新しいうちに、異常を調べざるを得なくすることが目的だ。
 - **対立概念:** **スループットの圧力** — 止めるたびに生産量は落ちる。スループットで評価されるチームでは、紐を引くことは誰かが理由を説明しなければならないコストになる。頻繁に、あるいは誤って止まる紐があると、人はそれを避けて通るようになる。
 - **判断の指針:** main ブランチのビルドが赤い、カナリアが失敗した、SLO を割った、といったときには、全員のマージやデプロイが止まるようにする。その紐は誰でも許可なく引けるようにする。誤発火がめったに起きない程度に条件を絞る。誰も調べない停止は、引いた人ではなく対応する側の欠陥として扱う。
+- **実例:** カリフォルニア州フリーモントにあった GM の旧工場（1982年閉鎖）では、ラインは決して止めてはならないというのが決まりで、止めたらクビになったと語る労働者もいた。GM とトヨタがここを NUMMI として再開すると、作業者にアンドンのひもが与えられた。引くとチームリーダーが駆けつけ、その場で直せないときだけラインが止まる。NUMMI の不良率は最初から米国でも最良の水準になり、1984年12月の最初の1台から数か月でほぼ完璧な品質評価を得た。 [記録 ↗](https://www.thisamericanlife.org/403/transcript)
 - **出典:** トヨタ自動車『トヨタ生産方式』(global.toyota の公式ページ)。自働化、アンドン (異常表示盤)、どの作業者も引ける停止紐の出典。その源流を、緯糸切断自動停止装置を備えた豊田式汽力織機 (1896 年開発) に求めている。同ページは大野耐一 (1912–1990) がこの方式と、ジャスト・イン・タイムの枠組みを確立したとしている。 — [原典 ↗](https://global.toyota/en/company/vision-and-philosophy/production-system/)
 - **関連:** [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) · [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys)
 
@@ -1120,8 +1165,9 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** フェイルオーバー、リトライ、冗長構成は、何かが壊れたときにしか動かない。だから障害と障害の間に劣化していく。設定がずれる、依存が増える、タイムアウトが変わる。そうした変化に、本物の障害が来るまで誰も気づかない。ステージングでは本番のトラフィックもデータも結合も再現できないので、そこでの試験から分かる、人が実際に使うシステムのことは期待するより少ない。定常状態についての仮説を立て、本番で意図的に障害を注入すれば、弱点は深夜3時ではなく、エンジニアが見ている平日の午後に表に出る。Netflix は AWS への移行初期に、インスタンスを無作為に落とす Chaos Monkey を作り、どのサービスにもインスタンスを一台失っても動き続けることを求めた。
 - **対立概念:** **まず害をなさない** — 実際の顧客が頼っているシステムをわざと劣化させれば、その顧客の信頼を削ることになる。同じ知見の多くは、障害注入テスト、ゲームデイ、設計レビューでもっと安く得られる。もろいと分かっているシステムで実験しても分かっていたことを確かめるだけなので、まず直す。
 - **判断の指針:** 依存先を一つ選び、それが落ちている間の定常状態がどうあるべきかを書き出す。そのうえで業務時間中に、中止スイッチと見張り役を用意して、本番でその依存先を取り除く。トラフィックのごく一部から始め、システムが持ちこたえてから範囲を広げる。落ちると見込んでいるサービスでは実験しない。
+- **実例:** 2014年9月末、AWS は Xen の脆弱性を塞ぐため、EC2 のおよそ1割を急に再起動した。Netflix の本番 Cassandra ノード2,700台超のうち218台が再起動され、22台は戻らなかったが、その週末のダウンタイムはゼロだったと Netflix は報告した。チームはその1年前から Cassandra に Chaos Monkey を走らせていたことを理由に挙げた。それで故障ノードを見つけて置き換える自動化を作らざるをえなかったのだ。 [記録 ↗](https://www.infoq.com/news/2014/10/netflix-cassandra)
 - **出典:** 『Principles of Chaos Engineering』(principlesofchaos.org, 2019 年 3 月最終更新)。定義、定常状態の仮説、本番での実験、影響範囲の最小化の出典。Netflix Technology Blog『5 Lessons We've Learned Using AWS』(2010) は Chaos Monkey を初めて紹介した記事。 — [原典 ↗](https://principlesofchaos.org/)
-- **関連:** [マーフィーの法則 (Murphy's Law)](#マーフィーの法則-murphys-law) · [分散コンピューティングの誤謬 (Fallacies of Distributed Computing)](#分散コンピューティングの誤謬-fallacies-of-distributed-computing) · [フォールバックを避ける (Avoid Fallback)](#フォールバックを避ける-avoid-fallback)
+- **関連:** [マーフィーの法則 (Murphy's Law)](#マーフィーの法則-murphys-law) · [分散コンピューティングの誤謬 (Fallacies of Distributed Computing)](#分散コンピューティングの誤謬-fallacies-of-distributed-computing) · [フォールバックを避ける (Avoid Fallback)](#フォールバックを避ける-avoid-fallback) · [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox)
 
 ### 統制ではなく文脈を (Context, Not Control)
 
@@ -1154,7 +1200,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **チャーンルール** — テストの形をした契約は、変更する側に何を壊したかを教えるだけで、壊してよかったことにはならない。変更するチームは、利用者の移行作業をそれでも負う。
 - **判断の指針:** 共有ライブラリや依存先に頼っている挙動には、すべてテストを書く。そのテストが、他人の変更を止める CI の中で走るようにする。テストで捕まえられずに何かが壊れたら、障害を閉じる前にそのテストを足す。共有コードを持つ側なら、テストが契約だと前もって宣言する。ただし、自分の変更で利用者側のテストを実際に走らせていないなら、このルールを持ち出さない。
 - **出典:** Adam Bender「Testing Overview」、Winters, Manshreck & Wright『Software Engineering at Google』(O'Reilly, 2020) 第 11 章。"If you liked it, then you shoulda put a test on it" と、コードベース全体に変更をかける基盤チームがこのルールを使うことの出典。 — [原典 ↗](https://abseil.io/resources/swe-book/html/ch11.html)
-- **関連:** [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule)
+- **関連:** [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule) · [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox)
 
 ### チャーンルール (Churn Rule)
 
@@ -1176,7 +1222,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **隠れた変数としての品質** — 期日が固定されてもスコープを削れない、あるいは削らないチームは、代わりにテストやレビュー、エラー処理を削る。また、プロトコルやコンプライアンス要件のように、それ以下に切っては出す意味のない下限がある仕事もある。
 - **判断の指針:** 作業を始める前に、どれだけかかるかではなく、どれだけの時間をかける価値があるかを決め、スコープをそれに合わせる。時間が尽きたら原則として止める。できた部分が単独で成り立つなら出し、そうでなければ問題の切り方を作り直して、もう一度賭けるかを改めて決める。黙って延長しない。機能はテストやレビューより先に削る。筋の通った最小単位より細かく切れない仕事では、時間を固定しない。
 - **出典:** Ryan Singer『Shape Up』(Basecamp, 2019) 第 3 章「Set Boundaries」。アペタイトと "fixed time, variable scope" の出典。第 8 章「The Betting Table」のサーキットブレーカー ("by default the project doesn't get an extension")。先行して 37signals『Getting Real』(2006)「Fix Time and Budget, Flex Scope」("Never throw more time or money at a problem, just scale back the scope")。 — [原典 ↗](https://basecamp.com/shapeup/1.2-chapter-03)
-- **関連:** [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [ホフスタッターの法則 (Hofstadter's Law)](#ホフスタッターの法則-hofstadters-law) · [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy)
+- **関連:** [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [ホフスタッターの法則 (Hofstadter's Law)](#ホフスタッターの法則-hofstadters-law) · [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy) · [技術的負債 (Technical Debt)](#技術的負債-technical-debt)
 
 ### ストラングラーフィグ (Strangler Fig)
 
@@ -1187,7 +1233,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **一括切り替え** — 古いシステムにきれいな振り分け点を置けないときや、移行用の層が書き直しより高くつくときは、計画した一度の切り替えのほうが、段階的移行のありがちな末路を避けられる。簡単な経路だけが移り、いちばん絡み合った部分はいつまでも移らず、組織は二つのシステムを運用し、その費用を払い続ける。
 - **判断の指針:** レガシーシステムの前に振り分け点（プロキシ、ルーター、ファサード）を置き、挙動を一部分ずつその裏へ移す。最初は、それだけで価値を生む部分を選ぶ。「完了」の定義を最初に決め、古い経路に残っているトラフィックの割合を追う。古いコードと移行用の層を消す作業は、後片づけではなくプロジェクトの一部として見積もる。
 - **出典:** Martin Fowler『Strangler Fig Application』(martinfowler.com。原題「Strangler Application」、2004 年。2024 年に書き直し)。絞め殺しのイチジクのたとえと、段階的な刷新ではリスクの低さと早く得られる価値が移行用アーキテクチャのコストを上回るという主張の出典。 — [原典 ↗](https://martinfowler.com/bliki/StranglerFigApplication.html)
-- **関連:** [セカンドシステム症候群 (Second-System Effect)](#セカンドシステム症候群-second-system-effect) · [ガルの法則 (Gall's Law)](#ガルの法則-galls-law) · [90対90の法則 (Ninety-Ninety Rule)](#90対90の法則-ninety-ninety-rule)
+- **関連:** [セカンドシステム症候群 (Second-System Effect)](#セカンドシステム症候群-second-system-effect) · [ガルの法則 (Gall's Law)](#ガルの法則-galls-law) · [90対90の法則 (Ninety-Ninety Rule)](#90対90の法則-ninety-ninety-rule) · [レーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)](#レーマンのソフトウェア進化の法則-lehmans-laws-of-software-evolution)
 
 ### 退屈な技術を選べ (Choose Boring Technology)
 
@@ -1199,6 +1245,50 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **判断の指針:** 言語、データストア、フレームワークを足す前に、今動かしているもので同じ仕事をするには何が要り、なぜそれでは足りないのかを書き出す。そのうえで、一つのチームの中ではなく、それを運用することになる全員で決める。新しい技術は、製品を他と差別化する場所にだけ使う。何かを採り入れるなら、それが置き換えるものを廃止する計画も立てる。
 - **出典:** Dan McKinley『Choose Boring Technology』(mcfunley.com, 2015)。"every company gets about three innovation tokens" の出典。Etsy 在籍時の経験に基づく。 — [原典 ↗](https://mcfunley.com/choose-boring-technology)
 - **関連:** [KISS の原則 (KISS Principle)](#kiss-の原則-kiss-principle) · [リンディ効果 (Lindy Effect)](#リンディ効果-lindy-effect)
+
+### 技術的負債 (Technical Debt)
+
+`§ 92` · 保守性
+
+- **概念:** 問題を十分に理解する前に出したコードは、誰かが書き直すまで、そのコードをその後変えるたびに余計なコストを生む。
+- **メカニズム:** プログラムの最初の版には、書いた時点でチームが理解していたことが刻まれる。コードが変わらなくなった後も、理解は深まり続ける。その後の変更はどれも両者のずれをよけて進めることになり、その余計な手間は、借金の利息のように変更のたびにかかる。コストは薄く広がって次にそのコードに触る人にかかるので、どの変更から見ても返すほどではないように見え、残高はチーム全体が遅くなるまで増えていく。Cunningham は手抜きそのものを責めてはいない。問題にしたのは、小さいうちに書き直して返さない負債だ。
+- **対立概念:** **早すぎる返済** — 負債を早く返すと、設計がまだ変わるかもしれないコードや、次に誰かが触る前に消えるかもしれないコードに時間を使うことになる。次の変更の前に片づけるほうが、節約できる利息より高くつくこともある。
+- **判断の指針:** 問題を十分に理解する前に書いたコードは借金として扱う。どこにあり、返すには何が要るかを書き残し、コードが誰かの記憶に新しいうちに書き直しの予定を立てる。返済は、見た目が一番ひどいコードではなく、チームが一番よく変えるコードから始める。記録のないまま負債をためない。
+- **出典:** Ward Cunningham『The WyCash Portfolio Management System』(OOPSLA '92 Experience Report, 1992)。"Shipping first time code is like going into debt. A little debt speeds development so long as it is paid back promptly with a rewrite." と "Every minute spent on not-quite-right code counts as interest on that debt." の出典。慎重な負債と無謀な負債の区別は Martin Fowler『Technical Debt Quadrant』(martinfowler.com, 2009)。 — [原典 ↗](https://c2.com/doc/oopsla92.html)
+- **関連:** [レーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)](#レーマンのソフトウェア進化の法則-lehmans-laws-of-software-evolution) · [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [時間を固定し、スコープを変える (Fixed Time, Variable Scope)](#時間を固定しスコープを変える-fixed-time-variable-scope)
+
+### レーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)
+
+`§ 93` · 保守性
+
+- **概念:** 実際に使われているプログラムは、変わり続けなければ役に立たなくなる。そして変えるたびに、手をかけて単純にしない限り複雑になっていく。
+- **メカニズム:** 世の中の仕事の一部を自動化するプログラムは、その世界のモデルであり、世界は動き続ける。利用者の求めるものは移り、業務は変わり、プログラムが入ったこと自体が人の働き方を変える。だからプログラムが完成することはなく、リリースのたびにモデルと現実のずれがまた開く。変更は時間に追われ、設計の全体を頭に入れていない人の手で入るので、例外処理や依存は減るより速く増え、構造は傷んでいく。Lehman はこれらの法則を、大規模システムが何度ものリリースを経て変わっていく様子から導いた。同じ論文で、物理法則のように不変なものではなく、人と組織の習慣ややり方から生まれるものだと述べている。
+- **対立概念:** **安定も機能のうち** — 変更のたびに利用者は覚え直しを強いられ、古い挙動に頼っていた誰かが壊れる。他人がその上に作るプロトコルやファイル形式、ツールなら、世の中に追従するより設計を凍結するほうが価値を生むこともある。
+- **判断の指針:** 継続的な変更は、リリース後の例外ではなく、使われているプログラムの通常のコストとして予算に入れる。毎回のサイクルの一部を、使われない経路の削除や例外処理の統合など、複雑さを減らす作業にあてる。複雑さの指標をリリースごとに追い、身動きが取れなくなる前に傾向をつかむ。凍結するのは他人がその上に作るものだけにし、凍結するときはそう明言する。
+- **出典:** Meir M. Lehman『Programs, Life Cycles, and Laws of Software Evolution』(Proceedings of the IEEE, vol. 68, no. 9, 1980) の表 I。継続的変化 ("A program that is used and that as an implementation of its specification reflects some other reality, undergoes continual change or becomes progressively less useful.") と複雑さの増大 ("As an evolving program is continually changed, its complexity, reflecting deteriorating structure, increases unless work is done to maintain or reduce it.") の出典。p. 1069 の "clearly not immutable, as for example, are the laws of physics" と "arise from the habits and practices of people and organizations" も同じ論文から。 — [原典 ↗](https://doi.org/10.1109/PROC.1980.11805)
+- **関連:** [技術的負債 (Technical Debt)](#技術的負債-technical-debt) · [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [ストラングラーフィグ (Strangler Fig)](#ストラングラーフィグ-strangler-fig)
+
+### バス係数 (Bus Factor)
+
+`§ 94` · 組織
+
+- **概念:** システムを動かし続けられる人が少ないほど、その将来は一人ひとりが辞めずにいることにかかってくる。
+- **メカニズム:** 知識は放っておくと偏りやすい。ある部分を書いた人が一番速く直せるので、次の変更もその人に回り、そのたびに差が開く。誰か一人を欠かせない存在にしようと決めた人はいない。その都度いちばん安い選択をした結果で、そのリスクは本人が辞めるか、病気になるか、ただ休暇を取るまで見えない。Avelino らが GitHub の人気プロジェクト133件を調べたところ、65%はトラック係数が2以下だった。開発者が一人か二人抜けるだけで、大半のファイルを書いた人がいなくなる。知識を広げるのは、来ないかもしれない損失に備えて今の時間を使うことなので、誰かがはっきり目標に掲げない限り、スケジュールの議論ではたいてい負ける。
+- **対立概念:** **所有の深さ** — ある領域を持つ専門家は、少しずつ知っている人の持ち回りよりずっと速く動き、問題にも多く気づく。小さなチームがあらゆる知識を二人目にも持たせようとすると、ない時間を使うことになる。
+- **判断の指針:** 一人しか変更も運用もできない箇所を洗い出す。それぞれについて、誰も読まない引き継ぎ文書を書くのではなく、次の実際の変更で二人目をペアにつける。オンコールとコードレビューを持ち回りにして、普段の仕事のついでに知識が移るようにする。予定された不在は訓練として扱う。一週間の休みでシステムが止まるなら、誰かが本当に辞める前に直す。
+- **出典:** 出所は口伝。主要人物が「バスにはねられたら」プロジェクトはどうなるのかという問いは 1994 年には出回っており、この年 Michael McLay が Python のメーリングリストに「If Guido was hit by a bus?」を投稿している (1994 年 6 月 29 日。python.org のメーリングリストアーカイブ python-1994q2 の 1040 番)。計測は Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente『A Novel Approach for Estimating Truck Factors』(ICPC, 2016)。トラック係数の定義 ("the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated") と、"the majority of our target systems (65%) have TF ≤ 2" という結果の出典。 — [原典 ↗](https://doi.org/10.1109/ICPC.2016.7503718)
+- **関連:** [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) · [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge)
+
+### 殺虫剤のパラドックス (Pesticide Paradox)
+
+`§ 95` · 保守性
+
+- **概念:** バグを見つける方法はどれも、その方法では見つからないバグを残す。だから変わらないテストスイートが見つけるバグは減っていく。
+- **メカニズム:** テスト手法は特定の種類のバグを捕まえる。しばらく使い続けると、その種類のバグは直され、開発者もそれを書かなくなる。残るのはその手法から見えないバグなので、同じテストは通り続け、欠陥はテストが見ていない場所へ移っていく。同じ殺虫剤を何シーズンも撒いた後に残るのが、その薬では死なない虫であるのと同じだ。そうなると、テストが全部通ることが示すのは、コードが昨日のバグをどれだけ避けているかであって、バグがどれだけ少ないかではない。
+- **対立概念:** **古いテストの守り** — 何年も落ちていないテストも、直したバグの再発を止め、他人が頼る挙動を固定している。新しいバグを追うために古いテストを捨てれば、今も効いている守りを失う。
+- **判断の指針:** 回帰テストは残すが、それで新しいバグが見つかるとは期待しない。新しい入力、ファジング、プロパティベーステスト、探索的テストなど、スイートが確かめていないところを狙うテストを足す。本番にバグが漏れたら、どの種類のテストなら捕まえられたかを考え、その一件だけでなく、その種類のテストを足す。スイートは定期的に見直し、互いに重複するテストは消す。
+- **出典:** Boris Beizer『Software Testing Techniques』(第 2 版、Van Nostrand Reinhold, 1990)「The Pesticide Paradox and the Complexity Barrier」。"Every method you use to prevent or find bugs leaves a residue of subtler bugs against which those methods are ineffectual" と "Test suites wear out." の出典。 — [原典 ↗](https://openlibrary.org/books/OL2205629M/Software_testing_techniques)
+- **関連:** [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [カオスエンジニアリング (Chaos Engineering)](#カオスエンジニアリング-chaos-engineering)
 
 <!-- CODEX:END -->
 

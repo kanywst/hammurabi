@@ -71,6 +71,7 @@ situations:
       - conways-law
       - bystander-effect
       - context-not-control
+      - bus-factor
   - key: metric-gamed
     en: A metric is being gamed
     ja: 指標が数字合わせになっている
@@ -98,6 +99,7 @@ situations:
       - ironies-of-automation
       - five-whys
       - mechanisms-not-good-intentions
+      - pesticide-paradox
   - key: reliability-vs-speed
     en: Reliability versus shipping speed
     ja: 信頼性と開発速度がぶつかる
@@ -109,6 +111,7 @@ situations:
       - you-build-it-you-run-it
       - andon
       - chaos-engineering
+      - technical-debt
   - key: too-slow
     en: Something is too slow
     ja: 何かが遅い
@@ -131,6 +134,8 @@ situations:
       - strangler-fig
       - beyonce-rule
       - churn-rule
+      - technical-debt
+      - lehmans-laws
   - key: designing-interface
     en: Designing an API or interface
     ja: API やインタフェースを設計する
@@ -217,6 +222,7 @@ laws:
   - slug: normalization-of-deviance
     tag: safety
     source_url: https://www.press.uchicago.edu/ucp/books/book/chicago/C/bo22781921.html
+    example_url: "https://govinfo.library.unt.edu/caib/news/report/pdf/vol1/chapters/chapter8.pdf"
     see_also:
       - swiss-cheese-model
       - normal-accident-theory
@@ -237,6 +243,8 @@ laws:
           not every deviation is a precursor; a team that investigates every one stops shipping and starts ignoring the investigations, so an agreed allowance keeps the real alarms visible
       guideline: |-
         When a check fails and you ship anyway, write down who decided, why, and when it will be reviewed. In postmortems, ask which past exceptions made this one look normal.
+      example: |-
+        The board that investigated the 2003 loss of Space Shuttle Columbia found that foam had been shed on many earlier flights, with left bipod ramp foam lost on 10 percent of the flights with visible evidence, and that NASA had come to treat it as normal. When a large piece of bipod foam struck the booster on STS-112 in October 2002, management did not classify it as an In-Flight Anomaly and downgraded it to an "action" item.
       source: |-
         Diane Vaughan, *The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA* (University of Chicago Press, 1996; enlarged edition 2016, which is what this links to) — where the term is coined, from the Challenger O-ring decisions.
     ja:
@@ -251,12 +259,15 @@ laws:
           逸脱がすべて前兆とは限らない。一つ残らず調べるチームは出荷が止まり、やがて調査そのものを無視し始める。許容量を合意しておけば、本物の警報が埋もれない
       guideline: |-
         チェックが失敗したまま出荷するなら、誰がなぜ決めたか、いつ見直すかを書き残す。ポストモーテムでは、過去のどの例外のせいで今回が当たり前に見えたのかを問う。
+      example: |-
+        2003年のスペースシャトル・コロンビア喪失を調べた事故調査委員会は、断熱材の剥落がそれ以前の多くの飛行で起きており、目視で確認できた飛行の10%では左バイポッド部の断熱材が剥がれていたと指摘した。NASA はこれを普通のことと見なすようになっていた。2002年10月の STS-112 で大きな断熱材片が固体ロケットブースターに当たったときも、経営陣は飛行中異常に指定せず、格下げした「対応事項」として扱った。
       source: |-
         Diane Vaughan『The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA』(University of Chicago Press, 1996、増補版 2016、本項のリンク先)。チャレンジャー号の O リングをめぐる判断の分析から生まれたこの用語の出典。
 
   - slug: chestertons-fence
     tag: systems
     source_url: https://www.chesterton.org/taking-a-fence-down/
+    example_url: "https://research.swtch.com/openssl"
     see_also:
       - eaglesons-law
       - yagni
@@ -271,6 +282,8 @@ laws:
           taken absolutely the rule removes nothing ever, because the reason is sometimes gone with the person who had it
       guideline: |-
         You are forbidden from removing a "fence" (code/rule) until you can explain why it was put there — but put a deadline on the search. When it expires, take the fence down behind a flag, with a rollback ready, and watch what complains.
+      example: |-
+        In 2006 a Debian maintainer removed a line from OpenSSL's random number generator because Valgrind flagged it for reading uninitialized memory, writing that he had "no idea what effect this really has on the RNG." That line was what added the caller's data to the entropy pool, leaving the process ID as the only unpredictable input. Until the flaw was announced in May 2008, ssh-keygen on Debian-based systems could produce only about 32,767 different keys of each type and size.
       source: |-
         G. K. Chesterton, *The Thing* (1929) — the original parable of the fence in the road.
     ja:
@@ -285,6 +298,8 @@ laws:
           この規則を絶対視すると何ひとつ消せなくなる。理由を知っていた人がいなくなり、理由ごと失われていることもあるからだ
       guideline: |-
         その「柵」（コードやルール）がなぜ立てられたのかを説明できるまで、取り除かない。ただし調べる期限は決めておく。期限が来たら、ロールバックを用意してフラグの裏で外し、どこから苦情が出るかを見る。
+      example: |-
+        2006年、Debian のメンテナが OpenSSL の乱数生成器から1行を削除した。Valgrind が未初期化メモリの読み取りとして警告していたからで、本人は「乱数生成器に実際どう影響するのか見当がつかない」と書いていた。その行こそが呼び出し側のデータをエントロピープールに加える処理で、削除後に予測不能な入力として残ったのはプロセス ID だけだった。2008年5月に欠陥が公表されるまで、Debian 系の ssh-keygen は鍵の種類と長さごとに約32,767通りの鍵しか作れなかった。
       source: |-
         G. K. Chesterton『The Thing』(1929)。道に立つ柵の寓話の出典。
 
@@ -325,6 +340,7 @@ laws:
   - slug: law-of-triviality
     tag: organization
     source_url: https://en.wikipedia.org/wiki/Law_of_triviality
+    example_url: "https://phk.freebsd.dk/sagas/bikeshed/"
     see_also:
       - parkinsons-law
       - disagree-and-commit
@@ -340,6 +356,8 @@ laws:
           the small, easy-to-discuss things are sometimes the permanent ones; a public API name or a config key is cheap to argue about and expensive to change after release
       guideline: |-
         Move everything a tool can decide (format, import order, lint rules) out of human review. When a review thread is mostly style, stop it and ask one question about the riskiest part of the change. In meetings, put the most expensive or riskiest item first on the agenda.
+      example: |-
+        On October 2, 1999, FreeBSD developer Poul-Henning Kamp wrote to the project's mailing list after a long argument over whether sleep(1) should accept fractional seconds. He called that thread "the most blatant example of a bike shed discussion we have had ever in FreeBSD," noting that small, easy-to-grasp changes draw endless debate while complex ones pass with little comment.
       source: |-
         C. Northcote Parkinson, *Parkinson's Law and Other Studies in Administration* (Houghton Mifflin, 1957), in the chapter "High Finance, or the Point of Vanishing Interest" — the original bike-shed committee parable. Published in the UK as *Parkinson's Law: The Pursuit of Progress* (John Murray, 1958).
     ja:
@@ -353,12 +371,15 @@ laws:
           議論しやすい小さなことが、後から変えられないこともある。公開 API の名前や設定キーは、議論するのは安いが、リリース後に変えるのは高くつく
       guideline: |-
         ツールで決められること（整形、import の順序、lint ルール）は人のレビューから外す。レビューのやり取りがスタイルの話ばかりになったら打ち切り、変更のうち最もリスクの高い部分について一つ質問する。会議では、金額やリスクの最も大きい議題を最初に置く。
+      example: |-
+        1999年10月2日、FreeBSD 開発者の Poul-Henning Kamp は、sleep(1)に小数の秒数を渡せるようにするかで延々と続いた議論のあと、プロジェクトのメーリングリストに投稿した。彼はこのスレッドを「FreeBSD でこれまでにあった中で最もあからさまな自転車置き場の議論」と呼び、誰でもわかる小さな変更ほど議論が尽きず、複雑な変更はほとんど意見が出ないまま通ると書いた。
       source: |-
         C. Northcote Parkinson『Parkinson's Law and Other Studies in Administration』(Houghton Mifflin, 1957) 所収「High Finance, or the Point of Vanishing Interest」。自転車置き場の委員会の寓話の出典。英国版は『Parkinson's Law: The Pursuit of Progress』(John Murray, 1958)。
 
   - slug: galls-law
     tag: systems
     source_url: https://en.wikipedia.org/wiki/John_Gall_(author)
+    example_url: "https://oig.justice.gov/sites/default/files/legacy/reports/FBI/a0614/final.pdf"
     see_also:
       - worse-is-better
       - yagni
@@ -375,6 +396,8 @@ laws:
           a payments ledger, a safety interlock or a protocol with many independent implementers has to be right in its first version, and evolving it in production means running the incorrect versions on real money or real people
       guideline: |-
         Ship the smallest version that does one real job end to end, and grow it in steps that each keep it working. When a rewrite is proposed, ask which working system it will grow from.
+      example: |-
+        In March 2005 the FBI terminated the Virtual Case File, a three-year, $170 million effort to replace its paper-based case management in one system, after a pilot in a field office confirmed the project was not working. The Justice Department's Inspector General recorded that its replacement, Sentinel, would instead be built in four overlapping phases, each delivering distinct capabilities, starting with a web portal.
       source: |-
         John Gall, *General Systemantics: An Essay on How Systems Work, and Especially How They Fail* (General Systemantics Press, 1975); reissued as *Systemantics: How Systems Work and Especially How They Fail* (Quadrangle, 1977) — "A complex system that works is invariably found to have evolved from a simple system that worked."
     ja:
@@ -388,12 +411,15 @@ laws:
           決済の元帳、安全インターロック、独立した実装が多いプロトコルは、最初の版から正しくなければならない。こうしたものを本番で育てると、誤った版を本物のお金や人に対して動かすことになる
       guideline: |-
         本物の仕事を端から端まで一つこなせる最小の版を出し、動く状態を保ったまま段階的に育てる。書き直しが提案されたら、どの動いているシステムから育てるのかを問う。
+      example: |-
+        2005年3月、FBI は Virtual Case File を打ち切った。紙中心の事件管理を一つのシステムで置き換えようとした3年がかり、1億7000万ドルの計画で、ある支局での試験運用でもうまくいかないことが確かめられていた。司法省監察総監の報告によれば、後継の Sentinel はそれぞれ別の機能を提供する4つの段階に分けて、まず Web ポータルから順に作る方針に変わった。
       source: |-
         John Gall『General Systemantics: An Essay on How Systems Work, and Especially How They Fail』(General Systemantics Press, 1975)。『Systemantics: How Systems Work and Especially How They Fail』(Quadrangle, 1977) として再刊。「うまく動く複雑なシステムは、例外なく、うまく動く単純なシステムから進化したものである」の出典。
 
   - slug: conways-law
     tag: organization
     source_url: https://www.melconway.com/Home/Committees_Paper.html
+    example_url: "https://ideas.repec.org/p/hbs/wpaper/08-039.html"
     see_also:
       - dunbars-number
       - brooks-law
@@ -411,6 +437,8 @@ laws:
           giving every team its own service imports the costs of a distributed system; sometimes one team should own one deployable unit whatever the org chart says
       guideline: |-
         If you want a modular architecture, create modular, independent teams first. Do not fight the org chart with code.
+      example: |-
+        In a 2008 Harvard Business School study, Alan MacCormack, John Rusnak and Carliss Baldwin compared pairs of software products that do the same job, one built by a tightly coupled commercial firm and one by a loosely coupled open source community. In every pair the open source product was significantly more modular, and a change to one component in the commercial product could spread to others up to eight times as much. The authors read this as evidence consistent with a product's architecture mirroring the organization that builds it.
       source: |-
         Melvin E. Conway, *How Do Committees Invent?* (Datamation, April 1968).
     ja:
@@ -424,12 +452,15 @@ laws:
           チームごとにサービスを持たせると、分散システムのコストまで抱え込む。組織図がどうであれ、一つのチームが一つのデプロイ単位を持つべき場合もある
       guideline: |-
         モジュール化されたアーキテクチャが欲しいなら、先にチームを独立したモジュールとして編成する。組織構造にコードで逆らわない。
+      example: |-
+        2008年、ハーバード・ビジネス・スクールの Alan MacCormack、John Rusnak、Carliss Baldwin は、同じ役割を果たすソフトウェアを対にして比べた。一方は結びつきの強い商用企業が、もう一方は結びつきの緩いオープンソースのコミュニティが作ったものだ。どの対でもオープンソース側のほうがはっきりモジュール化されており、ある部品への変更が他へ波及する度合いは商用側で最大8倍あった。著者らはこれを、製品の構造が作り手の組織構造を映すことと整合する証拠とした。
       source: |-
         Melvin E. Conway『How Do Committees Invent?』(Datamation, 1968 年 4 月号)。
 
   - slug: hyrums-law
     tag: systems
     source_url: https://www.hyrumslaw.com/
+    example_url: "https://bugzilla.redhat.com/show_bug.cgi?id=638477"
     see_also:
       - postels-law
       - principle-of-least-astonishment
@@ -446,6 +477,8 @@ laws:
           if every observable behavior were sacred nothing could ever change, so vary what you never promised — randomized iteration order, planned outages — and the dependency never forms
       guideline: |-
         "Internal" doesn't exist once you have users. Version and feature-flag what you promise; deliberately vary what you do not, so nobody can build on it in the first place.
+      example: |-
+        In 2010 a Fedora 14 development build of glibc shipped a faster memcpy for some Intel CPUs that copied memory backward, and audio in Adobe's 64-bit Flash plugin turned to noise. Flash had been calling memcpy on overlapping buffers, which the C standard leaves undefined but the old forward copy had happened to handle. The bug thread split over whether glibc should keep the old behavior, with Linus Torvalds arguing memcpy should simply act like memmove.
       source: |-
         Hyrum Wright, *hyrumslaw.com*; canonicalized in *Software Engineering at Google* (Winters, Manshreck, Wright, 2020).
     ja:
@@ -459,6 +492,8 @@ laws:
           観測できる挙動をすべて不可侵にすると、何も変えられなくなる。約束していない部分は、反復順序のランダム化や計画的な停止のように意図的に揺らしておく。そうすれば依存はそもそも生まれない
       guideline: |-
         利用者がいる以上、「内部実装」というものはない。約束した部分はバージョニングと機能フラグで守り、約束していない部分は意図的に揺らして、そもそも依存されないようにする。
+      example: |-
+        2010年、Fedora 14開発版の glibc に、一部の Intel CPU 向けに後ろからコピーする高速な memcpy が入ると、Adobe の64ビット版 Flash プラグインの音声がノイズになった。Flash は重なり合うバッファに memcpy を使っていた。C 標準では未定義の動作だが、以前の前からコピーする実装ではたまたま動いていた。バグ報告では、glibc が古い挙動を守るべきかで意見が割れ、Linus Torvalds は memcpy を memmove と同じように動かせばよいと主張した。
       source: |-
         Hyrum Wright『hyrumslaw.com』。『Software Engineering at Google』(Winters, Manshreck, Wright, 2020) で正式化された。
 
@@ -535,6 +570,7 @@ laws:
   - slug: postels-law
     tag: distributed-systems
     source_url: https://www.rfc-editor.org/rfc/rfc761
+    example_url: "https://www.rfc-editor.org/rfc/rfc9413.html"
     see_also:
       - hyrums-law
       - fallacies-of-distributed-computing
@@ -549,6 +585,8 @@ laws:
           tolerating malformed input lets broken senders ship, every receiver then has to copy the tolerance, and the de facto protocol drifts from the spec; the IAB now asks protocol designers to keep maintaining their specifications so tolerance does not become permanent, and calls ignoring faulty input almost always the wrong fix
       guideline: |-
         Send exactly what the spec says. Accept small deviations at the edge only where they are documented and logged, and set a date to stop accepting them.
+      example: |-
+        RFC 9413 (2023), written by Martin Thomson and David Schinazi to examine the robustness principle, recounts that some widely deployed TLS servers dropped the connection when a ClientHello ended with an empty extension, even though TLS lets extensions appear in any order. Clients that followed the spec exactly broke against those servers, so they had to avoid that ordering to keep working.
       source: |-
         Jon Postel, *RFC 761* (DoD Standard TCP, January 1980) §2.10 — "be conservative in what you do, be liberal in what you accept from others". The same guidance appears in *RFC 760* (IP) §3.2 in different words, and verbatim again in *RFC 793* (1981).
     ja:
@@ -562,12 +600,15 @@ laws:
           不正な入力を許すと、壊れた送信側がそのまま出荷される。受信側はみな同じ寛容さを真似るしかなくなり、事実上のプロトコルが仕様から離れていく。IAB は現在、寛容さが恒久化しないよう仕様を保守し続けることを設計者に求めており、不正な入力を無視するのはほぼ常に誤った対処だとしている
       guideline: |-
         送るものは仕様どおりにする。受け取る側の小さな逸脱は、文書化してログに残すときに限って境界で受け入れ、受け入れをやめる期日を決めておく。
+      example: |-
+        堅牢性原則を見直すために2023年に Martin Thomson と David Schinazi が書いた RFC 9413は、広く使われていた一部の TLS サーバーが、空の拡張で終わる ClientHello を受け取ると接続を切っていた例を挙げている。TLS では拡張をどの順序で並べてもよいことになっている。仕様どおりに動くクライアントはこうしたサーバーとつながらず、その並び順を避けて回避するしかなかった。
       source: |-
         Jon Postel『RFC 761』(DoD Standard TCP, 1980 年 1 月) §2.10。"be conservative in what you do, be liberal in what you accept from others" の出典。同じ趣旨は『RFC 760』(IP) §3.2 に別の言い回しで、『RFC 793』(1981) に同文で再掲される。
 
   - slug: hanlons-razor
     tag: organization
     source_url: https://en.wikipedia.org/wiki/Hanlon%27s_razor
+    example_url: "https://blog.cloudflare.com/18-november-2025-outage/"
     see_also:
       - bystander-effect
       - occams-razor
@@ -583,6 +624,8 @@ laws:
           some failures are malicious, and an attacker relies on looking like an honest mistake; the xz utils backdoor (2024) came from a helpful, patient contributor
       guideline: |-
         Before you attribute a failure to intent, find out what the person could see at the time, and fix what was missing. Raise intent only with evidence, and then privately.
+      example: |-
+        When Cloudflare's network began failing on November 18, 2025, the team at first suspected a hyper-scale DDoS attack, a suspicion strengthened when its separately hosted status page went down at the same time by coincidence. The real cause was a database permissions change that made a query return duplicate rows, doubling a Bot Management feature file past a size limit in the routing software. Cloudflare's postmortem states the outage was not caused by any attack or malicious activity.
       source: |-
         Robert J. Hanlon, contributed to *Murphy's Law Book Two* (Arthur Bloch, 1980).
     ja:
@@ -596,12 +639,15 @@ laws:
           悪意による失敗もあり、攻撃者は正直なミスに見えることを当てにしている。xz utils のバックドア（2024年）は、親切で辛抱強い貢献者が持ち込んだものだった
       guideline: |-
         失敗を意図のせいにする前に、その人がその時点で何を見られたかを確かめ、欠けていたものを補う。意図を問題にするのは証拠があるときだけにし、その場合も一対一で話す。
+      example: |-
+        2025年11月18日に Cloudflare のネットワークが障害を起こしたとき、チームは当初、超大規模な DDoS 攻撃を疑った。別の場所で運用していたステータスページが偶然同時に落ちたことで、その疑いは強まった。実際の原因はデータベースの権限変更で、クエリが重複行を返すようになり、Bot Management の特徴量ファイルが倍の大きさになってルーティングソフトウェアのサイズ上限を超えた。Cloudflare の事後報告は、攻撃や悪意ある行為によるものではなかったと明記している。
       source: |-
         Robert J. Hanlon が『Murphy's Law Book Two』(Arthur Bloch 編, 1980) に寄稿した格言。
 
   - slug: hofstadters-law
     tag: estimation
     source_url: https://en.wikipedia.org/wiki/Hofstadter%27s_law
+    example_url: "https://www.gao.gov/assets/gao-18-273.pdf"
     see_also:
       - ninety-ninety-rule
       - parkinsons-law
@@ -617,6 +663,8 @@ laws:
           padding an estimate does not bank the slack; the work expands into it, so a generous estimate can be as late as a tight one
       guideline: |-
         Estimate from what similar past work actually took, not from how this work looks today. Write down, at the start, which scope you will cut when the date is at risk, and re-estimate when a milestone lands rather than only at the end.
+      example: |-
+        When NASA re-planned the James Webb Space Telescope in 2011, it set an October 2018 launch and built in 13 months of funded schedule reserve, later raised to 14. By early 2018 the GAO reported that the project had used all of that reserve on technical problems such as an anomaly in vibration testing, had moved launch to a window at least five months later, and was likely to slip further.
       source: |-
         Douglas Hofstadter, *Gödel, Escher, Bach: an Eternal Golden Braid* (Basic Books, 1979) — where the law is stated.
     ja:
@@ -631,12 +679,15 @@ laws:
           見積りに余裕を足しても、その余裕は貯金されない。仕事のほうが膨らんで埋めるので、余裕のある見積りもきつい見積りと同じくらい遅れる
       guideline: |-
         見積りは、今どう見えるかではなく、似た過去の作業に実際にかかった時間から出す。期限が危うくなったときに削るスコープは最初に書いておく。終盤だけでなく、マイルストーンを終えるたびに見積り直す。
+      example: |-
+        2011年に NASA がジェイムズ・ウェッブ宇宙望遠鏡の計画を立て直したとき、打ち上げを2018年10月とし、予算の裏づけのある13か月のスケジュール予備を組み込んだ。予備はのちに14か月に増えた。それでも2018年初めの GAO 報告によれば、振動試験での異常などの技術的問題で予備を使い切り、打ち上げは少なくとも5か月遅い時期にずれ込み、さらに遅れる見込みだった。
       source: |-
         Douglas Hofstadter『ゲーデル、エッシャー、バッハ — あるいは不思議の環 (Gödel, Escher, Bach)』(Basic Books, 1979)。この法則が述べられた箇所の出典。
 
   - slug: goodharts-law
     tag: incentives
     source_url: https://en.wikipedia.org/wiki/Goodhart%27s_law
+    example_url: "https://www.consumerfinance.gov/about-us/newsroom/consumer-financial-protection-bureau-fines-wells-fargo-100-million-widespread-illegal-practice-secretly-opening-unauthorized-accounts/"
     see_also:
       - cobra-effect
       - shirky-principle
@@ -653,6 +704,8 @@ laws:
           you still have to steer by numbers; several measures that are hard to game together, read alongside the work itself, keep the signal longer than refusing to measure
       guideline: |-
         Never use a single metric to judge performance. Observe the system's output, not its proxies.
+      example: |-
+        In September 2016 the US Consumer Financial Protection Bureau fined Wells Fargo $100 million after the bank's own analysis found employees had opened more than two million deposit and credit card accounts customers may not have authorized. The CFPB said the conduct was "spurred by sales targets and compensation incentives," and that employees were paid for meeting sales goals.
       source: |-
         Charles Goodhart, *Problems of Monetary Management: The U.K. Experience* (Papers in Monetary Economics, Reserve Bank of Australia, 1975) — the original law; Marilyn Strathern, *'Improving ratings': audit in the British University system* (European Review, 1997) — the "when a measure becomes a target" wording usually quoted.
     ja:
@@ -666,6 +719,8 @@ laws:
           それでも数字なしでは舵を取れない。まとめて操作するのが難しい複数の指標を、仕事そのものと並べて読めば、測るのをやめるよりも長く信号を保てる
       guideline: |-
         単一の指標で成果を評価しない。代わりの指標ではなく、システムが実際に出しているものを見る。
+      example: |-
+        2016年9月、米消費者金融保護局(CFPB)は Wells Fargo に1億ドルの制裁金を科した。銀行自身の分析で、顧客が承認していない可能性のある預金口座とクレジットカード口座が200万件以上、従業員によって開設されていたことがわかったからだ。CFPB はこの行為が販売目標と報酬のインセンティブに後押しされたもので、従業員は販売目標を達成すると報酬を得ていたとした。
       source: |-
         Charles Goodhart『Problems of Monetary Management: The U.K. Experience』(Papers in Monetary Economics, Reserve Bank of Australia, 1975)。元の法則の出典。よく引用される「指標が目標になると」の言い回しは Marilyn Strathern『'Improving ratings': audit in the British University system』(European Review, 1997) による。
 
@@ -806,6 +861,7 @@ laws:
   - slug: leaky-abstractions
     tag: systems
     source_url: https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/
+    example_url: "https://blog.cloudflare.com/how-and-why-the-leap-second-affected-cloudflare-dns/"
     see_also:
       - teslers-law
       - law-of-demeter
@@ -820,6 +876,8 @@ laws:
           most users of an abstraction never hit the leak, and the point of a layer is that most people do not have to learn what is underneath (Parnas, 1972)
       guideline: |-
         Use abstractions to move fast, but ensure at least one person on the team understands the layer beneath it.
+      example: |-
+        At midnight UTC on January 1, 2017, a leap second stepped the clock back, and Cloudflare's RRDNS DNS software computed a negative response time by subtracting a start time from Go's time.Now(), which at the time was not monotonic. The negative value eventually reached rand.Int63n(), which panicked, and some DNS lookups for customers using CNAME records failed, peaking at about 0.2% of queries.
       source: |-
         Joel Spolsky, *The Law of Leaky Abstractions* (Joel on Software, 2002).
     ja:
@@ -833,12 +891,15 @@ laws:
           抽象化の利用者のほとんどは漏れに出くわさない。下に何があるかを大半の人が学ばずに済むことが、層を設ける意味だ（Parnas, 1972）
       guideline: |-
         抽象化を使って速く進める。ただし、その下の層を理解している人をチームに少なくとも一人置く。
+      example: |-
+        2017年1月1日0時(UTC)、うるう秒で時計が巻き戻り、Cloudflare の DNS ソフトウェア RRDNS が負の応答時間を計算した。開始時刻を Go の time.Now()から引いて測っていたが、当時の time.Now()は単調増加を保証していなかった。負の値はやがて rand.Int63n()に渡ってパニックを起こし、CNAME レコードを使う顧客の一部で DNS 解決が失敗した。ピーク時には問い合わせの約0.2%が失敗した。
       source: |-
         Joel Spolsky『The Law of Leaky Abstractions』(Joel on Software, 2002)。
 
   - slug: pareto-principle
     tag: decision
     source_url: https://en.wikipedia.org/wiki/Pareto_principle
+    example_url: "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/sosp153-glerum-web.pdf"
     see_also:
       - premature-optimization
     en:
@@ -852,6 +913,8 @@ laws:
           the many small causes can add up to more than the few big ones; in availability and security, the rare path you deprioritized is where the outage or breach comes from
       guideline: |-
         Before a quality push, rank modules by defects or incidents over the last quarter and start at the top. Re-rank every quarter; the vital few move.
+      example: |-
+        Microsoft's 2009 SOSP paper on Windows Error Reporting, drawn from crash reports across about a billion machines, states that error reports "follow a Pareto distribution with a small number of bugs accounting for most error reports." The top 500 buckets accounted for 65% of all error reports for Windows Vista, and when ranked by volume, the first quarter of reports came from well under 1% of buckets.
       source: |-
         Vilfredo Pareto, *Cours d'Économie Politique* (1896); applied to quality engineering by Joseph M. Juran (*Quality Control Handbook*, 1951).
     ja:
@@ -866,6 +929,8 @@ laws:
           小さな原因も数が多ければ、少数の大きな原因を合計で上回ることがある。可用性やセキュリティでは、後回しにしたまれな経路から障害や侵害が起きる
       guideline: |-
         品質改善を始める前に、直近の四半期の欠陥やインシデントの件数でモジュールを並べ、上から手を付ける。重要な少数は入れ替わるので、順位は四半期ごとに付け直す。
+      example: |-
+        約10億台のマシンから集まるクラッシュ報告をもとにした Microsoft の2009年の SOSP 論文は、Windows Error Reporting のエラー報告が「パレート分布に従い、少数のバグが報告の大半を占める」と述べている。Windows Vista では上位500のバケットが全エラー報告の65%を占め、件数順に並べると報告の最初の4分の1は全バケットの1%にはるかに満たない数から来ていた。
       source: |-
         Vilfredo Pareto『Cours d'Économie Politique』(1896)。品質工学への応用は Joseph M. Juran『Quality Control Handbook』(1951)。
 
@@ -940,6 +1005,7 @@ laws:
   - slug: cobra-effect
     tag: incentives
     source_url: https://en.wikipedia.org/wiki/Perverse_incentive
+    example_url: "https://ideas.repec.org/a/taf/tcpoxx/v11y2011i2p851-864.html"
     see_also:
       - goodharts-law
       - jevons-paradox
@@ -954,6 +1020,8 @@ laws:
           most bounties and targets do move behavior the intended way; refusing to reward the outcome because it could be gamed leaves the problem unpaid-for
       guideline: |-
         For every incentive, ask how someone would earn it without fixing the problem, pay for the outcome rather than the evidence where you can, and decide in advance how you will wind it down.
+      example: |-
+        Under the Kyoto Protocol's Clean Development Mechanism, factories making the refrigerant HCFC-22 could earn carbon credits for destroying HFC-23, a potent greenhouse gas the process gives off. Lambert Schneider's 2011 study in Climate Policy found that these plants produced significantly less HFC-23 in periods when no credits could be claimed, and that their HCFC-22 output appeared to be set mainly by CDM rules. He concluded the scheme gave "perverse incentives to generate more HFC-23."
       source: |-
         Horst Siebert, *Der Kobra-Effekt: Wie man Irrwege der Wirtschaftspolitik vermeidet* (DVA, 2001) — who named the effect; the documented Hanoi case is Michael G. Vann, *Of Rats, Rice, and Race: The Great Hanoi Rat Massacre* (French Colonial History, 2003).
     ja:
@@ -967,6 +1035,8 @@ laws:
           報奨金や目標の多くは、意図した方向に行動を動かす。悪用されうるからといって成果に報いなければ、問題の解決に誰もお金を払わないままになる
       guideline: |-
         インセンティブを作るたびに、問題を直さずに報酬を得る方法がないかを考える。できるなら証拠ではなく成果に支払い、終わらせ方を先に決めておく。
+      example: |-
+        京都議定書のクリーン開発メカニズム(CDM)では、冷媒 HCFC-22 を作る工場が、その製造で出る強力な温室効果ガス HFC-23 を破壊すると排出削減クレジットを得られた。Lambert Schneider が2011年に Climate Policy 誌で発表した研究によれば、こうした工場はクレジットを請求できない期間には HFC-23 の発生量がはっきり少なく、HCFC-22 の生産量もおもに CDM のルールで決まっているように見えた。Schneider は、この制度が HFC-23 を余計に生み出すゆがんだ動機を与えていると結論づけた。
       source: |-
         Horst Siebert『Der Kobra-Effekt: Wie man Irrwege der Wirtschaftspolitik vermeidet』(DVA, 2001)。この効果の命名の出典。記録に残るハノイの例は Michael G. Vann『Of Rats, Rice, and Race: The Great Hanoi Rat Massacre』(French Colonial History, 2003) による。
 
@@ -1010,6 +1080,7 @@ laws:
   - slug: worse-is-better
     tag: systems
     source_url: https://www.dreamsongs.com/RiseOfWorseIsBetter.html
+    example_url: "https://spectrum.ieee.org/osi-the-internet-that-wasnt"
     see_also:
       - galls-law
       - lindy-effect
@@ -1025,6 +1096,8 @@ laws:
           Gabriel's own opposite: when the interface is hard to change later (a protocol, a file format, a security boundary) getting it right first can matter more than getting it out first
       guideline: |-
         For anything users will build on, ship the simplest version whose interface you can live with for years; keep the implementation simple and spend the care on the interface.
+      example: |-
+        In the 1980s the OSI networking standards were written by international committees that, unable to settle disputes between the computer and telecom camps, put options for both designs into the standard, making it larger and more complex. TCP/IP was already running on ARPA's network and its specifications were free, while OSI documents had to be bought from ISO. By the early 1990s TCP/IP had won, and in 1992 Internet engineers loudly rejected an ISO protocol offered as a replacement for IP.
       source: |-
         Richard P. Gabriel, *Lisp: Good News, Bad News, How to Win Big* (1991) — the "Worse is Better" essay.
     ja:
@@ -1038,6 +1111,8 @@ laws:
           Gabriel 自身が対置した考え方。プロトコル、ファイル形式、セキュリティ境界のように後から変えにくいインタフェースでは、先に出すことより先に正しく作ることのほうが大事になる場合がある
       guideline: |-
         利用者がその上に何かを作るものは、何年も付き合えるインタフェースを備えた最も単純な版で出す。実装は単純に保ち、手間はインタフェースにかける。
+      example: |-
+        1980年代、OSI のネットワーク標準は国際委員会が作っていた。委員会はコンピュータ業界と通信業界の対立を解消できず、両方の設計を選択肢として標準に盛り込んだため、規格は大きく複雑になった。一方の TCP/IP はすでに ARPA のネットワークで動いており、仕様は無料で手に入った。OSI の文書は ISO から1部ずつ買う必要があった。1990年代初めには TCP/IP が勝ち、1992年には IP の後継として提案された ISO のプロトコルをインターネットの技術者たちが強く拒んだ。
       source: |-
         Richard P. Gabriel『Lisp: Good News, Bad News, How to Win Big』(1991)。「Worse is Better」の節の出典。
 
@@ -1080,6 +1155,7 @@ laws:
       - hanlons-razor
       - ringelmann-effect
       - blameless-postmortem
+      - bus-factor
     en:
       title: Bystander Effect
       concept: The more people who see a problem, the less likely any one of them is to act on it.
@@ -1110,6 +1186,7 @@ laws:
   - slug: murphys-law
     tag: safety
     source_url: https://en.wikipedia.org/wiki/Murphy%27s_law
+    example_url: "https://aws.amazon.com/message/41926/"
     see_also:
       - normalcy-bias
       - fallacies-of-distributed-computing
@@ -1125,6 +1202,8 @@ laws:
           defending against every conceivable failure costs more than some of the failures; rank failure modes by likelihood and cost and accept the cheap, rare ones
       guideline: |-
         Treat every external dependency, retry, and timeout as something that *will* fail in production. Build the failure path before the success path.
+      example: |-
+        On February 28, 2017, an AWS engineer running a playbook to remove a few servers from an S3 billing subsystem in US-EAST-1 mistyped one input, and the command removed far more servers, including ones the S3 index and placement subsystems depended on. S3 in the region could not serve requests until those subsystems restarted, about four hours later. AWS's fix was to change the tool so it removes capacity more slowly and refuses to take any subsystem below its minimum required capacity.
       source: |-
         Capt. Edward A. Murphy Jr., USAF Project MX981 (1949); popularized by Maj. John Paul Stapp. Accounts of the original words conflict; see Nick T. Spark, *A History of Murphy's Law* (2006).
     ja:
@@ -1138,6 +1217,8 @@ laws:
           考えうる故障すべてに備えると、故障の一部が起きたときの損失より高くつく。故障モードを起こりやすさとコストで並べ、安くてまれなものは受け入れる
       guideline: |-
         外部依存、リトライ、タイムアウトはすべて、本番でいつか必ず失敗するものとして扱う。成功パスより先に失敗パスを作る。
+      example: |-
+        2017年2月28日、AWS のエンジニアが US-EAST-1 の S3 課金系サブシステムから数台のサーバーを外す手順を実行した際、入力を1つ打ち間違え、コマンドは S3 のインデックスと配置のサブシステムが頼るサーバーまで大量に外してしまった。そのリージョンの S3 は、これらのサブシステムが再起動するまでおよそ4時間リクエストを処理できなかった。AWS はツールを改め、容量の削除をゆっくりにし、どのサブシステムも必要最小限の容量を下回るような削除は拒むようにした。
       source: |-
         Capt. Edward A. Murphy Jr. (USAF MX981 計画, 1949)。Maj. John Paul Stapp により広まった。原文の言い回しについては証言が食い違う。Nick T. Spark『A History of Murphy's Law』(2006) を参照。
 
@@ -1148,6 +1229,8 @@ laws:
       - normalization-of-deviance
       - broken-windows-theory
       - code-health-standard
+      - technical-debt
+      - lehmans-laws
     en:
       title: Boy Scout Rule
       concept: Code decays because cleanup tends to be deferred to a refactor that rarely happens.
@@ -1250,6 +1333,7 @@ laws:
       - dunning-kruger-effect
       - principle-of-least-astonishment
       - context-not-control
+      - bus-factor
     en:
       title: Curse of Knowledge
       concept: "Once you know something, you can't easily imagine what it's like not to know it."
@@ -1280,6 +1364,7 @@ laws:
   - slug: swiss-cheese-model
     tag: safety
     source_url: https://doi.org/10.1136/bmj.320.7237.768
+    example_url: "https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31/"
     see_also:
       - normalization-of-deviance
       - normal-accident-theory
@@ -1296,6 +1381,8 @@ laws:
           layers are not independent and each one adds interactions of its own; past a point, another safeguard is another way to fail
       guideline: |-
         During an incident review, do not stop at "the one thing that failed." Enumerate every layer that should have caught the failure and ask why each hole was open at exactly that moment. The fix is rarely a single layer; prefer changes that make the layers fail independently of each other.
+      example: |-
+        On January 31, 2017, a GitLab.com engineer meant to wipe the data directory of a lagging PostgreSQL replica but ran the command on the primary. Then every safeguard turned out to have its own hole: the daily pg_dump backups had been failing because of a version mismatch, the failure emails were rejected so nobody saw them, and disk snapshots were not enabled for the database servers. GitLab restored from a six-hour-old staging snapshot and lost about 5,000 projects, 5,000 comments and 700 user accounts created in that window.
       source: |-
         James Reason, *Human Error* (Cambridge University Press, 1990) — the layered-defenses model; the Swiss-cheese picture of it is from Reason, *Human error: models and management* (BMJ, 2000), which is what this links to. Larouzée & Le Coze (Safety Science, 2020) trace the cheese metaphor to Rob Lee.
     ja:
@@ -1309,12 +1396,15 @@ laws:
           層は互いに独立しておらず、層を足すたびにその層の相互作用も増える。ある程度を超えると、安全策を一つ足すことは失敗の経路を一つ足すことになる
       guideline: |-
         インシデントレビューでは「失敗した一か所」で終わらせない。その失敗を止めるはずだった層をすべて挙げ、なぜその瞬間に各層の穴が開いていたのかを問う。一つの層を直すだけで済むことはまれだ。層同士が互いに独立して失敗するようにする変更を優先する。
+      example: |-
+        2017年1月31日、GitLab.com のエンジニアは遅れていた PostgreSQL のレプリカのデータディレクトリを消すつもりで、プライマリで消してしまった。そこから先の防御にもそれぞれ穴があった。毎日の pg_dump バックアップはバージョンの不一致で失敗し続けており、その失敗通知のメールは受信側で拒否されて誰も気づかず、データベースサーバーではディスクのスナップショットも有効になっていなかった。GitLab は6時間前のステージング用スナップショットから復旧し、その間に作られた約5,000のプロジェクト、約5,000のコメント、約700のユーザーアカウントを失った。
       source: |-
         James Reason『Human Error』(Cambridge University Press, 1990) が多層防護のモデルを示した。スイスチーズの図は Reason『Human error: models and management』(BMJ, 2000、本項のリンク先) から。チーズの比喩そのものは Rob Lee によるものだと Larouzée & Le Coze (Safety Science, 2020) が跡づけている。
 
   - slug: premature-optimization
     tag: performance
     source_url: https://doi.org/10.1145/356635.356640
+    example_url: "https://nee.lv/2021/02/28/How-I-cut-GTA-Online-loading-times-by-70/"
     see_also:
       - amdahls-law
       - pareto-principle
@@ -1329,6 +1419,8 @@ laws:
           some performance is set by early design (data layout, number of round trips, sync vs async) and cannot be profiled in later; for those decisions, think about speed before there is anything to measure
       guideline: |-
         Write the obvious code first. Only optimize hot paths that a profiler proves are bottlenecks. Leave the other 97% of the code simple — that's where the next maintainer will live.
+      example: |-
+        For years GTA Online took minutes to load. In 2021 a player who goes by t0st profiled it and found that almost all the time went to two plain pieces of code: a parser that called sscanf, and through it strlen, again and again over a 10 MB JSON file, and a duplicate check that compared each of 63,000 items against every item before it. Patching just those two spots cut his load time from about six minutes to 1 minute 50 seconds, and Rockstar shipped a fix in March 2021.
       source: |-
         Donald E. Knuth, *Structured Programming with go to Statements* (Computing Surveys, 1974).
     ja:
@@ -1342,12 +1434,15 @@ laws:
           性能の一部は初期の設計（データ配置、往復回数、同期か非同期か）で決まり、後からプロファイルしても直せない。そうした判断では、測れるものができる前から速さを考える
       guideline: |-
         まず素直なコードを書く。最適化するのは、プロファイラでボトルネックだと確かめたホットパスだけにする。残り97%のクリティカルでないコードは単純なまま残す。次のメンテナーが日々触るのはそこだ。
+      example: |-
+        GTA Online は長年、読み込みに何分もかかっていた。2021年、t0st と名乗るプレイヤーがプロファイルを取ると、時間のほとんどは平凡な2か所のコードで使われていた。10MB の JSON を読むパーサーが sscanf を、その中で strlen を何度も呼んでいたことと、6万3,000件の項目を1件ずつそれまでの全項目と比べる重複チェックだ。この2か所を直すだけで読み込みは約6分から1分50秒に縮み、Rockstar も2021年3月に修正を出した。
       source: |-
         Donald E. Knuth『Structured Programming with go to Statements』(Computing Surveys, 1974)。
 
   - slug: linus-law
     tag: maintainability
     source_url: https://web.archive.org/web/2024/http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/
+    example_url: "https://heartbleed.com/"
     see_also:
       - cunninghams-law
     en:
@@ -1361,6 +1456,8 @@ laws:
           visibility is not review; the Heartbleed bug sat in OpenSSL's public source for two years before its disclosure in 2014, and some code needs a few paid, expert eyes rather than many casual ones
       guideline: |-
         If the same class of bug keeps slipping through, the fix is not more careful review by the same people — it is exposing the code to more, differently-shaped eyes. Rotate reviewers, open up internal libraries, run bug bounties.
+      example: |-
+        The Heartbleed bug entered OpenSSL in December 2011 and shipped in OpenSSL 1.0.1 in March 2012, in code that was open for anyone to read and ran on a large part of the web's servers. It became public only on April 7, 2014, after engineers at Codenomicon and Neel Mehta of Google Security found it independently. Many potential eyeballs did not mean many actual reviewers.
       source: |-
         Eric S. Raymond, *The Cathedral and the Bazaar* (1999) — named for Linus Torvalds.
     ja:
@@ -1374,12 +1471,15 @@ laws:
           公開されていることとレビューされていることは別だ。Heartbleed のバグは2014年に公表されるまで、2年間 OpenSSL の公開ソースに残っていた。コードによっては、気軽に眺める大勢より、報酬を受けた少数の専門家の目が必要になる
       guideline: |-
         同じ種類のバグが何度もすり抜けるなら、同じ人がもっと慎重にレビューしても解決しない。視点の違う多くの人にコードを見せる。レビュアーを入れ替え、社内ライブラリを公開し、バグバウンティを実施する。
+      example: |-
+        Heartbleed のバグは2011年12月に OpenSSL に入り、2012年3月の OpenSSL 1.0.1 で出荷された。誰でも読めるコードで、ウェブの多くのサーバーで動いていた。それでも公になったのは2014年4月7日で、Codenomicon のエンジニアたちと Google Security の Neel Mehta がそれぞれ独立に見つけてからだった。読める目が多いことと、実際に読む人が多いことは違う。
       source: |-
         Eric S. Raymond『The Cathedral and the Bazaar』(1999)。Linus Torvalds にちなんで名付けられた法則の出典。
 
   - slug: cap-theorem
     tag: distributed-systems
     source_url: https://doi.org/10.1145/564585.564601
+    example_url: "https://github.blog/news-insights/company-news/oct21-post-incident-analysis/"
     see_also:
       - two-generals-problem
       - fallacies-of-distributed-computing
@@ -1394,6 +1494,8 @@ laws:
           partitions are rare; the trade-off you pay every day is latency against consistency (Abadi, 2012), so a design argued only in CAP terms ignores the normal case
       guideline: |-
         Decide *before* an outage whether each operation prefers consistency or availability. The partition will happen; the only question is what your system does when it does.
+      example: |-
+        On October 21, 2018, a 43-second network cut between GitHub's East Coast hub and its primary East Coast data center led its MySQL failover tooling to promote West Coast databases, and both sites ended up holding writes the other lacked. GitHub chose to keep data consistent over keeping the site fully available: it paused webhooks and Pages builds and ran degraded for 24 hours and 11 minutes while it reconciled the data. Its postmortem says the extended degradation was worth ensuring the consistency of users' data.
       source: |-
         Eric Brewer, *Towards Robust Distributed Systems* (PODC keynote, 2000); proved by Seth Gilbert & Nancy Lynch (*SIGACT News*, 2002).
     ja:
@@ -1407,12 +1509,15 @@ laws:
           分断はまれだ。毎日払っているのは、レイテンシと一貫性のトレードオフのほうだ（Abadi, 2012）。CAP の言葉だけで議論した設計は、平常時を考えていない
       guideline: |-
         障害が起きる*前*に、操作ごとに一貫性と可用性のどちらを優先するかを決めておく。分断はいずれ起きる。問題は、そのときシステムがどう動くかだけだ。
+      example: |-
+        2018年10月21日、GitHub の東海岸のネットワーク拠点と東海岸のメインのデータセンターの間で通信が43秒途切れ、MySQL のフェイルオーバーの仕組みが西海岸のデータベースを昇格させた。その結果、両方のサイトに相手にない書き込みが残った。GitHub はサイトを完全に動かし続けるよりデータの一貫性を守ることを選び、Webhook と Pages のビルドを止め、データを突き合わせる間、24時間11分にわたって機能を落として運用した。ポストモーテムには、長い機能低下はユーザーのデータの一貫性を守るためなら払う価値があったと書かれている。
       source: |-
         Eric Brewer『Towards Robust Distributed Systems』(PODC 基調講演, 2000)。Seth Gilbert & Nancy Lynch が証明した (SIGACT News, 2002)。
 
   - slug: littles-law
     tag: performance
     source_url: https://doi.org/10.1287/opre.9.3.383
+    example_url: "https://github.com/Netflix/concurrency-limits"
     see_also:
       - tail-at-scale
       - theory-of-constraints
@@ -1427,6 +1532,8 @@ laws:
           cut work-in-progress too far and servers sit idle between arrivals; throughput drops and the work you refused still has to be done somewhere
       guideline: |-
         To cut time-in-system without adding capacity, start less work: cap work-in-progress and shed, reject or defer what exceeds the cap, so the excess is refused quickly instead of queuing slowly. A cap without shedding just moves the queue somewhere you are not measuring.
+      example: |-
+        Netflix used to configure fixed concurrency limits for its services through laborious performance testing, and in auto-scaling systems those limits went stale, so a service could fall over instead of shedding excess load. Its open-source concurrency-limits library instead derives each service's limit from Little's Law, limit = average RPS × average latency, and adjusts it at runtime from measured latency.
       source: |-
         John D. C. Little, *A Proof for the Queuing Formula L = λW* (Operations Research, 1961).
     ja:
@@ -1440,12 +1547,15 @@ laws:
           仕掛りを削りすぎると到着の合間にサーバが遊び、スループットが落ちる。断った仕事も、どこかで誰かがやらなければならない
       guideline: |-
         容量を増やさずに滞在時間を縮めたいなら、始める仕事を減らす。仕掛りに上限を設け、上限を超えた分は捨てるか断るか後回しにする。そうすれば超過分は行列で長く待たされず、すぐに断られる。捨てずに上限だけ設けても、行列は測っていない場所に移るだけだ。
+      example: |-
+        Netflix は以前、サービスごとの同時実行数の上限を手間のかかる性能試験で決めて固定していた。だがオートスケールする環境ではその値がすぐ古くなり、サービスは余分な負荷を捨てられずに落ちることがあった。そこでオープンソースの concurrency-limits ライブラリでは、リトルの法則（上限 = 平均 RPS × 平均レイテンシ）から上限を求め、計測したレイテンシをもとに実行中に調整するようにした。
       source: |-
         John D. C. Little『A Proof for the Queuing Formula L = λW』(Operations Research, 1961)。
 
   - slug: two-generals-problem
     tag: distributed-systems
     source_url: https://doi.org/10.1145/800213.806523
+    example_url: "https://stripe.com/blog/idempotency"
     see_also:
       - cap-theorem
     en:
@@ -1459,6 +1569,8 @@ laws:
           certainty is impossible but rarely needed; TCP, payments and every RPC run on high probability plus a way to reconcile, and waiting for proof means never acting
       guideline: |-
         Never assume "I sent it, so they got it." Make every cross-network action safely retryable and idempotent, and reconcile state instead of trusting a single round-trip.
+      example: |-
+        Stripe's 2017 engineering post on API idempotency starts from a case the client cannot resolve: a call can succeed on the server but the connection breaks before the response arrives, so the client cannot know whether the charge happened. Rather than trying to get certainty, Stripe has clients send an idempotency key with each request, so a retry with the same key returns the saved result instead of charging the customer twice.
       source: |-
         E. A. Akkoyunlu, K. Ekanadham & R. V. Huber, *Some Constraints and Tradeoffs in the Design of Network Communications* (SOSP, 1975) — the first statement of the problem; named "the two generals problem" and framed as a database problem by Jim Gray, *Notes on Data Base Operating Systems* (1978).
     ja:
@@ -1473,12 +1585,15 @@ laws:
           確実さは得られないが、必要になることもまれだ。TCP も決済もあらゆる RPC も、高い確率と後から突き合わせる手段で動いている。証明を待っていたら何もできない
       guideline: |-
         「送ったから届いた」とは決して考えない。ネットワークをまたぐ操作はすべて安全に再試行できるようにべき等にし、一往復の結果を信じるのではなく状態を突き合わせる。
+      example: |-
+        Stripe が2017年に書いた API の冪等性についての記事は、クライアントには判断のつかない状況から始まる。サーバー側では呼び出しが成功していても、応答が届く前に接続が切れれば、クライアントには課金が済んだかどうか分からない。Stripe は確実さを得ようとするのをやめ、クライアントにリクエストごとの冪等キーを送らせる。同じキーで再送すれば、二重に課金せず保存済みの結果を返す。
       source: |-
         E. A. Akkoyunlu, K. Ekanadham & R. V. Huber『Some Constraints and Tradeoffs in the Design of Network Communications』(SOSP, 1975)。この問題を初めて述べた論文。「二人の将軍問題」と名付け、データベースの問題として定式化したのは Jim Gray『Notes on Data Base Operating Systems』(1978)。
 
   - slug: peter-principle
     tag: organization
     source_url: https://en.wikipedia.org/wiki/Peter_principle
+    example_url: "https://doi.org/10.1093/qje/qjz017"
     see_also:
       - dunning-kruger-effect
       - shirky-principle
@@ -1493,6 +1608,8 @@ laws:
           promoting only those already proven at the next level means nobody gets the chance to learn it; stretch roles with support and a way back are how most good managers were made
       guideline: |-
         Do not promote your best engineer into management as a reward — it removes a great engineer and risks creating a poor manager. Offer a technical ladder, and evaluate candidates for the role above, not the one they already mastered.
+      example: |-
+        Alan Benson, Danielle Li and Kelly Shue studied sales workers at 131 U.S. firms and published the results in 2019. They found that firms promoted their best salespeople into management even when other observable traits better predicted who would be a good manager, and estimated that promoting people with lower managerial potential was costly. Firms leaned less on sales numbers when the management job carried more responsibility.
       source: |-
         Laurence J. Peter & Raymond Hull, *The Peter Principle* (1969).
     ja:
@@ -1506,6 +1623,8 @@ laws:
           一つ上の職務ですでに実績がある人しか昇進させなければ、誰もその職務を学ぶ機会を得られない。良いマネージャーの多くは、支援と戻り道のある背伸びの役割から育ってきた
       guideline: |-
         一番優秀なエンジニアを、褒美としてマネジメントに昇進させない。優秀なエンジニアを一人失ううえに、力不足のマネージャーを生むおそれがある。技術職のキャリアラダーを用意し、候補者は、すでに習熟した職務ではなく一つ上の職務への適性で評価する。
+      example: |-
+        Alan Benson、Danielle Li、Kelly Shue の3人は米国131社の営業職のデータを分析し、2019年に結果を発表した。企業は、管理職としての適性をよく予測する別の特徴があっても、売上の高い営業担当者を管理職に昇進させていた。管理職としての適性が低い人を昇進させるコストは大きいと推計している。管理職の責任が重い場合には、企業は売上の数字に頼る度合いを下げていた。
       source: |-
         Laurence J. Peter & Raymond Hull『The Peter Principle』(1969)。
 
@@ -1679,6 +1798,7 @@ laws:
   - slug: fitts-law
     tag: interaction
     source_url: https://doi.org/10.1037/h0055392
+    example_url: "https://www.asktog.com/columns/022DesignedToGiveFitts.html"
     see_also:
       - hicks-law
     en:
@@ -1692,6 +1812,8 @@ laws:
           the same law that makes a button easy to hit makes it easy to hit by accident; for irreversible actions a slower, harder target is the point
       guideline: |-
         Make frequent actions big and close to where the pointer already is; make destructive ones small, far from the frequent ones, and behind a confirmation. Screen edges and corners are effectively infinite targets, because the pointer stops there, so put primary actions there.
+      example: |-
+        Apple put the Macintosh menu bar at the top edge of the screen, while Microsoft, Sun and others attached menu bars to each window. Bruce Tognazzini, who wrote Apple's early interface guidelines, explained in 1999 that a menu on the screen edge has effectively infinite height, because the pointer stops there, so users can fling the mouse up without aiming, and he called Mac menus at least five times faster to reach. In a test he ran at Apple with a second monitor stacked above, so the menu bar was no longer on an edge, users overshot, slowed down, and their access times fell to about those of Windows users.
       source: |-
         Paul M. Fitts, *The Information Capacity of the Human Motor System in Controlling the Amplitude of Movement* (Journal of Experimental Psychology, 1954).
     ja:
@@ -1705,6 +1827,8 @@ laws:
           ボタンが押しやすくなれば、同じ理屈で誤って押すことも増える。取り消せない操作では、遅くて押しにくいことこそが狙いだ
       guideline: |-
         よく使う操作は大きくし、ポインタが今ある場所の近くに置く。破壊的な操作は小さくし、よく使う操作から離して、確認を挟む。画面の端と角はカーソルがそこで止まるので、無限に大きいターゲットに近くなる。だから主要な操作はそこに置く。
+      example: |-
+        Apple は Macintosh のメニューバーを画面の上端に置き、Microsoft や Sun などはメニューバーをウィンドウごとに付けた。Apple の初期のインターフェースガイドラインを書いた Bruce Tognazzini は1999年、画面の端にあるメニューはポインタがそこで止まるので実質的に高さが無限になり、狙わずにマウスを上へ放り投げればよいと説明し、Mac のメニューには少なくとも5倍速く届くと書いた。彼が Apple で行った試験では、上にもう1台モニタを重ねてメニューバーが端でなくなると、利用者は行き過ぎてから減速するようになり、操作時間は Windows の利用者並みに落ちた。
       source: |-
         Paul M. Fitts『The Information Capacity of the Human Motor System in Controlling the Amplitude of Movement』(Journal of Experimental Psychology, 1954)。
 
@@ -1780,6 +1904,7 @@ laws:
   - slug: ironies-of-automation
     tag: safety
     source_url: https://doi.org/10.1016/0005-1098(83)90046-8
+    example_url: "https://bea.aero/fileadmin/uploads/tx_elyextendttnews/presentation.rapport.final.05juillet2012.en_04.pdf"
     see_also:
       - normal-accident-theory
       - toil
@@ -1795,6 +1920,8 @@ laws:
           keeping people on routine manual work only to keep them practiced has its own cost: repetitive work that scales with load, burns time and invites slips, so the push to automate is real, and the tension is resolved by better human-machine teaming rather than by automating less
       guideline: |-
         Keep operators sharp with regular game-days and hands-on drills, and design handoffs so a human takes over with context, not cold.
+      example: |-
+        On June 1, 2009, ice crystals likely blocked the pitot probes of Air France flight 447, the speed readings disagreed, and the autopilot disconnected over the Atlantic. The crew's manual inputs destabilized the flight path and they did not recognize the stall that followed. France's BEA listed among the causes an absence of training in manual handling at high altitude.
       source: |-
         Lisanne Bainbridge, *Ironies of Automation* (Automatica, 1983).
     ja:
@@ -1808,12 +1935,15 @@ laws:
           腕を鈍らせないためだけに定型作業を人に続けさせるのにもコストがある。負荷に比例して増える繰り返し作業は時間を食い、ミスを招くので、自動化を進める理由は確かにある。この対立は、自動化を減らすことではなく、人と機械の連携をよくすることで解く
       guideline: |-
         定期的なゲームデーと実地訓練で、運用担当の勘を保つ。引き継ぎは、人が何も知らないままいきなり引き取るのではなく、状況を把握したうえで引き取れるように設計する。
+      example: |-
+        2009年6月1日、大西洋上のエールフランス447便で、ピトー管が氷晶でふさがったとみられ、速度の計測値が食い違って自動操縦が切れた。乗員の手動操作は飛行経路を不安定にし、その後の失速にも気づかなかった。フランスの事故調査機関 BEA は、高高度での手動操縦の訓練がなかったことを原因の一つに挙げた。
       source: |-
         Lisanne Bainbridge『Ironies of Automation』(Automatica, 1983)。
 
   - slug: principle-of-least-privilege
     tag: security
     source_url: https://web.mit.edu/Saltzer/www/publications/protection/
+    example_url: "https://www.justice.gov/media/1019711/dl?inline"
     see_also:
       - kerckhoffs-principle
     en:
@@ -1826,6 +1956,8 @@ laws:
         note: over-restriction that users route around defeats itself
       guideline: |-
         Default every process, service account, and token to deny, then add only the minimal scopes the job provably needs; re-audit the grants whenever the job changes.
+      example: |-
+        In the 2019 Capital One breach, a firewall misconfiguration let an outsider run commands on one server and obtain credentials for the role used by its web application firewall. According to the DOJ complaint, that role could list more than 700 folders or buckets of data in Capital One's cloud storage and copy out the ones it had permissions for.
       source: |-
         Jerome Saltzer & Michael Schroeder, *The Protection of Information in Computer Systems* (Proceedings of the IEEE, 1975).
     ja:
@@ -1838,12 +1970,15 @@ laws:
         note: 利用者が回避するほど厳しい制限は、かえって守りを崩す
       guideline: |-
         プロセス、サービスアカウント、トークンはすべて既定で拒否にし、その仕事に必要だと確かめられた最小限のスコープだけを加える。仕事の内容が変わったら、そのたびに権限を監査し直す。
+      example: |-
+        2019年の Capital One の情報流出では、ファイアウォールの設定ミスにより、外部の人物が一つのサーバ上でコマンドを実行し、Web アプリケーションファイアウォールが使うロールの認証情報を手に入れた。司法省の訴状によれば、このロールはCapital One のクラウドストレージにある700を超えるフォルダやバケットを一覧でき、権限のあるものからデータをコピーできた。
       source: |-
         Jerome Saltzer & Michael Schroeder『The Protection of Information in Computer Systems』(Proceedings of the IEEE, 1975)。
 
   - slug: kerckhoffs-principle
     tag: security
     source_url: https://www.petitcolas.net/kerckhoffs/
+    example_url: "https://doi.org/10.1007/978-3-540-88313-5_7"
     see_also:
       - principle-of-least-privilege
     en:
@@ -1856,6 +1991,8 @@ laws:
         note: obscurity may be one thin extra layer, never the foundation
       guideline: |-
         Assume the attacker has your source and design. Put all of the secret in rotatable keys, and never rely on a hidden algorithm to protect anything.
+      example: |-
+        NXP kept the design of CRYPTO1, the 48-bit cipher in its MIFARE Classic smart card, secret, and the card was used in transit systems such as London's Oyster card and the Dutch OV-chipkaart. In 2008 researchers at Radboud University Nijmegen reverse engineered the cipher and authentication protocol from recorded card-reader traffic. Their attack recovers the secret key from one or two authentication attempts with a genuine reader in under a second, enough to clone a card.
       source: |-
         Auguste Kerckhoffs, *La cryptographie militaire* (Journal des sciences militaires, January and February 1883) — the principle, stated as the second of six requirements; both parts are scanned at the linked page.
     ja:
@@ -1869,12 +2006,15 @@ laws:
           秘匿は薄い追加の一層にはなっても、土台には決してならない
       guideline: |-
         攻撃者はソースコードも設計もすべて手にしている前提で考える。秘密はすべて交換できる鍵に寄せ、隠したアルゴリズムで何かを守ろうとしない。
+      example: |-
+        NXP は MIFARE Classic カードに使う48ビットの暗号 CRYPTO1 の設計を非公開にしていた。このカードはロンドンの Oyster カードやオランダの OV-chipkaart などの交通システムで使われていた。2008年、ラドバウド大学ナイメーヘンの研究者たちはカードと読み取り機の通信を記録して暗号と認証プロトコルを解析した。本物の読み取り機との1、2回の認証から1秒足らずで秘密鍵を取り出せる攻撃を示し、カードの複製も可能になった。
       source: |-
         Auguste Kerckhoffs『La cryptographie militaire』(Journal des sciences militaires, 1883 年 1 月・2 月)。6 つの要件の 2 番目としてこの原理を述べた論文の出典。リンク先に両号のスキャンがある。
 
   - slug: gustafsons-law
     tag: performance
     source_url: https://doi.org/10.1145/42411.42415
+    example_url: "https://arxiv.org/abs/2304.10397"
     see_also:
       - amdahls-law
       - moores-law
@@ -1888,6 +2028,8 @@ laws:
         note: for a fixed-size workload, the serial fraction still hard-caps speedup
       guideline: |-
         Before justifying more cores, ask whether the problem size grows with the hardware. If the workload is fixed, reason with Amdahl; if it scales, Gustafson applies.
+      example: |-
+        In a 2023 paper, AMD engineers ran rocHPL, their Linpack implementation for the Frontier supercomputer, on 1 to 128 nodes of Frontier's early-access system Crusher. At each node count they grew the problem size N to fill the GPUs' memory again, rather than holding it fixed. Performance went from 153 TFLOPS on one node to 17.75 PFLOPS on 128 nodes, over 90% weak-scaling efficiency.
       source: |-
         John L. Gustafson, *Reevaluating Amdahl's Law* (Communications of the ACM, 1988).
     ja:
@@ -1901,12 +2043,15 @@ laws:
           作業量の大きさが固定なら、やはり逐次部分が速度向上の上限を決める
       guideline: |-
         コアの追加を求める前に、問題の規模がハードウェアに合わせて大きくなるかを確かめる。作業量が固定ならアムダールで考え、規模とともに増えるならグスタフソンで考える。
+      example: |-
+        2023年の論文で、AMD の技術者たちはスーパーコンピュータ Frontier 向けの Linpack 実装 rocHPL を、Frontier の先行利用システム Crusher の1から128ノードで動かした。ノード数を増やすたびに、問題サイズ N を固定せず、GPU のメモリをまた埋めるところまで大きくした。性能は1ノードの153 TFLOPS から128ノードの17.75 PFLOPS まで伸び、弱スケーリング効率は90%を超えた。
       source: |-
         John L. Gustafson『Reevaluating Amdahl's Law』(Communications of the ACM, 1988)。
 
   - slug: tail-at-scale
     tag: distributed-systems
     source_url: https://doi.org/10.1145/2408776.2408794
+    example_url: "https://grafana.com/blog/2021/08/27/grafana-tempo-1.1-released-new-hedged-requests-reduce-latency-by-45/"
     see_also:
       - littles-law
       - error-budget
@@ -1921,6 +2066,8 @@ laws:
           hedged and tied requests add load; don't chase the tail where the median is what users feel
       guideline: |-
         Set SLOs on p99/p99.9, not the mean, and deploy tail-tolerance — hedged requests, micro-partitioning — instead of trying to make every node uniformly fast.
+      example: |-
+        In August 2021, Grafana's tracing backend Tempo 1.1 added hedged requests: when a read from object storage takes longer than a set threshold, Tempo sends it again and uses whichever answer comes back. With the threshold at the backend's p99, only the slowest 1% of requests are resent. Grafana reported that query p99 fell from about 4.5 seconds to 2.5 seconds, a 45% improvement.
       source: |-
         Jeffrey Dean & Luiz André Barroso, *The Tail at Scale* (Communications of the ACM, 2013).
     ja:
@@ -1934,6 +2081,8 @@ laws:
           ヘッジドリクエストや連動リクエストは負荷を増やす。利用者の体感を決めるのが中央値なら、テールを追いかけない
       guideline: |-
         SLO は平均ではなく p99／p99.9 に設定する。すべてのノードを同じように速くしようとするのではなく、ヘッジドリクエストやマイクロパーティショニングのようなテール対策を入れる。
+      example: |-
+        2021年8月、Grafana のトレーシング基盤 Tempo 1.1 はヘッジドリクエストを加えた。オブジェクトストレージへの読み出しが設定したしきい値より長くかかると、もう一度リクエストを送り、先に返ってきた方を使う。しきい値をバックエンドの p99 にすれば、再送されるのは最も遅い1%のリクエストだけになる。Grafana によると、p99 は約4.5秒から2.5秒に下がり、45%改善した。
       source: |-
         Jeffrey Dean & Luiz André Barroso『The Tail at Scale』(Communications of the ACM, 2013)。
 
@@ -2006,6 +2155,7 @@ laws:
   - slug: jevons-paradox
     tag: incentives
     source_url: https://archive.org/details/in.ernet.dli.2015.224624
+    example_url: "https://www.sandia.gov/-jytsao/energy/"
     see_also:
       - cobra-effect
       - wirths-law
@@ -2020,6 +2170,8 @@ laws:
           pair efficiency with a quota, cap, or price signal to actually capture the savings
       guideline: |-
         When you make something cheaper — compute, storage, an internal API — expect demand to balloon; provision and budget for the rebound instead of assuming a net reduction.
+      example: |-
+        Sandia National Laboratories researcher Jeff Tsao and colleagues compiled lighting data spanning three centuries, six continents and five lighting technologies. Each gain in efficiency was met by consuming more light, so global energy use for lighting showed a 100% rebound: the efficiency gains were fully offset, and energy use for lighting did not fall. The authors still argue for better lighting, and say their result is misread as proof that efficiency is counterproductive.
       source: |-
         William Stanley Jevons, *The Coal Question* (Macmillan, 1865), ch. 7 — "It is wholly a confusion of ideas to suppose that the economical use of fuel is equivalent to a diminished consumption."
     ja:
@@ -2033,6 +2185,8 @@ laws:
           効率化には割当、上限、価格シグナルを組み合わせ、節約分を実際に手元に残す
       guideline: |-
         計算資源、ストレージ、社内 API などを安くしたら、需要が大きく膨らむと見込む。全体として減ると決めつけず、反動を見込んで容量と予算を確保する。
+      example: |-
+        サンディア国立研究所の Jeff Tsao らは、3世紀、6大陸、5つの照明技術にわたる照明のデータを集めた。効率が上がるたびに使う光の量が増え、照明に使う世界のエネルギーは100%のリバウンドを示した。効率化の分はすべて相殺され、照明のエネルギー消費は減らなかった。それでも著者らは照明技術の改良を進めるべきだとし、この結果が効率化は逆効果だという意味に誤読されていると述べている。
       source: |-
         William Stanley Jevons『The Coal Question』(Macmillan, 1865) 第 7 章。「燃料を経済的に使うことが消費の減少に等しいと考えるのは、まったくの考え違いである」の出典。
 
@@ -2075,6 +2229,7 @@ laws:
   - slug: broken-windows-theory
     tag: safety
     source_url: https://www.theatlantic.com/magazine/archive/1982/03/broken-windows/304465/
+    example_url: "https://www.rug.nl/staff/e.m.steg/keizerlindenbergstegdisorder.pdf"
     see_also:
       - normalization-of-deviance
       - boy-scout-rule
@@ -2090,6 +2245,8 @@ laws:
           attention spent on paint is attention not spent on the foundation, and the criminological evidence for the original claim is contested
       guideline: |-
         Repair the first visible defect in a file you are already touching, and give every tolerated exception an owner and a date. Do not open a refactor for a window you are not standing next to.
+      example: |-
+        In a 2008 field experiment in Groningen, researchers attached flyers to bicycles parked in an alley with no trash cans and varied only the wall: clean, or covered in graffiti next to a no-graffiti sign. With the clean wall, 33% of cyclists littered the flyer; with graffiti, 69% did. One visible violation made people more likely to break a different rule.
       source: |-
         James Q. Wilson & George L. Kelling, *Broken Windows* (The Atlantic, March 1982).
     ja:
@@ -2103,6 +2260,8 @@ laws:
           塗装に注意を向ければ、その分だけ土台への注意が減る。そもそも元の犯罪学的な主張を裏づける証拠には異論がある
       guideline: |-
         いま触っているファイルに目に見える欠陥があれば、最初の一つを直す。黙認する例外にはすべて担当者と期限を付ける。自分がいま手を入れていない場所の窓を直すために、リファクタリングを始めない。
+      example: |-
+        2008年、オランダのフローニンゲンで行われた実地実験では、ゴミ箱のない路地に停めた自転車にチラシを付け、壁の状態だけを変えた。壁がきれいなときと、落書き禁止の掲示の横に落書きがあるときである。壁がきれいなときにチラシを捨てたのは33%、落書きがあるときは69%だった。目に見える違反が一つあると、人は別のルールも破りやすくなった。
       source: |-
         James Q. Wilson & George L. Kelling『Broken Windows』(The Atlantic, 1982 年 3 月号)。
 
@@ -2209,6 +2368,7 @@ laws:
   - slug: theory-of-constraints
     tag: performance
     source_url: https://en.wikipedia.org/wiki/Theory_of_constraints
+    example_url: "https://www.dbrmfg.co.nz/Critical%20Chain%20in%20Marine%20Corps%20Depot.pdf"
     see_also:
       - amdahls-law
       - littles-law
@@ -2223,6 +2383,8 @@ laws:
           relieve one and another takes its place, so a process permanently optimized around yesterday's bottleneck starves at the new one
       guideline: |-
         Find the constraint, exploit it fully before you buy capacity, and subordinate every other stage to it. Then measure again — you have just created a different bottleneck somewhere else.
+      example: |-
+        In 2001 the Marine Corps Maintenance Center in Albany, Georgia, was overhauling five MK-48 heavy haulers a month against demand for ten, and nearly every shop was thought to be a bottleneck. A Theory of Constraints analysis found enough physical capacity; the real constraint was a push scheduling policy that released work regardless of resource status. After switching to pull scheduling, MK-48 repair cycle time fell from an average of 167 days to 58.
       source: |-
         Eliyahu M. Goldratt & Jeff Cox, *The Goal: A Process of Ongoing Improvement* (North River Press, 1984).
     ja:
@@ -2236,6 +2398,8 @@ laws:
           一つを緩めれば別のものが制約になる。昨日のボトルネックに合わせて恒久的に最適化した工程は、新しい制約の前で立ち往生する
       guideline: |-
         制約を特定し、能力を買い足す前にまずそれを目一杯使い切り、他の全工程をそれに従わせる。そのあと測り直す。今の改善で、別の場所に新しいボトルネックができているからだ。
+      example: |-
+        2001年、ジョージア州オールバニの海兵隊整備センターは、月10台の需要に対して大型輸送車両 MK-48 を月5台しか整備できず、ほぼすべての工程がボトルネックだと思われていた。制約理論による分析では、物理的な能力は十分にあり、本当の制約は資源の状況に関係なく作業を投入するプッシュ型の計画方針だった。プル型の計画に切り替えると、MK-48 の修理リードタイムは平均167日から58日に縮んだ。
       source: |-
         Eliyahu M. Goldratt & Jeff Cox『The Goal: A Process of Ongoing Improvement』(North River Press, 1984)。
 
@@ -2310,6 +2474,7 @@ laws:
   - slug: principle-of-least-astonishment
     tag: interaction
     source_url: https://en.wikipedia.org/wiki/Principle_of_least_astonishment
+    example_url: "https://www.nysd.uscourts.gov/sites/default/files/2021-02/20cv6539%20Citibank%20Opinion.pdf"
     see_also:
       - hyrums-law
       - curse-of-knowledge
@@ -2324,6 +2489,8 @@ laws:
           designing only for today's expectations freezes bad conventions in place; sometimes the right move is to surprise everyone once, loudly, with a migration path
       guideline: |-
         When two designs are close, take the one that matches the convention your users already know — the flag name, the exit code, the sort order. Spend deliberate surprise only where you can afford to announce it.
+      example: |-
+        On August 11, 2020, Citibank meant to send Revlon's lenders only an interest payment but wired out nearly $900 million, including about $894 million of principal. In its Flexcube software, suppressing a principal payment required setting three fields (FRONT, FUND and PRINCIPAL) to an internal wash account, yet all three employees who built and approved the payment believed setting PRINCIPAL alone was enough. The approver wrote, "Principal is going to wash."
       source: |-
         Long-standing folklore in language and interface design; stated explicitly in Michael F. Cowlishaw, *The Design of the REXX Language* (IBM Systems Journal, 1984).
     ja:
@@ -2337,6 +2504,8 @@ laws:
           今日の期待だけに合わせて設計すると、悪い慣習がそのまま固定される。移行手順を用意したうえで、一度だけ大々的に全員を驚かせるのが正しいこともある
       guideline: |-
         2つの設計が拮抗したら、フラグ名、終了コード、並び順など、利用者がすでに知っている慣習に合うほうを選ぶ。意図した驚きは、告知するコストを払える場所でだけ使う。
+      example: |-
+        2020年8月11日、Citibank は Revlon の貸し手に利息だけを払うつもりで、元本約8億9400万ドルを含む約9億ドルを送金してしまった。同行の Flexcube というソフトでは、元本の支払いを止めるには FRONT、FUND、PRINCIPAL の三つの欄をすべて社内の振替口座に設定する必要があった。しかし支払いを作成し承認した3人とも、PRINCIPAL だけを設定すれば足りると思っていた。承認者は「元本は振替口座へ回る」と書いていた。
       source: |-
         言語・インタフェース設計の古くからの言い伝え。Michael F. Cowlishaw『The Design of the REXX Language』(IBM Systems Journal, 1984) に明示的な記述がある。
 
@@ -2473,6 +2642,7 @@ laws:
   - slug: metcalfes-law
     tag: systems
     source_url: https://en.wikipedia.org/wiki/Metcalfe%27s_law
+    example_url: "https://doi.org/10.1007/s11390-015-1518-1"
     see_also:
       - dunbars-number
       - brooks-law
@@ -2487,6 +2657,8 @@ laws:
           connections are an asset between users and a liability between colleagues; Brooks' Law is Metcalfe's Law with the sign flipped
       guideline: |-
         For a product whose value comes from other users, spend early effort on the smallest network that is already useful to its own members, not on features. For a team, do the opposite and cut connections.
+      example: |-
+        In 2015 researchers at the Chinese Academy of Sciences tested four proposed network-value laws against real financial and user data from Tencent and Facebook. Metcalfe's law, value proportional to the square of the number of users, fit both companies' data better than the alternatives they tested, and the paper reports that costs also grew with the square of network size. It is one fit on two social platforms; the n log n critique by Briscoe, Odlyzko and Tilly still stands.
       source: |-
         Attributed to Robert Metcalfe (c. 1980); the n log n critique is Bob Briscoe, Andrew Odlyzko & Benjamin Tilly, *Metcalfe's Law is Wrong* (IEEE Spectrum, July 2006).
     ja:
@@ -2499,12 +2671,15 @@ laws:
         note: 接続は利用者どうしでは資産だが、同僚どうしでは負債になる。ブルックスの法則はメトカーフの法則の符号を反転させたものだ
       guideline: |-
         他の利用者から価値が生まれるプロダクトでは、初期の労力を機能ではなく、参加者にとってすでに役に立つ最小のネットワークづくりに注ぐ。チームでは逆に、接続を減らす。
+      example: |-
+        2015年、中国科学院の研究者たちは、ネットワークの価値に関する4つの法則を、Tencent と Facebook の実際の財務データと利用者数で検証した。価値は利用者数の2乗に比例するというメトカーフの法則が、両社のデータに、検証したほかの法則よりよく当てはまった。論文はコストも規模の2乗で増えていたと報告している。ただしこれは二つのソーシャル基盤での当てはめで、Briscoe、Odlyzko、Tilly による n log n の反論は今も残っている。
       source: |-
         Robert Metcalfe に帰される (1980 年頃)。n log n による批判は Bob Briscoe, Andrew Odlyzko & Benjamin Tilly『Metcalfe's Law is Wrong』(IEEE Spectrum, 2006 年 7 月)。
 
   - slug: ringelmann-effect
     tag: organization
     source_url: https://en.wikipedia.org/wiki/Ringelmann_effect
+    example_url: "https://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Group_Dynamics/required_reading/4Latane_et_al_1979_Many_hands_make_light_the_work.pdf"
     see_also:
       - bystander-effect
       - dunbars-number
@@ -2519,6 +2694,8 @@ laws:
           the effect is a property of how the work is measured rather than of the people; make the individual contribution legible and most of it disappears
       guideline: |-
         Give every workstream one named owner and a visible output. If you cannot say who produced which part of a result, expect the group to produce less than the sum of its members.
+      example: |-
+        In 1979, Latané, Williams and Harkins at Ohio State had students shout as loudly as they could, alone or in groups. In groups of two they produced 66% of their individual capacity and in groups of six only 36%. Blindfolded and wearing headphones, students who only believed others were shouting with them still shouted at 82% (one partner) and 74% (five partners) of their solo intensity, so about half the loss came from reduced effort rather than coordination.
       source: |-
         Maximilien Ringelmann, *Recherches sur les moteurs animés: Travail de l'homme* (Annales de l'Institut National Agronomique, 1913).
     ja:
@@ -2533,12 +2710,15 @@ laws:
           この効果は人の性質ではなく、仕事の測り方から生まれる。誰がどれだけやったかが見えるようにすれば、効果の大半は消える
       guideline: |-
         作業の流れごとに、名前の分かる担当者を一人と、目に見える成果物を決める。結果のどの部分を誰が出したか言えないなら、その集団は全員の力の合計より少ない成果しか出さないと見ておく。
+      example: |-
+        1979年、オハイオ州立大学の Latané、Williams、Harkins は、学生に一人で、または集団で、できるだけ大きな声を出させた。2人組では一人のときの能力の66%、6人組では36%しか出なかった。目隠しとヘッドホンをつけ、他の人も叫んでいると思い込ませただけの条件でも、声の強さは一人のときの82%（相手が1人）と74%（相手が5人）に落ちた。損失のおよそ半分は連携のずれではなく、努力の減少から来ていた。
       source: |-
         Maximilien Ringelmann『Recherches sur les moteurs animés: Travail de l'homme』(Annales de l'Institut National Agronomique, 1913)。
 
   - slug: shirky-principle
     tag: incentives
     source_url: https://kk.org/thetechnium/the-shirky-prin/
+    example_url: "https://www.propublica.org/article/inside-turbotax-20-year-fight-to-stop-americans-from-filing-their-taxes-for-free"
     see_also:
       - goodharts-law
       - peter-principle
@@ -2553,6 +2733,8 @@ laws:
           treating every long-lived team as self-serving destroys the ones doing necessary maintenance, which is invisible precisely when it is working
       guideline: |-
         For any team or tool created to fix something, write down what "fixed" looks like and when you will check. A platform team that cannot describe its own obsolescence is optimizing for its own survival.
+      example: |-
+        ProPublica reported in October 2019, from Intuit's internal documents, that the maker of TurboTax had spent two decades fighting proposals to make US tax filing free and simple, including a government-run free filing option and return-free filing where the IRS pre-fills returns. A 2007 Intuit board presentation said: "For a decade proposals have sought to create IRS tax software or a ReturnFree Tax System; All were stopped." In ProPublica's reading, a company that sells help with a complicated chore worked to keep the chore complicated.
       source: |-
         Clay Shirky, named and quoted in Kevin Kelly, *The Shirky Principle* (The Technium, 2010).
     ja:
@@ -2567,12 +2749,15 @@ laws:
           長く続くチームをすべて自己保身だとみなすと、必要な保守をしているチームまでなくしてしまう。保守は、うまくいっているときほど目に見えない
       guideline: |-
         何かを直すために作ったチームやツールには、「直った」とはどういう状態か、いつそれを確かめるかを書き出しておく。自分たちが不要になる条件を説明できないプラットフォームチームは、自分たちの存続を目的にしている。
+      example: |-
+        ProPublica は2019年10月、Intuit の社内文書をもとに、TurboTax を売るこの会社が20年にわたり米国の確定申告を無料で簡単にする提案に反対してきたと報じた。対象には政府が運営する無料の申告手段や、IRS が申告書を事前に記入しておく方式も含まれる。2007年の取締役会資料には「10年間、IRS の税務ソフトや ReturnFree Tax System を作る提案が出てきたが、すべて止めた」とある。ProPublica の見立てでは、面倒な手続きの手助けを売る会社が、その手続きを面倒なままにしようとしていた。
       source: |-
         Clay Shirky の言。Kevin Kelly『The Shirky Principle』(The Technium, 2010) で命名・引用された。
 
   - slug: error-budget
     tag: operations
     source_url: https://sre.google/sre-book/embracing-risk/
+    example_url: "https://sre.google/workbook/slo-engineering-case-studies/"
     see_also:
       - goodharts-law
       - tail-at-scale
@@ -2591,6 +2776,8 @@ laws:
           a standing allowance for failure teaches a team that each failure is routine; the outage that should have alarmed people gets logged against the budget and never investigated
       guideline: |-
         Agree on the SLO and the policy before the incident, not during it: while budget remains, ship; when it is spent, freeze feature releases and put the time into reliability until it recovers. Keep data loss and security outside the budget entirely.
+      example: |-
+        After moving to Google Cloud, Evernote set its first SLO at 99.95% uptime per calendar month for certain services, counting even maintenance windows as downtime, and said it used the SLO and error budget to decide where to spend engineering effort, reviewing performance monthly with Google. In 2017, while chasing a complex bug, it applied an SLO calculation to quantify customer impact and cut its weekly release windows from five to two.
       source: |-
         Marc Alvidrez, "Embracing Risk" (with "Motivation for Error Budgets" by Mark Roth), in Beyer, Jones, Petoff & Murphy (eds.), *Site Reliability Engineering* (O'Reilly, 2016), ch. 3 — where the error budget is defined and "100% is probably never the right reliability target" is argued.
     ja:
@@ -2604,12 +2791,15 @@ laws:
           失敗を許す枠があると、チームは失敗をいつものことだと覚える。本来なら騒ぎになるはずの障害も予算から差し引かれるだけで、調べられずに終わる
       guideline: |-
         SLO と、予算を使い切ったときの方針は、障害の最中ではなく事前に合意しておく。予算が残っていればリリースし、使い切ったら機能リリースを止め、回復するまで信頼性に時間を使う。データ消失とセキュリティは、そもそも予算の外に置く。
+      example: |-
+        Evernote は Google Cloud へ移ったあと、一部のサービスに暦月ごとの稼働率99.95%という最初の SLO を置き、メンテナンス時間も停止として数えた。SLO とエラーバジェットを使って開発の手をどこに割くか決め、Google と月に一度その実績を見直したという。2017年に複雑なバグを追っていたときは、SLO の計算で顧客への影響を数字にし、週のリリース枠を5回から2回に減らした。
       source: |-
         Marc Alvidrez「Embracing Risk」(「Motivation for Error Budgets」節は Mark Roth)、Beyer, Jones, Petoff & Murphy 編『Site Reliability Engineering』(O'Reilly, 2016) 第 3 章。エラーバジェットの定義と「100% がふさわしい信頼性目標であることはおそらくない」という主張の出典。
 
   - slug: toil
     tag: operations
     source_url: https://sre.google/sre-book/eliminating-toil/
+    example_url: "https://sre.google/workbook/eliminating-toil/"
     see_also:
       - ironies-of-automation
       - error-budget
@@ -2627,6 +2817,8 @@ laws:
           automating a task removes the practice people needed to handle it when the automation fails, and some automation costs more to build and keep alive than the toil it replaces
       guideline: |-
         Measure the share of each person's time spent on toil and set a ceiling (Google uses 50%). When a task comes back a third time (a rule of thumb, not the book's), file it as engineering work; when it scales with users, treat it as a defect rather than a chore.
+      example: |-
+        Google's datacenter network engineers had to handle each failed line card in its Saturn and Jupiter switch fabrics by hand: check that traffic could move, drain the switch, reboot or replace the card, and undrain it. Jupiter was more than six times larger than any earlier Google fabric, and the volume of these repairs grew with it. The team automated the procedure, first reboot and reinstall, then replacement on a second failure, which freed engineers for other work; it also concluded that spending nearly three years (2012-2015) analyzing memory errors before automating had been unnecessary.
       source: |-
         Vivek Rau, "Eliminating Toil", in Beyer, Jones, Petoff & Murphy (eds.), *Site Reliability Engineering* (O'Reilly, 2016), ch. 5 — the definition of toil and the 50% cap.
     ja:
@@ -2640,6 +2832,8 @@ laws:
           作業を自動化すると、自動化がうまく動かなくなったときに人が対処するための慣れが失われる。作って動かし続けるコストが、置き換えたトイルより高くつく自動化もある
       guideline: |-
         一人ひとりの時間のうちトイルが占める割合を測り、上限を決める（Google は 50%）。同じ作業が三度目に来たら（本書ではなく経験則）開発タスクとして起票する。利用者数に比例して増える作業は、雑用ではなく欠陥として扱う。
+      example: |-
+        Google のデータセンターネットワークでは、Saturn と Jupiter のスイッチで故障したラインカードを一枚ずつ手で処理していた。トラフィックを移せるか確かめ、スイッチを切り離し、カードを再起動か交換して、元に戻す。Jupiter はそれまでのどのファブリックより6倍以上大きく、修理の件数も同じように増えた。チームは手順を自動化し（1回目は再起動と再インストール、2回目で交換）、エンジニアを別の仕事に回せるようにした。自動化の前にメモリエラーの分析へ3年近く（2012年から2015年）かけたのは不要だったとも結論づけている。
       source: |-
         Vivek Rau「Eliminating Toil」、Beyer, Jones, Petoff & Murphy 編『Site Reliability Engineering』(O'Reilly, 2016) 第 5 章。トイルの定義と 50% 上限の出典。
 
@@ -2784,6 +2978,7 @@ laws:
   - slug: static-stability
     tag: distributed-systems
     source_url: https://builder.aws.com/content/3K9SiqiJ369TGkkGzqPM95BuYWI/static-stability-using-availability-zones
+    example_url: "https://aws.amazon.com/message/12721/"
     see_also:
       - avoid-fallback
       - constant-work
@@ -2800,6 +2995,8 @@ laws:
           capacity held for a failure that rarely happens is paid for every day, and scaling to demand is cheaper wherever a slow recovery is acceptable; the source itself concedes that building services zone by zone rather than regionally adds complexity
       guideline: |-
         List what your service must do to recover from losing a zone or a dependency. For every step that calls a control plane or launches something, decide whether to have it in place beforehand instead: spare capacity in every zone, the last good configuration cached locally, serving that continues while the control plane is down. Reserve this for paths whose failure you cannot afford; elsewhere, scale on demand.
+      example: |-
+        On December 7, 2021, an internal network problem in AWS's us-east-1 region impaired the EC2 APIs that launch and describe instances for hours, and new launches did not fully recover until 2:40 PM PST. AWS's summary noted that "running EC2 instances were unaffected by this event": workloads already running kept serving because the data plane did not need the impaired control plane, while anything that depended on launching new capacity to recover was stuck.
       source: |-
         Becky Weiss & Mike Furr, *Static stability using Availability Zones* (Amazon Builders' Library, 2019) — "In a statically stable design, the overall system keeps working even when a dependency becomes impaired", with EC2's control-plane/data-plane split and the 50 percent overprovisioning across three zones.
     ja:
@@ -2814,12 +3011,15 @@ laws:
           まれにしか起きない障害のための容量にも、毎日お金がかかる。復旧が遅くても許される場所では、需要に合わせて伸縮させるほうが安い。リージョン単位ではなくゾーン単位でサービスを作ると複雑さが増すことは、出典自身も認めている
       guideline: |-
         ゾーンや依存先を一つ失ったとき、サービスが復旧のために何をしなければならないかを書き出す。コントロールプレーンを呼ぶ手順や何かを起動する手順ごとに、代わりに前もって用意しておけないかを判断する。たとえば全ゾーンに予備の容量を置く、最後に正常だった設定を手元にキャッシュする、コントロールプレーンが落ちても配信を続ける、といった形だ。これは失敗が許されない経路に限り、それ以外は需要に応じて伸縮させる。
+      example: |-
+        2021年12月7日、AWS の us-east-1 で内部ネットワークの障害が起き、インスタンスを起動したり一覧したりする EC2 の API が数時間使えなくなった。新規起動が戻ったのは太平洋標準時の14時40分だった。AWS のまとめには「稼働中の EC2 インスタンスはこの事象の影響を受けなかった」とある。データプレーンは止まったコントロールプレーンを必要としないので、すでに動いていたものは動き続け、回復に新しい容量の起動を必要とするものだけが止まった。
       source: |-
         Becky Weiss & Mike Furr『Static stability using Availability Zones』(Amazon Builders' Library, 2019)。"In a statically stable design, the overall system keeps working even when a dependency becomes impaired" という定義、EC2 のコントロールプレーンとデータプレーンの区別、3 ゾーンでの 50% の余剰の出典。
 
   - slug: avoid-fallback
     tag: distributed-systems
     source_url: https://builder.aws.com/content/3EuS9Sakq7L3VLQIF3qzfMfke1Y/avoiding-fallback-in-distributed-systems
+    example_url: "https://blog.cloudflare.com/post-mortem-on-cloudflare-control-plane-and-analytics-outage/"
     see_also:
       - static-stability
       - constant-work
@@ -2837,6 +3037,8 @@ laws:
           returning a reduced answer beats returning an error when the reduced path runs all the time, as when a recommendations panel falls back to a static list it serves anyway; the danger is the path that never runs, not degradation itself
       guideline: |-
         Before adding a fallback, ask whether the same effort would make the primary path more available: push data to the caller ahead of time instead of pulling it at request time, add redundancy. If you keep a fallback, run it in production continuously, not only on failure, and treat its output as an equally valid source. Delete fallback paths nobody has exercised.
+      example: |-
+        On November 2, 2023, a power failure at Cloudflare's main Portland data center took down its control plane and analytics, and Cloudflare failed over to its disaster-recovery sites in Europe. The fallback had never been tested at that scale: Cloudflare had "never tested fully taking the entire PDX-04 facility offline," some newer products had no tested DR procedure, log processing was not supported at the DR site at all, and retrying clients swamped the services that did come up. Full restoration took until November 4.
       source: |-
         Jacob Gabrielson, *Avoiding fallback in distributed systems* (Amazon Builders' Library, 2019) — the Amazon.com outage of around 2001, when every web server fell back to querying the database directly once the caches failed together, and "At Amazon, we avoid fallback in our systems because it's difficult to prove and its effectiveness is hard to test."
     ja:
@@ -2851,6 +3053,8 @@ laws:
           縮退した経路が普段から動いているなら、エラーを返すより縮退した答えを返すほうがよい。おすすめ欄が、普段から出している固定リストに切り替える場合などだ。危ないのは縮退そのものではなく、普段一度も動かない経路のほうだ
       guideline: |-
         フォールバックを足す前に、同じ労力で主経路の可用性を上げられないかを考える。リクエストのたびに取りに行く代わりに呼び出し側へ前もってデータをプッシュしておく、冗長化する、といった方法がある。フォールバックを残すなら、障害時だけでなく本番で常に動かし、その出力を主経路と同等に正当なデータ源として扱う。誰も動かしたことのないフォールバック経路は消す。
+      example: |-
+        2023年11月2日、Cloudflare のポートランドの主要データセンターで電源が落ち、コントロールプレーンと分析機能が止まった。Cloudflare は欧州の災害復旧サイトに切り替えたが、この退避がその規模で試されたことはなかった。「PDX-04 の施設全体を落とす試験はしたことがなかった」うえ、一部の新しい製品には試験済みの復旧手順がなく、ログ処理は復旧サイトでそもそも動かず、立ち上がったサービスにはクライアントの再試行が殺到した。完全な復旧は11月4日までかかった。
       source: |-
         Jacob Gabrielson『Avoiding fallback in distributed systems』(Amazon Builders' Library, 2019)。キャッシュが一斉に落ちてすべての Web サーバがデータベースへ直接問い合わせた、2001 年頃の Amazon.com の障害と、"At Amazon, we avoid fallback in our systems because it's difficult to prove and its effectiveness is hard to test." の出典。
 
@@ -2891,6 +3095,7 @@ laws:
   - slug: mechanisms-not-good-intentions
     tag: organization
     source_url: https://aws.amazon.com/blogs/enterprise-strategy/strategy-is-a-winding-road-mechanisms-keep-you-on-track/
+    example_url: "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/"
     see_also:
       - blameless-postmortem
       - goodharts-law
@@ -2908,6 +3113,8 @@ laws:
           a mechanism can harden into the goal; once following the process is what gets judged, people defend a bad outcome by saying they followed it, and nobody asks whether the process still serves the result
       guideline: |-
         When a postmortem action item says "be more careful", "remind the team" or "double-check", replace it with a change that works without anyone remembering: a CI check, a safe default, a field that cannot be skipped. Give each one an owner and a date to inspect whether it is used and whether it worked. Retire mechanisms that no longer change outcomes.
+      example: |-
+        On July 2, 2019, a single regular expression in a Cloudflare WAF rule backtracked catastrophically and exhausted CPU on its HTTP-serving cores worldwide, taking traffic down for 27 minutes. Instead of asking engineers to write safer regexes, Cloudflare's fixes were mechanisms: switch to the re2 or Rust regex engine, which give run-time guarantees, add performance profiling of every rule to the test suite, restore the CPU-usage protection that had been removed, and require staged rollouts for rules.
       source: |-
         An internal Amazon saying, not a published Bezos text. Gregor Hohpe, *Strategy Is a Winding Road. Mechanisms Keep You on Track.* (AWS Enterprise Strategy blog, 2021) records "At Amazon we have a common saying: 'Good intentions don't work—mechanisms do'" and defines a mechanism as tools, adoption and inspection; attributions of the line to Jeff Bezos are secondhand. The counter-force is from Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017): "The process is not the thing."
     ja:
@@ -2921,12 +3128,15 @@ laws:
           仕組みは、それ自体が目的として固まることがある。プロセスに従ったかどうかで評価されるようになると、人は悪い結果を「プロセスどおりにやった」と弁護し、そのプロセスがまだ結果の役に立っているかを誰も問わなくなる
       guideline: |-
         ポストモーテムの対策項目が「注意する」「チームに周知する」「ダブルチェックする」なら、誰も覚えていなくても働く変更に置き換える。CI のチェック、安全な既定値、飛ばせない入力欄などだ。それぞれに担当者と、使われているか、効果があったかを点検する期日を付ける。もう結果を変えていない仕組みは廃止する。
+      example: |-
+        2019年7月2日、Cloudflare の WAF ルールに入っていた正規表現ひとつが破滅的なバックトラックを起こし、世界中の HTTP 処理用の CPU を使い切って、27分間トラフィックを止めた。Cloudflare は「もっと安全な正規表現を書こう」と呼びかけるかわりに、仕組みで直した。実行時間が保証される re2 か Rust の正規表現エンジンへの切り替え、全ルールの性能測定をテストに組み込むこと、外されていた CPU 使用量の保護を戻すこと、ルールの段階的なリリースの義務化である。
       source: |-
         Amazon 社内の言い回しで、Bezos の公表文書が出典ではない。Gregor Hohpe『Strategy Is a Winding Road. Mechanisms Keep You on Track.』(AWS Enterprise Strategy blog, 2021) が "At Amazon we have a common saying: 'Good intentions don't work—mechanisms do'" と記録し、仕組みを道具・採用・点検からなるものと定義している。Jeff Bezos の言葉とする説は二次資料による。対抗する力は Jeff Bezos『2016 年 株主への手紙』(Amazon.com, Inc., 2017 年) の "The process is not the thing." から。
 
   - slug: andon
     tag: operations
     source_url: https://global.toyota/en/company/vision-and-philosophy/production-system/
+    example_url: "https://www.thisamericanlife.org/403/transcript"
     see_also:
       - normalization-of-deviance
       - error-budget
@@ -2943,6 +3153,8 @@ laws:
           every stop costs output, and where a team is judged on throughput, pulling the cord becomes a cost someone has to justify, so a cord that fires often or falsely teaches people to route around it
       guideline: |-
         Make a red main-branch build, a failed canary or a breached SLO halt further merges or deploys for everyone, and let anyone pull that cord without asking permission. Keep the trigger narrow enough that it rarely fires falsely, and treat a stop that nobody investigates as a defect in the response, not in the person who pulled it.
+      example: |-
+        At the old GM plant in Fremont, California, which closed in 1982, workers said the rule was that the line must never stop, and one recalled that stopping it could get you fired. When GM and Toyota reopened it as NUMMI, workers got an andon cord: a pull summoned team leaders, and the line stopped only if they could not fix the problem. NUMMI's defect rate was among the best in America from the start, with near-perfect quality ratings within months of the first car in December 1984.
       source: |-
         Toyota Motor Corporation, *Toyota Production System* (official page, global.toyota) — jidoka, the andon board and the stop cord any operator can pull, traced to the Toyoda Power Loom with a weft-breakage automatic stopping device, developed in 1896; the page credits Taiichi Ohno (1912–1990) with establishing the system and the framework of Just-in-Time.
     ja:
@@ -2957,6 +3169,8 @@ laws:
           止めるたびに生産量は落ちる。スループットで評価されるチームでは、紐を引くことは誰かが理由を説明しなければならないコストになる。頻繁に、あるいは誤って止まる紐があると、人はそれを避けて通るようになる
       guideline: |-
         main ブランチのビルドが赤い、カナリアが失敗した、SLO を割った、といったときには、全員のマージやデプロイが止まるようにする。その紐は誰でも許可なく引けるようにする。誤発火がめったに起きない程度に条件を絞る。誰も調べない停止は、引いた人ではなく対応する側の欠陥として扱う。
+      example: |-
+        カリフォルニア州フリーモントにあった GM の旧工場（1982年閉鎖）では、ラインは決して止めてはならないというのが決まりで、止めたらクビになったと語る労働者もいた。GM とトヨタがここを NUMMI として再開すると、作業者にアンドンのひもが与えられた。引くとチームリーダーが駆けつけ、その場で直せないときだけラインが止まる。NUMMI の不良率は最初から米国でも最良の水準になり、1984年12月の最初の1台から数か月でほぼ完璧な品質評価を得た。
       source: |-
         トヨタ自動車『トヨタ生産方式』(global.toyota の公式ページ)。自働化、アンドン (異常表示盤)、どの作業者も引ける停止紐の出典。その源流を、緯糸切断自動停止装置を備えた豊田式汽力織機 (1896 年開発) に求めている。同ページは大野耐一 (1912–1990) がこの方式と、ジャスト・イン・タイムの枠組みを確立したとしている。
 
@@ -3001,10 +3215,12 @@ laws:
   - slug: chaos-engineering
     tag: operations
     source_url: https://principlesofchaos.org/
+    example_url: "https://www.infoq.com/news/2014/10/netflix-cassandra"
     see_also:
       - murphys-law
       - fallacies-of-distributed-computing
       - avoid-fallback
+      - pesticide-paradox
     en:
       title: Chaos Engineering
       concept: |-
@@ -3017,6 +3233,8 @@ laws:
           deliberately degrading a system real customers depend on spends their trust, and much of the same knowledge comes cheaper from fault-injection tests, game days and design review; on a system already known to be fragile an experiment only confirms what you knew, so fix it first
       guideline: |-
         Pick one dependency, write down what steady state should look like while it is down, and take it away in production during working hours with an abort switch and someone watching. Start with a small slice of traffic, widen only after the system holds, and do not experiment on a service you already expect to fall over.
+      example: |-
+        In late September 2014, AWS rebooted about a tenth of its EC2 fleet on short notice to patch a Xen vulnerability. Of Netflix's 2,700+ production Cassandra nodes, 218 were rebooted and 22 did not come back, yet Netflix reported zero downtime that weekend. The team credited the Chaos Monkey runs against Cassandra it had started a year earlier, which had forced it to build the automation that detected and replaced the failed nodes.
       source: |-
         *Principles of Chaos Engineering* (principlesofchaos.org, last updated March 2019) — the definition, the steady-state hypothesis, running experiments in production and minimizing blast radius; Netflix Technology Blog, *5 Lessons We've Learned Using AWS* (2010) — the introduction of Chaos Monkey.
     ja:
@@ -3030,6 +3248,8 @@ laws:
           実際の顧客が頼っているシステムをわざと劣化させれば、その顧客の信頼を削ることになる。同じ知見の多くは、障害注入テスト、ゲームデイ、設計レビューでもっと安く得られる。もろいと分かっているシステムで実験しても分かっていたことを確かめるだけなので、まず直す
       guideline: |-
         依存先を一つ選び、それが落ちている間の定常状態がどうあるべきかを書き出す。そのうえで業務時間中に、中止スイッチと見張り役を用意して、本番でその依存先を取り除く。トラフィックのごく一部から始め、システムが持ちこたえてから範囲を広げる。落ちると見込んでいるサービスでは実験しない。
+      example: |-
+        2014年9月末、AWS は Xen の脆弱性を塞ぐため、EC2 のおよそ1割を急に再起動した。Netflix の本番 Cassandra ノード2,700台超のうち218台が再起動され、22台は戻らなかったが、その週末のダウンタイムはゼロだったと Netflix は報告した。チームはその1年前から Cassandra に Chaos Monkey を走らせていたことを理由に挙げた。それで故障ノードを見つけて置き換える自動化を作らざるをえなかったのだ。
       source: |-
         『Principles of Chaos Engineering』(principlesofchaos.org, 2019 年 3 月最終更新)。定義、定常状態の仮説、本番での実験、影響範囲の最小化の出典。Netflix Technology Blog『5 Lessons We've Learned Using AWS』(2010) は Chaos Monkey を初めて紹介した記事。
 
@@ -3109,6 +3329,7 @@ laws:
     see_also:
       - hyrums-law
       - churn-rule
+      - pesticide-paradox
     en:
       title: Beyoncé Rule
       concept: |-
@@ -3178,6 +3399,7 @@ laws:
       - parkinsons-law
       - hofstadters-law
       - sunk-cost-fallacy
+      - technical-debt
     en:
       title: Fixed Time, Variable Scope
       concept: |-
@@ -3212,6 +3434,7 @@ laws:
       - second-system-effect
       - galls-law
       - ninety-ninety-rule
+      - lehmans-laws
     en:
       title: Strangler Fig
       concept: |-
@@ -3272,3 +3495,141 @@ laws:
         言語、データストア、フレームワークを足す前に、今動かしているもので同じ仕事をするには何が要り、なぜそれでは足りないのかを書き出す。そのうえで、一つのチームの中ではなく、それを運用することになる全員で決める。新しい技術は、製品を他と差別化する場所にだけ使う。何かを採り入れるなら、それが置き換えるものを廃止する計画も立てる。
       source: |-
         Dan McKinley『Choose Boring Technology』(mcfunley.com, 2015)。"every company gets about three innovation tokens" の出典。Etsy 在籍時の経験に基づく。
+
+  - slug: technical-debt
+    tag: maintainability
+    source_url: https://c2.com/doc/oopsla92.html
+    see_also:
+      - lehmans-laws
+      - boy-scout-rule
+      - fixed-time-variable-scope
+    en:
+      title: Technical Debt
+      concept: |-
+        Code shipped before the team fully understands the problem charges extra on later changes to that code until someone rewrites it.
+      mechanism: |-
+        The first version of a program records what the team understood when it wrote it, and that understanding keeps improving after the code stops changing. Every later change has to work around the gap between the two, and the extra effort recurs on each change the way interest recurs on a loan. The cost is spread thin and lands on whoever touches the code next, so no single change makes repaying it look worthwhile, and the balance grows until the whole team slows down. Cunningham did not object to the shortcut itself; his warning was about debt that is not paid back with a rewrite while it is still small.
+      counter:
+        name: Premature Repayment
+        note: |-
+          paying down debt early spends time on code whose design may still change or that may be deleted before anyone touches it again, so cleaning up ahead of the next change can cost more than the interest it saves
+      guideline: |-
+        Treat code written before the team fully understood the problem as a loan: write down where it is and what repaying it would take, and schedule the rewrite while the code is still fresh in someone's head. Repay first where the team changes code most often, not where the code merely looks worst. Do not let debt pile up unrecorded.
+      source: |-
+        Ward Cunningham, *The WyCash Portfolio Management System* (OOPSLA '92 Experience Report, 1992) — "Shipping first time code is like going into debt. A little debt speeds development so long as it is paid back promptly with a rewrite." and "Every minute spent on not-quite-right code counts as interest on that debt." The prudent/reckless distinction is from Martin Fowler, *Technical Debt Quadrant* (martinfowler.com, 2009).
+    ja:
+      title: 技術的負債
+      concept: 問題を十分に理解する前に出したコードは、誰かが書き直すまで、そのコードをその後変えるたびに余計なコストを生む。
+      mechanism: |-
+        プログラムの最初の版には、書いた時点でチームが理解していたことが刻まれる。コードが変わらなくなった後も、理解は深まり続ける。その後の変更はどれも両者のずれをよけて進めることになり、その余計な手間は、借金の利息のように変更のたびにかかる。コストは薄く広がって次にそのコードに触る人にかかるので、どの変更から見ても返すほどではないように見え、残高はチーム全体が遅くなるまで増えていく。Cunningham は手抜きそのものを責めてはいない。問題にしたのは、小さいうちに書き直して返さない負債だ。
+      counter:
+        name: 早すぎる返済
+        note: |-
+          負債を早く返すと、設計がまだ変わるかもしれないコードや、次に誰かが触る前に消えるかもしれないコードに時間を使うことになる。次の変更の前に片づけるほうが、節約できる利息より高くつくこともある
+      guideline: |-
+        問題を十分に理解する前に書いたコードは借金として扱う。どこにあり、返すには何が要るかを書き残し、コードが誰かの記憶に新しいうちに書き直しの予定を立てる。返済は、見た目が一番ひどいコードではなく、チームが一番よく変えるコードから始める。記録のないまま負債をためない。
+      source: |-
+        Ward Cunningham『The WyCash Portfolio Management System』(OOPSLA '92 Experience Report, 1992)。"Shipping first time code is like going into debt. A little debt speeds development so long as it is paid back promptly with a rewrite." と "Every minute spent on not-quite-right code counts as interest on that debt." の出典。慎重な負債と無謀な負債の区別は Martin Fowler『Technical Debt Quadrant』(martinfowler.com, 2009)。
+
+  - slug: lehmans-laws
+    tag: maintainability
+    source_url: https://doi.org/10.1109/PROC.1980.11805
+    see_also:
+      - technical-debt
+      - boy-scout-rule
+      - strangler-fig
+    en:
+      title: Lehman's Laws of Software Evolution
+      concept: |-
+        A program in real use must keep changing or grow less useful, and each change makes it more complex unless work is spent to simplify it.
+      mechanism: |-
+        A program that automates part of the world is a model of that world, and the world keeps moving: users' needs shift, the business changes, and the program's own arrival changes how people work. So the program is never finished, and each release reopens the gap between the model and what it models. Changes are made under pressure by people who do not hold the whole design in mind, so special cases and dependencies are added faster than they are removed, and the structure decays. Lehman drew the laws from watching large systems evolve over many releases, and in the same paper describes them as arising from the habits and practices of people and organizations rather than being immutable like the laws of physics.
+      counter:
+        name: Stability Is a Feature
+        note: |-
+          every change makes users relearn something and breaks someone who relied on the old behavior, so for a protocol, file format or tool that others build on, freezing the design can be worth more than keeping up with the world
+      guideline: |-
+        Budget ongoing change as the normal cost of a program in use, not as an exception after launch. Reserve part of every cycle for work that reduces complexity, such as deleting dead paths and merging special cases, and track a complexity measure across releases so you see the trend before it stalls you. Freeze only what other people build on, and say so when you do.
+      source: |-
+        Meir M. Lehman, *Programs, Life Cycles, and Laws of Software Evolution* (Proceedings of the IEEE, vol. 68, no. 9, 1980), Table I — Continuing Change: "A program that is used and that as an implementation of its specification reflects some other reality, undergoes continual change or becomes progressively less useful."; Increasing Complexity: "As an evolving program is continually changed, its complexity, reflecting deteriorating structure, increases unless work is done to maintain or reduce it."; p. 1069: the laws are "clearly not immutable, as for example, are the laws of physics" and "arise from the habits and practices of people and organizations".
+    ja:
+      title: レーマンのソフトウェア進化の法則
+      concept: 実際に使われているプログラムは、変わり続けなければ役に立たなくなる。そして変えるたびに、手をかけて単純にしない限り複雑になっていく。
+      mechanism: |-
+        世の中の仕事の一部を自動化するプログラムは、その世界のモデルであり、世界は動き続ける。利用者の求めるものは移り、業務は変わり、プログラムが入ったこと自体が人の働き方を変える。だからプログラムが完成することはなく、リリースのたびにモデルと現実のずれがまた開く。変更は時間に追われ、設計の全体を頭に入れていない人の手で入るので、例外処理や依存は減るより速く増え、構造は傷んでいく。Lehman はこれらの法則を、大規模システムが何度ものリリースを経て変わっていく様子から導いた。同じ論文で、物理法則のように不変なものではなく、人と組織の習慣ややり方から生まれるものだと述べている。
+      counter:
+        name: 安定も機能のうち
+        note: |-
+          変更のたびに利用者は覚え直しを強いられ、古い挙動に頼っていた誰かが壊れる。他人がその上に作るプロトコルやファイル形式、ツールなら、世の中に追従するより設計を凍結するほうが価値を生むこともある
+      guideline: |-
+        継続的な変更は、リリース後の例外ではなく、使われているプログラムの通常のコストとして予算に入れる。毎回のサイクルの一部を、使われない経路の削除や例外処理の統合など、複雑さを減らす作業にあてる。複雑さの指標をリリースごとに追い、身動きが取れなくなる前に傾向をつかむ。凍結するのは他人がその上に作るものだけにし、凍結するときはそう明言する。
+      source: |-
+        Meir M. Lehman『Programs, Life Cycles, and Laws of Software Evolution』(Proceedings of the IEEE, vol. 68, no. 9, 1980) の表 I。継続的変化 ("A program that is used and that as an implementation of its specification reflects some other reality, undergoes continual change or becomes progressively less useful.") と複雑さの増大 ("As an evolving program is continually changed, its complexity, reflecting deteriorating structure, increases unless work is done to maintain or reduce it.") の出典。p. 1069 の "clearly not immutable, as for example, are the laws of physics" と "arise from the habits and practices of people and organizations" も同じ論文から。
+
+  - slug: bus-factor
+    tag: organization
+    source_url: https://doi.org/10.1109/ICPC.2016.7503718
+    see_also:
+      - bystander-effect
+      - curse-of-knowledge
+    en:
+      title: Bus Factor
+      concept: |-
+        The fewer people who can keep a system running, the more its future depends on each of them staying.
+      mechanism: |-
+        Knowledge tends to concentrate on its own: whoever wrote a part fixes it fastest, so the next change goes to them too, and every round widens the gap. Nobody decides to make one person indispensable; it is the cheapest choice each time, and the risk stays invisible until that person leaves, falls ill or simply goes on vacation. In a sample of 133 popular GitHub projects, Avelino and colleagues found that 65% have a truck factor of two or less, meaning that losing at most two developers would leave most of their files without an active author. Spreading knowledge spends time now against a loss that may never come, so it usually loses the scheduling argument unless someone makes it an explicit goal.
+      counter:
+        name: Depth of Ownership
+        note: |-
+          a specialist who owns an area works far faster and notices more than a rotation of people who each know a little, and a small team that copies everything into a second head spends time it does not have
+      guideline: |-
+        List the parts of your system that only one person can change or operate. For each, pair a second person on the next real change instead of writing a handover document nobody reads. Rotate on-call and code review so knowledge moves as a side effect of normal work. Treat a planned absence as a drill: if a week away stalls a system, fix that before someone leaves for good.
+      source: |-
+        Folklore: the question of what becomes of a project if a key person is "hit by a bus" was in circulation by 1994, when Michael McLay posted "If Guido was hit by a bus?" to the Python mailing list on 29 June 1994 (python.org mailing-list archive, python-1994q2, message 1040). Measured in Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente, *A Novel Approach for Estimating Truck Factors* (ICPC, 2016) — the truck factor as "the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated", and the finding that "the majority of our target systems (65%) have TF ≤ 2".
+    ja:
+      title: バス係数
+      concept: システムを動かし続けられる人が少ないほど、その将来は一人ひとりが辞めずにいることにかかってくる。
+      mechanism: |-
+        知識は放っておくと偏りやすい。ある部分を書いた人が一番速く直せるので、次の変更もその人に回り、そのたびに差が開く。誰か一人を欠かせない存在にしようと決めた人はいない。その都度いちばん安い選択をした結果で、そのリスクは本人が辞めるか、病気になるか、ただ休暇を取るまで見えない。Avelino らが GitHub の人気プロジェクト133件を調べたところ、65%はトラック係数が2以下だった。開発者が一人か二人抜けるだけで、大半のファイルを書いた人がいなくなる。知識を広げるのは、来ないかもしれない損失に備えて今の時間を使うことなので、誰かがはっきり目標に掲げない限り、スケジュールの議論ではたいてい負ける。
+      counter:
+        name: 所有の深さ
+        note: |-
+          ある領域を持つ専門家は、少しずつ知っている人の持ち回りよりずっと速く動き、問題にも多く気づく。小さなチームがあらゆる知識を二人目にも持たせようとすると、ない時間を使うことになる
+      guideline: |-
+        一人しか変更も運用もできない箇所を洗い出す。それぞれについて、誰も読まない引き継ぎ文書を書くのではなく、次の実際の変更で二人目をペアにつける。オンコールとコードレビューを持ち回りにして、普段の仕事のついでに知識が移るようにする。予定された不在は訓練として扱う。一週間の休みでシステムが止まるなら、誰かが本当に辞める前に直す。
+      source: |-
+        出所は口伝。主要人物が「バスにはねられたら」プロジェクトはどうなるのかという問いは 1994 年には出回っており、この年 Michael McLay が Python のメーリングリストに「If Guido was hit by a bus?」を投稿している (1994 年 6 月 29 日。python.org のメーリングリストアーカイブ python-1994q2 の 1040 番)。計測は Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente『A Novel Approach for Estimating Truck Factors』(ICPC, 2016)。トラック係数の定義 ("the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated") と、"the majority of our target systems (65%) have TF ≤ 2" という結果の出典。
+
+  - slug: pesticide-paradox
+    tag: maintainability
+    source_url: https://openlibrary.org/books/OL2205629M/Software_testing_techniques
+    see_also:
+      - beyonce-rule
+      - chaos-engineering
+    en:
+      title: Pesticide Paradox
+      concept: |-
+        Every way of finding bugs leaves behind the bugs it cannot find, so a test suite that never changes finds fewer and fewer.
+      mechanism: |-
+        A test method catches a particular kind of bug, and once a team has run it for a while those bugs are fixed and developers learn not to write them. What remains are the bugs the method is blind to, so the same tests keep passing while the defects move to places they do not look. As with insects after seasons of the same pesticide, what survives is what the treatment cannot kill. A green suite then shows how well the code avoids yesterday's bugs, not how few bugs it has.
+      counter:
+        name: Old Tests Still Guard
+        note: |-
+          a test that has not failed in years still keeps a fixed bug from coming back and pins behavior others rely on, so retiring old tests to chase new bugs gives up protection they still provide
+      guideline: |-
+        Keep the regression suite, but do not count on it to find new bugs. Add tests aimed at what the suite does not exercise: new inputs, fuzzing, property-based tests, exploratory sessions. When a bug escapes to production, ask which kind of test would have caught it and add that kind, not only that one case. Review the suite on a schedule and remove tests that duplicate each other.
+      source: |-
+        Boris Beizer, *Software Testing Techniques* (2nd ed., Van Nostrand Reinhold, 1990), "The Pesticide Paradox and the Complexity Barrier" — "Every method you use to prevent or find bugs leaves a residue of subtler bugs against which those methods are ineffectual", and "Test suites wear out."
+    ja:
+      title: 殺虫剤のパラドックス
+      concept: バグを見つける方法はどれも、その方法では見つからないバグを残す。だから変わらないテストスイートが見つけるバグは減っていく。
+      mechanism: |-
+        テスト手法は特定の種類のバグを捕まえる。しばらく使い続けると、その種類のバグは直され、開発者もそれを書かなくなる。残るのはその手法から見えないバグなので、同じテストは通り続け、欠陥はテストが見ていない場所へ移っていく。同じ殺虫剤を何シーズンも撒いた後に残るのが、その薬では死なない虫であるのと同じだ。そうなると、テストが全部通ることが示すのは、コードが昨日のバグをどれだけ避けているかであって、バグがどれだけ少ないかではない。
+      counter:
+        name: 古いテストの守り
+        note: |-
+          何年も落ちていないテストも、直したバグの再発を止め、他人が頼る挙動を固定している。新しいバグを追うために古いテストを捨てれば、今も効いている守りを失う
+      guideline: |-
+        回帰テストは残すが、それで新しいバグが見つかるとは期待しない。新しい入力、ファジング、プロパティベーステスト、探索的テストなど、スイートが確かめていないところを狙うテストを足す。本番にバグが漏れたら、どの種類のテストなら捕まえられたかを考え、その一件だけでなく、その種類のテストを足す。スイートは定期的に見直し、互いに重複するテストは消す。
+      source: |-
+        Boris Beizer『Software Testing Techniques』(第 2 版、Van Nostrand Reinhold, 1990)「The Pesticide Paradox and the Complexity Barrier」。"Every method you use to prevent or find bugs leaves a residue of subtler bugs against which those methods are ineffectual" と "Test suites wear out." の出典。

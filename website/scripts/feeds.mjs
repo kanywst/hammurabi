@@ -28,6 +28,7 @@ const COPY = {
     mechanism: 'Why it happens',
     counter: 'Counter-force',
     guideline: 'What to do',
+    example: 'In practice',
     source: 'Source',
     seeAlso: 'See also',
     label: (n) => `§ ${n}`,
@@ -38,6 +39,7 @@ const COPY = {
     mechanism: 'なぜ起きるか',
     counter: '歯止め',
     guideline: 'どうするか',
+    example: '実際にあったこと',
     source: '出典',
     seeAlso: '関連する法則',
     label: (n) => `第${n}条`,
@@ -88,6 +90,9 @@ function markdown(law, lang, tagLabel, bySlug) {
     '',
     t.mechanism,
     '',
+    ...(t.example && law.exampleUrl
+      ? [`## ${c.example}`, '', t.example, '', law.exampleUrl, '']
+      : []),
     `## ${c.counter}`,
     '',
     `**${t.counter.name}**${note}`,
@@ -157,6 +162,7 @@ function main() {
       tag: law.tag,
       figure: law.figure.name,
       source_url: law.sourceUrl,
+      example_url: law.exampleUrl,
       see_also: law.seeAlso,
       url: { en: url('en', law.slug), ja: url('ja', law.slug) },
       og_image: {
