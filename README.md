@@ -255,7 +255,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 09` · Organization
 
 - **Concept:** Adding people to a late project tends to make it later, because ramp-up and coordination cost more than they add.
-- **Mechanism:** Adding people to a late project increases communication overhead quadratically (n(n-1)/2 communication channels for n people). New people take more time from veterans than they contribute.
+- **Mechanism:** Adding people to a late project increases communication overhead quadratically (n(n-1)/2 communication channels for n people). For a while, new people take more time from veterans than they contribute.
 - **Counter:** **Partitionable Work** — Brooks introduced the law as "oversimplifying outrageously": people added early, to work that splits cleanly with little communication, do speed it up.
 - **Guideline:** If a project is late, cut scope or move the date first. Add people only to work that splits cleanly and that they can start without a veteran's daily help, and do it early, not in the last month.
 - **Source:** Fred Brooks, *The Mythical Man-Month* (Addison-Wesley, 1975; anniversary edition 1995), ch. 2 — where the law is stated. — [source ↗](https://en.wikipedia.org/wiki/Brooks%27s_law)

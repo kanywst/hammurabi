@@ -471,7 +471,7 @@ laws:
       title: Brooks' Law
       concept: Adding people to a late project tends to make it later, because ramp-up and coordination cost more than they add.
       mechanism: |-
-        Adding people to a late project increases communication overhead quadratically (n(n-1)/2 communication channels for n people). New people take more time from veterans than they contribute.
+        Adding people to a late project increases communication overhead quadratically (n(n-1)/2 communication channels for n people). For a while, new people take more time from veterans than they contribute.
       counter:
         name: Partitionable Work
         note: |-

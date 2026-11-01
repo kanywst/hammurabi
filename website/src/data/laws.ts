@@ -698,7 +698,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Brooks' Law",
       "concept": "Adding people to a late project tends to make it later, because ramp-up and coordination cost more than they add.",
-      "mechanism": "Adding people to a late project increases communication overhead quadratically (n(n-1)/2 communication channels for n people). New people take more time from veterans than they contribute.",
+      "mechanism": "Adding people to a late project increases communication overhead quadratically (n(n-1)/2 communication channels for n people). For a while, new people take more time from veterans than they contribute.",
       "counter": {
         "name": "Partitionable Work",
         "note": "Brooks introduced the law as \"oversimplifying outrageously\": people added early, to work that splits cleanly with little communication, do speed it up"
