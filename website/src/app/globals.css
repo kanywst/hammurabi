@@ -1,8 +1,3 @@
-/* The display face: Shippori Mincho B1, a Mincho with Latin drawn to match,
-   so headings and article numbers read like a statute book in both languages.
-   Loaded as CSS, so the static build fetches nothing; until it arrives, the
-   system Mincho stands in. */
-@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&display=swap');
 @import 'tailwindcss';
 
 /* A reference you consult, set for reading.
