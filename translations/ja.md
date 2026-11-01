@@ -3,7 +3,7 @@
 **エンジニアリングの法則と、その歯止め。** どの条にも、現場での指針と一次資料の出典を付けている。
 
 [![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=1d47b8&labelColor=17181a)](https://github.com/kanywst/hammurabi/stargazers)
-[![laws](https://img.shields.io/badge/%E6%B3%95%E5%89%87-91-1d47b8?style=for-the-badge&labelColor=17181a)](#法典)
+[![laws](https://img.shields.io/badge/%E6%B3%95%E5%89%87-95-1d47b8?style=for-the-badge&labelColor=17181a)](#法典)
 [![site](https://img.shields.io/badge/%E6%B3%95%E5%85%B8%E3%82%92%E8%AA%AD%E3%82%80-1d47b8?style=for-the-badge&labelColor=17181a)](https://kanywst.github.io/hammurabi/ja/)
 [![license](https://img.shields.io/badge/content-CC%20BY--SA%204.0-5c5f64?style=for-the-badge&labelColor=17181a)](../LICENSE)
 
@@ -48,13 +48,13 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 **状況から引く**
 
 - **見積りが毎回ずれる:** [ホフスタッターの法則 (Hofstadter's Law)](#ホフスタッターの法則-hofstadters-law) · [90対90の法則 (Ninety-Ninety Rule)](#90対90の法則-ninety-ninety-rule) · [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) · [時間を固定し、スコープを変える (Fixed Time, Variable Scope)](#時間を固定しスコープを変える-fixed-time-variable-scope)
-- **チームが大きくなってきた:** [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) · [ダンバー数 (Dunbar's Number)](#ダンバー数-dunbars-number) · [リンゲルマン効果 (Ringelmann Effect)](#リンゲルマン効果-ringelmann-effect) · [コンウェイの法則 (Conway's Law)](#コンウェイの法則-conways-law) · [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control)
+- **チームが大きくなってきた:** [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) · [ダンバー数 (Dunbar's Number)](#ダンバー数-dunbars-number) · [リンゲルマン効果 (Ringelmann Effect)](#リンゲルマン効果-ringelmann-effect) · [コンウェイの法則 (Conway's Law)](#コンウェイの法則-conways-law) · [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control) · [バス係数 (Bus Factor)](#バス係数-bus-factor)
 - **指標が数字合わせになっている:** [グッドハートの法則 (Goodhart's Law)](#グッドハートの法則-goodharts-law) · [コブラ効果 (Cobra Effect)](#コブラ効果-cobra-effect) · [シャーキーの原理 (Shirky Principle)](#シャーキーの原理-shirky-principle)
 - **決めきれない:** [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality) · [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy)
-- **障害が起きた後:** [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor) · [自動化の皮肉 (Ironies of Automation)](#自動化の皮肉-ironies-of-automation) · [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions)
-- **信頼性と開発速度がぶつかる:** [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) · [トイル (Toil)](#トイル-toil) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [マーフィーの法則 (Murphy's Law)](#マーフィーの法則-murphys-law) · [作った者が運用する (You Build It, You Run It)](#作った者が運用する-you-build-it-you-run-it) · [アンドン（ラインを止める） (Andon (Stop the Line))](#アンドンラインを止める-andon-stop-the-line) · [カオスエンジニアリング (Chaos Engineering)](#カオスエンジニアリング-chaos-engineering)
+- **障害が起きた後:** [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor) · [自動化の皮肉 (Ironies of Automation)](#自動化の皮肉-ironies-of-automation) · [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions) · [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox)
+- **信頼性と開発速度がぶつかる:** [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) · [トイル (Toil)](#トイル-toil) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [マーフィーの法則 (Murphy's Law)](#マーフィーの法則-murphys-law) · [作った者が運用する (You Build It, You Run It)](#作った者が運用する-you-build-it-you-run-it) · [アンドン（ラインを止める） (Andon (Stop the Line))](#アンドンラインを止める-andon-stop-the-line) · [カオスエンジニアリング (Chaos Engineering)](#カオスエンジニアリング-chaos-engineering) · [技術的負債 (Technical Debt)](#技術的負債-technical-debt)
 - **何かが遅い:** [アムダールの法則 (Amdahl's Law)](#アムダールの法則-amdahls-law) · [制約理論 (Theory of Constraints)](#制約理論-theory-of-constraints) · [早すぎる最適化 (Premature Optimization)](#早すぎる最適化-premature-optimization) · [スケールの裾野 (The Tail at Scale)](#スケールの裾野-the-tail-at-scale) · [リトルの法則 (Little's Law)](#リトルの法則-littles-law)
-- **古いコードを消す・作り直す:** [チェスタトンの柵 (Chesterton's Fence)](#チェスタトンの柵-chestertons-fence) · [セカンドシステム症候群 (Second-System Effect)](#セカンドシステム症候群-second-system-effect) · [ガルの法則 (Gall's Law)](#ガルの法則-galls-law) · [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [イーグルソンの法則 (Eagleson's Law)](#イーグルソンの法則-eaglesons-law) · [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [ストラングラーフィグ (Strangler Fig)](#ストラングラーフィグ-strangler-fig) · [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule)
+- **古いコードを消す・作り直す:** [チェスタトンの柵 (Chesterton's Fence)](#チェスタトンの柵-chestertons-fence) · [セカンドシステム症候群 (Second-System Effect)](#セカンドシステム症候群-second-system-effect) · [ガルの法則 (Gall's Law)](#ガルの法則-galls-law) · [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [イーグルソンの法則 (Eagleson's Law)](#イーグルソンの法則-eaglesons-law) · [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [ストラングラーフィグ (Strangler Fig)](#ストラングラーフィグ-strangler-fig) · [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule) · [技術的負債 (Technical Debt)](#技術的負債-technical-debt) · [リーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)](#リーマンのソフトウェア進化の法則-lehmans-laws-of-software-evolution)
 - **API やインタフェースを設計する:** [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [ポステルの法則 (Postel's Law)](#ポステルの法則-postels-law) · [驚き最小の原則 (Principle of Least Astonishment)](#驚き最小の原則-principle-of-least-astonishment) · [リーキー・アブストラクション (Law of Leaky Abstractions)](#リーキーアブストラクション-law-of-leaky-abstractions) · [テスラーの複雑性保存則 (Tesler's Law)](#テスラーの複雑性保存則-teslers-law) · [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule)
 - **新しいものを作り始める:** [ワーキング・バックワーズ (Working Backwards)](#ワーキングバックワーズ-working-backwards) · [YAGNI (YAGNI)](#yagni-yagni) · [ガルの法則 (Gall's Law)](#ガルの法則-galls-law) · [劣っている方が勝つ (Worse is Better)](#劣っている方が勝つ-worse-is-better) · [KISS の原則 (KISS Principle)](#kiss-の原則-kiss-principle) · [XY問題 (XY Problem)](#xy問題-xy-problem)
 - **技術を選ぶ:** [リンディ効果 (Lindy Effect)](#リンディ効果-lindy-effect) · [カーゴ・カルト・エンジニアリング (Cargo Cult Engineering)](#カーゴカルトエンジニアリング-cargo-cult-engineering) · [アマラの法則 (Amara's Law)](#アマラの法則-amaras-law) · [生存者バイアス (Survivorship Bias)](#生存者バイアス-survivorship-bias) · [退屈な技術を選べ (Choose Boring Technology)](#退屈な技術を選べ-choose-boring-technology)
@@ -156,6 +156,10 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 | `89` | [時間を固定し、スコープを変える (Fixed Time, Variable Scope)](#時間を固定しスコープを変える-fixed-time-variable-scope) | 見積り | スコープを固定して時間を固定しないと、ずれるのは期日で、スコープは残る。時間を固定すれば、何が大事かを選ばざるを得なくなる。 |
 | `90` | [ストラングラーフィグ (Strangler Fig)](#ストラングラーフィグ-strangler-fig) | 保守性 | 稼働中のシステムは、一度に置き換えるより、周縁から少しずつ置き換えるほうがたいてい安全だ。 |
 | `91` | [退屈な技術を選べ (Choose Boring Technology)](#退屈な技術を選べ-choose-boring-technology) | 意思決定 | 不慣れな技術を採り入れるたびに、未知の故障モードと恒久的な運用コストが付いてくる。チームが抱えられる数は多くない。 |
+| `92` | [技術的負債 (Technical Debt)](#技術的負債-technical-debt) | 保守性 | 問題を十分に理解する前に出したコードは、誰かが書き直すまで、その後の変更のたびに余計なコストを生む。 |
+| `93` | [リーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)](#リーマンのソフトウェア進化の法則-lehmans-laws-of-software-evolution) | 保守性 | 実際に使われているプログラムは、変わり続けなければ役に立たなくなる。そして変えるたびに、手をかけて単純にしない限り複雑になっていく。 |
+| `94` | [バス係数 (Bus Factor)](#バス係数-bus-factor) | 組織 | システムを動かし続けられる人が少ないほど、その将来は一人ひとりが辞めずにいることにかかってくる。 |
+| `95` | [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox) | 保守性 | バグを見つける方法はどれも、その方法では見つからないバグを残す。だから変わらないテストスイートが見つけるバグは減っていく。 |
 
 ### タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)
 
@@ -459,7 +463,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **単一障害点** — 毎回一人を名指しすると、その人がボトルネックになり、いなくなれば止まる。担当者は対応を調整する役であって、全部を自分でやる役ではない。
 - **判断の指針:** 「誰か見てもらえますか」とは言わない。「@名前 さん、これの調査をお願いします」と名指しで頼む。インシデントには必ず、名前のついた担当者を一人割り当てる。
 - **出典:** John M. Darley & Bibb Latané『Bystander Intervention in Emergencies: Diffusion of Responsibility』(Journal of Personality and Social Psychology, 1968)。 — [原典 ↗](https://doi.org/10.1037/h0025589)
-- **関連:** [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor) · [リンゲルマン効果 (Ringelmann Effect)](#リンゲルマン効果-ringelmann-effect) · [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem)
+- **関連:** [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor) · [リンゲルマン効果 (Ringelmann Effect)](#リンゲルマン効果-ringelmann-effect) · [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [バス係数 (Bus Factor)](#バス係数-bus-factor)
 
 ### マーフィーの法則 (Murphy's Law)
 
@@ -481,7 +485,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **1つの差分に1つの理由** — 振る舞いの変更に片付けが相乗りすると、変更そのものが埋もれる。ついでに40箇所をリネームした PR は、誰もレビューしない。
 - **判断の指針:** コードは必ず来たときよりもきれいにして去る。ただし片付けは、同じ差分の中で読み切れる大きさにとどめる。1行のリネーム、分かりやすくしたコメント、使われていない分岐の削除くらいだ。それより大きい片付けは別のコミットにする。
 - **出典:** Robert C. Martin『The Boy Scout Rule』(Kevlin Henney 編『97 Things Every Programmer Should Know』O'Reilly, 2010 所収)。ベーデン＝パウエルの「この世界を来たときより少しだけ良くして去れ」を翻案した規則の出典。『Clean Code』(2008) にも記述がある。 — [原典 ↗](https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html)
-- **関連:** [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [割れ窓理論 (Broken Windows Theory)](#割れ窓理論-broken-windows-theory) · [コードの健全性を上げるなら承認する (Approve What Improves Code Health)](#コードの健全性を上げるなら承認する-approve-what-improves-code-health)
+- **関連:** [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [割れ窓理論 (Broken Windows Theory)](#割れ窓理論-broken-windows-theory) · [コードの健全性を上げるなら承認する (Approve What Improves Code Health)](#コードの健全性を上げるなら承認する-approve-what-improves-code-health) · [技術的負債 (Technical Debt)](#技術的負債-technical-debt) · [リーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)](#リーマンのソフトウェア進化の法則-lehmans-laws-of-software-evolution)
 
 ### テスラーの複雑性保存則 (Tesler's Law)
 
@@ -514,7 +518,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **読み手に合わせて書く** — 何もかも説明する文書では、熟練した読み手が必要な情報にたどり着けない。午前3時の運用担当に必要なのはチュートリアルではなくコマンドだ。
 - **判断の指針:** ドキュメントや公開 API を出す前に、システムを触ったことのない人にその作業を実際にやってもらい、自分は黙って見る。その人がつまずいた箇所が、そのまま書き忘れた前提を示している。
 - **出典:** Colin Camerer, George Loewenstein & Martin Weber『The Curse of Knowledge in Economic Settings: An Experimental Analysis』(Journal of Political Economy, 1989)。 — [原典 ↗](https://doi.org/10.1086/261651)
-- **関連:** [XY問題 (XY Problem)](#xy問題-xy-problem) · [ダニング・クルーガー効果 (Dunning-Kruger Effect)](#ダニングクルーガー効果-dunning-kruger-effect) · [驚き最小の原則 (Principle of Least Astonishment)](#驚き最小の原則-principle-of-least-astonishment) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control)
+- **関連:** [XY問題 (XY Problem)](#xy問題-xy-problem) · [ダニング・クルーガー効果 (Dunning-Kruger Effect)](#ダニングクルーガー効果-dunning-kruger-effect) · [驚き最小の原則 (Principle of Least Astonishment)](#驚き最小の原則-principle-of-least-astonishment) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control) · [バス係数 (Bus Factor)](#バス係数-bus-factor)
 
 ### スイスチーズモデル (Swiss Cheese Model)
 
@@ -1121,7 +1125,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **まず害をなさない** — 実際の顧客が頼っているシステムをわざと劣化させれば、その顧客の信頼を削ることになる。同じ知見の多くは、障害注入テスト、ゲームデイ、設計レビューでもっと安く得られる。もろいと分かっているシステムで実験しても分かっていたことを確かめるだけなので、まず直す。
 - **判断の指針:** 依存先を一つ選び、それが落ちている間の定常状態がどうあるべきかを書き出す。そのうえで業務時間中に、中止スイッチと見張り役を用意して、本番でその依存先を取り除く。トラフィックのごく一部から始め、システムが持ちこたえてから範囲を広げる。落ちると見込んでいるサービスでは実験しない。
 - **出典:** 『Principles of Chaos Engineering』(principlesofchaos.org, 2019 年 3 月最終更新)。定義、定常状態の仮説、本番での実験、影響範囲の最小化の出典。Netflix Technology Blog『5 Lessons We've Learned Using AWS』(2010) は Chaos Monkey を初めて紹介した記事。 — [原典 ↗](https://principlesofchaos.org/)
-- **関連:** [マーフィーの法則 (Murphy's Law)](#マーフィーの法則-murphys-law) · [分散コンピューティングの誤謬 (Fallacies of Distributed Computing)](#分散コンピューティングの誤謬-fallacies-of-distributed-computing) · [フォールバックを避ける (Avoid Fallback)](#フォールバックを避ける-avoid-fallback)
+- **関連:** [マーフィーの法則 (Murphy's Law)](#マーフィーの法則-murphys-law) · [分散コンピューティングの誤謬 (Fallacies of Distributed Computing)](#分散コンピューティングの誤謬-fallacies-of-distributed-computing) · [フォールバックを避ける (Avoid Fallback)](#フォールバックを避ける-avoid-fallback) · [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox)
 
 ### 統制ではなく文脈を (Context, Not Control)
 
@@ -1154,7 +1158,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **チャーンルール** — テストの形をした契約は、変更する側に何を壊したかを教えるだけで、壊してよかったことにはならない。変更するチームは、利用者の移行作業をそれでも負う。
 - **判断の指針:** 共有ライブラリや依存先に頼っている挙動には、すべてテストを書く。そのテストが、他人の変更を止める CI の中で走るようにする。テストで捕まえられずに何かが壊れたら、障害を閉じる前にそのテストを足す。共有コードを持つ側なら、テストが契約だと前もって宣言する。ただし、自分の変更で利用者側のテストを実際に走らせていないなら、このルールを持ち出さない。
 - **出典:** Adam Bender「Testing Overview」、Winters, Manshreck & Wright『Software Engineering at Google』(O'Reilly, 2020) 第 11 章。"If you liked it, then you shoulda put a test on it" と、コードベース全体に変更をかける基盤チームがこのルールを使うことの出典。 — [原典 ↗](https://abseil.io/resources/swe-book/html/ch11.html)
-- **関連:** [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule)
+- **関連:** [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule) · [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox)
 
 ### チャーンルール (Churn Rule)
 
@@ -1176,7 +1180,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **隠れた変数としての品質** — 期日が固定されてもスコープを削れない、あるいは削らないチームは、代わりにテストやレビュー、エラー処理を削る。また、プロトコルやコンプライアンス要件のように、それ以下に切っては出す意味のない下限がある仕事もある。
 - **判断の指針:** 作業を始める前に、どれだけかかるかではなく、どれだけの時間をかける価値があるかを決め、スコープをそれに合わせる。時間が尽きたら原則として止める。できた部分が単独で成り立つなら出し、そうでなければ問題の切り方を作り直して、もう一度賭けるかを改めて決める。黙って延長しない。機能はテストやレビューより先に削る。筋の通った最小単位より細かく切れない仕事では、時間を固定しない。
 - **出典:** Ryan Singer『Shape Up』(Basecamp, 2019) 第 3 章「Set Boundaries」。アペタイトと "fixed time, variable scope" の出典。第 8 章「The Betting Table」のサーキットブレーカー ("by default the project doesn't get an extension")。先行して 37signals『Getting Real』(2006)「Fix Time and Budget, Flex Scope」("Never throw more time or money at a problem, just scale back the scope")。 — [原典 ↗](https://basecamp.com/shapeup/1.2-chapter-03)
-- **関連:** [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [ホフスタッターの法則 (Hofstadter's Law)](#ホフスタッターの法則-hofstadters-law) · [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy)
+- **関連:** [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [ホフスタッターの法則 (Hofstadter's Law)](#ホフスタッターの法則-hofstadters-law) · [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy) · [技術的負債 (Technical Debt)](#技術的負債-technical-debt)
 
 ### ストラングラーフィグ (Strangler Fig)
 
@@ -1187,7 +1191,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **一括切り替え** — 古いシステムにきれいな振り分け点を置けないときや、移行用の層が書き直しより高くつくときは、計画した一度の切り替えのほうが、段階的移行のありがちな末路を避けられる。簡単な経路だけが移り、いちばん絡み合った部分はいつまでも移らず、組織は二つのシステムを運用し、その費用を払い続ける。
 - **判断の指針:** レガシーシステムの前に振り分け点（プロキシ、ルーター、ファサード）を置き、挙動を一部分ずつその裏へ移す。最初は、それだけで価値を生む部分を選ぶ。「完了」の定義を最初に決め、古い経路に残っているトラフィックの割合を追う。古いコードと移行用の層を消す作業は、後片づけではなくプロジェクトの一部として見積もる。
 - **出典:** Martin Fowler『Strangler Fig Application』(martinfowler.com。原題「Strangler Application」、2004 年。2024 年に書き直し)。絞め殺しのイチジクのたとえと、段階的な刷新ではリスクの低さと早く得られる価値が移行用アーキテクチャのコストを上回るという主張の出典。 — [原典 ↗](https://martinfowler.com/bliki/StranglerFigApplication.html)
-- **関連:** [セカンドシステム症候群 (Second-System Effect)](#セカンドシステム症候群-second-system-effect) · [ガルの法則 (Gall's Law)](#ガルの法則-galls-law) · [90対90の法則 (Ninety-Ninety Rule)](#90対90の法則-ninety-ninety-rule)
+- **関連:** [セカンドシステム症候群 (Second-System Effect)](#セカンドシステム症候群-second-system-effect) · [ガルの法則 (Gall's Law)](#ガルの法則-galls-law) · [90対90の法則 (Ninety-Ninety Rule)](#90対90の法則-ninety-ninety-rule) · [リーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)](#リーマンのソフトウェア進化の法則-lehmans-laws-of-software-evolution)
 
 ### 退屈な技術を選べ (Choose Boring Technology)
 
@@ -1199,6 +1203,50 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **判断の指針:** 言語、データストア、フレームワークを足す前に、今動かしているもので同じ仕事をするには何が要り、なぜそれでは足りないのかを書き出す。そのうえで、一つのチームの中ではなく、それを運用することになる全員で決める。新しい技術は、製品を他と差別化する場所にだけ使う。何かを採り入れるなら、それが置き換えるものを廃止する計画も立てる。
 - **出典:** Dan McKinley『Choose Boring Technology』(mcfunley.com, 2015)。"every company gets about three innovation tokens" の出典。Etsy 在籍時の経験に基づく。 — [原典 ↗](https://mcfunley.com/choose-boring-technology)
 - **関連:** [KISS の原則 (KISS Principle)](#kiss-の原則-kiss-principle) · [リンディ効果 (Lindy Effect)](#リンディ効果-lindy-effect)
+
+### 技術的負債 (Technical Debt)
+
+`§ 92` · 保守性
+
+- **概念:** 問題を十分に理解する前に出したコードは、誰かが書き直すまで、その後の変更のたびに余計なコストを生む。
+- **メカニズム:** プログラムの最初の版には、書いた時点でチームが理解していたことが刻まれる。コードが変わらなくなった後も、理解は深まり続ける。その後の変更はどれも両者のずれをよけて進めることになり、その余計な手間は、借金の利息のように変更のたびにかかる。コストは薄く広がって次にそのコードに触る人にかかるので、どの変更から見ても返すほどではないように見え、残高はチーム全体が遅くなるまで増えていく。Cunningham は手抜きそのものを責めてはいない。問題にしたのは、小さいうちに書き直して返さない負債だ。
+- **対立概念:** **慎重な負債** — 早く出す価値が利息を上回ることはある。まもなく消すコードや二度と変えないコードの負債は返済期日が来ないので、そこを返しても何も得られない。
+- **判断の指針:** 手抜きは借金として扱う。どこにあり、返すには何が要るかを書き残し、コードが誰かの記憶に新しいうちに書き直しの予定を立てる。返済は、見た目が一番ひどいコードではなく、チームが一番よく変えるコードから始める。記録のないまま負債をためない。
+- **出典:** Ward Cunningham『The WyCash Portfolio Management System』(OOPSLA '92 Experience Report, 1992)。"Shipping first time code is like going into debt. A little debt speeds development so long as it is paid back promptly with a rewrite." と "Every minute spent on not-quite-right code counts as interest on that debt." の出典。慎重な負債と無謀な負債の区別は Martin Fowler『Technical Debt Quadrant』(martinfowler.com, 2009)。 — [原典 ↗](https://c2.com/doc/oopsla92.html)
+- **関連:** [リーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)](#リーマンのソフトウェア進化の法則-lehmans-laws-of-software-evolution) · [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [時間を固定し、スコープを変える (Fixed Time, Variable Scope)](#時間を固定しスコープを変える-fixed-time-variable-scope)
+
+### リーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)
+
+`§ 93` · 保守性
+
+- **概念:** 実際に使われているプログラムは、変わり続けなければ役に立たなくなる。そして変えるたびに、手をかけて単純にしない限り複雑になっていく。
+- **メカニズム:** 世の中の仕事の一部を自動化するプログラムは、その世界のモデルであり、世界は動き続ける。利用者の求めるものは移り、業務は変わり、プログラムが入ったこと自体が人の働き方を変える。だからプログラムが完成することはなく、リリースのたびにモデルと現実のずれがまた開く。変更は時間に追われ、設計の全体を頭に入れていない人の手で入るので、例外処理や依存は減るより速く増え、構造は傷んでいく。Lehman はこれらの法則を大規模システムの長年のリリースデータから導き、物理法則ではなく人と組織の習慣から生まれるものだと明言している。
+- **対立概念:** **安定も機能のうち** — 変更のたびに利用者は覚え直しを強いられ、古い挙動に頼っていた誰かが壊れる。他人がその上に作るプロトコルやファイル形式、ツールなら、世の中に追従するより設計を凍結するほうが価値を生むこともある。
+- **判断の指針:** 継続的な変更は、リリース後の例外ではなく、使われているプログラムの通常のコストとして予算に入れる。毎回のサイクルの一部を、使われない経路の削除や例外処理の統合など、複雑さを減らす作業にあてる。複雑さの指標をリリースごとに追い、身動きが取れなくなる前に傾向をつかむ。凍結するのは他人がその上に作るものだけにし、凍結するときはそう明言する。
+- **出典:** Meir M. Lehman『Programs, Life Cycles, and Laws of Software Evolution』(Proceedings of the IEEE, vol. 68, no. 9, 1980) の表 I。継続的変化 ("A program that is used and that as an implementation of its specification reflects some other reality, undergoes continual change or becomes progressively less useful.") と複雑さの増大 ("As an evolving program is continually changed, its complexity, reflecting deteriorating structure, increases unless work is done to maintain or reduce it.") の出典。 — [原典 ↗](https://doi.org/10.1109/PROC.1980.11805)
+- **関連:** [技術的負債 (Technical Debt)](#技術的負債-technical-debt) · [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [ストラングラーフィグ (Strangler Fig)](#ストラングラーフィグ-strangler-fig)
+
+### バス係数 (Bus Factor)
+
+`§ 94` · 組織
+
+- **概念:** システムを動かし続けられる人が少ないほど、その将来は一人ひとりが辞めずにいることにかかってくる。
+- **メカニズム:** 知識は放っておくと偏る。ある部分を書いた人が一番速く直せるので、次の変更もその人に回り、そのたびに差が開く。誰か一人を欠かせない存在にしようと決めた人はいない。その都度いちばん安い選択をした結果で、そのリスクは本人が辞めるか、病気になるか、ただ休暇を取るまで見えない。オープンソースではむしろ普通のことで、Avelino らによると、GitHub の人気プロジェクト133件のうち65%はトラック係数が2以下だった。開発者が二人抜けるだけで、大半のファイルを書いた人がいなくなる。知識を広げるのは、来ないかもしれない損失に備えて今の時間を使うことなので、誰かがはっきり目標に掲げない限り、スケジュールの議論では毎回負ける。
+- **対立概念:** **所有の深さ** — ある領域を持つ専門家は、少しずつ知っている人の持ち回りよりずっと速く動き、問題にも多く気づく。小さなチームがあらゆる知識を二人目にも持たせようとすると、ない時間を使うことになる。
+- **判断の指針:** 一人しか変更も運用もできない箇所を洗い出す。それぞれについて、誰も読まない引き継ぎ文書を書くのではなく、次の実際の変更で二人目をペアにつける。オンコールとコードレビューを持ち回りにして、普段の仕事のついでに知識が移るようにする。予定された不在は訓練として扱う。一週間の休みでシステムが止まるなら、誰かが本当に辞める前に直す。
+- **出典:** 出所は口伝。主要人物が「バスにはねられたら」プロジェクトはどうなるのかという問いは 1994 年には出回っており、この年 Michael McLay が Python のメーリングリストに「If Guido was hit by a bus?」を投稿している。計測は Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente『A Novel Approach for Estimating Truck Factors』(ICPC, 2016)。トラック係数の定義 ("the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated") と、"the majority of our target systems (65%) have TF ≤ 2" という結果の出典。 — [原典 ↗](https://doi.org/10.1109/ICPC.2016.7503718)
+- **関連:** [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) · [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge)
+
+### 殺虫剤のパラドックス (Pesticide Paradox)
+
+`§ 95` · 保守性
+
+- **概念:** バグを見つける方法はどれも、その方法では見つからないバグを残す。だから変わらないテストスイートが見つけるバグは減っていく。
+- **メカニズム:** テスト手法は特定の種類のバグを捕まえる。しばらく使い続けると、その種類のバグは直され、開発者もそれを書かなくなる。残るのはその手法から見えないバグなので、同じテストは通り続け、欠陥はテストが見ていない場所へ移っていく。同じ殺虫剤を何シーズンも撒いた後に残るのが、その薬では死なない虫であるのと同じだ。そうなると、テストが全部通ることが示すのは、コードが昨日のバグをどれだけ避けているかであって、バグがどれだけ少ないかではない。
+- **対立概念:** **古いテストの守り** — 何年も落ちていないテストも、直したバグの再発を止め、他人が頼る挙動を固定している。新しいバグを追うために古いテストを捨てれば、今も効いている守りを失う。
+- **判断の指針:** 回帰テストは残すが、それで新しいバグが見つかるとは期待しない。新しい入力、ファジング、プロパティベーステスト、探索的テストなど、スイートが確かめていないところを狙うテストを足す。本番にバグが漏れたら、どの種類のテストなら捕まえられたかを考え、その一件だけでなく、その種類のテストを足す。スイートは定期的に見直し、互いに重複するテストは消す。
+- **出典:** Boris Beizer『Software Testing Techniques』(第 2 版、Van Nostrand Reinhold, 1990)「The Pesticide Paradox and the Complexity Barrier」。"Every method you use to prevent or find bugs leaves a residue of subtler bugs against which those methods are ineffectual" と "Test suites wear out." の出典。 — [原典 ↗](https://openlibrary.org/books/OL2205629M/Software_testing_techniques)
+- **関連:** [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [カオスエンジニアリング (Chaos Engineering)](#カオスエンジニアリング-chaos-engineering)
 
 <!-- CODEX:END -->
 

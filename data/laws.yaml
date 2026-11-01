@@ -71,6 +71,7 @@ situations:
       - conways-law
       - bystander-effect
       - context-not-control
+      - bus-factor
   - key: metric-gamed
     en: A metric is being gamed
     ja: 指標が数字合わせになっている
@@ -98,6 +99,7 @@ situations:
       - ironies-of-automation
       - five-whys
       - mechanisms-not-good-intentions
+      - pesticide-paradox
   - key: reliability-vs-speed
     en: Reliability versus shipping speed
     ja: 信頼性と開発速度がぶつかる
@@ -109,6 +111,7 @@ situations:
       - you-build-it-you-run-it
       - andon
       - chaos-engineering
+      - technical-debt
   - key: too-slow
     en: Something is too slow
     ja: 何かが遅い
@@ -131,6 +134,8 @@ situations:
       - strangler-fig
       - beyonce-rule
       - churn-rule
+      - technical-debt
+      - lehmans-laws
   - key: designing-interface
     en: Designing an API or interface
     ja: API やインタフェースを設計する
@@ -1080,6 +1085,7 @@ laws:
       - hanlons-razor
       - ringelmann-effect
       - blameless-postmortem
+      - bus-factor
     en:
       title: Bystander Effect
       concept: The more people who see a problem, the less likely any one of them is to act on it.
@@ -1148,6 +1154,8 @@ laws:
       - normalization-of-deviance
       - broken-windows-theory
       - code-health-standard
+      - technical-debt
+      - lehmans-laws
     en:
       title: Boy Scout Rule
       concept: Code decays because cleanup tends to be deferred to a refactor that rarely happens.
@@ -1250,6 +1258,7 @@ laws:
       - dunning-kruger-effect
       - principle-of-least-astonishment
       - context-not-control
+      - bus-factor
     en:
       title: Curse of Knowledge
       concept: "Once you know something, you can't easily imagine what it's like not to know it."
@@ -3005,6 +3014,7 @@ laws:
       - murphys-law
       - fallacies-of-distributed-computing
       - avoid-fallback
+      - pesticide-paradox
     en:
       title: Chaos Engineering
       concept: |-
@@ -3109,6 +3119,7 @@ laws:
     see_also:
       - hyrums-law
       - churn-rule
+      - pesticide-paradox
     en:
       title: Beyoncé Rule
       concept: |-
@@ -3178,6 +3189,7 @@ laws:
       - parkinsons-law
       - hofstadters-law
       - sunk-cost-fallacy
+      - technical-debt
     en:
       title: Fixed Time, Variable Scope
       concept: |-
@@ -3212,6 +3224,7 @@ laws:
       - second-system-effect
       - galls-law
       - ninety-ninety-rule
+      - lehmans-laws
     en:
       title: Strangler Fig
       concept: |-
@@ -3272,3 +3285,141 @@ laws:
         言語、データストア、フレームワークを足す前に、今動かしているもので同じ仕事をするには何が要り、なぜそれでは足りないのかを書き出す。そのうえで、一つのチームの中ではなく、それを運用することになる全員で決める。新しい技術は、製品を他と差別化する場所にだけ使う。何かを採り入れるなら、それが置き換えるものを廃止する計画も立てる。
       source: |-
         Dan McKinley『Choose Boring Technology』(mcfunley.com, 2015)。"every company gets about three innovation tokens" の出典。Etsy 在籍時の経験に基づく。
+
+  - slug: technical-debt
+    tag: maintainability
+    source_url: https://c2.com/doc/oopsla92.html
+    see_also:
+      - lehmans-laws
+      - boy-scout-rule
+      - fixed-time-variable-scope
+    en:
+      title: Technical Debt
+      concept: |-
+        Code shipped before the team fully understands the problem charges extra on every later change until someone rewrites it.
+      mechanism: |-
+        The first version of a program records what the team understood when it wrote it, and that understanding keeps improving after the code stops changing. Every later change has to work around the gap between the two, and the extra effort recurs on each change the way interest recurs on a loan. The cost is spread thin and lands on whoever touches the code next, so no single change makes repaying it look worthwhile, and the balance grows until the whole team slows down. Cunningham did not object to the shortcut itself; his warning was about debt that is not paid back with a rewrite while it is still small.
+      counter:
+        name: Prudent Debt
+        note: |-
+          shipping earlier can be worth more than the interest, and debt in code that is about to be deleted or will never change again never comes due, so paying it down there buys nothing
+      guideline: |-
+        Treat a shortcut as a loan: write down where it is and what repaying it would take, and schedule the rewrite while the code is still fresh in someone's head. Repay first where the team changes code most often, not where the code merely looks worst. Do not let debt pile up unrecorded.
+      source: |-
+        Ward Cunningham, *The WyCash Portfolio Management System* (OOPSLA '92 Experience Report, 1992) — "Shipping first time code is like going into debt. A little debt speeds development so long as it is paid back promptly with a rewrite." and "Every minute spent on not-quite-right code counts as interest on that debt." The prudent/reckless distinction is from Martin Fowler, *Technical Debt Quadrant* (martinfowler.com, 2009).
+    ja:
+      title: 技術的負債
+      concept: 問題を十分に理解する前に出したコードは、誰かが書き直すまで、その後の変更のたびに余計なコストを生む。
+      mechanism: |-
+        プログラムの最初の版には、書いた時点でチームが理解していたことが刻まれる。コードが変わらなくなった後も、理解は深まり続ける。その後の変更はどれも両者のずれをよけて進めることになり、その余計な手間は、借金の利息のように変更のたびにかかる。コストは薄く広がって次にそのコードに触る人にかかるので、どの変更から見ても返すほどではないように見え、残高はチーム全体が遅くなるまで増えていく。Cunningham は手抜きそのものを責めてはいない。問題にしたのは、小さいうちに書き直して返さない負債だ。
+      counter:
+        name: 慎重な負債
+        note: |-
+          早く出す価値が利息を上回ることはある。まもなく消すコードや二度と変えないコードの負債は返済期日が来ないので、そこを返しても何も得られない
+      guideline: |-
+        手抜きは借金として扱う。どこにあり、返すには何が要るかを書き残し、コードが誰かの記憶に新しいうちに書き直しの予定を立てる。返済は、見た目が一番ひどいコードではなく、チームが一番よく変えるコードから始める。記録のないまま負債をためない。
+      source: |-
+        Ward Cunningham『The WyCash Portfolio Management System』(OOPSLA '92 Experience Report, 1992)。"Shipping first time code is like going into debt. A little debt speeds development so long as it is paid back promptly with a rewrite." と "Every minute spent on not-quite-right code counts as interest on that debt." の出典。慎重な負債と無謀な負債の区別は Martin Fowler『Technical Debt Quadrant』(martinfowler.com, 2009)。
+
+  - slug: lehmans-laws
+    tag: maintainability
+    source_url: https://doi.org/10.1109/PROC.1980.11805
+    see_also:
+      - technical-debt
+      - boy-scout-rule
+      - strangler-fig
+    en:
+      title: Lehman's Laws of Software Evolution
+      concept: |-
+        A program in real use must keep changing or grow less useful, and each change makes it more complex unless work is spent to simplify it.
+      mechanism: |-
+        A program that automates part of the world is a model of that world, and the world keeps moving: users' needs shift, the business changes, and the program's own arrival changes how people work. So the program is never finished, and each release reopens the gap between the model and what it models. Changes are made under pressure by people who do not hold the whole design in mind, so special cases and dependencies are added faster than they are removed, and the structure decays. Lehman drew the laws from release data on large systems over many years, and he was clear that they come from the habits of people and organizations, not from physics.
+      counter:
+        name: Stability Is a Feature
+        note: |-
+          every change makes users relearn something and breaks someone who relied on the old behavior, so for a protocol, file format or tool that others build on, freezing the design can be worth more than keeping up with the world
+      guideline: |-
+        Budget ongoing change as the normal cost of a program in use, not as an exception after launch. Reserve part of every cycle for work that reduces complexity, such as deleting dead paths and merging special cases, and track a complexity measure across releases so you see the trend before it stalls you. Freeze only what other people build on, and say so when you do.
+      source: |-
+        Meir M. Lehman, *Programs, Life Cycles, and Laws of Software Evolution* (Proceedings of the IEEE, vol. 68, no. 9, 1980), Table I — Continuing Change: "A program that is used and that as an implementation of its specification reflects some other reality, undergoes continual change or becomes progressively less useful."; Increasing Complexity: "As an evolving program is continually changed, its complexity, reflecting deteriorating structure, increases unless work is done to maintain or reduce it."
+    ja:
+      title: リーマンのソフトウェア進化の法則
+      concept: 実際に使われているプログラムは、変わり続けなければ役に立たなくなる。そして変えるたびに、手をかけて単純にしない限り複雑になっていく。
+      mechanism: |-
+        世の中の仕事の一部を自動化するプログラムは、その世界のモデルであり、世界は動き続ける。利用者の求めるものは移り、業務は変わり、プログラムが入ったこと自体が人の働き方を変える。だからプログラムが完成することはなく、リリースのたびにモデルと現実のずれがまた開く。変更は時間に追われ、設計の全体を頭に入れていない人の手で入るので、例外処理や依存は減るより速く増え、構造は傷んでいく。Lehman はこれらの法則を大規模システムの長年のリリースデータから導き、物理法則ではなく人と組織の習慣から生まれるものだと明言している。
+      counter:
+        name: 安定も機能のうち
+        note: |-
+          変更のたびに利用者は覚え直しを強いられ、古い挙動に頼っていた誰かが壊れる。他人がその上に作るプロトコルやファイル形式、ツールなら、世の中に追従するより設計を凍結するほうが価値を生むこともある
+      guideline: |-
+        継続的な変更は、リリース後の例外ではなく、使われているプログラムの通常のコストとして予算に入れる。毎回のサイクルの一部を、使われない経路の削除や例外処理の統合など、複雑さを減らす作業にあてる。複雑さの指標をリリースごとに追い、身動きが取れなくなる前に傾向をつかむ。凍結するのは他人がその上に作るものだけにし、凍結するときはそう明言する。
+      source: |-
+        Meir M. Lehman『Programs, Life Cycles, and Laws of Software Evolution』(Proceedings of the IEEE, vol. 68, no. 9, 1980) の表 I。継続的変化 ("A program that is used and that as an implementation of its specification reflects some other reality, undergoes continual change or becomes progressively less useful.") と複雑さの増大 ("As an evolving program is continually changed, its complexity, reflecting deteriorating structure, increases unless work is done to maintain or reduce it.") の出典。
+
+  - slug: bus-factor
+    tag: organization
+    source_url: https://doi.org/10.1109/ICPC.2016.7503718
+    see_also:
+      - bystander-effect
+      - curse-of-knowledge
+    en:
+      title: Bus Factor
+      concept: |-
+        The fewer people who can keep a system running, the more its future depends on each of them staying.
+      mechanism: |-
+        Knowledge concentrates on its own: whoever wrote a part fixes it fastest, so the next change goes to them too, and every round widens the gap. Nobody decides to make one person indispensable; it is the cheapest choice each time, and the risk stays invisible until that person leaves, falls ill or simply goes on vacation. In open source it is the norm: Avelino and colleagues found that 65% of 133 popular GitHub projects have a truck factor of two or less, meaning that losing at most two developers would leave most of their files without an active author. Spreading knowledge spends time now against a loss that may never come, so it loses every scheduling argument unless someone makes it an explicit goal.
+      counter:
+        name: Depth of Ownership
+        note: |-
+          a specialist who owns an area works far faster and notices more than a rotation of people who each know a little, and a small team that copies everything into a second head spends time it does not have
+      guideline: |-
+        List the parts of your system that only one person can change or operate. For each, pair a second person on the next real change instead of writing a handover document nobody reads. Rotate on-call and code review so knowledge moves as a side effect of normal work. Treat a planned absence as a drill: if a week away stalls a system, fix that before someone leaves for good.
+      source: |-
+        Folklore: the question of what becomes of a project if a key person is "hit by a bus" was in circulation by 1994, when Michael McLay posted "If Guido was hit by a bus?" to the Python mailing list. Measured in Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente, *A Novel Approach for Estimating Truck Factors* (ICPC, 2016) — the truck factor as "the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated", and the finding that "the majority of our target systems (65%) have TF ≤ 2".
+    ja:
+      title: バス係数
+      concept: システムを動かし続けられる人が少ないほど、その将来は一人ひとりが辞めずにいることにかかってくる。
+      mechanism: |-
+        知識は放っておくと偏る。ある部分を書いた人が一番速く直せるので、次の変更もその人に回り、そのたびに差が開く。誰か一人を欠かせない存在にしようと決めた人はいない。その都度いちばん安い選択をした結果で、そのリスクは本人が辞めるか、病気になるか、ただ休暇を取るまで見えない。オープンソースではむしろ普通のことで、Avelino らによると、GitHub の人気プロジェクト133件のうち65%はトラック係数が2以下だった。開発者が二人抜けるだけで、大半のファイルを書いた人がいなくなる。知識を広げるのは、来ないかもしれない損失に備えて今の時間を使うことなので、誰かがはっきり目標に掲げない限り、スケジュールの議論では毎回負ける。
+      counter:
+        name: 所有の深さ
+        note: |-
+          ある領域を持つ専門家は、少しずつ知っている人の持ち回りよりずっと速く動き、問題にも多く気づく。小さなチームがあらゆる知識を二人目にも持たせようとすると、ない時間を使うことになる
+      guideline: |-
+        一人しか変更も運用もできない箇所を洗い出す。それぞれについて、誰も読まない引き継ぎ文書を書くのではなく、次の実際の変更で二人目をペアにつける。オンコールとコードレビューを持ち回りにして、普段の仕事のついでに知識が移るようにする。予定された不在は訓練として扱う。一週間の休みでシステムが止まるなら、誰かが本当に辞める前に直す。
+      source: |-
+        出所は口伝。主要人物が「バスにはねられたら」プロジェクトはどうなるのかという問いは 1994 年には出回っており、この年 Michael McLay が Python のメーリングリストに「If Guido was hit by a bus?」を投稿している。計測は Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente『A Novel Approach for Estimating Truck Factors』(ICPC, 2016)。トラック係数の定義 ("the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated") と、"the majority of our target systems (65%) have TF ≤ 2" という結果の出典。
+
+  - slug: pesticide-paradox
+    tag: maintainability
+    source_url: https://openlibrary.org/books/OL2205629M/Software_testing_techniques
+    see_also:
+      - beyonce-rule
+      - chaos-engineering
+    en:
+      title: Pesticide Paradox
+      concept: |-
+        Every way of finding bugs leaves behind the bugs it cannot find, so a test suite that never changes finds fewer and fewer.
+      mechanism: |-
+        A test method catches a particular kind of bug, and once a team has run it for a while those bugs are fixed and developers learn not to write them. What remains are the bugs the method is blind to, so the same tests keep passing while the defects move to places they do not look. As with insects after seasons of the same pesticide, what survives is what the treatment cannot kill. A green suite then shows how well the code avoids yesterday's bugs, not how few bugs it has.
+      counter:
+        name: Old Tests Still Guard
+        note: |-
+          a test that has not failed in years still keeps a fixed bug from coming back and pins behavior others rely on, so retiring old tests to chase new bugs gives up protection they still provide
+      guideline: |-
+        Keep the regression suite, but do not count on it to find new bugs. Add tests aimed at what the suite does not exercise: new inputs, fuzzing, property-based tests, exploratory sessions. When a bug escapes to production, ask which kind of test would have caught it and add that kind, not only that one case. Review the suite on a schedule and remove tests that duplicate each other.
+      source: |-
+        Boris Beizer, *Software Testing Techniques* (2nd ed., Van Nostrand Reinhold, 1990), "The Pesticide Paradox and the Complexity Barrier" — "Every method you use to prevent or find bugs leaves a residue of subtler bugs against which those methods are ineffectual", and "Test suites wear out."
+    ja:
+      title: 殺虫剤のパラドックス
+      concept: バグを見つける方法はどれも、その方法では見つからないバグを残す。だから変わらないテストスイートが見つけるバグは減っていく。
+      mechanism: |-
+        テスト手法は特定の種類のバグを捕まえる。しばらく使い続けると、その種類のバグは直され、開発者もそれを書かなくなる。残るのはその手法から見えないバグなので、同じテストは通り続け、欠陥はテストが見ていない場所へ移っていく。同じ殺虫剤を何シーズンも撒いた後に残るのが、その薬では死なない虫であるのと同じだ。そうなると、テストが全部通ることが示すのは、コードが昨日のバグをどれだけ避けているかであって、バグがどれだけ少ないかではない。
+      counter:
+        name: 古いテストの守り
+        note: |-
+          何年も落ちていないテストも、直したバグの再発を止め、他人が頼る挙動を固定している。新しいバグを追うために古いテストを捨てれば、今も効いている守りを失う
+      guideline: |-
+        回帰テストは残すが、それで新しいバグが見つかるとは期待しない。新しい入力、ファジング、プロパティベーステスト、探索的テストなど、スイートが確かめていないところを狙うテストを足す。本番にバグが漏れたら、どの種類のテストなら捕まえられたかを考え、その一件だけでなく、その種類のテストを足す。スイートは定期的に見直し、互いに重複するテストは消す。
+      source: |-
+        Boris Beizer『Software Testing Techniques』(第 2 版、Van Nostrand Reinhold, 1990)「The Pesticide Paradox and the Complexity Barrier」。"Every method you use to prevent or find bugs leaves a residue of subtler bugs against which those methods are ineffectual" と "Test suites wear out." の出典。

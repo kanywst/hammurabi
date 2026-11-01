@@ -648,3 +648,22 @@ figures:
     author: "Michael Holloway"
     page: "https://commons.wikimedia.org/wiki/File:Dan_McKinley_-_Wikimedia_Dev_Summit_2018.png"
     focus: { x: 0.73, y: 0.43, zoom: 2.5 }
+  - slug: technical-debt
+    kind: person
+    name: "Ward Cunningham"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Ward_Cunningham_-_Commons-1_%28cropped%29.jpg/500px-Ward_Cunningham_-_Commons-1_%28cropped%29.jpg"
+    license: "CC BY-SA 3.0"
+    author: "Carrigg Photography for the Wikimedia Foundation"
+    page: "https://commons.wikimedia.org/wiki/File:Ward_Cunningham_-_Commons-1_(cropped).jpg"
+  - slug: lehmans-laws
+    kind: person
+    name: "Meir M. Lehman"
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/e1/Meir_Manny_Lehman.jpg"
+    license: "CC BY-SA 4.0"
+    author: "Hilehman"
+    page: "https://commons.wikimedia.org/wiki/File:Meir_Manny_Lehman.jpg"
+  - slug: bus-factor
+    kind: none
+  - slug: pesticide-paradox
+    kind: person
+    name: "Boris Beizer"

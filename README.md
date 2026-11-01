@@ -3,7 +3,7 @@
 **Engineering laws, each with its counter-force.** Every article also carries a field guideline and a primary source.
 
 [![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=1d47b8&labelColor=17181a)](https://github.com/kanywst/hammurabi/stargazers)
-[![laws](https://img.shields.io/badge/laws-91-1d47b8?style=for-the-badge&labelColor=17181a)](#the-codex)
+[![laws](https://img.shields.io/badge/laws-95-1d47b8?style=for-the-badge&labelColor=17181a)](#the-codex)
 [![site](https://img.shields.io/badge/read-the%20codex-1d47b8?style=for-the-badge&labelColor=17181a)](https://kanywst.github.io/hammurabi/)
 [![license](https://img.shields.io/badge/content-CC%20BY--SA%204.0-5c5f64?style=for-the-badge&labelColor=17181a)](./LICENSE)
 
@@ -48,13 +48,13 @@ The `§` number is a stable display label, assigned in file order. The permanent
 **Start from a situation**
 
 - **Estimates keep slipping:** [Hofstadter's Law](#hofstadters-law) · [Ninety-Ninety Rule](#ninety-ninety-rule) · [Parkinson's Law](#parkinsons-law) · [Brooks' Law](#brooks-law) · [Fixed Time, Variable Scope](#fixed-time-variable-scope)
-- **The team is growing:** [Brooks' Law](#brooks-law) · [Dunbar's Number](#dunbars-number) · [Ringelmann Effect](#ringelmann-effect) · [Conway's Law](#conways-law) · [Bystander Effect](#bystander-effect) · [Context, Not Control](#context-not-control)
+- **The team is growing:** [Brooks' Law](#brooks-law) · [Dunbar's Number](#dunbars-number) · [Ringelmann Effect](#ringelmann-effect) · [Conway's Law](#conways-law) · [Bystander Effect](#bystander-effect) · [Context, Not Control](#context-not-control) · [Bus Factor](#bus-factor)
 - **A metric is being gamed:** [Goodhart's Law](#goodharts-law) · [Cobra Effect](#cobra-effect) · [Shirky Principle](#shirky-principle)
 - **The decision is stuck:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Disagree and Commit](#disagree-and-commit) · [Law of Triviality](#law-of-triviality) · [Sunk Cost Fallacy](#sunk-cost-fallacy)
-- **After an incident:** [Blameless Postmortem](#blameless-postmortem) · [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory) · [Hanlon's Razor](#hanlons-razor) · [Ironies of Automation](#ironies-of-automation) · [Five Whys](#five-whys) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions)
-- **Reliability versus shipping speed:** [Error Budget](#error-budget) · [Toil](#toil) · [Normalization of Deviance](#normalization-of-deviance) · [Murphy's Law](#murphys-law) · [You Build It, You Run It](#you-build-it-you-run-it) · [Andon (Stop the Line)](#andon-stop-the-line) · [Chaos Engineering](#chaos-engineering)
+- **After an incident:** [Blameless Postmortem](#blameless-postmortem) · [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory) · [Hanlon's Razor](#hanlons-razor) · [Ironies of Automation](#ironies-of-automation) · [Five Whys](#five-whys) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Pesticide Paradox](#pesticide-paradox)
+- **Reliability versus shipping speed:** [Error Budget](#error-budget) · [Toil](#toil) · [Normalization of Deviance](#normalization-of-deviance) · [Murphy's Law](#murphys-law) · [You Build It, You Run It](#you-build-it-you-run-it) · [Andon (Stop the Line)](#andon-stop-the-line) · [Chaos Engineering](#chaos-engineering) · [Technical Debt](#technical-debt)
 - **Something is too slow:** [Amdahl's Law](#amdahls-law) · [Theory of Constraints](#theory-of-constraints) · [Premature Optimization](#premature-optimization) · [The Tail at Scale](#the-tail-at-scale) · [Little's Law](#littles-law)
-- **Deleting or rewriting old code:** [Chesterton's Fence](#chestertons-fence) · [Second-System Effect](#second-system-effect) · [Gall's Law](#galls-law) · [Hyrum's Law](#hyrums-law) · [Eagleson's Law](#eaglesons-law) · [Boy Scout Rule](#boy-scout-rule) · [Strangler Fig](#strangler-fig) · [Beyoncé Rule](#beyoncé-rule) · [Churn Rule](#churn-rule)
+- **Deleting or rewriting old code:** [Chesterton's Fence](#chestertons-fence) · [Second-System Effect](#second-system-effect) · [Gall's Law](#galls-law) · [Hyrum's Law](#hyrums-law) · [Eagleson's Law](#eaglesons-law) · [Boy Scout Rule](#boy-scout-rule) · [Strangler Fig](#strangler-fig) · [Beyoncé Rule](#beyoncé-rule) · [Churn Rule](#churn-rule) · [Technical Debt](#technical-debt) · [Lehman's Laws of Software Evolution](#lehmans-laws-of-software-evolution)
 - **Designing an API or interface:** [Hyrum's Law](#hyrums-law) · [Postel's Law](#postels-law) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Law of Leaky Abstractions](#law-of-leaky-abstractions) · [Tesler's Law](#teslers-law) · [Beyoncé Rule](#beyoncé-rule)
 - **Starting something new:** [Working Backwards](#working-backwards) · [YAGNI](#yagni) · [Gall's Law](#galls-law) · [Worse is Better](#worse-is-better) · [KISS Principle](#kiss-principle) · [XY Problem](#xy-problem)
 - **Choosing a technology:** [Lindy Effect](#lindy-effect) · [Cargo Cult Engineering](#cargo-cult-engineering) · [Amara's Law](#amaras-law) · [Survivorship Bias](#survivorship-bias) · [Choose Boring Technology](#choose-boring-technology)
@@ -156,6 +156,10 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `89` | [Fixed Time, Variable Scope](#fixed-time-variable-scope) | Estimation | When scope is fixed and time is not, the date slips and the scope stays; fixing the time instead forces a choice about what matters. |
 | `90` | [Strangler Fig](#strangler-fig) | Maintainability | Replacing a live system piece by piece around its edges is usually safer than replacing it all at once. |
 | `91` | [Choose Boring Technology](#choose-boring-technology) | Decision | Every unfamiliar technology a team adopts brings unknown failure modes and a permanent operating cost, and a team can afford only a few of them. |
+| `92` | [Technical Debt](#technical-debt) | Maintainability | Code shipped before the team fully understands the problem charges extra on every later change until someone rewrites it. |
+| `93` | [Lehman's Laws of Software Evolution](#lehmans-laws-of-software-evolution) | Maintainability | A program in real use must keep changing or grow less useful, and each change makes it more complex unless work is spent to simplify it. |
+| `94` | [Bus Factor](#bus-factor) | Organization | The fewer people who can keep a system running, the more its future depends on each of them staying. |
+| `95` | [Pesticide Paradox](#pesticide-paradox) | Maintainability | Every way of finding bugs leaves behind the bugs it cannot find, so a test suite that never changes finds fewer and fewer. |
 
 ### Type 1 vs Type 2 Decisions
 
@@ -459,7 +463,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Single Point of Failure** — naming one owner every time makes that person the bottleneck and the bus factor; the owner should coordinate the response, not do all of it.
 - **Guideline:** Never say "Can someone look at this?" Instead, say "@name, you are investigating this." Assign a single, named owner for every incident.
 - **Source:** John M. Darley & Bibb Latané, *Bystander Intervention in Emergencies: Diffusion of Responsibility* (JPSP, 1968). — [source ↗](https://doi.org/10.1037/h0025589)
-- **See also:** [Hanlon's Razor](#hanlons-razor) · [Ringelmann Effect](#ringelmann-effect) · [Blameless Postmortem](#blameless-postmortem)
+- **See also:** [Hanlon's Razor](#hanlons-razor) · [Ringelmann Effect](#ringelmann-effect) · [Blameless Postmortem](#blameless-postmortem) · [Bus Factor](#bus-factor)
 
 ### Murphy's Law
 
@@ -481,7 +485,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **One Reason Per Diff** — cleanup riding along with a behavior change hides the change, and a pull request that also renames forty things is one nobody reviews.
 - **Guideline:** Always leave the code cleaner than you found it, and keep the cleanup small enough to read inside the same diff — a one-line rename, a clearer comment, a deleted dead branch. Anything bigger gets its own commit.
 - **Source:** Robert C. Martin, *The Boy Scout Rule*, in Kevlin Henney (ed.), *97 Things Every Programmer Should Know* (O'Reilly, 2010) — adapting Baden-Powell's "leave this world a little better than you found it". Also stated in *Clean Code* (2008). — [source ↗](https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html)
-- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Broken Windows Theory](#broken-windows-theory) · [Approve What Improves Code Health](#approve-what-improves-code-health)
+- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Broken Windows Theory](#broken-windows-theory) · [Approve What Improves Code Health](#approve-what-improves-code-health) · [Technical Debt](#technical-debt) · [Lehman's Laws of Software Evolution](#lehmans-laws-of-software-evolution)
 
 ### Tesler's Law
 
@@ -514,7 +518,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Write for Your Audience** — docs that explain everything bury the expert reader; an operator at 3 AM needs the command, not the tutorial.
 - **Guideline:** Before shipping documentation or a public API, have someone who has never touched the system attempt the task while you watch silently. Their confusion points exactly at the assumptions you forgot to spell out.
 - **Source:** Colin Camerer, George Loewenstein & Martin Weber, *The Curse of Knowledge in Economic Settings: An Experimental Analysis* (Journal of Political Economy, 1989). — [source ↗](https://doi.org/10.1086/261651)
-- **See also:** [XY Problem](#xy-problem) · [Dunning-Kruger Effect](#dunning-kruger-effect) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Context, Not Control](#context-not-control)
+- **See also:** [XY Problem](#xy-problem) · [Dunning-Kruger Effect](#dunning-kruger-effect) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Context, Not Control](#context-not-control) · [Bus Factor](#bus-factor)
 
 ### Swiss Cheese Model
 
@@ -1121,7 +1125,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **First, Do No Harm** — deliberately degrading a system real customers depend on spends their trust, and much of the same knowledge comes cheaper from fault-injection tests, game days and design review; on a system already known to be fragile an experiment only confirms what you knew, so fix it first.
 - **Guideline:** Pick one dependency, write down what steady state should look like while it is down, and take it away in production during working hours with an abort switch and someone watching. Start with a small slice of traffic, widen only after the system holds, and do not experiment on a service you already expect to fall over.
 - **Source:** *Principles of Chaos Engineering* (principlesofchaos.org, last updated March 2019) — the definition, the steady-state hypothesis, running experiments in production and minimizing blast radius; Netflix Technology Blog, *5 Lessons We've Learned Using AWS* (2010) — the introduction of Chaos Monkey. — [source ↗](https://principlesofchaos.org/)
-- **See also:** [Murphy's Law](#murphys-law) · [Fallacies of Distributed Computing](#fallacies-of-distributed-computing) · [Avoid Fallback](#avoid-fallback)
+- **See also:** [Murphy's Law](#murphys-law) · [Fallacies of Distributed Computing](#fallacies-of-distributed-computing) · [Avoid Fallback](#avoid-fallback) · [Pesticide Paradox](#pesticide-paradox)
 
 ### Context, Not Control
 
@@ -1154,7 +1158,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Churn Rule** — a test-shaped contract tells the changer what it broke, not that breaking it was free; the team making the change still owes its users the migration.
 - **Guideline:** Write a test for every behavior your product relies on in a shared library or dependency, and make sure it runs in the CI that gates other people's changes. When something breaks and no test caught it, add that test before closing the incident. If you own the shared code, say up front that tests are the contract, and do not invoke the rule unless your changes actually run consumers' tests.
 - **Source:** Adam Bender, "Testing Overview", in Winters, Manshreck & Wright, *Software Engineering at Google* (O'Reilly, 2020), ch. 11 — "If you liked it, then you shoulda put a test on it", invoked by infrastructure teams making changes across the entire codebase. — [source ↗](https://abseil.io/resources/swe-book/html/ch11.html)
-- **See also:** [Hyrum's Law](#hyrums-law) · [Churn Rule](#churn-rule)
+- **See also:** [Hyrum's Law](#hyrums-law) · [Churn Rule](#churn-rule) · [Pesticide Paradox](#pesticide-paradox)
 
 ### Churn Rule
 
@@ -1176,7 +1180,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Quality as the Hidden Variable** — under a fixed date a team that cannot or will not cut scope cuts tests, review and error handling instead, and some work (a protocol, a compliance requirement) has a floor below which no slice is worth shipping.
 - **Guideline:** Before the work starts, decide how much time it is worth, not how long it will take, and shape the scope to fit. When the time runs out, stop by default: ship what is done if it stands on its own, otherwise reshape it and decide afresh whether to bet on it again; do not quietly extend. Cut features before tests or review, and do not fix the time on work that cannot be sliced below a coherent minimum.
 - **Source:** Ryan Singer, *Shape Up* (Basecamp, 2019), ch. 3 "Set Boundaries" — the appetite and "fixed time, variable scope"; ch. 8 "The Betting Table" — the circuit breaker: "by default the project doesn't get an extension". Earlier, 37signals, *Getting Real* (2006), "Fix Time and Budget, Flex Scope": "Never throw more time or money at a problem, just scale back the scope." — [source ↗](https://basecamp.com/shapeup/1.2-chapter-03)
-- **See also:** [Parkinson's Law](#parkinsons-law) · [Hofstadter's Law](#hofstadters-law) · [Sunk Cost Fallacy](#sunk-cost-fallacy)
+- **See also:** [Parkinson's Law](#parkinsons-law) · [Hofstadter's Law](#hofstadters-law) · [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Technical Debt](#technical-debt)
 
 ### Strangler Fig
 
@@ -1187,7 +1191,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Clean Cutover** — when the old system cannot be intercepted cleanly, or the transitional layer would cost more than the rewrite, a single planned switch avoids the common end state of incremental migration: the easy routes move, the tangled core never does, and the organization runs and pays for two systems indefinitely.
 - **Guideline:** Put an interception point (a proxy, router or facade) in front of the legacy system and move one slice of behavior behind it at a time, starting with one that delivers value on its own. Define "done" at the start, track the share of traffic still on the old path, and budget deleting the old code and the transitional layer as part of the project, not as cleanup for later.
 - **Source:** Martin Fowler, *Strangler Fig Application* (martinfowler.com; originally "Strangler Application", 2004; rewritten 2024) — the fig metaphor and the case that the reduced risk and earlier value of gradual modernization outweigh the cost of transitional architecture. — [source ↗](https://martinfowler.com/bliki/StranglerFigApplication.html)
-- **See also:** [Second-System Effect](#second-system-effect) · [Gall's Law](#galls-law) · [Ninety-Ninety Rule](#ninety-ninety-rule)
+- **See also:** [Second-System Effect](#second-system-effect) · [Gall's Law](#galls-law) · [Ninety-Ninety Rule](#ninety-ninety-rule) · [Lehman's Laws of Software Evolution](#lehmans-laws-of-software-evolution)
 
 ### Choose Boring Technology
 
@@ -1199,6 +1203,50 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Guideline:** Before adding a language, datastore or framework, write down what it would take to do the job with what you already run and why that falls short, and make the decision with everyone who will operate it, not inside one team. Spend new technology only where it sets the product apart. When you do adopt something, plan to retire what it replaces.
 - **Source:** Dan McKinley, *Choose Boring Technology* (mcfunley.com, 2015) — "every company gets about three innovation tokens", drawn from his years at Etsy. — [source ↗](https://mcfunley.com/choose-boring-technology)
 - **See also:** [KISS Principle](#kiss-principle) · [Lindy Effect](#lindy-effect)
+
+### Technical Debt
+
+`§ 92` · Maintainability
+
+- **Concept:** Code shipped before the team fully understands the problem charges extra on every later change until someone rewrites it.
+- **Mechanism:** The first version of a program records what the team understood when it wrote it, and that understanding keeps improving after the code stops changing. Every later change has to work around the gap between the two, and the extra effort recurs on each change the way interest recurs on a loan. The cost is spread thin and lands on whoever touches the code next, so no single change makes repaying it look worthwhile, and the balance grows until the whole team slows down. Cunningham did not object to the shortcut itself; his warning was about debt that is not paid back with a rewrite while it is still small.
+- **Counter:** **Prudent Debt** — shipping earlier can be worth more than the interest, and debt in code that is about to be deleted or will never change again never comes due, so paying it down there buys nothing.
+- **Guideline:** Treat a shortcut as a loan: write down where it is and what repaying it would take, and schedule the rewrite while the code is still fresh in someone's head. Repay first where the team changes code most often, not where the code merely looks worst. Do not let debt pile up unrecorded.
+- **Source:** Ward Cunningham, *The WyCash Portfolio Management System* (OOPSLA '92 Experience Report, 1992) — "Shipping first time code is like going into debt. A little debt speeds development so long as it is paid back promptly with a rewrite." and "Every minute spent on not-quite-right code counts as interest on that debt." The prudent/reckless distinction is from Martin Fowler, *Technical Debt Quadrant* (martinfowler.com, 2009). — [source ↗](https://c2.com/doc/oopsla92.html)
+- **See also:** [Lehman's Laws of Software Evolution](#lehmans-laws-of-software-evolution) · [Boy Scout Rule](#boy-scout-rule) · [Fixed Time, Variable Scope](#fixed-time-variable-scope)
+
+### Lehman's Laws of Software Evolution
+
+`§ 93` · Maintainability
+
+- **Concept:** A program in real use must keep changing or grow less useful, and each change makes it more complex unless work is spent to simplify it.
+- **Mechanism:** A program that automates part of the world is a model of that world, and the world keeps moving: users' needs shift, the business changes, and the program's own arrival changes how people work. So the program is never finished, and each release reopens the gap between the model and what it models. Changes are made under pressure by people who do not hold the whole design in mind, so special cases and dependencies are added faster than they are removed, and the structure decays. Lehman drew the laws from release data on large systems over many years, and he was clear that they come from the habits of people and organizations, not from physics.
+- **Counter:** **Stability Is a Feature** — every change makes users relearn something and breaks someone who relied on the old behavior, so for a protocol, file format or tool that others build on, freezing the design can be worth more than keeping up with the world.
+- **Guideline:** Budget ongoing change as the normal cost of a program in use, not as an exception after launch. Reserve part of every cycle for work that reduces complexity, such as deleting dead paths and merging special cases, and track a complexity measure across releases so you see the trend before it stalls you. Freeze only what other people build on, and say so when you do.
+- **Source:** Meir M. Lehman, *Programs, Life Cycles, and Laws of Software Evolution* (Proceedings of the IEEE, vol. 68, no. 9, 1980), Table I — Continuing Change: "A program that is used and that as an implementation of its specification reflects some other reality, undergoes continual change or becomes progressively less useful."; Increasing Complexity: "As an evolving program is continually changed, its complexity, reflecting deteriorating structure, increases unless work is done to maintain or reduce it." — [source ↗](https://doi.org/10.1109/PROC.1980.11805)
+- **See also:** [Technical Debt](#technical-debt) · [Boy Scout Rule](#boy-scout-rule) · [Strangler Fig](#strangler-fig)
+
+### Bus Factor
+
+`§ 94` · Organization
+
+- **Concept:** The fewer people who can keep a system running, the more its future depends on each of them staying.
+- **Mechanism:** Knowledge concentrates on its own: whoever wrote a part fixes it fastest, so the next change goes to them too, and every round widens the gap. Nobody decides to make one person indispensable; it is the cheapest choice each time, and the risk stays invisible until that person leaves, falls ill or simply goes on vacation. In open source it is the norm: Avelino and colleagues found that 65% of 133 popular GitHub projects have a truck factor of two or less, meaning that losing at most two developers would leave most of their files without an active author. Spreading knowledge spends time now against a loss that may never come, so it loses every scheduling argument unless someone makes it an explicit goal.
+- **Counter:** **Depth of Ownership** — a specialist who owns an area works far faster and notices more than a rotation of people who each know a little, and a small team that copies everything into a second head spends time it does not have.
+- **Guideline:** List the parts of your system that only one person can change or operate. For each, pair a second person on the next real change instead of writing a handover document nobody reads. Rotate on-call and code review so knowledge moves as a side effect of normal work. Treat a planned absence as a drill: if a week away stalls a system, fix that before someone leaves for good.
+- **Source:** Folklore: the question of what becomes of a project if a key person is "hit by a bus" was in circulation by 1994, when Michael McLay posted "If Guido was hit by a bus?" to the Python mailing list. Measured in Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente, *A Novel Approach for Estimating Truck Factors* (ICPC, 2016) — the truck factor as "the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated", and the finding that "the majority of our target systems (65%) have TF ≤ 2". — [source ↗](https://doi.org/10.1109/ICPC.2016.7503718)
+- **See also:** [Bystander Effect](#bystander-effect) · [Curse of Knowledge](#curse-of-knowledge)
+
+### Pesticide Paradox
+
+`§ 95` · Maintainability
+
+- **Concept:** Every way of finding bugs leaves behind the bugs it cannot find, so a test suite that never changes finds fewer and fewer.
+- **Mechanism:** A test method catches a particular kind of bug, and once a team has run it for a while those bugs are fixed and developers learn not to write them. What remains are the bugs the method is blind to, so the same tests keep passing while the defects move to places they do not look. As with insects after seasons of the same pesticide, what survives is what the treatment cannot kill. A green suite then shows how well the code avoids yesterday's bugs, not how few bugs it has.
+- **Counter:** **Old Tests Still Guard** — a test that has not failed in years still keeps a fixed bug from coming back and pins behavior others rely on, so retiring old tests to chase new bugs gives up protection they still provide.
+- **Guideline:** Keep the regression suite, but do not count on it to find new bugs. Add tests aimed at what the suite does not exercise: new inputs, fuzzing, property-based tests, exploratory sessions. When a bug escapes to production, ask which kind of test would have caught it and add that kind, not only that one case. Review the suite on a schedule and remove tests that duplicate each other.
+- **Source:** Boris Beizer, *Software Testing Techniques* (2nd ed., Van Nostrand Reinhold, 1990), "The Pesticide Paradox and the Complexity Barrier" — "Every method you use to prevent or find bugs leaves a residue of subtler bugs against which those methods are ineffectual", and "Test suites wear out." — [source ↗](https://openlibrary.org/books/OL2205629M/Software_testing_techniques)
+- **See also:** [Beyoncé Rule](#beyoncé-rule) · [Chaos Engineering](#chaos-engineering)
 
 <!-- CODEX:END -->
 
