@@ -2377,7 +2377,7 @@ export const laws: Law[] = [
         "name": "意図的な摩擦",
         "note": "ボタンが押しやすくなれば、同じ理屈で誤って押すことも増える。取り消せない操作では、遅くて押しにくいことこそが狙いだ"
       },
-      "guideline": "よく使う操作は大きくし、ポインタが今ある場所の近くに置く。破壊的な操作は小さくし、よく使う操作から離して、確認を挟む。画面の端と角はカーソルがそこで止まるので、無限に大きいターゲットと同じになる。だから主要な操作はそこに置く。",
+      "guideline": "よく使う操作は大きくし、ポインタが今ある場所の近くに置く。破壊的な操作は小さくし、よく使う操作から離して、確認を挟む。画面の端と角はカーソルがそこで止まるので、無限に大きいターゲットに近くなる。だから主要な操作はそこに置く。",
       "source": "Paul M. Fitts『The Information Capacity of the Human Motor System in Controlling the Amplitude of Movement』(Journal of Experimental Psychology, 1954)。"
     }
   },
