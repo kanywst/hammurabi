@@ -9,7 +9,14 @@ export const SITE_URL = 'https://kanywst.github.io/hammurabi';
 export const REPO_URL = 'https://github.com/kanywst/hammurabi';
 
 const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-const REQUIRED_TEXT = ['title', 'concept', 'mechanism', 'guideline', 'source'];
+const REQUIRED_TEXT = ['title', 'concept', 'stance', 'mechanism', 'guideline', 'source'];
+
+/**
+ * The stance is the one line a reader keeps after closing the article, so it
+ * has to stay short enough to remember and must not read as a paragraph.
+ * Lengths are characters: Japanese packs about twice the meaning per one.
+ */
+export const STANCE_MAX = { en: 80, ja: 32 };
 
 /**
  * GitHub's heading-anchor algorithm: lowercase, drop every character that is
@@ -112,6 +119,14 @@ export function loadCodex({ file = join(ROOT, 'data', 'laws.yaml') } = {}) {
         } else if ((value.match(/\*\*/g) ?? []).length % 2 !== 0) {
           fail(`${at}.${locale}.${field} has an unbalanced ** emphasis marker`);
         }
+      }
+      if (typeof loc.stance === 'string' && loc.stance.trim()) {
+        if (/\n/.test(loc.stance)) fail(`${at}.${locale}.stance must be a single line`);
+        if (/[.。]$/.test(loc.stance)) fail(`${at}.${locale}.stance must not end with a full stop`);
+        if ([...loc.stance].length > STANCE_MAX[locale]) {
+          fail(`${at}.${locale}.stance is longer than ${STANCE_MAX[locale]} characters`);
+        }
+        if (loc.stance === loc.concept) fail(`${at}.${locale}.stance repeats the concept`);
       }
       if (typeof loc.counter?.name !== 'string' || loc.counter.name.trim() === '') {
         fail(`${at}.${locale}.counter.name is empty`);

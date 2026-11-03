@@ -52,6 +52,7 @@ const COPY = {
   en: {
     indexHead: ['§', 'Law', 'Category', 'The core idea'],
     concept: 'Concept',
+    stance: 'Keep in mind',
     mechanism: 'Mechanism',
     counter: 'Counter',
     guideline: 'Guideline',
@@ -69,6 +70,7 @@ const COPY = {
     bySituation: '状況から引く',
     allLaws: 'すべての法則',
     concept: '概念',
+    stance: '心得',
     mechanism: 'メカニズム',
     counter: '対立概念',
     guideline: '判断の指針',
@@ -116,6 +118,7 @@ function entry(law, tags, locale, bySlug, depth) {
     `\`§ ${article(law.number)}\` · ${tags[law.tag][locale]}`,
     '',
     `- **${t.concept}:** ${loc.concept}`,
+    `- **${t.stance}:** ${loc.stance}`,
     `- **${t.mechanism}:** ${loc.mechanism}`,
     `- **${t.counter}:** ${counter}`,
     `- **${t.guideline}:** ${loc.guideline}`,
@@ -271,6 +274,8 @@ export interface Counter {
 export interface LawText {
   title: string;
   concept: string;
+  /** The one line to keep in mind: an attitude, not a description. */
+  stance: string;
   mechanism: string;
   counter: Counter;
   guideline: string;

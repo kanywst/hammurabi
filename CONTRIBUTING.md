@@ -53,6 +53,7 @@ Append to the end of `laws:` in `data/laws.yaml`. Never insert into the middle �
     en:
       title: Some Law
       concept: One line. What force is this?
+      stance: The one line to keep in mind
       mechanism: |-
         Why it happens. Usually a fact about people or about systems, not about software.
       counter:
@@ -64,11 +65,12 @@ Append to the end of `laws:` in `data/laws.yaml`. Never insert into the middle �
         Author, *Work* (Venue, Year) — what this source is cited for.
     ja:
       title: 何々の法則
-      # …the same five fields
+      # …the same six fields
 ```
 
 Notes on the fields:
 
+- **`stance`** answers "so what should I keep in mind?" in one line: an attitude the reader can carry into the next decision, not a description of the law. The concept says what happens; the stance says how to stand toward it; the guideline says what to do on Monday. No full stop at the end, at most 80 characters in English and 32 in Japanese. `npm run validate` enforces the shape, not the quality, so read it aloud: if it only restates the concept, rewrite it.
 - **`slug`** is permanent. It is the article's URL on the website (`/laws/<slug>/`) and its identity in `see_also`. Once it has shipped it must not change, even if the title does.
 - **`tag`** must already exist under `tags:` at the top of the file. Adding a category is fine, but a category with one member is usually a sign the law belongs in an existing one.
 - **`source_url`** must be `https` and should point at the primary source: the DOI, the RFC, the author's own page, the publisher's record. Not a summary, not a Medium post. Where the primary source is offline or paywalled, an encyclopedia entry that cites it properly is acceptable.

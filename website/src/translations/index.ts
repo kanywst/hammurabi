@@ -33,6 +33,7 @@ export const translations = {
       backToTop: 'Back to top',
     },
     law: {
+      stance: 'Keep in mind',
       whatToDo: 'What to do',
       why: 'Why it happens',
       whenNot: 'When it stops applying',
@@ -106,6 +107,7 @@ export const translations = {
       backToTop: 'ページの先頭へ',
     },
     law: {
+      stance: '心得',
       whatToDo: 'どうするか',
       why: 'なぜ起きるか',
       whenNot: '当てはまらなくなるとき',
