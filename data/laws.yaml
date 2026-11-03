@@ -101,6 +101,7 @@ situations:
       - five-whys
       - mechanisms-not-good-intentions
       - pesticide-paradox
+      - genchi-genbutsu
   - key: reliability-vs-speed
     en: Reliability versus shipping speed
     ja: 信頼性と開発速度がぶつかる
@@ -697,6 +698,7 @@ laws:
       - shirky-principle
       - error-budget
       - mechanisms-not-good-intentions
+      - genchi-genbutsu
     en:
       title: Goodhart's Law
       concept: A number stops measuring well once people are rewarded for moving it.
@@ -3147,6 +3149,7 @@ laws:
       - normalization-of-deviance
       - error-budget
       - five-whys
+      - genchi-genbutsu
     en:
       title: Andon (Stop the Line)
       concept: |-
@@ -3189,6 +3192,7 @@ laws:
       - blameless-postmortem
       - andon
       - xy-problem
+      - genchi-genbutsu
     en:
       title: Five Whys
       concept: |-
@@ -3711,3 +3715,38 @@ laws:
         社内のものも外部のものも、共有する依存先はバージョンを一つに保つ。アップグレードは、すべての呼び出し側を移す一つの変更として行う。一度で入らないアップグレードに限り、二つ目のバージョンを別の名前で、オーナーと期限を付けて許し、期限が来たら消す。チームが共有ライブラリを勝手にフォークしたり固定したりするのは認めない。セキュリティ、法務、リリースの要件が本当に違うプロジェクトはリポジトリを分けてよいが、それぞれの中では依存先ごとにバージョンを一つに保つ。
       source: |-
         Titus Winters「Version Control and Branch Management」、Winters, Manshreck & Wright『Software Engineering at Google』(O'Reilly, 2020) 第 16 章。"For every dependency in our repository, there must be only one version of that dependency to choose."、シェーディングは "work neither in theory nor in practice"、"What is important is not whether we focus on monorepo; it's to adhere to the One-Version principle to the greatest extent possible" の出典。Google Open Source『The One Version Rule』(サードパーティのポリシー) の "There may only be one version of a package in `//third_party`." も参照。対抗原理は Russ Cox『Semantic Import Versioning』(research!rsc, 2018) の "to make it possible to upgrade the clients of that package one at a time and still have a buildable result" から。
+
+  - slug: genchi-genbutsu
+    tag: decision
+    source_url: https://www.toyota-global.com/company/history_of_toyota/75years/text/leaping_forward_as_a_global_corporation/chapter4/section7/item4.html
+    see_also:
+      - five-whys
+      - andon
+      - goodharts-law
+    en:
+      title: Genchi Genbutsu (Go and See)
+      concept: |-
+        Decisions made from reports drift away from what is actually happening, because each layer of summary drops the detail that did not fit its form.
+      mechanism: |-
+        A report is written by someone who chose what to include, in categories fixed before the problem appeared, so the anomaly that matters is the one most likely to be averaged away or left out. A dashboard shows only what someone thought to measure, and the failure nobody predicted has no panel. The further the person deciding sits from the work, the more layers of summary lie between them, and each layer is also shaped by what its writer expects the reader to want. Toyota made going to the source one of the five key concepts of the Toyota Way: find the facts where the work happens before deciding.
+      counter:
+        name: Law of Small Numbers
+        note: |-
+          a visit shows one shift, one user or one trace, and people treat a small sample as if it stood for the whole, so a vivid observation can override an aggregate that covers all the cases nobody went to see
+      guideline: |-
+        Before you decide on a fix, a priority or a postmortem conclusion, look at the primary evidence yourself: reproduce the bug, read the raw logs and the trace of one failing request, watch a real user hit the problem, or sit on the support queue for an hour. Use what you saw to question the dashboard, not to replace it, and check that the case is typical before acting on it at scale.
+      source: |-
+        Toyota Motor Corporation, *The Toyota Way 2001*, as recorded in Toyota's official history *75 Years of Toyota*, ch. 4, sec. 7 — "Genchi Genbutsu (go to the source to find the facts)", one of five key concepts compiled in April 2001; Toyota, *Sustainable Management Report 2016*, p. 23 — "go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed." The counter-force is Amos Tversky & Daniel Kahneman, *Belief in the Law of Small Numbers* (Psychological Bulletin, 1971).
+    ja:
+      title: 現地現物
+      concept: 報告をもとに下す判断は、実際に起きていることから離れていく。要約が一段挟まるたびに、その形式に収まらなかった細部が落ちるからだ。
+      mechanism: |-
+        報告は、何を入れるかを選んだ誰かが、問題が起きる前に決まっていた区分に沿って書く。だから肝心の異常ほど、平均にならされるか書き漏らされやすい。ダッシュボードには、誰かが測ろうと思ったものしか映らず、誰も予想しなかった障害の画面はない。判断する人が現場から遠いほど、間に挟まる要約は増える。どの段も、書き手が読み手の求めていると思うものに寄っていく。トヨタは現地現物をトヨタウェイの五つの柱の一つに据えた。判断の前に、仕事が行われている場所で事実をつかむ。
+      counter:
+        name: 少数の法則
+        note: |-
+          現場で見られるのは一つのシフト、一人の利用者、一本のトレースだ。人は小さな標本を全体の代表のように扱うので、鮮やかな一件の観察が、誰も見に行かなかった多数の事例を含む集計を押しのけてしまう
+      guideline: |-
+        修正、優先順位、ポストモーテムの結論を決める前に、一次の証拠を自分の目で確かめる。バグを再現する、生のログと失敗したリクエスト一件のトレースを読む、実際の利用者が問題にぶつかる様子を見る、一時間サポートの窓口に座る。見たものはダッシュボードを疑うのに使い、置き換えるのには使わない。大きく動く前に、その一件がよくある事例かどうかを確かめる。
+      source: |-
+        トヨタ自動車『トヨタウェイ 2001』。公式社史『トヨタ自動車75年史』第 4 章第 7 節の記録による。"Genchi Genbutsu (go to the source to find the facts)" は 2001 年 4 月にまとめられた五つの柱の一つ。トヨタ『Sustainable Management Report 2016』p. 23 の "go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed." も参照。対抗原理は Amos Tversky & Daniel Kahneman『Belief in the Law of Small Numbers』(Psychological Bulletin, 1971) から。

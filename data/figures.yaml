@@ -684,3 +684,10 @@ figures:
     logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
     license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
+  - slug: genchi-genbutsu
+    kind: person
+    name: "Kiichiro Toyoda"
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/af/Kiichiro_Toyoda.jpg"
+    license: "Public domain in Japan"
+    author: "Unknown author"
+    page: "https://commons.wikimedia.org/wiki/File:Kiichiro_Toyoda.jpg"
