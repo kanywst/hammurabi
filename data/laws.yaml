@@ -88,6 +88,7 @@ situations:
       - law-of-triviality
       - sunk-cost-fallacy
       - narratives-not-slides
+      - believability-weighted-decisions
   - key: after-incident
     en: After an incident
     ja: 障害が起きた後
@@ -349,6 +350,7 @@ laws:
       - parkinsons-law
       - disagree-and-commit
       - code-health-standard
+      - believability-weighted-decisions
     en:
       title: Law of Triviality
       concept: Discussion goes to the parts everyone understands, not the parts that matter.
@@ -1304,6 +1306,7 @@ laws:
     see_also:
       - curse-of-knowledge
       - peter-principle
+      - believability-weighted-decisions
     en:
       title: Dunning-Kruger Effect
       concept: People who are least skilled at something tend to overrate their ability the most.
@@ -2921,6 +2924,7 @@ laws:
     see_also:
       - type-1-vs-type-2-decisions
       - law-of-triviality
+      - believability-weighted-decisions
     en:
       title: Disagree and Commit
       concept: |-
@@ -3750,3 +3754,38 @@ laws:
         修正、優先順位、ポストモーテムの結論を決める前に、一次の証拠を自分の目で確かめる。バグを再現する、生のログと失敗したリクエスト一件のトレースを読む、実際の利用者が問題にぶつかる様子を見る、一時間サポートの窓口に座る。見たものはダッシュボードを疑うのに使い、置き換えるのには使わない。大きく動く前に、その一件がよくある事例かどうかを確かめる。
       source: |-
         トヨタ自動車『トヨタウェイ 2001』。公式社史『トヨタ自動車75年史』第 4 章第 7 節の記録による。"Genchi Genbutsu (go to the source to find the facts)" は 2001 年 4 月にまとめられた五つの柱の一つ。トヨタ『Sustainable Management Report 2016』p. 23 の "go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed." も参照。対抗原理は Amos Tversky & Daniel Kahneman『Belief in the Law of Small Numbers』(Psychological Bulletin, 1971) から。
+
+  - slug: believability-weighted-decisions
+    tag: decision
+    source_url: https://www.principles.com/principles/633d5d13-8610-425f-ad62-cd62347d9165/
+    see_also:
+      - disagree-and-commit
+      - dunning-kruger-effect
+      - law-of-triviality
+    en:
+      title: Believability-Weighted Decisions
+      concept: |-
+        When a group counts every opinion the same, or defers to rank, the people who have actually done the thing before are outvoted by those who have not.
+      mechanism: |-
+        In a design review everyone can form a view on every part, but only some of the room has built or run something like it. A show of hands gives the first-timer and the engineer who ran the last migration one vote each, and deferring to the most senior person only swaps one blind spot for another. Dalio's test is narrow and checkable: the most believable people have "repeatedly and successfully accomplished the thing in question" and can explain the cause and effect behind their view. Bridgewater shows the equal-weighted and the believability-weighted vote side by side; when they agree the matter is settled, and when they split, the split is where the information is.
+      counter:
+        name: Wisdom of Crowds
+        note: |-
+          when judgments are made independently, a plain equal-weight average is hard to beat (the median guess of Galton's fairground crowd was within 1 percent of the ox's weight), and picking experts in advance bets on a track record that may not carry over to the new question
+      guideline: |-
+        Before a contested technical call, ask who has built or run this kind of thing before and whether it worked, and give their view more weight than headcount or title. Collect views in writing before the discussion so they stay independent, and look at both the plain tally and the weighted one; where they disagree, dig in rather than letting the weighted side win by default. Base believability on outcomes you can check, such as systems shipped and postmortems, and drop the weighting for questions nobody on the team has faced before.
+      source: |-
+        Ray Dalio, *Principles: Life & Work* (Simon & Schuster, 2017), work principle "Believability Weight Your Decision Making" (principles.com) — "the best decisions are made by an idea meritocracy with believability-weighted decision making", the most believable people being those who "have repeatedly and successfully accomplished the thing in question", and a tool that "displays both the equal-weighted average and the believability-weighted results". Netflix's culture memo makes the same point: "not all opinions are created equal". The counter-force is Francis Galton, *Vox Populi* (Nature, 1907).
+    ja:
+      title: 信頼度で重みづけする意思決定
+      concept: 集団がどの意見も同じ一票と数えたり、役職に従ったりすると、実際にそれをやったことのある人が、やったことのない人に多数決で負ける。
+      mechanism: |-
+        設計レビューでは誰でもどの部分にも意見を持てるが、似たものを作ったり運用したりした経験があるのは一部の人だけだ。挙手で決めれば、初めて触る人も前回の移行をやり遂げたエンジニアも同じ一票になる。いちばん上の人に従っても、別の死角に置き換わるだけだ。Dalio の基準は狭く、確かめられる。最も信頼できるのは、問題になっていることを「繰り返し成功させてきた」うえで、自分の見解の因果を説明できる人だ。Bridgewater では、均等に数えた票と信頼度で重みづけした票を並べて示す。両者が一致すれば決着とし、割れたら、その割れ目にこそ情報がある。
+      counter:
+        name: 群衆の知恵
+        note: |-
+          判断が互いに独立していれば、均等な重みの単純な平均はなかなか負けない (Galton が見た品評会の群衆の推定の中央値は、牛の重さとの差が 1% もなかった)。専門家を前もって選ぶのは、過去の実績が新しい問いにも通じるほうに賭けることだ
+      guideline: |-
+        意見の割れる技術判断の前に、この種のものを作ったり運用したりした人は誰か、それはうまくいったかを確かめ、その人の見解を人数や肩書きより重く扱う。議論の前に意見を書面で集めて独立性を保ち、単純な集計と重みづけした集計の両方を見る。両者が食い違ったら、重みづけした側を自動的に勝たせず、掘り下げる。信頼度は、出荷したシステムやポストモーテムなど確かめられる結果に基づかせる。チームの誰も経験したことのない問いでは、重みづけをやめる。
+      source: |-
+        Ray Dalio『Principles: Life & Work』(Simon & Schuster, 2017) の仕事の原則「Believability Weight Your Decision Making」(principles.com)。"the best decisions are made by an idea meritocracy with believability-weighted decision making"、最も信頼できる人の条件 "have repeatedly and successfully accomplished the thing in question"、"displays both the equal-weighted average and the believability-weighted results" という道具の出典。Netflix のカルチャーメモも "not all opinions are created equal" と同じことを言う。対抗原理は Francis Galton『Vox Populi』(Nature, 1907) から。

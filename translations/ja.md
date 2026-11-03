@@ -3,7 +3,7 @@
 **エンジニアリングの法則と、その歯止め。** どの条にも、現場での指針と一次資料の出典を付けている。
 
 [![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=1d47b8&labelColor=17181a)](https://github.com/kanywst/hammurabi/stargazers)
-[![laws](https://img.shields.io/badge/%E6%B3%95%E5%89%87-98-1d47b8?style=for-the-badge&labelColor=17181a)](#法典)
+[![laws](https://img.shields.io/badge/%E6%B3%95%E5%89%87-99-1d47b8?style=for-the-badge&labelColor=17181a)](#法典)
 [![site](https://img.shields.io/badge/%E6%B3%95%E5%85%B8%E3%82%92%E8%AA%AD%E3%82%80-1d47b8?style=for-the-badge&labelColor=17181a)](https://kanywst.github.io/hammurabi/ja/)
 [![license](https://img.shields.io/badge/content-CC%20BY--SA%204.0-5c5f64?style=for-the-badge&labelColor=17181a)](../LICENSE)
 
@@ -50,7 +50,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **見積りが毎回ずれる:** [ホフスタッターの法則 (Hofstadter's Law)](#ホフスタッターの法則-hofstadters-law) · [90対90の法則 (Ninety-Ninety Rule)](#90対90の法則-ninety-ninety-rule) · [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) · [時間を固定し、スコープを変える (Fixed Time, Variable Scope)](#時間を固定しスコープを変える-fixed-time-variable-scope)
 - **チームが大きくなってきた:** [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) · [ダンバー数 (Dunbar's Number)](#ダンバー数-dunbars-number) · [リンゲルマン効果 (Ringelmann Effect)](#リンゲルマン効果-ringelmann-effect) · [コンウェイの法則 (Conway's Law)](#コンウェイの法則-conways-law) · [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control) · [バス係数 (Bus Factor)](#バス係数-bus-factor)
 - **指標が数字合わせになっている:** [グッドハートの法則 (Goodhart's Law)](#グッドハートの法則-goodharts-law) · [コブラ効果 (Cobra Effect)](#コブラ効果-cobra-effect) · [シャーキーの原理 (Shirky Principle)](#シャーキーの原理-shirky-principle)
-- **決めきれない:** [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality) · [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy) · [スライドではなく文章で (Narratives, Not Slides)](#スライドではなく文章で-narratives-not-slides)
+- **決めきれない:** [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality) · [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy) · [スライドではなく文章で (Narratives, Not Slides)](#スライドではなく文章で-narratives-not-slides) · [信頼度で重みづけする意思決定 (Believability-Weighted Decisions)](#信頼度で重みづけする意思決定-believability-weighted-decisions)
 - **障害が起きた後:** [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor) · [自動化の皮肉 (Ironies of Automation)](#自動化の皮肉-ironies-of-automation) · [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions) · [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox) · [現地現物 (Genchi Genbutsu (Go and See))](#現地現物-genchi-genbutsu-go-and-see)
 - **信頼性と開発速度がぶつかる:** [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) · [トイル (Toil)](#トイル-toil) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [マーフィーの法則 (Murphy's Law)](#マーフィーの法則-murphys-law) · [作った者が運用する (You Build It, You Run It)](#作った者が運用する-you-build-it-you-run-it) · [アンドン（ラインを止める） (Andon (Stop the Line))](#アンドンラインを止める-andon-stop-the-line) · [カオスエンジニアリング (Chaos Engineering)](#カオスエンジニアリング-chaos-engineering) · [技術的負債 (Technical Debt)](#技術的負債-technical-debt)
 - **何かが遅い:** [アムダールの法則 (Amdahl's Law)](#アムダールの法則-amdahls-law) · [制約理論 (Theory of Constraints)](#制約理論-theory-of-constraints) · [早すぎる最適化 (Premature Optimization)](#早すぎる最適化-premature-optimization) · [スケールの裾野 (The Tail at Scale)](#スケールの裾野-the-tail-at-scale) · [リトルの法則 (Little's Law)](#リトルの法則-littles-law)
@@ -163,6 +163,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 | `96` | [スライドではなく文章で (Narratives, Not Slides)](#スライドではなく文章で-narratives-not-slides) | 意思決定 | スライドと箇条書きに縮めた議論は、論点どうしのつながりを失う。文章なら露わになったはずの穴や警告が、気づかれないままレビューを通り抜ける。 |
 | `97` | [ワン・バージョン・ルール (One-Version Rule)](#ワンバージョンルール-one-version-rule) | 保守性 | 共有する依存先のどのバージョンを使うかを利用者が選べると、選ぶたびに、選んでいない誰かが衝突を抱える。 |
 | `98` | [現地現物 (Genchi Genbutsu (Go and See))](#現地現物-genchi-genbutsu-go-and-see) | 意思決定 | 報告をもとに下す判断は、実際に起きていることから離れていく。要約が一段挟まるたびに、その形式に収まらなかった細部が落ちるからだ。 |
+| `99` | [信頼度で重みづけする意思決定 (Believability-Weighted Decisions)](#信頼度で重みづけする意思決定-believability-weighted-decisions) | 意思決定 | 集団がどの意見も同じ一票と数えたり、役職に従ったりすると、実際にそれをやったことのある人が、やったことのない人に多数決で負ける。 |
 
 ### タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)
 
@@ -220,7 +221,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **判断の指針:** ツールで決められること（整形、import の順序、lint ルール）は人のレビューから外す。レビューのやり取りがスタイルの話ばかりになったら打ち切り、変更のうち最もリスクの高い部分について一つ質問する。会議では、金額やリスクの最も大きい議題を最初に置く。
 - **実例:** 1999年10月2日、FreeBSD 開発者の Poul-Henning Kamp は、sleep(1)に小数の秒数を渡せるようにするかで延々と続いた議論のあと、プロジェクトのメーリングリストに投稿した。彼はこのスレッドを「FreeBSD でこれまでにあった中で最もあからさまな自転車置き場の議論」と呼び、誰でもわかる小さな変更ほど議論が尽きず、複雑な変更はほとんど意見が出ないまま通ると書いた。 [記録 ↗](https://phk.freebsd.dk/sagas/bikeshed/)
 - **出典:** C. Northcote Parkinson『Parkinson's Law and Other Studies in Administration』(Houghton Mifflin, 1957) 所収「High Finance, or the Point of Vanishing Interest」。自転車置き場の委員会の寓話の出典。英国版は『Parkinson's Law: The Pursuit of Progress』(John Murray, 1958)。 — [原典 ↗](https://en.wikipedia.org/wiki/Law_of_triviality)
-- **関連:** [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [コードの健全性を上げるなら承認する (Approve What Improves Code Health)](#コードの健全性を上げるなら承認する-approve-what-improves-code-health)
+- **関連:** [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [コードの健全性を上げるなら承認する (Approve What Improves Code Health)](#コードの健全性を上げるなら承認する-approve-what-improves-code-health) · [信頼度で重みづけする意思決定 (Believability-Weighted Decisions)](#信頼度で重みづけする意思決定-believability-weighted-decisions)
 
 ### ガルの法則 (Gall's Law)
 
@@ -525,7 +526,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **較正された自信** — この効果には異論がある。古典的なパターンの多くは、ノイズの多い自己評価で起きる平均への回帰でも再現できる。だから過信は診断としてではなく、実績を確かめるきっかけとして扱う。
 - **判断の指針:** 誰かが難しい問題を「簡単」と言い切ったら、その見積りを信じる前にその分野での実績を確認する。スコープを決める段階では、自信のある新人と口数の少ないベテランを組ませ、口数の少ない側の意見を重く見る。
 - **出典:** Justin Kruger & David Dunning『Unskilled and Unaware of It』(Journal of Personality and Social Psychology, 1999)。 — [原典 ↗](https://doi.org/10.1037/0022-3514.77.6.1121)
-- **関連:** [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge) · [ピーターの法則 (Peter Principle)](#ピーターの法則-peter-principle)
+- **関連:** [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge) · [ピーターの法則 (Peter Principle)](#ピーターの法則-peter-principle) · [信頼度で重みづけする意思決定 (Believability-Weighted Decisions)](#信頼度で重みづけする意思決定-believability-weighted-decisions)
 
 ### 知識の呪い (Curse of Knowledge)
 
@@ -1077,7 +1078,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **集団浅慮** — コミットを重んじる文化では、人は早いうちに反対するのをやめるようになる。黙って従う人が増えると、誤りに気づけたはずの異論が表に出てこない。
 - **判断の指針:** 反対意見は一度だけ、理由を添えて全部言う。そのうえで「反対だがコミットする」と言い、自分の案だったつもりで実行する。立場が上の人も同じようにする。チームに自分を説得させるのではなく、チームの判断を後押しする。ただし取り返しのつかない決定や、安全・倫理上のリスクがある決定では、黙ってコミットせずエスカレーションする。
 - **出典:** Jeff Bezos『2016 年 株主への手紙』(Amazon.com, Inc., 2017 年)。"use the phrase 'disagree and commit'" と Amazon Studios の例。語句自体は Amazon 以前からある。Karen Southwick『High Noon』(1999) は Sun Microsystems の Scott McNealy がこの語を使っていたと記しており、Intel 発祥とする説もある。 — [原典 ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
-- **関連:** [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality)
+- **関連:** [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality) · [信頼度で重みづけする意思決定 (Believability-Weighted Decisions)](#信頼度で重みづけする意思決定-believability-weighted-decisions)
 
 ### 作った者が運用する (You Build It, You Run It)
 
@@ -1325,6 +1326,17 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **判断の指針:** 修正、優先順位、ポストモーテムの結論を決める前に、一次の証拠を自分の目で確かめる。バグを再現する、生のログと失敗したリクエスト一件のトレースを読む、実際の利用者が問題にぶつかる様子を見る、一時間サポートの窓口に座る。見たものはダッシュボードを疑うのに使い、置き換えるのには使わない。大きく動く前に、その一件がよくある事例かどうかを確かめる。
 - **出典:** トヨタ自動車『トヨタウェイ 2001』。公式社史『トヨタ自動車75年史』第 4 章第 7 節の記録による。"Genchi Genbutsu (go to the source to find the facts)" は 2001 年 4 月にまとめられた五つの柱の一つ。トヨタ『Sustainable Management Report 2016』p. 23 の "go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed." も参照。対抗原理は Amos Tversky & Daniel Kahneman『Belief in the Law of Small Numbers』(Psychological Bulletin, 1971) から。 — [原典 ↗](https://www.toyota-global.com/company/history_of_toyota/75years/text/leaping_forward_as_a_global_corporation/chapter4/section7/item4.html)
 - **関連:** [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys) · [アンドン（ラインを止める） (Andon (Stop the Line))](#アンドンラインを止める-andon-stop-the-line) · [グッドハートの法則 (Goodhart's Law)](#グッドハートの法則-goodharts-law)
+
+### 信頼度で重みづけする意思決定 (Believability-Weighted Decisions)
+
+`§ 99` · 意思決定
+
+- **概念:** 集団がどの意見も同じ一票と数えたり、役職に従ったりすると、実際にそれをやったことのある人が、やったことのない人に多数決で負ける。
+- **メカニズム:** 設計レビューでは誰でもどの部分にも意見を持てるが、似たものを作ったり運用したりした経験があるのは一部の人だけだ。挙手で決めれば、初めて触る人も前回の移行をやり遂げたエンジニアも同じ一票になる。いちばん上の人に従っても、別の死角に置き換わるだけだ。Dalio の基準は狭く、確かめられる。最も信頼できるのは、問題になっていることを「繰り返し成功させてきた」うえで、自分の見解の因果を説明できる人だ。Bridgewater では、均等に数えた票と信頼度で重みづけした票を並べて示す。両者が一致すれば決着とし、割れたら、その割れ目にこそ情報がある。
+- **対立概念:** **群衆の知恵** — 判断が互いに独立していれば、均等な重みの単純な平均はなかなか負けない (Galton が見た品評会の群衆の推定の中央値は、牛の重さとの差が 1% もなかった)。専門家を前もって選ぶのは、過去の実績が新しい問いにも通じるほうに賭けることだ。
+- **判断の指針:** 意見の割れる技術判断の前に、この種のものを作ったり運用したりした人は誰か、それはうまくいったかを確かめ、その人の見解を人数や肩書きより重く扱う。議論の前に意見を書面で集めて独立性を保ち、単純な集計と重みづけした集計の両方を見る。両者が食い違ったら、重みづけした側を自動的に勝たせず、掘り下げる。信頼度は、出荷したシステムやポストモーテムなど確かめられる結果に基づかせる。チームの誰も経験したことのない問いでは、重みづけをやめる。
+- **出典:** Ray Dalio『Principles: Life & Work』(Simon & Schuster, 2017) の仕事の原則「Believability Weight Your Decision Making」(principles.com)。"the best decisions are made by an idea meritocracy with believability-weighted decision making"、最も信頼できる人の条件 "have repeatedly and successfully accomplished the thing in question"、"displays both the equal-weighted average and the believability-weighted results" という道具の出典。Netflix のカルチャーメモも "not all opinions are created equal" と同じことを言う。対抗原理は Francis Galton『Vox Populi』(Nature, 1907) から。 — [原典 ↗](https://www.principles.com/principles/633d5d13-8610-425f-ad62-cd62347d9165/)
+- **関連:** [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [ダニング・クルーガー効果 (Dunning-Kruger Effect)](#ダニングクルーガー効果-dunning-kruger-effect) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality)
 
 <!-- CODEX:END -->
 

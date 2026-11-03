@@ -691,3 +691,10 @@ figures:
     license: "Public domain in Japan"
     author: "Unknown author"
     page: "https://commons.wikimedia.org/wiki/File:Kiichiro_Toyoda.jpg"
+  - slug: believability-weighted-decisions
+    kind: person
+    name: "Ray Dalio"
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Ray_Dalio_Sept_23_2017_NYC.jpg"
+    license: "CC BY 3.0"
+    author: "Grameen America"
+    page: "https://commons.wikimedia.org/wiki/File:Ray_Dalio_Sept_23_2017_NYC.jpg"

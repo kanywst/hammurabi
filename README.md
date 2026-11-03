@@ -3,7 +3,7 @@
 **Engineering laws, each with its counter-force.** Every article also carries a field guideline and a primary source.
 
 [![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=1d47b8&labelColor=17181a)](https://github.com/kanywst/hammurabi/stargazers)
-[![laws](https://img.shields.io/badge/laws-98-1d47b8?style=for-the-badge&labelColor=17181a)](#the-codex)
+[![laws](https://img.shields.io/badge/laws-99-1d47b8?style=for-the-badge&labelColor=17181a)](#the-codex)
 [![site](https://img.shields.io/badge/read-the%20codex-1d47b8?style=for-the-badge&labelColor=17181a)](https://kanywst.github.io/hammurabi/)
 [![license](https://img.shields.io/badge/content-CC%20BY--SA%204.0-5c5f64?style=for-the-badge&labelColor=17181a)](./LICENSE)
 
@@ -50,7 +50,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Estimates keep slipping:** [Hofstadter's Law](#hofstadters-law) · [Ninety-Ninety Rule](#ninety-ninety-rule) · [Parkinson's Law](#parkinsons-law) · [Brooks' Law](#brooks-law) · [Fixed Time, Variable Scope](#fixed-time-variable-scope)
 - **The team is growing:** [Brooks' Law](#brooks-law) · [Dunbar's Number](#dunbars-number) · [Ringelmann Effect](#ringelmann-effect) · [Conway's Law](#conways-law) · [Bystander Effect](#bystander-effect) · [Context, Not Control](#context-not-control) · [Bus Factor](#bus-factor)
 - **A metric is being gamed:** [Goodhart's Law](#goodharts-law) · [Cobra Effect](#cobra-effect) · [Shirky Principle](#shirky-principle)
-- **The decision is stuck:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Disagree and Commit](#disagree-and-commit) · [Law of Triviality](#law-of-triviality) · [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Narratives, Not Slides](#narratives-not-slides)
+- **The decision is stuck:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Disagree and Commit](#disagree-and-commit) · [Law of Triviality](#law-of-triviality) · [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Narratives, Not Slides](#narratives-not-slides) · [Believability-Weighted Decisions](#believability-weighted-decisions)
 - **After an incident:** [Blameless Postmortem](#blameless-postmortem) · [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory) · [Hanlon's Razor](#hanlons-razor) · [Ironies of Automation](#ironies-of-automation) · [Five Whys](#five-whys) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Pesticide Paradox](#pesticide-paradox) · [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see)
 - **Reliability versus shipping speed:** [Error Budget](#error-budget) · [Toil](#toil) · [Normalization of Deviance](#normalization-of-deviance) · [Murphy's Law](#murphys-law) · [You Build It, You Run It](#you-build-it-you-run-it) · [Andon (Stop the Line)](#andon-stop-the-line) · [Chaos Engineering](#chaos-engineering) · [Technical Debt](#technical-debt)
 - **Something is too slow:** [Amdahl's Law](#amdahls-law) · [Theory of Constraints](#theory-of-constraints) · [Premature Optimization](#premature-optimization) · [The Tail at Scale](#the-tail-at-scale) · [Little's Law](#littles-law)
@@ -163,6 +163,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `96` | [Narratives, Not Slides](#narratives-not-slides) | Decision | An argument cut down to slides and bullets loses the links between its points, so the gaps and warnings that prose would have exposed pass through the review unnoticed. |
 | `97` | [One-Version Rule](#one-version-rule) | Maintainability | When consumers may choose which version of a shared dependency to use, each choice becomes a conflict for someone who never made it. |
 | `98` | [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see) | Decision | Decisions made from reports drift away from what is actually happening, because each layer of summary drops the detail that did not fit its form. |
+| `99` | [Believability-Weighted Decisions](#believability-weighted-decisions) | Decision | When a group counts every opinion the same, or defers to rank, the people who have actually done the thing before are outvoted by those who have not. |
 
 ### Type 1 vs Type 2 Decisions
 
@@ -220,7 +221,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Guideline:** Move everything a tool can decide (format, import order, lint rules) out of human review. When a review thread is mostly style, stop it and ask one question about the riskiest part of the change. In meetings, put the most expensive or riskiest item first on the agenda.
 - **In practice:** On October 2, 1999, FreeBSD developer Poul-Henning Kamp wrote to the project's mailing list after a long argument over whether sleep(1) should accept fractional seconds. He called that thread "the most blatant example of a bike shed discussion we have had ever in FreeBSD," noting that small, easy-to-grasp changes draw endless debate while complex ones pass with little comment. [account ↗](https://phk.freebsd.dk/sagas/bikeshed/)
 - **Source:** C. Northcote Parkinson, *Parkinson's Law and Other Studies in Administration* (Houghton Mifflin, 1957), in the chapter "High Finance, or the Point of Vanishing Interest" — the original bike-shed committee parable. Published in the UK as *Parkinson's Law: The Pursuit of Progress* (John Murray, 1958). — [source ↗](https://en.wikipedia.org/wiki/Law_of_triviality)
-- **See also:** [Parkinson's Law](#parkinsons-law) · [Disagree and Commit](#disagree-and-commit) · [Approve What Improves Code Health](#approve-what-improves-code-health)
+- **See also:** [Parkinson's Law](#parkinsons-law) · [Disagree and Commit](#disagree-and-commit) · [Approve What Improves Code Health](#approve-what-improves-code-health) · [Believability-Weighted Decisions](#believability-weighted-decisions)
 
 ### Gall's Law
 
@@ -525,7 +526,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Calibrated Confidence** — the effect is contested — much of the classic pattern is reproduced by regression to the mean in noisy self-assessment, so treat overconfidence as a prompt to check the record rather than as a diagnosis.
 - **Guideline:** When someone declares a hard problem "easy," check their domain history before trusting the estimate. During scoping, pair confident newcomers with quiet veterans and weight the quiet voice.
 - **Source:** Justin Kruger & David Dunning, *Unskilled and Unaware of It* (JPSP, 1999). — [source ↗](https://doi.org/10.1037/0022-3514.77.6.1121)
-- **See also:** [Curse of Knowledge](#curse-of-knowledge) · [Peter Principle](#peter-principle)
+- **See also:** [Curse of Knowledge](#curse-of-knowledge) · [Peter Principle](#peter-principle) · [Believability-Weighted Decisions](#believability-weighted-decisions)
 
 ### Curse of Knowledge
 
@@ -1077,7 +1078,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Groupthink** — a culture that prizes commitment teaches people to stop objecting early, and silent compliance hides the dissent that would have caught the error.
 - **Guideline:** State your disagreement once, in full, with your reasons. Then say "I disagree and commit" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you. For an irreversible decision, or one with a safety or ethical risk, do not commit quietly: escalate.
 - **Source:** Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — "use the phrase 'disagree and commit'", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and it is also attributed to Intel. — [source ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
-- **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Law of Triviality](#law-of-triviality)
+- **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Law of Triviality](#law-of-triviality) · [Believability-Weighted Decisions](#believability-weighted-decisions)
 
 ### You Build It, You Run It
 
@@ -1325,6 +1326,17 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Guideline:** Before you decide on a fix, a priority or a postmortem conclusion, look at the primary evidence yourself: reproduce the bug, read the raw logs and the trace of one failing request, watch a real user hit the problem, or sit on the support queue for an hour. Use what you saw to question the dashboard, not to replace it, and check that the case is typical before acting on it at scale.
 - **Source:** Toyota Motor Corporation, *The Toyota Way 2001*, as recorded in Toyota's official history *75 Years of Toyota*, ch. 4, sec. 7 — "Genchi Genbutsu (go to the source to find the facts)", one of five key concepts compiled in April 2001; Toyota, *Sustainable Management Report 2016*, p. 23 — "go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed." The counter-force is Amos Tversky & Daniel Kahneman, *Belief in the Law of Small Numbers* (Psychological Bulletin, 1971). — [source ↗](https://www.toyota-global.com/company/history_of_toyota/75years/text/leaping_forward_as_a_global_corporation/chapter4/section7/item4.html)
 - **See also:** [Five Whys](#five-whys) · [Andon (Stop the Line)](#andon-stop-the-line) · [Goodhart's Law](#goodharts-law)
+
+### Believability-Weighted Decisions
+
+`§ 99` · Decision
+
+- **Concept:** When a group counts every opinion the same, or defers to rank, the people who have actually done the thing before are outvoted by those who have not.
+- **Mechanism:** In a design review everyone can form a view on every part, but only some of the room has built or run something like it. A show of hands gives the first-timer and the engineer who ran the last migration one vote each, and deferring to the most senior person only swaps one blind spot for another. Dalio's test is narrow and checkable: the most believable people have "repeatedly and successfully accomplished the thing in question" and can explain the cause and effect behind their view. Bridgewater shows the equal-weighted and the believability-weighted vote side by side; when they agree the matter is settled, and when they split, the split is where the information is.
+- **Counter:** **Wisdom of Crowds** — when judgments are made independently, a plain equal-weight average is hard to beat (the median guess of Galton's fairground crowd was within 1 percent of the ox's weight), and picking experts in advance bets on a track record that may not carry over to the new question.
+- **Guideline:** Before a contested technical call, ask who has built or run this kind of thing before and whether it worked, and give their view more weight than headcount or title. Collect views in writing before the discussion so they stay independent, and look at both the plain tally and the weighted one; where they disagree, dig in rather than letting the weighted side win by default. Base believability on outcomes you can check, such as systems shipped and postmortems, and drop the weighting for questions nobody on the team has faced before.
+- **Source:** Ray Dalio, *Principles: Life & Work* (Simon & Schuster, 2017), work principle "Believability Weight Your Decision Making" (principles.com) — "the best decisions are made by an idea meritocracy with believability-weighted decision making", the most believable people being those who "have repeatedly and successfully accomplished the thing in question", and a tool that "displays both the equal-weighted average and the believability-weighted results". Netflix's culture memo makes the same point: "not all opinions are created equal". The counter-force is Francis Galton, *Vox Populi* (Nature, 1907). — [source ↗](https://www.principles.com/principles/633d5d13-8610-425f-ad62-cd62347d9165/)
+- **See also:** [Disagree and Commit](#disagree-and-commit) · [Dunning-Kruger Effect](#dunning-kruger-effect) · [Law of Triviality](#law-of-triviality)
 
 <!-- CODEX:END -->
 
