@@ -5002,7 +5002,7 @@ export const laws: Law[] = [
     "en": {
       "title": "One-Version Rule",
       "concept": "When consumers may choose which version of a shared dependency to use, each choice becomes a conflict for someone who never made it.",
-      "mechanism": "Two components that pin different versions of the same library each work on their own. A program that comes to depend on both gets a link failure at best, or one copy picked at random at runtime, and the team that pays is the one that combined them, not the ones that pinned. Every extra version also adds another place a security fix or an upgrade has to land, and the copies drift apart until moving off the old one is a project of its own. Hiding the second copy, by shading or renaming, does not make the conflict go away. Allowing exactly one version per dependency removes the choice, so an upgrade is done once for every caller, and adding a dependency never breaks a bystander.",
+      "mechanism": "Two components that pin different versions of the same library each work on their own. A program that comes to depend on both gets a link failure at best, or one copy picked at random at runtime, and the team that pays is the one that combined them, not the ones that pinned. Every extra version also adds another place a security fix or an upgrade has to land, and the copies drift apart until moving off the old one is a project of its own. Hiding the second copy, by shading or renaming, does not make the conflict go away. Allowing exactly one version per dependency removes the choice, so an upgrade is done once for every caller, and adding a dependency no longer breaks a bystander through a version conflict.",
       "counter": {
         "name": "Semantic Import Versioning",
         "note": "where no one owns every caller, as across an open-source ecosystem, nobody can make the single change that moves everyone, so letting incompatible major versions live side by side under different import paths lets each caller upgrade on its own schedule and accepts the duplicate copies as the price, which is the approach Go modules take"
@@ -5013,7 +5013,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "ワン・バージョン・ルール",
       "concept": "共有する依存先のどのバージョンを使うかを利用者が選べると、選ぶたびに、選んでいない誰かが衝突を抱える。",
-      "mechanism": "同じライブラリの別々のバージョンに固定した二つのコンポーネントは、それぞれ単独では動く。両方に依存するプログラムができると、よくてリンクエラー、悪ければ実行時にどちらか一方がでたらめに選ばれる。そのツケを払うのは固定したチームではなく、二つを組み合わせたチームだ。バージョンが一つ増えるたびに、セキュリティ修正やアップグレードを入れる場所も一つ増える。コピーどうしの差は広がっていき、古いほうから移るだけで一つのプロジェクトになる。シェーディングや名前の付け替えで二つ目のコピーを隠しても、衝突は消えない。依存先ごとにバージョンを一つだけと決めれば選択肢がなくなり、アップグレードは全呼び出し側に対して一度で済み、依存を足しても無関係な誰かが壊れることはない。",
+      "mechanism": "同じライブラリの別々のバージョンに固定した二つのコンポーネントは、それぞれ単独では動く。両方に依存するプログラムができると、よくてリンクエラー、悪ければ実行時にどちらか一方がでたらめに選ばれる。そのツケを払うのは固定したチームではなく、二つを組み合わせたチームだ。バージョンが一つ増えるたびに、セキュリティ修正やアップグレードを入れる場所も一つ増える。コピーどうしの差は広がっていき、古いほうから移るだけで一つのプロジェクトになる。シェーディングや名前の付け替えで二つ目のコピーを隠しても、衝突は消えない。依存先ごとにバージョンを一つだけと決めれば選択肢がなくなり、アップグレードは全呼び出し側に対して一度で済み、依存を足しても、バージョンの衝突で無関係な誰かが壊れることはなくなる。",
       "counter": {
         "name": "セマンティック・インポート・バージョニング",
         "note": "オープンソースのエコシステムのように、すべての呼び出し側を持つ者がいない場では、全員を一度に移す変更は誰にもできない。互換性のないメジャーバージョンを別のインポートパスで並べて置けば、呼び出し側はそれぞれの都合でアップグレードでき、コピーが重複するのはその代価として受け入れる。Go のモジュールはこのやり方を採っている"
@@ -5046,7 +5046,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Genchi Genbutsu (Go and See)",
       "concept": "Decisions made from reports drift away from what is actually happening, because each layer of summary drops the detail that did not fit its form.",
-      "mechanism": "A report is written by someone who chose what to include, in categories fixed before the problem appeared, so the anomaly that matters is the one most likely to be averaged away or left out. A dashboard shows only what someone thought to measure, and the failure nobody predicted has no panel. The further the person deciding sits from the work, the more layers of summary lie between them, and each layer is also shaped by what its writer expects the reader to want. Toyota made going to the source one of the five key concepts of the Toyota Way: find the facts where the work happens before deciding.",
+      "mechanism": "A report is written by someone who chose what to include, in categories fixed before the problem appeared, so the anomaly that matters can be averaged away or left out. A dashboard shows only what someone thought to measure, and the failure nobody predicted has no panel. The further the person deciding sits from the work, the more layers of summary lie between them, and each layer is also shaped by what its writer expects the reader to want. Toyota made going to the source one of the five key concepts of the Toyota Way: find the facts where the work happens before deciding.",
       "counter": {
         "name": "Trust the Aggregate",
         "note": "a visit shows one shift, one user or one trace, and people judge from a small sample as if it stood for the whole (the belief in the law of small numbers), so for a question about the whole fleet the dashboard that covers every case is the better witness"
@@ -5057,7 +5057,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "現地現物",
       "concept": "報告をもとに下す判断は、実際に起きていることから離れていく。要約が一段挟まるたびに、その形式に収まらなかった細部が落ちるからだ。",
-      "mechanism": "報告は、何を入れるかを選んだ誰かが、問題が起きる前に決まっていた区分に沿って書く。だから肝心の異常ほど、平均にならされるか書き漏らされやすい。ダッシュボードには、誰かが測ろうと思ったものしか映らず、誰も予想しなかった障害の画面はない。判断する人が現場から遠いほど、間に挟まる要約は増える。どの段も、書き手が読み手の求めていると思うものに寄っていく。トヨタは現地現物を、トヨタウェイの五つのキーワードの一つに据えた。判断の前に、仕事が行われている場所で事実をつかむ。",
+      "mechanism": "報告は、何を入れるかを選んだ誰かが、問題が起きる前に決まっていた区分に沿って書く。だから肝心の異常が、平均にならされたり書き漏らされたりする。ダッシュボードには、誰かが測ろうと思ったものしか映らず、誰も予想しなかった障害の画面はない。判断する人が現場から遠いほど、間に挟まる要約は増える。どの段も、書き手が読み手の求めていると思うものに寄っていく。トヨタは現地現物を、トヨタウェイの五つのキーワードの一つに据えた。判断の前に、仕事が行われている場所で事実をつかむ。",
       "counter": {
         "name": "集計を信じる",
         "note": "現場で見られるのは一つのシフト、一人の利用者、一本のトレースだ。人は小さな標本を全体の代表のように扱いがちだ (少数の法則の信念)。全体についての問いなら、すべての事例を含むダッシュボードのほうが確かな証人になる"
@@ -5140,7 +5140,7 @@ export const laws: Law[] = [
         "note": "where a blind spot's cost lands on someone other than the owner (a security hole, lost data, another team's pager), advice that can be ignored is not enough, and a reviewer has to be able to block"
       },
       "guideline": "In a design or RFC review, let reviewers name problems and their suspected causes but not dictate the fix, and leave the decision with the author, who answers each point in writing. Fill the room with peers who have built something similar, not the manager who rates the author. Where a mistake would land on others (security, data loss, an irreversible migration), keep a blocking approval, but run it as a separate step from the advisory review.",
-      "source": "Ed Catmull, quoted in \"Spark Creativity with These Tips from Pixar's President\" (*First Round Review*, 2015) — \"the Braintrust should have no authority\", so that the person responsible \"would never have to come into the room in a defensive posture\"; the practice is set out at length in Ed Catmull with Amy Wallace, *Creativity, Inc.* (Random House, 2014)."
+      "source": "Ed Catmull, quoted in \"Spark Creativity with These Tips from Pixar's President\" (*First Round Review*, 2015) — \"the Braintrust should have no authority\", so that the person responsible \"would never have to come into the room in a defensive posture\"; the practice is set out at length in Ed Catmull with Amy Wallace, *Creativity, Inc.* (Random House, 2014). The counter-force is the approver model of code review, where \"the reviewer can certainly deny approval\" (Google, *The Standard of Code Review*)."
     },
     "ja": {
       "title": "ブレイントラスト (権限を持たない助言)",
@@ -5151,7 +5151,7 @@ export const laws: Law[] = [
         "note": "死角のツケがオーナー以外の誰か (セキュリティの穴、失われたデータ、別チームのオンコール) に回るなら、無視できる助言では足りず、レビュアーが止められなければならない"
       },
       "guideline": "設計レビューや RFC のレビューでは、レビュアーは問題とその原因と思われるものを指摘するが、直し方は指図しない。判断は作者に任せ、作者は指摘の一つひとつに書面で答える。部屋には、作者を評価する上司ではなく、似たものを作った経験のある仲間を集める。誤りのツケが他人に回るもの (セキュリティ、データ消失、取り消せない移行) では、止める権限のある承認を残す。ただし助言のためのレビューとは別の手順にする。",
-      "source": "Ed Catmull の発言。「Spark Creativity with These Tips from Pixar's President」(『First Round Review』, 2015) による。\"the Braintrust should have no authority\" と、責任者が \"would never have to come into the room in a defensive posture\" で済むようにするという点の出典。仕組みの全体は Ed Catmull with Amy Wallace『Creativity, Inc.』(Random House, 2014) に詳しい。"
+      "source": "Ed Catmull の発言。「Spark Creativity with These Tips from Pixar's President」(『First Round Review』, 2015) による。\"the Braintrust should have no authority\" と、責任者が \"would never have to come into the room in a defensive posture\" で済むようにするという点の出典。仕組みの全体は Ed Catmull with Amy Wallace『Creativity, Inc.』(Random House, 2014) に詳しい。対抗原理は、\"the reviewer can certainly deny approval\" とするコードレビューの承認者モデル (Google『The Standard of Code Review』) から。"
     }
   }
 ];
