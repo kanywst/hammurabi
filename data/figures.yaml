@@ -688,7 +688,7 @@ figures:
     kind: person
     name: "Kiichiro Toyoda"
     image: "https://upload.wikimedia.org/wikipedia/commons/a/af/Kiichiro_Toyoda.jpg"
-    license: "Public domain in Japan"
+    license: "Public domain"
     author: "Unknown author"
     page: "https://commons.wikimedia.org/wiki/File:Kiichiro_Toyoda.jpg"
   - slug: believability-weighted-decisions

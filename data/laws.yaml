@@ -2941,7 +2941,7 @@ laws:
       guideline: |-
         State your disagreement once, in full, with your reasons. Then say "I disagree and commit" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you. For an irreversible decision, or one with a safety or ethical risk, do not commit quietly: escalate.
       source: |-
-        Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — "use the phrase 'disagree and commit'", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and Richard Tedlow, Andy Grove's biographer, lists "disagree and then commit" alongside "constructive confrontation" among Intel's principles ("Andy Grove: A Biographer's Tale", *HBS Working Knowledge*, 2006). Netflix's culture memo uses the same rule, "disagree then commit", in its "informed captain" model, where one named person makes each significant decision after "farming for dissent".
+        Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — "use the phrase 'disagree and commit'", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and Richard Tedlow, Andy Grove's biographer, lists "disagree and then commit" alongside "constructive confrontation" among the parts of Intel culture that Grove built ("Andy Grove: A Biographer's Tale", *HBS Working Knowledge*, 2006). Netflix's culture memo uses the same rule, "disagree then commit", in its "informed captain" model, where one named person makes each significant decision after "farming for dissent".
     ja:
       title: 反対してもコミットする
       concept: 全員の同意を待つより、決めて実行し、誤りなら軌道修正するほうが速いことが多い。
@@ -2954,7 +2954,7 @@ laws:
       guideline: |-
         反対意見は一度だけ、理由を添えて全部言う。そのうえで「反対だがコミットする」と言い、自分の案だったつもりで実行する。立場が上の人も同じようにする。チームに自分を説得させるのではなく、チームの判断を後押しする。ただし取り返しのつかない決定や、安全・倫理上のリスクがある決定では、黙ってコミットせずエスカレーションする。
       source: |-
-        Jeff Bezos『2016 年 株主への手紙』(Amazon.com, Inc., 2017 年)。"use the phrase 'disagree and commit'" と Amazon Studios の例。語句自体は Amazon 以前からある。Karen Southwick『High Noon』(1999) は Sun Microsystems の Scott McNealy がこの語を使っていたと記している。Andy Grove の伝記を書いた Richard Tedlow は、Intel の原則として "constructive confrontation" と並べて "disagree and then commit" を挙げている (「Andy Grove: A Biographer's Tale」『HBS Working Knowledge』2006)。Netflix のカルチャーメモも "disagree then commit" という同じ決まりを「informed captain」のモデルの中で使う。重要な決定はそれぞれ名指しされた一人が、"farming for dissent" (異論を集めること) を経て下す。
+        Jeff Bezos『2016 年 株主への手紙』(Amazon.com, Inc., 2017 年)。"use the phrase 'disagree and commit'" と Amazon Studios の例。語句自体は Amazon 以前からある。Karen Southwick『High Noon』(1999) は Sun Microsystems の Scott McNealy がこの語を使っていたと記している。Andy Grove の伝記を書いた Richard Tedlow は、Grove が築いた Intel の文化の一部として "constructive confrontation" と並べて "disagree and then commit" を挙げている (「Andy Grove: A Biographer's Tale」『HBS Working Knowledge』2006)。Netflix のカルチャーメモも "disagree then commit" という同じ決まりを "informed captain" のモデルの中で使う。重要な決定はそれぞれ名指しされた一人が、"farming for dissent" (異論を集めること) を経て下す。
 
   - slug: you-build-it-you-run-it
     tag: operations
@@ -3688,7 +3688,7 @@ laws:
       guideline: |-
         取り消すのに高くつく決定や、チームの外の人の承認が要る決定は、数ページの文章で提案する。問題、検討した選択肢、トレードオフ、推奨案を書く。レビューは全員が黙って読むところから始め、それから議論する。取り消しやすい変更や、簡単な試作で答えが出る問いには書かない。試作を作る。
       source: |-
-        Jeff Bezos『2017 年 株主への手紙』(Amazon.com, Inc., 2018 年)。"We don't do PowerPoint (or any other slide-oriented) presentations at Amazon. Instead, we write narratively structured six-page memos."、会議の冒頭に黙って読むこと、メモに "a week or more" かかりうることの出典。Columbia Accident Investigation Board『Report』第 1 巻 (2003) 第 7 章「Engineering by Viewgraphs」。"When engineering analyses and risk assessments are condensed to fit on a standard form or overhead slide, information is inevitably lost." の出典。Malte Ubl『Design Docs at Google』(industrialempathy.com, 2020)。エンジニアリングでの形と、"really implementation manuals" な設計文書はそもそも要らなかったしるしだという指摘の出典。対抗原理は『アジャイルソフトウェア開発宣言』(2001) から。
+        Jeff Bezos『2017 年 株主への手紙』(Amazon.com, Inc., 2018 年)。"We don't do PowerPoint (or any other slide-oriented) presentations at Amazon. Instead, we write narratively structured six-page memos."、会議の冒頭に黙って読むこと、メモに "a week or more" かかりうることの出典。Columbia Accident Investigation Board『Report』第 1 巻 (2003) 第 7 章「Engineering by Viewgraphs」。"When engineering analyses and risk assessments are condensed to fit on a standard form or overhead slide, information is inevitably lost." の出典。Malte Ubl『Design Docs at Google』(industrialempathy.com, 2020)。エンジニアリングでの形と、設計文書が "really implementation manuals" になっているなら、そもそも要らなかったしるしだという指摘の出典。対抗原理は『アジャイルソフトウェア開発宣言』(2001) から。
 
   - slug: one-version-rule
     tag: maintainability
@@ -3702,7 +3702,7 @@ laws:
       concept: |-
         When consumers may choose which version of a shared dependency to use, each choice becomes a conflict for someone who never made it.
       mechanism: |-
-        Two components that pin different versions of the same library each work on their own. A program that comes to depend on both gets a link failure at best, or one copy picked at random at runtime, and the team that pays is the one that combined them, not the ones that pinned. Every extra version also doubles the places a security fix or an upgrade has to land, and the copies drift apart until moving off the old one is a project of its own. Hiding the second copy, by shading or renaming, does not make the conflict go away. Allowing exactly one version per dependency removes the choice, so an upgrade is done once for every caller, and adding a dependency never breaks a bystander.
+        Two components that pin different versions of the same library each work on their own. A program that comes to depend on both gets a link failure at best, or one copy picked at random at runtime, and the team that pays is the one that combined them, not the ones that pinned. Every extra version also adds another place a security fix or an upgrade has to land, and the copies drift apart until moving off the old one is a project of its own. Hiding the second copy, by shading or renaming, does not make the conflict go away. Allowing exactly one version per dependency removes the choice, so an upgrade is done once for every caller, and adding a dependency never breaks a bystander.
       counter:
         name: Semantic Import Versioning
         note: |-
@@ -3715,13 +3715,13 @@ laws:
       title: ワン・バージョン・ルール
       concept: 共有する依存先のどのバージョンを使うかを利用者が選べると、選ぶたびに、選んでいない誰かが衝突を抱える。
       mechanism: |-
-        同じライブラリの別々のバージョンに固定した二つのコンポーネントは、それぞれ単独では動く。両方に依存するプログラムができると、よくてリンクエラー、悪ければ実行時にどちらか一方がでたらめに選ばれる。そのツケを払うのは固定したチームではなく、二つを組み合わせたチームだ。バージョンが一つ増えるたびに、セキュリティ修正やアップグレードを入れる場所も倍になる。コピーどうしは離れていき、古いほうから移るだけで一つのプロジェクトになる。シェーディングや名前の付け替えで二つ目のコピーを隠しても、衝突は消えない。依存先ごとにバージョンを一つだけと決めれば選択肢がなくなり、アップグレードは全呼び出し側に対して一度で済み、依存を足しても無関係な誰かが壊れることはない。
+        同じライブラリの別々のバージョンに固定した二つのコンポーネントは、それぞれ単独では動く。両方に依存するプログラムができると、よくてリンクエラー、悪ければ実行時にどちらか一方がでたらめに選ばれる。そのツケを払うのは固定したチームではなく、二つを組み合わせたチームだ。バージョンが一つ増えるたびに、セキュリティ修正やアップグレードを入れる場所も一つ増える。コピーどうしの差は広がっていき、古いほうから移るだけで一つのプロジェクトになる。シェーディングや名前の付け替えで二つ目のコピーを隠しても、衝突は消えない。依存先ごとにバージョンを一つだけと決めれば選択肢がなくなり、アップグレードは全呼び出し側に対して一度で済み、依存を足しても無関係な誰かが壊れることはない。
       counter:
         name: セマンティック・インポート・バージョニング
         note: |-
           一度の変更では入りきらない大きなアップグレードでは、互換性のない二つのメジャーバージョンを別の名前で並べて置けば、ビルドを通したまま呼び出し側を一つずつ移せる。Go のモジュールはそのために設計された
       guideline: |-
-        社内のものも外部のものも、共有する依存先はバージョンを一つに保つ。アップグレードは、すべての呼び出し側を移す一つの変更として行う。一度で入らないアップグレードに限り、二つ目のバージョンを別の名前で、オーナーと期限を付けて許し、期限が来たら消す。チームが共有ライブラリを勝手にフォークしたり固定したりするのは認めない。セキュリティ、法務、リリースの要件が本当に違うプロジェクトはリポジトリを分けてよいが、それぞれの中では依存先ごとにバージョンを一つに保つ。
+        社内のものも外部のものも、共有する依存先はバージョンを一つに保つ。アップグレードは、すべての呼び出し側を一度に移す一つの変更にする。一度で入らないアップグレードに限り、二つ目のバージョンを別の名前で、オーナーと期限を付けて許し、期限が来たら消す。チームが共有ライブラリを勝手にフォークしたり固定したりするのは認めない。セキュリティ、法務、リリースの要件が本当に違うプロジェクトはリポジトリを分けてよいが、それぞれの中では依存先ごとにバージョンを一つに保つ。
       source: |-
         Titus Winters「Version Control and Branch Management」、Winters, Manshreck & Wright『Software Engineering at Google』(O'Reilly, 2020) 第 16 章。"For every dependency in our repository, there must be only one version of that dependency to choose."、シェーディングは "work neither in theory nor in practice"、"What is important is not whether we focus on monorepo; it's to adhere to the One-Version principle to the greatest extent possible" の出典。Google Open Source『The One Version Rule』(サードパーティのポリシー) の "There may only be one version of a package in `//third_party`." も参照。対抗原理は Russ Cox『Semantic Import Versioning』(research!rsc, 2018) の "to make it possible to upgrade the clients of that package one at a time and still have a buildable result" から。
 
@@ -3739,26 +3739,26 @@ laws:
       mechanism: |-
         A report is written by someone who chose what to include, in categories fixed before the problem appeared, so the anomaly that matters is the one most likely to be averaged away or left out. A dashboard shows only what someone thought to measure, and the failure nobody predicted has no panel. The further the person deciding sits from the work, the more layers of summary lie between them, and each layer is also shaped by what its writer expects the reader to want. Toyota made going to the source one of the five key concepts of the Toyota Way: find the facts where the work happens before deciding.
       counter:
-        name: Law of Small Numbers
+        name: Trust the Aggregate
         note: |-
-          a visit shows one shift, one user or one trace, and people treat a small sample as if it stood for the whole, so a vivid observation can override an aggregate that covers all the cases nobody went to see
+          a visit shows one shift, one user or one trace, and people judge from a small sample as if it stood for the whole (the belief in the law of small numbers), so for a question about the whole fleet the dashboard that covers every case is the better witness
       guideline: |-
         Before you decide on a fix, a priority or a postmortem conclusion, look at the primary evidence yourself: reproduce the bug, read the raw logs and the trace of one failing request, watch a real user hit the problem, or sit on the support queue for an hour. Use what you saw to question the dashboard, not to replace it, and check that the case is typical before acting on it at scale.
       source: |-
-        Toyota Motor Corporation, *The Toyota Way 2001*, as recorded in Toyota's official history *75 Years of Toyota*, ch. 4, sec. 7 — "Genchi Genbutsu (go to the source to find the facts)", one of five key concepts compiled in April 2001; Toyota, *Sustainable Management Report 2016*, p. 23 — "go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed." The counter-force is Amos Tversky & Daniel Kahneman, *Belief in the Law of Small Numbers* (Psychological Bulletin, 1971).
+        Toyota Motor Corporation, *The Toyota Way 2001*, as recorded in Toyota's official history *75 Years of Toyota*, ch. 4, sec. 7 — "Genchi Genbutsu (go to the source to find the facts)", one of five key concepts compiled in April 2001; Toyota, *Sustainable Management Report 2016*, p. 23 — "go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed." The bias behind the counter-force is from Amos Tversky & Daniel Kahneman, *Belief in the Law of Small Numbers* (Psychological Bulletin, 1971).
     ja:
       title: 現地現物
       concept: 報告をもとに下す判断は、実際に起きていることから離れていく。要約が一段挟まるたびに、その形式に収まらなかった細部が落ちるからだ。
       mechanism: |-
-        報告は、何を入れるかを選んだ誰かが、問題が起きる前に決まっていた区分に沿って書く。だから肝心の異常ほど、平均にならされるか書き漏らされやすい。ダッシュボードには、誰かが測ろうと思ったものしか映らず、誰も予想しなかった障害の画面はない。判断する人が現場から遠いほど、間に挟まる要約は増える。どの段も、書き手が読み手の求めていると思うものに寄っていく。トヨタは現地現物をトヨタウェイの五つの柱の一つに据えた。判断の前に、仕事が行われている場所で事実をつかむ。
+        報告は、何を入れるかを選んだ誰かが、問題が起きる前に決まっていた区分に沿って書く。だから肝心の異常ほど、平均にならされるか書き漏らされやすい。ダッシュボードには、誰かが測ろうと思ったものしか映らず、誰も予想しなかった障害の画面はない。判断する人が現場から遠いほど、間に挟まる要約は増える。どの段も、書き手が読み手の求めていると思うものに寄っていく。トヨタは現地現物を、トヨタウェイの五つのキーワードの一つに据えた。判断の前に、仕事が行われている場所で事実をつかむ。
       counter:
-        name: 少数の法則
+        name: 集計を信じる
         note: |-
-          現場で見られるのは一つのシフト、一人の利用者、一本のトレースだ。人は小さな標本を全体の代表のように扱うので、鮮やかな一件の観察が、誰も見に行かなかった多数の事例を含む集計を押しのけてしまう
+          現場で見られるのは一つのシフト、一人の利用者、一本のトレースだ。人は小さな標本を全体の代表のように扱いがちだ (少数の法則の信念)。全体についての問いなら、すべての事例を含むダッシュボードのほうが確かな証人になる
       guideline: |-
-        修正、優先順位、ポストモーテムの結論を決める前に、一次の証拠を自分の目で確かめる。バグを再現する、生のログと失敗したリクエスト一件のトレースを読む、実際の利用者が問題にぶつかる様子を見る、一時間サポートの窓口に座る。見たものはダッシュボードを疑うのに使い、置き換えるのには使わない。大きく動く前に、その一件がよくある事例かどうかを確かめる。
+        修正、優先順位、ポストモーテムの結論を決める前に、一次情報を自分の目で確かめる。バグを再現する、生のログと失敗したリクエスト一件のトレースを読む、実際の利用者が問題にぶつかる様子を見る、一時間サポートの窓口に座る。見たものはダッシュボードを疑うのに使い、置き換えるのには使わない。広く適用する前に、その一件がよくある事例かどうかを確かめる。
       source: |-
-        トヨタ自動車『トヨタウェイ 2001』。公式社史『トヨタ自動車75年史』第 4 章第 7 節の記録による。"Genchi Genbutsu (go to the source to find the facts)" は 2001 年 4 月にまとめられた五つの柱の一つ。トヨタ『Sustainable Management Report 2016』p. 23 の "go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed." も参照。対抗原理は Amos Tversky & Daniel Kahneman『Belief in the Law of Small Numbers』(Psychological Bulletin, 1971) から。
+        トヨタ自動車『トヨタウェイ 2001』。公式社史『トヨタ自動車75年史』第 4 章第 7 節の記録による。"Genchi Genbutsu (go to the source to find the facts)" は 2001 年 4 月にまとめられた五つのキーワードの一つ。トヨタ『Sustainable Management Report 2016』p. 23 の "go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed." も参照。対抗原理の背景にあるバイアスは Amos Tversky & Daniel Kahneman『Belief in the Law of Small Numbers』(Psychological Bulletin, 1971) から。
 
   - slug: believability-weighted-decisions
     tag: decision
@@ -3772,11 +3772,11 @@ laws:
       concept: |-
         When a group counts every opinion the same, or defers to rank, the people who have actually done the thing before are outvoted by those who have not.
       mechanism: |-
-        In a design review everyone can form a view on every part, but only some of the room has built or run something like it. A show of hands gives the first-timer and the engineer who ran the last migration one vote each, and deferring to the most senior person only swaps one blind spot for another. Dalio's test is narrow and checkable: the most believable people have "repeatedly and successfully accomplished the thing in question" and can explain the cause and effect behind their view. Bridgewater shows the equal-weighted and the believability-weighted vote side by side; when they agree the matter is settled, and when they split, the split is where the information is.
+        In a design review everyone can form a view on every part, but only some of the room has built or run something like it. A show of hands gives the first-timer and the engineer who ran the last migration one vote each, and deferring to the most senior person only swaps one blind spot for another. Dalio's test is narrow and checkable: the most believable people have "repeatedly and successfully accomplished the thing in question" and can explain the cause and effect behind their view. Bridgewater shows the equal-weighted and the believability-weighted vote side by side: when they agree the matter is settled, and when they split, it tries again to resolve the disagreement and otherwise goes with the weighted vote. The split itself is where the information is.
       counter:
         name: Wisdom of Crowds
         note: |-
-          when judgments are made independently, a plain equal-weight average is hard to beat (the median guess of Galton's fairground crowd was within 1 percent of the ox's weight), and picking experts in advance bets on a track record that may not carry over to the new question
+          when judgments are made independently, a plain equal-weight aggregate is hard to beat (the median guess of Galton's fairground crowd was within 1 percent of the ox's weight), and picking experts in advance bets on a track record that may not carry over to the new question
       guideline: |-
         Before a contested technical call, ask who has built or run this kind of thing before and whether it worked, and give their view more weight than headcount or title. Collect views in writing before the discussion so they stay independent, and look at both the plain tally and the weighted one; where they disagree, dig in rather than letting the weighted side win by default. Base believability on outcomes you can check, such as systems shipped and postmortems, and drop the weighting for questions nobody on the team has faced before.
       source: |-
@@ -3785,13 +3785,13 @@ laws:
       title: 信頼度で重みづけする意思決定
       concept: 集団がどの意見も同じ一票と数えたり、役職に従ったりすると、実際にそれをやったことのある人が、やったことのない人に多数決で負ける。
       mechanism: |-
-        設計レビューでは誰でもどの部分にも意見を持てるが、似たものを作ったり運用したりした経験があるのは一部の人だけだ。挙手で決めれば、初めて触る人も前回の移行をやり遂げたエンジニアも同じ一票になる。いちばん上の人に従っても、別の死角に置き換わるだけだ。Dalio の基準は狭く、確かめられる。最も信頼できるのは、問題になっていることを「繰り返し成功させてきた」うえで、自分の見解の因果を説明できる人だ。Bridgewater では、均等に数えた票と信頼度で重みづけした票を並べて示す。両者が一致すれば決着とし、割れたら、その割れ目にこそ情報がある。
+        設計レビューでは誰でもどの部分にも意見を持てるが、似たものを作ったり運用したりした経験があるのは一部の人だけだ。挙手で決めれば、初めて触る人も前回の移行をやり遂げたエンジニアも同じ一票になる。いちばん上の人に従っても、別の死角に置き換わるだけだ。Dalio の基準は狭く、確かめられる。最も信頼できるのは、問題になっていることを「繰り返し成功させてきた」うえで、自分の見解の因果を説明できる人だ。Bridgewater では、均等に数えた票と信頼度で重みづけした票を並べて示す。両者が一致すれば決着とし、割れたらもう一度すり合わせ、それでも決まらなければ重みづけした票に従う。割れたこと自体に情報がある。
       counter:
         name: 群衆の知恵
         note: |-
-          判断が互いに独立していれば、均等な重みの単純な平均はなかなか負けない (Galton が見た品評会の群衆の推定の中央値は、牛の重さとの差が 1% もなかった)。専門家を前もって選ぶのは、過去の実績が新しい問いにも通じるほうに賭けることだ
+          判断が互いに独立していれば、均等な重みの単純な集計を上回るのは難しい (Galton が見た品評会の群衆の推定の中央値は、牛の重さとの差が 1% もなかった)。専門家を前もって選ぶのは、過去の実績が新しい問いにも通じるほうに賭けることだ
       guideline: |-
-        意見の割れる技術判断の前に、この種のものを作ったり運用したりした人は誰か、それはうまくいったかを確かめ、その人の見解を人数や肩書きより重く扱う。議論の前に意見を書面で集めて独立性を保ち、単純な集計と重みづけした集計の両方を見る。両者が食い違ったら、重みづけした側を自動的に勝たせず、掘り下げる。信頼度は、出荷したシステムやポストモーテムなど確かめられる結果に基づかせる。チームの誰も経験したことのない問いでは、重みづけをやめる。
+        意見の割れる技術判断の前に、この種のものを作ったり運用したりした人は誰か、それはうまくいったかを確かめ、その人の見解を人数や肩書きより重く扱う。議論の前に意見を書面で集めて独立性を保ち、単純な集計と重みづけした集計の両方を見る。両者が食い違ったら、重みづけした側を自動的に勝たせず、掘り下げる。信頼度は、出荷したシステムやポストモーテムなど、確かめられる結果をもとに決める。チームの誰も経験したことのない問いでは、重みづけをやめる。
       source: |-
         Ray Dalio『Principles: Life & Work』(Simon & Schuster, 2017) の仕事の原則「Believability Weight Your Decision Making」(principles.com)。"the best decisions are made by an idea meritocracy with believability-weighted decision making"、最も信頼できる人の条件 "have repeatedly and successfully accomplished the thing in question"、"displays both the equal-weighted average and the believability-weighted results" という道具の出典。Netflix のカルチャーメモも "not all opinions are created equal" と同じことを言う。対抗原理は Francis Galton『Vox Populi』(Nature, 1907) から。
 
@@ -3828,4 +3828,4 @@ laws:
       guideline: |-
         設計レビューや RFC のレビューでは、レビュアーは問題とその原因と思われるものを指摘するが、直し方は指図しない。判断は作者に任せ、作者は指摘の一つひとつに書面で答える。部屋には、作者を評価する上司ではなく、似たものを作った経験のある仲間を集める。誤りのツケが他人に回るもの (セキュリティ、データ消失、取り消せない移行) では、止める権限のある承認を残す。ただし助言のためのレビューとは別の手順にする。
       source: |-
-        Ed Catmull の発言。「Spark Creativity with These Tips from Pixar's President」(『First Round Review』, 2015) による。"the Braintrust should have no authority" と、責任者が "would never have to come into the room in a defensive posture" ことの出典。仕組みの全体は Ed Catmull with Amy Wallace『Creativity, Inc.』(Random House, 2014) に詳しい。
+        Ed Catmull の発言。「Spark Creativity with These Tips from Pixar's President」(『First Round Review』, 2015) による。"the Braintrust should have no authority" と、責任者が "would never have to come into the room in a defensive posture" で済むようにするという点の出典。仕組みの全体は Ed Catmull with Amy Wallace『Creativity, Inc.』(Random House, 2014) に詳しい。
