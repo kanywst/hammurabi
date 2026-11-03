@@ -5038,10 +5038,14 @@ export const laws: Law[] = [
       "kind": "person",
       "name": "Kiichiro Toyoda",
       "monogram": "KT",
-      "image": null,
+      "image": "/figures/genchi-genbutsu.webp",
       "logo": null,
       "wide": false,
-      "credit": null
+      "credit": {
+        "author": "Unknown author",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Kiichiro_Toyoda.jpg"
+      }
     },
     "en": {
       "title": "Genchi Genbutsu (Go and See)",
@@ -5082,10 +5086,14 @@ export const laws: Law[] = [
       "kind": "person",
       "name": "Ray Dalio",
       "monogram": "RD",
-      "image": null,
+      "image": "/figures/believability-weighted-decisions.webp",
       "logo": null,
       "wide": false,
-      "credit": null
+      "credit": {
+        "author": "Grameen America",
+        "license": "CC BY 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Ray_Dalio_Sept_23_2017_NYC.jpg"
+      }
     },
     "en": {
       "title": "Believability-Weighted Decisions",
@@ -5126,10 +5134,14 @@ export const laws: Law[] = [
       "kind": "person",
       "name": "Ed Catmull",
       "monogram": "EC",
-      "image": null,
+      "image": "/figures/braintrust.webp",
       "logo": null,
       "wide": false,
-      "credit": null
+      "credit": {
+        "author": "Web Summit",
+        "license": "CC BY 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Ed_Catmull_at_Web_Summit_2015_(cropped).jpg"
+      }
     },
     "en": {
       "title": "Braintrust (Notes Without Authority)",
