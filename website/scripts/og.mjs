@@ -196,7 +196,7 @@ function card(law, lang, tagLabel) {
   const textW = 760;
   const titleSize = lang === 'ja' ? 64 : 62;
   const title = wrap(t.title, titleSize, textW, 2);
-  const concept = wrap(t.concept, 30, textW, 3);
+  const stance = wrap(t.stance, 32, textW, 2);
   const counter = wrap(
     `${COPY[lang].counter}${lang === 'ja' ? '：' : ': '}${t.counter.name}`,
     26,
@@ -216,10 +216,24 @@ function card(law, lang, tagLabel) {
     );
   }
   y += 22;
+  // The stance is the line to remember, so it always fits; the concept gets
+  // whatever room is left above the counter, up to three lines, and is left
+  // out rather than cut to a stub when a long title leaves no room.
+  const bottom = H - 170;
+  const stanceH = 18 + stance.length * 32 * 1.4;
+  const room = Math.floor((bottom - y - stanceH) / (30 * 1.5));
+  const concept = room > 0 ? wrap(t.concept, 30, textW, Math.min(3, room)) : [];
   for (const line of concept) {
     y += 30 * 1.5;
     parts.push(
       `<text x="72" y="${y}" font-family="${FAMILY}" font-weight="600" font-size="30" fill="${INK2}">${esc(line)}</text>`
+    );
+  }
+  y += 18;
+  for (const line of stance) {
+    y += 32 * 1.4;
+    parts.push(
+      `<text x="72" y="${y}" font-family="${FAMILY}" font-weight="800" font-size="32" fill="${INK}">${esc(line)}</text>`
     );
   }
   parts.push(
