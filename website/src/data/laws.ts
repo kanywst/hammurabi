@@ -5038,10 +5038,14 @@ export const laws: Law[] = [
       "kind": "person",
       "name": "Kiichiro Toyoda",
       "monogram": "KT",
-      "image": null,
+      "image": "/figures/genchi-genbutsu.webp",
       "logo": null,
       "wide": false,
-      "credit": null
+      "credit": {
+        "author": "Unknown author",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Kiichiro_Toyoda.jpg"
+      }
     },
     "en": {
       "title": "Genchi Genbutsu (Go and See)",
@@ -5052,7 +5056,7 @@ export const laws: Law[] = [
         "note": "a visit shows one shift, one user or one trace, and people judge from a small sample as if it stood for the whole (the belief in the law of small numbers), so for a question about the whole fleet the dashboard that covers every case is the better witness"
       },
       "guideline": "Before you decide on a fix, a priority or a postmortem conclusion, look at the primary evidence yourself: reproduce the bug, read the raw logs and the trace of one failing request, watch a real user hit the problem, or sit on the support queue for an hour. Use what you saw to question the dashboard, not to replace it.",
-      "source": "Toyota Motor Corporation, *The Toyota Way 2001*, as recorded in Toyota's official history *75 Years of Toyota*, ch. 4, sec. 7 — \"Genchi Genbutsu (go to the source to find the facts)\", one of five key concepts compiled in April 2001; Toyota, *Sustainable Management Report 2016*, p. 23 — \"go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed.\" The bias behind the counter-force is from Amos Tversky & Daniel Kahneman, *Belief in the Law of Small Numbers* (Psychological Bulletin, 1971)."
+      "source": "Toyota Motor Corporation, *The Toyota Way 2001*, as recorded in Toyota's official history *75 Years of Toyota*, ch. 4, sec. 7 — \"Genchi Genbutsu (go to the source to find the facts)\", one of five key concepts compiled in April 2001; Toyota, *Sustainable Management Report 2016*, p. 23 — \"go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed.\" The book's opening message credits the founder with applying it: \"Kiichiro thoroughly applied the principle of genchi genbutsu (going and seeing for oneself)\" (Fujio Cho, *75 Years of Toyota*, Message, 2012). The bias behind the counter-force is from Amos Tversky & Daniel Kahneman, *Belief in the Law of Small Numbers* (Psychological Bulletin, 1971)."
     },
     "ja": {
       "title": "現地現物",
@@ -5063,7 +5067,7 @@ export const laws: Law[] = [
         "note": "現場で見られるのは一つのシフト、一人の利用者、一本のトレースだ。人は小さな標本を全体の代表のように扱いがちだ (少数の法則の信念)。全体についての問いなら、すべての事例を含むダッシュボードのほうが確かな証人になる"
       },
       "guideline": "修正、優先順位、ポストモーテムの結論を決める前に、一次情報を自分の目で確かめる。バグを再現する、生のログと失敗したリクエスト一件のトレースを読む、実際の利用者が問題にぶつかる様子を見る、一時間サポートの窓口に座る。見たものはダッシュボードを疑うのに使い、置き換えるのには使わない。",
-      "source": "トヨタ自動車『トヨタウェイ 2001』。公式社史『トヨタ自動車75年史』第 4 章第 7 節の記録による。\"Genchi Genbutsu (go to the source to find the facts)\" は 2001 年 4 月にまとめられた五つのキーワードの一つ。トヨタ『Sustainable Management Report 2016』p. 23 の \"go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed.\" も参照。対抗原理の背景にあるバイアスは Amos Tversky & Daniel Kahneman『Belief in the Law of Small Numbers』(Psychological Bulletin, 1971) から。"
+      "source": "トヨタ自動車『トヨタウェイ 2001』。公式社史『トヨタ自動車75年史』第 4 章第 7 節の記録による。\"Genchi Genbutsu (go to the source to find the facts)\" は 2001 年 4 月にまとめられた五つのキーワードの一つ。トヨタ『Sustainable Management Report 2016』p. 23 の \"go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed.\" も参照。75年史の巻頭メッセージで張富士夫会長は、創業者がこの原則を徹底して実践したと述べている (\"Kiichiro thoroughly applied the principle of genchi genbutsu (going and seeing for oneself)\"、2012)。対抗原理の背景にあるバイアスは Amos Tversky & Daniel Kahneman『Belief in the Law of Small Numbers』(Psychological Bulletin, 1971) から。"
     }
   },
   {
@@ -5082,10 +5086,14 @@ export const laws: Law[] = [
       "kind": "person",
       "name": "Ray Dalio",
       "monogram": "RD",
-      "image": null,
+      "image": "/figures/believability-weighted-decisions.webp",
       "logo": null,
       "wide": false,
-      "credit": null
+      "credit": {
+        "author": "Grameen America",
+        "license": "CC BY 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Ray_Dalio_Sept_23_2017_NYC.jpg"
+      }
     },
     "en": {
       "title": "Believability-Weighted Decisions",
@@ -5126,10 +5134,14 @@ export const laws: Law[] = [
       "kind": "person",
       "name": "Ed Catmull",
       "monogram": "EC",
-      "image": null,
+      "image": "/figures/braintrust.webp",
       "logo": null,
       "wide": false,
-      "credit": null
+      "credit": {
+        "author": "Web Summit",
+        "license": "CC BY 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Ed_Catmull_at_Web_Summit_2015_(cropped).jpg"
+      }
     },
     "en": {
       "title": "Braintrust (Notes Without Authority)",
