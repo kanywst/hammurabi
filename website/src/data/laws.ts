@@ -5002,7 +5002,7 @@ export const laws: Law[] = [
     "en": {
       "title": "One-Version Rule",
       "concept": "When consumers may choose which version of a shared dependency to use, each choice becomes a conflict for someone who never made it.",
-      "mechanism": "Two components that pin different versions of the same library each work on their own. A program that comes to depend on both gets a link failure at best, or one copy picked at random at runtime, and the team that pays is the one that combined them, not the ones that pinned. Every extra version also adds another place a security fix or an upgrade has to land, and the copies drift apart until moving off the old one is a project of its own. Hiding the second copy, by shading or renaming, does not make the conflict go away. Allowing exactly one version per dependency removes the choice, so an upgrade is done once for every caller, and adding a dependency no longer breaks a bystander through a version conflict.",
+      "mechanism": "Two components that pin different versions of the same library each work on their own. A program that comes to depend on both gets a link failure at best, or one copy picked at random at runtime, and the team that pays is the one that combined them, not the ones that pinned. Every extra version also adds another place a security fix or an upgrade has to land, and the copies drift apart until moving off the old one is a project of its own. Hiding the second copy, by shading or renaming, does not make the conflict go away. Allowing exactly one version per dependency removes the choice, so an upgrade can be done once for every caller, and adding a dependency no longer breaks a bystander through a version conflict.",
       "counter": {
         "name": "Semantic Import Versioning",
         "note": "where no one owns every caller, as across an open-source ecosystem, nobody can make the single change that moves everyone, so letting incompatible major versions live side by side under different import paths lets each caller upgrade on its own schedule and accepts the duplicate copies as the price, which is the approach Go modules take"
@@ -5013,7 +5013,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "ワン・バージョン・ルール",
       "concept": "共有する依存先のどのバージョンを使うかを利用者が選べると、選ぶたびに、選んでいない誰かが衝突を抱える。",
-      "mechanism": "同じライブラリの別々のバージョンに固定した二つのコンポーネントは、それぞれ単独では動く。両方に依存するプログラムができると、よくてリンクエラー、悪ければ実行時にどちらか一方がでたらめに選ばれる。そのツケを払うのは固定したチームではなく、二つを組み合わせたチームだ。バージョンが一つ増えるたびに、セキュリティ修正やアップグレードを入れる場所も一つ増える。コピーどうしの差は広がっていき、古いほうから移るだけで一つのプロジェクトになる。シェーディングや名前の付け替えで二つ目のコピーを隠しても、衝突は消えない。依存先ごとにバージョンを一つだけと決めれば選択肢がなくなり、アップグレードは全呼び出し側に対して一度で済み、依存を足しても、バージョンの衝突で無関係な誰かが壊れることはなくなる。",
+      "mechanism": "同じライブラリの別々のバージョンに固定した二つのコンポーネントは、それぞれ単独では動く。両方に依存するプログラムができると、よくてリンクエラー、悪ければ実行時にどちらか一方がでたらめに選ばれる。そのツケを払うのは固定したチームではなく、二つを組み合わせたチームだ。バージョンが一つ増えるたびに、セキュリティ修正やアップグレードを入れる場所も一つ増える。コピーどうしの差は広がっていき、古いほうから移るだけで一つのプロジェクトになる。シェーディングや名前の付け替えで二つ目のコピーを隠しても、衝突は消えない。依存先ごとにバージョンを一つだけと決めれば選択肢がなくなり、アップグレードを全呼び出し側に対して一度で済ませられ、依存を足しても、バージョンの衝突で無関係な誰かが壊れることはなくなる。",
       "counter": {
         "name": "セマンティック・インポート・バージョニング",
         "note": "オープンソースのエコシステムのように、すべての呼び出し側を持つ者がいない場では、全員を一度に移す変更は誰にもできない。互換性のないメジャーバージョンを別のインポートパスで並べて置けば、呼び出し側はそれぞれの都合でアップグレードでき、コピーが重複するのはその代価として受け入れる。Go のモジュールはこのやり方を採っている"
@@ -5051,7 +5051,7 @@ export const laws: Law[] = [
         "name": "Trust the Aggregate",
         "note": "a visit shows one shift, one user or one trace, and people judge from a small sample as if it stood for the whole (the belief in the law of small numbers), so for a question about the whole fleet the dashboard that covers every case is the better witness"
       },
-      "guideline": "Before you decide on a fix, a priority or a postmortem conclusion, look at the primary evidence yourself: reproduce the bug, read the raw logs and the trace of one failing request, watch a real user hit the problem, or sit on the support queue for an hour. Use what you saw to question the dashboard, not to replace it, and check that the case is typical before acting on it at scale.",
+      "guideline": "Before you decide on a fix, a priority or a postmortem conclusion, look at the primary evidence yourself: reproduce the bug, read the raw logs and the trace of one failing request, watch a real user hit the problem, or sit on the support queue for an hour. Use what you saw to question the dashboard, not to replace it.",
       "source": "Toyota Motor Corporation, *The Toyota Way 2001*, as recorded in Toyota's official history *75 Years of Toyota*, ch. 4, sec. 7 — \"Genchi Genbutsu (go to the source to find the facts)\", one of five key concepts compiled in April 2001; Toyota, *Sustainable Management Report 2016*, p. 23 — \"go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed.\" The bias behind the counter-force is from Amos Tversky & Daniel Kahneman, *Belief in the Law of Small Numbers* (Psychological Bulletin, 1971)."
     },
     "ja": {
@@ -5062,7 +5062,7 @@ export const laws: Law[] = [
         "name": "集計を信じる",
         "note": "現場で見られるのは一つのシフト、一人の利用者、一本のトレースだ。人は小さな標本を全体の代表のように扱いがちだ (少数の法則の信念)。全体についての問いなら、すべての事例を含むダッシュボードのほうが確かな証人になる"
       },
-      "guideline": "修正、優先順位、ポストモーテムの結論を決める前に、一次情報を自分の目で確かめる。バグを再現する、生のログと失敗したリクエスト一件のトレースを読む、実際の利用者が問題にぶつかる様子を見る、一時間サポートの窓口に座る。見たものはダッシュボードを疑うのに使い、置き換えるのには使わない。広く適用する前に、その一件がよくある事例かどうかを確かめる。",
+      "guideline": "修正、優先順位、ポストモーテムの結論を決める前に、一次情報を自分の目で確かめる。バグを再現する、生のログと失敗したリクエスト一件のトレースを読む、実際の利用者が問題にぶつかる様子を見る、一時間サポートの窓口に座る。見たものはダッシュボードを疑うのに使い、置き換えるのには使わない。",
       "source": "トヨタ自動車『トヨタウェイ 2001』。公式社史『トヨタ自動車75年史』第 4 章第 7 節の記録による。\"Genchi Genbutsu (go to the source to find the facts)\" は 2001 年 4 月にまとめられた五つのキーワードの一つ。トヨタ『Sustainable Management Report 2016』p. 23 の \"go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed.\" も参照。対抗原理の背景にあるバイアスは Amos Tversky & Daniel Kahneman『Belief in the Law of Small Numbers』(Psychological Bulletin, 1971) から。"
     }
   },
@@ -5134,7 +5134,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Braintrust (Notes Without Authority)",
       "concept": "Feedback from people who can overrule the owner gets defended against rather than used; peers with no power to impose a fix can be candid, and the owner can afford to hear them.",
-      "mechanism": "Someone deep in a piece of work loses perspective and needs outside eyes. But if those eyes can impose a fix, the owner comes in to defend the work instead of to hear about it, and reviewers drift from naming the problem to dictating their own solution. Taking away the veto changes both sides: reviewers can be blunt because nothing they say is binding, and the owner can listen because nothing they hear is an order. The owner, who still answers for the result and knows constraints the room does not, then chooses the remedy. Authority does not disappear; it sits with whoever can replace the owner if the work keeps failing.",
+      "mechanism": "Someone deep in a piece of work loses perspective and needs outside eyes. But if those eyes can impose a fix, the owner comes in to defend the work instead of to hear about it, and reviewers drift from naming the problem to dictating their own solution. Taking away the veto changes both sides: reviewers can be blunt because nothing they say is binding, and the owner can listen because nothing they hear is an order. The owner, who still answers for the result and knows constraints the room does not, then chooses the remedy.",
       "counter": {
         "name": "Review as a Gate",
         "note": "where a blind spot's cost lands on someone other than the owner (a security hole, lost data, another team's pager), advice that can be ignored is not enough, and a reviewer has to be able to block"
@@ -5145,7 +5145,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "ブレイントラスト (権限を持たない助言)",
       "concept": "オーナーを覆せる人からの意見は、活かされるより先に防御の対象になる。修正を強制できない仲間なら率直に言えるし、オーナーも落ち着いて聞ける。",
-      "mechanism": "仕事に深く入り込んだ人は全体が見えなくなり、外の目を必要とする。ところがその目が修正を押しつけられるなら、オーナーは話を聞くためではなく作品を守るために部屋に入り、レビュアーは問題を指摘するところから自分の解決策を指図するところへずれていく。拒否権を外すと両側が変わる。言ったことに拘束力がないからレビュアーは遠慮なく言え、聞いたことが命令ではないからオーナーは耳を傾けられる。そのうえで、結果に責任を持ち、その場の誰も知らない制約を知っているオーナーが直し方を選ぶ。権限が消えるわけではない。仕事がうまくいかないままならオーナーを交代させられる人のところに残る。",
+      "mechanism": "仕事に深く入り込んだ人は全体が見えなくなり、外の目を必要とする。ところがその目が修正を押しつけられるなら、オーナーは話を聞くためではなく作品を守るために部屋に入り、レビュアーは問題を指摘するところから自分の解決策を指図するところへずれていく。拒否権を外すと両側が変わる。言ったことに拘束力がないからレビュアーは遠慮なく言え、聞いたことが命令ではないからオーナーは耳を傾けられる。そのうえで、結果に責任を持ち、その場の誰も知らない制約を知っているオーナーが直し方を選ぶ。",
       "counter": {
         "name": "関門としてのレビュー",
         "note": "死角のツケがオーナー以外の誰か (セキュリティの穴、失われたデータ、別チームのオンコール) に回るなら、無視できる助言では足りず、レビュアーが止められなければならない"
