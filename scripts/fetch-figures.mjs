@@ -126,10 +126,12 @@ const expected = new Set(
     .filter((f) => f.image || f.logo)
     .flatMap((f) => (f.image ? [`${f.slug}.webp`] : [`${f.slug}.svg`, `${f.slug}.png`]))
 );
-for (const file of readdirSync(OUT)) {
-  if (!expected.has(file)) {
-    rmSync(join(OUT, file));
-    console.log(`removed: ${file}`);
+for (const entry of readdirSync(OUT, { withFileTypes: true })) {
+  // Only figure files are ours to sweep; leave directories and dotfiles alone.
+  if (!entry.isFile() || entry.name.startsWith('.')) continue;
+  if (!expected.has(entry.name)) {
+    rmSync(join(OUT, entry.name));
+    console.log(`removed: ${entry.name}`);
   }
 }
 
