@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/kanywst/hammurabi/compare/v2.3.0...v2.4.0) (2026-11-03)
+
+
+### Added to the codex
+
+* **figures:** portraits for three of the new laws ([#171](https://github.com/kanywst/hammurabi/issues/171)) ([547c8ea](https://github.com/kanywst/hammurabi/commit/547c8eaa82ac86cf388cfac846fad7cb8a32d2e8))
+
 ## [2.3.0](https://github.com/kanywst/hammurabi/compare/v2.2.0...v2.3.0) (2026-11-03)
 
 
