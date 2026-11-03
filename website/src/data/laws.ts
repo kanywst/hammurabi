@@ -1473,7 +1473,7 @@ export const laws: Law[] = [
         "note": "large groups do ship coherent systems (the Linux kernel has thousands of contributors) when the interfaces between parts are stable enough that most people never need each other's context"
       },
       "guideline": "Watch for the symptom, not a number: when the people on one team can no longer say what everyone else is working on, or status meetings start multiplying, split along the seams of the system. Treat any specific size limit as a convention, not a finding.",
-      "source": "Robin I. M. Dunbar, *Neocortex size as a constraint on group size in primates* (Journal of Human Evolution, 1992). The smaller team-size figures usually quoted alongside it — 7±2, the two-pizza rule — are folklore rather than Dunbar's finding."
+      "source": "Robin I. M. Dunbar, *Neocortex size as a constraint on group size in primates* (Journal of Human Evolution, 1992). The smaller team-size figures usually quoted alongside it are not Dunbar's finding: 7±2 is folklore, and the two-pizza rule is an Amazon convention attributed to Jeff Bezos (\"We try to create teams that are no larger than can be fed by two pizzas\", AWS, *Introduction to DevOps on AWS*)."
     },
     "ja": {
       "title": "ダンバー数",
@@ -1484,7 +1484,7 @@ export const laws: Law[] = [
         "note": "部品間のインタフェースが十分に安定していて、ほとんどの人が互いの文脈を必要としないなら、大きな集団でも一貫したシステムを出せる（Linux カーネルには数千人の貢献者がいる）"
       },
       "guideline": "人数ではなく症状を見る。チームの誰もが他の全員の作業内容を言えなくなったり、状況共有の会議が増え始めたりしたら、システムの継ぎ目に沿ってチームを分ける。具体的な人数の上限は、知見ではなく慣習として扱う。",
-      "source": "Robin I. M. Dunbar『Neocortex size as a constraint on group size in primates』(Journal of Human Evolution, 1992)。併せて引かれる小さいチーム規模の数字 (7±2、ツー・ピザ・ルール) はダンバーの知見ではなく、通俗的な外挿である。"
+      "source": "Robin I. M. Dunbar『Neocortex size as a constraint on group size in primates』(Journal of Human Evolution, 1992)。併せて引かれる小さいチーム規模の数字はダンバーの知見ではない。7±2 は通俗的な外挿で、ツー・ピザ・ルールは Jeff Bezos の言葉とされる Amazon の慣行だ (\"We try to create teams that are no larger than can be fed by two pizzas\"、AWS『Introduction to DevOps on AWS』)。"
     }
   },
   {
@@ -3963,7 +3963,8 @@ export const laws: Law[] = [
     "seeAlso": [
       "type-1-vs-type-2-decisions",
       "law-of-triviality",
-      "believability-weighted-decisions"
+      "believability-weighted-decisions",
+      "context-not-control"
     ],
     "featured": false,
     "figure": {
@@ -3988,7 +3989,7 @@ export const laws: Law[] = [
         "note": "a culture that prizes commitment teaches people to stop objecting early, and silent compliance hides the dissent that would have caught the error"
       },
       "guideline": "State your disagreement once, in full, with your reasons. Then say \"I disagree and commit\" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you. For an irreversible decision, or one with a safety or ethical risk, do not commit quietly: escalate.",
-      "source": "Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — \"use the phrase 'disagree and commit'\", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and it is also attributed to Intel."
+      "source": "Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — \"use the phrase 'disagree and commit'\", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and Richard Tedlow, Andy Grove's biographer, lists \"disagree and then commit\" alongside \"constructive confrontation\" among Intel's principles (\"Andy Grove: A Biographer's Tale\", *HBS Working Knowledge*, 2006). Netflix's culture memo uses the same rule, \"disagree then commit\", in its \"informed captain\" model, where one named person makes each significant decision after \"farming for dissent\"."
     },
     "ja": {
       "title": "反対してもコミットする",
@@ -3999,7 +4000,7 @@ export const laws: Law[] = [
         "note": "コミットを重んじる文化では、人は早いうちに反対するのをやめるようになる。黙って従う人が増えると、誤りに気づけたはずの異論が表に出てこない"
       },
       "guideline": "反対意見は一度だけ、理由を添えて全部言う。そのうえで「反対だがコミットする」と言い、自分の案だったつもりで実行する。立場が上の人も同じようにする。チームに自分を説得させるのではなく、チームの判断を後押しする。ただし取り返しのつかない決定や、安全・倫理上のリスクがある決定では、黙ってコミットせずエスカレーションする。",
-      "source": "Jeff Bezos『2016 年 株主への手紙』(Amazon.com, Inc., 2017 年)。\"use the phrase 'disagree and commit'\" と Amazon Studios の例。語句自体は Amazon 以前からある。Karen Southwick『High Noon』(1999) は Sun Microsystems の Scott McNealy がこの語を使っていたと記しており、Intel 発祥とする説もある。"
+      "source": "Jeff Bezos『2016 年 株主への手紙』(Amazon.com, Inc., 2017 年)。\"use the phrase 'disagree and commit'\" と Amazon Studios の例。語句自体は Amazon 以前からある。Karen Southwick『High Noon』(1999) は Sun Microsystems の Scott McNealy がこの語を使っていたと記している。Andy Grove の伝記を書いた Richard Tedlow は、Intel の原則として \"constructive confrontation\" と並べて \"disagree and then commit\" を挙げている (「Andy Grove: A Biographer's Tale」『HBS Working Knowledge』2006)。Netflix のカルチャーメモも \"disagree then commit\" という同じ決まりを「informed captain」のモデルの中で使う。重要な決定はそれぞれ名指しされた一人が、\"farming for dissent\" (異論を集めること) を経て下す。"
     }
   },
   {
@@ -4411,7 +4412,8 @@ export const laws: Law[] = [
     "seeAlso": [
       "conways-law",
       "mechanisms-not-good-intentions",
-      "curse-of-knowledge"
+      "curse-of-knowledge",
+      "disagree-and-commit"
     ],
     "featured": false,
     "figure": {

@@ -447,7 +447,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** 人間が安定した社会関係を保てるのはおよそ150人とされる。ダンバーの結果は霊長類全般の新皮質の大きさと群れの大きさの関係を扱ったもので、仕事のチームの話ではない。エンジニアリングがそこから類推しているのは別の議論だ。意思疎通の経路は n(n-1)/2 で増えるので、全員が全員の文脈をまだ把握できる規模を超えると、増えた人員は成果ではなく調整に消える。
 - **対立概念:** **インタフェースによる協調** — 部品間のインタフェースが十分に安定していて、ほとんどの人が互いの文脈を必要としないなら、大きな集団でも一貫したシステムを出せる（Linux カーネルには数千人の貢献者がいる）。
 - **判断の指針:** 人数ではなく症状を見る。チームの誰もが他の全員の作業内容を言えなくなったり、状況共有の会議が増え始めたりしたら、システムの継ぎ目に沿ってチームを分ける。具体的な人数の上限は、知見ではなく慣習として扱う。
-- **出典:** Robin I. M. Dunbar『Neocortex size as a constraint on group size in primates』(Journal of Human Evolution, 1992)。併せて引かれる小さいチーム規模の数字 (7±2、ツー・ピザ・ルール) はダンバーの知見ではなく、通俗的な外挿である。 — [原典 ↗](https://doi.org/10.1016/0047-2484(92)90081-J)
+- **出典:** Robin I. M. Dunbar『Neocortex size as a constraint on group size in primates』(Journal of Human Evolution, 1992)。併せて引かれる小さいチーム規模の数字はダンバーの知見ではない。7±2 は通俗的な外挿で、ツー・ピザ・ルールは Jeff Bezos の言葉とされる Amazon の慣行だ ("We try to create teams that are no larger than can be fed by two pizzas"、AWS『Introduction to DevOps on AWS』)。 — [原典 ↗](https://doi.org/10.1016/0047-2484(92)90081-J)
 - **関連:** [コンウェイの法則 (Conway's Law)](#コンウェイの法則-conways-law) · [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) · [ミラーの法則 (Miller's Law)](#ミラーの法則-millers-law) · [メトカーフの法則 (Metcalfe's Law)](#メトカーフの法則-metcalfes-law) · [リンゲルマン効果 (Ringelmann Effect)](#リンゲルマン効果-ringelmann-effect)
 
 ### 劣っている方が勝つ (Worse is Better)
@@ -1078,8 +1078,8 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** 合意を求める集団では、決定はいちばんしつこい懐疑派の速さでしか進まない。しかも議論も終盤になると、正解はどのみち分からないことが多い。議論に負けた反対者が、決まった方針を中途半端にしか実行しないこともあり、そうなるとどちらが正しかったにせよ結果は悪くなる。「同意するか」と「コミットするか」を分ければ、反対は言い尽くしたうえで、実行には全力を注げる。
 - **対立概念:** **集団浅慮** — コミットを重んじる文化では、人は早いうちに反対するのをやめるようになる。黙って従う人が増えると、誤りに気づけたはずの異論が表に出てこない。
 - **判断の指針:** 反対意見は一度だけ、理由を添えて全部言う。そのうえで「反対だがコミットする」と言い、自分の案だったつもりで実行する。立場が上の人も同じようにする。チームに自分を説得させるのではなく、チームの判断を後押しする。ただし取り返しのつかない決定や、安全・倫理上のリスクがある決定では、黙ってコミットせずエスカレーションする。
-- **出典:** Jeff Bezos『2016 年 株主への手紙』(Amazon.com, Inc., 2017 年)。"use the phrase 'disagree and commit'" と Amazon Studios の例。語句自体は Amazon 以前からある。Karen Southwick『High Noon』(1999) は Sun Microsystems の Scott McNealy がこの語を使っていたと記しており、Intel 発祥とする説もある。 — [原典 ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
-- **関連:** [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality) · [信頼度で重みづけする意思決定 (Believability-Weighted Decisions)](#信頼度で重みづけする意思決定-believability-weighted-decisions)
+- **出典:** Jeff Bezos『2016 年 株主への手紙』(Amazon.com, Inc., 2017 年)。"use the phrase 'disagree and commit'" と Amazon Studios の例。語句自体は Amazon 以前からある。Karen Southwick『High Noon』(1999) は Sun Microsystems の Scott McNealy がこの語を使っていたと記している。Andy Grove の伝記を書いた Richard Tedlow は、Intel の原則として "constructive confrontation" と並べて "disagree and then commit" を挙げている (「Andy Grove: A Biographer's Tale」『HBS Working Knowledge』2006)。Netflix のカルチャーメモも "disagree then commit" という同じ決まりを「informed captain」のモデルの中で使う。重要な決定はそれぞれ名指しされた一人が、"farming for dissent" (異論を集めること) を経て下す。 — [原典 ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
+- **関連:** [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality) · [信頼度で重みづけする意思決定 (Believability-Weighted Decisions)](#信頼度で重みづけする意思決定-believability-weighted-decisions) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control)
 
 ### 作った者が運用する (You Build It, You Run It)
 
@@ -1183,7 +1183,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **ガードレール** — 一部の失敗（認証情報の漏洩、コンプライアンス違反、取り消せない削除）は、判断に任せるには代償が大きすぎる。また文脈は、まだそれを身につけていない新人には役に立たない。
 - **判断の指針:** 自分なら別の判断をしたと思う決定をチームが下したら、ルールを書く前に、チームに欠けていた文脈は何かを問い、まず文脈を補う。強い統制（承認ゲート、強制されるポリシー）は、取り返しのつかない決定、倫理に反する決定、重大なリスクを伴う決定に限る。統制ごとに存在理由を書き残し、理由がなくなったら外せるようにする。
 - **出典:** Netflix『Netflix Culture Memo』(jobs.netflix.com, 2024 年頃の版)。同じ原則は Reed Hastings & Erin Meyer『No Rules Rules: Netflix and the Culture of Reinvention』(Penguin Press, 2020) にもまとめられている。「context not control」、「highly aligned and loosely coupled」、成長に伴うプロセスの肥大を避けるためにルールを最小限に保つという方針の出典。 — [原典 ↗](https://jobs.netflix.com/culture)
-- **関連:** [コンウェイの法則 (Conway's Law)](#コンウェイの法則-conways-law) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions) · [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge)
+- **関連:** [コンウェイの法則 (Conway's Law)](#コンウェイの法則-conways-law) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions) · [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit)
 
 ### コードの健全性を上げるなら承認する (Approve What Improves Code Health)
 
