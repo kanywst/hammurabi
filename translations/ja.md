@@ -3,7 +3,7 @@
 **エンジニアリングの法則と、その歯止め。** どの条にも、現場での指針と一次資料の出典を付けている。
 
 [![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=1d47b8&labelColor=17181a)](https://github.com/kanywst/hammurabi/stargazers)
-[![laws](https://img.shields.io/badge/%E6%B3%95%E5%89%87-95-1d47b8?style=for-the-badge&labelColor=17181a)](#法典)
+[![laws](https://img.shields.io/badge/%E6%B3%95%E5%89%87-100-1d47b8?style=for-the-badge&labelColor=17181a)](#法典)
 [![site](https://img.shields.io/badge/%E6%B3%95%E5%85%B8%E3%82%92%E8%AA%AD%E3%82%80-1d47b8?style=for-the-badge&labelColor=17181a)](https://kanywst.github.io/hammurabi/ja/)
 [![license](https://img.shields.io/badge/content-CC%20BY--SA%204.0-5c5f64?style=for-the-badge&labelColor=17181a)](../LICENSE)
 
@@ -50,11 +50,11 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **見積りが毎回ずれる:** [ホフスタッターの法則 (Hofstadter's Law)](#ホフスタッターの法則-hofstadters-law) · [90対90の法則 (Ninety-Ninety Rule)](#90対90の法則-ninety-ninety-rule) · [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) · [時間を固定し、スコープを変える (Fixed Time, Variable Scope)](#時間を固定しスコープを変える-fixed-time-variable-scope)
 - **チームが大きくなってきた:** [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) · [ダンバー数 (Dunbar's Number)](#ダンバー数-dunbars-number) · [リンゲルマン効果 (Ringelmann Effect)](#リンゲルマン効果-ringelmann-effect) · [コンウェイの法則 (Conway's Law)](#コンウェイの法則-conways-law) · [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control) · [バス係数 (Bus Factor)](#バス係数-bus-factor)
 - **指標が数字合わせになっている:** [グッドハートの法則 (Goodhart's Law)](#グッドハートの法則-goodharts-law) · [コブラ効果 (Cobra Effect)](#コブラ効果-cobra-effect) · [シャーキーの原理 (Shirky Principle)](#シャーキーの原理-shirky-principle)
-- **決めきれない:** [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality) · [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy)
-- **障害が起きた後:** [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor) · [自動化の皮肉 (Ironies of Automation)](#自動化の皮肉-ironies-of-automation) · [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions) · [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox)
+- **決めきれない:** [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality) · [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy) · [スライドではなく文章で (Narratives, Not Slides)](#スライドではなく文章で-narratives-not-slides) · [信頼度で重みづけする意思決定 (Believability-Weighted Decisions)](#信頼度で重みづけする意思決定-believability-weighted-decisions)
+- **障害が起きた後:** [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor) · [自動化の皮肉 (Ironies of Automation)](#自動化の皮肉-ironies-of-automation) · [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions) · [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox) · [現地現物 (Genchi Genbutsu (Go and See))](#現地現物-genchi-genbutsu-go-and-see)
 - **信頼性と開発速度がぶつかる:** [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) · [トイル (Toil)](#トイル-toil) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [マーフィーの法則 (Murphy's Law)](#マーフィーの法則-murphys-law) · [作った者が運用する (You Build It, You Run It)](#作った者が運用する-you-build-it-you-run-it) · [アンドン（ラインを止める） (Andon (Stop the Line))](#アンドンラインを止める-andon-stop-the-line) · [カオスエンジニアリング (Chaos Engineering)](#カオスエンジニアリング-chaos-engineering) · [技術的負債 (Technical Debt)](#技術的負債-technical-debt)
 - **何かが遅い:** [アムダールの法則 (Amdahl's Law)](#アムダールの法則-amdahls-law) · [制約理論 (Theory of Constraints)](#制約理論-theory-of-constraints) · [早すぎる最適化 (Premature Optimization)](#早すぎる最適化-premature-optimization) · [スケールの裾野 (The Tail at Scale)](#スケールの裾野-the-tail-at-scale) · [リトルの法則 (Little's Law)](#リトルの法則-littles-law)
-- **古いコードを消す・作り直す:** [チェスタトンの柵 (Chesterton's Fence)](#チェスタトンの柵-chestertons-fence) · [セカンドシステム症候群 (Second-System Effect)](#セカンドシステム症候群-second-system-effect) · [ガルの法則 (Gall's Law)](#ガルの法則-galls-law) · [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [イーグルソンの法則 (Eagleson's Law)](#イーグルソンの法則-eaglesons-law) · [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [ストラングラーフィグ (Strangler Fig)](#ストラングラーフィグ-strangler-fig) · [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule) · [技術的負債 (Technical Debt)](#技術的負債-technical-debt) · [レーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)](#レーマンのソフトウェア進化の法則-lehmans-laws-of-software-evolution)
+- **古いコードを消す・作り直す:** [チェスタトンの柵 (Chesterton's Fence)](#チェスタトンの柵-chestertons-fence) · [セカンドシステム症候群 (Second-System Effect)](#セカンドシステム症候群-second-system-effect) · [ガルの法則 (Gall's Law)](#ガルの法則-galls-law) · [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [イーグルソンの法則 (Eagleson's Law)](#イーグルソンの法則-eaglesons-law) · [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [ストラングラーフィグ (Strangler Fig)](#ストラングラーフィグ-strangler-fig) · [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule) · [技術的負債 (Technical Debt)](#技術的負債-technical-debt) · [レーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)](#レーマンのソフトウェア進化の法則-lehmans-laws-of-software-evolution) · [ワン・バージョン・ルール (One-Version Rule)](#ワンバージョンルール-one-version-rule)
 - **API やインタフェースを設計する:** [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [ポステルの法則 (Postel's Law)](#ポステルの法則-postels-law) · [驚き最小の原則 (Principle of Least Astonishment)](#驚き最小の原則-principle-of-least-astonishment) · [リーキー・アブストラクション (Law of Leaky Abstractions)](#リーキーアブストラクション-law-of-leaky-abstractions) · [テスラーの複雑性保存則 (Tesler's Law)](#テスラーの複雑性保存則-teslers-law) · [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule)
 - **新しいものを作り始める:** [ワーキング・バックワーズ (Working Backwards)](#ワーキングバックワーズ-working-backwards) · [YAGNI (YAGNI)](#yagni-yagni) · [ガルの法則 (Gall's Law)](#ガルの法則-galls-law) · [劣っている方が勝つ (Worse is Better)](#劣っている方が勝つ-worse-is-better) · [KISS の原則 (KISS Principle)](#kiss-の原則-kiss-principle) · [XY問題 (XY Problem)](#xy問題-xy-problem)
 - **技術を選ぶ:** [リンディ効果 (Lindy Effect)](#リンディ効果-lindy-effect) · [カーゴ・カルト・エンジニアリング (Cargo Cult Engineering)](#カーゴカルトエンジニアリング-cargo-cult-engineering) · [アマラの法則 (Amara's Law)](#アマラの法則-amaras-law) · [生存者バイアス (Survivorship Bias)](#生存者バイアス-survivorship-bias) · [退屈な技術を選べ (Choose Boring Technology)](#退屈な技術を選べ-choose-boring-technology)
@@ -160,6 +160,11 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 | `93` | [レーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)](#レーマンのソフトウェア進化の法則-lehmans-laws-of-software-evolution) | 保守性 | 実際に使われているプログラムは、変わり続けなければ役に立たなくなる。そして変えるたびに、手をかけて単純にしない限り複雑になっていく。 |
 | `94` | [バス係数 (Bus Factor)](#バス係数-bus-factor) | 組織 | システムを動かし続けられる人が少ないほど、その将来は一人ひとりが辞めずにいることにかかってくる。 |
 | `95` | [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox) | 保守性 | バグを見つける方法はどれも、その方法では見つからないバグを残す。だから変わらないテストスイートが見つけるバグは減っていく。 |
+| `96` | [スライドではなく文章で (Narratives, Not Slides)](#スライドではなく文章で-narratives-not-slides) | 意思決定 | スライドと箇条書きに縮めた議論は、論点どうしのつながりを失う。文章なら露わになったはずの穴や警告が、気づかれないままレビューを通り抜ける。 |
+| `97` | [ワン・バージョン・ルール (One-Version Rule)](#ワンバージョンルール-one-version-rule) | 保守性 | 共有する依存先のどのバージョンを使うかを利用者が選べると、選ぶたびに、選んでいない誰かが衝突を抱える。 |
+| `98` | [現地現物 (Genchi Genbutsu (Go and See))](#現地現物-genchi-genbutsu-go-and-see) | 意思決定 | 報告をもとに下す判断は、実際に起きていることから離れていく。要約が一段挟まるたびに、その形式に収まらなかった細部が落ちるからだ。 |
+| `99` | [信頼度で重みづけする意思決定 (Believability-Weighted Decisions)](#信頼度で重みづけする意思決定-believability-weighted-decisions) | 意思決定 | 集団がどの意見も同じ一票と数えたり、役職に従ったりすると、実際にそれをやったことのある人が、やったことのない人に多数決で負ける。 |
+| `100` | [ブレイントラスト (権限を持たない助言) (Braintrust (Notes Without Authority))](#ブレイントラスト-権限を持たない助言-braintrust-notes-without-authority) | 組織 | オーナーを覆せる人からの意見は、活かされるより先に防御の対象になる。修正を強制できない仲間なら率直に言えるし、オーナーも落ち着いて聞ける。 |
 
 ### タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)
 
@@ -170,7 +175,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **隠れた一方通行のドア** — やり直せるように見えて実はやり直せない決定は多い（公開 API、ディスクに書いたデータ形式、顧客に告知した価格）。こうした決定を速く通すと、取り消せない約束を世に出してしまう。
 - **判断の指針:** 議論の予定を組む前に、その決定がどちらの種類かを見極める。1スプリント以内に、受け入れられるコストでやり直せるなら、一人か少人数が今週中に決める。完全なレビューは、永続化するデータ、公開インタフェース、セキュリティ、顧客にすでに約束したことに関わる決定に限る。
 - **出典:** Jeff Bezos『2015 年 株主への手紙』(Amazon.com, Inc., 2016 年 4 月提出)。"Type 1 / Type 2 decisions" という枠組みの出典。1997 年の手紙は「Day 1」の手紙で、この枠組みは含まれていない。 — [原典 ↗](https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm)
-- **関連:** [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy) · [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit)
+- **関連:** [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy) · [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [スライドではなく文章で (Narratives, Not Slides)](#スライドではなく文章で-narratives-not-slides)
 
 ### 逸脱の常態化 (Normalization of Deviance)
 
@@ -217,7 +222,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **判断の指針:** ツールで決められること（整形、import の順序、lint ルール）は人のレビューから外す。レビューのやり取りがスタイルの話ばかりになったら打ち切り、変更のうち最もリスクの高い部分について一つ質問する。会議では、金額やリスクの最も大きい議題を最初に置く。
 - **実例:** 1999年10月2日、FreeBSD 開発者の Poul-Henning Kamp は、sleep(1)に小数の秒数を渡せるようにするかで延々と続いた議論のあと、プロジェクトのメーリングリストに投稿した。彼はこのスレッドを「FreeBSD でこれまでにあった中で最もあからさまな自転車置き場の議論」と呼び、誰でもわかる小さな変更ほど議論が尽きず、複雑な変更はほとんど意見が出ないまま通ると書いた。 [記録 ↗](https://phk.freebsd.dk/sagas/bikeshed/)
 - **出典:** C. Northcote Parkinson『Parkinson's Law and Other Studies in Administration』(Houghton Mifflin, 1957) 所収「High Finance, or the Point of Vanishing Interest」。自転車置き場の委員会の寓話の出典。英国版は『Parkinson's Law: The Pursuit of Progress』(John Murray, 1958)。 — [原典 ↗](https://en.wikipedia.org/wiki/Law_of_triviality)
-- **関連:** [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [コードの健全性を上げるなら承認する (Approve What Improves Code Health)](#コードの健全性を上げるなら承認する-approve-what-improves-code-health)
+- **関連:** [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [コードの健全性を上げるなら承認する (Approve What Improves Code Health)](#コードの健全性を上げるなら承認する-approve-what-improves-code-health) · [信頼度で重みづけする意思決定 (Believability-Weighted Decisions)](#信頼度で重みづけする意思決定-believability-weighted-decisions)
 
 ### ガルの法則 (Gall's Law)
 
@@ -260,7 +265,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **判断の指針:** 利用者がいる以上、「内部実装」というものはない。約束した部分はバージョニングと機能フラグで守り、約束していない部分は意図的に揺らして、そもそも依存されないようにする。
 - **実例:** 2010年、Fedora 14開発版の glibc に、一部の Intel CPU 向けに後ろからコピーする高速な memcpy が入ると、Adobe の64ビット版 Flash プラグインの音声がノイズになった。Flash は重なり合うバッファに memcpy を使っていた。C 標準では未定義の動作だが、以前の前からコピーする実装ではたまたま動いていた。バグ報告では、glibc が古い挙動を守るべきかで意見が割れ、Linus Torvalds は memcpy を memmove と同じように動かせばよいと主張した。 [記録 ↗](https://bugzilla.redhat.com/show_bug.cgi?id=638477)
 - **出典:** Hyrum Wright『hyrumslaw.com』。『Software Engineering at Google』(Winters, Manshreck, Wright, 2020) で正式化された。 — [原典 ↗](https://www.hyrumslaw.com/)
-- **関連:** [ポステルの法則 (Postel's Law)](#ポステルの法則-postels-law) · [驚き最小の原則 (Principle of Least Astonishment)](#驚き最小の原則-principle-of-least-astonishment) · [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule)
+- **関連:** [ポステルの法則 (Postel's Law)](#ポステルの法則-postels-law) · [驚き最小の原則 (Principle of Least Astonishment)](#驚き最小の原則-principle-of-least-astonishment) · [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule) · [ワン・バージョン・ルール (One-Version Rule)](#ワンバージョンルール-one-version-rule)
 
 ### ブルックスの法則 (Brooks' Law)
 
@@ -330,7 +335,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **判断の指針:** 単一の指標で成果を評価しない。代わりの指標ではなく、システムが実際に出しているものを見る。
 - **実例:** 2016年9月、米消費者金融保護局(CFPB)は Wells Fargo に1億ドルの制裁金を科した。銀行自身の分析で、顧客が承認していない可能性のある預金口座とクレジットカード口座が200万件以上、従業員によって開設されていたことがわかったからだ。CFPB はこの行為が販売目標と報酬のインセンティブに後押しされたもので、従業員は販売目標を達成すると報酬を得ていたとした。 [記録 ↗](https://www.consumerfinance.gov/about-us/newsroom/consumer-financial-protection-bureau-fines-wells-fargo-100-million-widespread-illegal-practice-secretly-opening-unauthorized-accounts/)
 - **出典:** Charles Goodhart『Problems of Monetary Management: The U.K. Experience』(Papers in Monetary Economics, Reserve Bank of Australia, 1975)。元の法則の出典。よく引用される「指標が目標になると」の言い回しは Marilyn Strathern『'Improving ratings': audit in the British University system』(European Review, 1997) による。 — [原典 ↗](https://en.wikipedia.org/wiki/Goodhart%27s_law)
-- **関連:** [コブラ効果 (Cobra Effect)](#コブラ効果-cobra-effect) · [シャーキーの原理 (Shirky Principle)](#シャーキーの原理-shirky-principle) · [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions)
+- **関連:** [コブラ効果 (Cobra Effect)](#コブラ効果-cobra-effect) · [シャーキーの原理 (Shirky Principle)](#シャーキーの原理-shirky-principle) · [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions) · [現地現物 (Genchi Genbutsu (Go and See))](#現地現物-genchi-genbutsu-go-and-see)
 
 ### リンディ効果 (Lindy Effect)
 
@@ -442,7 +447,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **メカニズム:** 人間が安定した社会関係を保てるのはおよそ150人とされる。ダンバーの結果は霊長類全般の新皮質の大きさと群れの大きさの関係を扱ったもので、仕事のチームの話ではない。エンジニアリングがそこから類推しているのは別の議論だ。意思疎通の経路は n(n-1)/2 で増えるので、全員が全員の文脈をまだ把握できる規模を超えると、増えた人員は成果ではなく調整に消える。
 - **対立概念:** **インタフェースによる協調** — 部品間のインタフェースが十分に安定していて、ほとんどの人が互いの文脈を必要としないなら、大きな集団でも一貫したシステムを出せる（Linux カーネルには数千人の貢献者がいる）。
 - **判断の指針:** 人数ではなく症状を見る。チームの誰もが他の全員の作業内容を言えなくなったり、状況共有の会議が増え始めたりしたら、システムの継ぎ目に沿ってチームを分ける。具体的な人数の上限は、知見ではなく慣習として扱う。
-- **出典:** Robin I. M. Dunbar『Neocortex size as a constraint on group size in primates』(Journal of Human Evolution, 1992)。併せて引かれる小さいチーム規模の数字 (7±2、ツー・ピザ・ルール) はダンバーの知見ではなく、通俗的な外挿である。 — [原典 ↗](https://doi.org/10.1016/0047-2484(92)90081-J)
+- **出典:** Robin I. M. Dunbar『Neocortex size as a constraint on group size in primates』(Journal of Human Evolution, 1992)。併せて引かれる小さいチーム規模の数字はダンバーの知見ではない。7±2 は通俗的な外挿で、ツー・ピザ・ルールは Jeff Bezos の言葉とされる Amazon の慣行だ ("We try to create teams that are no larger than can be fed by two pizzas"、AWS『Introduction to DevOps on AWS』)。 — [原典 ↗](https://doi.org/10.1016/0047-2484(92)90081-J)
 - **関連:** [コンウェイの法則 (Conway's Law)](#コンウェイの法則-conways-law) · [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) · [ミラーの法則 (Miller's Law)](#ミラーの法則-millers-law) · [メトカーフの法則 (Metcalfe's Law)](#メトカーフの法則-metcalfes-law) · [リンゲルマン効果 (Ringelmann Effect)](#リンゲルマン効果-ringelmann-effect)
 
 ### 劣っている方が勝つ (Worse is Better)
@@ -522,7 +527,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **較正された自信** — この効果には異論がある。古典的なパターンの多くは、ノイズの多い自己評価で起きる平均への回帰でも再現できる。だから過信は診断としてではなく、実績を確かめるきっかけとして扱う。
 - **判断の指針:** 誰かが難しい問題を「簡単」と言い切ったら、その見積りを信じる前にその分野での実績を確認する。スコープを決める段階では、自信のある新人と口数の少ないベテランを組ませ、口数の少ない側の意見を重く見る。
 - **出典:** Justin Kruger & David Dunning『Unskilled and Unaware of It』(Journal of Personality and Social Psychology, 1999)。 — [原典 ↗](https://doi.org/10.1037/0022-3514.77.6.1121)
-- **関連:** [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge) · [ピーターの法則 (Peter Principle)](#ピーターの法則-peter-principle)
+- **関連:** [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge) · [ピーターの法則 (Peter Principle)](#ピーターの法則-peter-principle) · [信頼度で重みづけする意思決定 (Believability-Weighted Decisions)](#信頼度で重みづけする意思決定-believability-weighted-decisions)
 
 ### 知識の呪い (Curse of Knowledge)
 
@@ -533,7 +538,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **読み手に合わせて書く** — 何もかも説明する文書では、熟練した読み手が必要な情報にたどり着けない。午前3時の運用担当に必要なのはチュートリアルではなくコマンドだ。
 - **判断の指針:** ドキュメントや公開 API を出す前に、システムを触ったことのない人にその作業を実際にやってもらい、自分は黙って見る。その人がつまずいた箇所が、そのまま書き忘れた前提を示している。
 - **出典:** Colin Camerer, George Loewenstein & Martin Weber『The Curse of Knowledge in Economic Settings: An Experimental Analysis』(Journal of Political Economy, 1989)。 — [原典 ↗](https://doi.org/10.1086/261651)
-- **関連:** [XY問題 (XY Problem)](#xy問題-xy-problem) · [ダニング・クルーガー効果 (Dunning-Kruger Effect)](#ダニングクルーガー効果-dunning-kruger-effect) · [驚き最小の原則 (Principle of Least Astonishment)](#驚き最小の原則-principle-of-least-astonishment) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control) · [バス係数 (Bus Factor)](#バス係数-bus-factor)
+- **関連:** [XY問題 (XY Problem)](#xy問題-xy-problem) · [ダニング・クルーガー効果 (Dunning-Kruger Effect)](#ダニングクルーガー効果-dunning-kruger-effect) · [驚き最小の原則 (Principle of Least Astonishment)](#驚き最小の原則-principle-of-least-astonishment) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control) · [バス係数 (Bus Factor)](#バス係数-bus-factor) · [スライドではなく文章で (Narratives, Not Slides)](#スライドではなく文章で-narratives-not-slides) · [ブレイントラスト (権限を持たない助言) (Braintrust (Notes Without Authority))](#ブレイントラスト-権限を持たない助言-braintrust-notes-without-authority)
 
 ### スイスチーズモデル (Swiss Cheese Model)
 
@@ -1052,7 +1057,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **責任の拡散** — 誰も責任を負わないと、対策項目に持ち主がいなくなり、いつの間にか立ち消える。だから責めないことと引き換えに、修正の担当者だけは名指しするチームもある。
 - **判断の指針:** ポストモーテムは、各人が何を見て、なぜその操作がその時点で妥当だったかを時系列で書き、人ではなく仕組みの変更で締めくくる。変更ごとに担当者を一人決め、期日を付ける。根本原因に「ヒューマンエラー」と書くのは禁止し、何がその誤りを起こしやすくしていたかを問う。
 - **出典:** John Allspaw『Blameless PostMortems and a Just Culture』(Code as Craft, Etsy, 2012)。実践としては Lunney & Lueder「Postmortem Culture」『Site Reliability Engineering』(O'Reilly, 2016) 第 15 章にまとめられている。 — [原典 ↗](https://www.etsy.com/codeascraft/blameless-postmortems)
-- **関連:** [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor) · [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions) · [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys)
+- **関連:** [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor) · [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions) · [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys) · [ブレイントラスト (権限を持たない助言) (Braintrust (Notes Without Authority))](#ブレイントラスト-権限を持たない助言-braintrust-notes-without-authority)
 
 ### ワーキング・バックワーズ (Working Backwards)
 
@@ -1063,7 +1068,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **作って学ぶ** — 顧客が紙の上では判断できないもの（新しいプラットフォーム、基盤の変更、前例のないもの）では、磨いたプレスリリースより安い試作品のほうが多くを教えてくれる。
 - **判断の指針:** プロジェクトを始める前に、顧客向けのプレスリリース一枚と FAQ を書き、チームでレビューする。最初の段落で顧客とその問題を言えないなら、作り始めない。
 - **出典:** Werner Vogels『Working Backwards』(All Things Distributed, 2006)。Amazon の CTO がプレスリリースから書き始める手順を説明したもの。「プレスリリースが書きにくいなら、その製品はたぶんひどい」は Ian McAllister の Quora の回答「What is Amazon's approach to product development and product management?」から。PR/FAQ の全体像は Colin Bryar & Bill Carr『Working Backwards』(St. Martin's Press, 2021)。 — [原典 ↗](https://www.allthingsdistributed.com/2006/11/working_backwards.html)
-- **関連:** [XY問題 (XY Problem)](#xy問題-xy-problem) · [YAGNI (YAGNI)](#yagni-yagni)
+- **関連:** [XY問題 (XY Problem)](#xy問題-xy-problem) · [YAGNI (YAGNI)](#yagni-yagni) · [スライドではなく文章で (Narratives, Not Slides)](#スライドではなく文章で-narratives-not-slides)
 
 ### 反対してもコミットする (Disagree and Commit)
 
@@ -1073,8 +1078,8 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **メカニズム:** 合意を求める集団では、決定はいちばんしつこい懐疑派の速さでしか進まない。しかも議論も終盤になると、正解はどのみち分からないことが多い。議論に負けた反対者が、決まった方針を中途半端にしか実行しないこともあり、そうなるとどちらが正しかったにせよ結果は悪くなる。「同意するか」と「コミットするか」を分ければ、反対は言い尽くしたうえで、実行には全力を注げる。
 - **対立概念:** **集団浅慮** — コミットを重んじる文化では、人は早いうちに反対するのをやめるようになる。黙って従う人が増えると、誤りに気づけたはずの異論が表に出てこない。
 - **判断の指針:** 反対意見は一度だけ、理由を添えて全部言う。そのうえで「反対だがコミットする」と言い、自分の案だったつもりで実行する。立場が上の人も同じようにする。チームに自分を説得させるのではなく、チームの判断を後押しする。ただし取り返しのつかない決定や、安全・倫理上のリスクがある決定では、黙ってコミットせずエスカレーションする。
-- **出典:** Jeff Bezos『2016 年 株主への手紙』(Amazon.com, Inc., 2017 年)。"use the phrase 'disagree and commit'" と Amazon Studios の例。語句自体は Amazon 以前からある。Karen Southwick『High Noon』(1999) は Sun Microsystems の Scott McNealy がこの語を使っていたと記しており、Intel 発祥とする説もある。 — [原典 ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
-- **関連:** [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality)
+- **出典:** Jeff Bezos『2016 年 株主への手紙』(Amazon.com, Inc., 2017 年)。"use the phrase 'disagree and commit'" と Amazon Studios の例。語句自体は Amazon 以前からある。Karen Southwick『High Noon』(1999) は Sun Microsystems の Scott McNealy がこの語を使っていたと記している。Andy Grove の伝記を書いた Richard Tedlow は、Grove 時代の Intel の文化の一部として "constructive confrontation" と並べて "disagree and then commit" を挙げている (「Andy Grove: A Biographer's Tale」『HBS Working Knowledge』2006)。Netflix のカルチャーメモ (jobs.netflix.com の現行版) も "disagree then commit" という同じ決まりを "informed captain" のモデルの中で使う。重要な決定はそれぞれ名指しされた一人が、"farming for dissent" (異論を集めること) を経て下す。 — [原典 ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
+- **関連:** [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality) · [信頼度で重みづけする意思決定 (Believability-Weighted Decisions)](#信頼度で重みづけする意思決定-believability-weighted-decisions) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control)
 
 ### 作った者が運用する (You Build It, You Run It)
 
@@ -1144,7 +1149,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **判断の指針:** main ブランチのビルドが赤い、カナリアが失敗した、SLO を割った、といったときには、全員のマージやデプロイが止まるようにする。その紐は誰でも許可なく引けるようにする。誤発火がめったに起きない程度に条件を絞る。誰も調べない停止は、引いた人ではなく対応する側の欠陥として扱う。
 - **実例:** カリフォルニア州フリーモントにあった GM の旧工場（1982年閉鎖）では、ラインは決して止めてはならないというのが決まりで、止めたらクビになったと語る労働者もいた。GM とトヨタがここを NUMMI として再開すると、作業者にアンドンのひもが与えられた。引くとチームリーダーが駆けつけ、その場で直せないときだけラインが止まる。NUMMI の不良率は最初から米国でも最良の水準になり、1984年12月の最初の1台から数か月でほぼ完璧な品質評価を得た。 [記録 ↗](https://www.thisamericanlife.org/403/transcript)
 - **出典:** トヨタ自動車『トヨタ生産方式』(global.toyota の公式ページ)。自働化、アンドン (異常表示盤)、どの作業者も引ける停止紐の出典。その源流を、緯糸切断自動停止装置を備えた豊田式汽力織機 (1896 年開発) に求めている。同ページは大野耐一 (1912–1990) がこの方式と、ジャスト・イン・タイムの枠組みを確立したとしている。 — [原典 ↗](https://global.toyota/en/company/vision-and-philosophy/production-system/)
-- **関連:** [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) · [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys)
+- **関連:** [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) · [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys) · [現地現物 (Genchi Genbutsu (Go and See))](#現地現物-genchi-genbutsu-go-and-see)
 
 ### なぜなぜ分析 (Five Whys)
 
@@ -1155,7 +1160,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **スイスチーズモデル** — なぜを一本の鎖でたどると、複数の経路があった事故から一本だけを選ぶことになる。各段で分析者が何を選ぶかによって、出てくる根本原因が変わる。複雑なシステムでは、単一の根本原因がそもそも存在しないことも多い。
 - **判断の指針:** ポストモーテムでは、答えが出るたびに「なぜ」を問い、チームが変えられて、しかも変えていれば連鎖を断てたはずのものに行き着くまで続ける。その変更には担当者を付ける。一つの答えに原因が複数あるなら枝分かれさせ、人のところで止めない。「エンジニアがミスをした」は、なぜそのミスが起こしやすかったのかを問う合図だ。
 - **出典:** 大野耐一『トヨタ生産方式：脱規模の経営をめざして』(ダイヤモンド社, 1978 年)。英訳『Toyota Production System: Beyond Large-Scale Production』(Productivity Press, 1988) 第 2 章「Evolution of the Toyota Production System」の節「Repeating Why Five Times」。トヨタの問題解決の基本としての「なぜを五回繰り返す」の出典。 — [原典 ↗](https://www.routledge.com/Toyota-Production-System-Beyond-Large-Scale-Production/Ohno/p/book/9780915299140)
-- **関連:** [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [アンドン（ラインを止める） (Andon (Stop the Line))](#アンドンラインを止める-andon-stop-the-line) · [XY問題 (XY Problem)](#xy問題-xy-problem)
+- **関連:** [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [アンドン（ラインを止める） (Andon (Stop the Line))](#アンドンラインを止める-andon-stop-the-line) · [XY問題 (XY Problem)](#xy問題-xy-problem) · [現地現物 (Genchi Genbutsu (Go and See))](#現地現物-genchi-genbutsu-go-and-see)
 
 ### カオスエンジニアリング (Chaos Engineering)
 
@@ -1178,7 +1183,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **ガードレール** — 一部の失敗（認証情報の漏洩、コンプライアンス違反、取り消せない削除）は、判断に任せるには代償が大きすぎる。また文脈は、まだそれを身につけていない新人には役に立たない。
 - **判断の指針:** 自分なら別の判断をしたと思う決定をチームが下したら、ルールを書く前に、チームに欠けていた文脈は何かを問い、まず文脈を補う。強い統制（承認ゲート、強制されるポリシー）は、取り返しのつかない決定、倫理に反する決定、重大なリスクを伴う決定に限る。統制ごとに存在理由を書き残し、理由がなくなったら外せるようにする。
 - **出典:** Netflix『Netflix Culture Memo』(jobs.netflix.com, 2024 年頃の版)。同じ原則は Reed Hastings & Erin Meyer『No Rules Rules: Netflix and the Culture of Reinvention』(Penguin Press, 2020) にもまとめられている。「context not control」、「highly aligned and loosely coupled」、成長に伴うプロセスの肥大を避けるためにルールを最小限に保つという方針の出典。 — [原典 ↗](https://jobs.netflix.com/culture)
-- **関連:** [コンウェイの法則 (Conway's Law)](#コンウェイの法則-conways-law) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions) · [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge)
+- **関連:** [コンウェイの法則 (Conway's Law)](#コンウェイの法則-conways-law) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions) · [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit)
 
 ### コードの健全性を上げるなら承認する (Approve What Improves Code Health)
 
@@ -1189,7 +1194,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **割れ窓理論** — 差し引きで改善だからと小さな欠点を一つずつ通していくと、見過ごされた欠点だらけのコードベースが残る。一つ通すたびに、次も通しやすくなる。
 - **判断の指針:** 変更によってコードが以前より確実に健全になるなら、自分なら違う書き方をしたとしても承認する。磨き込みの指摘には「Nit:」を付けて、作者が見送れるようにする。ブロックするのはコードを悪くする点だけにする。緊急時を除き、全体としてコードの健全性を確実に悪くする変更は承認しない。
 - **出典:** Google「The Standard of Code Review」『Google Engineering Practices Documentation』(2019)。"favor approving a CL once it is in a state where it definitely improves the overall code health"、"there is no such thing as 'perfect' code—there is only better code"、任意の指摘に付ける「Nit:」の出典。 — [原典 ↗](https://google.github.io/eng-practices/review/reviewer/standard.html)
-- **関連:** [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [割れ窓理論 (Broken Windows Theory)](#割れ窓理論-broken-windows-theory) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality)
+- **関連:** [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [割れ窓理論 (Broken Windows Theory)](#割れ窓理論-broken-windows-theory) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality) · [ブレイントラスト (権限を持たない助言) (Braintrust (Notes Without Authority))](#ブレイントラスト-権限を持たない助言-braintrust-notes-without-authority)
 
 ### ビヨンセ・ルール (Beyoncé Rule)
 
@@ -1200,7 +1205,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **チャーンルール** — テストの形をした契約は、変更する側に何を壊したかを教えるだけで、壊してよかったことにはならない。変更するチームは、利用者の移行作業をそれでも負う。
 - **判断の指針:** 共有ライブラリや依存先に頼っている挙動には、すべてテストを書く。そのテストが、他人の変更を止める CI の中で走るようにする。テストで捕まえられずに何かが壊れたら、障害を閉じる前にそのテストを足す。共有コードを持つ側なら、テストが契約だと前もって宣言する。ただし、自分の変更で利用者側のテストを実際に走らせていないなら、このルールを持ち出さない。
 - **出典:** Adam Bender「Testing Overview」、Winters, Manshreck & Wright『Software Engineering at Google』(O'Reilly, 2020) 第 11 章。"If you liked it, then you shoulda put a test on it" と、コードベース全体に変更をかける基盤チームがこのルールを使うことの出典。 — [原典 ↗](https://abseil.io/resources/swe-book/html/ch11.html)
-- **関連:** [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule) · [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox)
+- **関連:** [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [チャーンルール (Churn Rule)](#チャーンルール-churn-rule) · [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox) · [ワン・バージョン・ルール (One-Version Rule)](#ワンバージョンルール-one-version-rule)
 
 ### チャーンルール (Churn Rule)
 
@@ -1211,7 +1216,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **コードオーナーシップ** — 普段触っていないコードを変える人は、そのコードにある固有の事情を見落とす。だから中央で一括して行う移行でもオーナーチームのレビューは要るし、オーナーにしか安全にできない変更もある。
 - **判断の指針:** ライブラリやサービス、プラットフォームを持つ側なら、移行作業を変更の一部として見積もる。呼び出し側は自分たちで移すか、後方互換を保ったままその場で変える。非推奨の告知と期限だけを移行計画として出さない。コードベースをまたぐ変更を安くする道具に投資し、変更は黙って入れず、一つずつオーナーチームのレビューに回す。
 - **出典:** Titus Winters「What Is Software Engineering?」、Winters, Manshreck & Wright『Software Engineering at Google』(O'Reilly, 2020) 第 1 章。2012 年に定めた「Churn Rule」("infrastructure teams must do the work to move their internal users to new versions themselves or do the update in place, in backward-compatible fashion") の出典。 — [原典 ↗](https://abseil.io/resources/swe-book/html/ch01.html)
-- **関連:** [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [トイル (Toil)](#トイル-toil)
+- **関連:** [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [トイル (Toil)](#トイル-toil) · [ワン・バージョン・ルール (One-Version Rule)](#ワンバージョンルール-one-version-rule)
 
 ### 時間を固定し、スコープを変える (Fixed Time, Variable Scope)
 
@@ -1289,6 +1294,61 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **判断の指針:** 回帰テストは残すが、それで新しいバグが見つかるとは期待しない。新しい入力、ファジング、プロパティベーステスト、探索的テストなど、スイートが確かめていないところを狙うテストを足す。本番にバグが漏れたら、どの種類のテストなら捕まえられたかを考え、その一件だけでなく、その種類のテストを足す。スイートは定期的に見直し、互いに重複するテストは消す。
 - **出典:** Boris Beizer『Software Testing Techniques』(第 2 版、Van Nostrand Reinhold, 1990)「The Pesticide Paradox and the Complexity Barrier」。"Every method you use to prevent or find bugs leaves a residue of subtler bugs against which those methods are ineffectual" と "Test suites wear out." の出典。 — [原典 ↗](https://openlibrary.org/books/OL2205629M/Software_testing_techniques)
 - **関連:** [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [カオスエンジニアリング (Chaos Engineering)](#カオスエンジニアリング-chaos-engineering)
+
+### スライドではなく文章で (Narratives, Not Slides)
+
+`§ 96` · 意思決定
+
+- **概念:** スライドと箇条書きに縮めた議論は、論点どうしのつながりを失う。文章なら露わになったはずの穴や警告が、気づかれないままレビューを通り抜ける。
+- **メカニズム:** 箇条書きは主張を並べるが、主張どうしのつながりは書かない。どの点がどの点に支えられ、どれがいちばん重要なのかが抜け落ちる。分析をスライドに収めようとすると、穴や警告を示すはずの推論から先に削られ、組織の階層を一段上がるたびにまた縮められる。スペースシャトル・コロンビア号の事故を調べた委員会は、こうして情報は「必ず失われる」と指摘した。文章で書くと、書き手はつながりを言葉にせざるを得ない。会議の冒頭に全員が黙って読めば、発表者の話しぶりではなく、同じ文面をもとに議論できる。代わりに時間がかかる。Bezos によれば、よいメモには一週間以上かかることもある。だから割に合うのは、その一週間に見合う決定だけだ。
+- **対立概念:** **包括的なドキュメントよりも動くソフトウェア** — 動くコードのほうが文章より早く設計上の問いに答えを出せるなら、先に書く文書は推測を一週間かけて書き留めるだけになる。実のところ実装手順書でしかない設計文書は、そもそも書かない。
+- **判断の指針:** 取り消すのに高くつく決定や、チームの外の人の承認が要る決定は、数ページの文章で提案する。問題、検討した選択肢、トレードオフ、推奨案を書く。レビューは全員が黙って読むところから始め、それから議論する。取り消しやすい変更や、簡単な試作で答えが出る問いには書かない。試作を作る。
+- **出典:** Jeff Bezos『2017 年 株主への手紙』(Amazon.com, Inc., 2018 年)。"We don't do PowerPoint (or any other slide-oriented) presentations at Amazon. Instead, we write narratively structured six-page memos."、会議の冒頭に黙って読むこと、メモに "a week or more" かかりうることの出典。Columbia Accident Investigation Board『Report』第 1 巻 (2003) 第 7 章「Engineering by Viewgraphs」。"When engineering analyses and risk assessments are condensed to fit on a standard form or overhead slide, information is inevitably lost." の出典。Malte Ubl『Design Docs at Google』(industrialempathy.com, 2020)。エンジニアリングでの形と、設計文書が "really implementation manuals" になっているなら、そもそも要らなかったしるしだという指摘の出典。対抗原理は『アジャイルソフトウェア開発宣言』(2001) から。 — [原典 ↗](https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders)
+- **関連:** [ワーキング・バックワーズ (Working Backwards)](#ワーキングバックワーズ-working-backwards) · [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge) · [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions)
+
+### ワン・バージョン・ルール (One-Version Rule)
+
+`§ 97` · 保守性
+
+- **概念:** 共有する依存先のどのバージョンを使うかを利用者が選べると、選ぶたびに、選んでいない誰かが衝突を抱える。
+- **メカニズム:** 同じライブラリの別々のバージョンに固定した二つのコンポーネントは、それぞれ単独では動く。両方に依存するプログラムができると、よくてリンクエラー、悪ければ実行時にどちらか一方がでたらめに選ばれる。そのツケを払うのは固定したチームではなく、二つを組み合わせたチームだ。バージョンが一つ増えるたびに、セキュリティ修正やアップグレードを入れる場所も一つ増える。コピーどうしの差は広がっていき、古いほうから移るだけで一つのプロジェクトになる。シェーディングや名前の付け替えで二つ目のコピーを隠しても、衝突は消えない。依存先ごとにバージョンを一つだけと決めれば選択肢がなくなり、アップグレードを全呼び出し側に対して一度で済ませられ、依存を足しても、バージョンの衝突で無関係な誰かが壊れることはなくなる。
+- **対立概念:** **セマンティック・インポート・バージョニング** — オープンソースのエコシステムのように、すべての呼び出し側を持つ者がいない場では、全員を一度に移す変更は誰にもできない。互換性のないメジャーバージョンを別のインポートパスで並べて置けば、呼び出し側はそれぞれの都合でアップグレードでき、コピーが重複するのはその代価として受け入れる。Go のモジュールはこのやり方を採っている。
+- **判断の指針:** 社内のものも外部のものも、共有する依存先はバージョンを一つに保つ。アップグレードは、すべての呼び出し側を一度に移す一つの変更にする。一度で入らないアップグレードに限り、二つ目のバージョンを別の名前で、オーナーと期限を付けて許し、期限が来たら消す。チームが共有ライブラリを勝手にフォークしたり固定したりするのは認めない。セキュリティ、法務、リリースの要件が本当に違うプロジェクトはリポジトリを分けてよいが、それぞれの中では依存先ごとにバージョンを一つに保つ。
+- **出典:** Titus Winters「Version Control and Branch Management」、Winters, Manshreck & Wright『Software Engineering at Google』(O'Reilly, 2020) 第 16 章。"For every dependency in our repository, there must be only one version of that dependency to choose."、シェーディングは "work neither in theory nor in practice"、"What is important is not whether we focus on monorepo; it's to adhere to the One-Version principle to the greatest extent possible" の出典。Google Open Source『The One Version Rule』(サードパーティのポリシー) の "There may only be one version of a package in `//third_party`." も参照。対抗原理は Russ Cox『Semantic Import Versioning』(research!rsc, 2018) の "to make it possible to upgrade the clients of that package one at a time and still have a buildable result" から。 — [原典 ↗](https://abseil.io/resources/swe-book/html/ch16.html)
+- **関連:** [チャーンルール (Churn Rule)](#チャーンルール-churn-rule) · [ハイラムの法則 (Hyrum's Law)](#ハイラムの法則-hyrums-law) · [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule)
+
+### 現地現物 (Genchi Genbutsu (Go and See))
+
+`§ 98` · 意思決定
+
+- **概念:** 報告をもとに下す判断は、実際に起きていることから離れていく。要約が一段挟まるたびに、その形式に収まらなかった細部が落ちるからだ。
+- **メカニズム:** 報告は、何を入れるかを選んだ誰かが、問題が起きる前に決まっていた区分に沿って書く。だから肝心の異常が、平均にならされたり書き漏らされたりする。ダッシュボードには、誰かが測ろうと思ったものしか映らず、誰も予想しなかった障害の画面はない。判断する人が現場から遠いほど、間に挟まる要約は増える。どの段も、書き手が読み手の求めていると思うものに寄っていく。トヨタは現地現物を、トヨタウェイの五つのキーワードの一つに据えた。判断の前に、仕事が行われている場所で事実をつかむ。
+- **対立概念:** **集計を信じる** — 現場で見られるのは一つのシフト、一人の利用者、一本のトレースだ。人は小さな標本を全体の代表のように扱いがちだ (少数の法則の信念)。全体についての問いなら、すべての事例を含むダッシュボードのほうが確かな証人になる。
+- **判断の指針:** 修正、優先順位、ポストモーテムの結論を決める前に、一次情報を自分の目で確かめる。バグを再現する、生のログと失敗したリクエスト一件のトレースを読む、実際の利用者が問題にぶつかる様子を見る、一時間サポートの窓口に座る。見たものはダッシュボードを疑うのに使い、置き換えるのには使わない。
+- **出典:** トヨタ自動車『トヨタウェイ 2001』。公式社史『トヨタ自動車75年史』第 4 章第 7 節の記録による。"Genchi Genbutsu (go to the source to find the facts)" は 2001 年 4 月にまとめられた五つのキーワードの一つ。トヨタ『Sustainable Management Report 2016』p. 23 の "go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed." も参照。対抗原理の背景にあるバイアスは Amos Tversky & Daniel Kahneman『Belief in the Law of Small Numbers』(Psychological Bulletin, 1971) から。 — [原典 ↗](https://www.toyota-global.com/company/history_of_toyota/75years/text/leaping_forward_as_a_global_corporation/chapter4/section7/item4.html)
+- **関連:** [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys) · [アンドン（ラインを止める） (Andon (Stop the Line))](#アンドンラインを止める-andon-stop-the-line) · [グッドハートの法則 (Goodhart's Law)](#グッドハートの法則-goodharts-law)
+
+### 信頼度で重みづけする意思決定 (Believability-Weighted Decisions)
+
+`§ 99` · 意思決定
+
+- **概念:** 集団がどの意見も同じ一票と数えたり、役職に従ったりすると、実際にそれをやったことのある人が、やったことのない人に多数決で負ける。
+- **メカニズム:** 設計レビューでは誰でもどの部分にも意見を持てるが、似たものを作ったり運用したりした経験があるのは一部の人だけだ。挙手で決めれば、初めて触る人も前回の移行をやり遂げたエンジニアも同じ一票になる。いちばん上の人に従っても、別の死角に置き換わるだけだ。Dalio の基準は狭く、確かめられる。最も信頼できるのは、問題になっていることを「繰り返し成功させてきた」うえで、自分の見解の因果を説明できる人だ。Bridgewater では、均等に数えた票と信頼度で重みづけした票を並べて示す。両者が一致すれば決着とし、割れたらもう一度すり合わせ、それでも決まらなければ重みづけした票に従う。割れたこと自体に情報がある。
+- **対立概念:** **群衆の知恵** — 判断が互いに独立していれば、均等な重みの単純な集計を上回るのは難しい (Galton が見た品評会の群衆の推定の中央値は、牛の重さとの差が 1% もなかった)。専門家を前もって選ぶのは、過去の実績が新しい問いにも通じるほうに賭けることだ。
+- **判断の指針:** 意見の割れる技術判断の前に、この種のものを作ったり運用したりした人は誰か、それはうまくいったかを確かめ、その人の見解を人数や肩書きより重く扱う。議論の前に意見を書面で集めて独立性を保ち、単純な集計と重みづけした集計の両方を見る。両者が食い違ったら、重みづけした側を自動的に勝たせず、掘り下げる。信頼度は、出荷したシステムやポストモーテムなど、確かめられる結果をもとに決める。チームの誰も経験したことのない問いでは、重みづけをやめる。
+- **出典:** Ray Dalio『Principles: Life & Work』(Simon & Schuster, 2017) の仕事の原則「Believability Weight Your Decision Making」(principles.com)。"the best decisions are made by an idea meritocracy with believability-weighted decision making"、最も信頼できる人の条件 "have repeatedly and successfully accomplished the thing in question"、"displays both the equal-weighted average and the believability-weighted results" という道具の出典。Netflix のカルチャーメモ (jobs.netflix.com の現行版) も "not all opinions are created equal" と同じことを言う。対抗原理は Francis Galton『Vox Populi』(Nature, 1907) から。 — [原典 ↗](https://www.principles.com/principles/633d5d13-8610-425f-ad62-cd62347d9165/)
+- **関連:** [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [ダニング・クルーガー効果 (Dunning-Kruger Effect)](#ダニングクルーガー効果-dunning-kruger-effect) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality)
+
+### ブレイントラスト (権限を持たない助言) (Braintrust (Notes Without Authority))
+
+`§ 100` · 組織
+
+- **概念:** オーナーを覆せる人からの意見は、活かされるより先に防御の対象になる。修正を強制できない仲間なら率直に言えるし、オーナーも落ち着いて聞ける。
+- **メカニズム:** 仕事に深く入り込んだ人は全体が見えなくなり、外の目を必要とする。ところがその目が修正を押しつけられるなら、オーナーは話を聞くためではなく作品を守るために部屋に入り、レビュアーは問題を指摘するところから自分の解決策を指図するところへずれていく。拒否権を外すと両側が変わる。言ったことに拘束力がないからレビュアーは遠慮なく言え、聞いたことが命令ではないからオーナーは耳を傾けられる。そのうえで、結果に責任を持ち、その場の誰も知らない制約を知っているオーナーが直し方を選ぶ。
+- **対立概念:** **関門としてのレビュー** — 死角のツケがオーナー以外の誰か (セキュリティの穴、失われたデータ、別チームのオンコール) に回るなら、無視できる助言では足りず、レビュアーが止められなければならない。
+- **判断の指針:** 設計レビューや RFC のレビューでは、レビュアーは問題とその原因と思われるものを指摘するが、直し方は指図しない。判断は作者に任せ、作者は指摘の一つひとつに書面で答える。部屋には、作者を評価する上司ではなく、似たものを作った経験のある仲間を集める。誤りのツケが他人に回るもの (セキュリティ、データ消失、取り消せない移行) では、止める権限のある承認を残す。ただし助言のためのレビューとは別の手順にする。
+- **出典:** Ed Catmull の発言。「Spark Creativity with These Tips from Pixar's President」(『First Round Review』, 2015) による。"the Braintrust should have no authority" と、責任者が "would never have to come into the room in a defensive posture" で済むようにするという点の出典。仕組みの全体は Ed Catmull with Amy Wallace『Creativity, Inc.』(Random House, 2014) に詳しい。対抗原理は、"the reviewer can certainly deny approval" とするコードレビューの承認者モデル (Google『The Standard of Code Review』) から。 — [原典 ↗](https://review.firstround.com/spark-creativity-with-these-tips-from-pixars-president/)
+- **関連:** [コードの健全性を上げるなら承認する (Approve What Improves Code Health)](#コードの健全性を上げるなら承認する-approve-what-improves-code-health) · [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge)
 
 <!-- CODEX:END -->
 

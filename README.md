@@ -3,7 +3,7 @@
 **Engineering laws, each with its counter-force.** Every article also carries a field guideline and a primary source.
 
 [![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=1d47b8&labelColor=17181a)](https://github.com/kanywst/hammurabi/stargazers)
-[![laws](https://img.shields.io/badge/laws-95-1d47b8?style=for-the-badge&labelColor=17181a)](#the-codex)
+[![laws](https://img.shields.io/badge/laws-100-1d47b8?style=for-the-badge&labelColor=17181a)](#the-codex)
 [![site](https://img.shields.io/badge/read-the%20codex-1d47b8?style=for-the-badge&labelColor=17181a)](https://kanywst.github.io/hammurabi/)
 [![license](https://img.shields.io/badge/content-CC%20BY--SA%204.0-5c5f64?style=for-the-badge&labelColor=17181a)](./LICENSE)
 
@@ -50,11 +50,11 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Estimates keep slipping:** [Hofstadter's Law](#hofstadters-law) · [Ninety-Ninety Rule](#ninety-ninety-rule) · [Parkinson's Law](#parkinsons-law) · [Brooks' Law](#brooks-law) · [Fixed Time, Variable Scope](#fixed-time-variable-scope)
 - **The team is growing:** [Brooks' Law](#brooks-law) · [Dunbar's Number](#dunbars-number) · [Ringelmann Effect](#ringelmann-effect) · [Conway's Law](#conways-law) · [Bystander Effect](#bystander-effect) · [Context, Not Control](#context-not-control) · [Bus Factor](#bus-factor)
 - **A metric is being gamed:** [Goodhart's Law](#goodharts-law) · [Cobra Effect](#cobra-effect) · [Shirky Principle](#shirky-principle)
-- **The decision is stuck:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Disagree and Commit](#disagree-and-commit) · [Law of Triviality](#law-of-triviality) · [Sunk Cost Fallacy](#sunk-cost-fallacy)
-- **After an incident:** [Blameless Postmortem](#blameless-postmortem) · [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory) · [Hanlon's Razor](#hanlons-razor) · [Ironies of Automation](#ironies-of-automation) · [Five Whys](#five-whys) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Pesticide Paradox](#pesticide-paradox)
+- **The decision is stuck:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Disagree and Commit](#disagree-and-commit) · [Law of Triviality](#law-of-triviality) · [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Narratives, Not Slides](#narratives-not-slides) · [Believability-Weighted Decisions](#believability-weighted-decisions)
+- **After an incident:** [Blameless Postmortem](#blameless-postmortem) · [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory) · [Hanlon's Razor](#hanlons-razor) · [Ironies of Automation](#ironies-of-automation) · [Five Whys](#five-whys) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Pesticide Paradox](#pesticide-paradox) · [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see)
 - **Reliability versus shipping speed:** [Error Budget](#error-budget) · [Toil](#toil) · [Normalization of Deviance](#normalization-of-deviance) · [Murphy's Law](#murphys-law) · [You Build It, You Run It](#you-build-it-you-run-it) · [Andon (Stop the Line)](#andon-stop-the-line) · [Chaos Engineering](#chaos-engineering) · [Technical Debt](#technical-debt)
 - **Something is too slow:** [Amdahl's Law](#amdahls-law) · [Theory of Constraints](#theory-of-constraints) · [Premature Optimization](#premature-optimization) · [The Tail at Scale](#the-tail-at-scale) · [Little's Law](#littles-law)
-- **Deleting or rewriting old code:** [Chesterton's Fence](#chestertons-fence) · [Second-System Effect](#second-system-effect) · [Gall's Law](#galls-law) · [Hyrum's Law](#hyrums-law) · [Eagleson's Law](#eaglesons-law) · [Boy Scout Rule](#boy-scout-rule) · [Strangler Fig](#strangler-fig) · [Beyoncé Rule](#beyoncé-rule) · [Churn Rule](#churn-rule) · [Technical Debt](#technical-debt) · [Lehman's Laws of Software Evolution](#lehmans-laws-of-software-evolution)
+- **Deleting or rewriting old code:** [Chesterton's Fence](#chestertons-fence) · [Second-System Effect](#second-system-effect) · [Gall's Law](#galls-law) · [Hyrum's Law](#hyrums-law) · [Eagleson's Law](#eaglesons-law) · [Boy Scout Rule](#boy-scout-rule) · [Strangler Fig](#strangler-fig) · [Beyoncé Rule](#beyoncé-rule) · [Churn Rule](#churn-rule) · [Technical Debt](#technical-debt) · [Lehman's Laws of Software Evolution](#lehmans-laws-of-software-evolution) · [One-Version Rule](#one-version-rule)
 - **Designing an API or interface:** [Hyrum's Law](#hyrums-law) · [Postel's Law](#postels-law) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Law of Leaky Abstractions](#law-of-leaky-abstractions) · [Tesler's Law](#teslers-law) · [Beyoncé Rule](#beyoncé-rule)
 - **Starting something new:** [Working Backwards](#working-backwards) · [YAGNI](#yagni) · [Gall's Law](#galls-law) · [Worse is Better](#worse-is-better) · [KISS Principle](#kiss-principle) · [XY Problem](#xy-problem)
 - **Choosing a technology:** [Lindy Effect](#lindy-effect) · [Cargo Cult Engineering](#cargo-cult-engineering) · [Amara's Law](#amaras-law) · [Survivorship Bias](#survivorship-bias) · [Choose Boring Technology](#choose-boring-technology)
@@ -160,6 +160,11 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `93` | [Lehman's Laws of Software Evolution](#lehmans-laws-of-software-evolution) | Maintainability | A program in real use must keep changing or grow less useful, and each change makes it more complex unless work is spent to simplify it. |
 | `94` | [Bus Factor](#bus-factor) | Organization | The fewer people who can keep a system running, the more its future depends on each of them staying. |
 | `95` | [Pesticide Paradox](#pesticide-paradox) | Maintainability | Every way of finding bugs leaves behind the bugs it cannot find, so a test suite that never changes finds fewer and fewer. |
+| `96` | [Narratives, Not Slides](#narratives-not-slides) | Decision | An argument cut down to slides and bullets loses the links between its points, so the gaps and warnings that prose would have exposed pass through the review unnoticed. |
+| `97` | [One-Version Rule](#one-version-rule) | Maintainability | When consumers may choose which version of a shared dependency to use, each choice becomes a conflict for someone who never made it. |
+| `98` | [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see) | Decision | Decisions made from reports drift away from what is actually happening, because each layer of summary drops the detail that did not fit its form. |
+| `99` | [Believability-Weighted Decisions](#believability-weighted-decisions) | Decision | When a group counts every opinion the same, or defers to rank, the people who have actually done the thing before are outvoted by those who have not. |
+| `100` | [Braintrust (Notes Without Authority)](#braintrust-notes-without-authority) | Organization | Feedback from people who can overrule the owner gets defended against rather than used; peers with no power to impose a fix can be candid, and the owner can afford to hear them. |
 
 ### Type 1 vs Type 2 Decisions
 
@@ -170,7 +175,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Counter:** **Hidden One-Way Doors** — many decisions look reversible and are not (a public API, a data format written to disk, a price announced to customers), and fast-tracking them ships a commitment you cannot take back.
 - **Guideline:** Classify a decision before you schedule the debate. If you could undo it within a sprint at a cost you would accept, let one person or a small group decide it this week. Keep the full review for decisions that touch persisted data, public interfaces, security, or something already promised to customers.
 - **Source:** Jeff Bezos, *2015 Letter to Shareholders* (Amazon.com, Inc., filed April 2016) — the letter that introduced the "Type 1 / Type 2 decisions" framing. The 1997 letter is the "Day 1" letter and does not contain it. — [source ↗](https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm)
-- **See also:** [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Parkinson's Law](#parkinsons-law) · [Disagree and Commit](#disagree-and-commit)
+- **See also:** [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Parkinson's Law](#parkinsons-law) · [Disagree and Commit](#disagree-and-commit) · [Narratives, Not Slides](#narratives-not-slides)
 
 ### Normalization of Deviance
 
@@ -217,7 +222,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Guideline:** Move everything a tool can decide (format, import order, lint rules) out of human review. When a review thread is mostly style, stop it and ask one question about the riskiest part of the change. In meetings, put the most expensive or riskiest item first on the agenda.
 - **In practice:** On October 2, 1999, FreeBSD developer Poul-Henning Kamp wrote to the project's mailing list after a long argument over whether sleep(1) should accept fractional seconds. He called that thread "the most blatant example of a bike shed discussion we have had ever in FreeBSD," noting that small, easy-to-grasp changes draw endless debate while complex ones pass with little comment. [account ↗](https://phk.freebsd.dk/sagas/bikeshed/)
 - **Source:** C. Northcote Parkinson, *Parkinson's Law and Other Studies in Administration* (Houghton Mifflin, 1957), in the chapter "High Finance, or the Point of Vanishing Interest" — the original bike-shed committee parable. Published in the UK as *Parkinson's Law: The Pursuit of Progress* (John Murray, 1958). — [source ↗](https://en.wikipedia.org/wiki/Law_of_triviality)
-- **See also:** [Parkinson's Law](#parkinsons-law) · [Disagree and Commit](#disagree-and-commit) · [Approve What Improves Code Health](#approve-what-improves-code-health)
+- **See also:** [Parkinson's Law](#parkinsons-law) · [Disagree and Commit](#disagree-and-commit) · [Approve What Improves Code Health](#approve-what-improves-code-health) · [Believability-Weighted Decisions](#believability-weighted-decisions)
 
 ### Gall's Law
 
@@ -260,7 +265,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Guideline:** "Internal" doesn't exist once you have users. Version and feature-flag what you promise; deliberately vary what you do not, so nobody can build on it in the first place.
 - **In practice:** In 2010 a Fedora 14 development build of glibc shipped a faster memcpy for some Intel CPUs that copied memory backward, and audio in Adobe's 64-bit Flash plugin turned to noise. Flash had been calling memcpy on overlapping buffers, which the C standard leaves undefined but the old forward copy had happened to handle. The bug thread split over whether glibc should keep the old behavior, with Linus Torvalds arguing memcpy should simply act like memmove. [account ↗](https://bugzilla.redhat.com/show_bug.cgi?id=638477)
 - **Source:** Hyrum Wright, *hyrumslaw.com*; canonicalized in *Software Engineering at Google* (Winters, Manshreck, Wright, 2020). — [source ↗](https://www.hyrumslaw.com/)
-- **See also:** [Postel's Law](#postels-law) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Beyoncé Rule](#beyoncé-rule) · [Churn Rule](#churn-rule)
+- **See also:** [Postel's Law](#postels-law) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Beyoncé Rule](#beyoncé-rule) · [Churn Rule](#churn-rule) · [One-Version Rule](#one-version-rule)
 
 ### Brooks' Law
 
@@ -330,7 +335,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Guideline:** Never use a single metric to judge performance. Observe the system's output, not its proxies.
 - **In practice:** In September 2016 the US Consumer Financial Protection Bureau fined Wells Fargo $100 million after the bank's own analysis found employees had opened more than two million deposit and credit card accounts customers may not have authorized. The CFPB said the conduct was "spurred by sales targets and compensation incentives," and that employees were paid for meeting sales goals. [account ↗](https://www.consumerfinance.gov/about-us/newsroom/consumer-financial-protection-bureau-fines-wells-fargo-100-million-widespread-illegal-practice-secretly-opening-unauthorized-accounts/)
 - **Source:** Charles Goodhart, *Problems of Monetary Management: The U.K. Experience* (Papers in Monetary Economics, Reserve Bank of Australia, 1975) — the original law; Marilyn Strathern, *'Improving ratings': audit in the British University system* (European Review, 1997) — the "when a measure becomes a target" wording usually quoted. — [source ↗](https://en.wikipedia.org/wiki/Goodhart%27s_law)
-- **See also:** [Cobra Effect](#cobra-effect) · [Shirky Principle](#shirky-principle) · [Error Budget](#error-budget) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions)
+- **See also:** [Cobra Effect](#cobra-effect) · [Shirky Principle](#shirky-principle) · [Error Budget](#error-budget) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see)
 
 ### Lindy Effect
 
@@ -442,7 +447,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Mechanism:** Humans can maintain approximately 150 stable social relationships. Dunbar's result is about neocortex size and group size across primates — it is not about work teams. What engineering extrapolates from it is a separate argument: communication channels grow as n(n-1)/2, so past the size where everyone can still hold everyone else's context, added people go into coordination rather than output.
 - **Counter:** **Coordination Through Interfaces** — large groups do ship coherent systems (the Linux kernel has thousands of contributors) when the interfaces between parts are stable enough that most people never need each other's context.
 - **Guideline:** Watch for the symptom, not a number: when the people on one team can no longer say what everyone else is working on, or status meetings start multiplying, split along the seams of the system. Treat any specific size limit as a convention, not a finding.
-- **Source:** Robin I. M. Dunbar, *Neocortex size as a constraint on group size in primates* (Journal of Human Evolution, 1992). The smaller team-size figures usually quoted alongside it — 7±2, the two-pizza rule — are folklore rather than Dunbar's finding. — [source ↗](https://doi.org/10.1016/0047-2484(92)90081-J)
+- **Source:** Robin I. M. Dunbar, *Neocortex size as a constraint on group size in primates* (Journal of Human Evolution, 1992). The smaller team-size figures usually quoted alongside it are not Dunbar's finding: 7±2 is folklore, and the two-pizza rule is an Amazon convention attributed to Jeff Bezos ("We try to create teams that are no larger than can be fed by two pizzas", AWS, *Introduction to DevOps on AWS*). — [source ↗](https://doi.org/10.1016/0047-2484(92)90081-J)
 - **See also:** [Conway's Law](#conways-law) · [Brooks' Law](#brooks-law) · [Miller's Law](#millers-law) · [Metcalfe's Law](#metcalfes-law) · [Ringelmann Effect](#ringelmann-effect)
 
 ### Worse is Better
@@ -522,7 +527,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Calibrated Confidence** — the effect is contested — much of the classic pattern is reproduced by regression to the mean in noisy self-assessment, so treat overconfidence as a prompt to check the record rather than as a diagnosis.
 - **Guideline:** When someone declares a hard problem "easy," check their domain history before trusting the estimate. During scoping, pair confident newcomers with quiet veterans and weight the quiet voice.
 - **Source:** Justin Kruger & David Dunning, *Unskilled and Unaware of It* (JPSP, 1999). — [source ↗](https://doi.org/10.1037/0022-3514.77.6.1121)
-- **See also:** [Curse of Knowledge](#curse-of-knowledge) · [Peter Principle](#peter-principle)
+- **See also:** [Curse of Knowledge](#curse-of-knowledge) · [Peter Principle](#peter-principle) · [Believability-Weighted Decisions](#believability-weighted-decisions)
 
 ### Curse of Knowledge
 
@@ -533,7 +538,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Write for Your Audience** — docs that explain everything bury the expert reader; an operator at 3 AM needs the command, not the tutorial.
 - **Guideline:** Before shipping documentation or a public API, have someone who has never touched the system attempt the task while you watch silently. Their confusion points exactly at the assumptions you forgot to spell out.
 - **Source:** Colin Camerer, George Loewenstein & Martin Weber, *The Curse of Knowledge in Economic Settings: An Experimental Analysis* (Journal of Political Economy, 1989). — [source ↗](https://doi.org/10.1086/261651)
-- **See also:** [XY Problem](#xy-problem) · [Dunning-Kruger Effect](#dunning-kruger-effect) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Context, Not Control](#context-not-control) · [Bus Factor](#bus-factor)
+- **See also:** [XY Problem](#xy-problem) · [Dunning-Kruger Effect](#dunning-kruger-effect) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Context, Not Control](#context-not-control) · [Bus Factor](#bus-factor) · [Narratives, Not Slides](#narratives-not-slides) · [Braintrust (Notes Without Authority)](#braintrust-notes-without-authority)
 
 ### Swiss Cheese Model
 
@@ -1052,7 +1057,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Diffused Ownership** — when nobody is answerable, the action items have no owner and quietly expire; some teams name a person accountable for the fix precisely because blamelessness leaves no one holding it.
 - **Guideline:** Write the postmortem as a timeline of what people saw and why each action made sense then, and end with changes to the system, not to a person, each with one named owner and a date. Ban "human error" as a root cause; ask what made the error easy to make.
 - **Source:** John Allspaw, *Blameless PostMortems and a Just Culture* (Code as Craft, Etsy, 2012); the practice is codified in Lunney & Lueder, "Postmortem Culture", *Site Reliability Engineering* (O'Reilly, 2016), ch. 15. — [source ↗](https://www.etsy.com/codeascraft/blameless-postmortems)
-- **See also:** [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Hanlon's Razor](#hanlons-razor) · [Bystander Effect](#bystander-effect) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Five Whys](#five-whys)
+- **See also:** [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Hanlon's Razor](#hanlons-razor) · [Bystander Effect](#bystander-effect) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Five Whys](#five-whys) · [Braintrust (Notes Without Authority)](#braintrust-notes-without-authority)
 
 ### Working Backwards
 
@@ -1063,7 +1068,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Build to Learn** — when customers cannot judge an idea on paper (a new platform, an infrastructure change, something with no precedent) a cheap prototype tells you more than a polished press release.
 - **Guideline:** Before a project starts, write a one-page press release and an FAQ for the customer, and review them as a team. If you cannot name the customer and their problem in the first paragraph, do not start building.
 - **Source:** Werner Vogels, *Working Backwards* (All Things Distributed, 2006) — Amazon's CTO describing the press-release-first process; Ian McAllister's Quora answer "What is Amazon's approach to product development and product management?" is the source of "if the press release is hard to write, the product is probably going to suck"; Colin Bryar & Bill Carr, *Working Backwards* (St. Martin's Press, 2021) — the PR/FAQ process in full. — [source ↗](https://www.allthingsdistributed.com/2006/11/working_backwards.html)
-- **See also:** [XY Problem](#xy-problem) · [YAGNI](#yagni)
+- **See also:** [XY Problem](#xy-problem) · [YAGNI](#yagni) · [Narratives, Not Slides](#narratives-not-slides)
 
 ### Disagree and Commit
 
@@ -1073,8 +1078,8 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Mechanism:** When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate the answer often cannot be known anyway. A dissenter who keeps arguing can also half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating "do you agree" from "will you commit" lets the disagreement be stated fully and the work still go ahead at full effort.
 - **Counter:** **Groupthink** — a culture that prizes commitment teaches people to stop objecting early, and silent compliance hides the dissent that would have caught the error.
 - **Guideline:** State your disagreement once, in full, with your reasons. Then say "I disagree and commit" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you. For an irreversible decision, or one with a safety or ethical risk, do not commit quietly: escalate.
-- **Source:** Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — "use the phrase 'disagree and commit'", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and it is also attributed to Intel. — [source ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
-- **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Law of Triviality](#law-of-triviality)
+- **Source:** Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — "use the phrase 'disagree and commit'", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and Richard Tedlow, Andy Grove's biographer, lists "disagree and then commit" alongside "constructive confrontation" among the parts of Intel culture under Grove ("Andy Grove: A Biographer's Tale", *HBS Working Knowledge*, 2006). Netflix's culture memo (jobs.netflix.com, current version) uses the same rule, "disagree then commit", in its "informed captain" model, where one named person makes each significant decision after "farming for dissent". — [source ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
+- **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Law of Triviality](#law-of-triviality) · [Believability-Weighted Decisions](#believability-weighted-decisions) · [Context, Not Control](#context-not-control)
 
 ### You Build It, You Run It
 
@@ -1144,7 +1149,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Guideline:** Make a red main-branch build, a failed canary or a breached SLO halt further merges or deploys for everyone, and let anyone pull that cord without asking permission. Keep the trigger narrow enough that it rarely fires falsely, and treat a stop that nobody investigates as a defect in the response, not in the person who pulled it.
 - **In practice:** At the old GM plant in Fremont, California, which closed in 1982, workers said the rule was that the line must never stop, and one recalled that stopping it could get you fired. When GM and Toyota reopened it as NUMMI, workers got an andon cord: a pull summoned team leaders, and the line stopped only if they could not fix the problem. NUMMI's defect rate was among the best in America from the start, with near-perfect quality ratings within months of the first car in December 1984. [account ↗](https://www.thisamericanlife.org/403/transcript)
 - **Source:** Toyota Motor Corporation, *Toyota Production System* (official page, global.toyota) — jidoka, the andon board and the stop cord any operator can pull, traced to the Toyoda Power Loom with a weft-breakage automatic stopping device, developed in 1896; the page credits Taiichi Ohno (1912–1990) with establishing the system and the framework of Just-in-Time. — [source ↗](https://global.toyota/en/company/vision-and-philosophy/production-system/)
-- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Error Budget](#error-budget) · [Five Whys](#five-whys)
+- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Error Budget](#error-budget) · [Five Whys](#five-whys) · [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see)
 
 ### Five Whys
 
@@ -1155,7 +1160,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Swiss Cheese Model** — a single chain of whys picks one path through an accident that had several, the analyst's choice at each step decides which root cause comes out, and in complex systems there is often no single root to find.
 - **Guideline:** In the postmortem, keep asking why of each answer until you reach something the team can change that would have stopped the chain, and give that change an owner. Branch whenever an answer has more than one cause, and never stop at a person: "the engineer made a mistake" is a cue to ask why the mistake was easy to make.
 - **Source:** Taiichi Ohno, *Toyota Production System: Beyond Large-Scale Production* (Productivity Press, 1988; originally 『トヨタ生産方式』, Diamond, 1978), ch. 2 "Evolution of the Toyota Production System", section "Repeating Why Five Times" — the method as the basis of Toyota's approach to problems. — [source ↗](https://www.routledge.com/Toyota-Production-System-Beyond-Large-Scale-Production/Ohno/p/book/9780915299140)
-- **See also:** [Swiss Cheese Model](#swiss-cheese-model) · [Normal Accident Theory](#normal-accident-theory) · [Blameless Postmortem](#blameless-postmortem) · [Andon (Stop the Line)](#andon-stop-the-line) · [XY Problem](#xy-problem)
+- **See also:** [Swiss Cheese Model](#swiss-cheese-model) · [Normal Accident Theory](#normal-accident-theory) · [Blameless Postmortem](#blameless-postmortem) · [Andon (Stop the Line)](#andon-stop-the-line) · [XY Problem](#xy-problem) · [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see)
 
 ### Chaos Engineering
 
@@ -1178,7 +1183,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Guardrails** — some failures (a leaked credential, a compliance breach, an irreversible deletion) cost too much to leave to judgment, and context does nothing for a newcomer who has not absorbed it yet.
 - **Guideline:** When a team makes a call you would have made differently, ask what context they were missing before you write a rule, and fix the context first. Keep hard controls (approval gates, enforced policy) for decisions that are irreversible, unethical or a material risk, and record why each one exists so it can be removed when the reason goes away.
 - **Source:** Netflix, *Netflix Culture Memo* (jobs.netflix.com, current version c. 2024), with the same principles set out in Reed Hastings & Erin Meyer, *No Rules Rules: Netflix and the Culture of Reinvention* (Penguin Press, 2020) — "context not control", "highly aligned and loosely coupled", and keeping rules to a minimum to avoid the process creep that comes with growth. — [source ↗](https://jobs.netflix.com/culture)
-- **See also:** [Conway's Law](#conways-law) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Curse of Knowledge](#curse-of-knowledge)
+- **See also:** [Conway's Law](#conways-law) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Curse of Knowledge](#curse-of-knowledge) · [Disagree and Commit](#disagree-and-commit)
 
 ### Approve What Improves Code Health
 
@@ -1189,7 +1194,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Broken Windows Theory** — a reviewer who waves each small flaw through because the change is a net improvement can still leave a codebase full of tolerated flaws, each one making the next easier to accept.
 - **Guideline:** Approve a change once it definitely leaves the code healthier than before, even if you would have written it differently. Prefix polish with "Nit:" so the author can skip it, and block only on what makes the code worse: outside an emergency, do not approve a change that definitely worsens overall code health.
 - **Source:** Google, "The Standard of Code Review", *Google Engineering Practices Documentation* (2019) — "favor approving a CL once it is in a state where it definitely improves the overall code health", "there is no such thing as 'perfect' code—there is only better code", and "Nit:" for optional comments. — [source ↗](https://google.github.io/eng-practices/review/reviewer/standard.html)
-- **See also:** [Boy Scout Rule](#boy-scout-rule) · [Broken Windows Theory](#broken-windows-theory) · [Law of Triviality](#law-of-triviality)
+- **See also:** [Boy Scout Rule](#boy-scout-rule) · [Broken Windows Theory](#broken-windows-theory) · [Law of Triviality](#law-of-triviality) · [Braintrust (Notes Without Authority)](#braintrust-notes-without-authority)
 
 ### Beyoncé Rule
 
@@ -1200,7 +1205,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Churn Rule** — a test-shaped contract tells the changer what it broke, not that breaking it was free; the team making the change still owes its users the migration.
 - **Guideline:** Write a test for every behavior your product relies on in a shared library or dependency, and make sure it runs in the CI that gates other people's changes. When something breaks and no test caught it, add that test before closing the incident. If you own the shared code, say up front that tests are the contract, and do not invoke the rule unless your changes actually run consumers' tests.
 - **Source:** Adam Bender, "Testing Overview", in Winters, Manshreck & Wright, *Software Engineering at Google* (O'Reilly, 2020), ch. 11 — "If you liked it, then you shoulda put a test on it", invoked by infrastructure teams making changes across the entire codebase. — [source ↗](https://abseil.io/resources/swe-book/html/ch11.html)
-- **See also:** [Hyrum's Law](#hyrums-law) · [Churn Rule](#churn-rule) · [Pesticide Paradox](#pesticide-paradox)
+- **See also:** [Hyrum's Law](#hyrums-law) · [Churn Rule](#churn-rule) · [Pesticide Paradox](#pesticide-paradox) · [One-Version Rule](#one-version-rule)
 
 ### Churn Rule
 
@@ -1211,7 +1216,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Code Ownership** — people who change a codebase they do not live in miss its local reasons, so a central migration still needs the owning team's review, and some changes only its owners can make safely.
 - **Guideline:** If you own a library, service or platform, budget the migration as part of the change: move the callers yourself, or change in place in a backward-compatible way. Do not ship a deprecation notice and a deadline as the migration plan. Invest in the tooling that makes cross-codebase changes cheap, and send each change to the owning team for review instead of landing it unseen.
 - **Source:** Titus Winters, "What Is Software Engineering?", in Winters, Manshreck & Wright, *Software Engineering at Google* (O'Reilly, 2020), ch. 1 — the 2012 "Churn Rule": "infrastructure teams must do the work to move their internal users to new versions themselves or do the update in place, in backward-compatible fashion." — [source ↗](https://abseil.io/resources/swe-book/html/ch01.html)
-- **See also:** [Beyoncé Rule](#beyoncé-rule) · [Hyrum's Law](#hyrums-law) · [Toil](#toil)
+- **See also:** [Beyoncé Rule](#beyoncé-rule) · [Hyrum's Law](#hyrums-law) · [Toil](#toil) · [One-Version Rule](#one-version-rule)
 
 ### Fixed Time, Variable Scope
 
@@ -1289,6 +1294,61 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Guideline:** Keep the regression suite, but do not count on it to find new bugs. Add tests aimed at what the suite does not exercise: new inputs, fuzzing, property-based tests, exploratory sessions. When a bug escapes to production, ask which kind of test would have caught it and add that kind, not only that one case. Review the suite on a schedule and remove tests that duplicate each other.
 - **Source:** Boris Beizer, *Software Testing Techniques* (2nd ed., Van Nostrand Reinhold, 1990), "The Pesticide Paradox and the Complexity Barrier" — "Every method you use to prevent or find bugs leaves a residue of subtler bugs against which those methods are ineffectual", and "Test suites wear out." — [source ↗](https://openlibrary.org/books/OL2205629M/Software_testing_techniques)
 - **See also:** [Beyoncé Rule](#beyoncé-rule) · [Chaos Engineering](#chaos-engineering)
+
+### Narratives, Not Slides
+
+`§ 96` · Decision
+
+- **Concept:** An argument cut down to slides and bullets loses the links between its points, so the gaps and warnings that prose would have exposed pass through the review unnoticed.
+- **Mechanism:** A bullet list records claims without the links between them: which point rests on which, and which one matters most. When an analysis is condensed to fit a slide, the reasoning that would expose a gap or a warning is what gets cut, and each step up a hierarchy condenses it again; the board that investigated the loss of Space Shuttle Columbia found that information is "inevitably lost" this way. Prose forces the author to state the links, and a group that reads the document in silence at the start of the meeting argues about the same text rather than about the presenter's delivery. The price is time: Bezos says a good memo can take a week or more, so the practice pays only for decisions worth that week.
+- **Counter:** **Working Software over Comprehensive Documentation** — when running code would settle a design question faster than prose, a document written first spends a week recording guesses, and a design doc that is really an implementation manual should not be written at all.
+- **Guideline:** For a decision that is expensive to reverse, or that people outside the team must approve, write the proposal as a few pages of prose: the problem, the options considered, the trade-offs and the recommendation. Open the review with everyone reading it in silence, then discuss. Do not write one for a reversible change or for a question a quick prototype will answer; build the prototype instead.
+- **Source:** Jeff Bezos, *2017 Letter to Shareholders* (Amazon.com, Inc., 2018) — "We don't do PowerPoint (or any other slide-oriented) presentations at Amazon. Instead, we write narratively structured six-page memos.", read silently at the start of each meeting, and a memo that "might take a week or more"; Columbia Accident Investigation Board, *Report*, vol. I (2003), ch. 7, "Engineering by Viewgraphs" — "When engineering analyses and risk assessments are condensed to fit on a standard form or overhead slide, information is inevitably lost."; Malte Ubl, *Design Docs at Google* (industrialempathy.com, 2020) — the engineering form, and design docs that are "really implementation manuals" as a sign that none was needed. The counter-force is from the *Manifesto for Agile Software Development* (2001). — [source ↗](https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders)
+- **See also:** [Working Backwards](#working-backwards) · [Curse of Knowledge](#curse-of-knowledge) · [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions)
+
+### One-Version Rule
+
+`§ 97` · Maintainability
+
+- **Concept:** When consumers may choose which version of a shared dependency to use, each choice becomes a conflict for someone who never made it.
+- **Mechanism:** Two components that pin different versions of the same library each work on their own. A program that comes to depend on both gets a link failure at best, or one copy picked at random at runtime, and the team that pays is the one that combined them, not the ones that pinned. Every extra version also adds another place a security fix or an upgrade has to land, and the copies drift apart until moving off the old one is a project of its own. Hiding the second copy, by shading or renaming, does not make the conflict go away. Allowing exactly one version per dependency removes the choice, so an upgrade can be done once for every caller, and adding a dependency no longer breaks a bystander through a version conflict.
+- **Counter:** **Semantic Import Versioning** — where no one owns every caller, as across an open-source ecosystem, nobody can make the single change that moves everyone, so letting incompatible major versions live side by side under different import paths lets each caller upgrade on its own schedule and accepts the duplicate copies as the price, which is the approach Go modules take.
+- **Guideline:** Keep one version of every shared dependency, internal or third-party, and do each upgrade as one change that moves every caller. When an upgrade cannot land in one step, allow a second version only under a different name, with an owner and an end date, and delete it when the date comes. Do not let a team fork or pin a shared library on its own. Where projects have genuinely different security, legal or release requirements, split them into separate repositories, but hold each one to a single version per dependency.
+- **Source:** Titus Winters, "Version Control and Branch Management", in Winters, Manshreck & Wright, *Software Engineering at Google* (O'Reilly, 2020), ch. 16 — "For every dependency in our repository, there must be only one version of that dependency to choose.", shading solutions that "work neither in theory nor in practice", and "What is important is not whether we focus on monorepo; it's to adhere to the One-Version principle to the greatest extent possible"; Google Open Source, *The One Version Rule* (third-party policy) — "There may only be one version of a package in `//third_party`." The counter-force is Russ Cox, *Semantic Import Versioning* (research!rsc, 2018) — "to make it possible to upgrade the clients of that package one at a time and still have a buildable result". — [source ↗](https://abseil.io/resources/swe-book/html/ch16.html)
+- **See also:** [Churn Rule](#churn-rule) · [Hyrum's Law](#hyrums-law) · [Beyoncé Rule](#beyoncé-rule)
+
+### Genchi Genbutsu (Go and See)
+
+`§ 98` · Decision
+
+- **Concept:** Decisions made from reports drift away from what is actually happening, because each layer of summary drops the detail that did not fit its form.
+- **Mechanism:** A report is written by someone who chose what to include, in categories fixed before the problem appeared, so the anomaly that matters can be averaged away or left out. A dashboard shows only what someone thought to measure, and the failure nobody predicted has no panel. The further the person deciding sits from the work, the more layers of summary lie between them, and each layer is also shaped by what its writer expects the reader to want. Toyota made going to the source one of the five key concepts of the Toyota Way: find the facts where the work happens before deciding.
+- **Counter:** **Trust the Aggregate** — a visit shows one shift, one user or one trace, and people judge from a small sample as if it stood for the whole (the belief in the law of small numbers), so for a question about the whole fleet the dashboard that covers every case is the better witness.
+- **Guideline:** Before you decide on a fix, a priority or a postmortem conclusion, look at the primary evidence yourself: reproduce the bug, read the raw logs and the trace of one failing request, watch a real user hit the problem, or sit on the support queue for an hour. Use what you saw to question the dashboard, not to replace it.
+- **Source:** Toyota Motor Corporation, *The Toyota Way 2001*, as recorded in Toyota's official history *75 Years of Toyota*, ch. 4, sec. 7 — "Genchi Genbutsu (go to the source to find the facts)", one of five key concepts compiled in April 2001; Toyota, *Sustainable Management Report 2016*, p. 23 — "go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed." The bias behind the counter-force is from Amos Tversky & Daniel Kahneman, *Belief in the Law of Small Numbers* (Psychological Bulletin, 1971). — [source ↗](https://www.toyota-global.com/company/history_of_toyota/75years/text/leaping_forward_as_a_global_corporation/chapter4/section7/item4.html)
+- **See also:** [Five Whys](#five-whys) · [Andon (Stop the Line)](#andon-stop-the-line) · [Goodhart's Law](#goodharts-law)
+
+### Believability-Weighted Decisions
+
+`§ 99` · Decision
+
+- **Concept:** When a group counts every opinion the same, or defers to rank, the people who have actually done the thing before are outvoted by those who have not.
+- **Mechanism:** In a design review everyone can form a view on every part, but only some of the room has built or run something like it. A show of hands gives the first-timer and the engineer who ran the last migration one vote each, and deferring to the most senior person only swaps one blind spot for another. Dalio's test is narrow and checkable: the most believable people have "repeatedly and successfully accomplished the thing in question" and can explain the cause and effect behind their view. Bridgewater shows the equal-weighted and the believability-weighted vote side by side: when they agree the matter is settled, and when they split, it tries again to resolve the disagreement and otherwise goes with the weighted vote. The split itself is where the information is.
+- **Counter:** **Wisdom of Crowds** — when judgments are made independently, a plain equal-weight aggregate is hard to beat (the median guess of Galton's fairground crowd was within 1 percent of the ox's weight), and picking experts in advance bets on a track record that may not carry over to the new question.
+- **Guideline:** Before a contested technical call, ask who has built or run this kind of thing before and whether it worked, and give their view more weight than headcount or title. Collect views in writing before the discussion so they stay independent, and look at both the plain tally and the weighted one; where they disagree, dig in rather than letting the weighted side win by default. Base believability on outcomes you can check, such as systems shipped and postmortems, and drop the weighting for questions nobody on the team has faced before.
+- **Source:** Ray Dalio, *Principles: Life & Work* (Simon & Schuster, 2017), work principle "Believability Weight Your Decision Making" (principles.com) — "the best decisions are made by an idea meritocracy with believability-weighted decision making", the most believable people being those who "have repeatedly and successfully accomplished the thing in question", and a tool that "displays both the equal-weighted average and the believability-weighted results". Netflix's culture memo (jobs.netflix.com, current version) makes the same point: "not all opinions are created equal". The counter-force is Francis Galton, *Vox Populi* (Nature, 1907). — [source ↗](https://www.principles.com/principles/633d5d13-8610-425f-ad62-cd62347d9165/)
+- **See also:** [Disagree and Commit](#disagree-and-commit) · [Dunning-Kruger Effect](#dunning-kruger-effect) · [Law of Triviality](#law-of-triviality)
+
+### Braintrust (Notes Without Authority)
+
+`§ 100` · Organization
+
+- **Concept:** Feedback from people who can overrule the owner gets defended against rather than used; peers with no power to impose a fix can be candid, and the owner can afford to hear them.
+- **Mechanism:** Someone deep in a piece of work loses perspective and needs outside eyes. But if those eyes can impose a fix, the owner comes in to defend the work instead of to hear about it, and reviewers drift from naming the problem to dictating their own solution. Taking away the veto changes both sides: reviewers can be blunt because nothing they say is binding, and the owner can listen because nothing they hear is an order. The owner, who still answers for the result and knows constraints the room does not, then chooses the remedy.
+- **Counter:** **Review as a Gate** — where a blind spot's cost lands on someone other than the owner (a security hole, lost data, another team's pager), advice that can be ignored is not enough, and a reviewer has to be able to block.
+- **Guideline:** In a design or RFC review, let reviewers name problems and their suspected causes but not dictate the fix, and leave the decision with the author, who answers each point in writing. Fill the room with peers who have built something similar, not the manager who rates the author. Where a mistake would land on others (security, data loss, an irreversible migration), keep a blocking approval, but run it as a separate step from the advisory review.
+- **Source:** Ed Catmull, quoted in "Spark Creativity with These Tips from Pixar's President" (*First Round Review*, 2015) — "the Braintrust should have no authority", so that the person responsible "would never have to come into the room in a defensive posture"; the practice is set out at length in Ed Catmull with Amy Wallace, *Creativity, Inc.* (Random House, 2014). The counter-force is the approver model of code review, where "the reviewer can certainly deny approval" (Google, *The Standard of Code Review*). — [source ↗](https://review.firstround.com/spark-creativity-with-these-tips-from-pixars-president/)
+- **See also:** [Approve What Improves Code Health](#approve-what-improves-code-health) · [Blameless Postmortem](#blameless-postmortem) · [Curse of Knowledge](#curse-of-knowledge)
 
 <!-- CODEX:END -->
 

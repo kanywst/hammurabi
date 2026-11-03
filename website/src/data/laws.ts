@@ -177,7 +177,9 @@ export const situations: Situation[] = [
       "type-1-vs-type-2-decisions",
       "disagree-and-commit",
       "law-of-triviality",
-      "sunk-cost-fallacy"
+      "sunk-cost-fallacy",
+      "narratives-not-slides",
+      "believability-weighted-decisions"
     ]
   },
   {
@@ -193,7 +195,8 @@ export const situations: Situation[] = [
       "ironies-of-automation",
       "five-whys",
       "mechanisms-not-good-intentions",
-      "pesticide-paradox"
+      "pesticide-paradox",
+      "genchi-genbutsu"
     ]
   },
   {
@@ -238,7 +241,8 @@ export const situations: Situation[] = [
       "beyonce-rule",
       "churn-rule",
       "technical-debt",
-      "lehmans-laws"
+      "lehmans-laws",
+      "one-version-rule"
     ]
   },
   {
@@ -315,7 +319,8 @@ export const laws: Law[] = [
     "seeAlso": [
       "sunk-cost-fallacy",
       "parkinsons-law",
-      "disagree-and-commit"
+      "disagree-and-commit",
+      "narratives-not-slides"
     ],
     "featured": false,
     "figure": {
@@ -511,7 +516,8 @@ export const laws: Law[] = [
     "seeAlso": [
       "parkinsons-law",
       "disagree-and-commit",
-      "code-health-standard"
+      "code-health-standard",
+      "believability-weighted-decisions"
     ],
     "featured": false,
     "figure": {
@@ -665,7 +671,8 @@ export const laws: Law[] = [
       "postels-law",
       "principle-of-least-astonishment",
       "beyonce-rule",
-      "churn-rule"
+      "churn-rule",
+      "one-version-rule"
     ],
     "featured": false,
     "figure": {
@@ -958,7 +965,8 @@ export const laws: Law[] = [
       "cobra-effect",
       "shirky-principle",
       "error-budget",
-      "mechanisms-not-good-intentions"
+      "mechanisms-not-good-intentions",
+      "genchi-genbutsu"
     ],
     "featured": false,
     "figure": {
@@ -1465,7 +1473,7 @@ export const laws: Law[] = [
         "note": "large groups do ship coherent systems (the Linux kernel has thousands of contributors) when the interfaces between parts are stable enough that most people never need each other's context"
       },
       "guideline": "Watch for the symptom, not a number: when the people on one team can no longer say what everyone else is working on, or status meetings start multiplying, split along the seams of the system. Treat any specific size limit as a convention, not a finding.",
-      "source": "Robin I. M. Dunbar, *Neocortex size as a constraint on group size in primates* (Journal of Human Evolution, 1992). The smaller team-size figures usually quoted alongside it — 7±2, the two-pizza rule — are folklore rather than Dunbar's finding."
+      "source": "Robin I. M. Dunbar, *Neocortex size as a constraint on group size in primates* (Journal of Human Evolution, 1992). The smaller team-size figures usually quoted alongside it are not Dunbar's finding: 7±2 is folklore, and the two-pizza rule is an Amazon convention attributed to Jeff Bezos (\"We try to create teams that are no larger than can be fed by two pizzas\", AWS, *Introduction to DevOps on AWS*)."
     },
     "ja": {
       "title": "ダンバー数",
@@ -1476,7 +1484,7 @@ export const laws: Law[] = [
         "note": "部品間のインタフェースが十分に安定していて、ほとんどの人が互いの文脈を必要としないなら、大きな集団でも一貫したシステムを出せる（Linux カーネルには数千人の貢献者がいる）"
       },
       "guideline": "人数ではなく症状を見る。チームの誰もが他の全員の作業内容を言えなくなったり、状況共有の会議が増え始めたりしたら、システムの継ぎ目に沿ってチームを分ける。具体的な人数の上限は、知見ではなく慣習として扱う。",
-      "source": "Robin I. M. Dunbar『Neocortex size as a constraint on group size in primates』(Journal of Human Evolution, 1992)。併せて引かれる小さいチーム規模の数字 (7±2、ツー・ピザ・ルール) はダンバーの知見ではなく、通俗的な外挿である。"
+      "source": "Robin I. M. Dunbar『Neocortex size as a constraint on group size in primates』(Journal of Human Evolution, 1992)。併せて引かれる小さいチーム規模の数字はダンバーの知見ではない。7±2 は通俗的な外挿で、ツー・ピザ・ルールは Jeff Bezos の言葉とされる Amazon の慣行だ (\"We try to create teams that are no larger than can be fed by two pizzas\"、AWS『Introduction to DevOps on AWS』)。"
     }
   },
   {
@@ -1771,7 +1779,8 @@ export const laws: Law[] = [
     "exampleUrl": null,
     "seeAlso": [
       "curse-of-knowledge",
-      "peter-principle"
+      "peter-principle",
+      "believability-weighted-decisions"
     ],
     "featured": false,
     "figure": {
@@ -1821,7 +1830,9 @@ export const laws: Law[] = [
       "dunning-kruger-effect",
       "principle-of-least-astonishment",
       "context-not-control",
-      "bus-factor"
+      "bus-factor",
+      "narratives-not-slides",
+      "braintrust"
     ],
     "featured": false,
     "figure": {
@@ -3855,7 +3866,8 @@ export const laws: Law[] = [
       "hanlons-razor",
       "bystander-effect",
       "mechanisms-not-good-intentions",
-      "five-whys"
+      "five-whys",
+      "braintrust"
     ],
     "featured": false,
     "figure": {
@@ -3902,7 +3914,8 @@ export const laws: Law[] = [
     "exampleUrl": null,
     "seeAlso": [
       "xy-problem",
-      "yagni"
+      "yagni",
+      "narratives-not-slides"
     ],
     "featured": false,
     "figure": {
@@ -3949,7 +3962,9 @@ export const laws: Law[] = [
     "exampleUrl": null,
     "seeAlso": [
       "type-1-vs-type-2-decisions",
-      "law-of-triviality"
+      "law-of-triviality",
+      "believability-weighted-decisions",
+      "context-not-control"
     ],
     "featured": false,
     "figure": {
@@ -3974,7 +3989,7 @@ export const laws: Law[] = [
         "note": "a culture that prizes commitment teaches people to stop objecting early, and silent compliance hides the dissent that would have caught the error"
       },
       "guideline": "State your disagreement once, in full, with your reasons. Then say \"I disagree and commit\" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you. For an irreversible decision, or one with a safety or ethical risk, do not commit quietly: escalate.",
-      "source": "Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — \"use the phrase 'disagree and commit'\", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and it is also attributed to Intel."
+      "source": "Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — \"use the phrase 'disagree and commit'\", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and Richard Tedlow, Andy Grove's biographer, lists \"disagree and then commit\" alongside \"constructive confrontation\" among the parts of Intel culture under Grove (\"Andy Grove: A Biographer's Tale\", *HBS Working Knowledge*, 2006). Netflix's culture memo (jobs.netflix.com, current version) uses the same rule, \"disagree then commit\", in its \"informed captain\" model, where one named person makes each significant decision after \"farming for dissent\"."
     },
     "ja": {
       "title": "反対してもコミットする",
@@ -3985,7 +4000,7 @@ export const laws: Law[] = [
         "note": "コミットを重んじる文化では、人は早いうちに反対するのをやめるようになる。黙って従う人が増えると、誤りに気づけたはずの異論が表に出てこない"
       },
       "guideline": "反対意見は一度だけ、理由を添えて全部言う。そのうえで「反対だがコミットする」と言い、自分の案だったつもりで実行する。立場が上の人も同じようにする。チームに自分を説得させるのではなく、チームの判断を後押しする。ただし取り返しのつかない決定や、安全・倫理上のリスクがある決定では、黙ってコミットせずエスカレーションする。",
-      "source": "Jeff Bezos『2016 年 株主への手紙』(Amazon.com, Inc., 2017 年)。\"use the phrase 'disagree and commit'\" と Amazon Studios の例。語句自体は Amazon 以前からある。Karen Southwick『High Noon』(1999) は Sun Microsystems の Scott McNealy がこの語を使っていたと記しており、Intel 発祥とする説もある。"
+      "source": "Jeff Bezos『2016 年 株主への手紙』(Amazon.com, Inc., 2017 年)。\"use the phrase 'disagree and commit'\" と Amazon Studios の例。語句自体は Amazon 以前からある。Karen Southwick『High Noon』(1999) は Sun Microsystems の Scott McNealy がこの語を使っていたと記している。Andy Grove の伝記を書いた Richard Tedlow は、Grove 時代の Intel の文化の一部として \"constructive confrontation\" と並べて \"disagree and then commit\" を挙げている (「Andy Grove: A Biographer's Tale」『HBS Working Knowledge』2006)。Netflix のカルチャーメモ (jobs.netflix.com の現行版) も \"disagree then commit\" という同じ決まりを \"informed captain\" のモデルの中で使う。重要な決定はそれぞれ名指しされた一人が、\"farming for dissent\" (異論を集めること) を経て下す。"
     }
   },
   {
@@ -4244,7 +4259,8 @@ export const laws: Law[] = [
     "seeAlso": [
       "normalization-of-deviance",
       "error-budget",
-      "five-whys"
+      "five-whys",
+      "genchi-genbutsu"
     ],
     "featured": false,
     "figure": {
@@ -4296,7 +4312,8 @@ export const laws: Law[] = [
       "normal-accident-theory",
       "blameless-postmortem",
       "andon",
-      "xy-problem"
+      "xy-problem",
+      "genchi-genbutsu"
     ],
     "featured": false,
     "figure": {
@@ -4395,7 +4412,8 @@ export const laws: Law[] = [
     "seeAlso": [
       "conways-law",
       "mechanisms-not-good-intentions",
-      "curse-of-knowledge"
+      "curse-of-knowledge",
+      "disagree-and-commit"
     ],
     "featured": false,
     "figure": {
@@ -4443,7 +4461,8 @@ export const laws: Law[] = [
     "seeAlso": [
       "boy-scout-rule",
       "broken-windows-theory",
-      "law-of-triviality"
+      "law-of-triviality",
+      "braintrust"
     ],
     "featured": false,
     "figure": {
@@ -4491,7 +4510,8 @@ export const laws: Law[] = [
     "seeAlso": [
       "hyrums-law",
       "churn-rule",
-      "pesticide-paradox"
+      "pesticide-paradox",
+      "one-version-rule"
     ],
     "featured": false,
     "figure": {
@@ -4539,7 +4559,8 @@ export const laws: Law[] = [
     "seeAlso": [
       "beyonce-rule",
       "hyrums-law",
-      "toil"
+      "toil",
+      "one-version-rule"
     ],
     "featured": false,
     "figure": {
@@ -4903,6 +4924,234 @@ export const laws: Law[] = [
       },
       "guideline": "回帰テストは残すが、それで新しいバグが見つかるとは期待しない。新しい入力、ファジング、プロパティベーステスト、探索的テストなど、スイートが確かめていないところを狙うテストを足す。本番にバグが漏れたら、どの種類のテストなら捕まえられたかを考え、その一件だけでなく、その種類のテストを足す。スイートは定期的に見直し、互いに重複するテストは消す。",
       "source": "Boris Beizer『Software Testing Techniques』(第 2 版、Van Nostrand Reinhold, 1990)「The Pesticide Paradox and the Complexity Barrier」。\"Every method you use to prevent or find bugs leaves a residue of subtler bugs against which those methods are ineffectual\" と \"Test suites wear out.\" の出典。"
+    }
+  },
+  {
+    "slug": "narratives-not-slides",
+    "number": 96,
+    "tag": "decision",
+    "sourceUrl": "https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders",
+    "exampleUrl": null,
+    "seeAlso": [
+      "working-backwards",
+      "curse-of-knowledge",
+      "type-1-vs-type-2-decisions"
+    ],
+    "featured": false,
+    "figure": {
+      "kind": "company",
+      "name": "Amazon",
+      "monogram": "A",
+      "image": null,
+      "logo": "/figures/narratives-not-slides.svg",
+      "wide": true,
+      "credit": {
+        "author": null,
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
+      }
+    },
+    "en": {
+      "title": "Narratives, Not Slides",
+      "concept": "An argument cut down to slides and bullets loses the links between its points, so the gaps and warnings that prose would have exposed pass through the review unnoticed.",
+      "mechanism": "A bullet list records claims without the links between them: which point rests on which, and which one matters most. When an analysis is condensed to fit a slide, the reasoning that would expose a gap or a warning is what gets cut, and each step up a hierarchy condenses it again; the board that investigated the loss of Space Shuttle Columbia found that information is \"inevitably lost\" this way. Prose forces the author to state the links, and a group that reads the document in silence at the start of the meeting argues about the same text rather than about the presenter's delivery. The price is time: Bezos says a good memo can take a week or more, so the practice pays only for decisions worth that week.",
+      "counter": {
+        "name": "Working Software over Comprehensive Documentation",
+        "note": "when running code would settle a design question faster than prose, a document written first spends a week recording guesses, and a design doc that is really an implementation manual should not be written at all"
+      },
+      "guideline": "For a decision that is expensive to reverse, or that people outside the team must approve, write the proposal as a few pages of prose: the problem, the options considered, the trade-offs and the recommendation. Open the review with everyone reading it in silence, then discuss. Do not write one for a reversible change or for a question a quick prototype will answer; build the prototype instead.",
+      "source": "Jeff Bezos, *2017 Letter to Shareholders* (Amazon.com, Inc., 2018) — \"We don't do PowerPoint (or any other slide-oriented) presentations at Amazon. Instead, we write narratively structured six-page memos.\", read silently at the start of each meeting, and a memo that \"might take a week or more\"; Columbia Accident Investigation Board, *Report*, vol. I (2003), ch. 7, \"Engineering by Viewgraphs\" — \"When engineering analyses and risk assessments are condensed to fit on a standard form or overhead slide, information is inevitably lost.\"; Malte Ubl, *Design Docs at Google* (industrialempathy.com, 2020) — the engineering form, and design docs that are \"really implementation manuals\" as a sign that none was needed. The counter-force is from the *Manifesto for Agile Software Development* (2001)."
+    },
+    "ja": {
+      "title": "スライドではなく文章で",
+      "concept": "スライドと箇条書きに縮めた議論は、論点どうしのつながりを失う。文章なら露わになったはずの穴や警告が、気づかれないままレビューを通り抜ける。",
+      "mechanism": "箇条書きは主張を並べるが、主張どうしのつながりは書かない。どの点がどの点に支えられ、どれがいちばん重要なのかが抜け落ちる。分析をスライドに収めようとすると、穴や警告を示すはずの推論から先に削られ、組織の階層を一段上がるたびにまた縮められる。スペースシャトル・コロンビア号の事故を調べた委員会は、こうして情報は「必ず失われる」と指摘した。文章で書くと、書き手はつながりを言葉にせざるを得ない。会議の冒頭に全員が黙って読めば、発表者の話しぶりではなく、同じ文面をもとに議論できる。代わりに時間がかかる。Bezos によれば、よいメモには一週間以上かかることもある。だから割に合うのは、その一週間に見合う決定だけだ。",
+      "counter": {
+        "name": "包括的なドキュメントよりも動くソフトウェア",
+        "note": "動くコードのほうが文章より早く設計上の問いに答えを出せるなら、先に書く文書は推測を一週間かけて書き留めるだけになる。実のところ実装手順書でしかない設計文書は、そもそも書かない"
+      },
+      "guideline": "取り消すのに高くつく決定や、チームの外の人の承認が要る決定は、数ページの文章で提案する。問題、検討した選択肢、トレードオフ、推奨案を書く。レビューは全員が黙って読むところから始め、それから議論する。取り消しやすい変更や、簡単な試作で答えが出る問いには書かない。試作を作る。",
+      "source": "Jeff Bezos『2017 年 株主への手紙』(Amazon.com, Inc., 2018 年)。\"We don't do PowerPoint (or any other slide-oriented) presentations at Amazon. Instead, we write narratively structured six-page memos.\"、会議の冒頭に黙って読むこと、メモに \"a week or more\" かかりうることの出典。Columbia Accident Investigation Board『Report』第 1 巻 (2003) 第 7 章「Engineering by Viewgraphs」。\"When engineering analyses and risk assessments are condensed to fit on a standard form or overhead slide, information is inevitably lost.\" の出典。Malte Ubl『Design Docs at Google』(industrialempathy.com, 2020)。エンジニアリングでの形と、設計文書が \"really implementation manuals\" になっているなら、そもそも要らなかったしるしだという指摘の出典。対抗原理は『アジャイルソフトウェア開発宣言』(2001) から。"
+    }
+  },
+  {
+    "slug": "one-version-rule",
+    "number": 97,
+    "tag": "maintainability",
+    "sourceUrl": "https://abseil.io/resources/swe-book/html/ch16.html",
+    "exampleUrl": null,
+    "seeAlso": [
+      "churn-rule",
+      "hyrums-law",
+      "beyonce-rule"
+    ],
+    "featured": false,
+    "figure": {
+      "kind": "company",
+      "name": "Google",
+      "monogram": "G",
+      "image": null,
+      "logo": "/figures/one-version-rule.svg",
+      "wide": false,
+      "credit": {
+        "author": null,
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
+      }
+    },
+    "en": {
+      "title": "One-Version Rule",
+      "concept": "When consumers may choose which version of a shared dependency to use, each choice becomes a conflict for someone who never made it.",
+      "mechanism": "Two components that pin different versions of the same library each work on their own. A program that comes to depend on both gets a link failure at best, or one copy picked at random at runtime, and the team that pays is the one that combined them, not the ones that pinned. Every extra version also adds another place a security fix or an upgrade has to land, and the copies drift apart until moving off the old one is a project of its own. Hiding the second copy, by shading or renaming, does not make the conflict go away. Allowing exactly one version per dependency removes the choice, so an upgrade can be done once for every caller, and adding a dependency no longer breaks a bystander through a version conflict.",
+      "counter": {
+        "name": "Semantic Import Versioning",
+        "note": "where no one owns every caller, as across an open-source ecosystem, nobody can make the single change that moves everyone, so letting incompatible major versions live side by side under different import paths lets each caller upgrade on its own schedule and accepts the duplicate copies as the price, which is the approach Go modules take"
+      },
+      "guideline": "Keep one version of every shared dependency, internal or third-party, and do each upgrade as one change that moves every caller. When an upgrade cannot land in one step, allow a second version only under a different name, with an owner and an end date, and delete it when the date comes. Do not let a team fork or pin a shared library on its own. Where projects have genuinely different security, legal or release requirements, split them into separate repositories, but hold each one to a single version per dependency.",
+      "source": "Titus Winters, \"Version Control and Branch Management\", in Winters, Manshreck & Wright, *Software Engineering at Google* (O'Reilly, 2020), ch. 16 — \"For every dependency in our repository, there must be only one version of that dependency to choose.\", shading solutions that \"work neither in theory nor in practice\", and \"What is important is not whether we focus on monorepo; it's to adhere to the One-Version principle to the greatest extent possible\"; Google Open Source, *The One Version Rule* (third-party policy) — \"There may only be one version of a package in `//third_party`.\" The counter-force is Russ Cox, *Semantic Import Versioning* (research!rsc, 2018) — \"to make it possible to upgrade the clients of that package one at a time and still have a buildable result\"."
+    },
+    "ja": {
+      "title": "ワン・バージョン・ルール",
+      "concept": "共有する依存先のどのバージョンを使うかを利用者が選べると、選ぶたびに、選んでいない誰かが衝突を抱える。",
+      "mechanism": "同じライブラリの別々のバージョンに固定した二つのコンポーネントは、それぞれ単独では動く。両方に依存するプログラムができると、よくてリンクエラー、悪ければ実行時にどちらか一方がでたらめに選ばれる。そのツケを払うのは固定したチームではなく、二つを組み合わせたチームだ。バージョンが一つ増えるたびに、セキュリティ修正やアップグレードを入れる場所も一つ増える。コピーどうしの差は広がっていき、古いほうから移るだけで一つのプロジェクトになる。シェーディングや名前の付け替えで二つ目のコピーを隠しても、衝突は消えない。依存先ごとにバージョンを一つだけと決めれば選択肢がなくなり、アップグレードを全呼び出し側に対して一度で済ませられ、依存を足しても、バージョンの衝突で無関係な誰かが壊れることはなくなる。",
+      "counter": {
+        "name": "セマンティック・インポート・バージョニング",
+        "note": "オープンソースのエコシステムのように、すべての呼び出し側を持つ者がいない場では、全員を一度に移す変更は誰にもできない。互換性のないメジャーバージョンを別のインポートパスで並べて置けば、呼び出し側はそれぞれの都合でアップグレードでき、コピーが重複するのはその代価として受け入れる。Go のモジュールはこのやり方を採っている"
+      },
+      "guideline": "社内のものも外部のものも、共有する依存先はバージョンを一つに保つ。アップグレードは、すべての呼び出し側を一度に移す一つの変更にする。一度で入らないアップグレードに限り、二つ目のバージョンを別の名前で、オーナーと期限を付けて許し、期限が来たら消す。チームが共有ライブラリを勝手にフォークしたり固定したりするのは認めない。セキュリティ、法務、リリースの要件が本当に違うプロジェクトはリポジトリを分けてよいが、それぞれの中では依存先ごとにバージョンを一つに保つ。",
+      "source": "Titus Winters「Version Control and Branch Management」、Winters, Manshreck & Wright『Software Engineering at Google』(O'Reilly, 2020) 第 16 章。\"For every dependency in our repository, there must be only one version of that dependency to choose.\"、シェーディングは \"work neither in theory nor in practice\"、\"What is important is not whether we focus on monorepo; it's to adhere to the One-Version principle to the greatest extent possible\" の出典。Google Open Source『The One Version Rule』(サードパーティのポリシー) の \"There may only be one version of a package in `//third_party`.\" も参照。対抗原理は Russ Cox『Semantic Import Versioning』(research!rsc, 2018) の \"to make it possible to upgrade the clients of that package one at a time and still have a buildable result\" から。"
+    }
+  },
+  {
+    "slug": "genchi-genbutsu",
+    "number": 98,
+    "tag": "decision",
+    "sourceUrl": "https://www.toyota-global.com/company/history_of_toyota/75years/text/leaping_forward_as_a_global_corporation/chapter4/section7/item4.html",
+    "exampleUrl": null,
+    "seeAlso": [
+      "five-whys",
+      "andon",
+      "goodharts-law"
+    ],
+    "featured": false,
+    "figure": {
+      "kind": "person",
+      "name": "Kiichiro Toyoda",
+      "monogram": "KT",
+      "image": null,
+      "logo": null,
+      "wide": false,
+      "credit": null
+    },
+    "en": {
+      "title": "Genchi Genbutsu (Go and See)",
+      "concept": "Decisions made from reports drift away from what is actually happening, because each layer of summary drops the detail that did not fit its form.",
+      "mechanism": "A report is written by someone who chose what to include, in categories fixed before the problem appeared, so the anomaly that matters can be averaged away or left out. A dashboard shows only what someone thought to measure, and the failure nobody predicted has no panel. The further the person deciding sits from the work, the more layers of summary lie between them, and each layer is also shaped by what its writer expects the reader to want. Toyota made going to the source one of the five key concepts of the Toyota Way: find the facts where the work happens before deciding.",
+      "counter": {
+        "name": "Trust the Aggregate",
+        "note": "a visit shows one shift, one user or one trace, and people judge from a small sample as if it stood for the whole (the belief in the law of small numbers), so for a question about the whole fleet the dashboard that covers every case is the better witness"
+      },
+      "guideline": "Before you decide on a fix, a priority or a postmortem conclusion, look at the primary evidence yourself: reproduce the bug, read the raw logs and the trace of one failing request, watch a real user hit the problem, or sit on the support queue for an hour. Use what you saw to question the dashboard, not to replace it.",
+      "source": "Toyota Motor Corporation, *The Toyota Way 2001*, as recorded in Toyota's official history *75 Years of Toyota*, ch. 4, sec. 7 — \"Genchi Genbutsu (go to the source to find the facts)\", one of five key concepts compiled in April 2001; Toyota, *Sustainable Management Report 2016*, p. 23 — \"go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed.\" The bias behind the counter-force is from Amos Tversky & Daniel Kahneman, *Belief in the Law of Small Numbers* (Psychological Bulletin, 1971)."
+    },
+    "ja": {
+      "title": "現地現物",
+      "concept": "報告をもとに下す判断は、実際に起きていることから離れていく。要約が一段挟まるたびに、その形式に収まらなかった細部が落ちるからだ。",
+      "mechanism": "報告は、何を入れるかを選んだ誰かが、問題が起きる前に決まっていた区分に沿って書く。だから肝心の異常が、平均にならされたり書き漏らされたりする。ダッシュボードには、誰かが測ろうと思ったものしか映らず、誰も予想しなかった障害の画面はない。判断する人が現場から遠いほど、間に挟まる要約は増える。どの段も、書き手が読み手の求めていると思うものに寄っていく。トヨタは現地現物を、トヨタウェイの五つのキーワードの一つに据えた。判断の前に、仕事が行われている場所で事実をつかむ。",
+      "counter": {
+        "name": "集計を信じる",
+        "note": "現場で見られるのは一つのシフト、一人の利用者、一本のトレースだ。人は小さな標本を全体の代表のように扱いがちだ (少数の法則の信念)。全体についての問いなら、すべての事例を含むダッシュボードのほうが確かな証人になる"
+      },
+      "guideline": "修正、優先順位、ポストモーテムの結論を決める前に、一次情報を自分の目で確かめる。バグを再現する、生のログと失敗したリクエスト一件のトレースを読む、実際の利用者が問題にぶつかる様子を見る、一時間サポートの窓口に座る。見たものはダッシュボードを疑うのに使い、置き換えるのには使わない。",
+      "source": "トヨタ自動車『トヨタウェイ 2001』。公式社史『トヨタ自動車75年史』第 4 章第 7 節の記録による。\"Genchi Genbutsu (go to the source to find the facts)\" は 2001 年 4 月にまとめられた五つのキーワードの一つ。トヨタ『Sustainable Management Report 2016』p. 23 の \"go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed.\" も参照。対抗原理の背景にあるバイアスは Amos Tversky & Daniel Kahneman『Belief in the Law of Small Numbers』(Psychological Bulletin, 1971) から。"
+    }
+  },
+  {
+    "slug": "believability-weighted-decisions",
+    "number": 99,
+    "tag": "decision",
+    "sourceUrl": "https://www.principles.com/principles/633d5d13-8610-425f-ad62-cd62347d9165/",
+    "exampleUrl": null,
+    "seeAlso": [
+      "disagree-and-commit",
+      "dunning-kruger-effect",
+      "law-of-triviality"
+    ],
+    "featured": false,
+    "figure": {
+      "kind": "person",
+      "name": "Ray Dalio",
+      "monogram": "RD",
+      "image": null,
+      "logo": null,
+      "wide": false,
+      "credit": null
+    },
+    "en": {
+      "title": "Believability-Weighted Decisions",
+      "concept": "When a group counts every opinion the same, or defers to rank, the people who have actually done the thing before are outvoted by those who have not.",
+      "mechanism": "In a design review everyone can form a view on every part, but only some of the room has built or run something like it. A show of hands gives the first-timer and the engineer who ran the last migration one vote each, and deferring to the most senior person only swaps one blind spot for another. Dalio's test is narrow and checkable: the most believable people have \"repeatedly and successfully accomplished the thing in question\" and can explain the cause and effect behind their view. Bridgewater shows the equal-weighted and the believability-weighted vote side by side: when they agree the matter is settled, and when they split, it tries again to resolve the disagreement and otherwise goes with the weighted vote. The split itself is where the information is.",
+      "counter": {
+        "name": "Wisdom of Crowds",
+        "note": "when judgments are made independently, a plain equal-weight aggregate is hard to beat (the median guess of Galton's fairground crowd was within 1 percent of the ox's weight), and picking experts in advance bets on a track record that may not carry over to the new question"
+      },
+      "guideline": "Before a contested technical call, ask who has built or run this kind of thing before and whether it worked, and give their view more weight than headcount or title. Collect views in writing before the discussion so they stay independent, and look at both the plain tally and the weighted one; where they disagree, dig in rather than letting the weighted side win by default. Base believability on outcomes you can check, such as systems shipped and postmortems, and drop the weighting for questions nobody on the team has faced before.",
+      "source": "Ray Dalio, *Principles: Life & Work* (Simon & Schuster, 2017), work principle \"Believability Weight Your Decision Making\" (principles.com) — \"the best decisions are made by an idea meritocracy with believability-weighted decision making\", the most believable people being those who \"have repeatedly and successfully accomplished the thing in question\", and a tool that \"displays both the equal-weighted average and the believability-weighted results\". Netflix's culture memo (jobs.netflix.com, current version) makes the same point: \"not all opinions are created equal\". The counter-force is Francis Galton, *Vox Populi* (Nature, 1907)."
+    },
+    "ja": {
+      "title": "信頼度で重みづけする意思決定",
+      "concept": "集団がどの意見も同じ一票と数えたり、役職に従ったりすると、実際にそれをやったことのある人が、やったことのない人に多数決で負ける。",
+      "mechanism": "設計レビューでは誰でもどの部分にも意見を持てるが、似たものを作ったり運用したりした経験があるのは一部の人だけだ。挙手で決めれば、初めて触る人も前回の移行をやり遂げたエンジニアも同じ一票になる。いちばん上の人に従っても、別の死角に置き換わるだけだ。Dalio の基準は狭く、確かめられる。最も信頼できるのは、問題になっていることを「繰り返し成功させてきた」うえで、自分の見解の因果を説明できる人だ。Bridgewater では、均等に数えた票と信頼度で重みづけした票を並べて示す。両者が一致すれば決着とし、割れたらもう一度すり合わせ、それでも決まらなければ重みづけした票に従う。割れたこと自体に情報がある。",
+      "counter": {
+        "name": "群衆の知恵",
+        "note": "判断が互いに独立していれば、均等な重みの単純な集計を上回るのは難しい (Galton が見た品評会の群衆の推定の中央値は、牛の重さとの差が 1% もなかった)。専門家を前もって選ぶのは、過去の実績が新しい問いにも通じるほうに賭けることだ"
+      },
+      "guideline": "意見の割れる技術判断の前に、この種のものを作ったり運用したりした人は誰か、それはうまくいったかを確かめ、その人の見解を人数や肩書きより重く扱う。議論の前に意見を書面で集めて独立性を保ち、単純な集計と重みづけした集計の両方を見る。両者が食い違ったら、重みづけした側を自動的に勝たせず、掘り下げる。信頼度は、出荷したシステムやポストモーテムなど、確かめられる結果をもとに決める。チームの誰も経験したことのない問いでは、重みづけをやめる。",
+      "source": "Ray Dalio『Principles: Life & Work』(Simon & Schuster, 2017) の仕事の原則「Believability Weight Your Decision Making」(principles.com)。\"the best decisions are made by an idea meritocracy with believability-weighted decision making\"、最も信頼できる人の条件 \"have repeatedly and successfully accomplished the thing in question\"、\"displays both the equal-weighted average and the believability-weighted results\" という道具の出典。Netflix のカルチャーメモ (jobs.netflix.com の現行版) も \"not all opinions are created equal\" と同じことを言う。対抗原理は Francis Galton『Vox Populi』(Nature, 1907) から。"
+    }
+  },
+  {
+    "slug": "braintrust",
+    "number": 100,
+    "tag": "organization",
+    "sourceUrl": "https://review.firstround.com/spark-creativity-with-these-tips-from-pixars-president/",
+    "exampleUrl": null,
+    "seeAlso": [
+      "code-health-standard",
+      "blameless-postmortem",
+      "curse-of-knowledge"
+    ],
+    "featured": false,
+    "figure": {
+      "kind": "person",
+      "name": "Ed Catmull",
+      "monogram": "EC",
+      "image": null,
+      "logo": null,
+      "wide": false,
+      "credit": null
+    },
+    "en": {
+      "title": "Braintrust (Notes Without Authority)",
+      "concept": "Feedback from people who can overrule the owner gets defended against rather than used; peers with no power to impose a fix can be candid, and the owner can afford to hear them.",
+      "mechanism": "Someone deep in a piece of work loses perspective and needs outside eyes. But if those eyes can impose a fix, the owner comes in to defend the work instead of to hear about it, and reviewers drift from naming the problem to dictating their own solution. Taking away the veto changes both sides: reviewers can be blunt because nothing they say is binding, and the owner can listen because nothing they hear is an order. The owner, who still answers for the result and knows constraints the room does not, then chooses the remedy.",
+      "counter": {
+        "name": "Review as a Gate",
+        "note": "where a blind spot's cost lands on someone other than the owner (a security hole, lost data, another team's pager), advice that can be ignored is not enough, and a reviewer has to be able to block"
+      },
+      "guideline": "In a design or RFC review, let reviewers name problems and their suspected causes but not dictate the fix, and leave the decision with the author, who answers each point in writing. Fill the room with peers who have built something similar, not the manager who rates the author. Where a mistake would land on others (security, data loss, an irreversible migration), keep a blocking approval, but run it as a separate step from the advisory review.",
+      "source": "Ed Catmull, quoted in \"Spark Creativity with These Tips from Pixar's President\" (*First Round Review*, 2015) — \"the Braintrust should have no authority\", so that the person responsible \"would never have to come into the room in a defensive posture\"; the practice is set out at length in Ed Catmull with Amy Wallace, *Creativity, Inc.* (Random House, 2014). The counter-force is the approver model of code review, where \"the reviewer can certainly deny approval\" (Google, *The Standard of Code Review*)."
+    },
+    "ja": {
+      "title": "ブレイントラスト (権限を持たない助言)",
+      "concept": "オーナーを覆せる人からの意見は、活かされるより先に防御の対象になる。修正を強制できない仲間なら率直に言えるし、オーナーも落ち着いて聞ける。",
+      "mechanism": "仕事に深く入り込んだ人は全体が見えなくなり、外の目を必要とする。ところがその目が修正を押しつけられるなら、オーナーは話を聞くためではなく作品を守るために部屋に入り、レビュアーは問題を指摘するところから自分の解決策を指図するところへずれていく。拒否権を外すと両側が変わる。言ったことに拘束力がないからレビュアーは遠慮なく言え、聞いたことが命令ではないからオーナーは耳を傾けられる。そのうえで、結果に責任を持ち、その場の誰も知らない制約を知っているオーナーが直し方を選ぶ。",
+      "counter": {
+        "name": "関門としてのレビュー",
+        "note": "死角のツケがオーナー以外の誰か (セキュリティの穴、失われたデータ、別チームのオンコール) に回るなら、無視できる助言では足りず、レビュアーが止められなければならない"
+      },
+      "guideline": "設計レビューや RFC のレビューでは、レビュアーは問題とその原因と思われるものを指摘するが、直し方は指図しない。判断は作者に任せ、作者は指摘の一つひとつに書面で答える。部屋には、作者を評価する上司ではなく、似たものを作った経験のある仲間を集める。誤りのツケが他人に回るもの (セキュリティ、データ消失、取り消せない移行) では、止める権限のある承認を残す。ただし助言のためのレビューとは別の手順にする。",
+      "source": "Ed Catmull の発言。「Spark Creativity with These Tips from Pixar's President」(『First Round Review』, 2015) による。\"the Braintrust should have no authority\" と、責任者が \"would never have to come into the room in a defensive posture\" で済むようにするという点の出典。仕組みの全体は Ed Catmull with Amy Wallace『Creativity, Inc.』(Random House, 2014) に詳しい。対抗原理は、\"the reviewer can certainly deny approval\" とするコードレビューの承認者モデル (Google『The Standard of Code Review』) から。"
     }
   }
 ];

@@ -672,3 +672,36 @@ figures:
   - slug: pesticide-paradox
     kind: person
     name: "Boris Beizer"
+  - slug: narratives-not-slides
+    kind: company
+    name: "Amazon"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
+  - slug: one-version-rule
+    kind: company
+    name: "Google"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
+  - slug: genchi-genbutsu
+    kind: person
+    name: "Kiichiro Toyoda"
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/af/Kiichiro_Toyoda.jpg"
+    license: "Public domain"
+    author: "Unknown author"
+    page: "https://commons.wikimedia.org/wiki/File:Kiichiro_Toyoda.jpg"
+  - slug: believability-weighted-decisions
+    kind: person
+    name: "Ray Dalio"
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Ray_Dalio_Sept_23_2017_NYC.jpg"
+    license: "CC BY 3.0"
+    author: "Grameen America"
+    page: "https://commons.wikimedia.org/wiki/File:Ray_Dalio_Sept_23_2017_NYC.jpg"
+  - slug: braintrust
+    kind: person
+    name: "Ed Catmull"
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Ed_Catmull_at_Web_Summit_2015_%28cropped%29.jpg"
+    license: "CC BY 2.0"
+    author: "Web Summit"
+    page: "https://commons.wikimedia.org/wiki/File:Ed_Catmull_at_Web_Summit_2015_(cropped).jpg"
