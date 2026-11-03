@@ -698,3 +698,10 @@ figures:
     license: "CC BY 3.0"
     author: "Grameen America"
     page: "https://commons.wikimedia.org/wiki/File:Ray_Dalio_Sept_23_2017_NYC.jpg"
+  - slug: braintrust
+    kind: person
+    name: "Ed Catmull"
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Ed_Catmull_at_Web_Summit_2015_%28cropped%29.jpg"
+    license: "CC BY 2.0"
+    author: "Web Summit"
+    page: "https://commons.wikimedia.org/wiki/File:Ed_Catmull_at_Web_Summit_2015_(cropped).jpg"
