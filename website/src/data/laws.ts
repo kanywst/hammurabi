@@ -618,13 +618,17 @@ export const laws: Law[] = [
     ],
     "featured": false,
     "figure": {
-      "kind": "person",
-      "name": "Melvin E. Conway",
-      "monogram": "MC",
-      "image": null,
+      "kind": "scene",
+      "name": "Bell System telephone switchboard, 1943",
+      "monogram": "CL",
+      "image": "/figures/conways-law.webp",
       "logo": null,
       "wide": false,
-      "credit": null
+      "credit": {
+        "author": "U.S. Department of Labor, Women's Bureau (National Archives)",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Photograph_of_Women_Working_at_a_Bell_System_Telephone_Switchboard_-_NARA_-_1633445.jpg"
+      }
     },
     "en": {
       "title": "Conway's Law",
