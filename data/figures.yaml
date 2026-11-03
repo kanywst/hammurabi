@@ -678,3 +678,9 @@ figures:
     logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
     license: "Public domain"
     page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
+  - slug: one-version-rule
+    kind: company
+    name: "Google"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
