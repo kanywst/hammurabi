@@ -51,7 +51,8 @@ function Part({
 
 /**
  * The order follows what a reader at a decision needs first: what the law says,
- * what to do about it, why it happens, and when to ignore it. The source and
+ * the one line to keep in mind, what to do about it, why it happens, and when
+ * to ignore it. The source and
  * the neighbouring laws come last, for whoever wants to check or keep going.
  */
 export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
@@ -101,7 +102,12 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
           </figure>
         </header>
 
-        <div className="todo mt-8">
+        <div className="stance mt-8">
+          <h2 className="stance__label">{t.law.stance}</h2>
+          <p className="stance__body">{text.stance}</p>
+        </div>
+
+        <div className="todo mt-6">
           <h2 className="todo__label">{t.law.whatToDo}</h2>
           <p className="todo__body">
             <RichText>{text.guideline}</RichText>

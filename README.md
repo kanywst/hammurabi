@@ -19,19 +19,21 @@ In a world of increasing complexity, the primary bottleneck in engineering is no
 
 Hammurabi is a curated codex of engineering laws drawn from **cognitive psychology**, **safety engineering**, and **system design**. It is named for the first written code of laws — the point at which a rule stopped being something you remembered and became something you could cite.
 
-Most collections of laws stop at the explanation. This one does not, because an explanation is not a decision. Every article here carries three more things:
+Most collections of laws stop at the explanation. This one does not, because an explanation is not a decision. Every article here carries four more things:
 
+- **A stance.** One line to keep in mind after you close the article: not what the law says, but how to stand toward it.
 - **A counter-force.** The principle that stops the law from hardening into dogma. Every law in this codex can be applied until it does damage; the counter is the boundary. Postel's Law without fail-fast produces systems that swallow corruption. Least Privilege without psychological acceptability produces controls that users route around.
 - **A field guideline.** Something you can act on tomorrow, written as an instruction rather than an observation.
 - **A primary source.** The paper, book, letter or RFC where the idea actually appeared — not a blog post summarising one. Every entry links to it, so you can check the claim rather than trust it.
 
 ## How to read an article
 
-Each article has the same five parts, in the same order:
+Each article has the same six parts, in the same order:
 
 | Part | What it answers |
 | --- | --- |
 | **Concept** | What force is this, in one line? |
+| **Keep in mind** | So what should I keep in mind? |
 | **Mechanism** | Why does it happen? Usually a fact about people or about systems, not about software. |
 | **Counter** | What keeps it from becoming dogma? |
 | **Guideline** | What do I do on Monday? |
@@ -171,6 +173,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 `§ 01` · Decision
 
 - **Concept:** Teams spend the caution meant for irreversible decisions on ones they could easily undo.
+- **Keep in mind:** Ask whether you can undo it before you ask how sure you are
 - **Mechanism:** Bezos's letter makes an argument about organizations. As a company grows it tends to run the heavyweight process built for irreversible (Type 1) decisions on most decisions, reversible (Type 2) ones included. The result, in the letter's words, is "slowness, unthoughtful risk aversion, failure to experiment sufficiently, and consequently diminished invention."
 - **Counter:** **Hidden One-Way Doors** — many decisions look reversible and are not (a public API, a data format written to disk, a price announced to customers), and fast-tracking them ships a commitment you cannot take back.
 - **Guideline:** Classify a decision before you schedule the debate. If you could undo it within a sprint at a cost you would accept, let one person or a small group decide it this week. Keep the full review for decisions that touch persisted data, public interfaces, security, or something already promised to customers.
@@ -182,6 +185,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 `§ 02` · Safety
 
 - **Concept:** A broken rule that causes no immediate harm quietly becomes the new normal.
+- **Keep in mind:** An exception that caused no harm is not proof that it is safe
 - **Mechanism:** Vaughan found no rule-breaking villains at NASA. Each time O-ring erosion appeared and the shuttle came back safely, engineers documented it, judged it acceptable, and widened what counted as acceptable for the next flight. Every step was reasoned and signed off. The deviation became the standard through the organization's normal process, which is why nobody felt they were taking a risk.
 - **Counter:** **Error Budget** — not every deviation is a precursor; a team that investigates every one stops shipping and starts ignoring the investigations, so an agreed allowance keeps the real alarms visible.
 - **Guideline:** When a check fails and you ship anyway, write down who decided, why, and when it will be reviewed. In postmortems, ask which past exceptions made this one look normal.
@@ -194,6 +198,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 `§ 03` · Systems
 
 - **Concept:** Code or rules whose origin you don't know look like clutter, which makes them tempting to delete.
+- **Keep in mind:** Learn why it is there before you remove it, but set a deadline on the search
 - **Mechanism:** A rule or a branch of code records the answer to a problem, not the problem. The incident it prevents, the customer it was written for and the person who added it are rarely in the file, so the answer looks like noise. Removing it is cheap and instant; the cost arrives later, often to someone else, when the problem it answered comes back.
 - **Counter:** **Time-Boxed Archaeology** — taken absolutely the rule removes nothing ever, because the reason is sometimes gone with the person who had it.
 - **Guideline:** You are forbidden from removing a "fence" (code/rule) until you can explain why it was put there — but put a deadline on the search. When it expires, take the fence down behind a flag, with a rollback ready, and watch what complains.
@@ -206,6 +211,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 `§ 04` · Cognition
 
 - **Concept:** Faced with a real anomaly, people reach for the familiar, harmless explanation.
+- **Keep in mind:** Ask what it would mean if it were real before you explain it away
 - **Mechanism:** Most anomalies really are the usual thing, so the usual explanation is right most of the time, and people learn to reach for it. In a real emergency that habit becomes delay: people look for confirmation, check with others, and finish what they were doing before acting. In an incident it sounds like "probably a transient network blip" while the database is corrupting.
 - **Counter:** **Alarm Fatigue** — treating every anomaly as the start of a collapse burns out the on-call rotation, and an engineer who escalates everything is soon ignored; most anomalies really are the usual thing.
 - **Guideline:** When an error occurs, ask: "If this were the start of a total system collapse, what would the next 10 minutes look like?" If that scares you, investigate now.
@@ -217,6 +223,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 `§ 05` · Organization
 
 - **Concept:** Discussion goes to the parts everyone understands, not the parts that matter.
+- **Keep in mind:** Spend the discussion where the risk is, not where the opinions are
 - **Mechanism:** Parkinson's committee approves a reactor in minutes and spends forty-five on a bicycle shed, because everyone can picture a shed and only a few can judge a reactor. Commenting on what you understand feels like contributing, and the cost of the discussion is the same whatever its subject, so attention flows to the cheapest topic rather than the most important one.
 - **Counter:** **Names Are Interfaces** — the small, easy-to-discuss things are sometimes the permanent ones; a public API name or a config key is cheap to argue about and expensive to change after release.
 - **Guideline:** Move everything a tool can decide (format, import order, lint rules) out of human review. When a review thread is mostly style, stop it and ask one question about the riskiest part of the change. In meetings, put the most expensive or riskiest item first on the agenda.
@@ -229,6 +236,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 `§ 06` · Systems
 
 - **Concept:** Complex systems that work usually grew from simple systems that worked; designed ones rarely do.
+- **Keep in mind:** Distrust a design that has to work all at once to work at all
 - **Mechanism:** A design written from scratch has to anticipate every interaction between its parts, and in a complex system most interactions are only discovered by running it. A simple system that works has already had its interactions tested by use; each addition is then a small change to something known. A system designed whole has to discover all its interactions at once, after the investment has been made.
 - **Counter:** **Some Systems Cannot Grow From a Toy** — a payments ledger, a safety interlock or a protocol with many independent implementers has to be right in its first version, and evolving it in production means running the incorrect versions on real money or real people.
 - **Guideline:** Ship the smallest version that does one real job end to end, and grow it in steps that each keep it working. When a rewrite is proposed, ask which working system it will grow from.
@@ -241,6 +249,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 `§ 07` · Organization
 
 - **Concept:** Systems end up shaped like the communication paths of the teams that build them.
+- **Keep in mind:** To change the architecture, change the teams first
 - **Mechanism:** Every interface in a system has to be agreed by the people on either side of it. Where people talk every day, interfaces can be fine-grained and change often; where they rarely talk, interfaces become coarse, formal and slow to change. So the boundaries that are easy to build are the ones that match the communication paths, and the design converges on them whether anyone intends it or not.
 - **Counter:** **Monolith First** — giving every team its own service imports the costs of a distributed system; sometimes one team should own one deployable unit whatever the org chart says.
 - **Guideline:** If you want a modular architecture, create modular, independent teams first. Do not fight the org chart with code.
@@ -260,6 +269,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 08` · Systems
 
 - **Concept:** With enough users, every observable behavior of a system, bugs included, is depended on.
+- **Keep in mind:** Assume everything users can observe has been promised
 - **Mechanism:** A contract says what is promised; users see what happens. Response order, timing, error text, the exact rounding: each is observable, and with enough users someone builds on each one, usually without knowing it was never promised. The cost lands on the maintainer, who discovers the dependency only when a "safe" internal change breaks a customer.
 - **Counter:** **Deliberate Variance** — if every observable behavior were sacred nothing could ever change, so vary what you never promised — randomized iteration order, planned outages — and the dependency never forms.
 - **Guideline:** "Internal" doesn't exist once you have users. Version and feature-flag what you promise; deliberately vary what you do not, so nobody can build on it in the first place.
@@ -272,6 +282,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 09` · Organization
 
 - **Concept:** Adding people to a late project tends to make it later, because ramp-up and coordination cost more than they add.
+- **Keep in mind:** When a project is late, cut scope or move the date before adding people
 - **Mechanism:** Adding people to a late project increases communication overhead quadratically (n(n-1)/2 communication channels for n people). For a while, new people take more time from veterans than they contribute.
 - **Counter:** **Partitionable Work** — Brooks introduced the law as "oversimplifying outrageously": people added early, to work that splits cleanly with little communication, do speed it up.
 - **Guideline:** If a project is late, cut scope or move the date first. Add people only to work that splits cleanly and that they can start without a veteran's daily help, and do it early, not in the last month.
@@ -283,6 +294,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 10` · Cognition
 
 - **Concept:** People ask for help with their attempted fix instead of the problem they actually have.
+- **Keep in mind:** Look past the question to what the asker is trying to do
 - **Mechanism:** Once someone has picked an approach, the approach becomes the problem in their head, and they ask about the step that failed rather than the goal. The helper sees only Y, so they answer Y, and both sides can spend an hour on a solution to a problem that a different X-level approach makes disappear.
 - **Counter:** **Answer the Question Asked** — sometimes the asker has already weighed X and needs Y for reasons they do not owe you; interrogating every question is patronizing and slows down the people who knew what they were doing.
 - **Guideline:** When someone asks "How do I do Y?", answer Y if it is cheap, then ask once what they are trying to achieve.
@@ -294,6 +306,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 11` · Distributed Systems
 
 - **Concept:** Systems that assume every peer follows the spec exactly tend to be brittle against the first one that doesn't.
+- **Keep in mind:** Be exact in what you send, and explicit about what you tolerate
 - **Mechanism:** Specifications are incomplete and implementations are written by different people at different times. A receiver that rejects anything slightly off breaks against the first peer that read the spec differently; a sender that emits only the strict core gives receivers the least to disagree about. Postel's asymmetry helped early internet implementations interoperate before the specs had settled.
 - **Counter:** **Maintaining Robust Protocols (RFC 9413)** — tolerating malformed input lets broken senders ship, every receiver then has to copy the tolerance, and the de facto protocol drifts from the spec; the IAB now asks protocol designers to keep maintaining their specifications so tolerance does not become permanent, and calls ignoring faulty input almost always the wrong fix.
 - **Guideline:** Send exactly what the spec says. Accept small deviations at the edge only where they are documented and logged, and set a date to stop accepting them.
@@ -306,6 +319,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 12` · Organization
 
 - **Concept:** People read malice into delays and bugs that are better explained by fatigue or missing context.
+- **Keep in mind:** Look for what was missing before you look for who meant it
 - **Mechanism:** Inside a team the people whose work affects you are mostly invisible: you see the broken build, not the pager that woke them at 4 AM or the requirement they were never told about. Intent fills the gap in the story, and malice is the most vivid intent available. Acting on it turns a fixable gap in context into a conflict between people.
 - **Counter:** **Assume Breach** — some failures are malicious, and an attacker relies on looking like an honest mistake; the xz utils backdoor (2024) came from a helpful, patient contributor.
 - **Guideline:** Before you attribute a failure to intent, find out what the person could see at the time, and fix what was missing. Raise intent only with evidence, and then privately.
@@ -318,6 +332,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 13` · Estimation
 
 - **Concept:** Work takes longer than estimated, even when the estimate already allows for that.
+- **Keep in mind:** Trust what past work actually took over how this work looks today
 - **Mechanism:** "It always takes longer than you expect, even when you take into account Hofstadter's Law." Estimates are built from the steps you can picture, and the steps you cannot picture (integration surprises, rework, waiting on other people) are exactly the ones missing. Adjusting for that from the inside fails for the same reason: you can only adjust for the surprises you can already imagine.
 - **Counter:** **Parkinson's Law** — padding an estimate does not bank the slack; the work expands into it, so a generous estimate can be as late as a tight one.
 - **Guideline:** Estimate from what similar past work actually took, not from how this work looks today. Write down, at the start, which scope you will cut when the date is at risk, and re-estimate when a milestone lands rather than only at the end.
@@ -330,6 +345,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 14` · Incentives
 
 - **Concept:** A number stops measuring well once people are rewarded for moving it.
+- **Keep in mind:** Watch the outcome, not the number that stands for it
 - **Mechanism:** In Marilyn Strathern's phrasing, "when a measure becomes a target, it ceases to be a good measure." A number is useful because it moves with the thing you care about; once people are rewarded for the number, they find cheaper ways to move it that leave the thing alone. Reward "number of commits" and people make tiny, useless commits.
 - **Counter:** **Balanced Scorecards** — you still have to steer by numbers; several measures that are hard to game together, read alongside the work itself, keep the signal longer than refusing to measure.
 - **Guideline:** Never use a single metric to judge performance. Observe the system's output, not its proxies.
@@ -342,6 +358,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 15` · Systems
 
 - **Concept:** For ideas and software, the longer something has survived, the longer it is likely to last.
+- **Keep in mind:** For things that must last, bet on what has already lasted
 - **Mechanism:** For things that do not wear out, every year of survival is evidence of having passed tests that killed the alternatives: changes in hardware, fashion, maintainers and scale. Software that has lasted twenty years has had its bugs found, its edge cases documented and its operators trained. A new tool has not been tested yet, so its expected remaining life is short, however good it looks.
 - **Counter:** **The Substrate Changes** — age measures survival under past conditions; when the hardware, scale or threat model shifts, the long-lived choice can be the one that was optimized for a world that no longer exists.
 - **Guideline:** If you need a stable system for 10 years, choose a technology that has already been around for 10 years (e.g., PostgreSQL over a new NoSQL).
@@ -353,6 +370,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 16` · Decision
 
 - **Concept:** Teams keep funding a failing project because of what they have already spent on it.
+- **Keep in mind:** Decide on what lies ahead, not on what is already spent
 - **Mechanism:** Stopping a project turns money already spent from "investment" into "loss", and someone has to own that loss in public. Continuing defers the admission and keeps alive the chance of being proved right. Arkes and Blumer found the effect even in people paying for their own theater tickets: those who paid full price attended more often than those who got a discount.
 - **Counter:** **The J-Curve** — many worthwhile projects look worst in the middle, and a team that kills everything at the first trough never finishes anything; past investment says nothing, but the remaining cost to finish may be small.
 - **Guideline:** Ask: "If we started today with zero investment, would we choose this path?" If no, kill it.
@@ -364,6 +382,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 17` · Cognition
 
 - **Concept:** Teams copy another company's practices without the conditions that made them work.
+- **Keep in mind:** Copy a practice only if you have the problem it solved
 - **Mechanism:** A practice is visible; the conditions that made it work are not. Another company's process, tool or team model gets published as a description of what they do, without the scale, people and problems that made it pay off, so copying it reproduces the form and not the conditions. Feynman's islanders built a runway, a hut for a controller and wooden headphones, and the planes did not land.
 - **Counter:** **Proven Practice** — deriving everything from first principles throws away other people's hard-won lessons; copying a practice that is widely known to work is usually cheaper than reinventing it.
 - **Guideline:** Do not adopt a tool/process because Google uses it. Adopt it because you have the exact problem Google had at that scale.
@@ -375,6 +394,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 18` · Performance
 
 - **Concept:** Speeding up one part of a system barely helps when the bottleneck is somewhere else.
+- **Keep in mind:** Find the bottleneck before you speed anything up
 - **Mechanism:** If a fraction s of the work cannot be parallelized or sped up, the whole job can never run faster than 1/s, however much the rest improves. With 5% serial work, even infinite processors give at most a 20× speedup. Effort spent on the parallel part has diminishing returns, and the serial part sets the ceiling.
 - **Counter:** **Gustafson's Law** — when the problem grows with the machine, the serial fraction shrinks and speedup keeps climbing.
 - **Guideline:** Profile first; time usually concentrates in a small part of the code, often around 1% of it taking 90% of the time. Optimize that part only, and ignore the rest.
@@ -386,6 +406,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 19` · Systems
 
 - **Concept:** Every non-trivial abstraction eventually exposes the details it was meant to hide.
+- **Keep in mind:** Use the abstraction, but keep someone who knows what is under it
 - **Mechanism:** An abstraction hides details by assuming they behave well, and they behave well only most of the time. TCP hides packet loss until the cable is cut; SQL hides access paths until a missing index turns a query from milliseconds into minutes. When the assumption breaks, the problem shows up in terms of the hidden layer, and only someone who understands that layer can read it.
 - **Counter:** **Information Hiding** — most users of an abstraction never hit the leak, and the point of a layer is that most people do not have to learn what is underneath (Parnas, 1972).
 - **Guideline:** Use abstractions to move fast, but ensure at least one person on the team understands the layer beneath it.
@@ -398,6 +419,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 20` · Decision
 
 - **Concept:** Most of the effect comes from a small share of the causes, such as bugs in a few modules.
+- **Keep in mind:** Find the few causes that matter and start there
 - **Mechanism:** Causes are rarely spread evenly. Pareto noticed it in Italian land ownership; Juran generalized it to quality as "the vital few and the trivial many". In software, defects, load and support tickets tend to cluster in a few modules, endpoints and customers. The ratio is rarely exactly 80/20, but the skew is usually large enough that ranking beats spreading effort evenly.
 - **Counter:** **The Long Tail** — the many small causes can add up to more than the few big ones; in availability and security, the rare path you deprioritized is where the outage or breach comes from.
 - **Guideline:** Before a quality push, rank modules by defects or incidents over the last quarter and start at the top. Re-rank every quarter; the vital few move.
@@ -410,6 +432,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 21` · Cognition
 
 - **Concept:** Conclusions drawn only from successes ignore the failures that used the same strategy.
+- **Keep in mind:** Count the failures before you copy the success
 - **Mechanism:** Success stories are easy to find because the successes are still around to tell them; the projects that used the same strategy and failed left no blog post, no conference talk and no case study. Any sample built from what survived is skewed toward whatever survival looks like. Wald's bombers are the classic case: the planes that came back showed where a plane could be hit and still return, so the armor belonged where the returning planes had no holes.
 - **Counter:** **Learning From Success (Safety-II)** — studying only failures misses why things usually go right; most of the time the same messy practices succeed, and that is evidence too.
 - **Guideline:** Before adopting a strategy because "Company X succeeded with it," research how many companies failed using the same approach. The dead don't write blog posts.
@@ -421,6 +444,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 22` · Maintainability
 
 - **Concept:** Debugging is harder than writing, so code written at your cleverest is beyond your debugging.
+- **Keep in mind:** Write code a tired stranger could debug
 - **Mechanism:** Kernighan and Plauger's words are: "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?" When you write code you hold the whole design in your head. Debugging starts from a symptom, often months later and often by someone else, and has to rebuild that context from the code alone. Every trick that made the code shorter to write makes the rebuilding longer.
 - **Counter:** **Leverage of Abstraction** — the clever version is sometimes the short, correct one; a well-chosen data structure or library can remove whole classes of bugs that the "simple" hand-written loop keeps.
 - **Guideline:** In review, ask whether the next on-call engineer could explain the code without the author. If a trick is worth keeping, name it, link to where it is explained and add a test that pins its behavior.
@@ -432,6 +456,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 23` · Incentives
 
 - **Concept:** An incentive meant to reduce a problem rewards people for producing more of it.
+- **Keep in mind:** Ask how each incentive could be earned without fixing anything
 - **Mechanism:** A bounty pays for evidence of the problem, not for the problem going away, and evidence is usually cheaper to produce than the outcome. Siebert named the effect after an undocumented anecdote from colonial Delhi, a cobra bounty that led to cobra farming. The documented case is Hanoi in 1902, where a French bounty on rat tails led people to cut off tails and release the rats to breed, and rats were farmed outside the city. When such a bounty ends, the stock it created is released and the problem is bigger than before.
 - **Counter:** **Incentives Mostly Work** — most bounties and targets do move behavior the intended way; refusing to reward the outcome because it could be gamed leaves the problem unpaid-for.
 - **Guideline:** For every incentive, ask how someone would earn it without fixing the problem, pay for the outcome rather than the evidence where you can, and decide in advance how you will wind it down.
@@ -444,6 +469,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 24` · Organization
 
 - **Concept:** People keep only about 150 stable relationships. Engineers extrapolate: past shared context, added headcount goes to coordination.
+- **Keep in mind:** When people lose track of each other's work, it is time to split
 - **Mechanism:** Humans can maintain approximately 150 stable social relationships. Dunbar's result is about neocortex size and group size across primates — it is not about work teams. What engineering extrapolates from it is a separate argument: communication channels grow as n(n-1)/2, so past the size where everyone can still hold everyone else's context, added people go into coordination rather than output.
 - **Counter:** **Coordination Through Interfaces** — large groups do ship coherent systems (the Linux kernel has thousands of contributors) when the interfaces between parts are stable enough that most people never need each other's context.
 - **Guideline:** Watch for the symptom, not a number: when the people on one team can no longer say what everyone else is working on, or status meetings start multiplying, split along the seams of the system. Treat any specific size limit as a convention, not a finding.
@@ -455,6 +481,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 25` · Systems
 
 - **Concept:** A simpler design that is easy to build and adopt tends to beat a more correct but complex one.
+- **Keep in mind:** Keep the implementation simple and spend the care on the interface
 - **Mechanism:** A simpler, "inferior" design that is easy to implement and adopt will beat a theoretically "correct" but complex design in the real world. Unix beat Lisp. HTTP beat CORBA.
 - **Counter:** **The Right Thing** — Gabriel's own opposite: when the interface is hard to change later (a protocol, a file format, a security boundary) getting it right first can matter more than getting it out first.
 - **Guideline:** For anything users will build on, ship the simplest version whose interface you can live with for years; keep the implementation simple and spend the care on the interface.
@@ -467,6 +494,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 26` · Organization
 
 - **Concept:** People are quicker to correct a wrong answer than to answer a question.
+- **Keep in mind:** Post your best guess and let others correct it
 - **Mechanism:** A plausible reading: answering a question means admitting you have time to help a stranger; correcting a wrong answer feels like defending the record, and it costs less because the wrong answer already set out the structure. So a confident mistake draws replies that an open question does not. The law is itself an example: Cunningham disowns it, yet it still circulates under his name.
 - **Counter:** **Wrong Answers Persist** — the correction does not always arrive, and the wrong answer gets copied and indexed in the meantime; in shared docs, a guess must be labeled as a guess.
 - **Guideline:** When documentation is missing, write your best understanding, mark it as unverified, and send it to the person most likely to know.
@@ -478,6 +506,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 27` · Organization
 
 - **Concept:** The more people who see a problem, the less likely any one of them is to act on it.
+- **Keep in mind:** If everyone owns it, no one does, so name one person
 - **Mechanism:** In an emergency, the more people who are present, the less likely any single person is to take action. "Someone else will handle it." A meta-analysis of five decades of studies (Fischer et al., Psychological Bulletin, 2011) found the effect weaker when the danger is obvious, but a page in a busy channel rarely looks like danger. In engineering, a page sent to a group channel often means nobody responds.
 - **Counter:** **Single Point of Failure** — naming one owner every time makes that person the bottleneck and the bus factor; the owner should coordinate the response, not do all of it.
 - **Guideline:** Never say "Can someone look at this?" Instead, say "@name, you are investigating this." Assign a single, named owner for every incident.
@@ -489,6 +518,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 28` · Safety
 
 - **Concept:** Given enough time and traffic, a failure mode that can happen eventually will.
+- **Keep in mind:** Build the failure path as if it will run, because in time it will
 - **Mechanism:** The popular form is "Anything that can go wrong, will go wrong." Given enough time, traffic, or unexpected input, every latent failure mode eventually fires. Engineers who design only for the happy path build systems that are one network blip away from collapse.
 - **Counter:** **Risk Budgeting** — defending against every conceivable failure costs more than some of the failures; rank failure modes by likelihood and cost and accept the cheap, rare ones.
 - **Guideline:** Treat every external dependency, retry, and timeout as something that *will* fail in production. Build the failure path before the success path.
@@ -501,6 +531,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 29` · Maintainability
 
 - **Concept:** Code decays because cleanup tends to be deferred to a refactor that rarely happens.
+- **Keep in mind:** Leave what you touch a little better, in the same diff
 - **Mechanism:** Codebases decay because cleanup is always "someone else's job." Each engineer absorbs the entropy hit but defers the fix to a future refactor that never lands. The graph trends down.
 - **Counter:** **One Reason Per Diff** — cleanup riding along with a behavior change hides the change, and a pull request that also renames forty things is one nobody reviews.
 - **Guideline:** Always leave the code cleaner than you found it, and keep the cleanup small enough to read inside the same diff — a one-line rename, a clearer comment, a deleted dead branch. Anything bigger gets its own commit.
@@ -512,6 +543,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 30` · Systems
 
 - **Concept:** A system's inherent complexity can't be removed, only moved to someone else.
+- **Keep in mind:** Complexity only moves, so know who you moved it to
 - **Mechanism:** Every system has an irreducible amount of complexity that cannot be removed — only relocated. Hide it from the user and it lands on the developer. Hide it from the developer and it lands on the operator. Hide it from the operator and it lands on the customer at 3 AM.
 - **Counter:** **Accidental Complexity** — Brooks split complexity into essential and accidental; much of what a system carries is the accidental kind, and that can be deleted rather than moved.
 - **Guideline:** When a "simple API" feels too clean, ask: who absorbed the complexity I just removed? If you can't name them, you didn't simplify — you displaced.
@@ -523,6 +555,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 31` · Cognition
 
 - **Concept:** People who are least skilled at something tend to overrate their ability the most.
+- **Keep in mind:** Treat confidence as a reason to check the record, not as evidence
 - **Mechanism:** Lacking expertise in a domain also means lacking the meta-skill required to recognize one's own incompetence. In the original study the bottom quartile scored around the 12th percentile and placed themselves near the 60th. Top performers *under*-rated themselves, because they assumed others found the task as easy as they did.
 - **Counter:** **Calibrated Confidence** — the effect is contested — much of the classic pattern is reproduced by regression to the mean in noisy self-assessment, so treat overconfidence as a prompt to check the record rather than as a diagnosis.
 - **Guideline:** When someone declares a hard problem "easy," check their domain history before trusting the estimate. During scoping, pair confident newcomers with quiet veterans and weight the quiet voice.
@@ -534,6 +567,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 32` · Cognition
 
 - **Concept:** Once you know something, you can't easily imagine what it's like not to know it.
+- **Keep in mind:** You cannot see your own assumptions, so watch a newcomer try
 - **Mechanism:** Once you know a thing, you cannot easily imagine not knowing it. Engineers write docs, error messages, and APIs that are obvious to themselves and opaque to the next person who has to use them.
 - **Counter:** **Write for Your Audience** — docs that explain everything bury the expert reader; an operator at 3 AM needs the command, not the tutorial.
 - **Guideline:** Before shipping documentation or a public API, have someone who has never touched the system attempt the task while you watch silently. Their confusion points exactly at the assumptions you forgot to spell out.
@@ -545,6 +579,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 33` · Safety
 
 - **Concept:** Every safeguard has holes; accidents happen when the holes in several layers line up.
+- **Keep in mind:** Never stop at the one layer that failed
 - **Mechanism:** Every protective layer (review, test, alert, runbook, rollback) has holes. Accidents happen when holes across multiple independent layers happen to align. No single layer can ever be perfect, so resilience comes from layers that fail in independent ways.
 - **Counter:** **Normal Accident Theory** — layers are not independent and each one adds interactions of its own; past a point, another safeguard is another way to fail.
 - **Guideline:** During an incident review, do not stop at "the one thing that failed." Enumerate every layer that should have caught the failure and ask why each hole was open at exactly that moment. The fix is rarely a single layer; prefer changes that make the layers fail independently of each other.
@@ -564,6 +599,7 @@ Every layer has holes, and the holes move. The incident is not the failure of on
 `§ 34` · Performance
 
 - **Concept:** Optimizing before measuring spends effort on code that isn't the bottleneck.
+- **Keep in mind:** Tune only what you measured; decide early only what you cannot tune later
 - **Mechanism:** Knuth's full sentence is: "We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%." Intuition about where time goes is usually wrong, so effort spent before measuring lands on code that is not hot. It adds complexity, and by entangling hot and cold paths it makes the real optimization harder to do later.
 - **Counter:** **Performance Is Architecture** — some performance is set by early design (data layout, number of round trips, sync vs async) and cannot be profiled in later; for those decisions, think about speed before there is anything to measure.
 - **Guideline:** Write the obvious code first. Only optimize hot paths that a profiler proves are bottlenecks. Leave the other 97% of the code simple — that's where the next maintainer will live.
@@ -576,6 +612,7 @@ Every layer has holes, and the holes move. The incident is not the failure of on
 `§ 35` · Maintainability
 
 - **Concept:** A bug that stumps one person is often obvious to someone else looking at the same code.
+- **Keep in mind:** When the same bugs slip through, add different eyes, not harder looks
 - **Mechanism:** "Given enough eyeballs, all bugs are shallow." A defect that looks impossible to one person often becomes trivial when many independent perspectives are applied to it — provided the code is actually visible to those perspectives.
 - **Counter:** **Many Eyes, Few Looking** — visibility is not review; the Heartbleed bug sat in OpenSSL's public source for two years before its disclosure in 2014, and some code needs a few paid, expert eyes rather than many casual ones.
 - **Guideline:** If the same class of bug keeps slipping through, the fix is not more careful review by the same people — it is exposing the code to more, differently-shaped eyes. Rotate reviewers, open up internal libraries, run bug bounties.
@@ -588,6 +625,7 @@ Every layer has holes, and the holes move. The incident is not the failure of on
 `§ 36` · Distributed Systems
 
 - **Concept:** During a network partition, a data store must give up either consistency or availability.
+- **Keep in mind:** Choose what to give up before the partition chooses for you
 - **Mechanism:** A networked data store cannot simultaneously guarantee **C**onsistency, **A**vailability, and **P**artition tolerance. Because network partitions are not optional in the real world, the live choice is really between consistency and availability *at the moment a partition happens*.
 - **Counter:** **PACELC / Tunable Consistency** — partitions are rare; the trade-off you pay every day is latency against consistency (Abadi, 2012), so a design argued only in CAP terms ignores the normal case.
 - **Guideline:** Decide *before* an outage whether each operation prefers consistency or availability. The partition will happen; the only question is what your system does when it does.
@@ -607,6 +645,7 @@ The triangle is usually drawn as "pick two", which is misleading — you do not 
 `§ 37` · Performance
 
 - **Concept:** In a stable system, the average number of items inside equals arrival rate times average time spent.
+- **Keep in mind:** To finish faster, start less
 - **Mechanism:** In any stable system, the average number of items in the system (L) equals the average arrival rate (λ) times the average time each item spends in it (W): **L = λW**. It holds regardless of arrival distribution or service discipline.
 - **Counter:** **Utilization** — cut work-in-progress too far and servers sit idle between arrivals; throughput drops and the work you refused still has to be done somewhere.
 - **Guideline:** To cut time-in-system without adding capacity, start less work: cap work-in-progress and shed, reject or defer what exceeds the cap, so the excess is refused quickly instead of queuing slowly. A cap without shedding just moves the queue somewhere you are not measuring.
@@ -626,6 +665,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 38` · Distributed Systems
 
 - **Concept:** Over an unreliable channel, two parties can never be certain they have agreed.
+- **Keep in mind:** Sent is not received, so design for retries
 - **Mechanism:** Two parties communicating over an unreliable channel can never be *certain* they have reached agreement — every message needs an acknowledgment, which itself needs an acknowledgment, forever. No fixed number of messages yields common knowledge.
 - **Counter:** **Good-Enough Certainty** — certainty is impossible but rarely needed; TCP, payments and every RPC run on high probability plus a way to reconcile, and waiting for proof means never acting.
 - **Guideline:** Never assume "I sent it, so they got it." Make every cross-network action safely retryable and idempotent, and reconcile state instead of trusting a single round-trip.
@@ -638,6 +678,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 39` · Organization
 
 - **Concept:** People tend to get promoted until they reach a role they are bad at, and stay there.
+- **Keep in mind:** Promote for the next role, not as a reward for this one
 - **Mechanism:** In a hierarchy, people are promoted on performance in their *current* role, not the one above. So everyone tends to rise until they reach a role they are bad at — and there they stay. Competence is promoted away; incompetence accumulates.
 - **Counter:** **People Grow Into Roles** — promoting only those already proven at the next level means nobody gets the chance to learn it; stretch roles with support and a way back are how most good managers were made.
 - **Guideline:** Do not promote your best engineer into management as a reward — it removes a great engineer and risks creating a poor manager. Offer a technical ladder, and evaluate candidates for the role above, not the one they already mastered.
@@ -650,6 +691,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 40` · Organization
 
 - **Concept:** Work expands to fill the time available for it.
+- **Keep in mind:** Give open-ended work a short box
 - **Mechanism:** "Work expands so as to fill the time available for its completion." Give a task a week and it takes a week; the same task with a two-day deadline ships in two days. Slack is consumed, not banked.
 - **Counter:** **Slack** — work that is always squeezed into the shortest box has no room for the thinking, learning and recovery that keep quality up (DeMarco, Slack, 2001).
 - **Guideline:** Set deliberately short timeboxes for open-ended work and review at the deadline. A tight box forces the scoping decisions an open one defers forever.
@@ -661,6 +703,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 41` · Performance
 
 - **Concept:** Software gets slower faster than hardware gets faster.
+- **Keep in mind:** Treat faster hardware as a budget to protect, not to spend
 - **Mechanism:** "Software is getting slower more rapidly than hardware becomes faster." Each hardware gain is absorbed by added abstraction layers, features, and carelessness, so user-perceived speed stays flat or worsens.
 - **Counter:** **Programmer Time Over Machine Time** — hardware is cheap and engineers are not; much of the "bloat" is abstraction that let a feature ship in weeks instead of months.
 - **Guideline:** Treat the speed a faster machine buys you as a budget to protect, not a license to spend. Set a performance budget and fail the build when a release regresses against it.
@@ -672,6 +715,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 42` · Estimation
 
 - **Concept:** The last 10% of the work tends to take as long as the first 90% did.
+- **Keep in mind:** Expect "almost done" to hide as much work again
 - **Mechanism:** "The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time." The visible work hides a second, equally large body of integration, edge cases, and polish.
 - **Counter:** **Good Enough to Ship** — the last 10% is sometimes not worth doing; polish nobody uses and edge cases nobody hits can be cut, and the hard part is deciding which.
 - **Guideline:** When something looks "almost done," assume an entire second project remains: the last-10% of hardening, edge cases, and integration. Schedule it explicitly instead of treating it as a rounding error.
@@ -683,6 +727,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 43` · Maintainability
 
 - **Concept:** Your own code that you haven't read in six months might as well be someone else's.
+- **Keep in mind:** Write for the stranger you will be in six months
 - **Mechanism:** "Any code of your own that you haven't looked at for six months might as well have been written by someone else." Your mental model of the code evaporates far faster than the code does; context is not stored in the source.
 - **Counter:** **Comments Rot** — the code is the only description that is guaranteed current; a comment or ADR that is not maintained becomes a confident lie, which is worse than nothing.
 - **Guideline:** Write code and commit messages for the stranger you will become in six months. If a decision is not obvious from the code, record the *why* in a comment or an ADR — not just in your head.
@@ -694,6 +739,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 44` · Interaction
 
 - **Concept:** The more options people are given, the longer they take to choose one.
+- **Keep in mind:** Make each option earn its place
 - **Mechanism:** The time to make a decision grows logarithmically with the number of choices: **T = b·log₂(n+1)**. More options do not just add visual clutter — they measurably slow every user down. Hick measured choice among equally likely options; on a menu people already know, they search rather than choose, so the law applies most to unfamiliar screens.
 - **Counter:** **Expert Efficiency** — hiding options behind menus and defaults costs frequent users clicks and discoverability; a dense screen that experts learn once can be faster than a sparse one.
 - **Guideline:** Cut the number of choices on any screen or API surface to the few that matter; push the rest behind defaults and progressive disclosure. Fewer doors, faster decisions.
@@ -705,6 +751,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 45` · Interaction
 
 - **Concept:** Small, distant targets take longer to hit and get missed more often.
+- **Keep in mind:** Make frequent actions big and close, and dangerous ones small and far
 - **Mechanism:** The time to move to a target depends on its distance and size: distant, small targets are slow and error-prone; near, large targets are fast. Pointing is a physical act with a measurable cost.
 - **Counter:** **Deliberate Friction** — the same law that makes a button easy to hit makes it easy to hit by accident; for irreversible actions a slower, harder target is the point.
 - **Guideline:** Make frequent actions big and close to where the pointer already is; make destructive ones small, far from the frequent ones, and behind a confirmation. Screen edges and corners are effectively infinite targets, because the pointer stops there, so put primary actions there.
@@ -717,6 +764,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 46` · Cognition
 
 - **Concept:** Working memory holds only a handful of chunks (Miller said about seven; later estimates are lower).
+- **Keep in mind:** Don't make people hold more than a few things at once
 - **Mechanism:** Miller put the span of immediate memory at about seven chunks; later work, notably Cowan (2001), puts working memory nearer four. Either way the limit is small, and past it people drop items rather than slow down.
 - **Counter:** **Too Much Chunking** — every grouping is a level of indirection; split a short list into named groups and people now have to remember the groups as well.
 - **Guideline:** Group related items into a handful of named chunks — phone-number style — wherever a person must hold state in their head: function arguments, form fields, menu groups, on-call steps.
@@ -728,6 +776,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 47` · Distributed Systems
 
 - **Concept:** Networked code quietly assumes eight things about the network that are false in production.
+- **Keep in mind:** Write as if the network will fail, lag and cost you
 - **Mechanism:** Newcomers to distributed systems silently assume the network is reliable, latency is zero, bandwidth is infinite, the network is secure, topology is stable, there is one administrator, transport cost is zero, and the network is homogeneous. Each of these eight can fail in production, and the code that assumed it fails with it.
 - **Counter:** **Don't Distribute** — Fowler's first law of distributed object design; the cheapest way to survive the eight fallacies is not to make the call remote in the first place.
 - **Guideline:** Before shipping any cross-process call, name which of the eight assumptions you are relying on and add an explicit timeout, retry, and failure path for each.
@@ -739,6 +788,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 48` · Safety
 
 - **Concept:** Automation leaves people only the hardest cases, after their skills have faded from disuse.
+- **Keep in mind:** The more you automate, the more people must practise by hand
 - **Mechanism:** Automating the routine parts of a task leaves the human only the rarest, hardest exceptions — while their manual skill and situational awareness atrophy from disuse, precisely at the moment a failing automated system hands control back to them.
 - **Counter:** **Toil** — keeping people on routine manual work only to keep them practiced has its own cost: repetitive work that scales with load, burns time and invites slips, so the push to automate is real, and the tension is resolved by better human-machine teaming rather than by automating less.
 - **Guideline:** Keep operators sharp with regular game-days and hands-on drills, and design handoffs so a human takes over with context, not cold.
@@ -751,6 +801,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 49` · Security
 
 - **Concept:** Every permission a component doesn't need widens the damage when something goes wrong.
+- **Keep in mind:** Start from nothing and grant only what is proven necessary
 - **Mechanism:** Every component granted more authority than it strictly needs enlarges the blast radius of any bug, compromise, or accident, and multiplies the interactions an auditor must reason about.
 - **Counter:** **Psychological Acceptability** — over-restriction that users route around defeats itself.
 - **Guideline:** Default every process, service account, and token to deny, then add only the minimal scopes the job provably needs; re-audit the grants whenever the job changes.
@@ -763,6 +814,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 50` · Security
 
 - **Concept:** A system that is secure only while its design stays secret is not secure.
+- **Keep in mind:** Assume the attacker has read your design, and keep the secret in the keys
 - **Mechanism:** A cryptosystem should remain secure even if everything about it except the key is public. Secrecy of the algorithm is brittle: mechanisms leak, get reverse-engineered, and get reused across systems.
 - **Counter:** **Defense in Depth** — obscurity may be one thin extra layer, never the foundation.
 - **Guideline:** Assume the attacker has your source and design. Put all of the secret in rotatable keys, and never rely on a hidden algorithm to protect anything.
@@ -775,6 +827,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 51` · Performance
 
 - **Concept:** When the problem grows with the machine, parallel speedup keeps growing nearly linearly.
+- **Keep in mind:** Ask whether the problem grows with the machine
 - **Mechanism:** For a fixed time budget, a larger machine lets you solve a proportionally larger problem, so the serial fraction shrinks with scale and speedup grows near-linearly — the optimistic counterpart to Amdahl's fixed-workload pessimism.
 - **Counter:** **Amdahl's Law** — for a fixed-size workload, the serial fraction still hard-caps speedup.
 - **Guideline:** Before justifying more cores, ask whether the problem size grows with the hardware. If the workload is fixed, reason with Amdahl; if it scales, Gustafson applies.
@@ -787,6 +840,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 52` · Distributed Systems
 
 - **Concept:** When one request fans out to many servers, the slowest one sets the response time.
+- **Keep in mind:** In a fan-out, watch the tail, not the average
 - **Mechanism:** In a service that fans out to many components, rare per-node slowness (GC pauses, contention, a failing disk) is near-certain to hit some node on every request. So tail latency (p99, p99.9) governs the user experience even when medians look healthy.
 - **Counter:** **Redundancy Has a Price** — hedged and tied requests add load; don't chase the tail where the median is what users feel.
 - **Guideline:** Set SLOs on p99/p99.9, not the mean, and deploy tail-tolerance — hedged requests, micro-partitioning — instead of trying to make every node uniformly fast.
@@ -806,6 +860,7 @@ A leaf that is slow one request in a hundred is invisible on its own. Fan out to
 `§ 53` · Systems
 
 - **Concept:** A controller can only handle a system if it can respond to as many states as the system has.
+- **Keep in mind:** Match the system's variety, or cut it down
 - **Mechanism:** A controller can regulate a system only if it can match the variety of states that system can produce. Under-powered control simply cannot cope with a sufficiently rich environment.
 - **Counter:** **Constrain the Environment** — excess control variety is itself cost and complexity.
 - **Guideline:** When incidents keep escaping your alerts and runbooks, either add matching response capability or deliberately shrink the system's state space: fewer configurations, stricter inputs.
@@ -817,6 +872,7 @@ A leaf that is slow one request in a hundred is invisible on its own. Fan out to
 `§ 54` · Maintainability
 
 - **Concept:** Code that reaches through other objects' internals breaks when anything in the chain changes.
+- **Keep in mind:** Talk to your neighbours, not to their neighbours
 - **Mechanism:** An object that reaches through other objects' internals (`a.getB().getC().doThing()`) couples itself to the entire dependency chain, so a change anywhere along that chain ripples back and breaks it.
 - **Counter:** **Pragmatism over Dogma** — strict application breeds forwarding and wrapper bloat.
 - **Guideline:** Only call methods on your direct collaborators, your arguments, objects you create, and your own fields. If you are chaining getters, add a method to the object that owns the data.
@@ -828,6 +884,7 @@ A leaf that is slow one request in a hundred is invisible on its own. Fan out to
 `§ 55` · Incentives
 
 - **Concept:** Making a resource cheaper to use can increase how much of it is used in total.
+- **Keep in mind:** Make something cheaper and expect more of it to be used
 - **Mechanism:** Making a resource cheaper to use per unit lowers its effective price and can raise total consumption instead of lowering it — the efficiency gain is spent on more usage rather than banked as savings.
 - **Counter:** **Cap the Rebound** — pair efficiency with a quota, cap, or price signal to actually capture the savings.
 - **Guideline:** When you make something cheaper — compute, storage, an internal API — expect demand to balloon; provision and budget for the rebound instead of assuming a net reduction.
@@ -840,6 +897,7 @@ A leaf that is slow one request in a hundred is invisible on its own. Fan out to
 `§ 56` · Safety
 
 - **Concept:** In complex, tightly coupled systems, accidents are built into the structure.
+- **Keep in mind:** Loosen the coupling before you add more safeguards
 - **Mechanism:** In systems that are both interactively complex and tightly coupled, small independent failures interact in ways no designer anticipated and propagate faster than operators can intervene — so accidents become a property of the structure, not bad luck.
 - **Counter:** **High-Reliability Organizations** — organizations such as aircraft carriers and air-traffic control run tightly coupled, complex systems with very few accidents, through redundancy, deference to expertise and constant attention to small failures.
 - **Guideline:** Reduce coupling — add buffers, timeouts, bulkheads, and circuit breakers — and cut complexity before adding more safety interlocks, which themselves add interactions.
@@ -858,6 +916,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 57` · Safety
 
 - **Concept:** Visible disorder left unrepaired can signal that standards are optional, inviting more.
+- **Keep in mind:** Fix the defect in front of you before it becomes the standard
 - **Mechanism:** An unrepaired broken window signals that nobody is watching, which lowers the cost of the next violation. In a codebase, one tolerated hack, one skipped test and one permanently silenced alert together announce that the standard is optional.
 - **Counter:** **Repair Is Not Free** — attention spent on paint is attention not spent on the foundation, and the criminological evidence for the original claim is contested.
 - **Guideline:** Repair the first visible defect in a file you are already touching, and give every tolerated exception an owner and a date. Do not open a refactor for a window you are not standing next to.
@@ -870,6 +929,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 58` · Maintainability
 
 - **Concept:** Code built for imagined future needs costs time now and rarely fits the need that arrives.
+- **Keep in mind:** Build for the case you have, not the one you imagine
 - **Mechanism:** Speculative generality is paid for three times: writing the abstraction, carrying it while it is unused, and unpicking it when the anticipated requirement finally arrives in a different shape. Predictions about future requirements are usually wrong in exactly the details the abstraction fixed.
 - **Counter:** **Chesterton's Fence** — YAGNI licenses you not to build something; it never licenses you to delete something whose purpose you have not established.
 - **Guideline:** Implement the case you actually have. When you feel the pull to generalize, name the second concrete case first — if you cannot, you do not have a pattern, you have a guess.
@@ -881,6 +941,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 59` · Maintainability
 
 - **Concept:** A system has to be simple enough for an ordinary person to fix under bad conditions.
+- **Keep in mind:** Simple means someone else can fix it at 3 AM
 - **Mechanism:** "Keep it simple, stupid" came out of aircraft design, where the requirement was that a jet be repairable by an average mechanic in a field with basic tools. The test was never elegance — it was whether an ordinary person could fix it in the worst circumstances the thing would actually meet.
 - **Counter:** **Ashby's Law of Requisite Variety** — a system simpler than the problem it has to regulate cannot cope with it, and simplicity below that floor is displaced complexity rather than less of it.
 - **Guideline:** Judge a design by who can repair it at 3 AM, not by how it reads in review. If the on-call engineer needs the author on the call, it is not simple — it is familiar to one person.
@@ -892,6 +953,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 60` · Maintainability
 
 - **Concept:** Knowledge kept in two places drifts apart, because nothing makes the copies change together.
+- **Keep in mind:** Deduplicate knowledge, not text
 - **Mechanism:** Duplicated knowledge drifts, because nothing forces the copies to change together. The cost is not the extra characters — it is that some future editor fixes one copy and ships a system that now quietly contradicts itself.
 - **Counter:** **Duplication Is Cheaper Than the Wrong Abstraction** — two blocks that merely look alike today will fight each other the moment they need to diverge.
 - **Guideline:** Deduplicate knowledge, not text. Before merging two similar blocks, ask whether they change for the same reason and at the request of the same person; if not, leave them apart.
@@ -903,6 +965,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 61` · Performance
 
 - **Concept:** A system's throughput is set by its single tightest bottleneck.
+- **Keep in mind:** Improve the bottleneck first, because everything else is waiting on it
 - **Mechanism:** Every chain has one weakest link. Improvement anywhere else raises local efficiency while total throughput stays flat — and often makes things worse, because the faster upstream stage simply piles more work in front of the real bottleneck.
 - **Counter:** **The Constraint Moves** — relieve one and another takes its place, so a process permanently optimized around yesterday's bottleneck starves at the new one.
 - **Guideline:** Find the constraint, exploit it fully before you buy capacity, and subordinate every other stage to it. Then measure again — you have just created a different bottleneck somewhere else.
@@ -915,6 +978,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 62` · Cognition
 
 - **Concept:** The explanation that needs the fewest unverified assumptions is usually the right one.
+- **Keep in mind:** Test the explanation with the fewest assumptions first
 - **Mechanism:** Under incident pressure the mind reaches for the interesting hypothesis — a kernel bug, a bad disk, an attacker. The explanation requiring the fewest unverified assumptions is often the deploy that went out twenty minutes ago.
 - **Counter:** **Hickam's Dictum** — a system can carry several independent faults at once, and the simplest story that fits the symptoms is not automatically the true one.
 - **Guideline:** Rank your hypotheses by how many unverified assumptions each needs, and test the cheapest first. Ask "what changed?" before "what is broken?"
@@ -926,6 +990,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 63` · Maintainability
 
 - **Concept:** A module serving two groups gets conflicting change requests from both.
+- **Keep in mind:** Split code along the line of who asks for changes
 - **Mechanism:** When one module serves two audiences, their change requests arrive on different schedules and collide in the same file. Coupling is not really about calls between modules — it is about who is entitled to force you to edit them.
 - **Counter:** **Premature Decomposition** — splitting by imagined responsibilities produces a scatter of one-method classes and moves all the complexity into the wiring between them.
 - **Guideline:** Define responsibility by who asks for the change, not by what the code does. If two different people can each demand an edit to the same module, split it along that line and nowhere else.
@@ -937,6 +1002,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 64` · Interaction
 
 - **Concept:** Behavior that surprises users costs more than behavior that is slightly worse but expected.
+- **Keep in mind:** When in doubt, do what users already expect
 - **Mechanism:** Users arrive with a model assembled from every similar thing they have used. A behavior that is defensible but surprising costs more than a behavior that is slightly worse but predicted, because the surprise is paid again by every user, every time, forever.
 - **Counter:** **Astonishment Is Relative** — designing only for today's expectations freezes bad conventions in place; sometimes the right move is to surprise everyone once, loudly, with a migration path.
 - **Guideline:** When two designs are close, take the one that matches the convention your users already know — the flag name, the exit code, the sort order. Spend deliberate surprise only where you can afford to announce it.
@@ -949,6 +1015,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 65` · Systems
 
 - **Concept:** After a first success, designers tend to pack the ideas they deferred into the second system.
+- **Keep in mind:** In a rewrite, carry over the constraints, not the wish list
 - **Mechanism:** The first system is built cautiously, by someone unsure of the ground. Its success converts that caution into confidence, and every idea deferred the first time is loaded into the rewrite at once. The result, Brooks warns, is the most dangerous system a designer ever builds: over-general and late.
 - **Counter:** **Dead-End Architecture** — some first systems cannot be grown: a data model, a platform or a security boundary that blocks the next step outright, and there a deliberate, scoped second system is the right call.
 - **Guideline:** When rewriting, carry forward the constraints and not just the wish list. Cut the deferred features to the few that actually blocked users, and replace the original one piece at a time.
@@ -960,6 +1027,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 66` · Performance
 
 - **Concept:** The number of transistors on a chip at lowest cost per part doubles about every two years.
+- **Keep in mind:** Don't count on next year's hardware to save the design
 - **Mechanism:** Moore's observation was economic rather than physical: the component count giving the lowest cost per component doubles about every two years. It held for half a century and quietly underwrote every plan that assumed hardware would rescue it — but single-thread performance stopped following it once Dennard scaling ended around 2005.
 - **Counter:** **Wirth's Law** — the gains get spent rather than banked, and clock speed stopped rising long before transistor counts did.
 - **Guideline:** Do not budget for the hardware bailing out a design. If the workload is single-threaded and latency-bound, next year's machine will not save it — you have to parallelize it or do less work.
@@ -971,6 +1039,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 67` · Estimation
 
 - **Concept:** New technology is overrated in its first years and underrated over a decade.
+- **Keep in mind:** Discount the two-year hype, but respect the ten-year shift
 - **Mechanism:** A new technology is judged on a demo, which flatters it, and then adopted against an installed base, which resists it — so the first two years disappoint. The same compounding that made the early forecast wrong then runs for a decade in the other direction, and the ten-year forecast turns out to be wrong too, this time low.
 - **Counter:** **Some Things Simply Do Not Arrive** — survivorship makes the law look inevitable, because the technologies that never got a long run are not the ones quoted back at us.
 - **Guideline:** Discount two-year forecasts about a new technology and take ten-year ones seriously — but plan around the version that actually ships, not the one in the demo.
@@ -982,6 +1051,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 68` · Systems
 
 - **Concept:** In AI, general methods that scale with compute have, in the long run, beaten hand-coded human knowledge.
+- **Keep in mind:** Bet on what gets better on its own when the budget doubles
 - **Mechanism:** Across seven decades of AI research the approaches that won were search and learning scaled with available computation, not the ones that encoded human insight about the domain. Built-in knowledge helps in the short run and becomes the ceiling in the long run, because unlike computation it does not get cheaper every year.
 - **Counter:** **Compute Is Not Free** — inside a fixed budget domain knowledge is often the only lever you have, and the lesson describes the trajectory of a field rather than the right move this quarter.
 - **Guideline:** When choosing between encoding what you know and building something that learns from more data or more compute, ask which one improves on its own when the budget doubles. Bet on that one for anything with a multi-year horizon.
@@ -993,6 +1063,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 69` · Systems
 
 - **Concept:** Each new node adds value to every existing one, so a network's value outgrows its size.
+- **Keep in mind:** Add connections in a product, cut them in a team
 - **Mechanism:** A network of n nodes has n(n−1)/2 possible connections, so its value was claimed to scale with n². The exponent is disputed — n log n fits real networks better — but the shape holds: each new node adds value to every existing node, which is why networks tip rather than grow smoothly.
 - **Counter:** **The Same Quadratic Is a Cost** — connections are an asset between users and a liability between colleagues; Brooks' Law is Metcalfe's Law with the sign flipped.
 - **Guideline:** For a product whose value comes from other users, spend early effort on the smallest network that is already useful to its own members, not on features. For a team, do the opposite and cut connections.
@@ -1005,6 +1076,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 70` · Organization
 
 - **Concept:** Each person contributes less as a group grows, most of all when no one can see who did what.
+- **Keep in mind:** Make each contribution visible and owned
 - **Mechanism:** Ringelmann had men pull a rope alone and in teams, and measured the force. Each additional person contributed less than they had alone — partly coordination loss, partly reduced individual effort once the contribution stopped being separable. It shows up wherever output is pooled and nobody can see who produced which part.
 - **Counter:** **Separable Contribution** — the effect is a property of how the work is measured rather than of the people; make the individual contribution legible and most of it disappears.
 - **Guideline:** Give every workstream one named owner and a visible output. If you cannot say who produced which part of a result, expect the group to produce less than the sum of its members.
@@ -1017,6 +1089,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 71` · Incentives
 
 - **Concept:** Institutions tend to keep alive the problem they exist to solve.
+- **Keep in mind:** Ask every fixer what "fixed" would look like
 - **Mechanism:** An organization built to solve a problem draws its budget, headcount and status from that problem persisting. Nobody has to be cynical for this to work: the incentives simply never point at making the team unnecessary, so over time the solution quietly becomes an argument for the problem.
 - **Counter:** **Some Problems Are Permanent** — treating every long-lived team as self-serving destroys the ones doing necessary maintenance, which is invisible precisely when it is working.
 - **Guideline:** For any team or tool created to fix something, write down what "fixed" looks like and when you will check. A platform team that cannot describe its own obsolescence is optimizing for its own survival.
@@ -1029,6 +1102,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 72` · Operations
 
 - **Concept:** An SLO below 100% leaves a measurable allowance of failure, and that allowance can be spent.
+- **Keep in mind:** Spend the allowed failure on shipping, and stop when it runs out
 - **Mechanism:** Product teams are judged on velocity and operations teams on reliability, so every release becomes a negotiation decided by whoever argues harder. Past a point users cannot tell the difference (someone on a 99%-reliable phone cannot tell 99.99% from 99.999%), but the last fraction costs the most and blocks the most change. Once the target is explicit, the gap between it and perfect is a budget: 99.9% over 30 days is about 43 minutes of failure, and both sides can see how much of it is left.
 - **Counter:** **Normalization of Deviance** — a standing allowance for failure teaches a team that each failure is routine; the outage that should have alarmed people gets logged against the budget and never investigated.
 - **Guideline:** Agree on the SLO and the policy before the incident, not during it: while budget remains, ship; when it is spent, freeze feature releases and put the time into reliability until it recovers. Keep data loss and security outside the budget entirely.
@@ -1041,6 +1115,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 73` · Operations
 
 - **Concept:** Manual, repetitive operational work grows with the service and, left unchecked, crowds out engineering.
+- **Keep in mind:** Treat repeated manual work as a defect, not a duty
 - **Mechanism:** Toil is work that is manual, repetitive, automatable, interrupt-driven, leaves the system no better than it found it, and scales linearly with traffic or users. Each instance is small and urgent, so it always beats project work in the moment. Because it grows with the service and engineering time does not, a team that never pushes back ends up doing nothing else.
 - **Counter:** **Ironies of Automation** — automating a task removes the practice people needed to handle it when the automation fails, and some automation costs more to build and keep alive than the toil it replaces.
 - **Guideline:** Measure the share of each person's time spent on toil and set a ceiling (Google uses 50%). When a task comes back a third time (a rule of thumb, not the book's), file it as engineering work; when it scales with users, treat it as a defect rather than a chore.
@@ -1053,6 +1128,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 74` · Operations
 
 - **Concept:** Punishing the person nearest a failure teaches people to hide what they did.
+- **Keep in mind:** Fix what made the mistake easy, not the person who made it
 - **Mechanism:** The people closest to an incident hold the only accurate account of what they saw, what they believed and why the action made sense at the time. If telling that story can cost them, they tell a shorter one, and the organization loses the information it needs to fix the conditions that made the mistake easy. The error repeats with someone else's name on it. Blameless is not consequence-free: a just culture still separates an honest mistake inside a bad system from knowingly disregarding a risk.
 - **Counter:** **Diffused Ownership** — when nobody is answerable, the action items have no owner and quietly expire; some teams name a person accountable for the fix precisely because blamelessness leaves no one holding it.
 - **Guideline:** Write the postmortem as a timeline of what people saw and why each action made sense then, and end with changes to the system, not to a person, each with one named owner and a date. Ban "human error" as a root cause; ask what made the error easy to make.
@@ -1064,6 +1140,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 75` · Decision
 
 - **Concept:** Teams that start from a solution often build things no customer needed; starting from the announcement exposes that early.
+- **Keep in mind:** If you cannot say what the customer gets, you are not ready to build
 - **Mechanism:** Engineers start from what they can build and look for customers afterwards. A press release written before any code forces the team to state who the customer is, what problem they have and why existing options fail, in words the customer would use. If that page is hard to write, the product is unclear, and rewriting a page is far cheaper than rewriting the product.
 - **Counter:** **Build to Learn** — when customers cannot judge an idea on paper (a new platform, an infrastructure change, something with no precedent) a cheap prototype tells you more than a polished press release.
 - **Guideline:** Before a project starts, write a one-page press release and an FAQ for the customer, and review them as a team. If you cannot name the customer and their problem in the first paragraph, do not start building.
@@ -1075,6 +1152,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 76` · Decision
 
 - **Concept:** Waiting for everyone to agree is often slower than committing and correcting course if the call turns out wrong.
+- **Keep in mind:** Disagree once and fully, then commit, unless it cannot be undone
 - **Mechanism:** When a group needs consensus, the decision moves at the speed of its most persistent skeptic, and late in the debate the answer often cannot be known anyway. A dissenter who keeps arguing can also half-execute the choice they lost, which makes the outcome worse whichever option was right. Separating "do you agree" from "will you commit" lets the disagreement be stated fully and the work still go ahead at full effort.
 - **Counter:** **Groupthink** — a culture that prizes commitment teaches people to stop objecting early, and silent compliance hides the dissent that would have caught the error.
 - **Guideline:** State your disagreement once, in full, with your reasons. Then say "I disagree and commit" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you. For an irreversible decision, or one with a safety or ethical risk, do not commit quietly: escalate.
@@ -1086,6 +1164,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 77` · Operations
 
 - **Concept:** When the team that writes a service also operates it, the cost of every operational weakness lands on the people who can fix it.
+- **Keep in mind:** Whoever can fix it should be the one it wakes up
 - **Mechanism:** When software is thrown over a wall to a separate operations team, the people who take the page and face the angry customer are not the people who can change the code, so the fix arrives late or as a workaround. Developers who are paged for their own service learn which shortcuts hurt, and design for failure because they are the ones who will be woken up. Running it also puts them in daily contact with customers, which shortens the path from a complaint to a change. The incentive only works when the ownership is real: the team has to be able to change what it is paged for.
 - **Counter:** **Developer Cognitive Load** — owning the whole cycle widens what each developer must know and the priorities they juggle every week; without shared tooling and an on-call rotation it ends in burnout, and Netflix, which runs the model, says it supports people who want depth over breadth in finding other roles.
 - **Guideline:** Put the team that ships a service on its pager, and give it the authority and the deploy rights to fix what pages it. Pair that with a paved road (shared deploy, observability and alerting tooling) and a rotation, so no one person is on call for everything. Do not apply it to a team that cannot change the thing it is woken up for; that hands over the pager, not the ownership.
@@ -1097,6 +1176,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 78` · Distributed Systems
 
 - **Concept:** A system that has to take new action to survive a failure depends on that action succeeding at the moment things are going wrong.
+- **Keep in mind:** Don't make recovery depend on acting during the failure
 - **Mechanism:** Recovering from a failure usually means doing something the system does not do in normal operation: launching replacement instances, calling a control plane, changing routes. Control planes have more moving parts than data planes and so are more likely to be impaired, which means recovery leans on the weaker half of the system at the moment it is needed most. A statically stable design keeps working when a dependency is impaired, because the capacity and state it needs are already in place. Amazon runs its stateless services across three Availability Zones overprovisioned by 50 percent, so losing one leaves the other two able to carry the load without launching anything.
 - **Counter:** **Cost of Idle Capacity** — capacity held for a failure that rarely happens is paid for every day, and scaling to demand is cheaper wherever a slow recovery is acceptable; the source itself concedes that building services zone by zone rather than regionally adds complexity.
 - **Guideline:** List what your service must do to recover from losing a zone or a dependency. For every step that calls a control plane or launches something, decide whether to have it in place beforehand instead: spare capacity in every zone, the last good configuration cached locally, serving that continues while the control plane is down. Reserve this for paths whose failure you cannot afford; elsewhere, scale on demand.
@@ -1109,6 +1189,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 79` · Distributed Systems
 
 - **Concept:** A fallback path runs only after something has already failed, so the least-tested code in the system runs under the worst conditions.
+- **Keep in mind:** Distrust code that runs only when things are already broken
 - **Mechanism:** Fallback code sits idle in normal operation, so its bugs, its capacity limits and its stale data go unnoticed until it is needed. It then switches on in the middle of an outage, when load is unusual and other parts are degraded, and adds a new mode to a system that is already behaving strangely. A fallback that routes around a cache straight to a database, or onto a secondary service, can move load onto something never sized for it and widen a partial failure; Amazon.com's outage around 2001 began that way. Amazon's conclusion is that the effort is usually better spent making the primary path more available.
 - **Counter:** **Graceful Degradation** — returning a reduced answer beats returning an error when the reduced path runs all the time, as when a recommendations panel falls back to a static list it serves anyway; the danger is the path that never runs, not degradation itself.
 - **Guideline:** Before adding a fallback, ask whether the same effort would make the primary path more available: push data to the caller ahead of time instead of pulling it at request time, add redundancy. If you keep a fallback, run it in production continuously, not only on failure, and treat its output as an equally valid source. Delete fallback paths nobody has exercised.
@@ -1121,6 +1202,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 80` · Distributed Systems
 
 - **Concept:** A system whose work grows with the number of changes or failures does the most work exactly when it has the least headroom.
+- **Keep in mind:** In control loops, do the same work whether or not anything changed
 - **Mechanism:** Most systems do more work as conditions get worse: more retries, more changes to propagate, more health transitions to process. That extra work arrives when the system has the least headroom, and the code that handles it is the code that runs least often. A constant-work design does the same amount regardless: Route 53's health-check aggregators send DNS servers a fixed-size table of every status every few seconds, and Network Load Balancer nodes reload their full configuration from S3 every few seconds even when nothing has changed. A surge of failures produces no extra work, so there is no overload mode to discover in production.
 - **Counter:** **Elasticity** — doing the full work every cycle wastes resources when little has changed; for configuration and health status the cost is negligible, but for a web fleet the savings from scaling with load usually win over running peak capacity all day.
 - **Guideline:** For control loops that propagate configuration or health, send the whole state on a fixed schedule instead of deltas on change, and size the payload for the maximum, not the typical case. Keep the amount of work independent of how many things changed. Use it where the work is small; for request-serving capacity, scale with load and design the overload case explicitly.
@@ -1132,6 +1214,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 81` · Organization
 
 - **Concept:** Asking people to try harder after a failure changes little, because the failure happened to people who were already trying.
+- **Keep in mind:** Replace "be careful" with something that works without anyone remembering
 - **Mechanism:** Many mistakes are made by people who meant well and knew the rule, so telling them again adds nothing they lacked. Attention is finite and fades, so a fix that depends on someone remembering often fades, and the same error comes back. What changes behavior is a mechanism: a tool, its actual adoption, and inspection that checks whether it works. A checklist nobody reads is not a mechanism; a gate that blocks the merge is.
 - **Counter:** **Resist Proxies** — a mechanism can harden into the goal; once following the process is what gets judged, people defend a bad outcome by saying they followed it, and nobody asks whether the process still serves the result.
 - **Guideline:** When a postmortem action item says "be more careful", "remind the team" or "double-check", replace it with a change that works without anyone remembering: a CI check, a safe default, a field that cannot be skipped. Give each one an owner and a date to inspect whether it is used and whether it worked. Retire mechanisms that no longer change outcomes.
@@ -1144,6 +1227,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 82` · Operations
 
 - **Concept:** Letting anyone who sees an abnormality stop the line keeps a defect from traveling downstream, where it costs more to find and fix.
+- **Keep in mind:** Let anyone stop the line, and never punish a stop
 - **Mechanism:** A defect caught where it is made has one cause and an obvious fix; the same defect found three stations later is buried under work built on top of it, and the person who could explain it has moved on. Pressure to keep the line moving makes each worker discount what they saw and assume someone downstream will catch it. Toyota's jidoka moved the decision into the station: first a loom that stopped itself when a thread broke, later a cord any operator can pull to halt the line and light the andon board. The stop is not the point; it forces the abnormality to be examined while the evidence is still fresh.
 - **Counter:** **Throughput Pressure** — every stop costs output, and where a team is judged on throughput, pulling the cord becomes a cost someone has to justify, so a cord that fires often or falsely teaches people to route around it.
 - **Guideline:** Make a red main-branch build, a failed canary or a breached SLO halt further merges or deploys for everyone, and let anyone pull that cord without asking permission. Keep the trigger narrow enough that it rarely fires falsely, and treat a stop that nobody investigates as a defect in the response, not in the person who pulled it.
@@ -1156,6 +1240,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 83` · Operations
 
 - **Concept:** The first answer to "why did this fail" is usually a symptom, and fixing a symptom leaves the cause in place to fail again.
+- **Keep in mind:** Keep asking why until you reach something you can change
 - **Mechanism:** Investigations stop at the first cause that someone could plausibly have prevented, because it closes the ticket and names an action. That cause is usually the one nearest in time (a bad config push, a full disk), and fixing it removes this instance without touching whatever produced it. Asking why again of each answer walks the chain back to a condition (a missing check, a process nobody owns) whose fix prevents a whole class of failures. Five is a rule of thumb, not a required depth.
 - **Counter:** **Swiss Cheese Model** — a single chain of whys picks one path through an accident that had several, the analyst's choice at each step decides which root cause comes out, and in complex systems there is often no single root to find.
 - **Guideline:** In the postmortem, keep asking why of each answer until you reach something the team can change that would have stopped the chain, and give that change an owner. Branch whenever an answer has more than one cause, and never stop at a person: "the engineer made a mistake" is a cue to ask why the mistake was easy to make.
@@ -1167,6 +1252,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 84` · Operations
 
 - **Concept:** Resilience that has never been exercised is a hypothesis, and production will test it whether or not you schedule the test.
+- **Keep in mind:** Break it on purpose before production does it for you
 - **Mechanism:** Failover paths, retries and redundancy run only when something breaks, so they decay between failures: a config drifts, a dependency is added, a timeout changes, and nobody notices until the real outage. Staging cannot reproduce production's traffic, data and coupling, so a test there tells you less than you would hope about the system people actually use. Injecting failure on purpose, in production, against a stated hypothesis about steady-state behavior, makes those weaknesses show up on a weekday afternoon with engineers watching instead of at 3 a.m. Netflix built Chaos Monkey early in its move to AWS to kill instances at random, so every service had to survive losing one.
 - **Counter:** **First, Do No Harm** — deliberately degrading a system real customers depend on spends their trust, and much of the same knowledge comes cheaper from fault-injection tests, game days and design review; on a system already known to be fragile an experiment only confirms what you knew, so fix it first.
 - **Guideline:** Pick one dependency, write down what steady state should look like while it is down, and take it away in production during working hours with an abort switch and someone watching. Start with a small slice of traffic, widen only after the system holds, and do not experiment on a service you already expect to fall over.
@@ -1179,6 +1265,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 85` · Organization
 
 - **Concept:** As an organization grows, rules and approvals tend to scale worse than shared understanding; Netflix's argument is that people given the reasons behind a goal make better local decisions than people given a procedure.
+- **Keep in mind:** Fix the missing context before you write a rule
 - **Mechanism:** A rule encodes someone's judgment about the cases they could foresee, so it fails on the ones they could not, and every approval step sends a decision to a person with less detail than the one asking. As a company grows, each incident adds a rule and rules accumulate faster than anyone removes them, until people follow the procedure instead of thinking about the outcome. When managers spend their effort on the why (the goal, the constraints, what good looks like), the people closest to the work can decide quickly and still pull in the same direction. Netflix calls the result "highly aligned and loosely coupled".
 - **Counter:** **Guardrails** — some failures (a leaked credential, a compliance breach, an irreversible deletion) cost too much to leave to judgment, and context does nothing for a newcomer who has not absorbed it yet.
 - **Guideline:** When a team makes a call you would have made differently, ask what context they were missing before you write a rule, and fix the context first. Keep hard controls (approval gates, enforced policy) for decisions that are irreversible, unethical or a material risk, and record why each one exists so it can be removed when the reason goes away.
@@ -1190,6 +1277,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 86` · Maintainability
 
 - **Concept:** Holding every change to a standard of perfection makes review slow, and slow review leaves the codebase worse, not better.
+- **Keep in mind:** Approve better, not perfect
 - **Mechanism:** There is no perfect code, only better code, so a reviewer who waits for perfect is holding out for a bar nobody reaches while the change sits. Authors respond by batching work into large changes that get reviewed less carefully, or by not touching the code that needs it, and the improvement the change carried never lands. A bar of net improvement keeps each merge moving the codebase in the right direction, while still letting the reviewer refuse anything that makes it worse.
 - **Counter:** **Broken Windows Theory** — a reviewer who waves each small flaw through because the change is a net improvement can still leave a codebase full of tolerated flaws, each one making the next easier to accept.
 - **Guideline:** Approve a change once it definitely leaves the code healthier than before, even if you would have written it differently. Prefix polish with "Nit:" so the author can skip it, and block only on what makes the code worse: outside an emergency, do not approve a change that definitely worsens overall code health.
@@ -1201,6 +1289,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 87` · Maintainability
 
 - **Concept:** In a shared codebase, the behavior no test checks is the behavior that changes without warning.
+- **Keep in mind:** If you depend on it, put a test on it
 - **Mechanism:** A team changing infrastructure that the whole codebase uses cannot read every caller, so the only contract it can check at scale is the test suite. Whatever the suite does not exercise is invisible to them and changes without warning, not through carelessness but because nothing told them it mattered. The rule turns that blind spot into an assignment of responsibility: if an unrelated change passes all your tests and still breaks your product, the fix and the missing test are yours. It is only fair where a pervasive CI system runs everyone's tests against everyone's changes.
 - **Counter:** **Churn Rule** — a test-shaped contract tells the changer what it broke, not that breaking it was free; the team making the change still owes its users the migration.
 - **Guideline:** Write a test for every behavior your product relies on in a shared library or dependency, and make sure it runs in the CI that gates other people's changes. When something breaks and no test caught it, add that test before closing the incident. If you own the shared code, say up front that tests are the contract, and do not invoke the rule unless your changes actually run consumers' tests.
@@ -1212,6 +1301,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 88` · Organization
 
 - **Concept:** When the team that changes shared infrastructure can push the migration onto its users, the cost of the change multiplies by the number of users.
+- **Keep in mind:** Whoever changes shared code pays for the migration
 - **Mechanism:** Each consuming team meets the change cold: it ramps up on a problem it has never seen, solves its own instance and throws the knowledge away. Across hundreds of teams that is hundreds of shallow learning curves, and dependent projects spend progressively more effort just keeping up. The team that made the change never sees the bill, so nothing pushes it to change less often or make changes cheaper. Requiring the changer to do the migration puts the cost where the decision is made, and a few experts who learn the problem once can apply it everywhere.
 - **Counter:** **Code Ownership** — people who change a codebase they do not live in miss its local reasons, so a central migration still needs the owning team's review, and some changes only its owners can make safely.
 - **Guideline:** If you own a library, service or platform, budget the migration as part of the change: move the callers yourself, or change in place in a backward-compatible way. Do not ship a deprecation notice and a deadline as the migration plan. Invest in the tooling that makes cross-codebase changes cheap, and send each change to the owning team for review instead of landing it unseen.
@@ -1223,6 +1313,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 89` · Estimation
 
 - **Concept:** When scope is fixed and time is not, the date slips and the scope stays; fixing the time instead forces a choice about what matters.
+- **Keep in mind:** Decide what the work is worth before you ask how long it takes
 - **Mechanism:** An estimate starts from a design and ends with a number, and the number is usually wrong in the same direction because the unknowns only surface once the work is under way. When the date slips, the scope stays, since every item already has an advocate and asking for more time feels cheaper than cutting something. Fixing the time first (what *Shape Up* calls the appetite) turns the question from "how long will this take" into "what is the best version we can ship in this much time", so cutting scope becomes the normal move rather than an admission of failure. An overrun project that keeps getting extensions is the same force again, now fed by sunk cost.
 - **Counter:** **Quality as the Hidden Variable** — under a fixed date a team that cannot or will not cut scope cuts tests, review and error handling instead, and some work (a protocol, a compliance requirement) has a floor below which no slice is worth shipping.
 - **Guideline:** Before the work starts, decide how much time it is worth, not how long it will take, and shape the scope to fit. When the time runs out, stop by default: ship what is done if it stands on its own, otherwise reshape it and decide afresh whether to bet on it again; do not quietly extend. Cut features before tests or review, and do not fix the time on work that cannot be sliced below a coherent minimum.
@@ -1234,6 +1325,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 90` · Maintainability
 
 - **Concept:** Replacing a live system piece by piece around its edges is usually safer than replacing it all at once.
+- **Keep in mind:** Make every step of a migration shippable, and plan the deletion up front
 - **Mechanism:** A complete rewrite has to reproduce years of behavior nobody wrote down, while users keep needing features the old system must still deliver, so the target moves while the new system is not yet usable. Nothing reaches production until the end, so the risk and the value both land on a cutover day that often never comes. Routing one capability at a time to new code keeps each step small enough to verify and roll back, and each step starts paying back as soon as it lands. The price is transitional architecture: interception layers and adapters built to be thrown away.
 - **Counter:** **Clean Cutover** — when the old system cannot be intercepted cleanly, or the transitional layer would cost more than the rewrite, a single planned switch avoids the common end state of incremental migration: the easy routes move, the tangled core never does, and the organization runs and pays for two systems indefinitely.
 - **Guideline:** Put an interception point (a proxy, router or facade) in front of the legacy system and move one slice of behavior behind it at a time, starting with one that delivers value on its own. Define "done" at the start, track the share of traffic still on the old path, and budget deleting the old code and the transitional layer as part of the project, not as cleanup for later.
@@ -1245,6 +1337,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 91` · Decision
 
 - **Concept:** Every unfamiliar technology a team adopts brings unknown failure modes and a permanent operating cost, and a team can afford only a few of them.
+- **Keep in mind:** Spend new technology only where it sets you apart
 - **Mechanism:** Most of a technology's cost is paid after launch: keeping a system working reliably for years costs far more than the convenience it bought while building. With a mature tool the failure modes are well understood because someone has already hit them; with a new one the unknown unknowns are larger, and the team discovers them in production. Each addition is also one more thing to monitor, hire for and keep patched, and that cost stays after the novelty wears off. So novelty is a budget, not a free choice: McKinley gives every company about three innovation tokens.
 - **Counter:** **Fitness for Purpose** — boring is not the same as never new; when the existing stack genuinely cannot do the job, forcing it costs more than a token, and a stack that never moves becomes the legacy nobody wants to work on.
 - **Guideline:** Before adding a language, datastore or framework, write down what it would take to do the job with what you already run and why that falls short, and make the decision with everyone who will operate it, not inside one team. Spend new technology only where it sets the product apart. When you do adopt something, plan to retire what it replaces.
@@ -1256,6 +1349,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 92` · Maintainability
 
 - **Concept:** Code shipped before the team fully understands the problem charges extra on later changes to that code until someone rewrites it.
+- **Keep in mind:** Record shortcuts as loans, and repay them where you change code most
 - **Mechanism:** The first version of a program records what the team understood when it wrote it, and that understanding keeps improving after the code stops changing. Every later change has to work around the gap between the two, and the extra effort recurs on each change the way interest recurs on a loan. The cost is spread thin and lands on whoever touches the code next, so no single change makes repaying it look worthwhile, and the balance grows until the whole team slows down. Cunningham did not object to the shortcut itself; his warning was about debt that is not paid back with a rewrite while it is still small.
 - **Counter:** **Premature Repayment** — paying down debt early spends time on code whose design may still change or that may be deleted before anyone touches it again, so cleaning up ahead of the next change can cost more than the interest it saves.
 - **Guideline:** Treat code written before the team fully understood the problem as a loan: write down where it is and what repaying it would take, and schedule the rewrite while the code is still fresh in someone's head. Repay first where the team changes code most often, not where the code merely looks worst. Do not let debt pile up unrecorded.
@@ -1267,6 +1361,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 93` · Maintainability
 
 - **Concept:** A program in real use must keep changing or grow less useful, and each change makes it more complex unless work is spent to simplify it.
+- **Keep in mind:** Budget for simplifying, not just for changing
 - **Mechanism:** A program that automates part of the world is a model of that world, and the world keeps moving: users' needs shift, the business changes, and the program's own arrival changes how people work. So the program is never finished, and each release reopens the gap between the model and what it models. Changes are made under pressure by people who do not hold the whole design in mind, so special cases and dependencies are added faster than they are removed, and the structure decays. Lehman drew the laws from watching large systems evolve over many releases, and in the same paper describes them as arising from the habits and practices of people and organizations rather than being immutable like the laws of physics.
 - **Counter:** **Stability Is a Feature** — every change makes users relearn something and breaks someone who relied on the old behavior, so for a protocol, file format or tool that others build on, freezing the design can be worth more than keeping up with the world.
 - **Guideline:** Budget ongoing change as the normal cost of a program in use, not as an exception after launch. Reserve part of every cycle for work that reduces complexity, such as deleting dead paths and merging special cases, and track a complexity measure across releases so you see the trend before it stalls you. Freeze only what other people build on, and say so when you do.
@@ -1278,6 +1373,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 94` · Organization
 
 - **Concept:** The fewer people who can keep a system running, the more its future depends on each of them staying.
+- **Keep in mind:** Anything only one person can do is a risk to fix now
 - **Mechanism:** Knowledge tends to concentrate on its own: whoever wrote a part fixes it fastest, so the next change goes to them too, and every round widens the gap. Nobody decides to make one person indispensable; it is the cheapest choice each time, and the risk stays invisible until that person leaves, falls ill or simply goes on vacation. In a sample of 133 popular GitHub projects, Avelino and colleagues found that 65% have a truck factor of two or less, meaning that losing at most two developers would leave most of their files without an active author. Spreading knowledge spends time now against a loss that may never come, so it usually loses the scheduling argument unless someone makes it an explicit goal.
 - **Counter:** **Depth of Ownership** — a specialist who owns an area works far faster and notices more than a rotation of people who each know a little, and a small team that copies everything into a second head spends time it does not have.
 - **Guideline:** List the parts of your system that only one person can change or operate. For each, pair a second person on the next real change instead of writing a handover document nobody reads. Rotate on-call and code review so knowledge moves as a side effect of normal work. Treat a planned absence as a drill: if a week away stalls a system, fix that before someone leaves for good.
@@ -1289,6 +1385,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 95` · Maintainability
 
 - **Concept:** Every way of finding bugs leaves behind the bugs it cannot find, so a test suite that never changes finds fewer and fewer.
+- **Keep in mind:** Keep changing how you look for bugs
 - **Mechanism:** A test method catches a particular kind of bug, and once a team has run it for a while those bugs are fixed and developers learn not to write them. What remains are the bugs the method is blind to, so the same tests keep passing while the defects move to places they do not look. As with insects after seasons of the same pesticide, what survives is what the treatment cannot kill. A green suite then shows how well the code avoids yesterday's bugs, not how few bugs it has.
 - **Counter:** **Old Tests Still Guard** — a test that has not failed in years still keeps a fixed bug from coming back and pins behavior others rely on, so retiring old tests to chase new bugs gives up protection they still provide.
 - **Guideline:** Keep the regression suite, but do not count on it to find new bugs. Add tests aimed at what the suite does not exercise: new inputs, fuzzing, property-based tests, exploratory sessions. When a bug escapes to production, ask which kind of test would have caught it and add that kind, not only that one case. Review the suite on a schedule and remove tests that duplicate each other.
@@ -1300,6 +1397,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 96` · Decision
 
 - **Concept:** An argument cut down to slides and bullets loses the links between its points, so the gaps and warnings that prose would have exposed pass through the review unnoticed.
+- **Keep in mind:** For decisions that matter, write prose, not bullets
 - **Mechanism:** A bullet list records claims without the links between them: which point rests on which, and which one matters most. When an analysis is condensed to fit a slide, the reasoning that would expose a gap or a warning is what gets cut, and each step up a hierarchy condenses it again; the board that investigated the loss of Space Shuttle Columbia found that information is "inevitably lost" this way. Prose forces the author to state the links, and a group that reads the document in silence at the start of the meeting argues about the same text rather than about the presenter's delivery. The price is time: Bezos says a good memo can take a week or more, so the practice pays only for decisions worth that week.
 - **Counter:** **Working Software over Comprehensive Documentation** — when running code would settle a design question faster than prose, a document written first spends a week recording guesses, and a design doc that is really an implementation manual should not be written at all.
 - **Guideline:** For a decision that is expensive to reverse, or that people outside the team must approve, write the proposal as a few pages of prose: the problem, the options considered, the trade-offs and the recommendation. Open the review with everyone reading it in silence, then discuss. Do not write one for a reversible change or for a question a quick prototype will answer; build the prototype instead.
@@ -1311,6 +1409,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 97` · Maintainability
 
 - **Concept:** When consumers may choose which version of a shared dependency to use, each choice becomes a conflict for someone who never made it.
+- **Keep in mind:** Treat every second version as a debt with an owner and an end date
 - **Mechanism:** Two components that pin different versions of the same library each work on their own. A program that comes to depend on both gets a link failure at best, or one copy picked at random at runtime, and the team that pays is the one that combined them, not the ones that pinned. Every extra version also adds another place a security fix or an upgrade has to land, and the copies drift apart until moving off the old one is a project of its own. Hiding the second copy, by shading or renaming, does not make the conflict go away. Allowing exactly one version per dependency removes the choice, so an upgrade can be done once for every caller, and adding a dependency no longer breaks a bystander through a version conflict.
 - **Counter:** **Semantic Import Versioning** — where no one owns every caller, as across an open-source ecosystem, nobody can make the single change that moves everyone, so letting incompatible major versions live side by side under different import paths lets each caller upgrade on its own schedule and accepts the duplicate copies as the price, which is the approach Go modules take.
 - **Guideline:** Keep one version of every shared dependency, internal or third-party, and do each upgrade as one change that moves every caller. When an upgrade cannot land in one step, allow a second version only under a different name, with an owner and an end date, and delete it when the date comes. Do not let a team fork or pin a shared library on its own. Where projects have genuinely different security, legal or release requirements, split them into separate repositories, but hold each one to a single version per dependency.
@@ -1322,6 +1421,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 98` · Decision
 
 - **Concept:** Decisions made from reports drift away from what is actually happening, because each layer of summary drops the detail that did not fit its form.
+- **Keep in mind:** See the real thing yourself before you trust the summary
 - **Mechanism:** A report is written by someone who chose what to include, in categories fixed before the problem appeared, so the anomaly that matters can be averaged away or left out. A dashboard shows only what someone thought to measure, and the failure nobody predicted has no panel. The further the person deciding sits from the work, the more layers of summary lie between them, and each layer is also shaped by what its writer expects the reader to want. Toyota made going to the source one of the five key concepts of the Toyota Way: find the facts where the work happens before deciding.
 - **Counter:** **Trust the Aggregate** — a visit shows one shift, one user or one trace, and people judge from a small sample as if it stood for the whole (the belief in the law of small numbers), so for a question about the whole fleet the dashboard that covers every case is the better witness.
 - **Guideline:** Before you decide on a fix, a priority or a postmortem conclusion, look at the primary evidence yourself: reproduce the bug, read the raw logs and the trace of one failing request, watch a real user hit the problem, or sit on the support queue for an hour. Use what you saw to question the dashboard, not to replace it.
@@ -1333,6 +1433,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 99` · Decision
 
 - **Concept:** When a group counts every opinion the same, or defers to rank, the people who have actually done the thing before are outvoted by those who have not.
+- **Keep in mind:** Weigh views by track record, not by rank or headcount
 - **Mechanism:** In a design review everyone can form a view on every part, but only some of the room has built or run something like it. A show of hands gives the first-timer and the engineer who ran the last migration one vote each, and deferring to the most senior person only swaps one blind spot for another. Dalio's test is narrow and checkable: the most believable people have "repeatedly and successfully accomplished the thing in question" and can explain the cause and effect behind their view. Bridgewater shows the equal-weighted and the believability-weighted vote side by side: when they agree the matter is settled, and when they split, it tries again to resolve the disagreement and otherwise goes with the weighted vote. The split itself is where the information is.
 - **Counter:** **Wisdom of Crowds** — when judgments are made independently, a plain equal-weight aggregate is hard to beat (the median guess of Galton's fairground crowd was within 1 percent of the ox's weight), and picking experts in advance bets on a track record that may not carry over to the new question.
 - **Guideline:** Before a contested technical call, ask who has built or run this kind of thing before and whether it worked, and give their view more weight than headcount or title. Collect views in writing before the discussion so they stay independent, and look at both the plain tally and the weighted one; where they disagree, dig in rather than letting the weighted side win by default. Base believability on outcomes you can check, such as systems shipped and postmortems, and drop the weighting for questions nobody on the team has faced before.
@@ -1344,6 +1445,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 `§ 100` · Organization
 
 - **Concept:** Feedback from people who can overrule the owner gets defended against rather than used; peers with no power to impose a fix can be candid, and the owner can afford to hear them.
+- **Keep in mind:** Give candid notes, and leave the fix to the owner
 - **Mechanism:** Someone deep in a piece of work loses perspective and needs outside eyes. But if those eyes can impose a fix, the owner comes in to defend the work instead of to hear about it, and reviewers drift from naming the problem to dictating their own solution. Taking away the veto changes both sides: reviewers can be blunt because nothing they say is binding, and the owner can listen because nothing they hear is an order. The owner, who still answers for the result and knows constraints the room does not, then chooses the remedy.
 - **Counter:** **Review as a Gate** — where a blind spot's cost lands on someone other than the owner (a security hole, lost data, another team's pager), advice that can be ignored is not enough, and a reviewer has to be able to block.
 - **Guideline:** In a design or RFC review, let reviewers name problems and their suspected causes but not dictate the fix, and leave the decision with the author, who answers each point in writing. Fill the room with peers who have built something similar, not the manager who rates the author. Where a mistake would land on others (security, data loss, an irreversible migration), keep a blocking approval, but run it as a separate step from the advisory review.

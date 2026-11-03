@@ -45,6 +45,7 @@ export default function LawsCodex({ lang }: { lang: Locale }) {
           .flatMap((text) => [
             text.title,
             text.concept,
+            text.stance,
             text.mechanism,
             text.counter.name,
             text.counter.note ?? '',

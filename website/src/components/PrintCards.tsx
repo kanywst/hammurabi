@@ -56,6 +56,9 @@ export default function PrintCards({ lang }: { lang: Locale }) {
                   <p className="mt-[2mm] text-[8pt] leading-snug text-ink-2">
                     {law[lang].concept}
                   </p>
+                  <p className="display mt-[2.5mm] text-[9pt] leading-snug">
+                    {law[lang].stance}
+                  </p>
                 </article>
               ))}
             </section>

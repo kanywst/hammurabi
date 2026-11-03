@@ -25,6 +25,7 @@ const COPY = {
   en: {
     tagline: 'Engineering laws, each with its counter-force.',
     concept: 'Concept',
+    stance: 'Keep in mind',
     mechanism: 'Why it happens',
     counter: 'Counter-force',
     guideline: 'What to do',
@@ -36,6 +37,7 @@ const COPY = {
   ja: {
     tagline: 'エンジニアリングの法則と、その歯止め。',
     concept: '概念',
+    stance: '心得',
     mechanism: 'なぜ起きるか',
     counter: '歯止め',
     guideline: 'どうするか',
@@ -81,6 +83,10 @@ function markdown(law, lang, tagLabel, bySlug) {
     `## ${c.concept}`,
     '',
     t.concept,
+    '',
+    `## ${c.stance}`,
+    '',
+    t.stance,
     '',
     `## ${c.guideline}`,
     '',
@@ -194,7 +200,7 @@ function main() {
   const index = [
     '# Hammurabi',
     '',
-    `> ${COPY.en.tagline} Each law has a mechanism, a counter-force that limits it, a field guideline and a primary source. English and Japanese. ${LICENSE}.`,
+    `> ${COPY.en.tagline} Each law has a one-line stance, a mechanism, a counter-force that limits it, a field guideline and a primary source. English and Japanese. ${LICENSE}.`,
     '',
     `- [All laws as JSON](${BASE}/api/laws.json): both languages, every field`,
     `- [The full codex as Markdown](${BASE}/llms-full.txt)`,
