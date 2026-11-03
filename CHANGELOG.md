@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/kanywst/hammurabi/compare/v2.4.0...v2.5.0) (2026-11-03)
+
+
+### Added to the codex
+
+* **codex:** add a one-line stance to every law ([#173](https://github.com/kanywst/hammurabi/issues/173)) ([06c38f5](https://github.com/kanywst/hammurabi/commit/06c38f5a44876f29a62066df8421c97760635069))
+
 ## [2.4.0](https://github.com/kanywst/hammurabi/compare/v2.3.0...v2.4.0) (2026-11-03)
 
 
