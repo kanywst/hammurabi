@@ -751,7 +751,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 45` · Interaction
 
 - **Concept:** Small, distant targets take longer to hit and get missed more often.
-- **Keep in mind:** Put frequent actions within easy reach, and dangerous ones out of it
+- **Keep in mind:** Make frequent actions big and close, and dangerous ones small and far
 - **Mechanism:** The time to move to a target depends on its distance and size: distant, small targets are slow and error-prone; near, large targets are fast. Pointing is a physical act with a measurable cost.
 - **Counter:** **Deliberate Friction** — the same law that makes a button easy to hit makes it easy to hit by accident; for irreversible actions a slower, harder target is the point.
 - **Guideline:** Make frequent actions big and close to where the pointer already is; make destructive ones small, far from the frequent ones, and behind a confirmation. Screen edges and corners are effectively infinite targets, because the pointer stops there, so put primary actions there.
@@ -764,7 +764,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 46` · Cognition
 
 - **Concept:** Working memory holds only a handful of chunks (Miller said about seven; later estimates are lower).
-- **Keep in mind:** Never ask people to hold more than a few things at once
+- **Keep in mind:** Don't make people hold more than a few things at once
 - **Mechanism:** Miller put the span of immediate memory at about seven chunks; later work, notably Cowan (2001), puts working memory nearer four. Either way the limit is small, and past it people drop items rather than slow down.
 - **Counter:** **Too Much Chunking** — every grouping is a level of indirection; split a short list into named groups and people now have to remember the groups as well.
 - **Guideline:** Group related items into a handful of named chunks — phone-number style — wherever a person must hold state in their head: function arguments, form fields, menu groups, on-call steps.

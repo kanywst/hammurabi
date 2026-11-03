@@ -1873,7 +1873,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "ダニング・クルーガー効果",
       "concept": "ある分野に疎い人ほど、自分の能力を過大評価しがちだ。",
-      "stance": "自信は根拠ではない。実績を確かめるきっかけにする",
+      "stance": "自信は根拠ではなく、実績を確かめるきっかけにする",
       "mechanism": "ある分野の専門性がない人は、自分の無能さに気づくためのメタスキルも持っていない。元の研究では、下位四分位の被験者は実際の成績が12パーセンタイル程度だったのに、自己評価は60パーセンタイル付近だった。逆に上位の被験者は、他人にも同じくらい簡単だろうと考えて自分を過小評価した。",
       "counter": {
         "name": "較正された自信",
@@ -2080,7 +2080,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "リーナスの法則",
       "concept": "一人では見つからないバグも、同じコードを見る別の人にはあっさり分かることが多い。",
-      "stance": "同じ種類のバグが抜けるなら、目を凝らすより目を増やす",
+      "stance": "同じ種類のバグが抜けるなら、目を凝らすより違う目を足す",
       "mechanism": "「十分な目玉があれば、あらゆるバグは浅い。」一人では手に負えないように見える欠陥も、独立した多くの視点が加わると簡単な問題に変わることが多い。ただし、その人たちが実際にコードを見られることが前提だ。",
       "counter": {
         "name": "目は多くても見ていない",
@@ -2567,7 +2567,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Fitts's Law",
       "concept": "Small, distant targets take longer to hit and get missed more often.",
-      "stance": "Put frequent actions within easy reach, and dangerous ones out of it",
+      "stance": "Make frequent actions big and close, and dangerous ones small and far",
       "mechanism": "The time to move to a target depends on its distance and size: distant, small targets are slow and error-prone; near, large targets are fast. Pointing is a physical act with a measurable cost.",
       "counter": {
         "name": "Deliberate Friction",
@@ -2618,7 +2618,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Miller's Law",
       "concept": "Working memory holds only a handful of chunks (Miller said about seven; later estimates are lower).",
-      "stance": "Never ask people to hold more than a few things at once",
+      "stance": "Don't make people hold more than a few things at once",
       "mechanism": "Miller put the span of immediate memory at about seven chunks; later work, notably Cowan (2001), puts working memory nearer four. Either way the limit is small, and past it people drop items rather than slow down.",
       "counter": {
         "name": "Too Much Chunking",
