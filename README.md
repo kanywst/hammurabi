@@ -185,7 +185,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 `§ 02` · Safety
 
 - **Concept:** A broken rule that causes no immediate harm quietly becomes the new normal.
-- **Keep in mind:** An exception that caused no harm was luck, not proof
+- **Keep in mind:** An exception that caused no harm is not proof that it is safe
 - **Mechanism:** Vaughan found no rule-breaking villains at NASA. Each time O-ring erosion appeared and the shuttle came back safely, engineers documented it, judged it acceptable, and widened what counted as acceptable for the next flight. Every step was reasoned and signed off. The deviation became the standard through the organization's normal process, which is why nobody felt they were taking a risk.
 - **Counter:** **Error Budget** — not every deviation is a precursor; a team that investigates every one stops shipping and starts ignoring the investigations, so an agreed allowance keeps the real alarms visible.
 - **Guideline:** When a check fails and you ship anyway, write down who decided, why, and when it will be reviewed. In postmortems, ask which past exceptions made this one look normal.
@@ -394,7 +394,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 18` · Performance
 
 - **Concept:** Speeding up one part of a system barely helps when the bottleneck is somewhere else.
-- **Keep in mind:** Speed up the bottleneck, or don't bother
+- **Keep in mind:** Find the bottleneck before you speed anything up
 - **Mechanism:** If a fraction s of the work cannot be parallelized or sped up, the whole job can never run faster than 1/s, however much the rest improves. With 5% serial work, even infinite processors give at most a 20× speedup. Effort spent on the parallel part has diminishing returns, and the serial part sets the ceiling.
 - **Counter:** **Gustafson's Law** — when the problem grows with the machine, the serial fraction shrinks and speedup keeps climbing.
 - **Guideline:** Profile first; time usually concentrates in a small part of the code, often around 1% of it taking 90% of the time. Optimize that part only, and ignore the rest.
@@ -518,7 +518,7 @@ The architecture is downstream of the communication structure, not the org chart
 `§ 28` · Safety
 
 - **Concept:** Given enough time and traffic, a failure mode that can happen eventually will.
-- **Keep in mind:** Build the failure path as if it will run, because it will
+- **Keep in mind:** Build the failure path as if it will run, because in time it will
 - **Mechanism:** The popular form is "Anything that can go wrong, will go wrong." Given enough time, traffic, or unexpected input, every latent failure mode eventually fires. Engineers who design only for the happy path build systems that are one network blip away from collapse.
 - **Counter:** **Risk Budgeting** — defending against every conceivable failure costs more than some of the failures; rank failure modes by likelihood and cost and accept the cheap, rare ones.
 - **Guideline:** Treat every external dependency, retry, and timeout as something that *will* fail in production. Build the failure path before the success path.
@@ -715,7 +715,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 `§ 42` · Estimation
 
 - **Concept:** The last 10% of the work tends to take as long as the first 90% did.
-- **Keep in mind:** Read "almost done" as half done
+- **Keep in mind:** Expect "almost done" to hide as much work again
 - **Mechanism:** "The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time." The visible work hides a second, equally large body of integration, edge cases, and polish.
 - **Counter:** **Good Enough to Ship** — the last 10% is sometimes not worth doing; polish nobody uses and edge cases nobody hits can be cut, and the hard part is deciding which.
 - **Guideline:** When something looks "almost done," assume an entire second project remains: the last-10% of hardening, edge cases, and integration. Schedule it explicitly instead of treating it as a rounding error.

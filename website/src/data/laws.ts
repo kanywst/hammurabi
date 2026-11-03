@@ -392,7 +392,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Normalization of Deviance",
       "concept": "A broken rule that causes no immediate harm quietly becomes the new normal.",
-      "stance": "An exception that caused no harm was luck, not proof",
+      "stance": "An exception that caused no harm is not proof that it is safe",
       "mechanism": "Vaughan found no rule-breaking villains at NASA. Each time O-ring erosion appeared and the shuttle came back safely, engineers documented it, judged it acceptable, and widened what counted as acceptable for the next flight. Every step was reasoned and signed off. The deviation became the standard through the organization's normal process, which is why nobody felt they were taking a risk.",
       "counter": {
         "name": "Error Budget",
@@ -405,7 +405,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "逸脱の常態化",
       "concept": "すぐに害が出なかったルール違反は、いつの間にか当たり前になる。",
-      "stance": "何も起きなかった例外は、運がよかっただけだ",
+      "stance": "何も起きなかった例外は、安全の証明ではない",
       "mechanism": "Vaughan が NASA で見つけたのは、ルールを破る悪人ではなかった。O リングの侵食が見つかってもシャトルが無事に戻るたびに、技術者はそれを記録し、許容範囲内と判断し、次の飛行で許容する範囲を広げた。どの段階にも理由があり、承認も通っていた。逸脱は組織の通常の手続きを経て標準になったので、誰もリスクを取っているとは感じなかった。",
       "counter": {
         "name": "エラーバジェット",
@@ -1213,7 +1213,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Amdahl's Law",
       "concept": "Speeding up one part of a system barely helps when the bottleneck is somewhere else.",
-      "stance": "Speed up the bottleneck, or don't bother",
+      "stance": "Find the bottleneck before you speed anything up",
       "mechanism": "If a fraction s of the work cannot be parallelized or sped up, the whole job can never run faster than 1/s, however much the rest improves. With 5% serial work, even infinite processors give at most a 20× speedup. Effort spent on the parallel part has diminishing returns, and the serial part sets the ceiling.",
       "counter": {
         "name": "Gustafson's Law",
@@ -1225,7 +1225,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "アムダールの法則",
       "concept": "ボトルネックが別の場所にあれば、一部を速くしても全体はほとんど速くならない。",
-      "stance": "速くするのはボトルネックだけでいい",
+      "stance": "何かを速くする前に、ボトルネックを見つける",
       "mechanism": "仕事のうち割合 s が並列化も高速化もできないなら、残りをどれだけ改善しても、全体は1/s倍より速くならない。逐次部分が5%なら、プロセッサを無限に足しても速くなるのは最大20倍だ。並列化できる部分に労力をかけても効果は次第に小さくなり、上限は逐次部分で決まる。",
       "counter": {
         "name": "グスタフソンの法則",
@@ -1708,7 +1708,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Murphy's Law",
       "concept": "Given enough time and traffic, a failure mode that can happen eventually will.",
-      "stance": "Build the failure path as if it will run, because it will",
+      "stance": "Build the failure path as if it will run, because in time it will",
       "mechanism": "The popular form is \"Anything that can go wrong, will go wrong.\" Given enough time, traffic, or unexpected input, every latent failure mode eventually fires. Engineers who design only for the happy path build systems that are one network blip away from collapse.",
       "counter": {
         "name": "Risk Budgeting",
@@ -1721,7 +1721,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "マーフィーの法則",
       "concept": "時間と負荷が十分にあれば、起こりうる故障はいずれ起きる。",
-      "stance": "失敗する経路は、必ず通るものとして作る",
+      "stance": "失敗する経路は、いつか通るものとして作る",
       "mechanism": "よく知られた形は「うまくいかない可能性のあることは、必ずうまくいかない」だ。時間、トラフィック、想定外の入力が十分にあれば、潜んでいる故障モードはいずれ必ず表に出る。ハッピーパスだけを設計するエンジニアは、ネットワークが一瞬揺れただけで崩れるシステムを作る。",
       "counter": {
         "name": "リスクの予算化",
@@ -2421,7 +2421,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Ninety-Ninety Rule",
       "concept": "The last 10% of the work tends to take as long as the first 90% did.",
-      "stance": "Read \"almost done\" as half done",
+      "stance": "Expect \"almost done\" to hide as much work again",
       "mechanism": "\"The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time.\" The visible work hides a second, equally large body of integration, edge cases, and polish.",
       "counter": {
         "name": "Good Enough to Ship",
@@ -2433,7 +2433,7 @@ export const laws: Law[] = [
     "ja": {
       "title": "90対90の法則",
       "concept": "残り1割の作業に、最初の9割と同じくらいの時間がかかりがちだ。",
-      "stance": "「ほぼ終わり」は、まだ半分と考える",
+      "stance": "「ほぼ終わり」の先に、同じだけの仕事があると見込む",
       "mechanism": "「最初の90%のコードが、開発時間の最初の90%を占める。残り10%のコードが、もう90%を占める。」目に見える作業の裏には、統合、エッジケース、仕上げという同じくらい大きな作業がもう一つ隠れている。",
       "counter": {
         "name": "出せる程度で十分",
