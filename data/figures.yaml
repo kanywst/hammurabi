@@ -672,3 +672,9 @@ figures:
   - slug: pesticide-paradox
     kind: person
     name: "Boris Beizer"
+  - slug: narratives-not-slides
+    kind: company
+    name: "Amazon"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"

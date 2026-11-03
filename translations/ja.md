@@ -3,7 +3,7 @@
 **エンジニアリングの法則と、その歯止め。** どの条にも、現場での指針と一次資料の出典を付けている。
 
 [![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=1d47b8&labelColor=17181a)](https://github.com/kanywst/hammurabi/stargazers)
-[![laws](https://img.shields.io/badge/%E6%B3%95%E5%89%87-95-1d47b8?style=for-the-badge&labelColor=17181a)](#法典)
+[![laws](https://img.shields.io/badge/%E6%B3%95%E5%89%87-96-1d47b8?style=for-the-badge&labelColor=17181a)](#法典)
 [![site](https://img.shields.io/badge/%E6%B3%95%E5%85%B8%E3%82%92%E8%AA%AD%E3%82%80-1d47b8?style=for-the-badge&labelColor=17181a)](https://kanywst.github.io/hammurabi/ja/)
 [![license](https://img.shields.io/badge/content-CC%20BY--SA%204.0-5c5f64?style=for-the-badge&labelColor=17181a)](../LICENSE)
 
@@ -50,7 +50,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **見積りが毎回ずれる:** [ホフスタッターの法則 (Hofstadter's Law)](#ホフスタッターの法則-hofstadters-law) · [90対90の法則 (Ninety-Ninety Rule)](#90対90の法則-ninety-ninety-rule) · [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) · [時間を固定し、スコープを変える (Fixed Time, Variable Scope)](#時間を固定しスコープを変える-fixed-time-variable-scope)
 - **チームが大きくなってきた:** [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) · [ダンバー数 (Dunbar's Number)](#ダンバー数-dunbars-number) · [リンゲルマン効果 (Ringelmann Effect)](#リンゲルマン効果-ringelmann-effect) · [コンウェイの法則 (Conway's Law)](#コンウェイの法則-conways-law) · [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control) · [バス係数 (Bus Factor)](#バス係数-bus-factor)
 - **指標が数字合わせになっている:** [グッドハートの法則 (Goodhart's Law)](#グッドハートの法則-goodharts-law) · [コブラ効果 (Cobra Effect)](#コブラ効果-cobra-effect) · [シャーキーの原理 (Shirky Principle)](#シャーキーの原理-shirky-principle)
-- **決めきれない:** [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality) · [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy)
+- **決めきれない:** [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality) · [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy) · [スライドではなく文章で (Narratives, Not Slides)](#スライドではなく文章で-narratives-not-slides)
 - **障害が起きた後:** [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [通常事故理論 (Normal Accident Theory)](#通常事故理論-normal-accident-theory) · [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor) · [自動化の皮肉 (Ironies of Automation)](#自動化の皮肉-ironies-of-automation) · [なぜなぜ分析 (Five Whys)](#なぜなぜ分析-five-whys) · [善意ではなく仕組み (Mechanisms, Not Good Intentions)](#善意ではなく仕組み-mechanisms-not-good-intentions) · [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox)
 - **信頼性と開発速度がぶつかる:** [エラーバジェット (Error Budget)](#エラーバジェット-error-budget) · [トイル (Toil)](#トイル-toil) · [逸脱の常態化 (Normalization of Deviance)](#逸脱の常態化-normalization-of-deviance) · [マーフィーの法則 (Murphy's Law)](#マーフィーの法則-murphys-law) · [作った者が運用する (You Build It, You Run It)](#作った者が運用する-you-build-it-you-run-it) · [アンドン（ラインを止める） (Andon (Stop the Line))](#アンドンラインを止める-andon-stop-the-line) · [カオスエンジニアリング (Chaos Engineering)](#カオスエンジニアリング-chaos-engineering) · [技術的負債 (Technical Debt)](#技術的負債-technical-debt)
 - **何かが遅い:** [アムダールの法則 (Amdahl's Law)](#アムダールの法則-amdahls-law) · [制約理論 (Theory of Constraints)](#制約理論-theory-of-constraints) · [早すぎる最適化 (Premature Optimization)](#早すぎる最適化-premature-optimization) · [スケールの裾野 (The Tail at Scale)](#スケールの裾野-the-tail-at-scale) · [リトルの法則 (Little's Law)](#リトルの法則-littles-law)
@@ -160,6 +160,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 | `93` | [レーマンのソフトウェア進化の法則 (Lehman's Laws of Software Evolution)](#レーマンのソフトウェア進化の法則-lehmans-laws-of-software-evolution) | 保守性 | 実際に使われているプログラムは、変わり続けなければ役に立たなくなる。そして変えるたびに、手をかけて単純にしない限り複雑になっていく。 |
 | `94` | [バス係数 (Bus Factor)](#バス係数-bus-factor) | 組織 | システムを動かし続けられる人が少ないほど、その将来は一人ひとりが辞めずにいることにかかってくる。 |
 | `95` | [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox) | 保守性 | バグを見つける方法はどれも、その方法では見つからないバグを残す。だから変わらないテストスイートが見つけるバグは減っていく。 |
+| `96` | [スライドではなく文章で (Narratives, Not Slides)](#スライドではなく文章で-narratives-not-slides) | 意思決定 | スライドと箇条書きに縮めた議論は、論点どうしのつながりを失う。文章なら露わになったはずの穴や警告が、気づかれないままレビューを通り抜ける。 |
 
 ### タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)
 
@@ -170,7 +171,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **隠れた一方通行のドア** — やり直せるように見えて実はやり直せない決定は多い（公開 API、ディスクに書いたデータ形式、顧客に告知した価格）。こうした決定を速く通すと、取り消せない約束を世に出してしまう。
 - **判断の指針:** 議論の予定を組む前に、その決定がどちらの種類かを見極める。1スプリント以内に、受け入れられるコストでやり直せるなら、一人か少人数が今週中に決める。完全なレビューは、永続化するデータ、公開インタフェース、セキュリティ、顧客にすでに約束したことに関わる決定に限る。
 - **出典:** Jeff Bezos『2015 年 株主への手紙』(Amazon.com, Inc., 2016 年 4 月提出)。"Type 1 / Type 2 decisions" という枠組みの出典。1997 年の手紙は「Day 1」の手紙で、この枠組みは含まれていない。 — [原典 ↗](https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm)
-- **関連:** [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy) · [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit)
+- **関連:** [サンクコストの誤謬 (Sunk Cost Fallacy)](#サンクコストの誤謬-sunk-cost-fallacy) · [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit) · [スライドではなく文章で (Narratives, Not Slides)](#スライドではなく文章で-narratives-not-slides)
 
 ### 逸脱の常態化 (Normalization of Deviance)
 
@@ -533,7 +534,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **対立概念:** **読み手に合わせて書く** — 何もかも説明する文書では、熟練した読み手が必要な情報にたどり着けない。午前3時の運用担当に必要なのはチュートリアルではなくコマンドだ。
 - **判断の指針:** ドキュメントや公開 API を出す前に、システムを触ったことのない人にその作業を実際にやってもらい、自分は黙って見る。その人がつまずいた箇所が、そのまま書き忘れた前提を示している。
 - **出典:** Colin Camerer, George Loewenstein & Martin Weber『The Curse of Knowledge in Economic Settings: An Experimental Analysis』(Journal of Political Economy, 1989)。 — [原典 ↗](https://doi.org/10.1086/261651)
-- **関連:** [XY問題 (XY Problem)](#xy問題-xy-problem) · [ダニング・クルーガー効果 (Dunning-Kruger Effect)](#ダニングクルーガー効果-dunning-kruger-effect) · [驚き最小の原則 (Principle of Least Astonishment)](#驚き最小の原則-principle-of-least-astonishment) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control) · [バス係数 (Bus Factor)](#バス係数-bus-factor)
+- **関連:** [XY問題 (XY Problem)](#xy問題-xy-problem) · [ダニング・クルーガー効果 (Dunning-Kruger Effect)](#ダニングクルーガー効果-dunning-kruger-effect) · [驚き最小の原則 (Principle of Least Astonishment)](#驚き最小の原則-principle-of-least-astonishment) · [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control) · [バス係数 (Bus Factor)](#バス係数-bus-factor) · [スライドではなく文章で (Narratives, Not Slides)](#スライドではなく文章で-narratives-not-slides)
 
 ### スイスチーズモデル (Swiss Cheese Model)
 
@@ -1063,7 +1064,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **対立概念:** **作って学ぶ** — 顧客が紙の上では判断できないもの（新しいプラットフォーム、基盤の変更、前例のないもの）では、磨いたプレスリリースより安い試作品のほうが多くを教えてくれる。
 - **判断の指針:** プロジェクトを始める前に、顧客向けのプレスリリース一枚と FAQ を書き、チームでレビューする。最初の段落で顧客とその問題を言えないなら、作り始めない。
 - **出典:** Werner Vogels『Working Backwards』(All Things Distributed, 2006)。Amazon の CTO がプレスリリースから書き始める手順を説明したもの。「プレスリリースが書きにくいなら、その製品はたぶんひどい」は Ian McAllister の Quora の回答「What is Amazon's approach to product development and product management?」から。PR/FAQ の全体像は Colin Bryar & Bill Carr『Working Backwards』(St. Martin's Press, 2021)。 — [原典 ↗](https://www.allthingsdistributed.com/2006/11/working_backwards.html)
-- **関連:** [XY問題 (XY Problem)](#xy問題-xy-problem) · [YAGNI (YAGNI)](#yagni-yagni)
+- **関連:** [XY問題 (XY Problem)](#xy問題-xy-problem) · [YAGNI (YAGNI)](#yagni-yagni) · [スライドではなく文章で (Narratives, Not Slides)](#スライドではなく文章で-narratives-not-slides)
 
 ### 反対してもコミットする (Disagree and Commit)
 
@@ -1289,6 +1290,17 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **判断の指針:** 回帰テストは残すが、それで新しいバグが見つかるとは期待しない。新しい入力、ファジング、プロパティベーステスト、探索的テストなど、スイートが確かめていないところを狙うテストを足す。本番にバグが漏れたら、どの種類のテストなら捕まえられたかを考え、その一件だけでなく、その種類のテストを足す。スイートは定期的に見直し、互いに重複するテストは消す。
 - **出典:** Boris Beizer『Software Testing Techniques』(第 2 版、Van Nostrand Reinhold, 1990)「The Pesticide Paradox and the Complexity Barrier」。"Every method you use to prevent or find bugs leaves a residue of subtler bugs against which those methods are ineffectual" と "Test suites wear out." の出典。 — [原典 ↗](https://openlibrary.org/books/OL2205629M/Software_testing_techniques)
 - **関連:** [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [カオスエンジニアリング (Chaos Engineering)](#カオスエンジニアリング-chaos-engineering)
+
+### スライドではなく文章で (Narratives, Not Slides)
+
+`§ 96` · 意思決定
+
+- **概念:** スライドと箇条書きに縮めた議論は、論点どうしのつながりを失う。文章なら露わになったはずの穴や警告が、気づかれないままレビューを通り抜ける。
+- **メカニズム:** 箇条書きは主張を並べるが、主張どうしのつながりは書かない。どの点がどの点に支えられ、どれがいちばん重要なのかが抜け落ちる。分析をスライドに収めようとすると、穴や警告を示すはずの推論から先に削られ、組織の階層を一段上がるたびにまた縮められる。スペースシャトル・コロンビア号の事故を調べた委員会は、こうして情報は「必ず失われる」と指摘した。文章で書くと、書き手はつながりを言葉にせざるを得ない。会議の冒頭に全員が黙って読めば、発表者の話しぶりではなく、同じ文面をもとに議論できる。代わりに時間がかかる。Bezos によれば、よいメモには一週間以上かかることもある。だから割に合うのは、その一週間に見合う決定だけだ。
+- **対立概念:** **包括的なドキュメントよりも動くソフトウェア** — 動くコードのほうが文章より早く設計上の問いに答えを出せるなら、先に書く文書は推測を一週間かけて書き留めるだけになる。実のところ実装手順書でしかない設計文書は、そもそも書かない。
+- **判断の指針:** 取り消すのに高くつく決定や、チームの外の人の承認が要る決定は、数ページの文章で提案する。問題、検討した選択肢、トレードオフ、推奨案を書く。レビューは全員が黙って読むところから始め、それから議論する。取り消しやすい変更や、簡単な試作で答えが出る問いには書かない。試作を作る。
+- **出典:** Jeff Bezos『2017 年 株主への手紙』(Amazon.com, Inc., 2018 年)。"We don't do PowerPoint (or any other slide-oriented) presentations at Amazon. Instead, we write narratively structured six-page memos."、会議の冒頭に黙って読むこと、メモに "a week or more" かかりうることの出典。Columbia Accident Investigation Board『Report』第 1 巻 (2003) 第 7 章「Engineering by Viewgraphs」。"When engineering analyses and risk assessments are condensed to fit on a standard form or overhead slide, information is inevitably lost." の出典。Malte Ubl『Design Docs at Google』(industrialempathy.com, 2020)。エンジニアリングでの形と、"really implementation manuals" な設計文書はそもそも要らなかったしるしだという指摘の出典。対抗原理は『アジャイルソフトウェア開発宣言』(2001) から。 — [原典 ↗](https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders)
+- **関連:** [ワーキング・バックワーズ (Working Backwards)](#ワーキングバックワーズ-working-backwards) · [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge) · [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions)
 
 <!-- CODEX:END -->
 

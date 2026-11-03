@@ -177,7 +177,8 @@ export const situations: Situation[] = [
       "type-1-vs-type-2-decisions",
       "disagree-and-commit",
       "law-of-triviality",
-      "sunk-cost-fallacy"
+      "sunk-cost-fallacy",
+      "narratives-not-slides"
     ]
   },
   {
@@ -315,7 +316,8 @@ export const laws: Law[] = [
     "seeAlso": [
       "sunk-cost-fallacy",
       "parkinsons-law",
-      "disagree-and-commit"
+      "disagree-and-commit",
+      "narratives-not-slides"
     ],
     "featured": false,
     "figure": {
@@ -1821,7 +1823,8 @@ export const laws: Law[] = [
       "dunning-kruger-effect",
       "principle-of-least-astonishment",
       "context-not-control",
-      "bus-factor"
+      "bus-factor",
+      "narratives-not-slides"
     ],
     "featured": false,
     "figure": {
@@ -3902,7 +3905,8 @@ export const laws: Law[] = [
     "exampleUrl": null,
     "seeAlso": [
       "xy-problem",
-      "yagni"
+      "yagni",
+      "narratives-not-slides"
     ],
     "featured": false,
     "figure": {
@@ -4903,6 +4907,54 @@ export const laws: Law[] = [
       },
       "guideline": "回帰テストは残すが、それで新しいバグが見つかるとは期待しない。新しい入力、ファジング、プロパティベーステスト、探索的テストなど、スイートが確かめていないところを狙うテストを足す。本番にバグが漏れたら、どの種類のテストなら捕まえられたかを考え、その一件だけでなく、その種類のテストを足す。スイートは定期的に見直し、互いに重複するテストは消す。",
       "source": "Boris Beizer『Software Testing Techniques』(第 2 版、Van Nostrand Reinhold, 1990)「The Pesticide Paradox and the Complexity Barrier」。\"Every method you use to prevent or find bugs leaves a residue of subtler bugs against which those methods are ineffectual\" と \"Test suites wear out.\" の出典。"
+    }
+  },
+  {
+    "slug": "narratives-not-slides",
+    "number": 96,
+    "tag": "decision",
+    "sourceUrl": "https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders",
+    "exampleUrl": null,
+    "seeAlso": [
+      "working-backwards",
+      "curse-of-knowledge",
+      "type-1-vs-type-2-decisions"
+    ],
+    "featured": false,
+    "figure": {
+      "kind": "company",
+      "name": "Amazon",
+      "monogram": "A",
+      "image": null,
+      "logo": "/figures/narratives-not-slides.svg",
+      "wide": true,
+      "credit": {
+        "author": null,
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Amazon_2024.svg"
+      }
+    },
+    "en": {
+      "title": "Narratives, Not Slides",
+      "concept": "An argument cut down to slides and bullets loses the links between its points, so the gaps and warnings that prose would have exposed pass through the review unnoticed.",
+      "mechanism": "A bullet list records claims without the links between them: which point rests on which, and which one matters most. When an analysis is condensed to fit a slide, the reasoning that would expose a gap or a warning is what gets cut, and each step up a hierarchy condenses it again; the board that investigated the loss of Space Shuttle Columbia found that information is \"inevitably lost\" this way. Prose forces the author to state the links, and a group that reads the document in silence at the start of the meeting argues about the same text rather than about the presenter's delivery. The price is time: Bezos says a good memo can take a week or more, so the practice pays only for decisions worth that week.",
+      "counter": {
+        "name": "Working Software over Comprehensive Documentation",
+        "note": "when running code would settle a design question faster than prose, a document written first spends a week recording guesses, and a design doc that is really an implementation manual should not be written at all"
+      },
+      "guideline": "For a decision that is expensive to reverse, or that people outside the team must approve, write the proposal as a few pages of prose: the problem, the options considered, the trade-offs and the recommendation. Open the review with everyone reading it in silence, then discuss. Do not write one for a reversible change or for a question a quick prototype will answer; build the prototype instead.",
+      "source": "Jeff Bezos, *2017 Letter to Shareholders* (Amazon.com, Inc., 2018) — \"We don't do PowerPoint (or any other slide-oriented) presentations at Amazon. Instead, we write narratively structured six-page memos.\", read silently at the start of each meeting, and a memo that \"might take a week or more\"; Columbia Accident Investigation Board, *Report*, vol. I (2003), ch. 7, \"Engineering by Viewgraphs\" — \"When engineering analyses and risk assessments are condensed to fit on a standard form or overhead slide, information is inevitably lost.\"; Malte Ubl, *Design Docs at Google* (industrialempathy.com, 2020) — the engineering form, and design docs that are \"really implementation manuals\" as a sign that none was needed. The counter-force is from the *Manifesto for Agile Software Development* (2001)."
+    },
+    "ja": {
+      "title": "スライドではなく文章で",
+      "concept": "スライドと箇条書きに縮めた議論は、論点どうしのつながりを失う。文章なら露わになったはずの穴や警告が、気づかれないままレビューを通り抜ける。",
+      "mechanism": "箇条書きは主張を並べるが、主張どうしのつながりは書かない。どの点がどの点に支えられ、どれがいちばん重要なのかが抜け落ちる。分析をスライドに収めようとすると、穴や警告を示すはずの推論から先に削られ、組織の階層を一段上がるたびにまた縮められる。スペースシャトル・コロンビア号の事故を調べた委員会は、こうして情報は「必ず失われる」と指摘した。文章で書くと、書き手はつながりを言葉にせざるを得ない。会議の冒頭に全員が黙って読めば、発表者の話しぶりではなく、同じ文面をもとに議論できる。代わりに時間がかかる。Bezos によれば、よいメモには一週間以上かかることもある。だから割に合うのは、その一週間に見合う決定だけだ。",
+      "counter": {
+        "name": "包括的なドキュメントよりも動くソフトウェア",
+        "note": "動くコードのほうが文章より早く設計上の問いに答えを出せるなら、先に書く文書は推測を一週間かけて書き留めるだけになる。実のところ実装手順書でしかない設計文書は、そもそも書かない"
+      },
+      "guideline": "取り消すのに高くつく決定や、チームの外の人の承認が要る決定は、数ページの文章で提案する。問題、検討した選択肢、トレードオフ、推奨案を書く。レビューは全員が黙って読むところから始め、それから議論する。取り消しやすい変更や、簡単な試作で答えが出る問いには書かない。試作を作る。",
+      "source": "Jeff Bezos『2017 年 株主への手紙』(Amazon.com, Inc., 2018 年)。\"We don't do PowerPoint (or any other slide-oriented) presentations at Amazon. Instead, we write narratively structured six-page memos.\"、会議の冒頭に黙って読むこと、メモに \"a week or more\" かかりうることの出典。Columbia Accident Investigation Board『Report』第 1 巻 (2003) 第 7 章「Engineering by Viewgraphs」。\"When engineering analyses and risk assessments are condensed to fit on a standard form or overhead slide, information is inevitably lost.\" の出典。Malte Ubl『Design Docs at Google』(industrialempathy.com, 2020)。エンジニアリングでの形と、\"really implementation manuals\" な設計文書はそもそも要らなかったしるしだという指摘の出典。対抗原理は『アジャイルソフトウェア開発宣言』(2001) から。"
     }
   }
 ];

@@ -3,7 +3,7 @@
 **Engineering laws, each with its counter-force.** Every article also carries a field guideline and a primary source.
 
 [![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=1d47b8&labelColor=17181a)](https://github.com/kanywst/hammurabi/stargazers)
-[![laws](https://img.shields.io/badge/laws-95-1d47b8?style=for-the-badge&labelColor=17181a)](#the-codex)
+[![laws](https://img.shields.io/badge/laws-96-1d47b8?style=for-the-badge&labelColor=17181a)](#the-codex)
 [![site](https://img.shields.io/badge/read-the%20codex-1d47b8?style=for-the-badge&labelColor=17181a)](https://kanywst.github.io/hammurabi/)
 [![license](https://img.shields.io/badge/content-CC%20BY--SA%204.0-5c5f64?style=for-the-badge&labelColor=17181a)](./LICENSE)
 
@@ -50,7 +50,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Estimates keep slipping:** [Hofstadter's Law](#hofstadters-law) · [Ninety-Ninety Rule](#ninety-ninety-rule) · [Parkinson's Law](#parkinsons-law) · [Brooks' Law](#brooks-law) · [Fixed Time, Variable Scope](#fixed-time-variable-scope)
 - **The team is growing:** [Brooks' Law](#brooks-law) · [Dunbar's Number](#dunbars-number) · [Ringelmann Effect](#ringelmann-effect) · [Conway's Law](#conways-law) · [Bystander Effect](#bystander-effect) · [Context, Not Control](#context-not-control) · [Bus Factor](#bus-factor)
 - **A metric is being gamed:** [Goodhart's Law](#goodharts-law) · [Cobra Effect](#cobra-effect) · [Shirky Principle](#shirky-principle)
-- **The decision is stuck:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Disagree and Commit](#disagree-and-commit) · [Law of Triviality](#law-of-triviality) · [Sunk Cost Fallacy](#sunk-cost-fallacy)
+- **The decision is stuck:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Disagree and Commit](#disagree-and-commit) · [Law of Triviality](#law-of-triviality) · [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Narratives, Not Slides](#narratives-not-slides)
 - **After an incident:** [Blameless Postmortem](#blameless-postmortem) · [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory) · [Hanlon's Razor](#hanlons-razor) · [Ironies of Automation](#ironies-of-automation) · [Five Whys](#five-whys) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Pesticide Paradox](#pesticide-paradox)
 - **Reliability versus shipping speed:** [Error Budget](#error-budget) · [Toil](#toil) · [Normalization of Deviance](#normalization-of-deviance) · [Murphy's Law](#murphys-law) · [You Build It, You Run It](#you-build-it-you-run-it) · [Andon (Stop the Line)](#andon-stop-the-line) · [Chaos Engineering](#chaos-engineering) · [Technical Debt](#technical-debt)
 - **Something is too slow:** [Amdahl's Law](#amdahls-law) · [Theory of Constraints](#theory-of-constraints) · [Premature Optimization](#premature-optimization) · [The Tail at Scale](#the-tail-at-scale) · [Little's Law](#littles-law)
@@ -160,6 +160,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `93` | [Lehman's Laws of Software Evolution](#lehmans-laws-of-software-evolution) | Maintainability | A program in real use must keep changing or grow less useful, and each change makes it more complex unless work is spent to simplify it. |
 | `94` | [Bus Factor](#bus-factor) | Organization | The fewer people who can keep a system running, the more its future depends on each of them staying. |
 | `95` | [Pesticide Paradox](#pesticide-paradox) | Maintainability | Every way of finding bugs leaves behind the bugs it cannot find, so a test suite that never changes finds fewer and fewer. |
+| `96` | [Narratives, Not Slides](#narratives-not-slides) | Decision | An argument cut down to slides and bullets loses the links between its points, so the gaps and warnings that prose would have exposed pass through the review unnoticed. |
 
 ### Type 1 vs Type 2 Decisions
 
@@ -170,7 +171,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Counter:** **Hidden One-Way Doors** — many decisions look reversible and are not (a public API, a data format written to disk, a price announced to customers), and fast-tracking them ships a commitment you cannot take back.
 - **Guideline:** Classify a decision before you schedule the debate. If you could undo it within a sprint at a cost you would accept, let one person or a small group decide it this week. Keep the full review for decisions that touch persisted data, public interfaces, security, or something already promised to customers.
 - **Source:** Jeff Bezos, *2015 Letter to Shareholders* (Amazon.com, Inc., filed April 2016) — the letter that introduced the "Type 1 / Type 2 decisions" framing. The 1997 letter is the "Day 1" letter and does not contain it. — [source ↗](https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm)
-- **See also:** [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Parkinson's Law](#parkinsons-law) · [Disagree and Commit](#disagree-and-commit)
+- **See also:** [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Parkinson's Law](#parkinsons-law) · [Disagree and Commit](#disagree-and-commit) · [Narratives, Not Slides](#narratives-not-slides)
 
 ### Normalization of Deviance
 
@@ -533,7 +534,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Write for Your Audience** — docs that explain everything bury the expert reader; an operator at 3 AM needs the command, not the tutorial.
 - **Guideline:** Before shipping documentation or a public API, have someone who has never touched the system attempt the task while you watch silently. Their confusion points exactly at the assumptions you forgot to spell out.
 - **Source:** Colin Camerer, George Loewenstein & Martin Weber, *The Curse of Knowledge in Economic Settings: An Experimental Analysis* (Journal of Political Economy, 1989). — [source ↗](https://doi.org/10.1086/261651)
-- **See also:** [XY Problem](#xy-problem) · [Dunning-Kruger Effect](#dunning-kruger-effect) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Context, Not Control](#context-not-control) · [Bus Factor](#bus-factor)
+- **See also:** [XY Problem](#xy-problem) · [Dunning-Kruger Effect](#dunning-kruger-effect) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Context, Not Control](#context-not-control) · [Bus Factor](#bus-factor) · [Narratives, Not Slides](#narratives-not-slides)
 
 ### Swiss Cheese Model
 
@@ -1063,7 +1064,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Build to Learn** — when customers cannot judge an idea on paper (a new platform, an infrastructure change, something with no precedent) a cheap prototype tells you more than a polished press release.
 - **Guideline:** Before a project starts, write a one-page press release and an FAQ for the customer, and review them as a team. If you cannot name the customer and their problem in the first paragraph, do not start building.
 - **Source:** Werner Vogels, *Working Backwards* (All Things Distributed, 2006) — Amazon's CTO describing the press-release-first process; Ian McAllister's Quora answer "What is Amazon's approach to product development and product management?" is the source of "if the press release is hard to write, the product is probably going to suck"; Colin Bryar & Bill Carr, *Working Backwards* (St. Martin's Press, 2021) — the PR/FAQ process in full. — [source ↗](https://www.allthingsdistributed.com/2006/11/working_backwards.html)
-- **See also:** [XY Problem](#xy-problem) · [YAGNI](#yagni)
+- **See also:** [XY Problem](#xy-problem) · [YAGNI](#yagni) · [Narratives, Not Slides](#narratives-not-slides)
 
 ### Disagree and Commit
 
@@ -1289,6 +1290,17 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Guideline:** Keep the regression suite, but do not count on it to find new bugs. Add tests aimed at what the suite does not exercise: new inputs, fuzzing, property-based tests, exploratory sessions. When a bug escapes to production, ask which kind of test would have caught it and add that kind, not only that one case. Review the suite on a schedule and remove tests that duplicate each other.
 - **Source:** Boris Beizer, *Software Testing Techniques* (2nd ed., Van Nostrand Reinhold, 1990), "The Pesticide Paradox and the Complexity Barrier" — "Every method you use to prevent or find bugs leaves a residue of subtler bugs against which those methods are ineffectual", and "Test suites wear out." — [source ↗](https://openlibrary.org/books/OL2205629M/Software_testing_techniques)
 - **See also:** [Beyoncé Rule](#beyoncé-rule) · [Chaos Engineering](#chaos-engineering)
+
+### Narratives, Not Slides
+
+`§ 96` · Decision
+
+- **Concept:** An argument cut down to slides and bullets loses the links between its points, so the gaps and warnings that prose would have exposed pass through the review unnoticed.
+- **Mechanism:** A bullet list records claims without the links between them: which point rests on which, and which one matters most. When an analysis is condensed to fit a slide, the reasoning that would expose a gap or a warning is what gets cut, and each step up a hierarchy condenses it again; the board that investigated the loss of Space Shuttle Columbia found that information is "inevitably lost" this way. Prose forces the author to state the links, and a group that reads the document in silence at the start of the meeting argues about the same text rather than about the presenter's delivery. The price is time: Bezos says a good memo can take a week or more, so the practice pays only for decisions worth that week.
+- **Counter:** **Working Software over Comprehensive Documentation** — when running code would settle a design question faster than prose, a document written first spends a week recording guesses, and a design doc that is really an implementation manual should not be written at all.
+- **Guideline:** For a decision that is expensive to reverse, or that people outside the team must approve, write the proposal as a few pages of prose: the problem, the options considered, the trade-offs and the recommendation. Open the review with everyone reading it in silence, then discuss. Do not write one for a reversible change or for a question a quick prototype will answer; build the prototype instead.
+- **Source:** Jeff Bezos, *2017 Letter to Shareholders* (Amazon.com, Inc., 2018) — "We don't do PowerPoint (or any other slide-oriented) presentations at Amazon. Instead, we write narratively structured six-page memos.", read silently at the start of each meeting, and a memo that "might take a week or more"; Columbia Accident Investigation Board, *Report*, vol. I (2003), ch. 7, "Engineering by Viewgraphs" — "When engineering analyses and risk assessments are condensed to fit on a standard form or overhead slide, information is inevitably lost."; Malte Ubl, *Design Docs at Google* (industrialempathy.com, 2020) — the engineering form, and design docs that are "really implementation manuals" as a sign that none was needed. The counter-force is from the *Manifesto for Agile Software Development* (2001). — [source ↗](https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders)
+- **See also:** [Working Backwards](#working-backwards) · [Curse of Knowledge](#curse-of-knowledge) · [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions)
 
 <!-- CODEX:END -->
 
