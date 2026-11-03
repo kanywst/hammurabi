@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.3.0](https://github.com/kanywst/hammurabi/compare/v2.2.0...v2.3.0) (2026-11-03)
+
+
+### Added to the codex
+
+* **codex:** add five laws from the research backlog ([#141](https://github.com/kanywst/hammurabi/issues/141)–[#150](https://github.com/kanywst/hammurabi/issues/150)) ([#170](https://github.com/kanywst/hammurabi/issues/170)) ([9b12692](https://github.com/kanywst/hammurabi/commit/9b126921908bb9dde4476cc8033200a64c291ba8))
+* **figures:** Bell System switchboard scene for Conway's law ([#168](https://github.com/kanywst/hammurabi/issues/168)) ([c3023b2](https://github.com/kanywst/hammurabi/commit/c3023b2f60d65a5a0814426f62b904bec0456bd8))
+
 ## [2.2.0](https://github.com/kanywst/hammurabi/compare/v2.1.0...v2.2.0) (2026-11-01)
 
 
