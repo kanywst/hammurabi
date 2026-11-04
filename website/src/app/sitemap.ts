@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
-import { laws } from '@/data/laws';
-import { DEFAULT_LOCALE, LOCALES, urlFor } from '@/lib/site';
+import { collections, laws } from '@/data/laws';
+import { columnUrlFor, DEFAULT_LOCALE, LOCALES, urlFor } from '@/lib/site';
 
 // Required for `output: 'export'` — emit a static sitemap.xml at build time.
 export const dynamic = 'force-static';
@@ -35,5 +35,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...homes, ...articles];
+  const columns = LOCALES.flatMap((locale) =>
+    collections.map((column) => ({
+      url: columnUrlFor(locale, column.key),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+      alternates: {
+        languages: {
+          ...Object.fromEntries(
+            LOCALES.map((l) => [l, columnUrlFor(l, column.key)])
+          ),
+          'x-default': columnUrlFor(DEFAULT_LOCALE, column.key),
+        },
+      },
+    }))
+  );
+
+  return [...homes, ...articles, ...columns];
 }

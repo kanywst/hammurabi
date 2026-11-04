@@ -51,6 +51,11 @@ export const translations = {
       next: 'Next',
       editOnGitHub: 'Suggest a correction on GitHub',
     },
+    column: {
+      kicker: 'Column',
+      heading: 'Columns',
+      count: (n: number) => `${n} laws, read in order`,
+    },
     print: {
       cardsTitle: 'Card deck',
       cardsHow:
@@ -124,6 +129,11 @@ export const translations = {
       previous: '前へ',
       next: '次へ',
       editOnGitHub: 'GitHub で誤りを指摘する',
+    },
+    column: {
+      kicker: 'コラム',
+      heading: 'コラム',
+      count: (n: number) => `${n} 本を順に読む`,
     },
     print: {
       cardsTitle: 'カードデッキ',

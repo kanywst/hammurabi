@@ -179,6 +179,35 @@ export function loadCodex({ file = join(ROOT, 'data', 'laws.yaml') } = {}) {
     }
   });
 
+  // Columns are optional, but each one is a finished piece in both languages:
+  // a title, a lede, and for every law a note on why it comes next.
+  const collections = raw?.collections ?? [];
+  if (!Array.isArray(collections)) fail('collections: expected a list');
+  const seenCollections = new Set();
+  const text = (value) => typeof value === 'string' && value.trim() !== '' && value === value.trim();
+  (Array.isArray(collections) ? collections : []).forEach((collection, index) => {
+    const at = `collections[${index}]${collection?.key ? ` (${collection.key})` : ''}`;
+    if (!collection?.key || !SLUG_RE.test(collection.key)) fail(`${at}: key must be lowercase kebab-case`);
+    else if (seenCollections.has(collection.key)) fail(`${at}: duplicate key`);
+    else seenCollections.add(collection.key);
+    for (const locale of LOCALES) {
+      for (const field of ['title', 'lede']) {
+        if (!text(collection?.[locale]?.[field])) fail(`${at}.${locale}.${field} is empty or has stray whitespace`);
+      }
+    }
+    if (!Array.isArray(collection?.laws) || collection.laws.length < 2) fail(`${at}: laws must list at least two laws`);
+    const listed = new Set();
+    (collection?.laws ?? []).forEach((item, i) => {
+      const where = `${at}.laws[${i}]${item?.slug ? ` (${item.slug})` : ''}`;
+      if (!seenSlugs.has(item?.slug)) fail(`${where}: matches no law`);
+      if (listed.has(item?.slug)) fail(`${where}: listed twice`);
+      listed.add(item?.slug);
+      for (const locale of LOCALES) {
+        if (!text(item?.[locale])) fail(`${where}.${locale} note is empty or has stray whitespace`);
+      }
+    });
+  });
+
   const numbered = laws.map((law, index) => ({
     ...law,
     number: index + 1,
@@ -186,7 +215,13 @@ export function loadCodex({ file = join(ROOT, 'data', 'laws.yaml') } = {}) {
     featured: law.featured === true,
   }));
 
-  return { tags, situations, laws: numbered, problems };
+  return {
+    tags,
+    situations,
+    collections: Array.isArray(collections) ? collections : [],
+    laws: numbered,
+    problems,
+  };
 }
 
 /** Load and throw on the first structural problem. Callers that want to report

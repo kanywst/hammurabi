@@ -74,3 +74,29 @@ export function hueFor(tag: string): number {
   );
   return Math.round(20 + (index * 360) / tags.length) % 360;
 }
+
+/** Route for a column. Same locale rule as routeFor. */
+export function columnRouteFor(locale: Locale, key: string): string {
+  const prefix = locale === DEFAULT_LOCALE ? '' : `/${locale}`;
+  return `${prefix}/columns/${key}/`;
+}
+
+/** Absolute URL for a column. */
+export function columnUrlFor(locale: Locale, key: string): string {
+  return `${SITE_URL}${columnRouteFor(locale, key)}`;
+}
+
+/** Canonical + hreflang for a column, as alternatesFor does for a law. */
+export function columnAlternatesFor(locale: Locale, key: string) {
+  return {
+    canonical: columnUrlFor(locale, key),
+    languages: {
+      en: columnUrlFor('en', key),
+      ja: columnUrlFor('ja', key),
+      'x-default': columnUrlFor(DEFAULT_LOCALE, key),
+    },
+    types: {
+      'application/rss+xml': `${urlFor(locale)}feed.xml`,
+    },
+  };
+}

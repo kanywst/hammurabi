@@ -5,8 +5,15 @@ import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 import { Search, Shuffle } from 'lucide-react';
 import { translations } from '@/translations';
-import { laws, lawBySlug, situations, tags, type Locale } from '@/data/laws';
-import { articleLabel, hueFor, routeFor } from '@/lib/site';
+import {
+  collections,
+  laws,
+  lawBySlug,
+  situations,
+  tags,
+  type Locale,
+} from '@/data/laws';
+import { articleLabel, columnRouteFor, hueFor, routeFor } from '@/lib/site';
 import Medallion from './Medallion';
 
 /**
@@ -89,6 +96,10 @@ export default function LawsCodex({ lang }: { lang: Locale }) {
           <Shuffle className="h-4 w-4" aria-hidden />
           {t.ui.random}
         </button>
+      </div>
+
+      <div className="mt-6 lg:hidden">
+        <Columns lang={lang} headingLevel="h2" />
       </div>
 
       <details className="mt-6 rounded-md border border-line-soft lg:hidden">
@@ -181,6 +192,9 @@ export default function LawsCodex({ lang }: { lang: Locale }) {
 
         <aside aria-labelledby="situations-heading" className="hidden lg:block">
           <div className="sticky top-16 max-h-[calc(100vh-5rem)] overflow-y-auto pb-4">
+            <div className="mb-8">
+              <Columns lang={lang} headingLevel="h2" />
+            </div>
             <h2
               id="situations-heading"
               className="display text-[1.375rem] leading-snug"
@@ -194,6 +208,41 @@ export default function LawsCodex({ lang }: { lang: Locale }) {
         </aside>
       </div>
     </>
+  );
+}
+
+/** Columns: a guided read through several laws. Absent until one is written
+ *  under `collections:` in data/laws.yaml. */
+function Columns({
+  lang,
+  headingLevel: Heading,
+}: {
+  lang: Locale;
+  headingLevel: 'h2';
+}) {
+  if (collections.length === 0) return null;
+  const t = translations[lang].column;
+  return (
+    <section>
+      <Heading className="display text-[1.375rem] leading-snug">
+        {t.heading}
+      </Heading>
+      <ul className="mt-3 space-y-2">
+        {collections.map((column) => (
+          <li key={column.key}>
+            <Link
+              href={columnRouteFor(lang, column.key)}
+              className="group block rounded-md border border-line-soft px-4 py-3 hover:bg-surface"
+            >
+              <span className="block font-bold group-hover:text-accent">
+                {column[lang].title}
+              </span>
+              <span className="meta block">{t.count(column.laws.length)}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 

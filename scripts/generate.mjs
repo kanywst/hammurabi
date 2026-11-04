@@ -244,10 +244,16 @@ function figureFor(law) {
   return out;
 }
 
-function websiteModule(laws, tags, situations) {
+function websiteModule(laws, tags, situations, collections) {
   const payload = {
     tags: Object.entries(tags).map(([key, value]) => ({ key, ...value })),
     situations: situations.map(({ key, en, ja, laws: refs }) => ({ key, en, ja, laws: refs })),
+    collections: collections.map(({ key, en, ja, laws: items }) => ({
+      key,
+      en: { title: en.title, lede: en.lede },
+      ja: { title: ja.title, lede: ja.lede },
+      laws: items.map(({ slug, en: noteEn, ja: noteJa }) => ({ slug, en: noteEn, ja: noteJa })),
+    })),
     laws: laws.map((law) => ({
       slug: law.slug,
       number: law.number,
@@ -330,9 +336,31 @@ export interface Situation {
   laws: string[];
 }
 
+export interface CollectionText {
+  title: string;
+  lede: string;
+}
+
+/** One stop in a column: a law, and a note on why it comes next. */
+export interface CollectionItem {
+  slug: string;
+  en: string;
+  ja: string;
+}
+
+/** A column: several laws read in an order that tells one story. */
+export interface Collection {
+  key: string;
+  en: CollectionText;
+  ja: CollectionText;
+  laws: CollectionItem[];
+}
+
 export const tags: Tag[] = ${JSON.stringify(payload.tags, null, 2)};
 
 export const situations: Situation[] = ${JSON.stringify(payload.situations, null, 2)};
+
+export const collections: Collection[] = ${JSON.stringify(payload.collections, null, 2)};
 
 export const laws: Law[] = ${JSON.stringify(payload.laws, null, 2)};
 
@@ -342,12 +370,12 @@ export const lawBySlug: ReadonlyMap<string, Law> = new Map(
 `;
 }
 
-const { tags, situations, laws } = requireCodex();
+const { tags, situations, collections, laws } = requireCodex();
 
 const targets = [
   { path: join(ROOT, 'README.md'), build: () => spliceMarkdown(join(ROOT, 'README.md'), codexSection(laws, tags, situations, 'en', 0), laws.length) },
   { path: join(ROOT, 'translations', 'ja.md'), build: () => spliceMarkdown(join(ROOT, 'translations', 'ja.md'), codexSection(laws, tags, situations, 'ja', 1), laws.length) },
-  { path: join(ROOT, 'website', 'src', 'data', 'laws.ts'), build: () => websiteModule(laws, tags, situations) },
+  { path: join(ROOT, 'website', 'src', 'data', 'laws.ts'), build: () => websiteModule(laws, tags, situations, collections) },
 ];
 
 let stale = 0;
