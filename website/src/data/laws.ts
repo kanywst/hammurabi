@@ -336,11 +336,11 @@ export const collections: Collection[] = [
     "key": "working-as-a-team",
     "en": {
       "title": "Working as a team",
-      "lede": "A team exists to do what one person cannot. As it grows, that stops being true in roughly the same order each time, first in coordination, then ownership, then knowledge, then decisions. These laws follow that order, along with what keeps a team working through it."
+      "lede": "A team exists to do what one person cannot. As it grows, that can stop being true in several places, in coordination, ownership, knowledge and decisions. This column reads through them in that order, along with what keeps a team working."
     },
     "ja": {
       "title": "チームで働く",
-      "lede": "チームは、一人ではできないことをやるために組む。人が増えると、それはおおよそ決まった順に崩れていく。調整、担当、知識、意思決定の順だ。ここに並べた法則は、その順番と、それでもチームを動かし続けるための手をたどる。"
+      "lede": "チームは、一人ではできないことをやるために組む。人が増えると、それが効かなくなる場面が出てくる。調整、担当、知識、意思決定だ。このコラムはそれをこの順に読み、チームを動かし続けるための手もたどる。"
     },
     "laws": [
       {
@@ -350,8 +350,8 @@ export const collections: Collection[] = [
       },
       {
         "slug": "dunbars-number",
-        "en": "Brooks' Law is about a project that is already late. The same arithmetic keeps running when nothing is late and the team simply keeps hiring.",
-        "ja": "ブルックスの法則は、すでに遅れたプロジェクトの話だ。遅れていなくても、人を採り続ければ同じ計算が効き続ける。"
+        "en": "Brooks' Law is about a project that is already late. The same arithmetic can keep running when nothing is late and the team simply keeps hiring.",
+        "ja": "ブルックスの法則は、すでに遅れたプロジェクトの話だ。遅れていなくても、人を採り続ければ同じ計算が効いてくることがある。"
       },
       {
         "slug": "ringelmann-effect",
