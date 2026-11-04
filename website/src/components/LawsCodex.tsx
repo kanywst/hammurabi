@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
-import { ArrowRight, Search, Shuffle } from 'lucide-react';
+import { Search, Shuffle } from 'lucide-react';
 import { translations } from '@/translations';
 import {
   collections,
@@ -99,25 +99,37 @@ export default function LawsCodex({ lang }: { lang: Locale }) {
         </button>
       </div>
 
-      {/* On a phone the list must stay where it was, so a column is one row
-          the height of the situations toggle below it, not a card. */}
-      {collections.map((column) => (
-        <Link
-          key={column.key}
-          href={columnRouteFor(lang, column.key)}
-          className="mt-6 flex items-center justify-between gap-3 rounded-md border border-line-soft px-4 py-3 font-bold hover:bg-surface lg:hidden"
-        >
-          {t.column.entry(column[lang].title)}
-          <ArrowRight className="h-4 w-4 shrink-0" aria-hidden />
-        </Link>
-      ))}
-
       <details className="mt-6 rounded-md border border-line-soft lg:hidden">
+        {/* On a phone the list must start where it always has, so the
+            columns share the one toggle above it with the situations. */}
         <summary className="cursor-pointer px-4 py-3 font-bold">
-          <h2 className="inline">{t.ui.situationsHeading}</h2>
+          <h2 className="inline">{t.ui.waysInHeading}</h2>
         </summary>
-        <div className="px-4 pb-4">
-          <Situations lang={lang} />
+        <div className="space-y-6 px-4 pb-4">
+          <section>
+            <h3 className="meta">{t.column.heading}</h3>
+            <ul className="mt-1 space-y-1">
+              {collections.map((column) => (
+                <li key={column.key}>
+                  <Link
+                    href={columnRouteFor(lang, column.key)}
+                    className="font-bold text-accent hover:underline"
+                  >
+                    {column[lang].title}
+                  </Link>{' '}
+                  <span className="meta">
+                    {t.column.count(column.laws.length)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+          <section>
+            <h3 className="meta">{t.ui.situationsHeading}</h3>
+            <div className="mt-2">
+              <Situations lang={lang} />
+            </div>
+          </section>
         </div>
       </details>
 

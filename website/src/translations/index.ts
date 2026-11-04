@@ -19,6 +19,7 @@ export const translations = {
       metaDescription:
         'Engineering laws, each with what to do about it, the counter-force that limits it, and its primary source.',
       situationsHeading: 'Start from a situation',
+      waysInHeading: 'Columns and situations',
       allHeading: 'All laws',
       picksHeading: "Editor's picks",
       filterAll: 'All',
@@ -59,7 +60,6 @@ export const translations = {
       inColumn: 'Read in a column',
       position: (i: number, n: number) => `${i} of ${n}`,
       next: 'Next in the column',
-      entry: (title: string) => `Column: ${title}`,
     },
     print: {
       cardsTitle: 'Card deck',
@@ -103,6 +103,7 @@ export const translations = {
       metaDescription:
         'エンジニアリングの法則集。各法則に、どうすればいいか、当てはまらないのはどんなときか、一次資料の出典を付けている。',
       situationsHeading: '状況から引く',
+      waysInHeading: 'コラムと状況から引く',
       allHeading: 'すべての法則',
       picksHeading: '編者のおすすめ',
       filterAll: 'すべて',
@@ -143,7 +144,6 @@ export const translations = {
       inColumn: 'コラムで読む',
       position: (i: number, n: number) => `${n} 本中 ${i} 本目`,
       next: 'コラムの次',
-      entry: (title: string) => `コラム：${title}`,
     },
     print: {
       cardsTitle: 'カードデッキ',
