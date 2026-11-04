@@ -55,6 +55,11 @@ export const translations = {
       kicker: 'Column',
       heading: 'Columns',
       count: (n: number) => `${n} laws, read in order`,
+      more: 'More to read',
+      inColumn: 'Read in a column',
+      position: (i: number, n: number) => `${i} of ${n}`,
+      next: 'Next in the column',
+      entry: (title: string) => `Column: ${title}`,
     },
     print: {
       cardsTitle: 'Card deck',
@@ -134,6 +139,11 @@ export const translations = {
       kicker: 'コラム',
       heading: 'コラム',
       count: (n: number) => `${n} 本を順に読む`,
+      more: 'ほかに読む',
+      inColumn: 'コラムで読む',
+      position: (i: number, n: number) => `${n} 本中 ${i} 本目`,
+      next: 'コラムの次',
+      entry: (title: string) => `コラム：${title}`,
     },
     print: {
       cardsTitle: 'カードデッキ',

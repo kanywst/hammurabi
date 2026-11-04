@@ -8,7 +8,7 @@
  */
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { anchor, article, heading, loadFigures, requireCodex, ROOT } from './lib/codex.mjs';
+import { anchor, article, heading, loadFigures, requireCodex, ROOT, SITE_URL } from './lib/codex.mjs';
 
 /* Figures, if `npm run generate:diagrams` has been run. They are optional so a
    contributor editing a law never has to build the site to regenerate the
@@ -63,11 +63,13 @@ const COPY = {
     sourceLink: 'source ↗',
     backToIndex: 'Back to the index',
     bySituation: 'Start from a situation',
+    columns: 'Columns',
     allLaws: 'All laws',
   },
   ja: {
     indexHead: ['§', '法則', 'カテゴリ', '核心'],
     bySituation: '状況から引く',
+    columns: 'コラム',
     allLaws: 'すべての法則',
     concept: '概念',
     stance: '心得',
@@ -153,15 +155,33 @@ function situationList(situations, bySlug, locale) {
     .join('\n');
 }
 
-function codexSection(laws, tags, situations, locale, depth) {
+/** Columns are read on the site, where each law has a note on why it comes
+ *  next; here they are the title and the order. */
+function columnList(collections, bySlug, locale) {
+  return collections
+    .map((column) => {
+      const page = `${SITE_URL}${locale === 'en' ? '' : `/${locale}`}/columns/${column.key}/`;
+      const refs = column.laws.map(({ slug }) => {
+        const title = heading(bySlug.get(slug), locale);
+        return `[${title}](#${anchor(title)})`;
+      });
+      return `- **[${column[locale].title}](${page}):** ${refs.join(' → ')}`;
+    })
+    .join('\n');
+}
+
+function codexSection(laws, tags, situations, collections, locale, depth) {
   const bySlug = new Map(laws.map((l) => [l.slug, l]));
   const t = COPY[locale];
   return [
     WARNING,
     '',
     ...(situations.length > 0
-      ? [`**${t.bySituation}**`, '', situationList(situations, bySlug, locale), '', `**${t.allLaws}**`, '']
+      ? [`**${t.bySituation}**`, '', situationList(situations, bySlug, locale), '']
       : []),
+    ...(collections.length > 0 ? [`**${t.columns}**`, '', columnList(collections, bySlug, locale), ''] : []),
+    `**${t.allLaws}**`,
+    '',
     indexTable(laws, tags, locale),
     '',
     ...laws.flatMap((law) => [entry(law, tags, locale, bySlug, depth), '']),
@@ -373,8 +393,8 @@ export const lawBySlug: ReadonlyMap<string, Law> = new Map(
 const { tags, situations, collections, laws } = requireCodex();
 
 const targets = [
-  { path: join(ROOT, 'README.md'), build: () => spliceMarkdown(join(ROOT, 'README.md'), codexSection(laws, tags, situations, 'en', 0), laws.length) },
-  { path: join(ROOT, 'translations', 'ja.md'), build: () => spliceMarkdown(join(ROOT, 'translations', 'ja.md'), codexSection(laws, tags, situations, 'ja', 1), laws.length) },
+  { path: join(ROOT, 'README.md'), build: () => spliceMarkdown(join(ROOT, 'README.md'), codexSection(laws, tags, situations, collections, 'en', 0), laws.length) },
+  { path: join(ROOT, 'translations', 'ja.md'), build: () => spliceMarkdown(join(ROOT, 'translations', 'ja.md'), codexSection(laws, tags, situations, collections, 'ja', 1), laws.length) },
   { path: join(ROOT, 'website', 'src', 'data', 'laws.ts'), build: () => websiteModule(laws, tags, situations, collections) },
 ];
 

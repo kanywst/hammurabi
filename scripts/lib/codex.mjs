@@ -179,31 +179,40 @@ export function loadCodex({ file = join(ROOT, 'data', 'laws.yaml') } = {}) {
     }
   });
 
-  // Columns are optional, but each one is a finished piece in both languages:
-  // a title, a lede, and for every law a note on why it comes next.
-  const collections = raw?.collections ?? [];
-  if (!Array.isArray(collections)) fail('collections: expected a list');
+  // Columns are guided reads through several laws. The site exports one page
+  // per column from a dynamic route, and a static export with no params fails
+  // the build, so at least one is required. Each is a finished piece in both
+  // languages: a title, a lede, and for every law a note on why it comes next.
+  // The text is rendered as plain text, so markdown emphasis (* or **) is refused.
+  const collections = Array.isArray(raw?.collections) ? raw.collections : [];
+  if (collections.length === 0) fail('collections: expected a non-empty list (the site cannot export /columns/ with none)');
   const seenCollections = new Set();
-  const text = (value) => typeof value === 'string' && value.trim() !== '' && value === value.trim();
-  (Array.isArray(collections) ? collections : []).forEach((collection, index) => {
+  const plain = (value) =>
+    typeof value === 'string' && value.trim() !== '' && value === value.trim() && !value.includes('*');
+  collections.forEach((collection, index) => {
     const at = `collections[${index}]${collection?.key ? ` (${collection.key})` : ''}`;
     if (!collection?.key || !SLUG_RE.test(collection.key)) fail(`${at}: key must be lowercase kebab-case`);
     else if (seenCollections.has(collection.key)) fail(`${at}: duplicate key`);
     else seenCollections.add(collection.key);
     for (const locale of LOCALES) {
       for (const field of ['title', 'lede']) {
-        if (!text(collection?.[locale]?.[field])) fail(`${at}.${locale}.${field} is empty or has stray whitespace`);
+        if (!plain(collection?.[locale]?.[field])) fail(`${at}.${locale}.${field} must be plain text with no stray whitespace`);
       }
     }
-    if (!Array.isArray(collection?.laws) || collection.laws.length < 2) fail(`${at}: laws must list at least two laws`);
+    const items = Array.isArray(collection?.laws) ? collection.laws : [];
+    if (items.length < 2) fail(`${at}: laws must be a list of at least two laws`);
     const listed = new Set();
-    (collection?.laws ?? []).forEach((item, i) => {
+    items.forEach((item, i) => {
       const where = `${at}.laws[${i}]${item?.slug ? ` (${item.slug})` : ''}`;
-      if (!seenSlugs.has(item?.slug)) fail(`${where}: matches no law`);
-      if (listed.has(item?.slug)) fail(`${where}: listed twice`);
-      listed.add(item?.slug);
+      if (!item || typeof item !== 'object' || Array.isArray(item)) {
+        fail(`${where}: expected { slug, en, ja }, not a bare value`);
+        return;
+      }
+      if (!seenSlugs.has(item.slug)) fail(`${where}: matches no law`);
+      else if (listed.has(item.slug)) fail(`${where}: listed twice`);
+      listed.add(item.slug);
       for (const locale of LOCALES) {
-        if (!text(item?.[locale])) fail(`${where}.${locale} note is empty or has stray whitespace`);
+        if (!plain(item[locale])) fail(`${where}.${locale} note must be plain text with no stray whitespace`);
       }
     });
   });
@@ -218,7 +227,7 @@ export function loadCodex({ file = join(ROOT, 'data', 'laws.yaml') } = {}) {
   return {
     tags,
     situations,
-    collections: Array.isArray(collections) ? collections : [],
+    collections,
     laws: numbered,
     problems,
   };

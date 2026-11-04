@@ -1,9 +1,23 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { translations } from '@/translations';
-import { lawBySlug, tags, type Collection, type Locale } from '@/data/laws';
-import { article, articleLabel, hueFor, routeFor } from '@/lib/site';
+import {
+  collections,
+  lawBySlug,
+  tags,
+  type Collection,
+  type Locale,
+} from '@/data/laws';
+import {
+  article,
+  articleLabel,
+  columnRouteFor,
+  columnUrlFor,
+  hueFor,
+  routeFor,
+} from '@/lib/site';
 import Medallion from './Medallion';
+import ShareBar from './ShareBar';
 
 /**
  * A column: a lede, then the laws in reading order. Before each card sits the
@@ -20,6 +34,7 @@ export default function ColumnArticle({
   const t = translations[lang];
   const { title, lede } = column[lang];
   const label = new Map(tags.map((tag) => [tag.key, tag[lang]]));
+  const others = collections.filter((other) => other.key !== column.key);
 
   return (
     <article className="mx-auto max-w-[72rem] px-4 sm:px-6">
@@ -46,7 +61,9 @@ export default function ColumnArticle({
           </p>
         </header>
 
-        <ol className="mt-10">
+        {/* Tailwind strips list styling, and WebKit then drops list semantics,
+            so the role keeps the order announced. */}
+        <ol role="list" className="mt-10">
           {column.laws.map((item, i) => {
             const law = lawBySlug.get(item.slug);
             if (!law) return null;
@@ -66,17 +83,31 @@ export default function ColumnArticle({
                   <p className="leading-relaxed">{item[lang]}</p>
                   <Link
                     href={routeFor(lang, law.slug)}
+                    aria-labelledby={`${item.slug}-title`}
+                    aria-describedby={`${item.slug}-concept`}
                     className="group mt-3 flex items-start gap-3 rounded-md border border-line-soft p-4 hover:bg-surface"
                   >
-                    <Medallion figure={law.figure} hue={hueFor(law.tag)} />
-                    <span className="min-w-0">
-                      <span className="meta block">
+                    {/* On a phone the seal takes a third of the card's width,
+                        so the card keeps it only where there is room. */}
+                    <div className="hidden shrink-0 sm:block">
+                      <Medallion figure={law.figure} hue={hueFor(law.tag)} />
+                    </div>
+                    {/* The title comes first for assistive technology; the
+                        article number and category sit above it on screen. */}
+                    <div className="flex min-w-0 flex-col">
+                      <h2
+                        id={`${item.slug}-title`}
+                        className="mt-0.5 font-bold group-hover:text-accent"
+                      >
+                        {text.title}
+                      </h2>
+                      <span className="meta order-first block">
                         {articleLabel(lang, law.number)} · {label.get(law.tag)}
                       </span>
-                      <span className="mt-0.5 block font-bold group-hover:text-accent">
-                        {text.title}
-                      </span>
-                      <span className="mt-1 block text-[0.9375rem] leading-snug text-ink-2">
+                      <span
+                        id={`${item.slug}-concept`}
+                        className="mt-1 block text-[0.9375rem] leading-snug text-ink-2"
+                      >
                         {text.concept}
                       </span>
                       <span className="mt-2 block text-[0.9375rem] leading-snug">
@@ -87,14 +118,49 @@ export default function ColumnArticle({
                         {lang === 'ja' ? '' : ' '}
                         {text.stance}
                       </span>
-                    </span>
+                    </div>
                   </Link>
                 </div>
               </li>
             );
           })}
         </ol>
+
+        <div className="border-t border-line-soft pt-8">
+          <ShareBar
+            url={columnUrlFor(lang, column.key)}
+            title={title}
+            lang={lang}
+          />
+        </div>
       </div>
+
+      <nav
+        aria-label={t.column.more}
+        className={`mt-2 grid gap-3 border-t border-line-soft py-8 ${others.length > 0 ? 'sm:grid-cols-2' : ''}`}
+      >
+        <Link
+          href={`${routeFor(lang)}#laws`}
+          className="group/nav flex flex-col gap-0.5 rounded-md border border-line-soft p-4 hover:bg-surface"
+        >
+          <span className="flex items-center gap-1.5 font-bold group-hover/nav:text-accent">
+            <ArrowLeft className="h-4 w-4" aria-hidden />
+            {t.law.backToCodex}
+          </span>
+        </Link>
+        {others.map((other) => (
+          <Link
+            key={other.key}
+            href={columnRouteFor(lang, other.key)}
+            className="group/nav flex flex-col gap-0.5 rounded-md border border-line-soft p-4 hover:bg-surface"
+          >
+            <span className="meta">{t.column.kicker}</span>
+            <span className="font-bold group-hover/nav:text-accent">
+              {other[lang].title}
+            </span>
+          </Link>
+        ))}
+      </nav>
     </article>
   );
 }

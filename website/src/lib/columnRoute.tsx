@@ -2,17 +2,16 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import ColumnArticle from '@/components/ColumnArticle';
 import PageShell from '@/components/PageShell';
+import JsonLd from '@/components/JsonLd';
+import { columnBreadcrumbJsonLd, columnJsonLd } from './jsonld';
 import { collections, type Locale } from '@/data/laws';
 import {
   columnAlternatesFor,
   columnRouteFor,
   columnUrlFor,
   OG_LOCALE,
-  SITE_URL,
+  SITE_IMAGE,
 } from './site';
-
-// Setting openGraph replaces the root's, so the site banner is given again.
-const SITE_IMAGE = `${SITE_URL}/banner.jpg`;
 
 type Params = { key: string };
 
@@ -46,13 +45,14 @@ export function makeColumnRoute(locale: Locale) {
         siteName: 'Hammurabi',
         title,
         description: lede,
-        images: [{ url: SITE_IMAGE, width: 1600, height: 643, alt: title }],
+        // Setting openGraph replaces the root's, so the banner is given again.
+        images: [{ ...SITE_IMAGE, alt: title }],
       },
       twitter: {
         card: 'summary_large_image',
         title,
         description: lede,
-        images: [SITE_IMAGE],
+        images: [SITE_IMAGE.url],
       },
     };
   }
@@ -63,6 +63,8 @@ export function makeColumnRoute(locale: Locale) {
     if (!column) notFound();
     return (
       <PageShell lang={locale} counterpart={columnRouteFor(other, key)}>
+        <JsonLd data={columnJsonLd(column, locale)} />
+        <JsonLd data={columnBreadcrumbJsonLd(column, locale)} />
         <ColumnArticle column={column} lang={locale} />
       </PageShell>
     );

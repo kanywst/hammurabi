@@ -13,15 +13,35 @@ export const HTML_LANG: Record<Locale, string> = { en: 'en', ja: 'ja' };
 /** The og:locale for a locale. */
 export const OG_LOCALE: Record<Locale, string> = { en: 'en_US', ja: 'ja_JP' };
 
+/** The banner shared by pages that have no share card of their own. */
+export const SITE_IMAGE = {
+  url: `${SITE_URL}/banner.jpg`,
+  width: 1600,
+  height: 643,
+};
+
+/** The two kinds of page that have their own URL under a locale. */
+type Section = 'laws' | 'columns';
+
 /**
  * Route for a page, relative to the site root. English is unprefixed so the URL
  * the site was first published under keeps working; Japanese lives under /ja.
  * Trailing slashes everywhere, because `trailingSlash: true` is what makes the
  * static export serve directory URLs correctly on GitHub Pages.
  */
-export function routeFor(locale: Locale, slug?: string): string {
+function pathFor(locale: Locale, section?: Section, key?: string): string {
   const prefix = locale === DEFAULT_LOCALE ? '' : `/${locale}`;
-  return slug ? `${prefix}/laws/${slug}/` : `${prefix}/`;
+  return section && key ? `${prefix}/${section}/${key}/` : `${prefix}/`;
+}
+
+/** Route for the codex home, or for a law when given its slug. */
+export function routeFor(locale: Locale, slug?: string): string {
+  return pathFor(locale, slug ? 'laws' : undefined, slug);
+}
+
+/** Route for a column. */
+export function columnRouteFor(locale: Locale, key: string): string {
+  return pathFor(locale, 'columns', key);
 }
 
 /** Absolute URL for a page — used for canonicals, hreflang, sitemap and JSON-LD. */
@@ -29,23 +49,42 @@ export function urlFor(locale: Locale, slug?: string): string {
   return `${SITE_URL}${routeFor(locale, slug)}`;
 }
 
-/**
- * Canonical + hreflang for one page. The canonical is the page's own URL — the
- * two locales are alternates of each other, not duplicates of the English one.
- */
-export function alternatesFor(locale: Locale, slug?: string) {
+/** Absolute URL for a column. */
+export function columnUrlFor(locale: Locale, key: string): string {
+  return `${SITE_URL}${columnRouteFor(locale, key)}`;
+}
+
+/** hreflang map for a page given its absolute-URL builder. */
+export function languagesFor(url: (locale: Locale) => string) {
   return {
-    canonical: urlFor(locale, slug),
-    languages: {
-      en: urlFor('en', slug),
-      ja: urlFor('ja', slug),
-      'x-default': urlFor(DEFAULT_LOCALE, slug),
-    },
+    en: url('en'),
+    ja: url('ja'),
+    'x-default': url(DEFAULT_LOCALE),
+  };
+}
+
+function alternates(locale: Locale, url: (locale: Locale) => string) {
+  return {
+    canonical: url(locale),
+    languages: languagesFor(url),
     // Lets a feed reader find the RSS feed from any page.
     types: {
       'application/rss+xml': `${urlFor(locale)}feed.xml`,
     },
   };
+}
+
+/**
+ * Canonical + hreflang for one page. The canonical is the page's own URL — the
+ * two locales are alternates of each other, not duplicates of the English one.
+ */
+export function alternatesFor(locale: Locale, slug?: string) {
+  return alternates(locale, (l) => urlFor(l, slug));
+}
+
+/** Canonical + hreflang for a column. */
+export function columnAlternatesFor(locale: Locale, key: string) {
+  return alternates(locale, (l) => columnUrlFor(l, key));
 }
 
 /** How an article is numbered in each language, as a statute book would:
@@ -73,30 +112,4 @@ export function hueFor(tag: string): number {
     tags.findIndex((t) => t.key === tag)
   );
   return Math.round(20 + (index * 360) / tags.length) % 360;
-}
-
-/** Route for a column. Same locale rule as routeFor. */
-export function columnRouteFor(locale: Locale, key: string): string {
-  const prefix = locale === DEFAULT_LOCALE ? '' : `/${locale}`;
-  return `${prefix}/columns/${key}/`;
-}
-
-/** Absolute URL for a column. */
-export function columnUrlFor(locale: Locale, key: string): string {
-  return `${SITE_URL}${columnRouteFor(locale, key)}`;
-}
-
-/** Canonical + hreflang for a column, as alternatesFor does for a law. */
-export function columnAlternatesFor(locale: Locale, key: string) {
-  return {
-    canonical: columnUrlFor(locale, key),
-    languages: {
-      en: columnUrlFor('en', key),
-      ja: columnUrlFor('ja', key),
-      'x-default': columnUrlFor(DEFAULT_LOCALE, key),
-    },
-    types: {
-      'application/rss+xml': `${urlFor(locale)}feed.xml`,
-    },
-  };
 }

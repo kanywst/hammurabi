@@ -336,11 +336,11 @@ export const collections: Collection[] = [
     "key": "working-as-a-team",
     "en": {
       "title": "Working as a team",
-      "lede": "A team exists to do what one person cannot. These ten laws are the ways that stops being true as a team grows, in roughly the order a team runs into them, from coordination to ownership, then knowledge, then decisions."
+      "lede": "A team exists to do what one person cannot. As it grows, that stops being true in roughly the same order each time, first in coordination, then ownership, then knowledge, then decisions. These laws follow that order, along with what keeps a team working through it."
     },
     "ja": {
-      "title": "チーム開発編",
-      "lede": "チームは、一人ではできないことをやるために組む。ここに並べた 10 本は、チームが大きくなるにつれてそれが崩れていく道筋を、ぶつかる順に並べたものだ。調整、担当、知識、意思決定の順に出てくる。"
+      "title": "チームで働く",
+      "lede": "チームは、一人ではできないことをやるために組む。人が増えると、それはおおよそ決まった順に崩れていく。調整、担当、知識、意思決定の順だ。ここに並べた法則は、その順番と、それでもチームを動かし続けるための手をたどる。"
     },
     "laws": [
       {
@@ -350,18 +350,18 @@ export const collections: Collection[] = [
       },
       {
         "slug": "dunbars-number",
-        "en": "Brooks' Law is about one late project. As headcount keeps growing, the same coordination cost spreads across the whole team.",
-        "ja": "ブルックスの法則は、遅れた一つのプロジェクトの話だ。人数が増え続けると、同じ調整のコストがチーム全体にかかってくる。"
+        "en": "Brooks' Law is about a project that is already late. The same arithmetic keeps running when nothing is late and the team simply keeps hiring.",
+        "ja": "ブルックスの法則は、すでに遅れたプロジェクトの話だ。遅れていなくても、人を採り続ければ同じ計算が効き続ける。"
       },
       {
         "slug": "ringelmann-effect",
-        "en": "Coordination is the cost everyone can see. The quieter cost is what happens to each person's effort inside a bigger group.",
-        "ja": "調整は、誰にでも見えるコストだ。見えにくいほうのコストは、大きな集団の中で一人ひとりの力がどうなるかに出る。"
+        "en": "Coordination is the cost everyone can see. The quieter cost is in how much each person puts in once the group is large.",
+        "ja": "調整は、誰にでも見えるコストだ。見えにくいコストは、大きな集団の中で一人ひとりが出す力のほうに現れる。"
       },
       {
         "slug": "bystander-effect",
-        "en": "Effort fades when no one can see who did what. Action fades when a problem belongs to everyone.",
-        "ja": "誰の成果か見えないと、力が抜ける。問題が全員のものになると、今度は誰も動かなくなる。"
+        "en": "That is about work everyone is already doing. Work nobody has started yet, like a page sent to a group channel, has the same problem.",
+        "ja": "ここまでは、全員がもう手をつけている仕事の話だ。まだ誰も手をつけていない仕事、たとえばグループチャンネルに飛んだ呼び出しにも、同じことが起きる。"
       },
       {
         "slug": "conways-law",
@@ -370,28 +370,33 @@ export const collections: Collection[] = [
       },
       {
         "slug": "bus-factor",
-        "en": "Splitting the team also splits what people know, and some of it ends up with one person.",
-        "ja": "チームを分けると、知識も分かれる。その一部は、一人だけが持つことになる。"
+        "en": "Naming one owner is the fix the last few laws point to. It has a price, because what keeps that part running collects with its owner.",
+        "ja": "担当を一人決める、というのがここまでの処方だ。ただし代償もある。その部分を動かす知識が、担当者のところに溜まっていく。"
       },
       {
         "slug": "curse-of-knowledge",
-        "en": "Spreading that knowledge is harder than it sounds, because the person who has it cannot see what the others are missing.",
-        "ja": "その知識を広げるのは、見た目より難しい。持っている本人には、相手に何が足りないかが見えないからだ。"
+        "en": "The usual remedy is a handover document, and the person who has to write it is the one who knows too much to write it well.",
+        "ja": "よくある手は引き継ぎ文書だ。だが、それを書くのは、知りすぎていてうまく書けない当の本人だ。"
+      },
+      {
+        "slug": "context-not-control",
+        "en": "When decisions get made without that knowledge, the usual response in a growing team is one more rule or approval step.",
+        "ja": "その知識がないまま判断が下されると、大きくなるチームでの定番の対応は、ルールか承認を一つ足すことだ。"
       },
       {
         "slug": "law-of-triviality",
-        "en": "Uneven knowledge shows up again when the team meets to decide.",
-        "ja": "知識の偏りは、チームが集まって決めるときにもう一度出てくる。"
+        "en": "Some decisions still go to a meeting, and uneven knowledge shows up there too.",
+        "ja": "それでも、会議で決めることは残る。そこにも知識の偏りが出る。"
       },
       {
         "slug": "narratives-not-slides",
-        "en": "One way to bring the discussion back to what matters is to change what the team reads before it meets.",
-        "ja": "議論を大事なところに戻す手の一つは、集まる前に読むものを変えることだ。"
+        "en": "One way to bring the discussion back to what matters is to change what the team reads when the meeting starts.",
+        "ja": "議論を大事なところに戻す手の一つは、会議の冒頭で読むものを変えることだ。"
       },
       {
         "slug": "disagree-and-commit",
-        "en": "Even a well-argued proposal will not convince everyone. The last law is about moving on anyway.",
-        "ja": "よく書けた提案でも、全員は納得しない。最後の法則は、それでも前に進むための話だ。"
+        "en": "Even a well-argued proposal leaves someone unconvinced, and the team still has to act as one.",
+        "ja": "よく書けた提案でも、納得しない人は残る。それでもチームは、一つになって動かなければならない。"
       }
     ]
   }

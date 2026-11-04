@@ -1,5 +1,12 @@
-import { laws, tags, type Law, type Locale } from '@/data/laws';
-import { article, REPO_URL, SITE_URL, urlFor } from './site';
+import {
+  laws,
+  lawBySlug,
+  tags,
+  type Collection,
+  type Law,
+  type Locale,
+} from '@/data/laws';
+import { article, columnUrlFor, REPO_URL, SITE_URL, urlFor } from './site';
 import { translations } from '@/translations';
 
 /**
@@ -60,8 +67,8 @@ export function lawJsonLd(law: Law, locale: Locale) {
   };
 }
 
-/** Codex > article, so a search result can show where the page sits. */
-export function lawBreadcrumbJsonLd(law: Law, locale: Locale) {
+/** Codex > page, so a search result can show where the page sits. */
+function breadcrumbJsonLd(locale: Locale, name: string, url: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -72,12 +79,39 @@ export function lawBreadcrumbJsonLd(law: Law, locale: Locale) {
         name: 'Hammurabi',
         item: urlFor(locale),
       },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: law[locale].title,
-        item: urlFor(locale, law.slug),
-      },
+      { '@type': 'ListItem', position: 2, name, item: url },
     ],
+  };
+}
+
+export function lawBreadcrumbJsonLd(law: Law, locale: Locale) {
+  return breadcrumbJsonLd(locale, law[locale].title, urlFor(locale, law.slug));
+}
+
+export function columnBreadcrumbJsonLd(column: Collection, locale: Locale) {
+  return breadcrumbJsonLd(
+    locale,
+    column[locale].title,
+    columnUrlFor(locale, column.key)
+  );
+}
+
+/** A column as an ordered list of the laws it reads through. */
+export function columnJsonLd(column: Collection, locale: Locale) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': columnUrlFor(locale, column.key),
+    name: column[locale].title,
+    description: column[locale].lede,
+    url: columnUrlFor(locale, column.key),
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    numberOfItems: column.laws.length,
+    itemListElement: column.laws.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: lawBySlug.get(item.slug)?.[locale].title,
+      url: urlFor(locale, item.slug),
+    })),
   };
 }
