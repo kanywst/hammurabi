@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.0](https://github.com/kanywst/hammurabi/compare/v2.5.0...v2.6.0) (2026-11-05)
+
+
+### Added to the codex
+
+* **site:** add columns, a guided read through several laws ([#175](https://github.com/kanywst/hammurabi/issues/175)) ([bfbec4e](https://github.com/kanywst/hammurabi/commit/bfbec4ecfec8694f8b4c12a65d74d5c297198a9e))
+
 ## [2.5.0](https://github.com/kanywst/hammurabi/compare/v2.4.0...v2.5.0) (2026-11-03)
 
 
