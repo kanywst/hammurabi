@@ -205,14 +205,14 @@ collections:
         en: It usually starts when the work falls behind and someone asks for more people.
         ja: たいていは、作業が遅れて人を増やそうという話から始まる。
       - slug: dunbars-number
-        en: Brooks' Law is about a project that is already late. The same arithmetic can keep running when nothing is late and the team simply keeps hiring.
-        ja: ブルックスの法則は、すでに遅れたプロジェクトの話だ。遅れていなくても、人を採り続ければ同じ計算が効いてくることがある。
+        en: Brooks' Law is about a project that is already late. A related cost can keep running when nothing is late and the team simply keeps hiring.
+        ja: ブルックスの法則は、すでに遅れたプロジェクトの話だ。遅れていなくても、人を採り続ければ、似たコストが効いてくることがある。
       - slug: ringelmann-effect
         en: Coordination is the cost everyone can see. The quieter cost is in how much each person puts in once the group is large.
         ja: 調整は、誰にでも見えるコストだ。見えにくいコストは、大きな集団の中で一人ひとりが出す力のほうに現れる。
       - slug: bystander-effect
-        en: That is about work everyone is already doing. Work nobody has started yet, like a page sent to a group channel, has the same problem.
-        ja: ここまでは、全員がもう手をつけている仕事の話だ。まだ誰も手をつけていない仕事、たとえばグループチャンネルに飛んだ呼び出しにも、同じことが起きる。
+        en: That is about work everyone is already doing. Work nobody has started yet, like a page sent to a group channel, tends to run into the same problem.
+        ja: ここまでは、全員がもう手をつけている仕事の話だ。まだ誰も手をつけていない仕事、たとえばグループチャンネルに飛んだ呼び出しにも、同じことが起きやすい。
       - slug: conways-law
         en: The usual fix is to split the team and give each part an owner. How it is split does not stay on the org chart.
         ja: よくある手は、チームを分けてそれぞれに担当を置くことだ。その分け方は、組織図の上だけでは終わらない。

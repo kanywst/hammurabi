@@ -350,8 +350,8 @@ export const collections: Collection[] = [
       },
       {
         "slug": "dunbars-number",
-        "en": "Brooks' Law is about a project that is already late. The same arithmetic can keep running when nothing is late and the team simply keeps hiring.",
-        "ja": "ブルックスの法則は、すでに遅れたプロジェクトの話だ。遅れていなくても、人を採り続ければ同じ計算が効いてくることがある。"
+        "en": "Brooks' Law is about a project that is already late. A related cost can keep running when nothing is late and the team simply keeps hiring.",
+        "ja": "ブルックスの法則は、すでに遅れたプロジェクトの話だ。遅れていなくても、人を採り続ければ、似たコストが効いてくることがある。"
       },
       {
         "slug": "ringelmann-effect",
@@ -360,8 +360,8 @@ export const collections: Collection[] = [
       },
       {
         "slug": "bystander-effect",
-        "en": "That is about work everyone is already doing. Work nobody has started yet, like a page sent to a group channel, has the same problem.",
-        "ja": "ここまでは、全員がもう手をつけている仕事の話だ。まだ誰も手をつけていない仕事、たとえばグループチャンネルに飛んだ呼び出しにも、同じことが起きる。"
+        "en": "That is about work everyone is already doing. Work nobody has started yet, like a page sent to a group channel, tends to run into the same problem.",
+        "ja": "ここまでは、全員がもう手をつけている仕事の話だ。まだ誰も手をつけていない仕事、たとえばグループチャンネルに飛んだ呼び出しにも、同じことが起きやすい。"
       },
       {
         "slug": "conways-law",
