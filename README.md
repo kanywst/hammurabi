@@ -69,6 +69,8 @@ The `§` number is a stable display label, assigned in file order. The permanent
 **Columns**
 
 - **[Working as a team](https://kanywst.github.io/hammurabi/columns/working-as-a-team/):** [Brooks' Law](#brooks-law) → [Dunbar's Number](#dunbars-number) → [Ringelmann Effect](#ringelmann-effect) → [Bystander Effect](#bystander-effect) → [Conway's Law](#conways-law) → [Bus Factor](#bus-factor) → [Curse of Knowledge](#curse-of-knowledge) → [Context, Not Control](#context-not-control) → [Law of Triviality](#law-of-triviality) → [Narratives, Not Slides](#narratives-not-slides) → [Disagree and Commit](#disagree-and-commit)
+- **[When AI writes the code](https://kanywst.github.io/hammurabi/columns/when-ai-writes-the-code/):** [Jevons Paradox](#jevons-paradox) → [Theory of Constraints](#theory-of-constraints) → [Small Changes](#small-changes) → [Brandolini's Law](#brandolinis-law) → [Automation Bias](#automation-bias) → [Test Oracle Problem](#test-oracle-problem) → [Kernighan's Law](#kernighans-law) → [Programming as Theory Building](#programming-as-theory-building) → [Ironies of Automation](#ironies-of-automation) → [The Lethal Trifecta](#the-lethal-trifecta)
+- **[Deciding what to build](https://kanywst.github.io/hammurabi/columns/deciding-what-to-build/):** [XY Problem](#xy-problem) → [Wicked Problems](#wicked-problems) → [Working Backwards](#working-backwards) → [Most Ideas Fail](#most-ideas-fail) → [Cost of Delay](#cost-of-delay) → [The Last Responsible Moment](#the-last-responsible-moment) → [Pre-Mortem](#pre-mortem) → [Disagree and Commit](#disagree-and-commit) → [McNamara Fallacy](#mcnamara-fallacy)
 
 **All laws**
 
