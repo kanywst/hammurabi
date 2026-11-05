@@ -376,7 +376,7 @@ export const collections: Collection[] = [
       {
         "slug": "curse-of-knowledge",
         "en": "The usual remedy is a handover document, and the person who has to write it is often the one least able to see what a newcomer lacks.",
-        "ja": "よくある手は引き継ぎ文書だ。だが、それを書くのは、新しい人に何が足りないかにいちばん気づきにくい当の本人だ。"
+        "ja": "よくある手は引き継ぎ文書だ。だが、それを書くのは、新しい人に何が足りないかにいちばん気づきにくい当の本人であることが多い。"
       },
       {
         "slug": "context-not-control",
