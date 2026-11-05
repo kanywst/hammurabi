@@ -279,76 +279,76 @@ collections:
   - key: when-ai-writes-the-code
     en:
       title: When AI writes the code
-      lede: AI has made writing code cheap. This column reads through what that can do to a team, from more code arriving, to checking it, to understanding it, and then what keeps it trustworthy.
+      lede: AI has made writing code cheaper. This column reads through what that can do to a team, more code arriving, more than can be checked, less of it understood, and finally what handing off more of the work costs.
     ja:
       title: AI がコードを書くとき
-      lede: AI でコードを書く手間は安くなった。このコラムは、それがチームに何を起こしうるかを順に読む。コードが増え、確かめる手間が増え、理解が追いつかなくなる。そのうえで、何がコードを信頼できるものに保つかをたどる。
+      lede: AI のおかげで、コードを書くのは安くなった。このコラムは、それがチームに何を起こしうるかを順に読む。コードが増え、確かめきれなくなり、理解が追いつかなくなりうる。最後に、任せる範囲を広げたときの代償をたどる。
     laws:
       - slug: jevons-paradox
-        en: When code gets cheaper to write, the first thing to expect is more of it, not less work.
-        ja: コードが安く書けるようになったら、まず見込むべきは仕事が減ることではなく、コードが増えることだ。
+        en: The first thing AI changes is the price of a line of code. What a lower price does to the amount written is an old question.
+        ja: AI がまず変えるのは、コード一行の値段だ。値段が下がったとき書かれる量がどうなるかは、古くからある問いだ。
       - slug: theory-of-constraints
         en: More code only helps if the rest of the pipeline keeps up. If it does not, the work piles up at the next tightest step, such as review.
         ja: コードが増えても、後ろの工程が追いつかなければ届く量は増えない。仕事は次に詰まる工程、たとえばレビューに溜まる。
       - slug: small-changes
-        en: If review is where the work piles up, the size of what lands there decides how well it is read.
-        ja: レビューに仕事が溜まるなら、そこに届く変更の大きさで、どれだけ丁寧に読まれるかが変わる。
+        en: Theory of Constraints says to get the most out of the bottleneck before anything else. For review, the cheapest lever is what the author sends to it.
+        ja: 制約理論は、まずボトルネックを使い切れと言う。レビューの場合、いちばん安い手は書く側が何を送るかだ。
       - slug: brandolinis-law
-        en: Even small changes have to be checked, and checking does not get cheaper when generating does.
-        ja: 変更が小さくても、確かめる手間は残る。生成が安くなっても、確かめるほうは安くならない。
+        en: Splitting a change makes each piece readable, not fewer. Each one is still a claim that the code works, and that claim can now cost far less to make than to check.
+        ja: 変更を分ければ一つずつは読みやすくなるが、数は減らない。どれも、このコードは動くという主張だ。その主張は、確かめるよりずっと安く出せるようになりうる。
       - slug: automation-bias
-        en: The pressure from the last two laws pushes reviewers in one direction, toward trusting the tool.
-        ja: ここまでの二つの圧力は、レビューする人を同じ方向へ押す。ツールを信じる方向だ。
+        en: A reviewer facing a queue that never empties, of changes that cost more to check than to make, has a shortcut close at hand, which is to let the tool's answer stand.
+        ja: 減らないキューと、作るより確かめるほうが高くつく変更を前にしたレビュアーには、手近な近道がある。ツールの答えをそのまま通すことだ。
       - slug: test-oracle-problem
-        en: A natural fix is to have the tool write the tests as well. That only moves the question to what the tests were checked against.
-        ja: 自然な手は、テストもツールに書かせることだ。だがそれでは、テスト自身が何と照合されたのかという問いに移るだけだ。
+        en: A natural fix is to let tests do the checking, and have the tool write those too, from the same code it just produced.
+        ja: 自然な手は、確認をテストに任せ、そのテストもツールに書かせることだ。元になるのは、ツールがいま生成したそのコードだ。
       - slug: kernighans-law
         en: Whatever slips through still has to be debugged, by someone who did not write the code and may not fully follow it.
-        ja: それでもすり抜けたものは、誰かがデバッグすることになる。自分で書いておらず、すべては追い切れていないコードとしてだ。
+        ja: それでもすり抜けたものは、誰かがデバッグすることになる。その人はそのコードを書いておらず、隅々まで追えているとも限らない。
       - slug: programming-as-theory-building
         en: Debugging is hardest when nobody holds the reasoning behind the code, and generated code can start out that way.
-        ja: コードの背後にある理由を誰も持っていないと、デバッグはいちばん難しくなる。生成されたコードは、最初からそうなりうる。
+        ja: コードがなぜそうなっているかを誰も言えないとき、デバッグはいちばん難しくなる。生成されたコードは、最初からそうなりうる。
       - slug: ironies-of-automation
-        en: The fix is to keep people close to the code, which gets harder the more of it they hand off.
-        ja: 対策は人をコードの近くに置き続けることだが、任せる量が増えるほどそれは難しくなる。
+        en: The last law's remedy is a person who can say why the code is shaped the way it is. That person is built by doing the work, and doing the work is the part being handed off.
+        ja: 前の法則の処方は、コードがなぜこの形なのかを言える人を置くことだ。そういう人は手を動かすことで育つ。そして手を動かす部分こそ、いま任せている部分だ。
       - slug: lethal-trifecta
-        en: Handing off more also means giving agents more access, and some combinations of access are dangerous even when the code they write is fine.
-        ja: 任せる範囲が広がれば、エージェントに渡す権限も増える。権限の組み合わせによっては、書くコードが正しくても危ない。
+        en: Handing off more usually comes with giving agents more access, and some combinations of access are dangerous even when the code they write is fine.
+        ja: 任せる範囲が広がると、たいていエージェントに渡す権限も増える。権限の組み合わせによっては、書くコードが正しくても危ない。
   - key: deciding-what-to-build
     en:
       title: Deciding what to build
       lede: Deciding what to build can go wrong in several places, in how the problem is framed, which ideas look good, the order of the work, when to commit, and how the result is judged. This column reads through them in that order.
     ja:
       title: 何を作るか決める
-      lede: 何を作るかの決定は、いくつもの場所でつまずく。問題の捉え方、案の良し悪し、仕事の順番、確定する時期、結果の見方だ。このコラムはそれをこの順に読む。
+      lede: 何を作るかを決めるときは、いくつもの場所でつまずく。問題の捉え方、案の良し悪し、仕事の順番、確定する時期、結果の見方だ。このコラムはそれをこの順に読む。
     laws:
       - slug: xy-problem
         en: It often starts with a request that is really a solution in disguise.
-        ja: たいていは、解決策の形をした依頼から始まる。
+        ja: 始まりは、解決策の形をした依頼であることが多い。
       - slug: wicked-problems
         en: Sometimes asking for the real goal does not settle it, because the goal itself shifts as the work goes on.
         ja: 本当の目的を聞いても決まらないこともある。作業が進むにつれて、目的そのものが動くからだ。
       - slug: working-backwards
-        en: One way to pin the problem down far enough to start is to write first what the customer would read.
-        ja: 着手できる程度に問題を捉える手の一つは、顧客が読む文章から先に書くことだ。
+        en: If the problem statement can only be a draft, the cheapest draft to throw away is a page the customer would read.
+        ja: 問題の書き方が下書きにしかならないなら、いちばん安く捨てられる下書きは、顧客が読む一枚の文章だ。
       - slug: most-ideas-fail
-        en: A clear announcement still describes an idea, and an idea is a guess until it meets users.
-        ja: よく書けた発表文でも、書いてあるのはアイデアだ。アイデアは、使う人に触れるまでは推測にすぎない。
+        en: A press release that survives the team's review has convinced the team. That is a different test from the one users run.
+        ja: チームのレビューを通った発表文は、チームを納得させた。それは、使う人が下す判定とは別の試験だ。
       - slug: cost-of-delay
-        en: If most ideas will not work, the order in which you try them matters, and waiting has a price too.
-        ja: 大半が外れるなら、試す順番が効いてくる。待たせることにも値段がある。
+        en: If most ideas fail, a team has to try many of them with the same people, so which goes first becomes a decision of its own.
+        ja: 大半のアイデアが外れるなら、同じ人数で数多く試すしかない。だから、どれを先にやるかが一つの決定になる。
       - slug: last-responsible-moment
         en: Ordering the work is one decision. When to commit to each design choice inside it is another.
         ja: 仕事の順番を決めるのと、その中の設計判断をいつ確定するかは、別の決定だ。
       - slug: pre-mortem
-        en: Before the team commits, asking how the plan already failed brings doubts out while changing it is still cheap.
-        ja: チームが確定する前に、計画がどう失敗したかを聞いておくと、直すのがまだ安いうちに疑問が出てくる。
+        en: Deciding before an option expires is half of it. The other half is hearing, before the work is under way, what the team privately doubts about the plan.
+        ja: 選択肢が消える前に決めるのは半分だ。残り半分は、仕事が動き出す前に、チームが計画について内心で疑っていることを聞き出すことだ。
       - slug: disagree-and-commit
-        en: Once the doubts are on the table, waiting for everyone to agree is a decision of its own.
-        ja: 疑問が出そろったあとで、全員の同意を待つのも一つの決定だ。
+        en: A pre-mortem brings doubts out, and not every one gets resolved. When the work has to start, some people will still think the plan is wrong.
+        ja: プレモーテムで疑問は出てくるが、すべてが解消するわけではない。仕事を始めるときにも、計画は間違っていると思う人は残る。
       - slug: mcnamara-fallacy
-        en: After shipping, the result will be judged, and what gets counted decides what the team learns.
-        ja: 出したあとは結果が評価される。何を数えるかで、チームが何を学ぶかが決まる。
+        en: Most Ideas Fail asked for a metric before building. Once the result is in, that metric is also the easiest place to stop looking.
+        ja: 「大半のアイデアは失敗する」は、作る前に指標を決めろと言った。結果が出ると、その指標の外を見なくなりやすい。
 
 laws:
   - slug: type-1-vs-type-2-decisions
