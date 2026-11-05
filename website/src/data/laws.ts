@@ -5694,9 +5694,9 @@ export const laws: Law[] = [
     ],
     "featured": false,
     "figure": {
-      "kind": "none",
-      "name": null,
-      "monogram": "BL",
+      "kind": "person",
+      "name": "Alberto Brandolini",
+      "monogram": "AB",
       "image": null,
       "logo": null,
       "wide": false,
@@ -5706,27 +5706,27 @@ export const laws: Law[] = [
       "title": "Brandolini's Law",
       "concept": "Refuting a false claim takes far more effort than making it, so a stream of cheap claims can swamp the people who have to check them.",
       "stance": "Make a claim carry its own evidence before you spend yours on it",
-      "mechanism": "A claim can be stated in one line; showing it is wrong means reading the context, reproducing the case and writing up why it fails. The person making the claim pays the first cost and the checker pays the second, and nothing stops the first from being much cheaper. curl's security team has seven members; in 2025 each incoming report drew three or four of them, for 30 minutes and sometimes up to three hours each, while about 20% of submissions were AI slop and about 5% turned out to be genuine vulnerabilities. When producing a claim gets cheaper, as generated text has made it, the gap widens.",
+      "mechanism": "A claim can be stated in one line; showing it is wrong means reading the context, reproducing the case and writing up why it fails. The person making the claim pays the first cost and the checker pays the second, and nothing stops the first from being much cheaper. curl's security team has seven members; in 2025 each incoming report drew three or four of them, by Stenberg's estimate for 30 minutes and sometimes up to three hours each; by early July about 20% of that year's submissions were AI slop and about 5% had turned out to be genuine vulnerabilities. When producing a claim gets cheaper, as generated text has made it, the gap widens.",
       "counter": {
         "name": "Cunningham's Law",
         "note": "in front of people who know the subject, a wrong claim often draws its correction quickly and for free, so posting your best guess and letting others fix it can beat holding back until every claim is checked"
       },
-      "guideline": "Where claims arrive faster than you can check them (bug reports, review comments, security disclosures), ask the claimant for the evidence up front: steps to reproduce, a failing test, the log. Timebox the first look, and remove any reward paid per claim rather than per confirmed result. Do not use this to wave away a short report from someone with nothing to gain; a terse report that reproduces deserves full attention.",
+      "guideline": "Where claims arrive faster than you can check them (bug reports, review comments, security disclosures), ask the claimant for the evidence up front: steps to reproduce, a failing test, the log. Timebox the first look, and watch what a reward attracts: even one paid only for confirmed results can draw more claims than you can check, and then it is better dropped. Do not use this to wave away a short report from someone with nothing to gain; a terse report that reproduces deserves full attention.",
       "example": "curl ended its bug bounty, officially on January 31, 2026. Daniel Stenberg wrote that in previous years somewhere north of 15% of submissions ended up as confirmed vulnerabilities, but \"Starting 2025, the confirmed-rate plummeted to below 5%.\" He named AI slop among the reasons and said the change was \"In an attempt to remove the incentives for submitting made up lies.\"",
-      "source": "Alberto Brandolini, tweet (Twitter, 11 January 2013) — \"The bullshit asimmetry: the amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it.\" (spelling as in the original); Daniel Stenberg, \"Death by a thousand slops\" (daniel.haxx.se, 2025) — the curl security team's numbers."
+      "source": "Alberto Brandolini, tweet (Twitter, 11 January 2013) — \"The bullshit asimmetry: the amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it.\" (spelling as in the tweet itself; Wikipedia's citation retitles it); Daniel Stenberg, \"Death by a thousand slops\" (daniel.haxx.se, 2025) — the curl security team's numbers."
     },
     "ja": {
       "title": "ブランドリーニの法則",
       "concept": "誤った主張を論破するには、それを言うよりはるかに手間がかかる。だから安い主張が大量に来ると、確かめる側がつぶれる。",
       "stance": "反論に手間をかける前に、まず主張に証拠を出させる",
-      "mechanism": "主張は一行で言える。それが誤りだと示すには、文脈を読み、事例を再現し、なぜ成り立たないかを書かなければならない。主張する側が払うのは前者で、確かめる側が払うのは後者だ。前者がずっと安くて済むのを止める仕組みはない。curl のセキュリティチームは7人で、2025年は報告が来るたびに3〜4人が、それぞれ30分、ときには3時間ほどかけていた。その一方で、送られてきたものの約20%は AI が生成したゴミで、本物の脆弱性だったのは約5%だった。生成されたテキストのせいで主張を作るのが安くなるほど、この差は広がる。",
+      "mechanism": "主張は一行で言える。それが誤りだと示すには、文脈を読み、事例を再現し、なぜ成り立たないかを書かなければならない。主張する側が払うのは前者で、確かめる側が払うのは後者だ。前者がずっと安くて済むのを止める仕組みはない。curl のセキュリティチームは7人で、2025年は報告が来るたびに3〜4人が、Stenberg の見積りでそれぞれ30分、ときには3時間ほどかけていた。7月初めの時点で、その年に送られてきたものの約20%は AI が生成したゴミで、本物の脆弱性だったのは約5%だった。生成されたテキストのせいで主張を作るのが安くなるほど、この差は広がる。",
       "counter": {
         "name": "カニンガムの法則",
         "note": "詳しい人が見ている場では、間違った主張にはすぐに無料で訂正がつくことが多い。主張を一つ残らず確かめてから出すより、自分の推測を出して直してもらうほうが早い場合もある"
       },
-      "guideline": "確かめる速さを超えて主張が届く場所（バグ報告、レビューコメント、脆弱性の報告）では、最初に証拠を求める。再現手順、失敗するテスト、ログを出してもらう。最初の確認には時間の上限を決め、確認済みの結果ではなく主張の件数に対して払う報酬はなくす。ただし、得るもののない人からの短い報告を切り捨てる口実にはしない。短くても再現する報告は、きちんと見る。",
+      "guideline": "確かめる速さを超えて主張が届く場所（バグ報告、レビューコメント、脆弱性の報告）では、最初に証拠を求める。再現手順、失敗するテスト、ログを出してもらう。最初の確認には時間の上限を決める。報酬が何を呼び込むかも見ておく。確認済みの結果にだけ払う報酬でも、確かめきれないほどの主張を集めるなら、やめたほうがいい。ただし、得るもののない人からの短い報告を切り捨てる口実にはしない。短くても再現する報告は、きちんと見る。",
       "example": "curl はバグバウンティを終え、正式な終了日は2026年1月31日だった。Daniel Stenberg によれば、以前は報告の15%強が確認済みの脆弱性になっていたが、2025年からその割合は5%未満に落ちた。理由の一つに AI が生成したゴミを挙げ、でっち上げの嘘を送る動機をなくすための措置だと書いている。",
-      "source": "Alberto Brandolini のツイート (Twitter, 2013年1月11日)。\"The bullshit asimmetry: the amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it.\"（綴りは原文のまま）。curl のセキュリティチームの数字は Daniel Stenberg「Death by a thousand slops」(daniel.haxx.se, 2025) による。"
+      "source": "Alberto Brandolini のツイート (Twitter, 2013年1月11日)。\"The bullshit asimmetry: the amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it.\"（綴りはツイートの原文のまま。Wikipedia の出典表記は題を言い換えている）。curl のセキュリティチームの数字は Daniel Stenberg「Death by a thousand slops」(daniel.haxx.se, 2025) による。"
     }
   },
   {
@@ -5756,7 +5756,7 @@ export const laws: Law[] = [
     "en": {
       "title": "Automation Bias",
       "concept": "People working with an automated aid tend to let it stand in for their own checking: they miss what it fails to flag and follow it when it is wrong.",
-      "stance": "Check the tool's answer the way you would check a colleague's",
+      "stance": "Answer for the outcome, not for having followed the tool",
       "mechanism": "Checking costs attention, and an aid that is usually right makes each check feel wasted, so its output quietly replaces the search a person would otherwise do. Parasuraman and Manzey's review describes two kinds of error: \"Automation bias results in making both omission and commission errors when decision aids are imperfect.\" It is not a beginner's mistake: \"Automation bias occurs in both naive and expert participants, cannot be prevented by training or instructions, and can affect decision making in individuals as well as in teams.\" In a user study by Perry et al., participants with an AI code assistant wrote significantly less secure code than those without one, and were more likely to believe their code was secure.",
       "counter": {
         "name": "Algorithm Aversion",
@@ -5769,8 +5769,8 @@ export const laws: Law[] = [
     "ja": {
       "title": "自動化バイアス",
       "concept": "自動化された補助を使う人は、自分で確かめる代わりにそれを頼りがちだ。補助が指摘しないものを見落とし、補助が間違っていてもそれに従う。",
-      "stance": "ツールの答えも、同僚の答えと同じように確かめる",
-      "mechanism": "確かめるには注意がいる。たいてい正しい補助を使っていると、一回ごとの確認が無駄に思えてきて、本来なら自分でする探索がいつのまにか補助の出力に置き換わる。Parasuraman と Manzey のレビューは誤りを二種類に分け、補助が不完全なとき、自動化バイアスは見落とし（omission）と誤った指示への追従（commission）の両方を生むとしている。初心者だけの問題でもない。初心者にも熟練者にも起き、訓練や指示では防げず、個人の判断にもチームの判断にも影響するという。Perry らのユーザ実験では、AI のコードアシスタントを使った参加者は使わなかった参加者よりはっきり安全性の低いコードを書き、しかも自分のコードは安全だと思いやすかった。",
+      "stance": "ツールに従ったかではなく、結果に責任を持つ",
+      "mechanism": "確かめるには注意がいる。たいてい正しい補助を使っていると、一回ごとの確認が無駄に思えてきて、本来なら自分でする探索がいつのまにか補助の出力に置き換わる。Parasuraman と Manzey のレビューは誤りを二種類に分け、補助が不完全なとき、自動化バイアスは見落とし（omission）と誤った指示への追従（commission）の両方を生むとしている。初心者だけの問題でもない。初心者にも熟練者にも起き、訓練や指示では防げず、個人の判断にもチームの判断にも影響するという。Perry らのユーザ実験では、AI のコードアシスタントを使った参加者は使わなかった参加者より有意に安全性の低いコードを書き、しかも自分のコードは安全だと思いやすかった。",
       "counter": {
         "name": "アルゴリズム嫌悪",
         "note": "逆向きの誤りもよく起きる。Dietvorst、Simmons、Massey によれば、人は同じ間違いを見たとき、人間の予測者よりアルゴリズムのほうに早く信頼を失う。そのため、まだ自分より正確な補助を手放してしまう"
@@ -5809,8 +5809,8 @@ export const laws: Law[] = [
       "stance": "Send a change small enough to read in one sitting",
       "mechanism": "A reviewer's attention runs out. In SmartBear's study of 2,500 reviews at Cisco, reviews of under 200 lines found defects at a relatively high rate and the results trailed off considerably above that; its authors concluded that \"Anything larger overwhelms reviewers and defects are not uncovered.\" Google's guide adds the scheduling side: \"It’s easier for a reviewer to find five minutes several times to review small CLs than to set aside a 30 minute block to review one large CL.\" At Google the median change modifies 24 lines, and authors wait a median of under an hour for initial feedback on small changes and about 5 hours on very large ones.",
       "counter": {
-        "name": "See the Whole Design",
-        "note": "split a change too finely and each piece looks harmless while nobody judges how they fit together; Google's own guide asks that a change not be \"so small that its implications are difficult to understand\""
+        "name": "Per-Change Overhead",
+        "note": "every change pays a fixed cost whatever its size (a review round trip, a CI run, the reviewer switching context), so splitting work multiplies those costs and the waits between them; when reviews are slow, a chain of tiny dependent changes can take far longer to land than one coherent change"
       },
       "guideline": "Make each change one self-contained thing: about 100 lines is usually reasonable and 1000 lines usually too large, though the reviewer has the final say. Send refactoring separately from behaviour changes, and stack dependent changes instead of piling them into one. Do not split a purely mechanical change (a rename, generated code) just to hit a number, and do not cut a design so finely that the reviewer can no longer see what it does.",
       "source": "Google, \"Small CLs\", *Google Engineering Practices Documentation* — \"100 lines is usually a reasonable size for a CL, and 1000 lines is usually too large, but it’s up to the judgment of your reviewer.\"; SmartBear Software, \"Code Review at Cisco Systems\", in *Best Kept Secrets of Peer Code Review* (Smart Bear, 2006) — a vendor's case study of 2,500 reviews, which recommends that \"LOC under review should be under 200, not to exceed 400.\"; Caitlin Sadowski, Emma Söderberg, Luke Church, Michal Sipko & Alberto Bacchelli, *Modern Code Review: A Case Study at Google* (ICSE-SEIP, 2018) — the change size and review latency figures."
@@ -5819,13 +5819,13 @@ export const laws: Law[] = [
       "title": "小さな変更",
       "concept": "レビューに出す変更が大きいほど、一行ずつは丁寧に読まれなくなる。欠陥はすり抜け、最初に見てもらうまでの待ちも長くなる。",
       "stance": "一度に読み切れる大きさで変更を出す",
-      "mechanism": "レビュアーの注意には限りがある。SmartBear が Cisco で 2,500 件のレビューを調べた研究では、200 行未満のレビューは比較的高い率で欠陥を見つけ、それを超えると結果は大きく落ちた。著者たちは、それより大きいとレビュアーは手に負えなくなり、欠陥は見つからないと結論している。Google のガイドは時間の取り方の面を挙げる。大きな変更一つのために30分のまとまった時間を空けるより、小さな変更のために5分を何度か見つけるほうがレビュアーには楽だ。Google では変更の行数の中央値は24行で、最初のフィードバックまでの待ち時間の中央値は、小さな変更で1時間未満、とても大きな変更で約5時間だった。",
+      "mechanism": "レビュアーの注意には限りがある。SmartBear が Cisco で 2,500件のレビューを調べた研究では、200行未満のレビューは比較的高い率で欠陥を見つけ、それを超えると結果は大きく落ちた。著者たちは、それより大きいとレビュアーは手に負えなくなり、欠陥は見つからないと結論している。Google のガイドは時間の取り方の面を挙げる。大きな変更一つのために30分のまとまった時間を空けるより、小さな変更のために5分を何度か見つけるほうがレビュアーには楽だ。Google では変更の行数の中央値は24行で、最初のフィードバックまでの待ち時間の中央値は、小さな変更で1時間未満、とても大きな変更で約5時間だった。",
       "counter": {
-        "name": "設計を通して見る",
-        "note": "細かく割りすぎると、どの断片も無害に見えるのに、それらがどう組み合わさるかを誰も判断しなくなる。Google のガイド自身も、影響が読み取れないほど小さくはしないよう求めている"
+        "name": "変更ごとの固定費",
+        "note": "変更には大きさに関係なくかかる固定費がある（レビューの往復、CI の実行、レビュアーの頭の切り替え）。細かく割るほどその費用と待ちが増える。レビューが遅い場では、依存し合う小さな変更を順に通すほうが、まとまった一つの変更より取り込みまでずっと時間がかかることがある"
       },
       "guideline": "変更は一つで完結するものにする。100行くらいならたいてい妥当で、1000行はたいてい大きすぎる。ただし最後はレビュアーが決める。リファクタリングは振る舞いの変更と別に出し、依存し合う変更は一つにまとめず、順番に積んで出す。名前の変更や生成コードのような機械的な変更を、行数を合わせるためだけに割ることはしない。レビュアーが全体として何をするのか見えなくなるほど、設計を細かく切り分けることもしない。",
-      "source": "Google「Small CLs」『Google Engineering Practices Documentation』。\"100 lines is usually a reasonable size for a CL, and 1000 lines is usually too large, but it’s up to the judgment of your reviewer.\" SmartBear Software「Code Review at Cisco Systems」、『Best Kept Secrets of Peer Code Review』(Smart Bear, 2006) 所収。2,500 件のレビューを扱ったベンダー自身の事例研究で、\"LOC under review should be under 200, not to exceed 400.\" と勧めている。変更の大きさとレビュー待ちの数字は Caitlin Sadowski, Emma Söderberg, Luke Church, Michal Sipko & Alberto Bacchelli『Modern Code Review: A Case Study at Google』(ICSE-SEIP, 2018) による。"
+      "source": "Google「Small CLs」『Google Engineering Practices Documentation』。\"100 lines is usually a reasonable size for a CL, and 1000 lines is usually too large, but it’s up to the judgment of your reviewer.\" SmartBear Software「Code Review at Cisco Systems」、『Best Kept Secrets of Peer Code Review』(Smart Bear, 2006) 所収。2,500件のレビューを扱ったベンダー自身の事例研究で、\"LOC under review should be under 200, not to exceed 400.\" と勧めている。変更の大きさとレビュー待ちの数字は Caitlin Sadowski, Emma Söderberg, Luke Church, Michal Sipko & Alberto Bacchelli『Modern Code Review: A Case Study at Google』(ICSE-SEIP, 2018) による。"
     }
   },
   {
@@ -5859,7 +5859,7 @@ export const laws: Law[] = [
         "name": "Fake the Rational Design",
         "note": "parnas and clements argue for writing the design down as if it had been derived rationally and keeping that record current with every change, so new programmers do not have to depend completely on the old staff; where people move on often, a maintained record is a safer bet than counting on who stays"
       },
-      "guideline": "When a system changes hands, plan an overlap: the new owners make real changes while the old team reviews them, and the handover ends when the old team stops catching patches that fight the design. Before merging code from a generator or a contractor, have the person who will own it explain why it is shaped the way it is; if nobody can, treat it as unowned. For a small program whose team is gone, writing it afresh can cost less than patching it blind, as Naur suggests; for a large one, rebuild the theory by pairing on real changes before restructuring anything.",
+      "guideline": "When a system changes hands, plan an overlap: the new owners make real changes while the old team reviews them, and the handover ends when the old team stops catching patches that fight the design. Before merging code from a generator or a contractor, have the person who will own it explain why it is shaped the way it is; if nobody can, treat it as unowned. When a program's team is gone, Naur's advice is to discard the old text and let the new team solve the problem afresh, which he expects to cost no more than reviving it; where a rewrite is out of reach, rebuild the theory by pairing on real changes before restructuring anything.",
       "source": "Peter Naur, *Programming as Theory Building* (Microprocessing and Microprogramming, 1985) — programming as building \"a certain kind of insight, a theory, of the matters at hand\", the compiler case, \"The death of a program happens when the programmer team possessing its theory is dissolved.\", and revival from documentation being \"strictly impossible\". The counter-force is from David L. Parnas & Paul C. Clements, *A Rational Design Process: How and Why to Fake It* (IEEE Transactions on Software Engineering, 1986) — \"When new programmers join the project they do not have to depend completely on the old staff for their information.\""
     },
     "ja": {
@@ -5871,7 +5871,7 @@ export const laws: Law[] = [
         "name": "合理的な設計を装う",
         "note": "Parnas と Clements は、設計を合理的に導いたかのように書き残し、変更のたびにその記録を最新に保つべきだと論じた。そうすれば新しく入った人は古いメンバーだけに頼らずにすむ。人の入れ替わりが多い職場では、誰が残るかに賭けるより、保たれた記録のほうが確かだ"
       },
-      "guideline": "システムの担当が替わるときは、重なる期間を取る。新しい担当が実際に変更を加え、前のチームがそれをレビューする。設計に逆らうパッチを前のチームが見つけなくなったら、引き継ぎを終える。生成コードや外注のコードをマージする前に、それを持つことになる人に、なぜこういう形なのかを説明させる。誰も説明できないなら、持ち主のいないコードとして扱う。チームがいなくなった小さなプログラムは、Naur が言うように、手探りでパッチを当てるより書き直したほうが安いこともある。大きなものは、何かを組み替える前に、実際の変更をペアで進めて理論を組み立て直す。",
+      "guideline": "システムの担当が替わるときは、重なる期間を取る。新しい担当が実際に変更を加え、前のチームがそれをレビューする。設計に逆らうパッチを前のチームが見つけなくなったら、引き継ぎを終える。生成コードや外注のコードをマージする前に、それを持つことになる人に、なぜこういう形なのかを説明させる。誰も説明できないなら、持ち主のいないコードとして扱う。チームがいなくなったプログラムについて、Naur は古いプログラムを捨てて新しいチームに問題を解き直させるよう勧め、そのほうが復活させるより高くはつかないとした。書き直せないなら、何かを組み替える前に、実際の変更をペアで進めて理論を組み立て直す。",
       "source": "Peter Naur『Programming as Theory Building』(Microprocessing and Microprogramming, 1985)。プログラミングを \"a certain kind of insight, a theory, of the matters at hand\" を組み立てる活動とみる見方、コンパイラの例、\"The death of a program happens when the programmer team possessing its theory is dissolved.\"、文書からの復活が \"strictly impossible\" だという主張の出典。対抗原理は David L. Parnas & Paul C. Clements『A Rational Design Process: How and Why to Fake It』(IEEE Transactions on Software Engineering, 1986) から。\"When new programmers join the project they do not have to depend completely on the old staff for their information.\" の出典。"
     }
   },
@@ -5904,7 +5904,7 @@ export const laws: Law[] = [
       "mechanism": "Elaine Weyuker pointed out that \"A frequently invoked assumption in program testing is that there is an oracle\": the tester, or some other mechanism, can tell whether an output is correct. \"A program is non-testable if either an oracle does not exist\" or checking the output would take the tester an extraordinary amount of time. When nobody can say what the right answer is, the expected value in a test tends to come from running the code itself, and then the test records what the code does, not what it should do; it passes on every bug that was already there when it was written. Tests generated from the implementation are especially prone to this. Chen, Cheung and Yiu, building on Weyuker, wrote that \"the availability of test oracles is pragmatically unattainable in most situations,\" and proposed metamorphic testing: derive follow-up inputs from tests that passed and check that the outputs relate the way they must, which needs no oracle.",
       "counter": {
         "name": "Production as the Oracle",
-        "note": "for a cheap, reversible change, a partial and time-limited deployment watched against real outcomes judges correctness better than any expected value a test author could write down, so days spent building an oracle are not worth it"
+        "note": "for a cheap, reversible change, a partial and time-limited deployment judged against real traffic and SLOs catches problems no test author thought to write down, so days spent hand-building an oracle are often not worth it"
       },
       "guideline": "For every test that guards something important, be able to say where its expected value came from: a spec, a hand calculation, an independent implementation, a domain expert. Treat snapshot tests and generated tests whose expectations were copied from the current output as change detectors, not as evidence the code is right. Where no oracle exists, test what must hold anyway: invariants, round trips, and relations between the outputs of related inputs. For a reversible change behind good monitoring, a canary can be the check; keep hand-built oracles for changes that are expensive to undo.",
       "source": "Elaine J. Weyuker, *On Testing Non-Testable Programs* (The Computer Journal, 1982) — \"A frequently invoked assumption in program testing is that there is an oracle\", and a program as non-testable when no oracle exists or checking takes an extraordinary amount of time; T. Y. Chen, S. C. Cheung & S. M. Yiu, *Metamorphic Testing: A New Approach for Generating Next Test Cases* (Technical Report HKUST-CS98-01, Hong Kong University of Science and Technology, 1998) — \"the availability of test oracles is pragmatically unattainable in most situations\", and tests that need no oracle. The counter-force is from Alec Warner & Štěpán Davidovič, \"Canarying Releases\", in *The Site Reliability Workbook* (O'Reilly, 2018) — canarying as \"a partial and time-limited deployment of a change in a service and its evaluation.\""
@@ -5916,7 +5916,7 @@ export const laws: Law[] = [
       "mechanism": "Elaine Weyuker は「プログラムのテストでよく持ち出される前提は、オラクルがあるというものだ」と指摘した。テストする人か何らかの仕組みが、出力が正しいかどうかを判定できるという前提だ。オラクルが存在しないか、出力の確認にテストする人が途方もない時間をかけなければならないなら、そのプログラムはテストできない。正しい答えを誰も言えないとき、テストの期待値はコードを動かした結果から取られやすい。そうなると、テストが記録するのはコードがすべきことではなく、コードがしていることになり、書いた時点ですでにあったバグはすべて通してしまう。実装から生成したテストは、とくにこうなりやすい。Chen、Cheung、Yiu は Weyuker を踏まえて「テストオラクルが手に入ることは、たいていの状況で現実的に望めない」と書き、メタモーフィックテストを提案した。通ったテストから次の入力を作り、出力どうしが満たすべき関係を満たしているかを確かめる。これならオラクルは要らない。",
       "counter": {
         "name": "本番を判定役にする",
-        "note": "安くて取り消せる変更なら、一部に期間を限って出し、実際の結果を見るほうが、テストを書く人が書ける期待値よりも正しさをよく判定できる。オラクル作りに何日もかけるのは割に合わない"
+        "note": "安くて取り消せる変更なら、一部に期間を限って出し、実際のトラフィックと SLO に照らして見るほうが、テストを書く人が思いつかなかった問題を拾える。手作りのオラクルに何日もかけるのは、割に合わないことが多い"
       },
       "guideline": "大事なものを守るテストは、期待値の出どころを言えるようにする。仕様、手計算、独立した別実装、その分野の専門家などだ。現在の出力をそのまま期待値にしたスナップショットテストや生成テストは、変化の検知器として扱い、コードが正しい証拠とはみなさない。オラクルがないところでは、どのみち成り立つはずのことを確かめる。不変条件、往復変換、関連する入力どうしの出力の関係などだ。監視の整った取り消せる変更なら、カナリアを確認手段にしてよい。手で作るオラクルは、取り消しが高くつく変更のためにとっておく。",
       "source": "Elaine J. Weyuker『On Testing Non-Testable Programs』(The Computer Journal, 1982)。\"A frequently invoked assumption in program testing is that there is an oracle\" と、オラクルがないか確認に途方もない時間がかかるプログラムをテスト不能とする定義の出典。T. Y. Chen, S. C. Cheung & S. M. Yiu『Metamorphic Testing: A New Approach for Generating Next Test Cases』(Technical Report HKUST-CS98-01, Hong Kong University of Science and Technology, 1998)。\"the availability of test oracles is pragmatically unattainable in most situations\" と、オラクルの要らないテストの出典。対抗原理は Alec Warner & Štěpán Davidovič「Canarying Releases」『The Site Reliability Workbook』(O'Reilly, 2018) から。カナリアを \"a partial and time-limited deployment of a change in a service and its evaluation\" とする定義の出典。"
@@ -5950,12 +5950,12 @@ export const laws: Law[] = [
       "stance": "Treat any text an agent reads as instructions from whoever wrote it",
       "mechanism": "\"LLMs follow instructions in content,\" and they are \"unable to reliably distinguish the importance of instructions based on where they came from.\" So anyone who can put text in front of an agent (a web page, an email, an issue) can tell it to gather the private data it can reach and send it out through any outbound channel it has. Each capability is useful on its own, and the danger appears only when one session has all three, often because a user mixed tools from different sources. Simon Willison has collected dozens of such cases; vendors usually fixed them by locking down the exfiltration vector, but \"we still don't know how to 100% reliably prevent this from happening.\" Filters that claim to catch 95% of attacks do not close the gap: \"in web application security 95% is very much a failing grade.\"",
       "counter": {
-        "name": "Supervised Autonomy",
-        "note": "an assistant worth having often needs all three at once, so Meta's Rule of Two lets a session hold no more than two unsupervised and puts a human approval in front of the agent when it needs the third"
+        "name": "Constrain the Flow, Not the Tools",
+        "note": "an assistant worth having often needs all three; a design like Google DeepMind's CaMeL keeps them by planning the steps from the user's trusted request alone and tagging data with capabilities, so untrusted content cannot change what the agent does or where private data goes; when you build the agent yourself, that can serve better than taking a capability away, at some cost in tasks it can finish"
       },
       "guideline": "Before connecting a tool to an agent, write down which of the three it adds: private data, untrusted content, or a way to send data out (including links, image loads, pull requests and email). When a session ends up with all three, take one away: browse in a sandbox with no credentials, cut the outbound channel, or make a human approve each outbound action. Do not count a prompt-injection filter as the control. An agent that reads only trusted data, or whose output never leaves the machine, does not need this.",
-      "example": "In May 2025 Willison wrote up an attack on GitHub's official MCP server reported by Marco Milanta and Luca Beurer-Kellner. A malicious issue in a public repository asked the agent to read the README files of the author's repositories and add a list of all the other repositories the user was working on; when the user asked the agent to look at the issues, it opened a pull request that revealed the names of the user's private repositories. Willison noted that the server combined private data access, exposure to untrusted content and the ability to exfiltrate.",
-      "source": "Simon Willison, *The lethal trifecta for AI agents: private data, untrusted content, and external communication* (simonwillison.net, 2025) — the three ingredients and \"The only way to stay safe there is to avoid that lethal trifecta combination entirely.\" The counter-force is from Meta, *Agents Rule of Two: A Practical Approach to AI Agent Security* (Meta AI blog, 2025) — agents \"must satisfy no more than two\" of the three properties within a session, and one that needs all three \"should not be permitted to operate autonomously\"."
+      "example": "In May 2025 Willison wrote up an attack on GitHub's official MCP server reported by Marco Milanta and Luca Beurer-Kellner. A malicious issue in a public repository asked the agent to read the README files of the author's repositories and add a list of all the other repositories the user was working on; when the user asked the agent to look at the issues, it opened a pull request that revealed the names of the user's private repositories. Willison noted that GitHub's MCP server combined access to private data, exposure to malicious instructions and the ability to exfiltrate information in a single package.",
+      "source": "Simon Willison, *The lethal trifecta for AI agents: private data, untrusted content, and external communication* (simonwillison.net, 2025) — the three ingredients and \"The only way to stay safe there is to avoid that lethal trifecta combination entirely.\" The counter-force is from Edoardo Debenedetti et al., *Defeating Prompt Injections by Design* (arXiv, 2025) — CaMeL \"explicitly extracts the control and data flows from the (trusted) query\", so untrusted data \"can never impact the program flow\"."
     },
     "ja": {
       "title": "致命的な三点セット",
@@ -5963,12 +5963,12 @@ export const laws: Law[] = [
       "stance": "エージェントが読む文章は、書いた人からの指示だと思う",
       "mechanism": "LLM は内容の中にある指示に従う。しかも指示の重みを、それがどこから来たかで確実に区別することができない。だから Web ページでもメールでも issue でも、エージェントの前に文章を置ける人は、エージェントが触れる非公開データを集めて、手持ちの送信手段で外に出すよう指示できる。三つの能力はそれぞれ単独なら役に立つ。危険になるのは一つのセッションが三つともそろえたときで、利用者が出どころの違うツールを組み合わせた結果そうなることが多い。Simon Willison はこうした事例を何十件も集めている。ベンダーはたいてい持ち出しの経路をふさいで直したが、「これを 100% 確実に防ぐ方法は、まだわかっていない」。攻撃の 95% を捕まえると謳うフィルタでは穴はふさがらない。「Web アプリケーションのセキュリティでは、95% は明らかに落第点だ」。",
       "counter": {
-        "name": "監督つきの自律",
-        "note": "役に立つアシスタントは三つを同時に要することが多い。そこで Meta の Rule of Two は、監督なしで持たせるのは二つまでとし、三つ目が要るときはエージェントの前に人の承認を置く"
+        "name": "道具ではなく流れを縛る",
+        "note": "役に立つアシスタントは三つを同時に要することが多い。Google DeepMind の CaMeL のような設計は、信頼できる利用者の依頼だけから手順を組み、データに権限の印をつけて三つとも残す。そうすれば信頼できない内容は、エージェントの動きも非公開データの行き先も変えられない。エージェントを自分で作るなら、能力を一つ外すよりこちらが合うこともある。ただし、こなせるタスクは少し減る"
       },
       "guideline": "エージェントにツールをつなぐ前に、そのツールが三つのどれを足すかを書き出す。非公開データ、信頼できない内容、外へ送る手段(リンク、画像の読み込み、プルリクエスト、メールを含む)だ。一つのセッションに三つがそろったら、一つを外す。認証情報のないサンドボックスで閲覧させる、送信経路を断つ、外への送信は一件ずつ人が承認する、のどれかにする。プロンプトインジェクションのフィルタを対策として数えない。信頼できるデータだけを読むエージェントや、出力が手元から出ないエージェントには要らない。",
-      "example": "2025年5月、Willison は Marco Milanta と Luca Beurer-Kellner が報告した GitHub 公式 MCP サーバへの攻撃を取り上げた。公開リポジトリに置かれた悪意ある issue が、作者のリポジトリの README を読み、利用者が手がけている他のリポジトリをすべて一覧にして加えるようエージェントに頼んでいた。利用者がエージェントに issue を見るよう頼むと、エージェントはプルリクエストを作り、利用者の非公開リポジトリの名前を明かしてしまった。Willison は、このサーバが非公開データへのアクセス、信頼できない内容への露出、持ち出す手段を併せ持っていたと指摘した。",
-      "source": "Simon Willison『The lethal trifecta for AI agents: private data, untrusted content, and external communication』(simonwillison.net, 2025)。三つの要素と \"The only way to stay safe there is to avoid that lethal trifecta combination entirely.\" の出典。対抗原理は Meta『Agents Rule of Two: A Practical Approach to AI Agent Security』(Meta AI blog, 2025) から。エージェントは一つのセッションで三つの性質のうち \"must satisfy no more than two\" とし、三つとも要るものは \"should not be permitted to operate autonomously\" とする出典。"
+      "example": "2025年5月、Willison は Marco Milanta と Luca Beurer-Kellner が報告した GitHub 公式 MCP サーバへの攻撃を取り上げた。公開リポジトリに置かれた悪意ある issue が、作者のリポジトリの README を読み、利用者が手がけている他のリポジトリをすべて一覧にして加えるようエージェントに頼んでいた。利用者がエージェントに issue を見るよう頼むと、エージェントはプルリクエストを作り、利用者の非公開リポジトリの名前を明かしてしまった。Willison は、GitHub の MCP サーバが非公開データへのアクセス、悪意ある指示への露出、情報を持ち出す手段の三つを一つにまとめて持っていたと指摘した。",
+      "source": "Simon Willison『The lethal trifecta for AI agents: private data, untrusted content, and external communication』(simonwillison.net, 2025)。三つの要素と \"The only way to stay safe there is to avoid that lethal trifecta combination entirely.\" の出典。対抗原理は Edoardo Debenedetti ほか『Defeating Prompt Injections by Design』(arXiv, 2025) から。CaMeL が \"explicitly extracts the control and data flows from the (trusted) query\" し、信頼できないデータが \"can never impact the program flow\" とする出典。"
     }
   },
   {
@@ -6002,11 +6002,11 @@ export const laws: Law[] = [
       "mechanism": "Most work loses value while it waits: revenue not yet earned, a market window closing, a penalty date coming closer. A backlog ordered by effort or by an undefined \"priority\" says nothing about that loss, and people's private guesses about it are far apart. Reinertsen, who argued for putting a number on it, puts the spread this way: \"The intuition of members of the same team typically differs by 50 to 1, so the real estimate surprises most team members.\" Once the cost of delay is a number, dividing it by the expected duration (CD3) puts first the items that release the most value per week of scarce capacity, which a ranking by value alone or by size alone does not.",
       "counter": {
         "name": "Important, Not Urgent",
-        "note": "work whose payoff is long and diffuse (paying down debt, platform work, learning) shows a small cost of delay in any given week and never wins the ranking; it only gets done if capacity is set aside for it outside the ranking"
+        "note": "ranking by cost of delay is ranking by urgency, and Stephen Covey argued that most time should go to work that is important but not urgent; paying down debt, platform work and learning show a small cost of delay in any given week, so someone who follows Covey plans that work first instead of waiting for it to win the ranking"
       },
       "guideline": "For the items at the top of the backlog, estimate what each one loses per week of waiting, in money, and write the assumptions next to the number. Divide by the expected duration and schedule in that order. A rough range is enough: the point is to expose how far apart people's guesses are, not to be precise. Keep a fixed share of capacity outside the ranking for work whose value is long-term.",
       "example": "Maersk Line put a dollar cost of delay on each requirement for its Global Customer Service System and scheduled them by CD3. Looking at the spread, the authors found the most valuable and urgent 25% of requirements were worth three orders of magnitude more than the bottom 25%: \"Not ten times, or one hundred times, but a thousand times more valuable.\"",
-      "source": "Don Reinertsen, *The Principles of Product Development Flow* (Celeritas, 2009) — the case for quantifying cost of delay and scheduling by it, as summarised in Wikipedia's \"Cost of delay\", which also describes CD3; Reinertsen interviewed in *Lean Magazine* (2012) — \"A cost-of-delay calculation establishes the value of time on the critical path of the project.\" and the 50-to-1 spread in intuition; Joshua Arnold quoting Reinertsen on InfoQ (2015) — \"If you only quantify one thing, quantify the Cost of Delay\"."
+      "source": "Don Reinertsen, *The Principles of Product Development Flow* (Celeritas, 2009) — the case for quantifying cost of delay and scheduling by it, as summarised in Wikipedia's \"Cost of delay\", which also describes CD3; Reinertsen interviewed in *Lean Magazine* (2012) — \"A cost-of-delay calculation establishes the value of time on the critical path of the project.\" and the 50-to-1 spread in intuition; Ben Linders' InfoQ interview with Joshua Arnold (2015), which quotes Reinertsen: \"If you only quantify one thing, quantify the Cost of Delay\"; Stephen R. Covey, *The 7 Habits of Highly Effective People* (Free Press, 1989) — the counter, important but not urgent work first, as summarised in Wikipedia's article on the book."
     },
     "ja": {
       "title": "遅延コスト",
@@ -6015,11 +6015,11 @@ export const laws: Law[] = [
       "mechanism": "たいていの仕事は待っている間に価値を失う。まだ入ってこない売上、閉じていく市場の窓、近づいてくる違約金の期日。工数や中身の決まっていない「優先度」で並べたバックログは、その損失について何も言わない。しかも、その損失を各自が頭の中で見積もると大きく食い違う。数字にすべきだと説いた Reinertsen は、その幅をこう言う。\"The intuition of members of the same team typically differs by 50 to 1, so the real estimate surprises most team members.\" 遅延コストを数字にすれば、それを見込み期間で割る（CD3）ことで、限られた人手の一週間あたりに最も多くの価値を出す仕事が先に来る。価値だけ、大きさだけで並べてもこうはならない。",
       "counter": {
         "name": "重要だが緊急でない仕事",
-        "note": "効果が長く薄く広がる仕事（負債の返済、基盤づくり、学習）は、どの週を取っても遅延コストが小さく、順位争いでは決して勝てない。順位とは別に人手を取っておかないと、いつまでも手が付かない"
+        "note": "遅延コストで並べるのは、緊急度で並べることだ。Stephen Covey は、時間の多くは重要だが緊急でない仕事に使うべきだと説いた。負債の返済、基盤づくり、学習は、どの週を取っても遅延コストが小さい。Covey に従うなら、順位争いで勝つのを待たず、こうした仕事を先に計画に入れる"
       },
       "guideline": "バックログの上位について、一週間待たせるごとに失う額を見積り、その前提を数字の横に書く。それを見込み期間で割り、その順に着手する。幅のある大まかな見積りで構わない。狙いは正確さではなく、各自の見積りがどれだけ食い違っているかを表に出すことだ。効果が長期にわたる仕事のために、順位の外に一定の人手を残しておく。",
       "example": "Maersk Line は Global Customer Service System の要求それぞれに遅延コストをドルで付け、CD3 の順に着手した。その分布を見ると、最も価値が高く緊急な上位25%の要求は、下位25%より三桁大きな価値を持っていた。\"Not ten times, or one hundred times, but a thousand times more valuable.\"",
-      "source": "Don Reinertsen『The Principles of Product Development Flow』(Celeritas, 2009)。遅延コストを数字にし、それで順序を決めるべきだという主張の出典で、Wikipedia の「Cost of delay」の要約による（CD3 の説明も同項目）。『Lean Magazine』の Reinertsen へのインタビュー (2012) は \"A cost-of-delay calculation establishes the value of time on the critical path of the project.\" と、直感が50対1も食い違うという話の出典。\"If you only quantify one thing, quantify the Cost of Delay\" は InfoQ (2015) で Joshua Arnold が Reinertsen の言葉として引いたもの。"
+      "source": "Don Reinertsen『The Principles of Product Development Flow』(Celeritas, 2009)。遅延コストを数字にし、それで順序を決めるべきだという主張の出典で、Wikipedia の「Cost of delay」の要約による（CD3 の説明も同項目）。『Lean Magazine』の Reinertsen へのインタビュー (2012) は \"A cost-of-delay calculation establishes the value of time on the critical path of the project.\" と、直感が50対1も食い違うという話の出典。\"If you only quantify one thing, quantify the Cost of Delay\" は、Ben Linders による Joshua Arnold への InfoQ のインタビュー (2015) で Reinertsen の言葉として引かれたもの。反対の力は Stephen R. Covey『The 7 Habits of Highly Effective People』(Free Press, 1989) の、重要だが緊急でない仕事を先にするという考えで、Wikipedia の同書の項目の要約による。"
     }
   },
   {
@@ -6051,7 +6051,7 @@ export const laws: Law[] = [
       "mechanism": "At the start of a project the team knows least, and an early commitment narrows the field of view before the facts arrive. Holding a decision open lets learning catch up. But every open decision has a deadline that nobody announces: the Poppendiecks define the last responsible moment as \"the moment at which failing to make a decision eliminates an important alternative.\" A contract renews, an API ships and gets callers, another team builds on an assumption, and the alternative is gone. \"If commitments are delayed beyond the last responsible moment, then decisions are made by default, which is generally not a good approach to making decisions.\" They add that some decisions, such as usability design, layering and component packaging, are best made early, and that \"A bias toward late commitment must not degenerate into a bias toward no commitment.\"",
       "counter": {
         "name": "Most Responsible Moment",
-        "note": "some decisions pay off most when made early, because settling them unblocks everyone else; Wirfs-Brock prefers to decide when a decision has a positive impact rather than at the latest moment it can still be made"
+        "note": "Wirfs-Brock finds she cannot tell when the last responsible moment is, and that aiming for it lulls her into thinking there will always be time to change her mind; she prefers to decide as soon as a decision has a positive impact, which often comes earlier"
       },
       "guideline": "For each open design decision, write down the event that would remove an alternative (a contract date, a release that freezes an interface, another team starting to build on it) and put its date on the calendar. Decide before that date, not on it. Do not use this to postpone decisions that unblock other work or that shape everything after them, such as layering.",
       "source": "Mary & Tom Poppendieck, *Lean Software Development: An Agile Toolkit* (Addison-Wesley, 2003), ch. 3, \"Tool 8: The Last Responsible Moment\", pp. 57–59 — the definition, \"decisions are made by default\" and the warning against a bias toward no commitment; they credit the term to the Lean Construction Institute. Rebecca Wirfs-Brock, \"Agile Architecture Myths #2 Architecture Decisions Should Be Made At the Last Responsible Moment\" (2011) — the \"most responsible moment\"."
@@ -6063,7 +6063,7 @@ export const laws: Law[] = [
       "mechanism": "プロジェクトの初めはチームが最も物を知らない時期で、早い段階で決めると事実が出そろう前に視野が狭まる。決定を保留すれば、学びが追いつく時間ができる。だが保留中の決定には、誰も知らせてくれない期限がある。Poppendieck 夫妻は最終責任時点を \"the moment at which failing to make a decision eliminates an important alternative.\" と定義する。契約が自動更新される、API が出て呼び出し元がつく、別のチームがある前提の上に作り始める。そうして選択肢は消える。\"If commitments are delayed beyond the last responsible moment, then decisions are made by default, which is generally not a good approach to making decisions.\" 夫妻は、使い勝手の設計、レイヤ分け、コンポーネントのまとめ方のように早く決めたほうがよいものもあるとし、\"A bias toward late commitment must not degenerate into a bias toward no commitment.\" とも書いている。",
       "counter": {
         "name": "最も責任ある時点",
-        "note": "早く決めたほうが得な決定もある。決まれば他の全員が動けるようになるからだ。Wirfs-Brock は、まだ決められる最後の時点ではなく、決めることで良い影響が出る時点で決めるほうを選ぶ"
+        "note": "Wirfs-Brock は、最終責任時点がいつなのか自分には見分けられないと書く。それを狙うと、いつでも考え直す時間があると思い込んでしまうという。だから、決めることで良い影響が出る時点が来たら決めるほうを選ぶ。その時点は、多くの場合もっと早く来る"
       },
       "guideline": "保留中の設計判断ごとに、選択肢を消してしまう出来事（契約の期日、インタフェースが固まるリリース、別チームがその上に作り始めること）を書き出し、その日付をカレンダーに入れる。その日になってからではなく、その前に決める。他の作業を止めている決定や、レイヤ分けのように後のすべてを形づくる決定を先送りする口実には使わない。",
       "source": "Mary & Tom Poppendieck『Lean Software Development: An Agile Toolkit』(Addison-Wesley, 2003) 第3章「Tool 8: The Last Responsible Moment」(pp. 57–59)。定義、「decisions are made by default」、決めないことへの偏りへの警告の出典。用語は Lean Construction Institute の造語だと同書が書いている。「最も責任ある時点」は Rebecca Wirfs-Brock「Agile Architecture Myths #2 Architecture Decisions Should Be Made At the Last Responsible Moment」(2011)。"
@@ -6095,25 +6095,25 @@ export const laws: Law[] = [
       "title": "Pre-Mortem",
       "concept": "People who doubt a plan the team has already committed to tend to keep quiet; asking them to explain a failure that has already happened draws the doubts out.",
       "stance": "Assume the plan already failed, and make finding out why the clever move",
-      "mechanism": "In an ordinary plan review, raising problems looks disloyal or negative, and the momentum of a kickoff pushes reservations down; Klein's HBR teaser puts it as \"too many people are reluctant to speak up about their reservations\". The pre-mortem changes the frame: the leader tells the team the plan has failed and asks why. In Klein's words, \"The pre-mortem reverses this dynamic—people show how smart they are by the quality of the issues that they raise.\" Writing reasons alone first, before anyone speaks, keeps the loudest voice from setting the list. In a study of 178 college students that Klein reports, the pre-mortem group showed the greatest drop in overconfidence compared with groups that critiqued the plan or listed pros and cons. The often-repeated claim that imagining failure makes people about 30% better at finding reasons goes beyond the 1989 study behind it, which counted how many reasons people produced, not how good they were.",
+      "mechanism": "In an ordinary plan review there is, in Klein's words, \"silent pressure in these meetings not to surface doubts that might disturb the team's harmony\", and people keep back what they would not ordinarily mention \"for fear of being impolitic\"; the opening paragraph of his HBR article says \"too many people are reluctant to speak up about their reservations during the all-important planning phase.\" The pre-mortem changes the frame: the leader tells the team the plan has failed and asks why. In Klein's words, \"The pre-mortem reverses this dynamic—people show how smart they are by the quality of the issues that they raise.\" Writing reasons alone first, before anyone speaks, keeps one senior voice from setting the list. In a study of 178 college students that Klein reports, the pre-mortem group showed the greatest drop in confidence in a hypothetical plan compared with groups that critiqued the plan or listed pros and cons; the study measured confidence, not whether the plan would have worked. Klein's HBR article says prospective hindsight \"increases the ability to correctly identify reasons for future outcomes by 30%\", but the 1989 study it rests on measured how many and what kind of reasons people gave when an outcome was framed as certain, not whether the reasons were right.",
       "counter": {
         "name": "Bias for Action",
         "note": "hunting for failure on every plan breeds caution; Klein himself notes that pre-mortems \"tend to encourage risk aversion\", and for a cheap, reversible step, trying it teaches more than imagining how it goes wrong"
       },
-      "guideline": "At the kickoff of any project that would hurt if it failed, after the plan is presented, tell the team it is some months later and the project has failed. Give everyone two minutes to write down the reasons alone, then go round the room one reason per person until the lists are empty, and give the top few an owner and a change to the plan. Skip it for small, reversible changes, where shipping and watching is cheaper.",
-      "source": "Gary Klein, \"Performing a Project Premortem\", *Harvard Business Review* (September 2007) — the method; Gary Klein, \"The Pre-Mortem Method\", *Psychology Today* (2021) — his fuller account of the steps and of the student study; Gary Klein, \"Double-Barreled Pre-Mortems\", *Psychology Today* (2025) — the warning about risk aversion."
+      "guideline": "At the kickoff of any project that would hurt if it failed, after the plan is presented, tell the team the project has failed. Give everyone two minutes to write down the reasons alone, then go round the room one reason per person until the lists are empty, and give the top few an owner and a change to the plan. Skip it for small, reversible changes, where shipping and watching is cheaper.",
+      "source": "Gary Klein, \"Performing a Project Premortem\", *Harvard Business Review* (September 2007) — the method; Gary Klein, \"The Pre-Mortem Method\", *Psychology Today* (2021) — his fuller account of the steps and of the student study, the \"silent pressure\" line and \"The pre-mortem reverses this dynamic\"; Gary Klein, \"Double-Barreled Pre-Mortems\", *Psychology Today* (2025) — the warning about risk aversion; Deborah J. Mitchell, J. Edward Russo & Nancy Pennington, \"Back to the future: Temporal perspective in the explanation of events\", *Journal of Behavioral Decision Making* 2 (1989) — the study behind the 30% figure, which measured the number and kind of reasons, not their accuracy."
     },
     "ja": {
       "title": "プレモーテム",
       "concept": "すでに決まった計画に疑問を持つ人は、黙っていることが多い。失敗はもう起きたことにして、その理由を説明してもらうと、疑問が表に出てくる。",
       "stance": "計画はもう失敗したと考え、理由を見つけた人が賢い場にする",
-      "mechanism": "普通の計画レビューでは、問題を挙げると忠誠心がないか後ろ向きに見え、キックオフの勢いが懸念を押し込める。Klein の HBR 記事の冒頭は \"too many people are reluctant to speak up about their reservations\" と書く。プレモーテムは前提を入れ替える。リーダーが計画は失敗したと告げ、なぜかを尋ねる。Klein の言葉では \"The pre-mortem reverses this dynamic—people show how smart they are by the quality of the issues that they raise.\" 誰かが話す前に各自で理由を書かせれば、声の大きい人がリストを決めてしまうことも防げる。Klein が紹介する大学生178人の研究では、計画を批評した組や長所と短所を挙げた組に比べ、プレモーテムの組で過信が最も大きく下がった。失敗を想像すると理由を見つける力が約30%上がるという話がよく引かれるが、元になった1989年の研究が数えたのは挙がった理由の数で、その質は測っていない。",
+      "mechanism": "普通の計画レビューには、Klein の言う \"silent pressure in these meetings not to surface doubts that might disturb the team's harmony\" がある。人は \"for fear of being impolitic\"、ふだんなら問題として口にしないことを胸にしまう。Klein の HBR 記事は冒頭の段落で \"too many people are reluctant to speak up about their reservations during the all-important planning phase.\" と書いている。プレモーテムは前提を入れ替える。リーダーが計画は失敗したと告げ、なぜかを尋ねる。Klein の言葉では \"The pre-mortem reverses this dynamic—people show how smart they are by the quality of the issues that they raise.\" 誰かが話す前に各自で理由を書かせれば、上の立場の一人がリストを決めてしまうことも防げる。Klein が紹介する大学生178人の研究では、架空の計画について、計画を批評した組や長所と短所を挙げた組に比べ、プレモーテムの組で計画への自信が最も大きく下がった。測ったのは自信で、計画がうまくいったかどうかではない。Klein の HBR 記事は、未来の出来事を起きたことにして考えると \"increases the ability to correctly identify reasons for future outcomes by 30%\" と書く。だが元になった1989年の研究が測ったのは、結果を確実なものとして示したときに挙がる理由の数と種類で、その理由が正しいかどうかは測っていない。",
       "counter": {
         "name": "行動を優先する",
         "note": "どの計画でも失敗探しをすると、慎重になりすぎる。Klein 自身、プレモーテムは \"tend to encourage risk aversion\" と書いている。安く戻せる一歩なら、失敗を想像するより試したほうが多くを学べる"
       },
-      "guideline": "失敗すると痛いプロジェクトでは、キックオフで計画の説明が終わったら、数か月後にこのプロジェクトは失敗したとチームに告げる。各自に二分間、一人で理由を書かせ、それから一人一つずつ順に、リストが尽きるまで読み上げてもらう。上位のいくつかには担当者と計画の変更を割り当てる。小さく戻せる変更ではやらない。出して様子を見るほうが安い。",
-      "source": "Gary Klein「Performing a Project Premortem」『Harvard Business Review』(2007年9月号)。手法の出典。Gary Klein「The Pre-Mortem Method」『Psychology Today』(2021) は手順と学生の研究についての本人による詳しい説明。リスク回避への警告は Gary Klein「Double-Barreled Pre-Mortems」『Psychology Today』(2025)。"
+      "guideline": "失敗すると痛いプロジェクトでは、キックオフで計画の説明が終わったら、このプロジェクトは失敗したとチームに告げる。各自に二分間、一人で理由を書かせ、それから一人一つずつ順に、リストが尽きるまで読み上げてもらう。上位のいくつかには担当者と計画の変更を割り当てる。小さく戻せる変更ではやらない。出して様子を見るほうが安い。",
+      "source": "Gary Klein「Performing a Project Premortem」『Harvard Business Review』(2007年9月号)。手法の出典。Gary Klein「The Pre-Mortem Method」『Psychology Today』(2021) は手順と学生の研究についての本人による詳しい説明で、\"silent pressure\" の一文と \"The pre-mortem reverses this dynamic\" の出典。リスク回避への警告は Gary Klein「Double-Barreled Pre-Mortems」『Psychology Today』(2025)。30%という数字の元になった研究は Deborah J. Mitchell, J. Edward Russo & Nancy Pennington「Back to the future: Temporal perspective in the explanation of events」『Journal of Behavioral Decision Making』2 (1989)。測ったのは理由の数と種類で、正しさではない。"
     }
   },
   {
@@ -6140,11 +6140,11 @@ export const laws: Law[] = [
     "en": {
       "title": "Wicked Problems",
       "concept": "For some problems, working out what the problem is and choosing a solution are the same act, so the requirements cannot be settled before the design starts and there is no point at which the problem is done.",
-      "stance": "When the problem shifts as you solve it, stop trying to freeze it first",
+      "stance": "When solving changes the problem, treat its statement as a draft, not a gate",
       "mechanism": "Rittel and Webber contrasted \"tame\" problems, such as solving an equation or checkmate in five moves, where the mission is clear and so is whether it has been solved, with \"wicked\" ones, which include nearly all public policy issues. For a wicked problem, \"The information needed to understand the problem depends upon one's idea for solving it\", so \"The formulation of a wicked problem is the problem!\" Phased methods that start with \"understand the problems or the mission\" assume you can understand first and solve afterwards; for wicked problems \"one cannot first understand, then solve.\" And \"Wicked problems have no stopping rule\": work ends because the planner runs out of time, or money, or patience, not because the problem says it is finished. Product and organisational questions with many stakeholders can behave this way, with each proposal changing what people say they want.",
       "counter": {
-        "name": "Most Problems Are Tame",
-        "note": "Rittel and Webber themselves say the problems scientists and engineers usually face are mostly tame; calling a bug, a migration or a latency target \"wicked\" excuses not writing the problem statement that would have worked"
+        "name": "Pin the Problem Down First",
+        "note": "for much engineering work, writing the problem statement before designing is what makes it solvable, which is why phased, requirements-first methods exist; calling a bug, a migration or a latency target \"wicked\" excuses not writing the statement that would have worked"
       },
       "guideline": "Before writing requirements, ask two questions: does the problem statement change every time someone proposes a solution, and is there no test that would say it is solved? If both are yes, stop trying to freeze the requirements first: put the people who disagree in the same review, show small versions early, and decide in advance when you will stop, since the problem will not tell you. If either is no, treat it as tame and write the problem statement.",
       "source": "Horst W. J. Rittel & Melvin M. Webber, \"Dilemmas in a General Theory of Planning\", *Policy Sciences* 4 (1973), 155–169 — the tame/wicked distinction and the ten properties of wicked problems."
@@ -6152,11 +6152,11 @@ export const laws: Law[] = [
     "ja": {
       "title": "厄介な問題",
       "concept": "問題によっては、何が問題かを見極めることと解決策を選ぶことが同じ作業になる。だから設計を始める前に要求を固めることはできず、ここで終わりという地点もない。",
-      "stance": "解くほどに問題が動くなら、先に固めようとしない",
+      "stance": "解くたびに問題が変わるなら、問題の書き方は関門でなく下書きだ",
       "mechanism": "Rittel と Webber は、方程式を解く、五手で詰めるといった「飼いならされた（tame）」問題と、「厄介な（wicked）」問題を対比した。前者は目的がはっきりしていて、解けたかどうかもはっきりしている。後者には公共政策の問題のほぼすべてが含まれる。厄介な問題では \"The information needed to understand the problem depends upon one's idea for solving it\" であり、だから \"The formulation of a wicked problem is the problem!\" となる。\"understand the problems or the mission\" から始まる段階的な手法は、まず理解し、それから解けると仮定している。厄介な問題では \"one cannot first understand, then solve.\" しかも \"Wicked problems have no stopping rule\"。作業が終わるのは時間か金か根気が尽きたからで、問題が終わったと告げるからではない。関係者の多いプロダクトや組織の問いは、案を出すたびに皆の言う要望が変わり、こうなることがある。",
       "counter": {
-        "name": "たいていの問題は飼いならせる",
-        "note": "Rittel と Webber 自身、科学者や技術者がふだん扱う問題はほとんどが飼いならされた問題だと書いている。バグや移行、レイテンシの目標を「厄介な問題」と呼ぶのは、書けば済んだはずの問題記述を書かない言い訳になる"
+        "name": "先に問題を固める",
+        "note": "技術の仕事の多くは、設計の前に問題記述を書くことで解けるようになる。要求を先に固める段階的な手法があるのはそのためだ。バグや移行、レイテンシの目標を「厄介な問題」と呼ぶのは、書けば済んだはずの問題記述を書かない言い訳になる"
       },
       "guideline": "要求を書く前に二つ確かめる。誰かが解決策を出すたびに問題の書き方が変わるか。解けたと判定できるテストがないか。両方とも当てはまるなら、要求を先に固めようとしない。意見の違う人を同じレビューに集め、小さな版を早く見せ、いつやめるかを先に決めておく。問題のほうは終わりを教えてくれない。どちらかが当てはまらないなら、飼いならされた問題として扱い、問題記述を書く。",
       "source": "Horst W. J. Rittel & Melvin M. Webber「Dilemmas in a General Theory of Planning」『Policy Sciences』4 (1973), 155–169。飼いならされた問題と厄介な問題の区別、厄介な問題の十の性質の出典。"
@@ -6193,7 +6193,7 @@ export const laws: Law[] = [
       "mechanism": "Every feature is built because someone believes it will have value, and the review that approves it runs on the same beliefs. When Microsoft measured ideas in controlled experiments, \"only about 1/3 of ideas improve the metrics they were designed to improve\"; the authors estimate that a team launching ten ideas without measuring gets roughly a third good, a third flat and a third negative, so the total value is small. Teams tend to run experiments when they are less sure, but the paper notes that Amazon evaluated every new feature and still saw a success rate below 50%. Without a measurement nobody finds out: \"For most ideas, the change in key metrics will be too small to detect over time.\"",
       "counter": {
         "name": "Conviction Bets",
-        "note": "experiments optimise what can be measured within weeks; a new product, a platform shift or a long-horizon bet cannot be A/B tested, and someone has to commit on judgement"
+        "note": "some bets cannot practically be randomised (one platform, one launch, effects that take years to show), and Kohavi et al. themselves grant that measuring is sometimes \"non-economical\"; there someone has to commit on judgement"
       },
       "guideline": "Before building, write down the metric the idea is meant to move and by how much, then ship it behind a flag to a randomised share of users. Drop or rework what does not move the metric, however sure the team was. Where you cannot randomise (too little traffic, a long-term bet, a change you cannot roll back), say so and decide on judgement without claiming it was measured.",
       "source": "Ronny Kohavi et al., *Online Experimentation at Microsoft* (Microsoft ThinkWeek, 2009) — \"only about 1/3 of ideas improve the metrics they were designed to improve\" and the estimate of a third good, a third flat and a third negative."
@@ -6205,7 +6205,7 @@ export const laws: Law[] = [
       "mechanism": "どの機能も、誰かが価値があると信じたから作られる。それを承認するレビューも同じ信念で動く。Microsoft がアイデアを対照実験で測ると \"only about 1/3 of ideas improve the metrics they were designed to improve\" だった。測らずに十のアイデアを出したチームは、およそ三分の一が良く、三分の一が変化なし、三分の一が悪い結果になり、全体の価値は小さいと著者らは見積もる。実験は自信のない案ほど行われやすいが、論文によれば新機能をすべて評価していた Amazon でも成功率は50%を下回った。しかも測らなければ誰も気づかない。\"For most ideas, the change in key metrics will be too small to detect over time.\"",
       "counter": {
         "name": "確信への賭け",
-        "note": "実験が最適化できるのは数週間で測れるものだけだ。新しいプロダクト、プラットフォームの転換、長期の賭けは A/B テストできず、誰かが判断で決めるしかない"
+        "note": "現実にはランダムに割り振れない賭けもある（プラットフォームは一つ、出せるのも一度、効果が出るまで何年もかかる）。Kohavi らも、測るのが \"non-economical\" な場合があると認めている。そこでは誰かが判断で決めるしかない"
       },
       "guideline": "作る前に、そのアイデアで動かしたい指標とその幅を書いておき、フラグの裏に置いてランダムに選んだ一部の利用者に出す。指標が動かなければ、チームがどれだけ自信を持っていても捨てるか作り直す。ランダムに割り振れないとき（トラフィックが少ない、長期の賭け、戻せない変更）はそう明記し、測ったふりをせずに判断で決める。",
       "source": "Ronny Kohavi ほか『Online Experimentation at Microsoft』(Microsoft ThinkWeek, 2009)。\"only about 1/3 of ideas improve the metrics they were designed to improve\" と、良い・変化なし・悪いがそれぞれ三分の一という見積りの出典。"
@@ -6238,7 +6238,7 @@ export const laws: Law[] = [
       "title": "Kingman's Formula",
       "concept": "As a server's utilization approaches 100%, the time work spends waiting for it climbs steeply, and variability in arrivals and service multiplies the climb.",
       "stance": "Keep headroom wherever someone is waiting on the answer",
-      "mechanism": "Kingman's approximation for the mean wait in a single-server queue (G/G/1) is **E(Wq) ≈ (ρ/(1−ρ)) · ((ca² + cs²)/2) · τ**, where ρ is utilization, ca and cs are the coefficients of variation of arrival and service times, and τ is the mean service time; it is also called the VUT equation, after its three factors. The utilization term does the damage: ρ/(1−ρ) is 4 at 80%, 9 at 90% and 19 at 95%, so going from 90% to 95% busy roughly doubles the wait with nothing else changed. Variability multiplies it, so bursty arrivals and uneven job sizes lengthen the wait at any load. The approximation \"is known to be generally very accurate, especially for a system operating close to saturation.\" Little's Law says L = λW but not why W grows; Kingman's formula shows where the growth comes from. The same arithmetic plausibly applies to people: a team whose every hour is booked tends to make every new request wait. That is an inference from the model, not something Kingman measured.",
+      "mechanism": "Kingman's approximation for the mean wait in a single-server queue (G/G/1) is **E(Wq) ≈ (ρ/(1−ρ)) · ((ca² + cs²)/2) · τ**, where ρ is utilization, ca and cs are the coefficients of variation of arrival and service times, and τ is the mean service time; it is also called the VUT equation, after its three factors. The utilization term does the damage: ρ/(1−ρ) is 4 at 80%, 9 at 90% and 19 at 95%, so going from 90% to 95% busy roughly doubles the wait with nothing else changed. Variability multiplies it, so bursty arrivals and uneven job sizes lengthen the wait at any load. The approximation is generally accurate, and most accurate for a system close to saturation. Little's Law says L = λW but not why W grows; Kingman's formula shows where the growth comes from. The same arithmetic plausibly applies to people: a team whose every hour is booked tends to make every new request wait. That is an inference from the model, not something Kingman measured.",
       "counter": {
         "name": "Throughput First",
         "note": "when nobody is waiting on the result, as with overnight batch jobs or a backlog with no deadline, idle capacity is pure cost and running close to full is the right call"
@@ -6251,7 +6251,7 @@ export const laws: Law[] = [
       "title": "キングマンの公式",
       "concept": "サーバの稼働率が 100% に近づくほど、仕事がその前で待つ時間は急に伸びる。到着と処理のばらつきは、その伸びをさらに大きくする。",
       "stance": "誰かが答えを待つところには、余裕を残す",
-      "mechanism": "単一サーバの待ち行列 (G/G/1) の平均待ち時間について、Kingman の近似式は **E(Wq) ≈ (ρ/(1−ρ)) · ((ca² + cs²)/2) · τ** となる。ρ は稼働率、ca と cs は到着間隔と処理時間の変動係数、τ は平均処理時間だ。三つの因子の頭文字から VUT 式とも呼ばれる。効いてくるのは稼働率の項で、ρ/(1−ρ) は 80% で 4、90% で 9、95% で 19 になる。ほかが同じなら、90% から 95% に上げるだけで待ち時間はほぼ倍になる。ばらつきの項は掛け算で効くので、到着の偏りや仕事の大きさの不揃いは、どの負荷でも待ちを長くする。この近似は「一般にかなり正確で、とくに飽和に近い系でよく合う」とされる。リトルの法則は L = λW を言うだけで、W がなぜ伸びるかは言わない。キングマンの公式はその伸びがどこから来るかを示す。同じ計算はおそらく人にも当てはまり、予定が埋まりきったチームでは新しい依頼がどれも待たされがちになる。これはモデルからの推論で、Kingman が測ったものではない。",
+      "mechanism": "単一サーバの待ち行列 (G/G/1) の平均待ち時間について、Kingman の近似式は **E(Wq) ≈ (ρ/(1−ρ)) · ((ca² + cs²)/2) · τ** となる。ρ は稼働率、ca と cs は到着間隔と処理時間の変動係数、τ は平均処理時間だ。三つの因子の頭文字から VUT 式とも呼ばれる。効いてくるのは稼働率の項で、ρ/(1−ρ) は 80% で 4、90% で 9、95% で 19 になる。ほかが同じなら、90% から 95% に上げるだけで待ち時間はほぼ倍になる。ばらつきの項は掛け算で効くので、到着の偏りや仕事の大きさの不揃いは、どの負荷でも待ちを長くする。この近似はおおむね正確で、飽和に近い系ほどよく合う。リトルの法則は L = λW を言うだけで、W がなぜ伸びるかは言わない。キングマンの公式はその伸びがどこから来るかを示す。同じ計算はおそらく人にも当てはまり、予定が埋まりきったチームでは新しい依頼がどれも待たされがちになる。これはモデルからの推論で、Kingman が測ったものではない。",
       "counter": {
         "name": "スループット優先",
         "note": "夜間のバッチ処理や期限のないバックログのように、結果を誰も待っていない仕事では、遊んでいる容量はただのコストだ。満杯近くまで回すのが正しい"
@@ -6290,11 +6290,11 @@ export const laws: Law[] = [
       "mechanism": "Paul Graham describes two ways of using a day. \"The manager's schedule is for bosses\": each day is cut into one-hour intervals, and a meeting is just one more slot. Makers, people who program or write, generally prefer to use time in units of half a day at least, because hard work needs a long run before it gets going. For them, \"A single meeting can blow a whole afternoon, by breaking it into two pieces each too small to do anything hard in.\" Neither schedule is wrong: \"Each type of schedule works fine by itself. Problems arise when they meet.\" The person booking the meeting usually sees only the hour it fills on their own calendar, so the cost to the maker tends to go uncounted.",
       "counter": {
         "name": "Unblock First",
-        "note": "a maker who saves every question for office hours leaves teammates stuck behind them; when someone else's work is waiting, answering now breaks one block and frees several"
+        "note": "a maker who saves every question for office hours leaves teammates stuck behind them; when someone else's work is waiting, answering now breaks one block and frees several; Google's review guide optimizes \"for the speed at which a team of developers can produce a product together\""
       },
       "guideline": "Put meetings at the edges of the day or cluster them on fixed days, and keep blocks of at least half a day free of them for the people who build. Before booking a maker, count the block you would break, not the hour you take. Incidents and a blocked teammate are exempt; those get answered now.",
-      "example": "Pinterest's product engineering team experimented with a three-day no-meeting schedule, putting 9AM-5PM no-meeting blocks on engineers' calendars from Tuesday to Thursday. After about 100 days, managers reported very positive feedback, and a survey indicated that most engineers shared it; some said Monday and Friday meetings often spilled over. Several other engineering organisations at Pinterest then adopted the same schedule.",
-      "source": "Paul Graham, *Maker's Schedule, Manager's Schedule* (paulgraham.com, July 2009) — the two schedules and what one meeting costs a maker."
+      "example": "Pinterest's product engineering organization experimented with a three-day no-meeting schedule, putting 9AM-5PM no-meeting blocks on engineers' calendars from Tuesday to Thursday. After about 100 days, managers reported very positive feedback, and a survey indicated that most engineers shared it; some said Monday and Friday meetings often spilled over. Several other engineering organisations at Pinterest then adopted the same schedule.",
+      "source": "Paul Graham, *Maker's Schedule, Manager's Schedule* (paulgraham.com, July 2009) — the two schedules and what one meeting costs a maker. The counter-force cites Google, \"Speed of Code Reviews\", *Google Engineering Practices Documentation* — \"At Google, we optimize for the speed at which a team of developers can produce a product together\"."
     },
     "ja": {
       "title": "メイカーの時間割、マネージャーの時間割",
@@ -6303,11 +6303,11 @@ export const laws: Law[] = [
       "mechanism": "Paul Graham は一日の使い方を二つに分ける。「マネージャーの時間割は上司のためのものだ」。一日は一時間ごとに区切られ、会議は枠がひとつ埋まるだけだ。プログラムを書いたり文章を書いたりするメイカーは、ふつう少なくとも半日単位で時間を使いたがる。難しい仕事は、動き出すまでに長い助走が要るからだ。メイカーにとっては「会議がひとつあるだけで午後がまるごと吹き飛ぶ。午後が二つに割れ、どちらも難しいことをするには短すぎるからだ」。どちらの時間割も間違いではない。「どちらの時間割も、それだけならうまくいく。問題は両者がぶつかったときに起きる」。会議を入れる側には自分の予定表の一時間しか見えないので、メイカーの損は数えられないまま終わりがちだ。",
       "counter": {
         "name": "まず詰まりを外す",
-        "note": "質問をすべてオフィスアワーまでためるメイカーは、後ろでチームメイトを止めてしまう。誰かの仕事が待っているなら、今答えて一つのまとまりを崩すほうが、いくつものまとまりを救える"
+        "note": "質問をすべてオフィスアワーまでためるメイカーは、後ろでチームメイトを止めてしまう。誰かの仕事が待っているなら、今答えて一つのまとまりを崩すほうが、いくつものまとまりを救える。Google のレビューのガイドも \"for the speed at which a team of developers can produce a product together\" を最適化するとしている"
       },
       "guideline": "会議は一日の端に寄せるか、決まった曜日にまとめる。作る人には、会議のない半日以上のまとまりを残す。メイカーの予定を押さえる前に、取る一時間ではなく壊すまとまりを数える。障害対応と、手が止まっているチームメイトは例外で、すぐ答える。",
-      "example": "Pinterest のプロダクトエンジニアリングチームは、火曜から木曜まで、エンジニアの予定表に 9 時から 17 時の会議禁止枠を入れる「週三日は会議なし」を試した。約100日後、マネージャーにはとても好意的な声が届き、調査でも大半のエンジニアが同じ意見だった。月曜と金曜の会議がよくはみ出すという声もあった。その後、Pinterest のほかのエンジニアリング組織もいくつか同じやり方を取り入れた。",
-      "source": "Paul Graham『Maker's Schedule, Manager's Schedule』(paulgraham.com, 2009年7月)。二つの時間割と、会議ひとつがメイカーに負わせる代償の出典。"
+      "example": "Pinterest のプロダクトエンジニアリング組織は、火曜から木曜まで、エンジニアの予定表に 9 時から 17 時の会議禁止枠を入れる「週三日は会議なし」を試した。約100日後、マネージャーにはとても好意的な声が届き、調査でも大半のエンジニアが同じ意見だった。月曜と金曜の会議がよくはみ出すという声もあった。その後、Pinterest のほかのエンジニアリング組織もいくつか同じやり方を取り入れた。",
+      "source": "Paul Graham『Maker's Schedule, Manager's Schedule』(paulgraham.com, 2009年7月)。二つの時間割と、会議ひとつがメイカーに負わせる代償の出典。対抗原理で引いたのは Google「Speed of Code Reviews」『Google Engineering Practices Documentation』の \"At Google, we optimize for the speed at which a team of developers can produce a product together\"。"
     }
   },
   {
@@ -6336,13 +6336,13 @@ export const laws: Law[] = [
       "title": "McNamara Fallacy",
       "concept": "Decisions drift toward whatever can be counted, until what cannot be counted is treated as if it did not exist.",
       "stance": "Name what you cannot count, and keep it beside the number",
-      "mechanism": "Daniel Yankelovich laid it out as four steps in a 1971 speech. \"The first step is to measure whatever can be easily measured. This is okay as far as it goes.\" Then: \"The second step is to disregard that which can't be easily measured or give it an arbitrary quantitative value.\" Then: \"The third step is to presume that what can't be easily measured really isn't very important.\" Last: \"The fourth step is to say that what can't be easily measured really doesn't exist.\" He called the end of that slide suicide, named it after Robert McNamara and pointed to the US experience in Vietnam. Numbers are cheap to collect, easy to compare and easy to defend in a meeting; judgements about trust, morale or the state of the code are not, so they tend to lose by default. It differs from Goodhart's Law: there the number gets gamed; here the number can be honest, and the harm comes from what was left out.",
+      "mechanism": "Daniel Yankelovich laid it out as four steps in a 1971 speech. \"The first step is to measure whatever can be easily measured. This is okay as far as it goes.\" Then: \"The second step is to disregard that which can't be easily measured or give it an arbitrary quantitative value.\" Then: \"The third step is to presume that what can't be measured easily really isn't very important.\" Last: \"The fourth step is to say that what can't be easily measured really doesn't exist.\" He called the end of that slide suicide, named it after Robert McNamara and pointed to the US experience in Vietnam. Numbers are cheap to collect, easy to compare and easy to defend in a meeting; judgements about trust, morale or the state of the code are not, so they tend to lose by default. It differs from Goodhart's Law: there the number gets gamed; here the number can be honest, and the harm comes from what was left out.",
       "counter": {
         "name": "Measure It Anyway",
         "note": "much of what looks unmeasurable can be measured roughly, and a rough number tells you more than an unexamined hunch; Hubbard argues that the belief something cannot be measured rests on misconceptions (How to Measure Anything, 2007)"
       },
-      "guideline": "When a decision rests on a dashboard, write down what matters that the dashboard does not show, such as user trust, on-call load or code health, and put at least one direct look or survey beside the numbers. The SPACE authors make the same point about developer productivity: \"it cannot be measured by a single metric or dimension.\" For a narrow, well-instrumented question such as one endpoint's latency, the number is enough.",
-      "source": "Daniel Yankelovich, *The New Odds* (speech to the Marketing Strategy Conference of the Sales Executives Club of New York, 1971) — the four steps and the name. The common citation *Corporate Priorities* (1972) appears to be a mis-citation: in the speech it is the name of his firm's research programme."
+      "guideline": "When a decision rests on a dashboard, write down what matters that the dashboard does not show, such as user trust, on-call load or code health, and put at least one direct look or survey beside the numbers. The SPACE authors make the same point about developer productivity: no single metric or dimension can capture it. For a narrow, well-instrumented question such as one endpoint's latency, the number is enough.",
+      "source": "Daniel Yankelovich, *The New Odds* (speech to the Marketing Strategy Conference of the Sales Executives Club of New York, 1971) — the four steps and the name. The common citation *Corporate Priorities* (1972) is the name of his firm's research programme, which this speech introduces; the four steps are in the speech itself."
     },
     "ja": {
       "title": "マクナマラの誤謬",
@@ -6353,8 +6353,8 @@ export const laws: Law[] = [
         "name": "それでも測る",
         "note": "測れないように見えるものの多くは粗くなら測れる。粗い数字でも、確かめていない勘よりは多くを教えてくれる。Hubbard は、何かが測れないという思い込みは誤解に基づいていると論じる（『How to Measure Anything』2007年）"
       },
-      "guideline": "ダッシュボードで判断するときは、ダッシュボードに出てこないが大事なもの（利用者の信頼、オンコールの負担、コードの健全さなど）を書き出し、少なくとも一つは直接見たものかアンケートを数字の横に置く。SPACE の著者も開発者の生産性について「単一の指標や次元では測れない」と書いている。一つのエンドポイントのレイテンシのように、狭くて計測が行き届いた問いなら数字だけで足りる。",
-      "source": "Daniel Yankelovich『The New Odds』(Sales Executives Club of New York の Marketing Strategy Conference での講演, 1971)。四つの段階と名前の出典。よく見る『Corporate Priorities』(1972) という出典は誤りとみられる。講演の中では、彼の会社の調査プログラムの名前として出てくる。"
+      "guideline": "ダッシュボードで判断するときは、ダッシュボードに出てこないが大事なもの（利用者の信頼、オンコールの負担、コードの健全さなど）を書き出し、少なくとも一つは直接見たものかアンケートを数字の横に置く。SPACE の著者も、開発者の生産性は単一の指標や次元では測れないと書いている。一つのエンドポイントのレイテンシのように、狭くて計測が行き届いた問いなら数字だけで足りる。",
+      "source": "Daniel Yankelovich『The New Odds』(Sales Executives Club of New York の Marketing Strategy Conference での講演, 1971)。四つの段階と名前の出典。よく見る『Corporate Priorities』(1972) は、この講演で紹介される彼の会社の調査プログラムの名前だ。四つの段階は講演そのものにある。"
     }
   },
   {
@@ -6383,27 +6383,27 @@ export const laws: Law[] = [
       "title": "Twyman's Law",
       "concept": "A metric that moves surprisingly far is more often a bug in the measurement or the analysis than a real effect.",
       "stance": "Treat a surprising number as a bug report until it survives checking",
-      "mechanism": "In its usual wording, \"Any figure that looks interesting or different is usually wrong!\" Kohavi and his co-authors explain it with Bayes' rule. Breakthroughs are rare: if experiment results centre on 0 with a standard deviation of 0.25%, a +2.0% gain in sessions per user is eight standard deviations out, so even a statistically significant result is more likely a bug, usually an instrumentation error. With 5% significance and 80% power, if real breakthroughs are one in 500 experiments, the chance that a significant result is a true positive drops to 3.1%. People also check results unevenly: a bad result for a favoured feature gets questioned, a great one gets celebrated, so the errors that flatter us survive longest.",
+      "mechanism": "In its usual wording, \"Any figure that looks interesting or different is usually wrong!\" Kohavi and his co-authors explain it with Bayes' rule. Breakthroughs are rare: if experiment results centre on 0 with a standard deviation of 0.25%, a +2.0% gain in sessions per user is eight standard deviations out, so even a statistically significant result is more likely a bug, such as an instrumentation error. With 5% significance and 80% power, if real breakthroughs are one in 500 experiments, the chance that a significant result is a true positive drops to 3.1%. People also check results unevenly: a bad result for a favoured feature gets questioned, a great one gets celebrated, so the errors that flatter us survive longest.",
       "counter": {
-        "name": "Big Effects Are Sometimes Real",
-        "note": "the same paper's first rule: some surprises are real, like a Bing font-colour change worth over $10M a year that held when replicated on 32 million users; check hard, but do not throw out a result only for being large"
+        "name": "Trivial Changes Can Have a Big Impact",
+        "note": "the same paper's Rule #1: trivial changes sometimes move key metrics a lot, like a Bing font-colour change worth over $10M a year; a team that treats every big win as a bug stops running the cheap long-shot experiments that find them"
       },
       "guideline": "When a result is far better or worse than past experiments, hold the announcement and check the plumbing first: how the metric is logged, whether the treatment changed what gets recorded, and whether the analysis compares like with like. Then replicate on a fresh sample. Ordinary, expected moves do not need this treatment.",
       "example": "An MSN experiment with a new auto-suggest algorithm looked like a huge success: searches on Bing referred from MSN rose dramatically. Investigating because of this rule, the team found the new code was effectively issuing two searches whenever a user picked a suggestion, one of which the browser always dropped.",
-      "source": "Folklore, attributed to Tony Twyman; documented in Ron Kohavi, Alex Deng, Roger Longbotham & Ya Xu, *Seven Rules of Thumb for Web Site Experimenters* (KDD, 2014) — the wording, the Bayes argument and the examples."
+      "source": "Folklore, attributed to Tony Twyman via A. S. C. Ehrenberg, *The Teaching of Statistics: Corrections and Comments* (Journal of the Royal Statistical Society, Series A, 1975); documented in Ron Kohavi, Alex Deng, Roger Longbotham & Ya Xu, *Seven Rules of Thumb for Web Site Experimenters* (KDD, 2014) — the wording, the Bayes argument and the examples."
     },
     "ja": {
       "title": "トワイマンの法則",
       "concept": "指標が驚くほど大きく動いたときは、本当の効果より、計測か分析のバグであることのほうが多い。",
       "stance": "意外な数字は、確かめるまでバグ報告として扱う",
-      "mechanism": "よく知られた言い方では「面白く見える数字、変わって見える数字は、たいてい間違っている！」。Kohavi らはベイズの定理で説明する。大当たりはまれだ。実験結果が平均 0、標準偏差 0.25% に分布しているなら、ユーザーあたりセッション数の +2.0% は平均から標準偏差 8 個分も外れている。統計的に有意でも、バグ、たいていは計測のバグである可能性のほうが高い。有意水準 5%、検出力 80% で、本物の大当たりが 500 回に 1 回なら、有意な結果が本当に効いている確率は 3.1% まで下がる。人の確かめ方も偏っている。肩入れした機能の悪い結果は疑うのに、良い結果は祝ってしまう。だから自分に都合のよい誤りほど長く生き残る。",
+      "mechanism": "よく知られた言い方では「面白く見える数字、変わって見える数字は、たいてい間違っている！」。Kohavi らはベイズの定理で説明する。大当たりはまれだ。実験結果が平均 0、標準偏差 0.25% に分布しているなら、ユーザーあたりセッション数の +2.0% は平均から標準偏差 8 個分も外れている。統計的に有意でも、計測の誤りのようなバグである可能性のほうが高い。有意水準 5%、検出力 80% で、本物の大当たりが 500 回に 1 回なら、有意な結果が本当に効いている確率は 3.1% まで下がる。人の確かめ方も偏っている。肩入れした機能の悪い結果は疑うのに、良い結果は祝ってしまう。だから自分に都合のよい誤りほど長く生き残る。",
       "counter": {
-        "name": "大きな効果が本物のこともある",
-        "note": "同じ論文の第一のルール。本物の驚きもある。Bing のフォントの色の変更は年間1000万ドル以上の価値があり、3200万人で再現しても結果は変わらなかった。厳しく確かめるのはよいが、大きいというだけで結果を捨てない"
+        "name": "ささいな変更が大きく効くこともある",
+        "note": "同じ論文のルール1。ささいな変更が主要な指標を大きく動かすことがある。Bing のフォントの色の変更は年間1000万ドル以上の価値があった。大きな勝ちをすべてバグ扱いするチームは、それを見つける安くて当たりにくい実験をやめてしまう"
       },
       "guideline": "過去の実験よりはるかに良い、あるいは悪い結果が出たら、発表を止めてまず配管を確かめる。指標がどう記録されているか、変更が記録される中身を変えていないか、分析が同じものどうしを比べているか。そのうえで新しいサンプルで再現する。予想どおりのふつうの動きには、ここまでしなくてよい。",
       "example": "MSN で新しいオートサジェストのアルゴリズムを試した実験は、大成功に見えた。MSN から Bing に送られる検索が劇的に増えたからだ。この法則に従って調べると、新しいコードは利用者が候補を選ぶたびに実質二回検索を投げていて、そのうち一回は必ずブラウザが切っていた。",
-      "source": "Tony Twyman のものとされる言い伝え（フォークロア）。Ron Kohavi, Alex Deng, Roger Longbotham & Ya Xu『Seven Rules of Thumb for Web Site Experimenters』(KDD, 2014) に記録されている。言い回し、ベイズによる説明、事例の出典。"
+      "source": "Tony Twyman のものとされる言い伝え（フォークロア）で、A. S. C. Ehrenberg『The Teaching of Statistics: Corrections and Comments』(Journal of the Royal Statistical Society, Series A, 1975) を経て伝わった。Ron Kohavi, Alex Deng, Roger Longbotham & Ya Xu『Seven Rules of Thumb for Web Site Experimenters』(KDD, 2014) に記録されている。言い回し、ベイズによる説明、事例の出典。"
     }
   },
   {
@@ -6430,29 +6430,29 @@ export const laws: Law[] = [
     },
     "en": {
       "title": "Psychological Safety",
-      "concept": "A team learns only as fast as its members will admit mistakes, ask for help and disagree, and they do that only when they believe it is safe to.",
+      "concept": "A team learns when its members admit mistakes, ask for help and disagree, and they do that far more readily when they believe it is safe to.",
       "stance": "Make \"I was wrong\" and \"I don't know\" cheap to say",
-      "mechanism": "Amy Edmondson defined team psychological safety as \"a shared belief held by members of a team that the team is safe for interpersonal risk taking\". Asking a question, reporting an error or challenging a plan each risks looking ignorant or difficult in front of colleagues; when that risk feels high, people tend to stay quiet, and the team loses exactly the information it needed. In her study of 51 work teams in a manufacturing company, psychological safety was associated with learning behaviour, and learning behaviour mediated between psychological safety and team performance. She separates it from cohesiveness, which can reduce willingness to disagree, and from permissiveness: it is \"a sense of confidence that the team will not embarrass, reject, or punish someone for speaking up.\"",
+      "mechanism": "Amy Edmondson defined team psychological safety as \"a shared belief held by members of a team that the team is safe for interpersonal risk taking\". Asking a question, reporting an error or challenging a plan each risks looking ignorant or difficult in front of colleagues; when that risk feels high, people tend to stay quiet, and the team loses exactly the information it needed. In her study of 51 work teams in a manufacturing company, psychological safety was associated with learning behaviour, and learning behaviour mediated between psychological safety and team performance.",
       "counter": {
-        "name": "Accountability for Excellence",
-        "note": "safety on its own does not make people stretch; Edmondson herself says \"if you are ONLY creating psychological safety, then you are creating a comfort zone,\" so the bar stays high and missed commitments still have consequences"
+        "name": "Felt Accountability",
+        "note": "in a three-year study of 545 New York City public schools, Higgins and colleagues found the best performance where psychological safety was relatively low and felt accountability relatively high, not where both were high as Edmondson's model predicts; they liken safety to \"a pinch of yeast\", so when results lag, raise accountability for shared goals before adding comfort (Academy of Management Discoveries, 2022)"
       },
-      "guideline": "Leaders go first: say your own mistakes and unknowns out loud, ask for dissent before you decide, and answer bad news by thanking the messenger and fixing the system. Keep standards and deadlines where they are; safety is about speaking up, not about lowering the bar.",
-      "example": "Google's re:Work guide on its team-effectiveness research (Project Aristotle, published 2015) says the researchers studied 180 teams and found that what mattered was less about who is on the team, and more about how the team worked together. Of the five dynamics it lists in order of importance, psychological safety comes first, defined with Edmondson's wording.",
-      "source": "Amy C. Edmondson, *Psychological Safety and Learning Behavior in Work Teams* (Administrative Science Quarterly, 1999) — the definition and the field study of 51 teams."
+      "guideline": "Leaders go first: say your own mistakes and unknowns out loud, ask for dissent before you decide, and answer bad news by thanking the messenger and fixing the system. Keep standards and deadlines where they are; safety is about speaking up, not about lowering the bar. Edmondson herself warns that \"if you are ONLY creating psychological safety, then you are creating a comfort zone.\"",
+      "example": "Google's re:Work guide on its team-effectiveness research, code-named Project Aristotle (the guide was first published in 2015), says the researchers studied 180 teams and found that what mattered was less about who is on the team, and more about how the team worked together. Of the five dynamics it lists in order of importance, psychological safety comes first, defined with Edmondson's wording.",
+      "source": "Amy C. Edmondson, *Psychological Safety and Learning Behavior in Work Teams* (Administrative Science Quarterly, 1999) — the definition and the field study of 51 teams; Edmondson on the Harvard Business School recruiting site's guide to leading in tough times — the \"comfort zone\" warning. The counter-force is from M. Higgins, Shoshana R. Dobrow, J. M. Weiner & Haiyang Liu, *When is psychological safety helpful in organizations? A longitudinal study* (Academy of Management Discoveries, 2022) — \"the best conditions for fostering organizational performance occur when psychological safety is relatively low and felt accountability is relatively high.\""
     },
     "ja": {
       "title": "心理的安全性",
-      "concept": "チームが学ぶ速さは、メンバーが間違いを認め、助けを求め、異を唱える速さで決まる。人がそうするのは、そうしても安全だと信じているときだけだ。",
+      "concept": "チームが学べるのは、メンバーが間違いを認め、助けを求め、異を唱えるときだ。人がそうしやすくなるのは、そうしても安全だと信じているときだ。",
       "stance": "「間違えた」「知らない」を言いやすくしておく",
-      "mechanism": "Amy Edmondson はチームの心理的安全性を「このチームでは対人関係のリスクを取っても安全だという、メンバーが共有する信念」と定義した。質問する、ミスを報告する、計画に異を唱える。どれも同僚の前で無知に見えたり面倒な人に見えたりするリスクがある。そのリスクが高く感じられると人は黙りがちで、チームはまさに必要だった情報を失う。製造業の会社の51チームを調べた研究では、心理的安全性は学習行動と結びつき、学習行動が心理的安全性とチームの成果をつないでいた。彼女はこれを、異を唱える気持ちを弱めることもある結束の強さとも、なれ合いとも区別する。心理的安全性とは「声を上げた人を、チームが恥をかかせたり、退けたり、罰したりしないという確信」だ。",
+      "mechanism": "Amy Edmondson はチームの心理的安全性を「このチームでは対人関係のリスクを取っても安全だという、メンバーが共有する信念」と定義した。質問する、ミスを報告する、計画に異を唱える。どれも同僚の前で無知に見えたり面倒な人に見えたりするリスクがある。そのリスクが高く感じられると人は黙りがちで、チームはまさに必要だった情報を失う。製造業の会社の51チームを調べた研究では、心理的安全性は学習行動と結びつき、学習行動が心理的安全性とチームの成果をつないでいた。",
       "counter": {
-        "name": "高い水準への説明責任",
-        "note": "安全なだけでは、人は背伸びしない。Edmondson 本人も「心理的安全性だけをつくるなら、それはぬるま湯をつくっているにすぎない」と言う。だから水準は高く保ち、守れなかった約束にはそれなりの結果がついてくる"
+        "name": "説明責任の実感",
+        "note": "Higgins らがニューヨーク市の公立学校545校を3年間追った研究では、成果が最も高かったのは心理的安全性が相対的に低く、説明責任の実感が相対的に高い学校だった。Edmondson のモデルが言う両方とも高い学校ではない。彼らは心理的安全性を「ひとつまみのイースト」にたとえる。成果が伸びないときは、居心地を足す前に、共有の目標への説明責任を上げる（Academy of Management Discoveries, 2022年）"
       },
-      "guideline": "まずリーダーがやって見せる。自分のミスと分からないことを口に出し、決める前に反対意見を求め、悪い知らせには知らせた人に礼を言って仕組みを直す。水準と締切は動かさない。心理的安全性は声を上げられることであって、基準を下げることではない。",
-      "example": "Google の re:Work にあるチームの効果性の研究（Project Aristotle、2015年公開）のガイドによれば、研究者は180チームを調べ、大事なのは誰がチームにいるかより、チームがどう一緒に働くかだとわかった。重要な順に挙げた五つの要素の一番目が心理的安全性で、定義には Edmondson の言葉を使っている。",
-      "source": "Amy C. Edmondson『Psychological Safety and Learning Behavior in Work Teams』(Administrative Science Quarterly, 1999)。定義と、51チームを対象にした現場研究の出典。"
+      "guideline": "まずリーダーがやって見せる。自分のミスと分からないことを口に出し、決める前に反対意見を求め、悪い知らせには知らせた人に礼を言って仕組みを直す。水準と締切は動かさない。心理的安全性は声を上げられることであって、基準を下げることではない。Edmondson 本人も「心理的安全性だけをつくるなら、それはぬるま湯をつくっているにすぎない」と言う。",
+      "example": "Google の re:Work にある、Project Aristotle という名のチームの効果性の研究のガイド（2015年初出）によれば、研究者は180チームを調べ、大事なのは誰がチームにいるかより、チームがどう一緒に働くかだとわかった。重要な順に挙げた五つの要素の一番目が心理的安全性で、定義には Edmondson の言葉を使っている。",
+      "source": "Amy C. Edmondson『Psychological Safety and Learning Behavior in Work Teams』(Administrative Science Quarterly, 1999)。定義と、51チームを対象にした現場研究の出典。「ぬるま湯」の警告は、Harvard Business School の採用サイトにある、厳しい時期のリーダーシップについてのガイドでの Edmondson の言葉。対抗原理は M. Higgins, Shoshana R. Dobrow, J. M. Weiner & Haiyang Liu『When is psychological safety helpful in organizations? A longitudinal study』(Academy of Management Discoveries, 2022) から。\"the best conditions for fostering organizational performance occur when psychological safety is relatively low and felt accountability is relatively high.\" の出典。"
     }
   }
 ];

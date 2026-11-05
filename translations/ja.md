@@ -191,7 +191,7 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 | `113` | [メイカーの時間割、マネージャーの時間割 (Maker's Schedule, Manager's Schedule)](#メイカーの時間割マネージャーの時間割-makers-schedule-managers-schedule) | 組織 | ものを作る人には途切れない長い時間が要る。一時間刻みで回る予定表は、その時間を使えないほど細かく切ってしまう。 |
 | `114` | [マクナマラの誤謬 (McNamara Fallacy)](#マクナマラの誤謬-mcnamara-fallacy) | 意思決定 | 判断は数えられるものに寄っていき、やがて数えられないものは存在しないかのように扱われる。 |
 | `115` | [トワイマンの法則 (Twyman's Law)](#トワイマンの法則-twymans-law) | 認知 | 指標が驚くほど大きく動いたときは、本当の効果より、計測か分析のバグであることのほうが多い。 |
-| `116` | [心理的安全性 (Psychological Safety)](#心理的安全性-psychological-safety) | 組織 | チームが学ぶ速さは、メンバーが間違いを認め、助けを求め、異を唱える速さで決まる。人がそうするのは、そうしても安全だと信じているときだけだ。 |
+| `116` | [心理的安全性 (Psychological Safety)](#心理的安全性-psychological-safety) | 組織 | チームが学べるのは、メンバーが間違いを認め、助けを求め、異を唱えるときだ。人がそうしやすくなるのは、そうしても安全だと信じているときだ。 |
 
 ### タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)
 
@@ -1483,11 +1483,11 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 
 - **概念:** 誤った主張を論破するには、それを言うよりはるかに手間がかかる。だから安い主張が大量に来ると、確かめる側がつぶれる。
 - **心得:** 反論に手間をかける前に、まず主張に証拠を出させる
-- **メカニズム:** 主張は一行で言える。それが誤りだと示すには、文脈を読み、事例を再現し、なぜ成り立たないかを書かなければならない。主張する側が払うのは前者で、確かめる側が払うのは後者だ。前者がずっと安くて済むのを止める仕組みはない。curl のセキュリティチームは7人で、2025年は報告が来るたびに3〜4人が、それぞれ30分、ときには3時間ほどかけていた。その一方で、送られてきたものの約20%は AI が生成したゴミで、本物の脆弱性だったのは約5%だった。生成されたテキストのせいで主張を作るのが安くなるほど、この差は広がる。
+- **メカニズム:** 主張は一行で言える。それが誤りだと示すには、文脈を読み、事例を再現し、なぜ成り立たないかを書かなければならない。主張する側が払うのは前者で、確かめる側が払うのは後者だ。前者がずっと安くて済むのを止める仕組みはない。curl のセキュリティチームは7人で、2025年は報告が来るたびに3〜4人が、Stenberg の見積りでそれぞれ30分、ときには3時間ほどかけていた。7月初めの時点で、その年に送られてきたものの約20%は AI が生成したゴミで、本物の脆弱性だったのは約5%だった。生成されたテキストのせいで主張を作るのが安くなるほど、この差は広がる。
 - **対立概念:** **カニンガムの法則** — 詳しい人が見ている場では、間違った主張にはすぐに無料で訂正がつくことが多い。主張を一つ残らず確かめてから出すより、自分の推測を出して直してもらうほうが早い場合もある。
-- **判断の指針:** 確かめる速さを超えて主張が届く場所（バグ報告、レビューコメント、脆弱性の報告）では、最初に証拠を求める。再現手順、失敗するテスト、ログを出してもらう。最初の確認には時間の上限を決め、確認済みの結果ではなく主張の件数に対して払う報酬はなくす。ただし、得るもののない人からの短い報告を切り捨てる口実にはしない。短くても再現する報告は、きちんと見る。
+- **判断の指針:** 確かめる速さを超えて主張が届く場所（バグ報告、レビューコメント、脆弱性の報告）では、最初に証拠を求める。再現手順、失敗するテスト、ログを出してもらう。最初の確認には時間の上限を決める。報酬が何を呼び込むかも見ておく。確認済みの結果にだけ払う報酬でも、確かめきれないほどの主張を集めるなら、やめたほうがいい。ただし、得るもののない人からの短い報告を切り捨てる口実にはしない。短くても再現する報告は、きちんと見る。
 - **実例:** curl はバグバウンティを終え、正式な終了日は2026年1月31日だった。Daniel Stenberg によれば、以前は報告の15%強が確認済みの脆弱性になっていたが、2025年からその割合は5%未満に落ちた。理由の一つに AI が生成したゴミを挙げ、でっち上げの嘘を送る動機をなくすための措置だと書いている。 [記録 ↗](https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/)
-- **出典:** Alberto Brandolini のツイート (Twitter, 2013年1月11日)。"The bullshit asimmetry: the amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it."（綴りは原文のまま）。curl のセキュリティチームの数字は Daniel Stenberg「Death by a thousand slops」(daniel.haxx.se, 2025) による。 — [原典 ↗](https://en.wikipedia.org/wiki/Brandolini%27s_law)
+- **出典:** Alberto Brandolini のツイート (Twitter, 2013年1月11日)。"The bullshit asimmetry: the amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it."（綴りはツイートの原文のまま。Wikipedia の出典表記は題を言い換えている）。curl のセキュリティチームの数字は Daniel Stenberg「Death by a thousand slops」(daniel.haxx.se, 2025) による。 — [原典 ↗](https://en.wikipedia.org/wiki/Brandolini%27s_law)
 - **関連:** [カニンガムの法則 (Cunningham's Law)](#カニンガムの法則-cunninghams-law) · [リーナスの法則 (Linus's Law)](#リーナスの法則-linuss-law) · [カーニハンの法則 (Kernighan's Law)](#カーニハンの法則-kernighans-law) · [自動化バイアス (Automation Bias)](#自動化バイアス-automation-bias)
 
 ### 自動化バイアス (Automation Bias)
@@ -1495,8 +1495,8 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 `§ 102` · 認知
 
 - **概念:** 自動化された補助を使う人は、自分で確かめる代わりにそれを頼りがちだ。補助が指摘しないものを見落とし、補助が間違っていてもそれに従う。
-- **心得:** ツールの答えも、同僚の答えと同じように確かめる
-- **メカニズム:** 確かめるには注意がいる。たいてい正しい補助を使っていると、一回ごとの確認が無駄に思えてきて、本来なら自分でする探索がいつのまにか補助の出力に置き換わる。Parasuraman と Manzey のレビューは誤りを二種類に分け、補助が不完全なとき、自動化バイアスは見落とし（omission）と誤った指示への追従（commission）の両方を生むとしている。初心者だけの問題でもない。初心者にも熟練者にも起き、訓練や指示では防げず、個人の判断にもチームの判断にも影響するという。Perry らのユーザ実験では、AI のコードアシスタントを使った参加者は使わなかった参加者よりはっきり安全性の低いコードを書き、しかも自分のコードは安全だと思いやすかった。
+- **心得:** ツールに従ったかではなく、結果に責任を持つ
+- **メカニズム:** 確かめるには注意がいる。たいてい正しい補助を使っていると、一回ごとの確認が無駄に思えてきて、本来なら自分でする探索がいつのまにか補助の出力に置き換わる。Parasuraman と Manzey のレビューは誤りを二種類に分け、補助が不完全なとき、自動化バイアスは見落とし（omission）と誤った指示への追従（commission）の両方を生むとしている。初心者だけの問題でもない。初心者にも熟練者にも起き、訓練や指示では防げず、個人の判断にもチームの判断にも影響するという。Perry らのユーザ実験では、AI のコードアシスタントを使った参加者は使わなかった参加者より有意に安全性の低いコードを書き、しかも自分のコードは安全だと思いやすかった。
 - **対立概念:** **アルゴリズム嫌悪** — 逆向きの誤りもよく起きる。Dietvorst、Simmons、Massey によれば、人は同じ間違いを見たとき、人間の予測者よりアルゴリズムのほうに早く信頼を失う。そのため、まだ自分より正確な補助を手放してしまう。
 - **判断の指針:** 自動化された補助が判断に入る場所（生成されたコード、スキャナの結果、異常なしと告げるアラート）では、ツールに従ったかどうかではなく、結果に責任を持つ人を一人決める。セキュリティ、データ移行、本番の変更のように影響の大きい経路では、レビュアーはツールの出力ではなく要件と照らし合わせて確かめ、補助が見落としたものを記録しておく。ツールのほうが確かだとわかっている作業を手でやり直すことはしない。影響の小さい出力は抜き取りで確かめる。
 - **実例:** 2018年3月23日、カリフォルニア州マウンテンビューの US-101 で、Traffic-Aware Cruise Control と Autosteer を使って走っていた Tesla Model X が分岐部の導流帯に入り、損傷していた衝撃吸収装置に衝突して、運転者が亡くなった。NTSB は推定原因として、システムの限界から Autopilot が車を導流帯に向けたことと、運転者が反応しなかったことを挙げた。運転者が反応しなかったのは、おそらく携帯電話のゲームアプリに気を取られていたことと、部分的な運転自動化システムである Autopilot に頼りすぎていたためだとしている。 [記録 ↗](https://www.ntsb.gov/investigations/Pages/HWY18FH011.aspx)
@@ -1509,10 +1509,10 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 
 - **概念:** レビューに出す変更が大きいほど、一行ずつは丁寧に読まれなくなる。欠陥はすり抜け、最初に見てもらうまでの待ちも長くなる。
 - **心得:** 一度に読み切れる大きさで変更を出す
-- **メカニズム:** レビュアーの注意には限りがある。SmartBear が Cisco で 2,500 件のレビューを調べた研究では、200 行未満のレビューは比較的高い率で欠陥を見つけ、それを超えると結果は大きく落ちた。著者たちは、それより大きいとレビュアーは手に負えなくなり、欠陥は見つからないと結論している。Google のガイドは時間の取り方の面を挙げる。大きな変更一つのために30分のまとまった時間を空けるより、小さな変更のために5分を何度か見つけるほうがレビュアーには楽だ。Google では変更の行数の中央値は24行で、最初のフィードバックまでの待ち時間の中央値は、小さな変更で1時間未満、とても大きな変更で約5時間だった。
-- **対立概念:** **設計を通して見る** — 細かく割りすぎると、どの断片も無害に見えるのに、それらがどう組み合わさるかを誰も判断しなくなる。Google のガイド自身も、影響が読み取れないほど小さくはしないよう求めている。
+- **メカニズム:** レビュアーの注意には限りがある。SmartBear が Cisco で 2,500件のレビューを調べた研究では、200行未満のレビューは比較的高い率で欠陥を見つけ、それを超えると結果は大きく落ちた。著者たちは、それより大きいとレビュアーは手に負えなくなり、欠陥は見つからないと結論している。Google のガイドは時間の取り方の面を挙げる。大きな変更一つのために30分のまとまった時間を空けるより、小さな変更のために5分を何度か見つけるほうがレビュアーには楽だ。Google では変更の行数の中央値は24行で、最初のフィードバックまでの待ち時間の中央値は、小さな変更で1時間未満、とても大きな変更で約5時間だった。
+- **対立概念:** **変更ごとの固定費** — 変更には大きさに関係なくかかる固定費がある（レビューの往復、CI の実行、レビュアーの頭の切り替え）。細かく割るほどその費用と待ちが増える。レビューが遅い場では、依存し合う小さな変更を順に通すほうが、まとまった一つの変更より取り込みまでずっと時間がかかることがある。
 - **判断の指針:** 変更は一つで完結するものにする。100行くらいならたいてい妥当で、1000行はたいてい大きすぎる。ただし最後はレビュアーが決める。リファクタリングは振る舞いの変更と別に出し、依存し合う変更は一つにまとめず、順番に積んで出す。名前の変更や生成コードのような機械的な変更を、行数を合わせるためだけに割ることはしない。レビュアーが全体として何をするのか見えなくなるほど、設計を細かく切り分けることもしない。
-- **出典:** Google「Small CLs」『Google Engineering Practices Documentation』。"100 lines is usually a reasonable size for a CL, and 1000 lines is usually too large, but it’s up to the judgment of your reviewer." SmartBear Software「Code Review at Cisco Systems」、『Best Kept Secrets of Peer Code Review』(Smart Bear, 2006) 所収。2,500 件のレビューを扱ったベンダー自身の事例研究で、"LOC under review should be under 200, not to exceed 400." と勧めている。変更の大きさとレビュー待ちの数字は Caitlin Sadowski, Emma Söderberg, Luke Church, Michal Sipko & Alberto Bacchelli『Modern Code Review: A Case Study at Google』(ICSE-SEIP, 2018) による。 — [原典 ↗](https://google.github.io/eng-practices/review/developer/small-cls.html)
+- **出典:** Google「Small CLs」『Google Engineering Practices Documentation』。"100 lines is usually a reasonable size for a CL, and 1000 lines is usually too large, but it’s up to the judgment of your reviewer." SmartBear Software「Code Review at Cisco Systems」、『Best Kept Secrets of Peer Code Review』(Smart Bear, 2006) 所収。2,500件のレビューを扱ったベンダー自身の事例研究で、"LOC under review should be under 200, not to exceed 400." と勧めている。変更の大きさとレビュー待ちの数字は Caitlin Sadowski, Emma Söderberg, Luke Church, Michal Sipko & Alberto Bacchelli『Modern Code Review: A Case Study at Google』(ICSE-SEIP, 2018) による。 — [原典 ↗](https://google.github.io/eng-practices/review/developer/small-cls.html)
 - **関連:** [コードの健全性を上げるなら承認する (Approve What Improves Code Health)](#コードの健全性を上げるなら承認する-approve-what-improves-code-health) · [ボーイスカウトの規則 (Boy Scout Rule)](#ボーイスカウトの規則-boy-scout-rule) · [リーナスの法則 (Linus's Law)](#リーナスの法則-linuss-law) · [リトルの法則 (Little's Law)](#リトルの法則-littles-law) · [自動化バイアス (Automation Bias)](#自動化バイアス-automation-bias)
 
 ### プログラミングは理論の構築である (Programming as Theory Building)
@@ -1523,7 +1523,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **心得:** 理由を言える人がいるうちが、保守できるコードだ
 - **メカニズム:** Peter Naur は、プログラミングとは主にプログラマが対象についての理論を組み立てることだと論じた。プログラムが現実のどこに対応しているか、各部分がなぜそうなっているか、新しい要求をどこにどう収めるか。その知識は人に残り、文書は「補助的で二次的な産物」にすぎない。Naur が挙げる例では、コンパイラを拡張することになった別のグループが、完全な文書、注釈つきのプログラム、設計の議論を書いたもの、原作者からの直接の助言まで受け取っていた。それでも彼らが出した修正案は、元の構造の力と簡潔さを「事実上壊す」パッチで、原作者のグループはすぐにそれを見抜いた。その後、原作者の助言なしに別の人たちが手を入れ続け、約10年後には元の構造は「まだ見えるが、さまざまな種類の無定形な追加によってまったく役に立たなくなっていた」。Naur の結論は「プログラムの死は、その理論を持つプログラマのチームが解散したときに起きる」であり、文書だけから理論を立て直すのは「厳密に不可能」だとした。チームの誰も筋道を追っていない生成コードを受け入れると、最初からこの状態に近くなりやすい。
 - **対立概念:** **合理的な設計を装う** — Parnas と Clements は、設計を合理的に導いたかのように書き残し、変更のたびにその記録を最新に保つべきだと論じた。そうすれば新しく入った人は古いメンバーだけに頼らずにすむ。人の入れ替わりが多い職場では、誰が残るかに賭けるより、保たれた記録のほうが確かだ。
-- **判断の指針:** システムの担当が替わるときは、重なる期間を取る。新しい担当が実際に変更を加え、前のチームがそれをレビューする。設計に逆らうパッチを前のチームが見つけなくなったら、引き継ぎを終える。生成コードや外注のコードをマージする前に、それを持つことになる人に、なぜこういう形なのかを説明させる。誰も説明できないなら、持ち主のいないコードとして扱う。チームがいなくなった小さなプログラムは、Naur が言うように、手探りでパッチを当てるより書き直したほうが安いこともある。大きなものは、何かを組み替える前に、実際の変更をペアで進めて理論を組み立て直す。
+- **判断の指針:** システムの担当が替わるときは、重なる期間を取る。新しい担当が実際に変更を加え、前のチームがそれをレビューする。設計に逆らうパッチを前のチームが見つけなくなったら、引き継ぎを終える。生成コードや外注のコードをマージする前に、それを持つことになる人に、なぜこういう形なのかを説明させる。誰も説明できないなら、持ち主のいないコードとして扱う。チームがいなくなったプログラムについて、Naur は古いプログラムを捨てて新しいチームに問題を解き直させるよう勧め、そのほうが復活させるより高くはつかないとした。書き直せないなら、何かを組み替える前に、実際の変更をペアで進めて理論を組み立て直す。
 - **出典:** Peter Naur『Programming as Theory Building』(Microprocessing and Microprogramming, 1985)。プログラミングを "a certain kind of insight, a theory, of the matters at hand" を組み立てる活動とみる見方、コンパイラの例、"The death of a program happens when the programmer team possessing its theory is dissolved."、文書からの復活が "strictly impossible" だという主張の出典。対抗原理は David L. Parnas & Paul C. Clements『A Rational Design Process: How and Why to Fake It』(IEEE Transactions on Software Engineering, 1986) から。"When new programmers join the project they do not have to depend completely on the old staff for their information." の出典。 — [原典 ↗](https://doi.org/10.1016/0165-6074(85)90032-8)
 - **関連:** [バス係数 (Bus Factor)](#バス係数-bus-factor) · [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge) · [イーグルソンの法則 (Eagleson's Law)](#イーグルソンの法則-eaglesons-law) · [スライドではなく文章で (Narratives, Not Slides)](#スライドではなく文章で-narratives-not-slides)
 
@@ -1534,7 +1534,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **概念:** テストが誤った答えを捕まえられるのは、コードとは別に正しい答えを知っているものがあるときだけだ。そして多くのプログラムには、それがない。
 - **心得:** 通ったテストは、何と照合したかを問う
 - **メカニズム:** Elaine Weyuker は「プログラムのテストでよく持ち出される前提は、オラクルがあるというものだ」と指摘した。テストする人か何らかの仕組みが、出力が正しいかどうかを判定できるという前提だ。オラクルが存在しないか、出力の確認にテストする人が途方もない時間をかけなければならないなら、そのプログラムはテストできない。正しい答えを誰も言えないとき、テストの期待値はコードを動かした結果から取られやすい。そうなると、テストが記録するのはコードがすべきことではなく、コードがしていることになり、書いた時点ですでにあったバグはすべて通してしまう。実装から生成したテストは、とくにこうなりやすい。Chen、Cheung、Yiu は Weyuker を踏まえて「テストオラクルが手に入ることは、たいていの状況で現実的に望めない」と書き、メタモーフィックテストを提案した。通ったテストから次の入力を作り、出力どうしが満たすべき関係を満たしているかを確かめる。これならオラクルは要らない。
-- **対立概念:** **本番を判定役にする** — 安くて取り消せる変更なら、一部に期間を限って出し、実際の結果を見るほうが、テストを書く人が書ける期待値よりも正しさをよく判定できる。オラクル作りに何日もかけるのは割に合わない。
+- **対立概念:** **本番を判定役にする** — 安くて取り消せる変更なら、一部に期間を限って出し、実際のトラフィックと SLO に照らして見るほうが、テストを書く人が思いつかなかった問題を拾える。手作りのオラクルに何日もかけるのは、割に合わないことが多い。
 - **判断の指針:** 大事なものを守るテストは、期待値の出どころを言えるようにする。仕様、手計算、独立した別実装、その分野の専門家などだ。現在の出力をそのまま期待値にしたスナップショットテストや生成テストは、変化の検知器として扱い、コードが正しい証拠とはみなさない。オラクルがないところでは、どのみち成り立つはずのことを確かめる。不変条件、往復変換、関連する入力どうしの出力の関係などだ。監視の整った取り消せる変更なら、カナリアを確認手段にしてよい。手で作るオラクルは、取り消しが高くつく変更のためにとっておく。
 - **出典:** Elaine J. Weyuker『On Testing Non-Testable Programs』(The Computer Journal, 1982)。"A frequently invoked assumption in program testing is that there is an oracle" と、オラクルがないか確認に途方もない時間がかかるプログラムをテスト不能とする定義の出典。T. Y. Chen, S. C. Cheung & S. M. Yiu『Metamorphic Testing: A New Approach for Generating Next Test Cases』(Technical Report HKUST-CS98-01, Hong Kong University of Science and Technology, 1998)。"the availability of test oracles is pragmatically unattainable in most situations" と、オラクルの要らないテストの出典。対抗原理は Alec Warner & Štěpán Davidovič「Canarying Releases」『The Site Reliability Workbook』(O'Reilly, 2018) から。カナリアを "a partial and time-limited deployment of a change in a service and its evaluation" とする定義の出典。 — [原典 ↗](https://doi.org/10.1093/comjnl/25.4.465)
 - **関連:** [殺虫剤のパラドックス (Pesticide Paradox)](#殺虫剤のパラドックス-pesticide-paradox) · [ビヨンセ・ルール (Beyoncé Rule)](#ビヨンセルール-beyoncé-rule) · [自動化バイアス (Automation Bias)](#自動化バイアス-automation-bias) · [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions)
@@ -1546,10 +1546,10 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **概念:** 非公開データを読めて、外から来た内容を取り込み、外へデータを送れる AI エージェントは、その内容を書いた誰にでも操られてデータを漏らしうる。
 - **心得:** エージェントが読む文章は、書いた人からの指示だと思う
 - **メカニズム:** LLM は内容の中にある指示に従う。しかも指示の重みを、それがどこから来たかで確実に区別することができない。だから Web ページでもメールでも issue でも、エージェントの前に文章を置ける人は、エージェントが触れる非公開データを集めて、手持ちの送信手段で外に出すよう指示できる。三つの能力はそれぞれ単独なら役に立つ。危険になるのは一つのセッションが三つともそろえたときで、利用者が出どころの違うツールを組み合わせた結果そうなることが多い。Simon Willison はこうした事例を何十件も集めている。ベンダーはたいてい持ち出しの経路をふさいで直したが、「これを 100% 確実に防ぐ方法は、まだわかっていない」。攻撃の 95% を捕まえると謳うフィルタでは穴はふさがらない。「Web アプリケーションのセキュリティでは、95% は明らかに落第点だ」。
-- **対立概念:** **監督つきの自律** — 役に立つアシスタントは三つを同時に要することが多い。そこで Meta の Rule of Two は、監督なしで持たせるのは二つまでとし、三つ目が要るときはエージェントの前に人の承認を置く。
+- **対立概念:** **道具ではなく流れを縛る** — 役に立つアシスタントは三つを同時に要することが多い。Google DeepMind の CaMeL のような設計は、信頼できる利用者の依頼だけから手順を組み、データに権限の印をつけて三つとも残す。そうすれば信頼できない内容は、エージェントの動きも非公開データの行き先も変えられない。エージェントを自分で作るなら、能力を一つ外すよりこちらが合うこともある。ただし、こなせるタスクは少し減る。
 - **判断の指針:** エージェントにツールをつなぐ前に、そのツールが三つのどれを足すかを書き出す。非公開データ、信頼できない内容、外へ送る手段(リンク、画像の読み込み、プルリクエスト、メールを含む)だ。一つのセッションに三つがそろったら、一つを外す。認証情報のないサンドボックスで閲覧させる、送信経路を断つ、外への送信は一件ずつ人が承認する、のどれかにする。プロンプトインジェクションのフィルタを対策として数えない。信頼できるデータだけを読むエージェントや、出力が手元から出ないエージェントには要らない。
-- **実例:** 2025年5月、Willison は Marco Milanta と Luca Beurer-Kellner が報告した GitHub 公式 MCP サーバへの攻撃を取り上げた。公開リポジトリに置かれた悪意ある issue が、作者のリポジトリの README を読み、利用者が手がけている他のリポジトリをすべて一覧にして加えるようエージェントに頼んでいた。利用者がエージェントに issue を見るよう頼むと、エージェントはプルリクエストを作り、利用者の非公開リポジトリの名前を明かしてしまった。Willison は、このサーバが非公開データへのアクセス、信頼できない内容への露出、持ち出す手段を併せ持っていたと指摘した。 [記録 ↗](https://simonwillison.net/2025/May/26/github-mcp-exploited/)
-- **出典:** Simon Willison『The lethal trifecta for AI agents: private data, untrusted content, and external communication』(simonwillison.net, 2025)。三つの要素と "The only way to stay safe there is to avoid that lethal trifecta combination entirely." の出典。対抗原理は Meta『Agents Rule of Two: A Practical Approach to AI Agent Security』(Meta AI blog, 2025) から。エージェントは一つのセッションで三つの性質のうち "must satisfy no more than two" とし、三つとも要るものは "should not be permitted to operate autonomously" とする出典。 — [原典 ↗](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
+- **実例:** 2025年5月、Willison は Marco Milanta と Luca Beurer-Kellner が報告した GitHub 公式 MCP サーバへの攻撃を取り上げた。公開リポジトリに置かれた悪意ある issue が、作者のリポジトリの README を読み、利用者が手がけている他のリポジトリをすべて一覧にして加えるようエージェントに頼んでいた。利用者がエージェントに issue を見るよう頼むと、エージェントはプルリクエストを作り、利用者の非公開リポジトリの名前を明かしてしまった。Willison は、GitHub の MCP サーバが非公開データへのアクセス、悪意ある指示への露出、情報を持ち出す手段の三つを一つにまとめて持っていたと指摘した。 [記録 ↗](https://simonwillison.net/2025/May/26/github-mcp-exploited/)
+- **出典:** Simon Willison『The lethal trifecta for AI agents: private data, untrusted content, and external communication』(simonwillison.net, 2025)。三つの要素と "The only way to stay safe there is to avoid that lethal trifecta combination entirely." の出典。対抗原理は Edoardo Debenedetti ほか『Defeating Prompt Injections by Design』(arXiv, 2025) から。CaMeL が "explicitly extracts the control and data flows from the (trusted) query" し、信頼できないデータが "can never impact the program flow" とする出典。 — [原典 ↗](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
 - **関連:** [最小権限の原則 (Principle of Least Privilege)](#最小権限の原則-principle-of-least-privilege) · [ケルクホフスの原理 (Kerckhoffs's Principle)](#ケルクホフスの原理-kerckhoffss-principle) · [スイスチーズモデル (Swiss Cheese Model)](#スイスチーズモデル-swiss-cheese-model) · [自動化バイアス (Automation Bias)](#自動化バイアス-automation-bias)
 
 ### 遅延コスト (Cost of Delay)
@@ -1559,10 +1559,10 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **概念:** 仕事は大きさや勘、声の大きさで並べられ、待たせた週ごとに失う価値は数えられない。だから一番価値のある仕事が、目立つだけの仕事の後ろで待たされることが多い。
 - **心得:** 作る費用より先に、一週間待たせる費用を聞く
 - **メカニズム:** たいていの仕事は待っている間に価値を失う。まだ入ってこない売上、閉じていく市場の窓、近づいてくる違約金の期日。工数や中身の決まっていない「優先度」で並べたバックログは、その損失について何も言わない。しかも、その損失を各自が頭の中で見積もると大きく食い違う。数字にすべきだと説いた Reinertsen は、その幅をこう言う。"The intuition of members of the same team typically differs by 50 to 1, so the real estimate surprises most team members." 遅延コストを数字にすれば、それを見込み期間で割る（CD3）ことで、限られた人手の一週間あたりに最も多くの価値を出す仕事が先に来る。価値だけ、大きさだけで並べてもこうはならない。
-- **対立概念:** **重要だが緊急でない仕事** — 効果が長く薄く広がる仕事（負債の返済、基盤づくり、学習）は、どの週を取っても遅延コストが小さく、順位争いでは決して勝てない。順位とは別に人手を取っておかないと、いつまでも手が付かない。
+- **対立概念:** **重要だが緊急でない仕事** — 遅延コストで並べるのは、緊急度で並べることだ。Stephen Covey は、時間の多くは重要だが緊急でない仕事に使うべきだと説いた。負債の返済、基盤づくり、学習は、どの週を取っても遅延コストが小さい。Covey に従うなら、順位争いで勝つのを待たず、こうした仕事を先に計画に入れる。
 - **判断の指針:** バックログの上位について、一週間待たせるごとに失う額を見積り、その前提を数字の横に書く。それを見込み期間で割り、その順に着手する。幅のある大まかな見積りで構わない。狙いは正確さではなく、各自の見積りがどれだけ食い違っているかを表に出すことだ。効果が長期にわたる仕事のために、順位の外に一定の人手を残しておく。
 - **実例:** Maersk Line は Global Customer Service System の要求それぞれに遅延コストをドルで付け、CD3 の順に着手した。その分布を見ると、最も価値が高く緊急な上位25%の要求は、下位25%より三桁大きな価値を持っていた。"Not ten times, or one hundred times, but a thousand times more valuable." [記録 ↗](https://blackswanfarming.com/black-swan-farming-using-cost-of-delay/)
-- **出典:** Don Reinertsen『The Principles of Product Development Flow』(Celeritas, 2009)。遅延コストを数字にし、それで順序を決めるべきだという主張の出典で、Wikipedia の「Cost of delay」の要約による（CD3 の説明も同項目）。『Lean Magazine』の Reinertsen へのインタビュー (2012) は "A cost-of-delay calculation establishes the value of time on the critical path of the project." と、直感が50対1も食い違うという話の出典。"If you only quantify one thing, quantify the Cost of Delay" は InfoQ (2015) で Joshua Arnold が Reinertsen の言葉として引いたもの。 — [原典 ↗](https://en.wikipedia.org/wiki/Cost_of_delay)
+- **出典:** Don Reinertsen『The Principles of Product Development Flow』(Celeritas, 2009)。遅延コストを数字にし、それで順序を決めるべきだという主張の出典で、Wikipedia の「Cost of delay」の要約による（CD3 の説明も同項目）。『Lean Magazine』の Reinertsen へのインタビュー (2012) は "A cost-of-delay calculation establishes the value of time on the critical path of the project." と、直感が50対1も食い違うという話の出典。"If you only quantify one thing, quantify the Cost of Delay" は、Ben Linders による Joshua Arnold への InfoQ のインタビュー (2015) で Reinertsen の言葉として引かれたもの。反対の力は Stephen R. Covey『The 7 Habits of Highly Effective People』(Free Press, 1989) の、重要だが緊急でない仕事を先にするという考えで、Wikipedia の同書の項目の要約による。 — [原典 ↗](https://en.wikipedia.org/wiki/Cost_of_delay)
 - **関連:** [リトルの法則 (Little's Law)](#リトルの法則-littles-law) · [制約理論 (Theory of Constraints)](#制約理論-theory-of-constraints) · [パレートの法則 (Pareto Principle)](#パレートの法則-pareto-principle) · [時間を固定し、スコープを変える (Fixed Time, Variable Scope)](#時間を固定しスコープを変える-fixed-time-variable-scope) · [最終責任時点 (The Last Responsible Moment)](#最終責任時点-the-last-responsible-moment) · [大半のアイデアは失敗する (Most Ideas Fail)](#大半のアイデアは失敗する-most-ideas-fail)
 
 ### 最終責任時点 (The Last Responsible Moment)
@@ -1572,7 +1572,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **概念:** 早く決めすぎると推測がそのまま設計として固まる。待ちすぎると選択肢が黙って消え、誰も決めないまま成り行きで決まってしまう。
 - **心得:** 決定ごとの期限を知り、その手前で決める
 - **メカニズム:** プロジェクトの初めはチームが最も物を知らない時期で、早い段階で決めると事実が出そろう前に視野が狭まる。決定を保留すれば、学びが追いつく時間ができる。だが保留中の決定には、誰も知らせてくれない期限がある。Poppendieck 夫妻は最終責任時点を "the moment at which failing to make a decision eliminates an important alternative." と定義する。契約が自動更新される、API が出て呼び出し元がつく、別のチームがある前提の上に作り始める。そうして選択肢は消える。"If commitments are delayed beyond the last responsible moment, then decisions are made by default, which is generally not a good approach to making decisions." 夫妻は、使い勝手の設計、レイヤ分け、コンポーネントのまとめ方のように早く決めたほうがよいものもあるとし、"A bias toward late commitment must not degenerate into a bias toward no commitment." とも書いている。
-- **対立概念:** **最も責任ある時点** — 早く決めたほうが得な決定もある。決まれば他の全員が動けるようになるからだ。Wirfs-Brock は、まだ決められる最後の時点ではなく、決めることで良い影響が出る時点で決めるほうを選ぶ。
+- **対立概念:** **最も責任ある時点** — Wirfs-Brock は、最終責任時点がいつなのか自分には見分けられないと書く。それを狙うと、いつでも考え直す時間があると思い込んでしまうという。だから、決めることで良い影響が出る時点が来たら決めるほうを選ぶ。その時点は、多くの場合もっと早く来る。
 - **判断の指針:** 保留中の設計判断ごとに、選択肢を消してしまう出来事（契約の期日、インタフェースが固まるリリース、別チームがその上に作り始めること）を書き出し、その日付をカレンダーに入れる。その日になってからではなく、その前に決める。他の作業を止めている決定や、レイヤ分けのように後のすべてを形づくる決定を先送りする口実には使わない。
 - **出典:** Mary & Tom Poppendieck『Lean Software Development: An Agile Toolkit』(Addison-Wesley, 2003) 第3章「Tool 8: The Last Responsible Moment」(pp. 57–59)。定義、「decisions are made by default」、決めないことへの偏りへの警告の出典。用語は Lean Construction Institute の造語だと同書が書いている。「最も責任ある時点」は Rebecca Wirfs-Brock「Agile Architecture Myths #2 Architecture Decisions Should Be Made At the Last Responsible Moment」(2011)。 — [原典 ↗](https://ptgmedia.pearsoncmg.com/images/9780321150783/samplepages/0321150783.pdf)
 - **関連:** [タイプ 1／タイプ 2 の意思決定 (Type 1 vs Type 2 Decisions)](#タイプ-1タイプ-2-の意思決定-type-1-vs-type-2-decisions) · [YAGNI (YAGNI)](#yagni-yagni) · [遅延コスト (Cost of Delay)](#遅延コスト-cost-of-delay) · [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit)
@@ -1583,10 +1583,10 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 
 - **概念:** すでに決まった計画に疑問を持つ人は、黙っていることが多い。失敗はもう起きたことにして、その理由を説明してもらうと、疑問が表に出てくる。
 - **心得:** 計画はもう失敗したと考え、理由を見つけた人が賢い場にする
-- **メカニズム:** 普通の計画レビューでは、問題を挙げると忠誠心がないか後ろ向きに見え、キックオフの勢いが懸念を押し込める。Klein の HBR 記事の冒頭は "too many people are reluctant to speak up about their reservations" と書く。プレモーテムは前提を入れ替える。リーダーが計画は失敗したと告げ、なぜかを尋ねる。Klein の言葉では "The pre-mortem reverses this dynamic—people show how smart they are by the quality of the issues that they raise." 誰かが話す前に各自で理由を書かせれば、声の大きい人がリストを決めてしまうことも防げる。Klein が紹介する大学生178人の研究では、計画を批評した組や長所と短所を挙げた組に比べ、プレモーテムの組で過信が最も大きく下がった。失敗を想像すると理由を見つける力が約30%上がるという話がよく引かれるが、元になった1989年の研究が数えたのは挙がった理由の数で、その質は測っていない。
+- **メカニズム:** 普通の計画レビューには、Klein の言う "silent pressure in these meetings not to surface doubts that might disturb the team's harmony" がある。人は "for fear of being impolitic"、ふだんなら問題として口にしないことを胸にしまう。Klein の HBR 記事は冒頭の段落で "too many people are reluctant to speak up about their reservations during the all-important planning phase." と書いている。プレモーテムは前提を入れ替える。リーダーが計画は失敗したと告げ、なぜかを尋ねる。Klein の言葉では "The pre-mortem reverses this dynamic—people show how smart they are by the quality of the issues that they raise." 誰かが話す前に各自で理由を書かせれば、上の立場の一人がリストを決めてしまうことも防げる。Klein が紹介する大学生178人の研究では、架空の計画について、計画を批評した組や長所と短所を挙げた組に比べ、プレモーテムの組で計画への自信が最も大きく下がった。測ったのは自信で、計画がうまくいったかどうかではない。Klein の HBR 記事は、未来の出来事を起きたことにして考えると "increases the ability to correctly identify reasons for future outcomes by 30%" と書く。だが元になった1989年の研究が測ったのは、結果を確実なものとして示したときに挙がる理由の数と種類で、その理由が正しいかどうかは測っていない。
 - **対立概念:** **行動を優先する** — どの計画でも失敗探しをすると、慎重になりすぎる。Klein 自身、プレモーテムは "tend to encourage risk aversion" と書いている。安く戻せる一歩なら、失敗を想像するより試したほうが多くを学べる。
-- **判断の指針:** 失敗すると痛いプロジェクトでは、キックオフで計画の説明が終わったら、数か月後にこのプロジェクトは失敗したとチームに告げる。各自に二分間、一人で理由を書かせ、それから一人一つずつ順に、リストが尽きるまで読み上げてもらう。上位のいくつかには担当者と計画の変更を割り当てる。小さく戻せる変更ではやらない。出して様子を見るほうが安い。
-- **出典:** Gary Klein「Performing a Project Premortem」『Harvard Business Review』(2007年9月号)。手法の出典。Gary Klein「The Pre-Mortem Method」『Psychology Today』(2021) は手順と学生の研究についての本人による詳しい説明。リスク回避への警告は Gary Klein「Double-Barreled Pre-Mortems」『Psychology Today』(2025)。 — [原典 ↗](https://hbr.org/2007/09/performing-a-project-premortem)
+- **判断の指針:** 失敗すると痛いプロジェクトでは、キックオフで計画の説明が終わったら、このプロジェクトは失敗したとチームに告げる。各自に二分間、一人で理由を書かせ、それから一人一つずつ順に、リストが尽きるまで読み上げてもらう。上位のいくつかには担当者と計画の変更を割り当てる。小さく戻せる変更ではやらない。出して様子を見るほうが安い。
+- **出典:** Gary Klein「Performing a Project Premortem」『Harvard Business Review』(2007年9月号)。手法の出典。Gary Klein「The Pre-Mortem Method」『Psychology Today』(2021) は手順と学生の研究についての本人による詳しい説明で、"silent pressure" の一文と "The pre-mortem reverses this dynamic" の出典。リスク回避への警告は Gary Klein「Double-Barreled Pre-Mortems」『Psychology Today』(2025)。30%という数字の元になった研究は Deborah J. Mitchell, J. Edward Russo & Nancy Pennington「Back to the future: Temporal perspective in the explanation of events」『Journal of Behavioral Decision Making』2 (1989)。測ったのは理由の数と種類で、正しさではない。 — [原典 ↗](https://hbr.org/2007/09/performing-a-project-premortem)
 - **関連:** [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [ワーキング・バックワーズ (Working Backwards)](#ワーキングバックワーズ-working-backwards) · [マーフィーの法則 (Murphy's Law)](#マーフィーの法則-murphys-law) · [心理的安全性 (Psychological Safety)](#心理的安全性-psychological-safety)
 
 ### 厄介な問題 (Wicked Problems)
@@ -1594,9 +1594,9 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 `§ 110` · 意思決定
 
 - **概念:** 問題によっては、何が問題かを見極めることと解決策を選ぶことが同じ作業になる。だから設計を始める前に要求を固めることはできず、ここで終わりという地点もない。
-- **心得:** 解くほどに問題が動くなら、先に固めようとしない
+- **心得:** 解くたびに問題が変わるなら、問題の書き方は関門でなく下書きだ
 - **メカニズム:** Rittel と Webber は、方程式を解く、五手で詰めるといった「飼いならされた（tame）」問題と、「厄介な（wicked）」問題を対比した。前者は目的がはっきりしていて、解けたかどうかもはっきりしている。後者には公共政策の問題のほぼすべてが含まれる。厄介な問題では "The information needed to understand the problem depends upon one's idea for solving it" であり、だから "The formulation of a wicked problem is the problem!" となる。"understand the problems or the mission" から始まる段階的な手法は、まず理解し、それから解けると仮定している。厄介な問題では "one cannot first understand, then solve." しかも "Wicked problems have no stopping rule"。作業が終わるのは時間か金か根気が尽きたからで、問題が終わったと告げるからではない。関係者の多いプロダクトや組織の問いは、案を出すたびに皆の言う要望が変わり、こうなることがある。
-- **対立概念:** **たいていの問題は飼いならせる** — Rittel と Webber 自身、科学者や技術者がふだん扱う問題はほとんどが飼いならされた問題だと書いている。バグや移行、レイテンシの目標を「厄介な問題」と呼ぶのは、書けば済んだはずの問題記述を書かない言い訳になる。
+- **対立概念:** **先に問題を固める** — 技術の仕事の多くは、設計の前に問題記述を書くことで解けるようになる。要求を先に固める段階的な手法があるのはそのためだ。バグや移行、レイテンシの目標を「厄介な問題」と呼ぶのは、書けば済んだはずの問題記述を書かない言い訳になる。
 - **判断の指針:** 要求を書く前に二つ確かめる。誰かが解決策を出すたびに問題の書き方が変わるか。解けたと判定できるテストがないか。両方とも当てはまるなら、要求を先に固めようとしない。意見の違う人を同じレビューに集め、小さな版を早く見せ、いつやめるかを先に決めておく。問題のほうは終わりを教えてくれない。どちらかが当てはまらないなら、飼いならされた問題として扱い、問題記述を書く。
 - **出典:** Horst W. J. Rittel & Melvin M. Webber「Dilemmas in a General Theory of Planning」『Policy Sciences』4 (1973), 155–169。飼いならされた問題と厄介な問題の区別、厄介な問題の十の性質の出典。 — [原典 ↗](https://doi.org/10.1007/BF01405730)
 - **関連:** [XY問題 (XY Problem)](#xy問題-xy-problem) · [ワーキング・バックワーズ (Working Backwards)](#ワーキングバックワーズ-working-backwards) · [大半のアイデアは失敗する (Most Ideas Fail)](#大半のアイデアは失敗する-most-ideas-fail)
@@ -1608,7 +1608,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **概念:** 有能なチームが吟味を済ませたアイデアでも、測ってみると大半は効果がないか逆効果で、出した本人にはどれがそうかふつう分からない。
 - **心得:** 気に入っている案ほど、たぶん外れる仮説として扱う
 - **メカニズム:** どの機能も、誰かが価値があると信じたから作られる。それを承認するレビューも同じ信念で動く。Microsoft がアイデアを対照実験で測ると "only about 1/3 of ideas improve the metrics they were designed to improve" だった。測らずに十のアイデアを出したチームは、およそ三分の一が良く、三分の一が変化なし、三分の一が悪い結果になり、全体の価値は小さいと著者らは見積もる。実験は自信のない案ほど行われやすいが、論文によれば新機能をすべて評価していた Amazon でも成功率は50%を下回った。しかも測らなければ誰も気づかない。"For most ideas, the change in key metrics will be too small to detect over time."
-- **対立概念:** **確信への賭け** — 実験が最適化できるのは数週間で測れるものだけだ。新しいプロダクト、プラットフォームの転換、長期の賭けは A/B テストできず、誰かが判断で決めるしかない。
+- **対立概念:** **確信への賭け** — 現実にはランダムに割り振れない賭けもある（プラットフォームは一つ、出せるのも一度、効果が出るまで何年もかかる）。Kohavi らも、測るのが "non-economical" な場合があると認めている。そこでは誰かが判断で決めるしかない。
 - **判断の指針:** 作る前に、そのアイデアで動かしたい指標とその幅を書いておき、フラグの裏に置いてランダムに選んだ一部の利用者に出す。指標が動かなければ、チームがどれだけ自信を持っていても捨てるか作り直す。ランダムに割り振れないとき（トラフィックが少ない、長期の賭け、戻せない変更）はそう明記し、測ったふりをせずに判断で決める。
 - **出典:** Ronny Kohavi ほか『Online Experimentation at Microsoft』(Microsoft ThinkWeek, 2009)。"only about 1/3 of ideas improve the metrics they were designed to improve" と、良い・変化なし・悪いがそれぞれ三分の一という見積りの出典。 — [原典 ↗](https://exp-platform.com/Documents/ExPThinkWeek2009Public.pdf)
 - **関連:** [生存者バイアス (Survivorship Bias)](#生存者バイアス-survivorship-bias) · [現地現物 (Genchi Genbutsu (Go and See))](#現地現物-genchi-genbutsu-go-and-see) · [トワイマンの法則 (Twyman's Law)](#トワイマンの法則-twymans-law) · [遅延コスト (Cost of Delay)](#遅延コスト-cost-of-delay) · [ワーキング・バックワーズ (Working Backwards)](#ワーキングバックワーズ-working-backwards) · [厄介な問題 (Wicked Problems)](#厄介な問題-wicked-problems)
@@ -1619,7 +1619,7 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 
 - **概念:** サーバの稼働率が 100% に近づくほど、仕事がその前で待つ時間は急に伸びる。到着と処理のばらつきは、その伸びをさらに大きくする。
 - **心得:** 誰かが答えを待つところには、余裕を残す
-- **メカニズム:** 単一サーバの待ち行列 (G/G/1) の平均待ち時間について、Kingman の近似式は **E(Wq) ≈ (ρ/(1−ρ)) · ((ca² + cs²)/2) · τ** となる。ρ は稼働率、ca と cs は到着間隔と処理時間の変動係数、τ は平均処理時間だ。三つの因子の頭文字から VUT 式とも呼ばれる。効いてくるのは稼働率の項で、ρ/(1−ρ) は 80% で 4、90% で 9、95% で 19 になる。ほかが同じなら、90% から 95% に上げるだけで待ち時間はほぼ倍になる。ばらつきの項は掛け算で効くので、到着の偏りや仕事の大きさの不揃いは、どの負荷でも待ちを長くする。この近似は「一般にかなり正確で、とくに飽和に近い系でよく合う」とされる。リトルの法則は L = λW を言うだけで、W がなぜ伸びるかは言わない。キングマンの公式はその伸びがどこから来るかを示す。同じ計算はおそらく人にも当てはまり、予定が埋まりきったチームでは新しい依頼がどれも待たされがちになる。これはモデルからの推論で、Kingman が測ったものではない。
+- **メカニズム:** 単一サーバの待ち行列 (G/G/1) の平均待ち時間について、Kingman の近似式は **E(Wq) ≈ (ρ/(1−ρ)) · ((ca² + cs²)/2) · τ** となる。ρ は稼働率、ca と cs は到着間隔と処理時間の変動係数、τ は平均処理時間だ。三つの因子の頭文字から VUT 式とも呼ばれる。効いてくるのは稼働率の項で、ρ/(1−ρ) は 80% で 4、90% で 9、95% で 19 になる。ほかが同じなら、90% から 95% に上げるだけで待ち時間はほぼ倍になる。ばらつきの項は掛け算で効くので、到着の偏りや仕事の大きさの不揃いは、どの負荷でも待ちを長くする。この近似はおおむね正確で、飽和に近い系ほどよく合う。リトルの法則は L = λW を言うだけで、W がなぜ伸びるかは言わない。キングマンの公式はその伸びがどこから来るかを示す。同じ計算はおそらく人にも当てはまり、予定が埋まりきったチームでは新しい依頼がどれも待たされがちになる。これはモデルからの推論で、Kingman が測ったものではない。
 - **対立概念:** **スループット優先** — 夜間のバッチ処理や期限のないバックログのように、結果を誰も待っていない仕事では、遊んでいる容量はただのコストだ。満杯近くまで回すのが正しい。
 - **判断の指針:** レイテンシが問題になるもの（サービス、共有のビルドランナー、オンコール担当）には、飽和よりかなり下に稼働率の上限を決める。上限を超えたら容量を足すか負荷を捨てる。レイテンシが跳ねてからでは遅い。ばらつきも減らす。仕事を小さく揃えれば、同じ負荷でも待ちは短くなる。誰も待っていないバッチ処理は詰めて回してよい。
 - **実例:** 2026年2月、DNSimple は権威 DNS サーバ erldns のバージョン10を紹介した。スケジューラの稼働率が 90% を超えると、サーバは仕事を受け付ける速さを落とす。記事はなぜ 100% を目指さないのかと問い、キングマンの公式で答えている。待ち行列のレイテンシは稼働率に対して双曲線的に伸びるので、上限を 90% に置くのはレイテンシの崖から距離を取るための意図的なトレードオフだという。 [記録 ↗](https://blog.dnsimple.com/2026/02/erldns-v10-release/)
@@ -1633,10 +1633,10 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **概念:** ものを作る人には途切れない長い時間が要る。一時間刻みで回る予定表は、その時間を使えないほど細かく切ってしまう。
 - **心得:** 会議の代償は、一時間ではなく壊す時間のまとまりで数える
 - **メカニズム:** Paul Graham は一日の使い方を二つに分ける。「マネージャーの時間割は上司のためのものだ」。一日は一時間ごとに区切られ、会議は枠がひとつ埋まるだけだ。プログラムを書いたり文章を書いたりするメイカーは、ふつう少なくとも半日単位で時間を使いたがる。難しい仕事は、動き出すまでに長い助走が要るからだ。メイカーにとっては「会議がひとつあるだけで午後がまるごと吹き飛ぶ。午後が二つに割れ、どちらも難しいことをするには短すぎるからだ」。どちらの時間割も間違いではない。「どちらの時間割も、それだけならうまくいく。問題は両者がぶつかったときに起きる」。会議を入れる側には自分の予定表の一時間しか見えないので、メイカーの損は数えられないまま終わりがちだ。
-- **対立概念:** **まず詰まりを外す** — 質問をすべてオフィスアワーまでためるメイカーは、後ろでチームメイトを止めてしまう。誰かの仕事が待っているなら、今答えて一つのまとまりを崩すほうが、いくつものまとまりを救える。
+- **対立概念:** **まず詰まりを外す** — 質問をすべてオフィスアワーまでためるメイカーは、後ろでチームメイトを止めてしまう。誰かの仕事が待っているなら、今答えて一つのまとまりを崩すほうが、いくつものまとまりを救える。Google のレビューのガイドも "for the speed at which a team of developers can produce a product together" を最適化するとしている。
 - **判断の指針:** 会議は一日の端に寄せるか、決まった曜日にまとめる。作る人には、会議のない半日以上のまとまりを残す。メイカーの予定を押さえる前に、取る一時間ではなく壊すまとまりを数える。障害対応と、手が止まっているチームメイトは例外で、すぐ答える。
-- **実例:** Pinterest のプロダクトエンジニアリングチームは、火曜から木曜まで、エンジニアの予定表に 9 時から 17 時の会議禁止枠を入れる「週三日は会議なし」を試した。約100日後、マネージャーにはとても好意的な声が届き、調査でも大半のエンジニアが同じ意見だった。月曜と金曜の会議がよくはみ出すという声もあった。その後、Pinterest のほかのエンジニアリング組織もいくつか同じやり方を取り入れた。 [記録 ↗](https://bthdonohue.com/2018/05/02/three-day-no-meeting-schedule-for-engineers.html)
-- **出典:** Paul Graham『Maker's Schedule, Manager's Schedule』(paulgraham.com, 2009年7月)。二つの時間割と、会議ひとつがメイカーに負わせる代償の出典。 — [原典 ↗](https://paulgraham.com/makersschedule.html)
+- **実例:** Pinterest のプロダクトエンジニアリング組織は、火曜から木曜まで、エンジニアの予定表に 9 時から 17 時の会議禁止枠を入れる「週三日は会議なし」を試した。約100日後、マネージャーにはとても好意的な声が届き、調査でも大半のエンジニアが同じ意見だった。月曜と金曜の会議がよくはみ出すという声もあった。その後、Pinterest のほかのエンジニアリング組織もいくつか同じやり方を取り入れた。 [記録 ↗](https://bthdonohue.com/2018/05/02/three-day-no-meeting-schedule-for-engineers.html)
+- **出典:** Paul Graham『Maker's Schedule, Manager's Schedule』(paulgraham.com, 2009年7月)。二つの時間割と、会議ひとつがメイカーに負わせる代償の出典。対抗原理で引いたのは Google「Speed of Code Reviews」『Google Engineering Practices Documentation』の "At Google, we optimize for the speed at which a team of developers can produce a product together"。 — [原典 ↗](https://paulgraham.com/makersschedule.html)
 - **関連:** [パーキンソンの法則 (Parkinson's Law)](#パーキンソンの法則-parkinsons-law) · [キングマンの公式 (Kingman's Formula)](#キングマンの公式-kingmans-formula) · [リトルの法則 (Little's Law)](#リトルの法則-littles-law) · [アンドン（ラインを止める） (Andon (Stop the Line))](#アンドンラインを止める-andon-stop-the-line)
 
 ### マクナマラの誤謬 (McNamara Fallacy)
@@ -1647,8 +1647,8 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 - **心得:** 数えられないものも、数字の横に名前を書いておく
 - **メカニズム:** Daniel Yankelovich は 1971 年の講演で、これを四つの段階で示した。「第一段階は、簡単に測れるものを測ることだ。それ自体は、その範囲では問題ない」。次に「第二段階は、簡単に測れないものを無視するか、適当な数値を与えることだ」。そして「第三段階は、簡単に測れないものは実はあまり重要でないと決めてかかることだ」。最後に「第四段階は、簡単に測れないものは実は存在しないと言うことだ」。彼はこの行き着く先を自殺行為と呼び、Robert McNamara の名をとって名づけ、米国のベトナムでの経験を挙げた。数字は集めやすく、比べやすく、会議で守りやすい。信頼、士気、コードの状態についての判断はそうではないので、黙っていると負けがちだ。グッドハートの法則とは違う。あちらは数字が操作される。こちらは数字が正直でも、外したものから害が出る。
 - **対立概念:** **それでも測る** — 測れないように見えるものの多くは粗くなら測れる。粗い数字でも、確かめていない勘よりは多くを教えてくれる。Hubbard は、何かが測れないという思い込みは誤解に基づいていると論じる（『How to Measure Anything』2007年）。
-- **判断の指針:** ダッシュボードで判断するときは、ダッシュボードに出てこないが大事なもの（利用者の信頼、オンコールの負担、コードの健全さなど）を書き出し、少なくとも一つは直接見たものかアンケートを数字の横に置く。SPACE の著者も開発者の生産性について「単一の指標や次元では測れない」と書いている。一つのエンドポイントのレイテンシのように、狭くて計測が行き届いた問いなら数字だけで足りる。
-- **出典:** Daniel Yankelovich『The New Odds』(Sales Executives Club of New York の Marketing Strategy Conference での講演, 1971)。四つの段階と名前の出典。よく見る『Corporate Priorities』(1972) という出典は誤りとみられる。講演の中では、彼の会社の調査プログラムの名前として出てくる。 — [原典 ↗](https://ryanmadden.net/the-new-odds-transcript/)
+- **判断の指針:** ダッシュボードで判断するときは、ダッシュボードに出てこないが大事なもの（利用者の信頼、オンコールの負担、コードの健全さなど）を書き出し、少なくとも一つは直接見たものかアンケートを数字の横に置く。SPACE の著者も、開発者の生産性は単一の指標や次元では測れないと書いている。一つのエンドポイントのレイテンシのように、狭くて計測が行き届いた問いなら数字だけで足りる。
+- **出典:** Daniel Yankelovich『The New Odds』(Sales Executives Club of New York の Marketing Strategy Conference での講演, 1971)。四つの段階と名前の出典。よく見る『Corporate Priorities』(1972) は、この講演で紹介される彼の会社の調査プログラムの名前だ。四つの段階は講演そのものにある。 — [原典 ↗](https://ryanmadden.net/the-new-odds-transcript/)
 - **関連:** [グッドハートの法則 (Goodhart's Law)](#グッドハートの法則-goodharts-law) · [生存者バイアス (Survivorship Bias)](#生存者バイアス-survivorship-bias) · [現地現物 (Genchi Genbutsu (Go and See))](#現地現物-genchi-genbutsu-go-and-see) · [トワイマンの法則 (Twyman's Law)](#トワイマンの法則-twymans-law)
 
 ### トワイマンの法則 (Twyman's Law)
@@ -1657,24 +1657,24 @@ L = λW は3つの量を縛り合う。ひとつを動かせば必ず別のも�
 
 - **概念:** 指標が驚くほど大きく動いたときは、本当の効果より、計測か分析のバグであることのほうが多い。
 - **心得:** 意外な数字は、確かめるまでバグ報告として扱う
-- **メカニズム:** よく知られた言い方では「面白く見える数字、変わって見える数字は、たいてい間違っている！」。Kohavi らはベイズの定理で説明する。大当たりはまれだ。実験結果が平均 0、標準偏差 0.25% に分布しているなら、ユーザーあたりセッション数の +2.0% は平均から標準偏差 8 個分も外れている。統計的に有意でも、バグ、たいていは計測のバグである可能性のほうが高い。有意水準 5%、検出力 80% で、本物の大当たりが 500 回に 1 回なら、有意な結果が本当に効いている確率は 3.1% まで下がる。人の確かめ方も偏っている。肩入れした機能の悪い結果は疑うのに、良い結果は祝ってしまう。だから自分に都合のよい誤りほど長く生き残る。
-- **対立概念:** **大きな効果が本物のこともある** — 同じ論文の第一のルール。本物の驚きもある。Bing のフォントの色の変更は年間1000万ドル以上の価値があり、3200万人で再現しても結果は変わらなかった。厳しく確かめるのはよいが、大きいというだけで結果を捨てない。
+- **メカニズム:** よく知られた言い方では「面白く見える数字、変わって見える数字は、たいてい間違っている！」。Kohavi らはベイズの定理で説明する。大当たりはまれだ。実験結果が平均 0、標準偏差 0.25% に分布しているなら、ユーザーあたりセッション数の +2.0% は平均から標準偏差 8 個分も外れている。統計的に有意でも、計測の誤りのようなバグである可能性のほうが高い。有意水準 5%、検出力 80% で、本物の大当たりが 500 回に 1 回なら、有意な結果が本当に効いている確率は 3.1% まで下がる。人の確かめ方も偏っている。肩入れした機能の悪い結果は疑うのに、良い結果は祝ってしまう。だから自分に都合のよい誤りほど長く生き残る。
+- **対立概念:** **ささいな変更が大きく効くこともある** — 同じ論文のルール1。ささいな変更が主要な指標を大きく動かすことがある。Bing のフォントの色の変更は年間1000万ドル以上の価値があった。大きな勝ちをすべてバグ扱いするチームは、それを見つける安くて当たりにくい実験をやめてしまう。
 - **判断の指針:** 過去の実験よりはるかに良い、あるいは悪い結果が出たら、発表を止めてまず配管を確かめる。指標がどう記録されているか、変更が記録される中身を変えていないか、分析が同じものどうしを比べているか。そのうえで新しいサンプルで再現する。予想どおりのふつうの動きには、ここまでしなくてよい。
 - **実例:** MSN で新しいオートサジェストのアルゴリズムを試した実験は、大成功に見えた。MSN から Bing に送られる検索が劇的に増えたからだ。この法則に従って調べると、新しいコードは利用者が候補を選ぶたびに実質二回検索を投げていて、そのうち一回は必ずブラウザが切っていた。 [記録 ↗](https://exp-platform.com/Documents/2014%20experimentersRulesOfThumb.pdf)
-- **出典:** Tony Twyman のものとされる言い伝え（フォークロア）。Ron Kohavi, Alex Deng, Roger Longbotham & Ya Xu『Seven Rules of Thumb for Web Site Experimenters』(KDD, 2014) に記録されている。言い回し、ベイズによる説明、事例の出典。 — [原典 ↗](https://exp-platform.com/Documents/2014%20experimentersRulesOfThumb.pdf)
+- **出典:** Tony Twyman のものとされる言い伝え（フォークロア）で、A. S. C. Ehrenberg『The Teaching of Statistics: Corrections and Comments』(Journal of the Royal Statistical Society, Series A, 1975) を経て伝わった。Ron Kohavi, Alex Deng, Roger Longbotham & Ya Xu『Seven Rules of Thumb for Web Site Experimenters』(KDD, 2014) に記録されている。言い回し、ベイズによる説明、事例の出典。 — [原典 ↗](https://exp-platform.com/Documents/2014%20experimentersRulesOfThumb.pdf)
 - **関連:** [グッドハートの法則 (Goodhart's Law)](#グッドハートの法則-goodharts-law) · [生存者バイアス (Survivorship Bias)](#生存者バイアス-survivorship-bias) · [大半のアイデアは失敗する (Most Ideas Fail)](#大半のアイデアは失敗する-most-ideas-fail) · [マクナマラの誤謬 (McNamara Fallacy)](#マクナマラの誤謬-mcnamara-fallacy)
 
 ### 心理的安全性 (Psychological Safety)
 
 `§ 116` · 組織
 
-- **概念:** チームが学ぶ速さは、メンバーが間違いを認め、助けを求め、異を唱える速さで決まる。人がそうするのは、そうしても安全だと信じているときだけだ。
+- **概念:** チームが学べるのは、メンバーが間違いを認め、助けを求め、異を唱えるときだ。人がそうしやすくなるのは、そうしても安全だと信じているときだ。
 - **心得:** 「間違えた」「知らない」を言いやすくしておく
-- **メカニズム:** Amy Edmondson はチームの心理的安全性を「このチームでは対人関係のリスクを取っても安全だという、メンバーが共有する信念」と定義した。質問する、ミスを報告する、計画に異を唱える。どれも同僚の前で無知に見えたり面倒な人に見えたりするリスクがある。そのリスクが高く感じられると人は黙りがちで、チームはまさに必要だった情報を失う。製造業の会社の51チームを調べた研究では、心理的安全性は学習行動と結びつき、学習行動が心理的安全性とチームの成果をつないでいた。彼女はこれを、異を唱える気持ちを弱めることもある結束の強さとも、なれ合いとも区別する。心理的安全性とは「声を上げた人を、チームが恥をかかせたり、退けたり、罰したりしないという確信」だ。
-- **対立概念:** **高い水準への説明責任** — 安全なだけでは、人は背伸びしない。Edmondson 本人も「心理的安全性だけをつくるなら、それはぬるま湯をつくっているにすぎない」と言う。だから水準は高く保ち、守れなかった約束にはそれなりの結果がついてくる。
-- **判断の指針:** まずリーダーがやって見せる。自分のミスと分からないことを口に出し、決める前に反対意見を求め、悪い知らせには知らせた人に礼を言って仕組みを直す。水準と締切は動かさない。心理的安全性は声を上げられることであって、基準を下げることではない。
-- **実例:** Google の re:Work にあるチームの効果性の研究（Project Aristotle、2015年公開）のガイドによれば、研究者は180チームを調べ、大事なのは誰がチームにいるかより、チームがどう一緒に働くかだとわかった。重要な順に挙げた五つの要素の一番目が心理的安全性で、定義には Edmondson の言葉を使っている。 [記録 ↗](https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness)
-- **出典:** Amy C. Edmondson『Psychological Safety and Learning Behavior in Work Teams』(Administrative Science Quarterly, 1999)。定義と、51チームを対象にした現場研究の出典。 — [原典 ↗](https://doi.org/10.2307/2666999)
+- **メカニズム:** Amy Edmondson はチームの心理的安全性を「このチームでは対人関係のリスクを取っても安全だという、メンバーが共有する信念」と定義した。質問する、ミスを報告する、計画に異を唱える。どれも同僚の前で無知に見えたり面倒な人に見えたりするリスクがある。そのリスクが高く感じられると人は黙りがちで、チームはまさに必要だった情報を失う。製造業の会社の51チームを調べた研究では、心理的安全性は学習行動と結びつき、学習行動が心理的安全性とチームの成果をつないでいた。
+- **対立概念:** **説明責任の実感** — Higgins らがニューヨーク市の公立学校545校を3年間追った研究では、成果が最も高かったのは心理的安全性が相対的に低く、説明責任の実感が相対的に高い学校だった。Edmondson のモデルが言う両方とも高い学校ではない。彼らは心理的安全性を「ひとつまみのイースト」にたとえる。成果が伸びないときは、居心地を足す前に、共有の目標への説明責任を上げる（Academy of Management Discoveries, 2022年）。
+- **判断の指針:** まずリーダーがやって見せる。自分のミスと分からないことを口に出し、決める前に反対意見を求め、悪い知らせには知らせた人に礼を言って仕組みを直す。水準と締切は動かさない。心理的安全性は声を上げられることであって、基準を下げることではない。Edmondson 本人も「心理的安全性だけをつくるなら、それはぬるま湯をつくっているにすぎない」と言う。
+- **実例:** Google の re:Work にある、Project Aristotle という名のチームの効果性の研究のガイド（2015年初出）によれば、研究者は180チームを調べ、大事なのは誰がチームにいるかより、チームがどう一緒に働くかだとわかった。重要な順に挙げた五つの要素の一番目が心理的安全性で、定義には Edmondson の言葉を使っている。 [記録 ↗](https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness)
+- **出典:** Amy C. Edmondson『Psychological Safety and Learning Behavior in Work Teams』(Administrative Science Quarterly, 1999)。定義と、51チームを対象にした現場研究の出典。「ぬるま湯」の警告は、Harvard Business School の採用サイトにある、厳しい時期のリーダーシップについてのガイドでの Edmondson の言葉。対抗原理は M. Higgins, Shoshana R. Dobrow, J. M. Weiner & Haiyang Liu『When is psychological safety helpful in organizations? A longitudinal study』(Academy of Management Discoveries, 2022) から。"the best conditions for fostering organizational performance occur when psychological safety is relatively low and felt accountability is relatively high." の出典。 — [原典 ↗](https://doi.org/10.2307/2666999)
 - **関連:** [非難なきポストモーテム (Blameless Postmortem)](#非難なきポストモーテム-blameless-postmortem) · [ブレイントラスト (権限を持たない助言) (Braintrust (Notes Without Authority))](#ブレイントラスト-権限を持たない助言-braintrust-notes-without-authority) · [プレモーテム (Pre-Mortem)](#プレモーテム-pre-mortem) · [ハンロンの剃刀 (Hanlon's Razor)](#ハンロンの剃刀-hanlons-razor)
 
 <!-- CODEX:END -->

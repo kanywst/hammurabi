@@ -708,7 +708,8 @@ figures:
     page: "https://commons.wikimedia.org/wiki/File:Ed_Catmull_at_Web_Summit_2015_(cropped).jpg"
     focus: { x: 0.5, y: 0.38, zoom: 1 }
   - slug: brandolinis-law
-    kind: none
+    kind: person
+    name: "Alberto Brandolini"
   - slug: automation-bias
     kind: person
     name: "Linda J. Skitka"
@@ -775,5 +776,5 @@ figures:
     name: "Amy Edmondson"
     image: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Amy_Edmondson._Photo_Credit-_Evgenia_Eliseeva_%282018_photo%3B_cropped_2022%29.jpg"
     license: "CC BY-SA 2.0"
-    author: "Evgenia Eliseeva"
+    author: "Evgenia Eliseeva (photo credit; uploaded by Amy Edmondson)"
     page: "https://commons.wikimedia.org/wiki/File:Amy_Edmondson._Photo_Credit-_Evgenia_Eliseeva_(2018_photo;_cropped_2022).jpg"
