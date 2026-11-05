@@ -375,13 +375,13 @@ export const collections: Collection[] = [
       },
       {
         "slug": "curse-of-knowledge",
-        "en": "The usual remedy is a handover document, and the person who has to write it is the one who knows too much to write it well.",
-        "ja": "よくある手は引き継ぎ文書だ。だが、それを書くのは、知りすぎていてうまく書けない当の本人だ。"
+        "en": "The usual remedy is a handover document, and the person who has to write it is often the one least able to see what a newcomer lacks.",
+        "ja": "よくある手は引き継ぎ文書だ。だが、それを書くのは、新しい人に何が足りないかにいちばん気づきにくい当の本人だ。"
       },
       {
         "slug": "context-not-control",
-        "en": "When decisions get made without that knowledge, the usual response in a growing team is one more rule or approval step.",
-        "ja": "その知識がないまま判断が下されると、大きくなるチームでの定番の対応は、ルールか承認を一つ足すことだ。"
+        "en": "When decisions get made without that knowledge, a common response in a growing team is one more rule or approval step.",
+        "ja": "その知識がないまま判断が下されると、大きくなるチームでよくある対応は、ルールか承認を一つ足すことだ。"
       },
       {
         "slug": "law-of-triviality",
