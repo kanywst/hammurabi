@@ -4268,7 +4268,7 @@ laws:
         Alberto Brandolini, tweet (Twitter, 11 January 2013) — "The bullshit asimmetry: the amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it." (spelling as in the tweet itself; Wikipedia's citation retitles it); Daniel Stenberg, "Death by a thousand slops" (daniel.haxx.se, 2025) — the curl security team's numbers.
     ja:
       title: ブランドリーニの法則
-      concept: 誤った主張を論破するには、それを言うよりはるかに手間がかかる。だから安い主張が大量に来ると、確かめる側がつぶれる。
+      concept: 誤った主張を論破するには、それを言うよりはるかに手間がかかる。だから安い主張が大量に来ると、確かめる側の手が回らなくなりうる。
       stance: 反論に手間をかける前に、まず主張に証拠を出させる
       mechanism: |-
         主張は一行で言える。それが誤りだと示すには、文脈を読み、事例を再現し、なぜ成り立たないかを書かなければならない。主張する側が払うのは前者で、確かめる側が払うのは後者だ。前者がずっと安くて済むのを止める仕組みはない。curl のセキュリティチームは7人で、2025年は報告が来るたびに3〜4人が、Stenberg の見積りでそれぞれ30分、ときには3時間ほどかけていた。7月初めの時点で、その年に送られてきたものの約20%は AI が生成したゴミで、本物の脆弱性だったのは約5%だった。生成されたテキストのせいで主張を作るのが安くなるほど、この差は広がる。
@@ -4309,7 +4309,7 @@ laws:
       example: |-
         On March 23, 2018, a Tesla Model X operating with Traffic-Aware Cruise Control and Autosteer moved into a gore area on US-101 in Mountain View, California, and struck a damaged crash attenuator; the driver died. The NTSB's probable cause included the Autopilot steering the SUV into the gore area due to system limitations, and the driver's lack of response due to distraction "likely from a cell phone game application and overreliance on the Autopilot partial driving automation system."
       source: |-
-        Kathleen L. Mosier, Linda J. Skitka, Susan Heers & Mark Burdick, *Automation Bias: Decision Making and Performance in High-Tech Cockpits* (International Journal of Aviation Psychology, 1998) and Linda J. Skitka, Kathleen L. Mosier & Mark Burdick, *Does automation bias decision-making?* (International Journal of Human-Computer Studies, 1999) — where the bias was named and tested; Raja Parasuraman & Dietrich H. Manzey, *Complacency and Bias in Human Use of Automation: An Attentional Integration* (Human Factors, 2010) — the review quoted above; Neil Perry, Megha Srivastava, Deepak Kumar & Dan Boneh, *Do Users Write More Insecure Code with AI Assistants?* (CCS, 2023) — the code assistant study; Berkeley J. Dietvorst, Joseph P. Simmons & Cade Massey, *Algorithm Aversion: People Erroneously Avoid Algorithms After Seeing Them Err* (Journal of Experimental Psychology: General, 2015) — the counter.
+        Kathleen L. Mosier, Linda J. Skitka, Susan Heers & Mark Burdick, *Automation Bias: Decision Making and Performance in High-Tech Cockpits* (International Journal of Aviation Psychology, 1998) and Linda J. Skitka, Kathleen L. Mosier & Mark Burdick, *Does automation bias decision-making?* (International Journal of Human-Computer Studies, 1999) — early empirical studies of the bias; Raja Parasuraman & Dietrich H. Manzey, *Complacency and Bias in Human Use of Automation: An Attentional Integration* (Human Factors, 2010) — the review quoted above; Neil Perry, Megha Srivastava, Deepak Kumar & Dan Boneh, *Do Users Write More Insecure Code with AI Assistants?* (CCS, 2023) — the code assistant study; Berkeley J. Dietvorst, Joseph P. Simmons & Cade Massey, *Algorithm Aversion: People Erroneously Avoid Algorithms After Seeing Them Err* (Journal of Experimental Psychology: General, 2015) — the counter.
     ja:
       title: 自動化バイアス
       concept: 自動化された補助を使う人は、自分で確かめる代わりにそれを頼りがちだ。補助が指摘しないものを見落とし、補助が間違っていてもそれに従う。
@@ -4325,7 +4325,7 @@ laws:
       example: |-
         2018年3月23日、カリフォルニア州マウンテンビューの US-101 で、Traffic-Aware Cruise Control と Autosteer を使って走っていた Tesla Model X が分岐部の導流帯に入り、損傷していた衝撃吸収装置に衝突して、運転者が亡くなった。NTSB は推定原因として、システムの限界から Autopilot が車を導流帯に向けたことと、運転者が反応しなかったことを挙げた。運転者が反応しなかったのは、おそらく携帯電話のゲームアプリに気を取られていたことと、部分的な運転自動化システムである Autopilot に頼りすぎていたためだとしている。
       source: |-
-        Kathleen L. Mosier, Linda J. Skitka, Susan Heers & Mark Burdick『Automation Bias: Decision Making and Performance in High-Tech Cockpits』(International Journal of Aviation Psychology, 1998) と Linda J. Skitka, Kathleen L. Mosier & Mark Burdick『Does automation bias decision-making?』(International Journal of Human-Computer Studies, 1999)。このバイアスを名付けて検証した研究。Raja Parasuraman & Dietrich H. Manzey『Complacency and Bias in Human Use of Automation: An Attentional Integration』(Human Factors, 2010) は本文で引いたレビュー。コードアシスタントの実験は Neil Perry, Megha Srivastava, Deepak Kumar & Dan Boneh『Do Users Write More Insecure Code with AI Assistants?』(CCS, 2023)。反対の力は Berkeley J. Dietvorst, Joseph P. Simmons & Cade Massey『Algorithm Aversion: People Erroneously Avoid Algorithms After Seeing Them Err』(Journal of Experimental Psychology: General, 2015)。
+        Kathleen L. Mosier, Linda J. Skitka, Susan Heers & Mark Burdick『Automation Bias: Decision Making and Performance in High-Tech Cockpits』(International Journal of Aviation Psychology, 1998) と Linda J. Skitka, Kathleen L. Mosier & Mark Burdick『Does automation bias decision-making?』(International Journal of Human-Computer Studies, 1999)。このバイアスを検証した初期の研究。Raja Parasuraman & Dietrich H. Manzey『Complacency and Bias in Human Use of Automation: An Attentional Integration』(Human Factors, 2010) は本文で引いたレビュー。コードアシスタントの実験は Neil Perry, Megha Srivastava, Deepak Kumar & Dan Boneh『Do Users Write More Insecure Code with AI Assistants?』(CCS, 2023)。反対の力は Berkeley J. Dietvorst, Joseph P. Simmons & Cade Massey『Algorithm Aversion: People Erroneously Avoid Algorithms After Seeing Them Err』(Journal of Experimental Psychology: General, 2015)。
   - slug: small-changes
     tag: maintainability
     source_url: https://google.github.io/eng-practices/review/developer/small-cls.html
@@ -4482,7 +4482,7 @@ laws:
         Simon Willison『The lethal trifecta for AI agents: private data, untrusted content, and external communication』(simonwillison.net, 2025)。三つの要素と "The only way to stay safe there is to avoid that lethal trifecta combination entirely." の出典。対抗原理は Edoardo Debenedetti ほか『Defeating Prompt Injections by Design』(arXiv, 2025) から。CaMeL が "explicitly extracts the control and data flows from the (trusted) query" し、信頼できないデータが "can never impact the program flow" とする出典。
   - slug: cost-of-delay
     tag: decision
-    source_url: https://en.wikipedia.org/wiki/Cost_of_delay
+    source_url: https://leanmagazine.net/lean/cost-of-delay-don-reinertsen/
     example_url: "https://blackswanfarming.com/black-swan-farming-using-cost-of-delay/"
     see_also:
       - littles-law
@@ -4733,7 +4733,7 @@ laws:
       counter:
         name: Unblock First
         note: |-
-          a maker who saves every question for office hours leaves teammates stuck behind them; when someone else's work is waiting, answering now breaks one block and frees several; Google's review guide optimizes "for the speed at which a team of developers can produce a product together"
+          a maker who saves every question for office hours leaves teammates stuck behind them; when someone else's work is blocked on you, as with a pending code review, answering now breaks one block and frees several; Google's review guide optimizes "for the speed at which a team of developers can produce a product together"
       guideline: |-
         Put meetings at the edges of the day or cluster them on fixed days, and keep blocks of at least half a day free of them for the people who build. Before booking a maker, count the block you would break, not the hour you take. Incidents and a blocked teammate are exempt; those get answered now.
       example: |-
@@ -4749,7 +4749,7 @@ laws:
       counter:
         name: まず詰まりを外す
         note: |-
-          質問をすべてオフィスアワーまでためるメイカーは、後ろでチームメイトを止めてしまう。誰かの仕事が待っているなら、今答えて一つのまとまりを崩すほうが、いくつものまとまりを救える。Google のレビューのガイドも "for the speed at which a team of developers can produce a product together" を最適化するとしている
+          質問をすべてオフィスアワーまでためるメイカーは、後ろでチームメイトを止めてしまう。レビュー待ちのように、誰かの仕事が自分のところで止まっているなら、今答えて一つのまとまりを崩すほうが、いくつものまとまりを救える。Google のレビューのガイドも "for the speed at which a team of developers can produce a product together" を最適化するとしている
       guideline: |-
         会議は一日の端に寄せるか、決まった曜日にまとめる。作る人には、会議のない半日以上のまとまりを残す。メイカーの予定を押さえる前に、取る一時間ではなく壊すまとまりを数える。障害対応と、手が止まっているチームメイトは例外で、すぐ答える。
       example: |-
@@ -4777,7 +4777,7 @@ laws:
       guideline: |-
         When a decision rests on a dashboard, write down what matters that the dashboard does not show, such as user trust, on-call load or code health, and put at least one direct look or survey beside the numbers. The SPACE authors make the same point about developer productivity: no single metric or dimension can capture it. For a narrow, well-instrumented question such as one endpoint's latency, the number is enough.
       source: |-
-        Daniel Yankelovich, *The New Odds* (speech to the Marketing Strategy Conference of the Sales Executives Club of New York, 1971) — the four steps and the name. The common citation *Corporate Priorities* (1972) is the name of his firm's research programme, which this speech introduces; the four steps are in the speech itself. The link is a transcript published by Ryan Madden (2026), who says he acquired a copy of the original transcript from the UCSD library archives and published it with the copyright holder's permission. Douglas W. Hubbard, *How to Measure Anything: Finding the Value of "Intangibles" in Business* (Wiley, 2007) — the counter's argument that much of what looks unmeasurable can be measured. Nicole Forsgren, Margaret-Anne Storey, Chandra Maddila, Thomas Zimmermann, Brian Houck and Jenna Butler, "The SPACE of Developer Productivity" (*ACM Queue* 19(1), 2021) — developer productivity cannot be measured by a single metric or dimension.
+        Daniel Yankelovich, *The New Odds* (speech to the Marketing Strategy Conference of the Sales Executives Club of New York, 1971) — the four steps and the name. The common citation *Corporate Priorities* (1972) is the name of his firm's research programme, which this speech introduces; the four steps are in the speech itself. The link is a transcript published by Ryan Madden (2026), who says he acquired a copy of the original transcript from the UCSD library archives and published it with the copyright holder's permission; it is the only full text of the speech we found online. Douglas W. Hubbard, *How to Measure Anything: Finding the Value of "Intangibles" in Business* (Wiley, 2007) — the counter's argument that much of what looks unmeasurable can be measured. Nicole Forsgren, Margaret-Anne Storey, Chandra Maddila, Thomas Zimmermann, Brian Houck and Jenna Butler, "The SPACE of Developer Productivity" (*ACM Queue* 19(1), 2021) — developer productivity cannot be measured by a single metric or dimension.
     ja:
       title: マクナマラの誤謬
       concept: 判断は数えられるものに寄っていき、やがて数えられないものは存在しないかのように扱われる。
@@ -4791,7 +4791,7 @@ laws:
       guideline: |-
         ダッシュボードで判断するときは、ダッシュボードに出てこないが大事なもの（利用者の信頼、オンコールの負担、コードの健全さなど）を書き出し、少なくとも一つは直接見たものかアンケートを数字の横に置く。SPACE の著者も、開発者の生産性は単一の指標や次元では測れないと書いている。一つのエンドポイントのレイテンシのように、狭くて計測が行き届いた問いなら数字だけで足りる。
       source: |-
-        Daniel Yankelovich『The New Odds』(Sales Executives Club of New York の Marketing Strategy Conference での講演, 1971)。四つの段階と名前の出典。よく見る『Corporate Priorities』(1972) は、この講演で紹介される彼の会社の調査プログラムの名前だ。四つの段階は講演そのものにある。リンク先は Ryan Madden が公開した書き起こし (2026) で、本人によれば UCSD の図書館アーカイブから元の書き起こしを入手し、著作権者の許可を得て載せている。Douglas W. Hubbard『How to Measure Anything: Finding the Value of "Intangibles" in Business』(Wiley, 2007)。測れないように見えるものの多くは測れるという、カウンターの主張の出典。Nicole Forsgren, Margaret-Anne Storey, Chandra Maddila, Thomas Zimmermann, Brian Houck, Jenna Butler「The SPACE of Developer Productivity」(『ACM Queue』19(1), 2021)。開発者の生産性は単一の指標や次元では測れないという指摘の出典。
+        Daniel Yankelovich『The New Odds』(Sales Executives Club of New York の Marketing Strategy Conference での講演, 1971)。四つの段階と名前の出典。よく見る『Corporate Priorities』(1972) は、この講演で紹介される彼の会社の調査プログラムの名前だ。四つの段階は講演そのものにある。リンク先は Ryan Madden が公開した書き起こし (2026) で、本人によれば UCSD の図書館アーカイブから元の書き起こしを入手し、著作権者の許可を得て載せている。ネットで見つかった講演の全文はこれだけだ。Douglas W. Hubbard『How to Measure Anything: Finding the Value of "Intangibles" in Business』(Wiley, 2007)。測れないように見えるものの多くは測れるという、カウンターの主張の出典。Nicole Forsgren, Margaret-Anne Storey, Chandra Maddila, Thomas Zimmermann, Brian Houck, Jenna Butler「The SPACE of Developer Productivity」(『ACM Queue』19(1), 2021)。開発者の生産性は単一の指標や次元では測れないという指摘の出典。
   - slug: twymans-law
     tag: cognition
     source_url: https://exp-platform.com/Documents/2014%20experimentersRulesOfThumb.pdf
