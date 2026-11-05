@@ -1,10 +1,18 @@
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { translations } from '@/translations';
-import { laws, lawBySlug, tags, type Law, type Locale } from '@/data/laws';
+import {
+  collections,
+  laws,
+  lawBySlug,
+  tags,
+  type Law,
+  type Locale,
+} from '@/data/laws';
 import {
   article,
   articleLabel,
+  columnRouteFor,
   DATA_URL,
   hueFor,
   routeFor,
@@ -62,6 +70,21 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
   const related = law.seeAlso
     .map((slug) => lawBySlug.get(slug))
     .filter((candidate): candidate is Law => Boolean(candidate));
+
+  // The columns this law is read in, with where it falls and what comes next,
+  // so a reader who arrived from a column can carry on with it.
+  const inColumns = collections.flatMap((column) => {
+    const at = column.laws.findIndex((item) => item.slug === law.slug);
+    if (at === -1) return [];
+    const following = column.laws[at + 1];
+    return [
+      {
+        column,
+        position: at + 1,
+        next: following ? lawBySlug.get(following.slug) : undefined,
+      },
+    ];
+  });
 
   const index = laws.findIndex((candidate) => candidate.slug === law.slug);
   const previous = index > 0 ? laws[index - 1] : null;
@@ -219,6 +242,35 @@ export default function LawArticle({ law, lang }: { law: Law; lang: Locale }) {
             />
           </div>
         </Part>
+
+        {inColumns.length > 0 && (
+          <Part title={t.column.inColumn}>
+            <ul className="space-y-2">
+              {inColumns.map(({ column, position, next: after }) => (
+                <li key={column.key}>
+                  <Link
+                    href={columnRouteFor(lang, column.key)}
+                    className="link font-bold"
+                  >
+                    {column[lang].title}
+                  </Link>{' '}
+                  <span className="meta">
+                    {t.column.position(position, column.laws.length)}
+                  </span>
+                  {after ? (
+                    <span className="block text-[0.9375rem]">
+                      {t.column.next}
+                      {lang === 'ja' ? '：' : ': '}
+                      <Link href={routeFor(lang, after.slug)} className="link">
+                        {after[lang].title}
+                      </Link>
+                    </span>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </Part>
+        )}
 
         {related.length > 0 && (
           <Part title={t.law.seeAlso}>

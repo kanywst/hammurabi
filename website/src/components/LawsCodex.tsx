@@ -5,13 +5,21 @@ import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 import { Search, Shuffle } from 'lucide-react';
 import { translations } from '@/translations';
-import { laws, lawBySlug, situations, tags, type Locale } from '@/data/laws';
-import { articleLabel, hueFor, routeFor } from '@/lib/site';
+import {
+  collections,
+  laws,
+  lawBySlug,
+  situations,
+  tags,
+  type Locale,
+} from '@/data/laws';
+import { articleLabel, columnRouteFor, hueFor, routeFor } from '@/lib/site';
 import Medallion from './Medallion';
 
 /**
- * The index of the codex. Two ways in: by the situation the reader is in, or by
- * scanning every law, one row each — name, the claim it makes, its category.
+ * The index of the codex. Three ways in: a column that reads through several
+ * laws in order, the situation the reader is in, or scanning every law, one row
+ * each — name, the claim it makes, its category.
  * Search reads the whole article in both languages, so an English name finds a
  * law from the Japanese page and the other way round.
  */
@@ -92,11 +100,36 @@ export default function LawsCodex({ lang }: { lang: Locale }) {
       </div>
 
       <details className="mt-6 rounded-md border border-line-soft lg:hidden">
+        {/* On a phone the list must start where it always has, so the
+            columns share the one toggle above it with the situations. */}
         <summary className="cursor-pointer px-4 py-3 font-bold">
-          <h2 className="inline">{t.ui.situationsHeading}</h2>
+          <h2 className="inline">{t.ui.waysInHeading}</h2>
         </summary>
-        <div className="px-4 pb-4">
-          <Situations lang={lang} />
+        <div className="space-y-6 px-4 pb-4">
+          <section>
+            <h3 className="meta">{t.column.heading}</h3>
+            <ul className="mt-1 space-y-1">
+              {collections.map((column) => (
+                <li key={column.key}>
+                  <Link
+                    href={columnRouteFor(lang, column.key)}
+                    className="font-bold text-accent hover:underline"
+                  >
+                    {column[lang].title}
+                  </Link>{' '}
+                  <span className="meta">
+                    {t.column.count(column.laws.length)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+          <section>
+            <h3 className="meta">{t.ui.situationsHeading}</h3>
+            <div className="mt-2">
+              <Situations lang={lang} />
+            </div>
+          </section>
         </div>
       </details>
 
@@ -179,21 +212,54 @@ export default function LawsCodex({ lang }: { lang: Locale }) {
           )}
         </section>
 
-        <aside aria-labelledby="situations-heading" className="hidden lg:block">
+        <aside className="hidden lg:block">
           <div className="sticky top-16 max-h-[calc(100vh-5rem)] overflow-y-auto pb-4">
-            <h2
-              id="situations-heading"
-              className="display text-[1.375rem] leading-snug"
-            >
-              {t.ui.situationsHeading}
-            </h2>
-            <div className="mt-4">
-              <Situations lang={lang} />
+            <div className="mb-8">
+              <Columns lang={lang} />
             </div>
+            <section aria-labelledby="situations-heading">
+              <h2
+                id="situations-heading"
+                className="display text-[1.375rem] leading-snug"
+              >
+                {t.ui.situationsHeading}
+              </h2>
+              <div className="mt-4">
+                <Situations lang={lang} />
+              </div>
+            </section>
           </div>
         </aside>
       </div>
     </>
+  );
+}
+
+/** Columns: a guided read through several laws, from `collections:` in
+ *  data/laws.yaml. */
+function Columns({ lang }: { lang: Locale }) {
+  const t = translations[lang].column;
+  return (
+    <section aria-labelledby="columns-heading">
+      <h2 id="columns-heading" className="display text-[1.375rem] leading-snug">
+        {t.heading}
+      </h2>
+      <ul className="mt-3 space-y-2">
+        {collections.map((column) => (
+          <li key={column.key}>
+            <Link
+              href={columnRouteFor(lang, column.key)}
+              className="group block rounded-md border border-line-soft px-4 py-3 hover:bg-surface"
+            >
+              <span className="block font-bold group-hover:text-accent">
+                {column[lang].title}
+              </span>
+              <span className="meta block">{t.count(column.laws.length)}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 

@@ -1,21 +1,12 @@
 import type { MetadataRoute } from 'next';
-import { laws } from '@/data/laws';
-import { DEFAULT_LOCALE, LOCALES, urlFor } from '@/lib/site';
+import { collections, laws, type Locale } from '@/data/laws';
+import { columnUrlFor, languagesFor, LOCALES, urlFor } from '@/lib/site';
 
 // Required for `output: 'export'` — emit a static sitemap.xml at build time.
 export const dynamic = 'force-static';
 
-function alternates(slug?: string) {
-  return {
-    languages: {
-      ...Object.fromEntries(
-        LOCALES.map((locale) => [locale, urlFor(locale, slug)])
-      ),
-      // Tells a crawler which version to serve a reader whose language matches
-      // neither entry, rather than leaving it to guess.
-      'x-default': urlFor(DEFAULT_LOCALE, slug),
-    },
-  };
+function alternates(url: (locale: Locale) => string) {
+  return { languages: languagesFor(url) };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -23,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: urlFor(locale),
     changeFrequency: 'weekly' as const,
     priority: 1,
-    alternates: alternates(),
+    alternates: alternates((l) => urlFor(l)),
   }));
 
   const articles = LOCALES.flatMap((locale) =>
@@ -31,9 +22,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: urlFor(locale, law.slug),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
-      alternates: alternates(law.slug),
+      alternates: alternates((l) => urlFor(l, law.slug)),
     }))
   );
 
-  return [...homes, ...articles];
+  const columns = LOCALES.flatMap((locale) =>
+    collections.map((column) => ({
+      url: columnUrlFor(locale, column.key),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+      alternates: alternates((l) => columnUrlFor(l, column.key)),
+    }))
+  );
+
+  return [...homes, ...articles, ...columns];
 }

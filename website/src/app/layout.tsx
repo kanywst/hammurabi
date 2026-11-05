@@ -7,6 +7,7 @@ import {
   DEFAULT_LOCALE,
   HTML_LANG,
   OG_LOCALE,
+  SITE_IMAGE,
   SITE_URL,
   urlFor,
 } from '@/lib/site';
@@ -43,7 +44,6 @@ const atkinson = localFont({
 });
 
 const copy = translations[DEFAULT_LOCALE].ui;
-const SITE_IMAGE = `${SITE_URL}/banner.jpg`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -60,15 +60,13 @@ export const metadata: Metadata = {
     locale: OG_LOCALE[DEFAULT_LOCALE],
     title: copy.metaTitle,
     description: copy.metaDescription,
-    images: [
-      { url: SITE_IMAGE, width: 1600, height: 643, alt: copy.metaTitle },
-    ],
+    images: [{ ...SITE_IMAGE, alt: copy.metaTitle }],
   },
   twitter: {
     card: 'summary_large_image',
     title: copy.metaTitle,
     description: copy.metaDescription,
-    images: [SITE_IMAGE],
+    images: [SITE_IMAGE.url],
   },
 };
 

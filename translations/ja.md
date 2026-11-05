@@ -63,6 +63,10 @@ Hammurabi は、**認知心理学**・**安全工学**・**システム設計**�
 - **分散システムを組む:** [分散コンピューティングの誤謬 (Fallacies of Distributed Computing)](#分散コンピューティングの誤謬-fallacies-of-distributed-computing) · [CAP定理 (CAP Theorem)](#cap定理-cap-theorem) · [二人の将軍問題 (Two Generals Problem)](#二人の将軍問題-two-generals-problem) · [スケールの裾野 (The Tail at Scale)](#スケールの裾野-the-tail-at-scale) · [静的安定性 (Static Stability)](#静的安定性-static-stability) · [フォールバックを避ける (Avoid Fallback)](#フォールバックを避ける-avoid-fallback) · [一定の作業量 (Constant Work)](#一定の作業量-constant-work) · [カオスエンジニアリング (Chaos Engineering)](#カオスエンジニアリング-chaos-engineering)
 - **権限と秘密を設計する:** [最小権限の原則 (Principle of Least Privilege)](#最小権限の原則-principle-of-least-privilege) · [ケルクホフスの原理 (Kerckhoffs's Principle)](#ケルクホフスの原理-kerckhoffss-principle)
 
+**コラム**
+
+- **[チームで働く](https://kanywst.github.io/hammurabi/ja/columns/working-as-a-team/):** [ブルックスの法則 (Brooks' Law)](#ブルックスの法則-brooks-law) → [ダンバー数 (Dunbar's Number)](#ダンバー数-dunbars-number) → [リンゲルマン効果 (Ringelmann Effect)](#リンゲルマン効果-ringelmann-effect) → [傍観者効果 (Bystander Effect)](#傍観者効果-bystander-effect) → [コンウェイの法則 (Conway's Law)](#コンウェイの法則-conways-law) → [バス係数 (Bus Factor)](#バス係数-bus-factor) → [知識の呪い (Curse of Knowledge)](#知識の呪い-curse-of-knowledge) → [統制ではなく文脈を (Context, Not Control)](#統制ではなく文脈を-context-not-control) → [パーキンソンの凡俗法則 (Law of Triviality)](#パーキンソンの凡俗法則-law-of-triviality) → [スライドではなく文章で (Narratives, Not Slides)](#スライドではなく文章で-narratives-not-slides) → [反対してもコミットする (Disagree and Commit)](#反対してもコミットする-disagree-and-commit)
+
 **すべての法則**
 
 | § | 法則 | カテゴリ | 核心 |

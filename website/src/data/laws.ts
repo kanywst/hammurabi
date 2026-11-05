@@ -66,6 +66,26 @@ export interface Situation {
   laws: string[];
 }
 
+export interface CollectionText {
+  title: string;
+  lede: string;
+}
+
+/** One stop in a column: a law, and a note on why it comes next. */
+export interface CollectionItem {
+  slug: string;
+  en: string;
+  ja: string;
+}
+
+/** A column: several laws read in an order that tells one story. */
+export interface Collection {
+  key: string;
+  en: CollectionText;
+  ja: CollectionText;
+  laws: CollectionItem[];
+}
+
 export const tags: Tag[] = [
   {
     "key": "decision",
@@ -307,6 +327,77 @@ export const situations: Situation[] = [
     "laws": [
       "principle-of-least-privilege",
       "kerckhoffs-principle"
+    ]
+  }
+];
+
+export const collections: Collection[] = [
+  {
+    "key": "working-as-a-team",
+    "en": {
+      "title": "Working as a team",
+      "lede": "A team exists to do what one person cannot. As it grows, that can stop being true in several places, in coordination, ownership, knowledge and decisions. This column reads through them in that order, along with what keeps a team working."
+    },
+    "ja": {
+      "title": "チームで働く",
+      "lede": "チームは、一人ではできないことをやるために組む。人が増えると、それが効かなくなる場面が出てくる。調整、担当、知識、意思決定だ。このコラムはそれをこの順に読み、チームを動かし続けるための手もたどる。"
+    },
+    "laws": [
+      {
+        "slug": "brooks-law",
+        "en": "It usually starts when the work falls behind and someone asks for more people.",
+        "ja": "たいていは、作業が遅れて人を増やそうという話から始まる。"
+      },
+      {
+        "slug": "dunbars-number",
+        "en": "Brooks' Law is about a project that is already late. A related cost can keep running when nothing is late and the team simply keeps hiring.",
+        "ja": "ブルックスの法則は、すでに遅れたプロジェクトの話だ。遅れていなくても、人を採り続ければ、似たコストが効いてくることがある。"
+      },
+      {
+        "slug": "ringelmann-effect",
+        "en": "Coordination is the cost everyone can see. The quieter cost is in how much each person puts in once the group is large.",
+        "ja": "調整は、誰にでも見えるコストだ。見えにくいコストは、大きな集団の中で一人ひとりが出す力のほうに現れる。"
+      },
+      {
+        "slug": "bystander-effect",
+        "en": "That is about work everyone is already doing. Work nobody has started yet, like a page sent to a group channel, tends to run into the same problem.",
+        "ja": "ここまでは、全員がもう手をつけている仕事の話だ。まだ誰も手をつけていない仕事、たとえばグループチャンネルに飛んだ呼び出しにも、同じことが起きやすい。"
+      },
+      {
+        "slug": "conways-law",
+        "en": "The usual fix is to split the team and give each part an owner. How it is split does not stay on the org chart.",
+        "ja": "よくある手は、チームを分けてそれぞれに担当を置くことだ。その分け方は、組織図の上だけでは終わらない。"
+      },
+      {
+        "slug": "bus-factor",
+        "en": "Naming one owner is the fix the last few laws point to. It has a price, because what keeps that part running collects with its owner.",
+        "ja": "担当を一人決める、というのがここまでの処方だ。ただし代償もある。その部分を動かす知識が、担当者のところに溜まっていく。"
+      },
+      {
+        "slug": "curse-of-knowledge",
+        "en": "The usual remedy is a handover document, and the person who has to write it is often the one least able to see what a newcomer lacks.",
+        "ja": "よくある手は引き継ぎ文書だ。だが、それを書くのは、新しい人に何が足りないかにいちばん気づきにくい当の本人であることが多い。"
+      },
+      {
+        "slug": "context-not-control",
+        "en": "When decisions get made without that knowledge, a common response in a growing team is one more rule or approval step.",
+        "ja": "その知識がないまま判断が下されると、大きくなるチームでよくある対応は、ルールか承認を一つ足すことだ。"
+      },
+      {
+        "slug": "law-of-triviality",
+        "en": "Some decisions still go to a meeting, and uneven knowledge shows up there too.",
+        "ja": "それでも、会議で決めることは残る。そこにも知識の偏りが出る。"
+      },
+      {
+        "slug": "narratives-not-slides",
+        "en": "One way to bring the discussion back to what matters is to change what the team reads when the meeting starts.",
+        "ja": "議論を大事なところに戻す手の一つは、会議の冒頭で読むものを変えることだ。"
+      },
+      {
+        "slug": "disagree-and-commit",
+        "en": "Even a well-argued proposal leaves someone unconvinced, and the team still has to act as one.",
+        "ja": "よく書けた提案でも、納得しない人は残る。それでもチームは、一つになって動かなければならない。"
+      }
     ]
   }
 ];

@@ -19,6 +19,7 @@ export const translations = {
       metaDescription:
         'Engineering laws, each with what to do about it, the counter-force that limits it, and its primary source.',
       situationsHeading: 'Start from a situation',
+      waysInHeading: 'Columns and situations',
       allHeading: 'All laws',
       picksHeading: "Editor's picks",
       filterAll: 'All',
@@ -50,6 +51,15 @@ export const translations = {
       previous: 'Previous',
       next: 'Next',
       editOnGitHub: 'Suggest a correction on GitHub',
+    },
+    column: {
+      kicker: 'Column',
+      heading: 'Columns',
+      count: (n: number) => `${n} laws, read in order`,
+      more: 'More to read',
+      inColumn: 'Read in a column',
+      position: (i: number, n: number) => `${i} of ${n}`,
+      next: 'Next in the column',
     },
     print: {
       cardsTitle: 'Card deck',
@@ -93,6 +103,7 @@ export const translations = {
       metaDescription:
         'エンジニアリングの法則集。各法則に、どうすればいいか、当てはまらないのはどんなときか、一次資料の出典を付けている。',
       situationsHeading: '状況から引く',
+      waysInHeading: 'コラムと状況から引く',
       allHeading: 'すべての法則',
       picksHeading: '編者のおすすめ',
       filterAll: 'すべて',
@@ -124,6 +135,15 @@ export const translations = {
       previous: '前へ',
       next: '次へ',
       editOnGitHub: 'GitHub で誤りを指摘する',
+    },
+    column: {
+      kicker: 'コラム',
+      heading: 'コラム',
+      count: (n: number) => `${n} 本を順に読む`,
+      more: 'ほかに読む',
+      inColumn: 'コラムで読む',
+      position: (i: number, n: number) => `${n} 本中 ${i} 本目`,
+      next: 'コラムの次',
     },
     print: {
       cardsTitle: 'カードデッキ',

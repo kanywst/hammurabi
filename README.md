@@ -63,6 +63,10 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Building a distributed system:** [Fallacies of Distributed Computing](#fallacies-of-distributed-computing) · [CAP Theorem](#cap-theorem) · [Two Generals Problem](#two-generals-problem) · [The Tail at Scale](#the-tail-at-scale) · [Static Stability](#static-stability) · [Avoid Fallback](#avoid-fallback) · [Constant Work](#constant-work) · [Chaos Engineering](#chaos-engineering)
 - **Designing permissions and secrets:** [Principle of Least Privilege](#principle-of-least-privilege) · [Kerckhoffs's Principle](#kerckhoffss-principle)
 
+**Columns**
+
+- **[Working as a team](https://kanywst.github.io/hammurabi/columns/working-as-a-team/):** [Brooks' Law](#brooks-law) → [Dunbar's Number](#dunbars-number) → [Ringelmann Effect](#ringelmann-effect) → [Bystander Effect](#bystander-effect) → [Conway's Law](#conways-law) → [Bus Factor](#bus-factor) → [Curse of Knowledge](#curse-of-knowledge) → [Context, Not Control](#context-not-control) → [Law of Triviality](#law-of-triviality) → [Narratives, Not Slides](#narratives-not-slides) → [Disagree and Commit](#disagree-and-commit)
+
 **All laws**
 
 | § | Law | Category | The core idea |
