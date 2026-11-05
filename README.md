@@ -3,7 +3,7 @@
 **Engineering laws, each with its counter-force.** Every article also carries a field guideline and a primary source.
 
 [![stars](https://img.shields.io/github/stars/kanywst/hammurabi?style=for-the-badge&color=1d47b8&labelColor=17181a)](https://github.com/kanywst/hammurabi/stargazers)
-[![laws](https://img.shields.io/badge/laws-100-1d47b8?style=for-the-badge&labelColor=17181a)](#the-codex)
+[![laws](https://img.shields.io/badge/laws-116-1d47b8?style=for-the-badge&labelColor=17181a)](#the-codex)
 [![site](https://img.shields.io/badge/read-the%20codex-1d47b8?style=for-the-badge&labelColor=17181a)](https://kanywst.github.io/hammurabi/)
 [![license](https://img.shields.io/badge/content-CC%20BY--SA%204.0-5c5f64?style=for-the-badge&labelColor=17181a)](./LICENSE)
 
@@ -51,17 +51,20 @@ The `§` number is a stable display label, assigned in file order. The permanent
 
 - **Estimates keep slipping:** [Hofstadter's Law](#hofstadters-law) · [Ninety-Ninety Rule](#ninety-ninety-rule) · [Parkinson's Law](#parkinsons-law) · [Brooks' Law](#brooks-law) · [Fixed Time, Variable Scope](#fixed-time-variable-scope)
 - **The team is growing:** [Brooks' Law](#brooks-law) · [Dunbar's Number](#dunbars-number) · [Ringelmann Effect](#ringelmann-effect) · [Conway's Law](#conways-law) · [Bystander Effect](#bystander-effect) · [Context, Not Control](#context-not-control) · [Bus Factor](#bus-factor)
-- **A metric is being gamed:** [Goodhart's Law](#goodharts-law) · [Cobra Effect](#cobra-effect) · [Shirky Principle](#shirky-principle)
-- **The decision is stuck:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Disagree and Commit](#disagree-and-commit) · [Law of Triviality](#law-of-triviality) · [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Narratives, Not Slides](#narratives-not-slides) · [Believability-Weighted Decisions](#believability-weighted-decisions)
-- **After an incident:** [Blameless Postmortem](#blameless-postmortem) · [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory) · [Hanlon's Razor](#hanlons-razor) · [Ironies of Automation](#ironies-of-automation) · [Five Whys](#five-whys) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Pesticide Paradox](#pesticide-paradox) · [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see)
+- **A metric is being gamed:** [Goodhart's Law](#goodharts-law) · [Cobra Effect](#cobra-effect) · [Shirky Principle](#shirky-principle) · [McNamara Fallacy](#mcnamara-fallacy) · [Twyman's Law](#twymans-law)
+- **The decision is stuck:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Disagree and Commit](#disagree-and-commit) · [Law of Triviality](#law-of-triviality) · [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Narratives, Not Slides](#narratives-not-slides) · [Believability-Weighted Decisions](#believability-weighted-decisions) · [The Last Responsible Moment](#the-last-responsible-moment)
+- **After an incident:** [Blameless Postmortem](#blameless-postmortem) · [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory) · [Hanlon's Razor](#hanlons-razor) · [Ironies of Automation](#ironies-of-automation) · [Five Whys](#five-whys) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Pesticide Paradox](#pesticide-paradox) · [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see) · [Automation Bias](#automation-bias) · [Psychological Safety](#psychological-safety)
 - **Reliability versus shipping speed:** [Error Budget](#error-budget) · [Toil](#toil) · [Normalization of Deviance](#normalization-of-deviance) · [Murphy's Law](#murphys-law) · [You Build It, You Run It](#you-build-it-you-run-it) · [Andon (Stop the Line)](#andon-stop-the-line) · [Chaos Engineering](#chaos-engineering) · [Technical Debt](#technical-debt)
-- **Something is too slow:** [Amdahl's Law](#amdahls-law) · [Theory of Constraints](#theory-of-constraints) · [Premature Optimization](#premature-optimization) · [The Tail at Scale](#the-tail-at-scale) · [Little's Law](#littles-law)
-- **Deleting or rewriting old code:** [Chesterton's Fence](#chestertons-fence) · [Second-System Effect](#second-system-effect) · [Gall's Law](#galls-law) · [Hyrum's Law](#hyrums-law) · [Eagleson's Law](#eaglesons-law) · [Boy Scout Rule](#boy-scout-rule) · [Strangler Fig](#strangler-fig) · [Beyoncé Rule](#beyoncé-rule) · [Churn Rule](#churn-rule) · [Technical Debt](#technical-debt) · [Lehman's Laws of Software Evolution](#lehmans-laws-of-software-evolution) · [One-Version Rule](#one-version-rule)
+- **Something is too slow:** [Amdahl's Law](#amdahls-law) · [Theory of Constraints](#theory-of-constraints) · [Premature Optimization](#premature-optimization) · [The Tail at Scale](#the-tail-at-scale) · [Little's Law](#littles-law) · [Kingman's Formula](#kingmans-formula)
+- **Deleting or rewriting old code:** [Chesterton's Fence](#chestertons-fence) · [Second-System Effect](#second-system-effect) · [Gall's Law](#galls-law) · [Hyrum's Law](#hyrums-law) · [Eagleson's Law](#eaglesons-law) · [Boy Scout Rule](#boy-scout-rule) · [Strangler Fig](#strangler-fig) · [Beyoncé Rule](#beyoncé-rule) · [Churn Rule](#churn-rule) · [Technical Debt](#technical-debt) · [Lehman's Laws of Software Evolution](#lehmans-laws-of-software-evolution) · [One-Version Rule](#one-version-rule) · [Programming as Theory Building](#programming-as-theory-building)
 - **Designing an API or interface:** [Hyrum's Law](#hyrums-law) · [Postel's Law](#postels-law) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Law of Leaky Abstractions](#law-of-leaky-abstractions) · [Tesler's Law](#teslers-law) · [Beyoncé Rule](#beyoncé-rule)
-- **Starting something new:** [Working Backwards](#working-backwards) · [YAGNI](#yagni) · [Gall's Law](#galls-law) · [Worse is Better](#worse-is-better) · [KISS Principle](#kiss-principle) · [XY Problem](#xy-problem)
+- **Starting something new:** [Working Backwards](#working-backwards) · [YAGNI](#yagni) · [Gall's Law](#galls-law) · [Worse is Better](#worse-is-better) · [KISS Principle](#kiss-principle) · [XY Problem](#xy-problem) · [Pre-Mortem](#pre-mortem) · [Wicked Problems](#wicked-problems) · [Most Ideas Fail](#most-ideas-fail)
 - **Choosing a technology:** [Lindy Effect](#lindy-effect) · [Cargo Cult Engineering](#cargo-cult-engineering) · [Amara's Law](#amaras-law) · [Survivorship Bias](#survivorship-bias) · [Choose Boring Technology](#choose-boring-technology)
 - **Building a distributed system:** [Fallacies of Distributed Computing](#fallacies-of-distributed-computing) · [CAP Theorem](#cap-theorem) · [Two Generals Problem](#two-generals-problem) · [The Tail at Scale](#the-tail-at-scale) · [Static Stability](#static-stability) · [Avoid Fallback](#avoid-fallback) · [Constant Work](#constant-work) · [Chaos Engineering](#chaos-engineering)
-- **Designing permissions and secrets:** [Principle of Least Privilege](#principle-of-least-privilege) · [Kerckhoffs's Principle](#kerckhoffss-principle)
+- **Designing permissions and secrets:** [Principle of Least Privilege](#principle-of-least-privilege) · [Kerckhoffs's Principle](#kerckhoffss-principle) · [The Lethal Trifecta](#the-lethal-trifecta)
+- **AI produces more than we can check:** [Brandolini's Law](#brandolinis-law) · [Automation Bias](#automation-bias) · [Small Changes](#small-changes) · [Test Oracle Problem](#test-oracle-problem) · [Programming as Theory Building](#programming-as-theory-building) · [The Lethal Trifecta](#the-lethal-trifecta) · [Ironies of Automation](#ironies-of-automation)
+- **Nobody agrees what to build next:** [Cost of Delay](#cost-of-delay) · [Wicked Problems](#wicked-problems) · [Most Ideas Fail](#most-ideas-fail) · [Working Backwards](#working-backwards) · [The Last Responsible Moment](#the-last-responsible-moment) · [McNamara Fallacy](#mcnamara-fallacy)
+- **Too much work, too many interruptions:** [Kingman's Formula](#kingmans-formula) · [Maker's Schedule, Manager's Schedule](#makers-schedule-managers-schedule) · [Little's Law](#littles-law) · [Theory of Constraints](#theory-of-constraints) · [Parkinson's Law](#parkinsons-law) · [Toil](#toil)
 
 **Columns**
 
@@ -171,6 +174,22 @@ The `§` number is a stable display label, assigned in file order. The permanent
 | `98` | [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see) | Decision | Decisions made from reports drift away from what is actually happening, because each layer of summary drops the detail that did not fit its form. |
 | `99` | [Believability-Weighted Decisions](#believability-weighted-decisions) | Decision | When a group counts every opinion the same, or defers to rank, the people who have actually done the thing before are outvoted by those who have not. |
 | `100` | [Braintrust (Notes Without Authority)](#braintrust-notes-without-authority) | Organization | Feedback from people who can overrule the owner gets defended against rather than used; peers with no power to impose a fix can be candid, and the owner can afford to hear them. |
+| `101` | [Brandolini's Law](#brandolinis-law) | Cognition | Refuting a false claim takes far more effort than making it, so a stream of cheap claims can swamp the people who have to check them. |
+| `102` | [Automation Bias](#automation-bias) | Cognition | People working with an automated aid tend to let it stand in for their own checking: they miss what it fails to flag and follow it when it is wrong. |
+| `103` | [Small Changes](#small-changes) | Maintainability | The larger a change sent for review, the less closely each line is read: defects slip through and the change waits longer for a first look. |
+| `104` | [Programming as Theory Building](#programming-as-theory-building) | Maintainability | A program's design lives in the heads of the people who built it, and the code and documents carry only part of it, so once those people are gone, changes tend to erode the design even with full documentation in hand. |
+| `105` | [Test Oracle Problem](#test-oracle-problem) | Maintainability | A test can only catch a wrong answer if something independent of the code knows the right one, and for many programs nothing does. |
+| `106` | [The Lethal Trifecta](#the-lethal-trifecta) | Security | An AI agent that can read private data, takes in content from outside and can send data out can be steered into leaking that data by whoever wrote the content. |
+| `107` | [Cost of Delay](#cost-of-delay) | Decision | Work gets ordered by size, by gut feel or by whoever asks loudest, while what each item loses every week it waits goes uncounted, so the most valuable work often waits behind the merely visible. |
+| `108` | [The Last Responsible Moment](#the-last-responsible-moment) | Decision | Commit too early and a guess hardens into the design; wait too long and an option quietly expires, so the decision gets made by default without anyone making it. |
+| `109` | [Pre-Mortem](#pre-mortem) | Decision | People who doubt a plan the team has already committed to tend to keep quiet; asking them to explain a failure that has already happened draws the doubts out. |
+| `110` | [Wicked Problems](#wicked-problems) | Decision | For some problems, working out what the problem is and choosing a solution are the same act, so the requirements cannot be settled before the design starts and there is no point at which the problem is done. |
+| `111` | [Most Ideas Fail](#most-ideas-fail) | Decision | Most ideas that a competent team has already vetted do nothing or make things worse once they are measured, and the people who proposed them usually cannot tell which ones. |
+| `112` | [Kingman's Formula](#kingmans-formula) | Performance | As a server's utilization approaches 100%, the time work spends waiting for it climbs steeply, and variability in arrivals and service multiplies the climb. |
+| `113` | [Maker's Schedule, Manager's Schedule](#makers-schedule-managers-schedule) | Organization | People who make things need long unbroken blocks of time, and a calendar run in one-hour slots breaks those blocks into pieces too small to use. |
+| `114` | [McNamara Fallacy](#mcnamara-fallacy) | Decision | Decisions drift toward whatever can be counted, until what cannot be counted is treated as if it did not exist. |
+| `115` | [Twyman's Law](#twymans-law) | Cognition | A metric that moves surprisingly far is more often a bug in the measurement or the analysis than a real effect. |
+| `116` | [Psychological Safety](#psychological-safety) | Organization | A team learns only as fast as its members will admit mistakes, ask for help and disagree, and they do that only when they believe it is safe to. |
 
 ### Type 1 vs Type 2 Decisions
 
@@ -182,7 +201,7 @@ The `§` number is a stable display label, assigned in file order. The permanent
 - **Counter:** **Hidden One-Way Doors** — many decisions look reversible and are not (a public API, a data format written to disk, a price announced to customers), and fast-tracking them ships a commitment you cannot take back.
 - **Guideline:** Classify a decision before you schedule the debate. If you could undo it within a sprint at a cost you would accept, let one person or a small group decide it this week. Keep the full review for decisions that touch persisted data, public interfaces, security, or something already promised to customers.
 - **Source:** Jeff Bezos, *2015 Letter to Shareholders* (Amazon.com, Inc., filed April 2016) — the letter that introduced the "Type 1 / Type 2 decisions" framing. The 1997 letter is the "Day 1" letter and does not contain it. — [source ↗](https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm)
-- **See also:** [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Parkinson's Law](#parkinsons-law) · [Disagree and Commit](#disagree-and-commit) · [Narratives, Not Slides](#narratives-not-slides)
+- **See also:** [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Parkinson's Law](#parkinsons-law) · [Disagree and Commit](#disagree-and-commit) · [Narratives, Not Slides](#narratives-not-slides) · [Test Oracle Problem](#test-oracle-problem) · [The Last Responsible Moment](#the-last-responsible-moment)
 
 ### Normalization of Deviance
 
@@ -303,7 +322,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Answer the Question Asked** — sometimes the asker has already weighed X and needs Y for reasons they do not owe you; interrogating every question is patronizing and slows down the people who knew what they were doing.
 - **Guideline:** When someone asks "How do I do Y?", answer Y if it is cheap, then ask once what they are trying to achieve.
 - **Source:** Folklore from the Perl IRC and sysadmin communities; canonical write-up at *xyproblem.info*. — [source ↗](https://xyproblem.info/)
-- **See also:** [Curse of Knowledge](#curse-of-knowledge) · [Working Backwards](#working-backwards) · [Five Whys](#five-whys)
+- **See also:** [Curse of Knowledge](#curse-of-knowledge) · [Working Backwards](#working-backwards) · [Five Whys](#five-whys) · [Wicked Problems](#wicked-problems)
 
 ### Postel's Law
 
@@ -329,7 +348,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Guideline:** Before you attribute a failure to intent, find out what the person could see at the time, and fix what was missing. Raise intent only with evidence, and then privately.
 - **In practice:** When Cloudflare's network began failing on November 18, 2025, the team at first suspected a hyper-scale DDoS attack, a suspicion strengthened when its separately hosted status page went down at the same time by coincidence. The real cause was a database permissions change that made a query return duplicate rows, doubling a Bot Management feature file past a size limit in the routing software. Cloudflare's postmortem states the outage was not caused by any attack or malicious activity. [account ↗](https://blog.cloudflare.com/18-november-2025-outage/)
 - **Source:** Robert J. Hanlon, contributed to *Murphy's Law Book Two* (Arthur Bloch, 1980). — [source ↗](https://en.wikipedia.org/wiki/Hanlon%27s_razor)
-- **See also:** [Bystander Effect](#bystander-effect) · [Occam's Razor](#occams-razor) · [Blameless Postmortem](#blameless-postmortem)
+- **See also:** [Bystander Effect](#bystander-effect) · [Occam's Razor](#occams-razor) · [Blameless Postmortem](#blameless-postmortem) · [Psychological Safety](#psychological-safety)
 
 ### Hofstadter's Law
 
@@ -355,7 +374,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Guideline:** Never use a single metric to judge performance. Observe the system's output, not its proxies.
 - **In practice:** In September 2016 the US Consumer Financial Protection Bureau fined Wells Fargo $100 million after the bank's own analysis found employees had opened more than two million deposit and credit card accounts customers may not have authorized. The CFPB said the conduct was "spurred by sales targets and compensation incentives," and that employees were paid for meeting sales goals. [account ↗](https://www.consumerfinance.gov/about-us/newsroom/consumer-financial-protection-bureau-fines-wells-fargo-100-million-widespread-illegal-practice-secretly-opening-unauthorized-accounts/)
 - **Source:** Charles Goodhart, *Problems of Monetary Management: The U.K. Experience* (Papers in Monetary Economics, Reserve Bank of Australia, 1975) — the original law; Marilyn Strathern, *'Improving ratings': audit in the British University system* (European Review, 1997) — the "when a measure becomes a target" wording usually quoted. — [source ↗](https://en.wikipedia.org/wiki/Goodhart%27s_law)
-- **See also:** [Cobra Effect](#cobra-effect) · [Shirky Principle](#shirky-principle) · [Error Budget](#error-budget) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see)
+- **See also:** [Cobra Effect](#cobra-effect) · [Shirky Principle](#shirky-principle) · [Error Budget](#error-budget) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see) · [McNamara Fallacy](#mcnamara-fallacy) · [Twyman's Law](#twymans-law)
 
 ### Lindy Effect
 
@@ -429,7 +448,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Guideline:** Before a quality push, rank modules by defects or incidents over the last quarter and start at the top. Re-rank every quarter; the vital few move.
 - **In practice:** Microsoft's 2009 SOSP paper on Windows Error Reporting, drawn from crash reports across about a billion machines, states that error reports "follow a Pareto distribution with a small number of bugs accounting for most error reports." The top 500 buckets accounted for 65% of all error reports for Windows Vista, and when ranked by volume, the first quarter of reports came from well under 1% of buckets. [account ↗](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/sosp153-glerum-web.pdf)
 - **Source:** Vilfredo Pareto, *Cours d'Économie Politique* (1896); applied to quality engineering by Joseph M. Juran (*Quality Control Handbook*, 1951). — [source ↗](https://en.wikipedia.org/wiki/Pareto_principle)
-- **See also:** [Premature Optimization](#premature-optimization)
+- **See also:** [Premature Optimization](#premature-optimization) · [Cost of Delay](#cost-of-delay)
 
 ### Survivorship Bias
 
@@ -441,7 +460,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Learning From Success (Safety-II)** — studying only failures misses why things usually go right; most of the time the same messy practices succeed, and that is evidence too.
 - **Guideline:** Before adopting a strategy because "Company X succeeded with it," research how many companies failed using the same approach. The dead don't write blog posts.
 - **Source:** Abraham Wald, *A Method of Estimating Plane Vulnerability Based on Damage of Survivors* (Statistical Research Group, Columbia University, 1943; reprinted by the Center for Naval Analyses, 1980) — the WWII bomber-armor analysis. — [source ↗](https://en.wikipedia.org/wiki/Survivorship_bias)
-- **See also:** [Cargo Cult Engineering](#cargo-cult-engineering) · [Amara's Law](#amaras-law)
+- **See also:** [Cargo Cult Engineering](#cargo-cult-engineering) · [Amara's Law](#amaras-law) · [Most Ideas Fail](#most-ideas-fail) · [McNamara Fallacy](#mcnamara-fallacy) · [Twyman's Law](#twymans-law)
 
 ### Kernighan's Law
 
@@ -453,7 +472,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Leverage of Abstraction** — the clever version is sometimes the short, correct one; a well-chosen data structure or library can remove whole classes of bugs that the "simple" hand-written loop keeps.
 - **Guideline:** In review, ask whether the next on-call engineer could explain the code without the author. If a trick is worth keeping, name it, link to where it is explained and add a test that pins its behavior.
 - **Source:** Brian W. Kernighan & P. J. Plauger, *The Elements of Programming Style*, 2nd ed. (McGraw-Hill, 1978), ch. 2 — the original wording; the "by definition, not smart enough" version is a later paraphrase. — [source ↗](https://en.wikipedia.org/wiki/The_Elements_of_Programming_Style)
-- **See also:** [Eagleson's Law](#eaglesons-law) · [KISS Principle](#kiss-principle)
+- **See also:** [Eagleson's Law](#eaglesons-law) · [KISS Principle](#kiss-principle) · [Brandolini's Law](#brandolinis-law)
 
 ### Cobra Effect
 
@@ -503,7 +522,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Wrong Answers Persist** — the correction does not always arrive, and the wrong answer gets copied and indexed in the meantime; in shared docs, a guess must be labeled as a guess.
 - **Guideline:** When documentation is missing, write your best understanding, mark it as unverified, and send it to the person most likely to know.
 - **Source:** Steven McGeady, comment on a New York Times blog (2010), recalling advice Ward Cunningham gave him in the early 1980s about Usenet. Cunningham disowns it: "a misquote that disproves itself by propagating through the internet as Cunningham's Law." — [source ↗](https://meta.wikimedia.org/wiki/Cunningham%27s_Law)
-- **See also:** [Linus's Law](#linuss-law)
+- **See also:** [Linus's Law](#linuss-law) · [Brandolini's Law](#brandolinis-law)
 
 ### Bystander Effect
 
@@ -528,7 +547,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Guideline:** Treat every external dependency, retry, and timeout as something that *will* fail in production. Build the failure path before the success path.
 - **In practice:** On February 28, 2017, an AWS engineer running a playbook to remove a few servers from an S3 billing subsystem in US-EAST-1 mistyped one input, and the command removed far more servers, including ones the S3 index and placement subsystems depended on. S3 in the region could not serve requests until those subsystems restarted, about four hours later. AWS's fix was to change the tool so it removes capacity more slowly and refuses to take any subsystem below its minimum required capacity. [account ↗](https://aws.amazon.com/message/41926/)
 - **Source:** Capt. Edward A. Murphy Jr., USAF Project MX981 (1949); popularized by Maj. John Paul Stapp. Accounts of the original words conflict; see Nick T. Spark, *A History of Murphy's Law* (2006). — [source ↗](https://en.wikipedia.org/wiki/Murphy%27s_law)
-- **See also:** [Normalcy Bias](#normalcy-bias) · [Fallacies of Distributed Computing](#fallacies-of-distributed-computing) · [Chaos Engineering](#chaos-engineering)
+- **See also:** [Normalcy Bias](#normalcy-bias) · [Fallacies of Distributed Computing](#fallacies-of-distributed-computing) · [Chaos Engineering](#chaos-engineering) · [Pre-Mortem](#pre-mortem)
 
 ### Boy Scout Rule
 
@@ -540,7 +559,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **One Reason Per Diff** — cleanup riding along with a behavior change hides the change, and a pull request that also renames forty things is one nobody reviews.
 - **Guideline:** Always leave the code cleaner than you found it, and keep the cleanup small enough to read inside the same diff — a one-line rename, a clearer comment, a deleted dead branch. Anything bigger gets its own commit.
 - **Source:** Robert C. Martin, *The Boy Scout Rule*, in Kevlin Henney (ed.), *97 Things Every Programmer Should Know* (O'Reilly, 2010) — adapting Baden-Powell's "leave this world a little better than you found it". Also stated in *Clean Code* (2008). — [source ↗](https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html)
-- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Broken Windows Theory](#broken-windows-theory) · [Approve What Improves Code Health](#approve-what-improves-code-health) · [Technical Debt](#technical-debt) · [Lehman's Laws of Software Evolution](#lehmans-laws-of-software-evolution)
+- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Broken Windows Theory](#broken-windows-theory) · [Approve What Improves Code Health](#approve-what-improves-code-health) · [Technical Debt](#technical-debt) · [Lehman's Laws of Software Evolution](#lehmans-laws-of-software-evolution) · [Small Changes](#small-changes)
 
 ### Tesler's Law
 
@@ -576,7 +595,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Counter:** **Write for Your Audience** — docs that explain everything bury the expert reader; an operator at 3 AM needs the command, not the tutorial.
 - **Guideline:** Before shipping documentation or a public API, have someone who has never touched the system attempt the task while you watch silently. Their confusion points exactly at the assumptions you forgot to spell out.
 - **Source:** Colin Camerer, George Loewenstein & Martin Weber, *The Curse of Knowledge in Economic Settings: An Experimental Analysis* (Journal of Political Economy, 1989). — [source ↗](https://doi.org/10.1086/261651)
-- **See also:** [XY Problem](#xy-problem) · [Dunning-Kruger Effect](#dunning-kruger-effect) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Context, Not Control](#context-not-control) · [Bus Factor](#bus-factor) · [Narratives, Not Slides](#narratives-not-slides) · [Braintrust (Notes Without Authority)](#braintrust-notes-without-authority)
+- **See also:** [XY Problem](#xy-problem) · [Dunning-Kruger Effect](#dunning-kruger-effect) · [Principle of Least Astonishment](#principle-of-least-astonishment) · [Context, Not Control](#context-not-control) · [Bus Factor](#bus-factor) · [Narratives, Not Slides](#narratives-not-slides) · [Braintrust (Notes Without Authority)](#braintrust-notes-without-authority) · [Programming as Theory Building](#programming-as-theory-building)
 
 ### Swiss Cheese Model
 
@@ -589,7 +608,7 @@ The architecture is downstream of the communication structure, not the org chart
 - **Guideline:** During an incident review, do not stop at "the one thing that failed." Enumerate every layer that should have caught the failure and ask why each hole was open at exactly that moment. The fix is rarely a single layer; prefer changes that make the layers fail independently of each other.
 - **In practice:** On January 31, 2017, a GitLab.com engineer meant to wipe the data directory of a lagging PostgreSQL replica but ran the command on the primary. Then every safeguard turned out to have its own hole: the daily pg_dump backups had been failing because of a version mismatch, the failure emails were rejected so nobody saw them, and disk snapshots were not enabled for the database servers. GitLab restored from a six-hour-old staging snapshot and lost about 5,000 projects, 5,000 comments and 700 user accounts created in that window. [account ↗](https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31/)
 - **Source:** James Reason, *Human Error* (Cambridge University Press, 1990) — the layered-defenses model; the Swiss-cheese picture of it is from Reason, *Human error: models and management* (BMJ, 2000), which is what this links to. Larouzée & Le Coze (Safety Science, 2020) trace the cheese metaphor to Rob Lee. — [source ↗](https://doi.org/10.1136/bmj.320.7237.768)
-- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory) · [Blameless Postmortem](#blameless-postmortem) · [Five Whys](#five-whys)
+- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Normal Accident Theory](#normal-accident-theory) · [Blameless Postmortem](#blameless-postmortem) · [Five Whys](#five-whys) · [Automation Bias](#automation-bias) · [The Lethal Trifecta](#the-lethal-trifecta)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/diagrams/swiss-cheese-model-en-dark.svg">
@@ -622,7 +641,7 @@ Every layer has holes, and the holes move. The incident is not the failure of on
 - **Guideline:** If the same class of bug keeps slipping through, the fix is not more careful review by the same people — it is exposing the code to more, differently-shaped eyes. Rotate reviewers, open up internal libraries, run bug bounties.
 - **In practice:** The Heartbleed bug entered OpenSSL in December 2011 and shipped in OpenSSL 1.0.1 in March 2012, in code that was open for anyone to read and ran on a large part of the web's servers. It became public only on April 7, 2014, after engineers at Codenomicon and Neel Mehta of Google Security found it independently. Many potential eyeballs did not mean many actual reviewers. [account ↗](https://heartbleed.com/)
 - **Source:** Eric S. Raymond, *The Cathedral and the Bazaar* (1999) — named for Linus Torvalds. — [source ↗](https://web.archive.org/web/2024/http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/)
-- **See also:** [Cunningham's Law](#cunninghams-law)
+- **See also:** [Cunningham's Law](#cunninghams-law) · [Brandolini's Law](#brandolinis-law) · [Small Changes](#small-changes)
 
 ### CAP Theorem
 
@@ -655,7 +674,7 @@ The triangle is usually drawn as "pick two", which is misleading — you do not 
 - **Guideline:** To cut time-in-system without adding capacity, start less work: cap work-in-progress and shed, reject or defer what exceeds the cap, so the excess is refused quickly instead of queuing slowly. A cap without shedding just moves the queue somewhere you are not measuring.
 - **In practice:** Netflix used to configure fixed concurrency limits for its services through laborious performance testing, and in auto-scaling systems those limits went stale, so a service could fall over instead of shedding excess load. Its open-source concurrency-limits library instead derives each service's limit from Little's Law, limit = average RPS × average latency, and adjusts it at runtime from measured latency. [account ↗](https://github.com/Netflix/concurrency-limits)
 - **Source:** John D. C. Little, *A Proof for the Queuing Formula L = λW* (Operations Research, 1961). — [source ↗](https://doi.org/10.1287/opre.9.3.383)
-- **See also:** [The Tail at Scale](#the-tail-at-scale) · [Theory of Constraints](#theory-of-constraints)
+- **See also:** [The Tail at Scale](#the-tail-at-scale) · [Theory of Constraints](#theory-of-constraints) · [Small Changes](#small-changes) · [Cost of Delay](#cost-of-delay) · [Kingman's Formula](#kingmans-formula) · [Maker's Schedule, Manager's Schedule](#makers-schedule-managers-schedule)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/diagrams/littles-law-en-dark.svg">
@@ -700,7 +719,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 - **Counter:** **Slack** — work that is always squeezed into the shortest box has no room for the thinking, learning and recovery that keep quality up (DeMarco, Slack, 2001).
 - **Guideline:** Set deliberately short timeboxes for open-ended work and review at the deadline. A tight box forces the scoping decisions an open one defers forever.
 - **Source:** C. Northcote Parkinson, *Parkinson's Law* (The Economist, 19 November 1955); expanded into *Parkinson's Law and Other Studies in Administration* (Houghton Mifflin, 1957). — [source ↗](https://www.economist.com/news/1955/11/19/parkinsons-law)
-- **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Law of Triviality](#law-of-triviality) · [Hofstadter's Law](#hofstadters-law) · [Fixed Time, Variable Scope](#fixed-time-variable-scope)
+- **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Law of Triviality](#law-of-triviality) · [Hofstadter's Law](#hofstadters-law) · [Fixed Time, Variable Scope](#fixed-time-variable-scope) · [Kingman's Formula](#kingmans-formula) · [Maker's Schedule, Manager's Schedule](#makers-schedule-managers-schedule)
 
 ### Wirth's Law
 
@@ -736,7 +755,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 - **Counter:** **Comments Rot** — the code is the only description that is guaranteed current; a comment or ADR that is not maintained becomes a confident lie, which is worse than nothing.
 - **Guideline:** Write code and commit messages for the stranger you will become in six months. If a decision is not obvious from the code, record the *why* in a comment or an ADR — not just in your head.
 - **Source:** Origin unknown. Programming folklore attributed to a Peter Eagleson, of whom nothing else is recorded; the line circulates in collections of programming laws, with no first publication found. — [source ↗](https://wiki.c2.com/?EaglesonsLaw)
-- **See also:** [Chesterton's Fence](#chestertons-fence) · [Kernighan's Law](#kernighans-law)
+- **See also:** [Chesterton's Fence](#chestertons-fence) · [Kernighan's Law](#kernighans-law) · [Programming as Theory Building](#programming-as-theory-building)
 
 ### Hick's Law
 
@@ -798,7 +817,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 - **Guideline:** Keep operators sharp with regular game-days and hands-on drills, and design handoffs so a human takes over with context, not cold.
 - **In practice:** On June 1, 2009, ice crystals likely blocked the pitot probes of Air France flight 447, the speed readings disagreed, and the autopilot disconnected over the Atlantic. The crew's manual inputs destabilized the flight path and they did not recognize the stall that followed. France's BEA listed among the causes an absence of training in manual handling at high altitude. [account ↗](https://bea.aero/fileadmin/uploads/tx_elyextendttnews/presentation.rapport.final.05juillet2012.en_04.pdf)
 - **Source:** Lisanne Bainbridge, *Ironies of Automation* (Automatica, 1983). — [source ↗](https://doi.org/10.1016/0005-1098(83)90046-8)
-- **See also:** [Normal Accident Theory](#normal-accident-theory) · [Toil](#toil) · [Avoid Fallback](#avoid-fallback)
+- **See also:** [Normal Accident Theory](#normal-accident-theory) · [Toil](#toil) · [Avoid Fallback](#avoid-fallback) · [Automation Bias](#automation-bias)
 
 ### Principle of Least Privilege
 
@@ -811,7 +830,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 - **Guideline:** Default every process, service account, and token to deny, then add only the minimal scopes the job provably needs; re-audit the grants whenever the job changes.
 - **In practice:** In the 2019 Capital One breach, a firewall misconfiguration let an outsider run commands on one server and obtain credentials for the role used by its web application firewall. According to the DOJ complaint, that role could list more than 700 folders or buckets of data in Capital One's cloud storage and copy out the ones it had permissions for. [account ↗](https://www.justice.gov/media/1019711/dl?inline)
 - **Source:** Jerome Saltzer & Michael Schroeder, *The Protection of Information in Computer Systems* (Proceedings of the IEEE, 1975). — [source ↗](https://web.mit.edu/Saltzer/www/publications/protection/)
-- **See also:** [Kerckhoffs's Principle](#kerckhoffss-principle)
+- **See also:** [Kerckhoffs's Principle](#kerckhoffss-principle) · [The Lethal Trifecta](#the-lethal-trifecta)
 
 ### Kerckhoffs's Principle
 
@@ -824,7 +843,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 - **Guideline:** Assume the attacker has your source and design. Put all of the secret in rotatable keys, and never rely on a hidden algorithm to protect anything.
 - **In practice:** NXP kept the design of CRYPTO1, the 48-bit cipher in its MIFARE Classic smart card, secret, and the card was used in transit systems such as London's Oyster card and the Dutch OV-chipkaart. In 2008 researchers at Radboud University Nijmegen reverse engineered the cipher and authentication protocol from recorded card-reader traffic. Their attack recovers the secret key from one or two authentication attempts with a genuine reader in under a second, enough to clone a card. [account ↗](https://doi.org/10.1007/978-3-540-88313-5_7)
 - **Source:** Auguste Kerckhoffs, *La cryptographie militaire* (Journal des sciences militaires, January and February 1883) — the principle, stated as the second of six requirements; both parts are scanned at the linked page. — [source ↗](https://www.petitcolas.net/kerckhoffs/)
-- **See also:** [Principle of Least Privilege](#principle-of-least-privilege)
+- **See also:** [Principle of Least Privilege](#principle-of-least-privilege) · [The Lethal Trifecta](#the-lethal-trifecta)
 
 ### Gustafson's Law
 
@@ -850,7 +869,7 @@ L = λW binds the three quantities, so you cannot move one without moving anothe
 - **Guideline:** Set SLOs on p99/p99.9, not the mean, and deploy tail-tolerance — hedged requests, micro-partitioning — instead of trying to make every node uniformly fast.
 - **In practice:** In August 2021, Grafana's tracing backend Tempo 1.1 added hedged requests: when a read from object storage takes longer than a set threshold, Tempo sends it again and uses whichever answer comes back. With the threshold at the backend's p99, only the slowest 1% of requests are resent. Grafana reported that query p99 fell from about 4.5 seconds to 2.5 seconds, a 45% improvement. [account ↗](https://grafana.com/blog/2021/08/27/grafana-tempo-1.1-released-new-hedged-requests-reduce-latency-by-45/)
 - **Source:** Jeffrey Dean & Luiz André Barroso, *The Tail at Scale* (Communications of the ACM, 2013). — [source ↗](https://doi.org/10.1145/2408776.2408794)
-- **See also:** [Little's Law](#littles-law) · [Error Budget](#error-budget)
+- **See also:** [Little's Law](#littles-law) · [Error Budget](#error-budget) · [Kingman's Formula](#kingmans-formula)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/diagrams/tail-at-scale-en-dark.svg">
@@ -938,7 +957,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Chesterton's Fence** — YAGNI licenses you not to build something; it never licenses you to delete something whose purpose you have not established.
 - **Guideline:** Implement the case you actually have. When you feel the pull to generalize, name the second concrete case first — if you cannot, you do not have a pattern, you have a guess.
 - **Source:** Ron Jeffries, Extreme Programming practice notes; named "You Aren't Gonna Need It" and popularized in Kent Beck, *Extreme Programming Explained* (1999). — [source ↗](https://ronjeffries.com/xprog/articles/practices/pracnotneed/)
-- **See also:** [Chesterton's Fence](#chestertons-fence) · [Gall's Law](#galls-law) · [Working Backwards](#working-backwards)
+- **See also:** [Chesterton's Fence](#chestertons-fence) · [Gall's Law](#galls-law) · [Working Backwards](#working-backwards) · [The Last Responsible Moment](#the-last-responsible-moment)
 
 ### KISS Principle
 
@@ -975,7 +994,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Guideline:** Find the constraint, exploit it fully before you buy capacity, and subordinate every other stage to it. Then measure again — you have just created a different bottleneck somewhere else.
 - **In practice:** In 2001 the Marine Corps Maintenance Center in Albany, Georgia, was overhauling five MK-48 heavy haulers a month against demand for ten, and nearly every shop was thought to be a bottleneck. A Theory of Constraints analysis found enough physical capacity; the real constraint was a push scheduling policy that released work regardless of resource status. After switching to pull scheduling, MK-48 repair cycle time fell from an average of 167 days to 58. [account ↗](https://www.dbrmfg.co.nz/Critical%20Chain%20in%20Marine%20Corps%20Depot.pdf)
 - **Source:** Eliyahu M. Goldratt & Jeff Cox, *The Goal: A Process of Ongoing Improvement* (North River Press, 1984). — [source ↗](https://en.wikipedia.org/wiki/Theory_of_constraints)
-- **See also:** [Amdahl's Law](#amdahls-law) · [Little's Law](#littles-law)
+- **See also:** [Amdahl's Law](#amdahls-law) · [Little's Law](#littles-law) · [Cost of Delay](#cost-of-delay) · [Kingman's Formula](#kingmans-formula)
 
 ### Occam's Razor
 
@@ -1137,7 +1156,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Diffused Ownership** — when nobody is answerable, the action items have no owner and quietly expire; some teams name a person accountable for the fix precisely because blamelessness leaves no one holding it.
 - **Guideline:** Write the postmortem as a timeline of what people saw and why each action made sense then, and end with changes to the system, not to a person, each with one named owner and a date. Ban "human error" as a root cause; ask what made the error easy to make.
 - **Source:** John Allspaw, *Blameless PostMortems and a Just Culture* (Code as Craft, Etsy, 2012); the practice is codified in Lunney & Lueder, "Postmortem Culture", *Site Reliability Engineering* (O'Reilly, 2016), ch. 15. — [source ↗](https://www.etsy.com/codeascraft/blameless-postmortems)
-- **See also:** [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Hanlon's Razor](#hanlons-razor) · [Bystander Effect](#bystander-effect) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Five Whys](#five-whys) · [Braintrust (Notes Without Authority)](#braintrust-notes-without-authority)
+- **See also:** [Swiss Cheese Model](#swiss-cheese-model) · [Normalization of Deviance](#normalization-of-deviance) · [Hanlon's Razor](#hanlons-razor) · [Bystander Effect](#bystander-effect) · [Mechanisms, Not Good Intentions](#mechanisms-not-good-intentions) · [Five Whys](#five-whys) · [Braintrust (Notes Without Authority)](#braintrust-notes-without-authority) · [Pre-Mortem](#pre-mortem) · [Psychological Safety](#psychological-safety)
 
 ### Working Backwards
 
@@ -1149,7 +1168,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Build to Learn** — when customers cannot judge an idea on paper (a new platform, an infrastructure change, something with no precedent) a cheap prototype tells you more than a polished press release.
 - **Guideline:** Before a project starts, write a one-page press release and an FAQ for the customer, and review them as a team. If you cannot name the customer and their problem in the first paragraph, do not start building.
 - **Source:** Werner Vogels, *Working Backwards* (All Things Distributed, 2006) — Amazon's CTO describing the press-release-first process; Ian McAllister's Quora answer "What is Amazon's approach to product development and product management?" is the source of "if the press release is hard to write, the product is probably going to suck"; Colin Bryar & Bill Carr, *Working Backwards* (St. Martin's Press, 2021) — the PR/FAQ process in full. — [source ↗](https://www.allthingsdistributed.com/2006/11/working_backwards.html)
-- **See also:** [XY Problem](#xy-problem) · [YAGNI](#yagni) · [Narratives, Not Slides](#narratives-not-slides)
+- **See also:** [XY Problem](#xy-problem) · [YAGNI](#yagni) · [Narratives, Not Slides](#narratives-not-slides) · [Pre-Mortem](#pre-mortem) · [Wicked Problems](#wicked-problems) · [Most Ideas Fail](#most-ideas-fail)
 
 ### Disagree and Commit
 
@@ -1161,7 +1180,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Groupthink** — a culture that prizes commitment teaches people to stop objecting early, and silent compliance hides the dissent that would have caught the error.
 - **Guideline:** State your disagreement once, in full, with your reasons. Then say "I disagree and commit" and execute as if it were your idea. If you are the senior person, do it too: back the team's call instead of making them convince you. For an irreversible decision, or one with a safety or ethical risk, do not commit quietly: escalate.
 - **Source:** Jeff Bezos, *2016 Letter to Shareholders* (Amazon.com, Inc., 2017) — "use the phrase 'disagree and commit'", with the Amazon Studios example. The phrase predates Amazon: Karen Southwick, *High Noon* (1999), records Scott McNealy using it at Sun Microsystems, and Richard Tedlow, Andy Grove's biographer, lists "disagree and then commit" alongside "constructive confrontation" among the parts of Intel culture under Grove ("Andy Grove: A Biographer's Tale", *HBS Working Knowledge*, 2006). Netflix's culture memo (jobs.netflix.com, current version) uses the same rule, "disagree then commit", in its "informed captain" model, where one named person makes each significant decision after "farming for dissent". — [source ↗](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
-- **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Law of Triviality](#law-of-triviality) · [Believability-Weighted Decisions](#believability-weighted-decisions) · [Context, Not Control](#context-not-control)
+- **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Law of Triviality](#law-of-triviality) · [Believability-Weighted Decisions](#believability-weighted-decisions) · [Context, Not Control](#context-not-control) · [The Last Responsible Moment](#the-last-responsible-moment)
 
 ### You Build It, You Run It
 
@@ -1237,7 +1256,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Guideline:** Make a red main-branch build, a failed canary or a breached SLO halt further merges or deploys for everyone, and let anyone pull that cord without asking permission. Keep the trigger narrow enough that it rarely fires falsely, and treat a stop that nobody investigates as a defect in the response, not in the person who pulled it.
 - **In practice:** At the old GM plant in Fremont, California, which closed in 1982, workers said the rule was that the line must never stop, and one recalled that stopping it could get you fired. When GM and Toyota reopened it as NUMMI, workers got an andon cord: a pull summoned team leaders, and the line stopped only if they could not fix the problem. NUMMI's defect rate was among the best in America from the start, with near-perfect quality ratings within months of the first car in December 1984. [account ↗](https://www.thisamericanlife.org/403/transcript)
 - **Source:** Toyota Motor Corporation, *Toyota Production System* (official page, global.toyota) — jidoka, the andon board and the stop cord any operator can pull, traced to the Toyoda Power Loom with a weft-breakage automatic stopping device, developed in 1896; the page credits Taiichi Ohno (1912–1990) with establishing the system and the framework of Just-in-Time. — [source ↗](https://global.toyota/en/company/vision-and-philosophy/production-system/)
-- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Error Budget](#error-budget) · [Five Whys](#five-whys) · [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see)
+- **See also:** [Normalization of Deviance](#normalization-of-deviance) · [Error Budget](#error-budget) · [Five Whys](#five-whys) · [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see) · [Maker's Schedule, Manager's Schedule](#makers-schedule-managers-schedule)
 
 ### Five Whys
 
@@ -1286,7 +1305,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Broken Windows Theory** — a reviewer who waves each small flaw through because the change is a net improvement can still leave a codebase full of tolerated flaws, each one making the next easier to accept.
 - **Guideline:** Approve a change once it definitely leaves the code healthier than before, even if you would have written it differently. Prefix polish with "Nit:" so the author can skip it, and block only on what makes the code worse: outside an emergency, do not approve a change that definitely worsens overall code health.
 - **Source:** Google, "The Standard of Code Review", *Google Engineering Practices Documentation* (2019) — "favor approving a CL once it is in a state where it definitely improves the overall code health", "there is no such thing as 'perfect' code—there is only better code", and "Nit:" for optional comments. — [source ↗](https://google.github.io/eng-practices/review/reviewer/standard.html)
-- **See also:** [Boy Scout Rule](#boy-scout-rule) · [Broken Windows Theory](#broken-windows-theory) · [Law of Triviality](#law-of-triviality) · [Braintrust (Notes Without Authority)](#braintrust-notes-without-authority)
+- **See also:** [Boy Scout Rule](#boy-scout-rule) · [Broken Windows Theory](#broken-windows-theory) · [Law of Triviality](#law-of-triviality) · [Braintrust (Notes Without Authority)](#braintrust-notes-without-authority) · [Small Changes](#small-changes)
 
 ### Beyoncé Rule
 
@@ -1298,7 +1317,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Churn Rule** — a test-shaped contract tells the changer what it broke, not that breaking it was free; the team making the change still owes its users the migration.
 - **Guideline:** Write a test for every behavior your product relies on in a shared library or dependency, and make sure it runs in the CI that gates other people's changes. When something breaks and no test caught it, add that test before closing the incident. If you own the shared code, say up front that tests are the contract, and do not invoke the rule unless your changes actually run consumers' tests.
 - **Source:** Adam Bender, "Testing Overview", in Winters, Manshreck & Wright, *Software Engineering at Google* (O'Reilly, 2020), ch. 11 — "If you liked it, then you shoulda put a test on it", invoked by infrastructure teams making changes across the entire codebase. — [source ↗](https://abseil.io/resources/swe-book/html/ch11.html)
-- **See also:** [Hyrum's Law](#hyrums-law) · [Churn Rule](#churn-rule) · [Pesticide Paradox](#pesticide-paradox) · [One-Version Rule](#one-version-rule)
+- **See also:** [Hyrum's Law](#hyrums-law) · [Churn Rule](#churn-rule) · [Pesticide Paradox](#pesticide-paradox) · [One-Version Rule](#one-version-rule) · [Test Oracle Problem](#test-oracle-problem)
 
 ### Churn Rule
 
@@ -1322,7 +1341,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Quality as the Hidden Variable** — under a fixed date a team that cannot or will not cut scope cuts tests, review and error handling instead, and some work (a protocol, a compliance requirement) has a floor below which no slice is worth shipping.
 - **Guideline:** Before the work starts, decide how much time it is worth, not how long it will take, and shape the scope to fit. When the time runs out, stop by default: ship what is done if it stands on its own, otherwise reshape it and decide afresh whether to bet on it again; do not quietly extend. Cut features before tests or review, and do not fix the time on work that cannot be sliced below a coherent minimum.
 - **Source:** Ryan Singer, *Shape Up* (Basecamp, 2019), ch. 3 "Set Boundaries" — the appetite and "fixed time, variable scope"; ch. 8 "The Betting Table" — the circuit breaker: "by default the project doesn't get an extension". Earlier, 37signals, *Getting Real* (2006), "Fix Time and Budget, Flex Scope": "Never throw more time or money at a problem, just scale back the scope." — [source ↗](https://basecamp.com/shapeup/1.2-chapter-03)
-- **See also:** [Parkinson's Law](#parkinsons-law) · [Hofstadter's Law](#hofstadters-law) · [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Technical Debt](#technical-debt)
+- **See also:** [Parkinson's Law](#parkinsons-law) · [Hofstadter's Law](#hofstadters-law) · [Sunk Cost Fallacy](#sunk-cost-fallacy) · [Technical Debt](#technical-debt) · [Cost of Delay](#cost-of-delay)
 
 ### Strangler Fig
 
@@ -1382,7 +1401,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Depth of Ownership** — a specialist who owns an area works far faster and notices more than a rotation of people who each know a little, and a small team that copies everything into a second head spends time it does not have.
 - **Guideline:** List the parts of your system that only one person can change or operate. For each, pair a second person on the next real change instead of writing a handover document nobody reads. Rotate on-call and code review so knowledge moves as a side effect of normal work. Treat a planned absence as a drill: if a week away stalls a system, fix that before someone leaves for good.
 - **Source:** Folklore: the question of what becomes of a project if a key person is "hit by a bus" was in circulation by 1994, when Michael McLay posted "If Guido was hit by a bus?" to the Python mailing list on 29 June 1994 (python.org mailing-list archive, python-1994q2, message 1040). Measured in Guilherme Avelino, Leonardo Passos, Andre Hora & Marco Tulio Valente, *A Novel Approach for Estimating Truck Factors* (ICPC, 2016) — the truck factor as "the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated", and the finding that "the majority of our target systems (65%) have TF ≤ 2". — [source ↗](https://doi.org/10.1109/ICPC.2016.7503718)
-- **See also:** [Bystander Effect](#bystander-effect) · [Curse of Knowledge](#curse-of-knowledge)
+- **See also:** [Bystander Effect](#bystander-effect) · [Curse of Knowledge](#curse-of-knowledge) · [Programming as Theory Building](#programming-as-theory-building)
 
 ### Pesticide Paradox
 
@@ -1394,7 +1413,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Old Tests Still Guard** — a test that has not failed in years still keeps a fixed bug from coming back and pins behavior others rely on, so retiring old tests to chase new bugs gives up protection they still provide.
 - **Guideline:** Keep the regression suite, but do not count on it to find new bugs. Add tests aimed at what the suite does not exercise: new inputs, fuzzing, property-based tests, exploratory sessions. When a bug escapes to production, ask which kind of test would have caught it and add that kind, not only that one case. Review the suite on a schedule and remove tests that duplicate each other.
 - **Source:** Boris Beizer, *Software Testing Techniques* (2nd ed., Van Nostrand Reinhold, 1990), "The Pesticide Paradox and the Complexity Barrier" — "Every method you use to prevent or find bugs leaves a residue of subtler bugs against which those methods are ineffectual", and "Test suites wear out." — [source ↗](https://openlibrary.org/books/OL2205629M/Software_testing_techniques)
-- **See also:** [Beyoncé Rule](#beyoncé-rule) · [Chaos Engineering](#chaos-engineering)
+- **See also:** [Beyoncé Rule](#beyoncé-rule) · [Chaos Engineering](#chaos-engineering) · [Test Oracle Problem](#test-oracle-problem)
 
 ### Narratives, Not Slides
 
@@ -1406,7 +1425,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Working Software over Comprehensive Documentation** — when running code would settle a design question faster than prose, a document written first spends a week recording guesses, and a design doc that is really an implementation manual should not be written at all.
 - **Guideline:** For a decision that is expensive to reverse, or that people outside the team must approve, write the proposal as a few pages of prose: the problem, the options considered, the trade-offs and the recommendation. Open the review with everyone reading it in silence, then discuss. Do not write one for a reversible change or for a question a quick prototype will answer; build the prototype instead.
 - **Source:** Jeff Bezos, *2017 Letter to Shareholders* (Amazon.com, Inc., 2018) — "We don't do PowerPoint (or any other slide-oriented) presentations at Amazon. Instead, we write narratively structured six-page memos.", read silently at the start of each meeting, and a memo that "might take a week or more"; Columbia Accident Investigation Board, *Report*, vol. I (2003), ch. 7, "Engineering by Viewgraphs" — "When engineering analyses and risk assessments are condensed to fit on a standard form or overhead slide, information is inevitably lost."; Malte Ubl, *Design Docs at Google* (industrialempathy.com, 2020) — the engineering form, and design docs that are "really implementation manuals" as a sign that none was needed. The counter-force is from the *Manifesto for Agile Software Development* (2001). — [source ↗](https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders)
-- **See also:** [Working Backwards](#working-backwards) · [Curse of Knowledge](#curse-of-knowledge) · [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions)
+- **See also:** [Working Backwards](#working-backwards) · [Curse of Knowledge](#curse-of-knowledge) · [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [Programming as Theory Building](#programming-as-theory-building)
 
 ### One-Version Rule
 
@@ -1430,7 +1449,7 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Trust the Aggregate** — a visit shows one shift, one user or one trace, and people judge from a small sample as if it stood for the whole (the belief in the law of small numbers), so for a question about the whole fleet the dashboard that covers every case is the better witness.
 - **Guideline:** Before you decide on a fix, a priority or a postmortem conclusion, look at the primary evidence yourself: reproduce the bug, read the raw logs and the trace of one failing request, watch a real user hit the problem, or sit on the support queue for an hour. Use what you saw to question the dashboard, not to replace it.
 - **Source:** Toyota Motor Corporation, *The Toyota Way 2001*, as recorded in Toyota's official history *75 Years of Toyota*, ch. 4, sec. 7 — "Genchi Genbutsu (go to the source to find the facts)", one of five key concepts compiled in April 2001; Toyota, *Sustainable Management Report 2016*, p. 23 — "go to the source to find the facts to make correct decisions, build consensus and achieve goals at our best speed." The book's opening message credits the founder with applying it: "Kiichiro thoroughly applied the principle of genchi genbutsu (going and seeing for oneself)" (Fujio Cho, *75 Years of Toyota*, Message, 2012). The bias behind the counter-force is from Amos Tversky & Daniel Kahneman, *Belief in the Law of Small Numbers* (Psychological Bulletin, 1971). — [source ↗](https://www.toyota-global.com/company/history_of_toyota/75years/text/leaping_forward_as_a_global_corporation/chapter4/section7/item4.html)
-- **See also:** [Five Whys](#five-whys) · [Andon (Stop the Line)](#andon-stop-the-line) · [Goodhart's Law](#goodharts-law)
+- **See also:** [Five Whys](#five-whys) · [Andon (Stop the Line)](#andon-stop-the-line) · [Goodhart's Law](#goodharts-law) · [Most Ideas Fail](#most-ideas-fail) · [McNamara Fallacy](#mcnamara-fallacy)
 
 ### Believability-Weighted Decisions
 
@@ -1454,7 +1473,207 @@ Perrow put systems on two axes. Only the top-right quadrant produces accidents n
 - **Counter:** **Review as a Gate** — where a blind spot's cost lands on someone other than the owner (a security hole, lost data, another team's pager), advice that can be ignored is not enough, and a reviewer has to be able to block.
 - **Guideline:** In a design or RFC review, let reviewers name problems and their suspected causes but not dictate the fix, and leave the decision with the author, who answers each point in writing. Fill the room with peers who have built something similar, not the manager who rates the author. Where a mistake would land on others (security, data loss, an irreversible migration), keep a blocking approval, but run it as a separate step from the advisory review.
 - **Source:** Ed Catmull, quoted in "Spark Creativity with These Tips from Pixar's President" (*First Round Review*, 2015) — "the Braintrust should have no authority", so that the person responsible "would never have to come into the room in a defensive posture"; the practice is set out at length in Ed Catmull with Amy Wallace, *Creativity, Inc.* (Random House, 2014). The counter-force is the approver model of code review, where "the reviewer can certainly deny approval" (Google, *The Standard of Code Review*). — [source ↗](https://review.firstround.com/spark-creativity-with-these-tips-from-pixars-president/)
-- **See also:** [Approve What Improves Code Health](#approve-what-improves-code-health) · [Blameless Postmortem](#blameless-postmortem) · [Curse of Knowledge](#curse-of-knowledge)
+- **See also:** [Approve What Improves Code Health](#approve-what-improves-code-health) · [Blameless Postmortem](#blameless-postmortem) · [Curse of Knowledge](#curse-of-knowledge) · [Psychological Safety](#psychological-safety)
+
+### Brandolini's Law
+
+`§ 101` · Cognition
+
+- **Concept:** Refuting a false claim takes far more effort than making it, so a stream of cheap claims can swamp the people who have to check them.
+- **Keep in mind:** Make a claim carry its own evidence before you spend yours on it
+- **Mechanism:** A claim can be stated in one line; showing it is wrong means reading the context, reproducing the case and writing up why it fails. The person making the claim pays the first cost and the checker pays the second, and nothing stops the first from being much cheaper. curl's security team has seven members; in 2025 each incoming report drew three or four of them, for 30 minutes and sometimes up to three hours each, while about 20% of submissions were AI slop and about 5% turned out to be genuine vulnerabilities. When producing a claim gets cheaper, as generated text has made it, the gap widens.
+- **Counter:** **Cunningham's Law** — in front of people who know the subject, a wrong claim often draws its correction quickly and for free, so posting your best guess and letting others fix it can beat holding back until every claim is checked.
+- **Guideline:** Where claims arrive faster than you can check them (bug reports, review comments, security disclosures), ask the claimant for the evidence up front: steps to reproduce, a failing test, the log. Timebox the first look, and remove any reward paid per claim rather than per confirmed result. Do not use this to wave away a short report from someone with nothing to gain; a terse report that reproduces deserves full attention.
+- **In practice:** curl ended its bug bounty, officially on January 31, 2026. Daniel Stenberg wrote that in previous years somewhere north of 15% of submissions ended up as confirmed vulnerabilities, but "Starting 2025, the confirmed-rate plummeted to below 5%." He named AI slop among the reasons and said the change was "In an attempt to remove the incentives for submitting made up lies." [account ↗](https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/)
+- **Source:** Alberto Brandolini, tweet (Twitter, 11 January 2013) — "The bullshit asimmetry: the amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it." (spelling as in the original); Daniel Stenberg, "Death by a thousand slops" (daniel.haxx.se, 2025) — the curl security team's numbers. — [source ↗](https://en.wikipedia.org/wiki/Brandolini%27s_law)
+- **See also:** [Cunningham's Law](#cunninghams-law) · [Linus's Law](#linuss-law) · [Kernighan's Law](#kernighans-law) · [Automation Bias](#automation-bias)
+
+### Automation Bias
+
+`§ 102` · Cognition
+
+- **Concept:** People working with an automated aid tend to let it stand in for their own checking: they miss what it fails to flag and follow it when it is wrong.
+- **Keep in mind:** Check the tool's answer the way you would check a colleague's
+- **Mechanism:** Checking costs attention, and an aid that is usually right makes each check feel wasted, so its output quietly replaces the search a person would otherwise do. Parasuraman and Manzey's review describes two kinds of error: "Automation bias results in making both omission and commission errors when decision aids are imperfect." It is not a beginner's mistake: "Automation bias occurs in both naive and expert participants, cannot be prevented by training or instructions, and can affect decision making in individuals as well as in teams." In a user study by Perry et al., participants with an AI code assistant wrote significantly less secure code than those without one, and were more likely to believe their code was secure.
+- **Counter:** **Algorithm Aversion** — the opposite error is common too: Dietvorst, Simmons and Massey found that "people more quickly lose confidence in algorithmic than human forecasters after seeing them make the same mistake", and so drop an aid that still beats them.
+- **Guideline:** Wherever an automated aid feeds a decision (generated code, scanner results, an alert that says all clear), name a person who answers for the outcome, not for having followed the tool. On high-stakes paths such as security, data migrations and production changes, have the reviewer check against the requirement, not against the tool's own output, and keep a record of what the aid missed. Do not re-derive by hand what the tool has shown it does better; spot-check low-stakes output instead.
+- **In practice:** On March 23, 2018, a Tesla Model X operating with Traffic-Aware Cruise Control and Autosteer moved into a gore area on US-101 in Mountain View, California, and struck a damaged crash attenuator; the driver died. The NTSB's probable cause included the Autopilot steering the SUV into the gore area due to system limitations, and the driver's lack of response due to distraction "likely from a cell phone game application and overreliance on the Autopilot partial driving automation system." [account ↗](https://www.ntsb.gov/investigations/Pages/HWY18FH011.aspx)
+- **Source:** Kathleen L. Mosier, Linda J. Skitka, Susan Heers & Mark Burdick, *Automation Bias: Decision Making and Performance in High-Tech Cockpits* (International Journal of Aviation Psychology, 1998) and Linda J. Skitka, Kathleen L. Mosier & Mark Burdick, *Does automation bias decision-making?* (International Journal of Human-Computer Studies, 1999) — where the bias was named and tested; Raja Parasuraman & Dietrich H. Manzey, *Complacency and Bias in Human Use of Automation: An Attentional Integration* (Human Factors, 2010) — the review quoted above; Neil Perry, Megha Srivastava, Deepak Kumar & Dan Boneh, *Do Users Write More Insecure Code with AI Assistants?* (CCS, 2023) — the code assistant study; Berkeley J. Dietvorst, Joseph P. Simmons & Cade Massey, *Algorithm Aversion: People Erroneously Avoid Algorithms After Seeing Them Err* (Journal of Experimental Psychology: General, 2015) — the counter. — [source ↗](https://doi.org/10.1177/0018720810376055)
+- **See also:** [Ironies of Automation](#ironies-of-automation) · [Swiss Cheese Model](#swiss-cheese-model) · [Brandolini's Law](#brandolinis-law) · [Test Oracle Problem](#test-oracle-problem) · [Small Changes](#small-changes) · [The Lethal Trifecta](#the-lethal-trifecta)
+
+### Small Changes
+
+`§ 103` · Maintainability
+
+- **Concept:** The larger a change sent for review, the less closely each line is read: defects slip through and the change waits longer for a first look.
+- **Keep in mind:** Send a change small enough to read in one sitting
+- **Mechanism:** A reviewer's attention runs out. In SmartBear's study of 2,500 reviews at Cisco, reviews of under 200 lines found defects at a relatively high rate and the results trailed off considerably above that; its authors concluded that "Anything larger overwhelms reviewers and defects are not uncovered." Google's guide adds the scheduling side: "It’s easier for a reviewer to find five minutes several times to review small CLs than to set aside a 30 minute block to review one large CL." At Google the median change modifies 24 lines, and authors wait a median of under an hour for initial feedback on small changes and about 5 hours on very large ones.
+- **Counter:** **See the Whole Design** — split a change too finely and each piece looks harmless while nobody judges how they fit together; Google's own guide asks that a change not be "so small that its implications are difficult to understand".
+- **Guideline:** Make each change one self-contained thing: about 100 lines is usually reasonable and 1000 lines usually too large, though the reviewer has the final say. Send refactoring separately from behaviour changes, and stack dependent changes instead of piling them into one. Do not split a purely mechanical change (a rename, generated code) just to hit a number, and do not cut a design so finely that the reviewer can no longer see what it does.
+- **Source:** Google, "Small CLs", *Google Engineering Practices Documentation* — "100 lines is usually a reasonable size for a CL, and 1000 lines is usually too large, but it’s up to the judgment of your reviewer."; SmartBear Software, "Code Review at Cisco Systems", in *Best Kept Secrets of Peer Code Review* (Smart Bear, 2006) — a vendor's case study of 2,500 reviews, which recommends that "LOC under review should be under 200, not to exceed 400."; Caitlin Sadowski, Emma Söderberg, Luke Church, Michal Sipko & Alberto Bacchelli, *Modern Code Review: A Case Study at Google* (ICSE-SEIP, 2018) — the change size and review latency figures. — [source ↗](https://google.github.io/eng-practices/review/developer/small-cls.html)
+- **See also:** [Approve What Improves Code Health](#approve-what-improves-code-health) · [Boy Scout Rule](#boy-scout-rule) · [Linus's Law](#linuss-law) · [Little's Law](#littles-law) · [Automation Bias](#automation-bias)
+
+### Programming as Theory Building
+
+`§ 104` · Maintainability
+
+- **Concept:** A program's design lives in the heads of the people who built it, and the code and documents carry only part of it, so once those people are gone, changes tend to erode the design even with full documentation in hand.
+- **Keep in mind:** Code stays maintainable only while someone can say why it is the way it is
+- **Mechanism:** Peter Naur argued that programming is mainly the programmers building up a theory of the matters at hand: how the program maps onto the world it serves, why each part is the way it is, and how a new demand fits into it. That knowledge stays with the people, "any documentation being an auxiliary, secondary product." In one case he describes, a second group extending a compiler had full documentation, annotated program texts, written design discussion and personal advice from the original authors, and still proposed patches that "effectively destroyed its power and simplicity"; the original group spotted them instantly. About ten years later, after others had changed it without that guidance, the original structure was "still visible, but made entirely ineffective by amorphous additions of many different kinds." Naur's conclusion: "The death of a program happens when the programmer team possessing its theory is dissolved," and rebuilding the theory merely from the documentation is "strictly impossible." Code accepted from a generator that nobody on the team has reasoned through is likely to start out in that state.
+- **Counter:** **Fake the Rational Design** — parnas and clements argue for writing the design down as if it had been derived rationally and keeping that record current with every change, so new programmers do not have to depend completely on the old staff; where people move on often, a maintained record is a safer bet than counting on who stays.
+- **Guideline:** When a system changes hands, plan an overlap: the new owners make real changes while the old team reviews them, and the handover ends when the old team stops catching patches that fight the design. Before merging code from a generator or a contractor, have the person who will own it explain why it is shaped the way it is; if nobody can, treat it as unowned. For a small program whose team is gone, writing it afresh can cost less than patching it blind, as Naur suggests; for a large one, rebuild the theory by pairing on real changes before restructuring anything.
+- **Source:** Peter Naur, *Programming as Theory Building* (Microprocessing and Microprogramming, 1985) — programming as building "a certain kind of insight, a theory, of the matters at hand", the compiler case, "The death of a program happens when the programmer team possessing its theory is dissolved.", and revival from documentation being "strictly impossible". The counter-force is from David L. Parnas & Paul C. Clements, *A Rational Design Process: How and Why to Fake It* (IEEE Transactions on Software Engineering, 1986) — "When new programmers join the project they do not have to depend completely on the old staff for their information." — [source ↗](https://doi.org/10.1016/0165-6074(85)90032-8)
+- **See also:** [Bus Factor](#bus-factor) · [Curse of Knowledge](#curse-of-knowledge) · [Eagleson's Law](#eaglesons-law) · [Narratives, Not Slides](#narratives-not-slides)
+
+### Test Oracle Problem
+
+`§ 105` · Maintainability
+
+- **Concept:** A test can only catch a wrong answer if something independent of the code knows the right one, and for many programs nothing does.
+- **Keep in mind:** Before trusting a passing test, ask what it was checked against
+- **Mechanism:** Elaine Weyuker pointed out that "A frequently invoked assumption in program testing is that there is an oracle": the tester, or some other mechanism, can tell whether an output is correct. "A program is non-testable if either an oracle does not exist" or checking the output would take the tester an extraordinary amount of time. When nobody can say what the right answer is, the expected value in a test tends to come from running the code itself, and then the test records what the code does, not what it should do; it passes on every bug that was already there when it was written. Tests generated from the implementation are especially prone to this. Chen, Cheung and Yiu, building on Weyuker, wrote that "the availability of test oracles is pragmatically unattainable in most situations," and proposed metamorphic testing: derive follow-up inputs from tests that passed and check that the outputs relate the way they must, which needs no oracle.
+- **Counter:** **Production as the Oracle** — for a cheap, reversible change, a partial and time-limited deployment watched against real outcomes judges correctness better than any expected value a test author could write down, so days spent building an oracle are not worth it.
+- **Guideline:** For every test that guards something important, be able to say where its expected value came from: a spec, a hand calculation, an independent implementation, a domain expert. Treat snapshot tests and generated tests whose expectations were copied from the current output as change detectors, not as evidence the code is right. Where no oracle exists, test what must hold anyway: invariants, round trips, and relations between the outputs of related inputs. For a reversible change behind good monitoring, a canary can be the check; keep hand-built oracles for changes that are expensive to undo.
+- **Source:** Elaine J. Weyuker, *On Testing Non-Testable Programs* (The Computer Journal, 1982) — "A frequently invoked assumption in program testing is that there is an oracle", and a program as non-testable when no oracle exists or checking takes an extraordinary amount of time; T. Y. Chen, S. C. Cheung & S. M. Yiu, *Metamorphic Testing: A New Approach for Generating Next Test Cases* (Technical Report HKUST-CS98-01, Hong Kong University of Science and Technology, 1998) — "the availability of test oracles is pragmatically unattainable in most situations", and tests that need no oracle. The counter-force is from Alec Warner & Štěpán Davidovič, "Canarying Releases", in *The Site Reliability Workbook* (O'Reilly, 2018) — canarying as "a partial and time-limited deployment of a change in a service and its evaluation." — [source ↗](https://doi.org/10.1093/comjnl/25.4.465)
+- **See also:** [Pesticide Paradox](#pesticide-paradox) · [Beyoncé Rule](#beyoncé-rule) · [Automation Bias](#automation-bias) · [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions)
+
+### The Lethal Trifecta
+
+`§ 106` · Security
+
+- **Concept:** An AI agent that can read private data, takes in content from outside and can send data out can be steered into leaking that data by whoever wrote the content.
+- **Keep in mind:** Treat any text an agent reads as instructions from whoever wrote it
+- **Mechanism:** "LLMs follow instructions in content," and they are "unable to reliably distinguish the importance of instructions based on where they came from." So anyone who can put text in front of an agent (a web page, an email, an issue) can tell it to gather the private data it can reach and send it out through any outbound channel it has. Each capability is useful on its own, and the danger appears only when one session has all three, often because a user mixed tools from different sources. Simon Willison has collected dozens of such cases; vendors usually fixed them by locking down the exfiltration vector, but "we still don't know how to 100% reliably prevent this from happening." Filters that claim to catch 95% of attacks do not close the gap: "in web application security 95% is very much a failing grade."
+- **Counter:** **Supervised Autonomy** — an assistant worth having often needs all three at once, so Meta's Rule of Two lets a session hold no more than two unsupervised and puts a human approval in front of the agent when it needs the third.
+- **Guideline:** Before connecting a tool to an agent, write down which of the three it adds: private data, untrusted content, or a way to send data out (including links, image loads, pull requests and email). When a session ends up with all three, take one away: browse in a sandbox with no credentials, cut the outbound channel, or make a human approve each outbound action. Do not count a prompt-injection filter as the control. An agent that reads only trusted data, or whose output never leaves the machine, does not need this.
+- **In practice:** In May 2025 Willison wrote up an attack on GitHub's official MCP server reported by Marco Milanta and Luca Beurer-Kellner. A malicious issue in a public repository asked the agent to read the README files of the author's repositories and add a list of all the other repositories the user was working on; when the user asked the agent to look at the issues, it opened a pull request that revealed the names of the user's private repositories. Willison noted that the server combined private data access, exposure to untrusted content and the ability to exfiltrate. [account ↗](https://simonwillison.net/2025/May/26/github-mcp-exploited/)
+- **Source:** Simon Willison, *The lethal trifecta for AI agents: private data, untrusted content, and external communication* (simonwillison.net, 2025) — the three ingredients and "The only way to stay safe there is to avoid that lethal trifecta combination entirely." The counter-force is from Meta, *Agents Rule of Two: A Practical Approach to AI Agent Security* (Meta AI blog, 2025) — agents "must satisfy no more than two" of the three properties within a session, and one that needs all three "should not be permitted to operate autonomously". — [source ↗](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
+- **See also:** [Principle of Least Privilege](#principle-of-least-privilege) · [Kerckhoffs's Principle](#kerckhoffss-principle) · [Swiss Cheese Model](#swiss-cheese-model) · [Automation Bias](#automation-bias)
+
+### Cost of Delay
+
+`§ 107` · Decision
+
+- **Concept:** Work gets ordered by size, by gut feel or by whoever asks loudest, while what each item loses every week it waits goes uncounted, so the most valuable work often waits behind the merely visible.
+- **Keep in mind:** Ask what a week of waiting costs before asking what it costs to build
+- **Mechanism:** Most work loses value while it waits: revenue not yet earned, a market window closing, a penalty date coming closer. A backlog ordered by effort or by an undefined "priority" says nothing about that loss, and people's private guesses about it are far apart. Reinertsen, who argued for putting a number on it, puts the spread this way: "The intuition of members of the same team typically differs by 50 to 1, so the real estimate surprises most team members." Once the cost of delay is a number, dividing it by the expected duration (CD3) puts first the items that release the most value per week of scarce capacity, which a ranking by value alone or by size alone does not.
+- **Counter:** **Important, Not Urgent** — work whose payoff is long and diffuse (paying down debt, platform work, learning) shows a small cost of delay in any given week and never wins the ranking; it only gets done if capacity is set aside for it outside the ranking.
+- **Guideline:** For the items at the top of the backlog, estimate what each one loses per week of waiting, in money, and write the assumptions next to the number. Divide by the expected duration and schedule in that order. A rough range is enough: the point is to expose how far apart people's guesses are, not to be precise. Keep a fixed share of capacity outside the ranking for work whose value is long-term.
+- **In practice:** Maersk Line put a dollar cost of delay on each requirement for its Global Customer Service System and scheduled them by CD3. Looking at the spread, the authors found the most valuable and urgent 25% of requirements were worth three orders of magnitude more than the bottom 25%: "Not ten times, or one hundred times, but a thousand times more valuable." [account ↗](https://blackswanfarming.com/black-swan-farming-using-cost-of-delay/)
+- **Source:** Don Reinertsen, *The Principles of Product Development Flow* (Celeritas, 2009) — the case for quantifying cost of delay and scheduling by it, as summarised in Wikipedia's "Cost of delay", which also describes CD3; Reinertsen interviewed in *Lean Magazine* (2012) — "A cost-of-delay calculation establishes the value of time on the critical path of the project." and the 50-to-1 spread in intuition; Joshua Arnold quoting Reinertsen on InfoQ (2015) — "If you only quantify one thing, quantify the Cost of Delay". — [source ↗](https://en.wikipedia.org/wiki/Cost_of_delay)
+- **See also:** [Little's Law](#littles-law) · [Theory of Constraints](#theory-of-constraints) · [Pareto Principle](#pareto-principle) · [Fixed Time, Variable Scope](#fixed-time-variable-scope) · [The Last Responsible Moment](#the-last-responsible-moment) · [Most Ideas Fail](#most-ideas-fail)
+
+### The Last Responsible Moment
+
+`§ 108` · Decision
+
+- **Concept:** Commit too early and a guess hardens into the design; wait too long and an option quietly expires, so the decision gets made by default without anyone making it.
+- **Keep in mind:** Know when each decision expires, and decide before it does
+- **Mechanism:** At the start of a project the team knows least, and an early commitment narrows the field of view before the facts arrive. Holding a decision open lets learning catch up. But every open decision has a deadline that nobody announces: the Poppendiecks define the last responsible moment as "the moment at which failing to make a decision eliminates an important alternative." A contract renews, an API ships and gets callers, another team builds on an assumption, and the alternative is gone. "If commitments are delayed beyond the last responsible moment, then decisions are made by default, which is generally not a good approach to making decisions." They add that some decisions, such as usability design, layering and component packaging, are best made early, and that "A bias toward late commitment must not degenerate into a bias toward no commitment."
+- **Counter:** **Most Responsible Moment** — some decisions pay off most when made early, because settling them unblocks everyone else; Wirfs-Brock prefers to decide when a decision has a positive impact rather than at the latest moment it can still be made.
+- **Guideline:** For each open design decision, write down the event that would remove an alternative (a contract date, a release that freezes an interface, another team starting to build on it) and put its date on the calendar. Decide before that date, not on it. Do not use this to postpone decisions that unblock other work or that shape everything after them, such as layering.
+- **Source:** Mary & Tom Poppendieck, *Lean Software Development: An Agile Toolkit* (Addison-Wesley, 2003), ch. 3, "Tool 8: The Last Responsible Moment", pp. 57–59 — the definition, "decisions are made by default" and the warning against a bias toward no commitment; they credit the term to the Lean Construction Institute. Rebecca Wirfs-Brock, "Agile Architecture Myths #2 Architecture Decisions Should Be Made At the Last Responsible Moment" (2011) — the "most responsible moment". — [source ↗](https://ptgmedia.pearsoncmg.com/images/9780321150783/samplepages/0321150783.pdf)
+- **See also:** [Type 1 vs Type 2 Decisions](#type-1-vs-type-2-decisions) · [YAGNI](#yagni) · [Cost of Delay](#cost-of-delay) · [Disagree and Commit](#disagree-and-commit)
+
+### Pre-Mortem
+
+`§ 109` · Decision
+
+- **Concept:** People who doubt a plan the team has already committed to tend to keep quiet; asking them to explain a failure that has already happened draws the doubts out.
+- **Keep in mind:** Assume the plan already failed, and make finding out why the clever move
+- **Mechanism:** In an ordinary plan review, raising problems looks disloyal or negative, and the momentum of a kickoff pushes reservations down; Klein's HBR teaser puts it as "too many people are reluctant to speak up about their reservations". The pre-mortem changes the frame: the leader tells the team the plan has failed and asks why. In Klein's words, "The pre-mortem reverses this dynamic—people show how smart they are by the quality of the issues that they raise." Writing reasons alone first, before anyone speaks, keeps the loudest voice from setting the list. In a study of 178 college students that Klein reports, the pre-mortem group showed the greatest drop in overconfidence compared with groups that critiqued the plan or listed pros and cons. The often-repeated claim that imagining failure makes people about 30% better at finding reasons goes beyond the 1989 study behind it, which counted how many reasons people produced, not how good they were.
+- **Counter:** **Bias for Action** — hunting for failure on every plan breeds caution; Klein himself notes that pre-mortems "tend to encourage risk aversion", and for a cheap, reversible step, trying it teaches more than imagining how it goes wrong.
+- **Guideline:** At the kickoff of any project that would hurt if it failed, after the plan is presented, tell the team it is some months later and the project has failed. Give everyone two minutes to write down the reasons alone, then go round the room one reason per person until the lists are empty, and give the top few an owner and a change to the plan. Skip it for small, reversible changes, where shipping and watching is cheaper.
+- **Source:** Gary Klein, "Performing a Project Premortem", *Harvard Business Review* (September 2007) — the method; Gary Klein, "The Pre-Mortem Method", *Psychology Today* (2021) — his fuller account of the steps and of the student study; Gary Klein, "Double-Barreled Pre-Mortems", *Psychology Today* (2025) — the warning about risk aversion. — [source ↗](https://hbr.org/2007/09/performing-a-project-premortem)
+- **See also:** [Blameless Postmortem](#blameless-postmortem) · [Working Backwards](#working-backwards) · [Murphy's Law](#murphys-law) · [Psychological Safety](#psychological-safety)
+
+### Wicked Problems
+
+`§ 110` · Decision
+
+- **Concept:** For some problems, working out what the problem is and choosing a solution are the same act, so the requirements cannot be settled before the design starts and there is no point at which the problem is done.
+- **Keep in mind:** When the problem shifts as you solve it, stop trying to freeze it first
+- **Mechanism:** Rittel and Webber contrasted "tame" problems, such as solving an equation or checkmate in five moves, where the mission is clear and so is whether it has been solved, with "wicked" ones, which include nearly all public policy issues. For a wicked problem, "The information needed to understand the problem depends upon one's idea for solving it", so "The formulation of a wicked problem is the problem!" Phased methods that start with "understand the problems or the mission" assume you can understand first and solve afterwards; for wicked problems "one cannot first understand, then solve." And "Wicked problems have no stopping rule": work ends because the planner runs out of time, or money, or patience, not because the problem says it is finished. Product and organisational questions with many stakeholders can behave this way, with each proposal changing what people say they want.
+- **Counter:** **Most Problems Are Tame** — Rittel and Webber themselves say the problems scientists and engineers usually face are mostly tame; calling a bug, a migration or a latency target "wicked" excuses not writing the problem statement that would have worked.
+- **Guideline:** Before writing requirements, ask two questions: does the problem statement change every time someone proposes a solution, and is there no test that would say it is solved? If both are yes, stop trying to freeze the requirements first: put the people who disagree in the same review, show small versions early, and decide in advance when you will stop, since the problem will not tell you. If either is no, treat it as tame and write the problem statement.
+- **Source:** Horst W. J. Rittel & Melvin M. Webber, "Dilemmas in a General Theory of Planning", *Policy Sciences* 4 (1973), 155–169 — the tame/wicked distinction and the ten properties of wicked problems. — [source ↗](https://doi.org/10.1007/BF01405730)
+- **See also:** [XY Problem](#xy-problem) · [Working Backwards](#working-backwards) · [Most Ideas Fail](#most-ideas-fail)
+
+### Most Ideas Fail
+
+`§ 111` · Decision
+
+- **Concept:** Most ideas that a competent team has already vetted do nothing or make things worse once they are measured, and the people who proposed them usually cannot tell which ones.
+- **Keep in mind:** Treat your favourite idea as a hypothesis that will probably fail
+- **Mechanism:** Every feature is built because someone believes it will have value, and the review that approves it runs on the same beliefs. When Microsoft measured ideas in controlled experiments, "only about 1/3 of ideas improve the metrics they were designed to improve"; the authors estimate that a team launching ten ideas without measuring gets roughly a third good, a third flat and a third negative, so the total value is small. Teams tend to run experiments when they are less sure, but the paper notes that Amazon evaluated every new feature and still saw a success rate below 50%. Without a measurement nobody finds out: "For most ideas, the change in key metrics will be too small to detect over time."
+- **Counter:** **Conviction Bets** — experiments optimise what can be measured within weeks; a new product, a platform shift or a long-horizon bet cannot be A/B tested, and someone has to commit on judgement.
+- **Guideline:** Before building, write down the metric the idea is meant to move and by how much, then ship it behind a flag to a randomised share of users. Drop or rework what does not move the metric, however sure the team was. Where you cannot randomise (too little traffic, a long-term bet, a change you cannot roll back), say so and decide on judgement without claiming it was measured.
+- **Source:** Ronny Kohavi et al., *Online Experimentation at Microsoft* (Microsoft ThinkWeek, 2009) — "only about 1/3 of ideas improve the metrics they were designed to improve" and the estimate of a third good, a third flat and a third negative. — [source ↗](https://exp-platform.com/Documents/ExPThinkWeek2009Public.pdf)
+- **See also:** [Survivorship Bias](#survivorship-bias) · [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see) · [Twyman's Law](#twymans-law) · [Cost of Delay](#cost-of-delay) · [Working Backwards](#working-backwards) · [Wicked Problems](#wicked-problems)
+
+### Kingman's Formula
+
+`§ 112` · Performance
+
+- **Concept:** As a server's utilization approaches 100%, the time work spends waiting for it climbs steeply, and variability in arrivals and service multiplies the climb.
+- **Keep in mind:** Keep headroom wherever someone is waiting on the answer
+- **Mechanism:** Kingman's approximation for the mean wait in a single-server queue (G/G/1) is **E(Wq) ≈ (ρ/(1−ρ)) · ((ca² + cs²)/2) · τ**, where ρ is utilization, ca and cs are the coefficients of variation of arrival and service times, and τ is the mean service time; it is also called the VUT equation, after its three factors. The utilization term does the damage: ρ/(1−ρ) is 4 at 80%, 9 at 90% and 19 at 95%, so going from 90% to 95% busy roughly doubles the wait with nothing else changed. Variability multiplies it, so bursty arrivals and uneven job sizes lengthen the wait at any load. The approximation "is known to be generally very accurate, especially for a system operating close to saturation." Little's Law says L = λW but not why W grows; Kingman's formula shows where the growth comes from. The same arithmetic plausibly applies to people: a team whose every hour is booked tends to make every new request wait. That is an inference from the model, not something Kingman measured.
+- **Counter:** **Throughput First** — when nobody is waiting on the result, as with overnight batch jobs or a backlog with no deadline, idle capacity is pure cost and running close to full is the right call.
+- **Guideline:** For anything latency-sensitive (a service, a shared build runner, the on-call engineer), set a utilization ceiling well below saturation and add capacity or shed load when you cross it, not after latency has already spiked. Cut variability too: smaller, more uniform jobs wait less at the same load. Batch work that nobody waits on can run hot.
+- **In practice:** In February 2026 DNSimple described version 10 of erldns, its authoritative DNS server: when scheduler utilization goes above 90%, the server reduces the rate at which it accepts work. The post asks why not push for 100% utilization and answers with Kingman's formula, saying queueing latency grows hyperbolically with utilization, so the 90% ceiling is a deliberate trade-off to stay away from the latency cliff. [account ↗](https://blog.dnsimple.com/2026/02/erldns-v10-release/)
+- **Source:** J. F. C. Kingman, *The single server queue in heavy traffic* (Mathematical Proceedings of the Cambridge Philosophical Society, 1961) — the heavy-traffic approximation for the mean wait in a single-server queue. — [source ↗](https://doi.org/10.1017/S0305004100036094)
+- **See also:** [Little's Law](#littles-law) · [Theory of Constraints](#theory-of-constraints) · [The Tail at Scale](#the-tail-at-scale) · [Parkinson's Law](#parkinsons-law) · [Maker's Schedule, Manager's Schedule](#makers-schedule-managers-schedule)
+
+### Maker's Schedule, Manager's Schedule
+
+`§ 113` · Organization
+
+- **Concept:** People who make things need long unbroken blocks of time, and a calendar run in one-hour slots breaks those blocks into pieces too small to use.
+- **Keep in mind:** Count a meeting's cost as the block it breaks, not the hour it takes
+- **Mechanism:** Paul Graham describes two ways of using a day. "The manager's schedule is for bosses": each day is cut into one-hour intervals, and a meeting is just one more slot. Makers, people who program or write, generally prefer to use time in units of half a day at least, because hard work needs a long run before it gets going. For them, "A single meeting can blow a whole afternoon, by breaking it into two pieces each too small to do anything hard in." Neither schedule is wrong: "Each type of schedule works fine by itself. Problems arise when they meet." The person booking the meeting usually sees only the hour it fills on their own calendar, so the cost to the maker tends to go uncounted.
+- **Counter:** **Unblock First** — a maker who saves every question for office hours leaves teammates stuck behind them; when someone else's work is waiting, answering now breaks one block and frees several.
+- **Guideline:** Put meetings at the edges of the day or cluster them on fixed days, and keep blocks of at least half a day free of them for the people who build. Before booking a maker, count the block you would break, not the hour you take. Incidents and a blocked teammate are exempt; those get answered now.
+- **In practice:** Pinterest's product engineering team experimented with a three-day no-meeting schedule, putting 9AM-5PM no-meeting blocks on engineers' calendars from Tuesday to Thursday. After about 100 days, managers reported very positive feedback, and a survey indicated that most engineers shared it; some said Monday and Friday meetings often spilled over. Several other engineering organisations at Pinterest then adopted the same schedule. [account ↗](https://bthdonohue.com/2018/05/02/three-day-no-meeting-schedule-for-engineers.html)
+- **Source:** Paul Graham, *Maker's Schedule, Manager's Schedule* (paulgraham.com, July 2009) — the two schedules and what one meeting costs a maker. — [source ↗](https://paulgraham.com/makersschedule.html)
+- **See also:** [Parkinson's Law](#parkinsons-law) · [Kingman's Formula](#kingmans-formula) · [Little's Law](#littles-law) · [Andon (Stop the Line)](#andon-stop-the-line)
+
+### McNamara Fallacy
+
+`§ 114` · Decision
+
+- **Concept:** Decisions drift toward whatever can be counted, until what cannot be counted is treated as if it did not exist.
+- **Keep in mind:** Name what you cannot count, and keep it beside the number
+- **Mechanism:** Daniel Yankelovich laid it out as four steps in a 1971 speech. "The first step is to measure whatever can be easily measured. This is okay as far as it goes." Then: "The second step is to disregard that which can't be easily measured or give it an arbitrary quantitative value." Then: "The third step is to presume that what can't be easily measured really isn't very important." Last: "The fourth step is to say that what can't be easily measured really doesn't exist." He called the end of that slide suicide, named it after Robert McNamara and pointed to the US experience in Vietnam. Numbers are cheap to collect, easy to compare and easy to defend in a meeting; judgements about trust, morale or the state of the code are not, so they tend to lose by default. It differs from Goodhart's Law: there the number gets gamed; here the number can be honest, and the harm comes from what was left out.
+- **Counter:** **Measure It Anyway** — much of what looks unmeasurable can be measured roughly, and a rough number tells you more than an unexamined hunch; Hubbard argues that the belief something cannot be measured rests on misconceptions (How to Measure Anything, 2007).
+- **Guideline:** When a decision rests on a dashboard, write down what matters that the dashboard does not show, such as user trust, on-call load or code health, and put at least one direct look or survey beside the numbers. The SPACE authors make the same point about developer productivity: "it cannot be measured by a single metric or dimension." For a narrow, well-instrumented question such as one endpoint's latency, the number is enough.
+- **Source:** Daniel Yankelovich, *The New Odds* (speech to the Marketing Strategy Conference of the Sales Executives Club of New York, 1971) — the four steps and the name. The common citation *Corporate Priorities* (1972) appears to be a mis-citation: in the speech it is the name of his firm's research programme. — [source ↗](https://ryanmadden.net/the-new-odds-transcript/)
+- **See also:** [Goodhart's Law](#goodharts-law) · [Survivorship Bias](#survivorship-bias) · [Genchi Genbutsu (Go and See)](#genchi-genbutsu-go-and-see) · [Twyman's Law](#twymans-law)
+
+### Twyman's Law
+
+`§ 115` · Cognition
+
+- **Concept:** A metric that moves surprisingly far is more often a bug in the measurement or the analysis than a real effect.
+- **Keep in mind:** Treat a surprising number as a bug report until it survives checking
+- **Mechanism:** In its usual wording, "Any figure that looks interesting or different is usually wrong!" Kohavi and his co-authors explain it with Bayes' rule. Breakthroughs are rare: if experiment results centre on 0 with a standard deviation of 0.25%, a +2.0% gain in sessions per user is eight standard deviations out, so even a statistically significant result is more likely a bug, usually an instrumentation error. With 5% significance and 80% power, if real breakthroughs are one in 500 experiments, the chance that a significant result is a true positive drops to 3.1%. People also check results unevenly: a bad result for a favoured feature gets questioned, a great one gets celebrated, so the errors that flatter us survive longest.
+- **Counter:** **Big Effects Are Sometimes Real** — the same paper's first rule: some surprises are real, like a Bing font-colour change worth over $10M a year that held when replicated on 32 million users; check hard, but do not throw out a result only for being large.
+- **Guideline:** When a result is far better or worse than past experiments, hold the announcement and check the plumbing first: how the metric is logged, whether the treatment changed what gets recorded, and whether the analysis compares like with like. Then replicate on a fresh sample. Ordinary, expected moves do not need this treatment.
+- **In practice:** An MSN experiment with a new auto-suggest algorithm looked like a huge success: searches on Bing referred from MSN rose dramatically. Investigating because of this rule, the team found the new code was effectively issuing two searches whenever a user picked a suggestion, one of which the browser always dropped. [account ↗](https://exp-platform.com/Documents/2014%20experimentersRulesOfThumb.pdf)
+- **Source:** Folklore, attributed to Tony Twyman; documented in Ron Kohavi, Alex Deng, Roger Longbotham & Ya Xu, *Seven Rules of Thumb for Web Site Experimenters* (KDD, 2014) — the wording, the Bayes argument and the examples. — [source ↗](https://exp-platform.com/Documents/2014%20experimentersRulesOfThumb.pdf)
+- **See also:** [Goodhart's Law](#goodharts-law) · [Survivorship Bias](#survivorship-bias) · [Most Ideas Fail](#most-ideas-fail) · [McNamara Fallacy](#mcnamara-fallacy)
+
+### Psychological Safety
+
+`§ 116` · Organization
+
+- **Concept:** A team learns only as fast as its members will admit mistakes, ask for help and disagree, and they do that only when they believe it is safe to.
+- **Keep in mind:** Make "I was wrong" and "I don't know" cheap to say
+- **Mechanism:** Amy Edmondson defined team psychological safety as "a shared belief held by members of a team that the team is safe for interpersonal risk taking". Asking a question, reporting an error or challenging a plan each risks looking ignorant or difficult in front of colleagues; when that risk feels high, people tend to stay quiet, and the team loses exactly the information it needed. In her study of 51 work teams in a manufacturing company, psychological safety was associated with learning behaviour, and learning behaviour mediated between psychological safety and team performance. She separates it from cohesiveness, which can reduce willingness to disagree, and from permissiveness: it is "a sense of confidence that the team will not embarrass, reject, or punish someone for speaking up."
+- **Counter:** **Accountability for Excellence** — safety on its own does not make people stretch; Edmondson herself says "if you are ONLY creating psychological safety, then you are creating a comfort zone," so the bar stays high and missed commitments still have consequences.
+- **Guideline:** Leaders go first: say your own mistakes and unknowns out loud, ask for dissent before you decide, and answer bad news by thanking the messenger and fixing the system. Keep standards and deadlines where they are; safety is about speaking up, not about lowering the bar.
+- **In practice:** Google's re:Work guide on its team-effectiveness research (Project Aristotle, published 2015) says the researchers studied 180 teams and found that what mattered was less about who is on the team, and more about how the team worked together. Of the five dynamics it lists in order of importance, psychological safety comes first, defined with Edmondson's wording. [account ↗](https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness)
+- **Source:** Amy C. Edmondson, *Psychological Safety and Learning Behavior in Work Teams* (Administrative Science Quarterly, 1999) — the definition and the field study of 51 teams. — [source ↗](https://doi.org/10.2307/2666999)
+- **See also:** [Blameless Postmortem](#blameless-postmortem) · [Braintrust (Notes Without Authority)](#braintrust-notes-without-authority) · [Pre-Mortem](#pre-mortem) · [Hanlon's Razor](#hanlons-razor)
 
 <!-- CODEX:END -->
 
