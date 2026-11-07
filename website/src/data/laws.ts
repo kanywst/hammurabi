@@ -571,6 +571,175 @@ export const collections: Collection[] = [
         "ja": "「大半のアイデアは失敗する」は、作る前に指標を決めろと言った。結果が出ると、その指標の外を見なくなりやすい。"
       }
     ]
+  },
+  {
+    "key": "before-and-after-an-incident",
+    "en": {
+      "title": "Before and after an incident",
+      "lede": "An incident is often several things lining up rather than one bad moment. This column reads from the small exceptions that build up before it, through the moment it is noticed, to what a team does afterwards so the next one is less likely."
+    },
+    "ja": {
+      "title": "障害の前とあと",
+      "lede": "障害は、一度の失敗ではなく、いくつかのことが重なって起きることが多い。このコラムは、障害の前に積み重なる小さな例外から、それに気づく瞬間、そして次を起こりにくくするための事後の手までを順に読む。"
+    },
+    "laws": [
+      {
+        "slug": "normalization-of-deviance",
+        "en": "It often starts well before anything breaks, with a shortcut that worked.",
+        "ja": "多くの場合、何かが壊れるずっと前、うまくいった近道から始まる。"
+      },
+      {
+        "slug": "broken-windows-theory",
+        "en": "An accepted exception does not stay alone. Left in plain sight, it invites the next one.",
+        "ja": "受け入れられた例外は、一つでは終わらない。見える所に放置されると、次の例外を呼ぶ。"
+      },
+      {
+        "slug": "normalcy-bias",
+        "en": "When the first real warning arrives, it looks like one more of the exceptions everyone has learned to live with.",
+        "ja": "最初の本物の警告が来ても、みんなが慣れてしまった例外の一つに見える。"
+      },
+      {
+        "slug": "andon",
+        "en": "Noticing is half of it. The other half is whether whoever noticed feels free to say so out loud.",
+        "ja": "気づくのは半分だ。残り半分は、気づいた人がそれを口に出してよいと思えるかどうかだ。"
+      },
+      {
+        "slug": "blameless-postmortem",
+        "en": "After the incident the same question returns. Will the people closest to it say what they saw?",
+        "ja": "障害のあとも同じ問いが戻ってくる。いちばん近くにいた人は、見たことを話すだろうか。"
+      },
+      {
+        "slug": "five-whys",
+        "en": "An honest account gives the analysis something to work with. How far it digs decides what the fix can reach.",
+        "ja": "正直な証言があれば、分析には材料ができる。どこまで掘るかで、対策がどこまで届くかが決まる。"
+      },
+      {
+        "slug": "swiss-cheese-model",
+        "en": "One chain of whys follows one path. Looking back, there is often more than one place the incident could have been stopped.",
+        "ja": "なぜを一本たどれば、見えるのは一つの経路だ。振り返ると、止められた場所は一つではないことが多い。"
+      },
+      {
+        "slug": "normal-accident-theory",
+        "en": "Adding another layer is the obvious response, and in some systems the new layer is one more way to fail.",
+        "ja": "層をもう一つ足すのが自然な対応だ。だがシステムによっては、足した層そのものが新しい壊れ方になる。"
+      },
+      {
+        "slug": "mechanisms-not-good-intentions",
+        "en": "Whatever the analysis finds, it ends as action items, and the kind of item decides whether the next incident is less likely.",
+        "ja": "分析が何を見つけても、最後は対策の一覧になる。どんな種類の対策かで、次の障害が起きにくくなるかが決まる。"
+      },
+      {
+        "slug": "chaos-engineering",
+        "en": "The postmortem steps all start from an incident that already happened. The last step is to learn some of the same lessons without one.",
+        "ja": "ポストモーテムからの手は、どれも起きてしまった障害が出発点だ。最後の一歩は、障害を待たずに、同じ教訓のいくつかを学ぶことだ。"
+      }
+    ]
+  },
+  {
+    "key": "when-numbers-run-the-work",
+    "en": {
+      "title": "When the numbers run the work",
+      "lede": "Teams measure to see what is happening, and can end up working to the measure. This column reads through how that can go wrong, from choosing what to count, to rewarding it, to reading the result, and then how to keep a number useful."
+    },
+    "ja": {
+      "title": "数字で仕事を回すとき",
+      "lede": "チームは何が起きているかを見るために測り、やがてその数字に向けて働くようになりやすい。このコラムは、何を数えるか、それに報いるとどうなるか、結果をどう読むか、そして数字を役に立つまま保つ手までを順に読む。"
+    },
+    "laws": [
+      {
+        "slug": "pareto-principle",
+        "en": "Numbers earn their place by pointing at where to look first.",
+        "ja": "数字が役に立つのは、まずどこを見ればいいかを指してくれるからだ。"
+      },
+      {
+        "slug": "mcnamara-fallacy",
+        "en": "A ranking only covers what someone thought to count.",
+        "ja": "ただ、順位がつくのは、誰かが数えようと決めたものだけだ。"
+      },
+      {
+        "slug": "goodharts-law",
+        "en": "That harm comes from what the number leaves out, even while the number is honest. Tie it to a reward and the number itself can stop measuring well.",
+        "ja": "ここまでの害は、数字が正直でも、その外にあるものから来る。報酬に結びつけると、今度は数字そのものが実態を測らなくなりうる。"
+      },
+      {
+        "slug": "cobra-effect",
+        "en": "Gaming a number is the mild case. The severe case is a reward that makes the problem itself grow.",
+        "ja": "数字を取り繕うだけなら、まだ軽い。重いのは、報酬が問題そのものを育ててしまう場合だ。"
+      },
+      {
+        "slug": "survivorship-bias",
+        "en": "Reading the results has its own trap, because the cases that make it into the report are not the only ones that happened.",
+        "ja": "結果を読む段にも罠がある。報告に残った例だけが、起きたことのすべてではない。"
+      },
+      {
+        "slug": "twymans-law",
+        "en": "Even the numbers that are in the report can mislead, most of all the surprising ones, and a surprisingly good one is easy to leave unchecked.",
+        "ja": "報告に載った数字でさえ、人を迷わせうる。とくに意外な数字がそうで、良すぎる数字は確かめられないままになりやすい。"
+      },
+      {
+        "slug": "genchi-genbutsu",
+        "en": "Checking the plumbing still means checking a number against other numbers. At some point someone has to look at the work itself.",
+        "ja": "配管を確かめても、比べている相手はまだ別の数字だ。どこかで誰かが、仕事そのものを見に行く必要がある。"
+      },
+      {
+        "slug": "error-budget",
+        "en": "Another way is to agree, before the number moves, what the team will do when it does, so nobody argues over it in the moment.",
+        "ja": "もう一つの手は、数字が動く前に、動いたら何をするかを決めておくことだ。そうすれば、その場で誰も言い争わずに済む。"
+      }
+    ]
+  },
+  {
+    "key": "making-it-faster",
+    "en": {
+      "title": "Making it faster",
+      "lede": "When something is too slow, the first instinct is to speed up the part you know. This column reads from finding where the time actually goes, to the limits on any speedup, to why waiting grows, and then to what keeps speed over time."
+    },
+    "ja": {
+      "title": "速くしたいとき",
+      "lede": "何かが遅いとき、まず手をつけたくなるのは自分の知っている部分だ。このコラムは、時間が実際にどこで使われているかを見つけるところから、速くできる限界、待ち時間が伸びる理由、そして速さを保ち続ける手までを順に読む。"
+    },
+    "laws": [
+      {
+        "slug": "premature-optimization",
+        "en": "It often starts with a part someone already suspects.",
+        "ja": "多くの場合、誰かが前から怪しいと思っている部分から始まる。"
+      },
+      {
+        "slug": "theory-of-constraints",
+        "en": "Measuring turns up many slow steps. When the work passes through them in a chain, only one of them sets how much gets through.",
+        "ja": "測ると遅い工程がいくつも見つかる。仕事がそれらを順に通るなら、どれだけ流れるかを決めるのはそのうち一つだ。"
+      },
+      {
+        "slug": "amdahls-law",
+        "en": "Even after finding the bottleneck, how much a fix can help depends on how much of the total it is.",
+        "ja": "ボトルネックを見つけても、直してどれだけ効くかは、それが全体のどれだけを占めるかで決まる。"
+      },
+      {
+        "slug": "littles-law",
+        "en": "Amdahl counts the time spent doing the work. In a busy system the bigger share can be time spent before the work starts, waiting for it.",
+        "ja": "アムダールが数えるのは、仕事をしている時間だ。混んでいるシステムでは、仕事が始まるまで待つ時間のほうが大きくなりうる。"
+      },
+      {
+        "slug": "kingmans-formula",
+        "en": "Little's Law ties waiting to the length of the line. What makes the line long is the next question.",
+        "ja": "リトルの法則は、待ち時間を列の長さに結びつける。何が列を長くするのかが、次の問いだ。"
+      },
+      {
+        "slug": "tail-at-scale",
+        "en": "A request that touches many servers is likely to meet some node's queue or stall, and the user waits for the slowest.",
+        "ja": "多くのサーバに触れるリクエストは、どこかのサーバの列や停止に出会いやすい。利用者は、いちばん遅いものを待つ。"
+      },
+      {
+        "slug": "constant-work",
+        "en": "The usual cures for the tail, hedging and retrying, add work, and work that grows exactly when things go wrong is a slowdown of its own.",
+        "ja": "裾への定番の手であるヘッジや再試行は、仕事を増やす。物事がうまくいかないときにちょうど増える仕事は、それ自体が遅さの原因になる。"
+      },
+      {
+        "slug": "wirths-law",
+        "en": "Most fixes so far are one-offs. Speed won once does not stay won unless something defends it.",
+        "ja": "ここまでの手の多くは一回きりだ。一度勝ち取った速さも、守る仕組みがなければ残らない。"
+      }
+    ]
   }
 ];
 
