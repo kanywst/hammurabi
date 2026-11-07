@@ -658,8 +658,8 @@ export const collections: Collection[] = [
       },
       {
         "slug": "goodharts-law",
-        "en": "That harm comes from what the number leaves out, even while the number is honest. Tie it to a reward and the number itself stops being honest.",
-        "ja": "ここまでの害は、数字が正直でも、その外にあるものから来る。報酬に結びつけると、今度は数字そのものが正直でなくなる。"
+        "en": "That harm comes from what the number leaves out, even while the number is honest. Tie it to a reward and the number itself can stop measuring well.",
+        "ja": "ここまでの害は、数字が正直でも、その外にあるものから来る。報酬に結びつけると、今度は数字そのものが実態を測らなくなりうる。"
       },
       {
         "slug": "cobra-effect",
@@ -722,7 +722,7 @@ export const collections: Collection[] = [
       {
         "slug": "kingmans-formula",
         "en": "Little's Law ties waiting to the length of the line. What makes the line long is the next question.",
-        "ja": "リトルの法則は、待ち時間を列の長さに結びつける。では何が列を長くするのか。"
+        "ja": "リトルの法則は、待ち時間を列の長さに結びつける。何が列を長くするのかが、次の問いだ。"
       },
       {
         "slug": "tail-at-scale",
@@ -736,8 +736,8 @@ export const collections: Collection[] = [
       },
       {
         "slug": "wirths-law",
-        "en": "Every fix so far is a one-off. Speed won once does not stay won unless something defends it.",
-        "ja": "ここまでの手は、どれも一回きりだ。一度勝ち取った速さも、守る仕組みがなければ残らない。"
+        "en": "Most fixes so far are one-offs. Speed won once does not stay won unless something defends it.",
+        "ja": "ここまでの手の多くは一回きりだ。一度勝ち取った速さも、守る仕組みがなければ残らない。"
       }
     ]
   }
