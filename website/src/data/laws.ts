@@ -827,13 +827,13 @@ export const collections: Collection[] = [
       },
       {
         "slug": "parkinsons-law",
-        "en": "You might hope tasks that come in under would offset the ones that run over. Tasks that could finish early tend to expand to fill their time, so early finishes rarely offset the late ones.",
-        "ja": "遅れた仕事の分を、早く終わった仕事が取り返してくれると期待したくなる。だが、早く終わりそうな仕事は時間いっぱいまで膨らみやすく、早めが遅れを取り返すことはまれだ。"
+        "en": "You might hope tasks that come in under would offset the ones that run over. Tasks that could finish early tend to expand to fill their time, so early finishes may not offset the late ones.",
+        "ja": "遅れた仕事の分を、早く終わった仕事が取り返してくれると期待したくなる。だが、早く終わりそうな仕事は時間いっぱいまで膨らみやすく、早めが遅れを取り返すとは限らない。"
       },
       {
         "slug": "kingmans-formula",
-        "en": "One delay sits outside every task's estimate: on a team whose every hour is booked, new work is likely to wait in line before it even starts.",
-        "ja": "どの作業の見積りにも入らない遅れもある。予定が埋まりきったチームでは、新しい仕事は始まる前から列で待たされやすい。"
+        "en": "One delay sits outside every task's estimate: by the same arithmetic as for servers, a team whose every hour is booked can expect new work to wait in line before it even starts.",
+        "ja": "どの作業の見積りにも入らない遅れもある。サーバと同じ計算を当てはめれば、予定が埋まりきったチームでは、新しい仕事は始まる前から列で待たされると見込める。"
       },
       {
         "slug": "brooks-law",
@@ -847,8 +847,8 @@ export const collections: Collection[] = [
       },
       {
         "slug": "cost-of-delay",
-        "en": "Moving scope means deciding what ships inside the box and what waits, and what waits keeps losing value.",
-        "ja": "スコープを動かすと、箱に入れるものと後に回すものを決めることになる。後に回したものは、待つ間も価値を失い続ける。"
+        "en": "Moving scope means deciding what ships inside the box and what waits, and what waits often keeps losing value.",
+        "ja": "スコープを動かすと、箱に入れるものと後に回すものを決めることになる。後に回したものは、待つ間も価値を失い続けることが多い。"
       }
     ]
   }
