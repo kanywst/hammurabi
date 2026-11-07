@@ -451,6 +451,73 @@ collections:
       - slug: wirths-law
         en: Most fixes so far are one-offs. Speed won once does not stay won unless something defends it.
         ja: ここまでの手の多くは一回きりだ。一度勝ち取った速さも、守る仕組みがなければ残らない。
+  - key: living-with-old-code
+    en:
+      title: Living with old code
+      lede: Old code invites two opposite urges, to delete what looks useless and to rewrite the whole thing. This column reads from finding out what the code is doing, to keeping it changeable, to replacing it without a big rewrite.
+    ja:
+      title: 古いコードとつきあう
+      lede: 古いコードは、二つの逆向きの衝動を呼ぶ。無駄に見えるものを消したい衝動と、全部書き直したい衝動だ。このコラムは、そのコードが何をしているかを知るところから、変えられる状態を保つ手、そして大きな書き直しをせずに置き換える手までを順に読む。
+    laws:
+      - slug: chestertons-fence
+        en: It often starts with a piece that looks like it does nothing.
+        ja: 多くの場合、何もしていないように見える部分から始まる。
+      - slug: hyrums-law
+        en: Even once you know why it was written, its users may depend on more than that.
+        ja: 書かれた理由が分かっても、使っている側はそれ以上のものに頼っているかもしれない。
+      - slug: programming-as-theory-building
+        en: The reasons and the dependencies both lived in the heads of the people who built it, and those people may be gone.
+        ja: 理由も依存も、作った人たちの頭の中にあった。その人たちは、もういないかもしれない。
+      - slug: lehmans-laws
+        en: Meanwhile the code keeps being changed, because it is still in use.
+        ja: その間もコードは変更され続ける。まだ使われているからだ。
+      - slug: technical-debt
+        en: Some of the complexity that builds up was chosen on purpose, as a shortcut, and can be tracked as one.
+        ja: 積み上がる複雑さの一部は、近道として意図して選んだものだ。それなら、近道として記録できる。
+      - slug: boy-scout-rule
+        en: Paying it back does not have to wait for a project of its own.
+        ja: 返すのは、専用のプロジェクトを待たなくてよい。
+      - slug: second-system-effect
+        en: When small repairs feel too slow, the urge is to start again from scratch.
+        ja: 小さな手直しでは遅すぎると感じると、一から作り直したくなる。
+      - slug: galls-law
+        en: A rewrite also gives up the one thing the old system has, which is that it already works.
+        ja: 作り直しは、古いシステムが持っているもの、つまり今動いているという事実も手放す。
+      - slug: strangler-fig
+        en: The alternative is to grow the replacement around the old system, one working piece at a time.
+        ja: 代わりの道は、古いシステムの周りに新しいものを、動く部品一つずつ育てていくことだ。
+      - slug: beyonce-rule
+        en: Moving piece by piece only works if you can tell when a piece starts to behave differently.
+        ja: 一つずつ移す方法が通用するのは、移した部品のふるまいが変わったときに気づけるときだけだ。
+  - key: why-estimates-slip
+    en:
+      title: Why estimates slip
+      lede: Estimates often slip for familiar reasons. This column reads from the estimate itself, to how work behaves once it starts, to what a late project tempts a team to do, and then to planning that expects the slip.
+    ja:
+      title: 見積りがずれるわけ
+      lede: 見積りは、見覚えのある理由でずれることが多い。このコラムは、見積りそのものから、始めた仕事のふるまい、遅れたプロジェクトがチームを誘う手、そしてずれを前提にした計画までを順に読む。
+    laws:
+      - slug: hofstadters-law
+        en: It starts with the estimate, which is made when the least is known.
+        ja: 始まりは見積りだ。見積りは、いちばん何も分かっていないときに出される。
+      - slug: ninety-ninety-rule
+        en: The gap is hard to see early on, because early progress is easy to count.
+        ja: ずれは序盤には見えにくい。序盤の進み具合は数えやすいからだ。
+      - slug: parkinsons-law
+        en: Work that could finish early tends to fill its time instead, so early and late do not cancel out.
+        ja: 早く終わりそうな仕事も、時間いっぱいまで膨らみやすい。だから早めと遅れは打ち消し合わない。
+      - slug: kingmans-formula
+        en: A team booked to full capacity can add one more delay, with every new request waiting in line.
+        ja: 予定を目一杯に詰めたチームでは、遅れがもう一つ加わりうる。新しい依頼が、列で待たされることだ。
+      - slug: brooks-law
+        en: When the date is at risk, the obvious fix is more people.
+        ja: 期日が危なくなると、まず思いつくのは人を増やすことだ。
+      - slug: fixed-time-variable-scope
+        en: Of the levers that remain, holding the date and moving the scope is the one that can be planned in from the start.
+        ja: 残る手のうち、期日を固定してスコープを動かすやり方は、最初から計画に組み込める。
+      - slug: cost-of-delay
+        en: Moving scope means choosing what goes first, and that choice often lacks a measure of what waiting costs.
+        ja: スコープを動かすには、何を先にやるかを選ぶ必要がある。その選択に欠けがちなのが、待たせる費用という物差しだ。
 
 laws:
   - slug: type-1-vs-type-2-decisions
