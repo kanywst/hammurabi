@@ -411,8 +411,8 @@ collections:
         en: Reading the results has its own trap, because the cases that make it into the report are not the only ones that happened.
         ja: 結果を読む段にも罠がある。報告に残った例だけが、起きたことのすべてではない。
       - slug: twymans-law
-        en: Even the numbers that are in the report can mislead, most of all the surprising ones, and a surprisingly good one is the least likely to be checked.
-        ja: 報告に載った数字でさえ、人を迷わせうる。とくに意外な数字がそうで、良すぎる数字ほど確かめられない。
+        en: Even the numbers that are in the report can mislead, most of all the surprising ones, and a surprisingly good one is easy to leave unchecked.
+        ja: 報告に載った数字でさえ、人を迷わせうる。とくに意外な数字がそうで、良すぎる数字は確かめられないままになりやすい。
       - slug: genchi-genbutsu
         en: Checking the plumbing still means checking a number against other numbers. At some point someone has to look at the work itself.
         ja: 配管を確かめても、比べている相手はまだ別の数字だ。どこかで誰かが、仕事そのものを見に行く必要がある。

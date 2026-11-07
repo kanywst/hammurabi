@@ -673,8 +673,8 @@ export const collections: Collection[] = [
       },
       {
         "slug": "twymans-law",
-        "en": "Even the numbers that are in the report can mislead, most of all the surprising ones, and a surprisingly good one is the least likely to be checked.",
-        "ja": "報告に載った数字でさえ、人を迷わせうる。とくに意外な数字がそうで、良すぎる数字ほど確かめられない。"
+        "en": "Even the numbers that are in the report can mislead, most of all the surprising ones, and a surprisingly good one is easy to leave unchecked.",
+        "ja": "報告に載った数字でさえ、人を迷わせうる。とくに意外な数字がそうで、良すぎる数字は確かめられないままになりやすい。"
       },
       {
         "slug": "genchi-genbutsu",
