@@ -580,7 +580,7 @@ export const collections: Collection[] = [
     },
     "ja": {
       "title": "障害の前とあと",
-      "lede": "障害は、ひとつの悪い瞬間ではなく、いくつかのことが重なって起きることが多い。このコラムは、障害の前に積み重なる小さな例外から、それに気づく瞬間、そして次を起こりにくくするための事後の手までを順に読む。"
+      "lede": "障害は、一度の失敗ではなく、いくつかのことが重なって起きることが多い。このコラムは、障害の前に積み重なる小さな例外から、それに気づく瞬間、そして次を起こりにくくするための事後の手までを順に読む。"
     },
     "laws": [
       {
@@ -590,8 +590,8 @@ export const collections: Collection[] = [
       },
       {
         "slug": "broken-windows-theory",
-        "en": "What one person tolerates quietly, a team can come to tolerate openly.",
-        "ja": "一人が黙って許したことを、チームはやがて公然と許すようになりうる。"
+        "en": "An accepted exception does not stay alone. Left in plain sight, it invites the next one.",
+        "ja": "受け入れられた例外は、一つでは終わらない。見える所に放置されると、次の例外を呼ぶ。"
       },
       {
         "slug": "normalcy-bias",
@@ -599,19 +599,9 @@ export const collections: Collection[] = [
         "ja": "最初の本物の警告が来ても、みんなが慣れてしまった例外の一つに見える。"
       },
       {
-        "slug": "swiss-cheese-model",
-        "en": "A dismissed warning is rarely the whole story. Looking back, there is often more than one place the incident could have been stopped.",
-        "ja": "見過ごされた警告だけが原因ということはまれだ。振り返ると、止められた場所は一つではないことが多い。"
-      },
-      {
-        "slug": "normal-accident-theory",
-        "en": "Adding another layer is the obvious response, and in some systems it is not enough.",
-        "ja": "層をもう一つ足すのが自然な対応だが、それでは足りないシステムもある。"
-      },
-      {
         "slug": "andon",
-        "en": "When something does go wrong, how fast it is raised depends on whether anyone feels free to raise it.",
-        "ja": "それでも何かがおかしくなったとき、どれだけ早く声が上がるかは、上げてよいと思えるかどうかに左右される。"
+        "en": "Noticing is half of it. The other half is whether whoever noticed feels free to say so out loud.",
+        "ja": "気づくのは半分だ。残り半分は、気づいた人がそれを口に出してよいと思えるかどうかだ。"
       },
       {
         "slug": "blameless-postmortem",
@@ -620,18 +610,28 @@ export const collections: Collection[] = [
       },
       {
         "slug": "five-whys",
-        "en": "With the facts on the table, the analysis has to go past the first cause it finds.",
-        "ja": "事実が出そろったら、分析は最初に見つかった原因の先まで進む必要がある。"
+        "en": "An honest account gives the analysis something to work with. How far it digs decides what the fix can reach.",
+        "ja": "正直な証言があれば、分析には材料ができる。どこまで掘るかで、対策がどこまで届くかが決まる。"
+      },
+      {
+        "slug": "swiss-cheese-model",
+        "en": "One chain of whys follows one path. Looking back, there is often more than one place the incident could have been stopped.",
+        "ja": "なぜを一本たどれば、見えるのは一つの経路だ。振り返ると、止められた場所は一つではないことが多い。"
+      },
+      {
+        "slug": "normal-accident-theory",
+        "en": "Adding another layer is the obvious response, and in some systems the new layer is one more way to fail.",
+        "ja": "層をもう一つ足すのが自然な対応だ。だがシステムによっては、足した層そのものが新しい壊れ方になる。"
       },
       {
         "slug": "mechanisms-not-good-intentions",
-        "en": "The analysis produces action items, and what kind of action item it produces decides whether the next incident is less likely.",
-        "ja": "分析からは対策が出てくる。どんな種類の対策かで、次の障害が起きにくくなるかが決まる。"
+        "en": "Whatever the analysis finds, it ends as action items, and the kind of item decides whether the next incident is less likely.",
+        "ja": "分析が何を見つけても、最後は対策の一覧になる。どんな種類の対策かで、次の障害が起きにくくなるかが決まる。"
       },
       {
         "slug": "chaos-engineering",
-        "en": "Every fix so far was learned from an incident that already happened. The last step is to learn some of them without one.",
-        "ja": "ここまでの対策は、どれも起きてしまった障害から学んだものだ。最後の一歩は、障害を待たずに学ぶことだ。"
+        "en": "The postmortem steps all start from an incident that already happened. The last step is to learn some of the same lessons without one.",
+        "ja": "ポストモーテムからの手は、どれも起きてしまった障害が出発点だ。最後の一歩は、障害を待たずに同じことを学ぶことだ。"
       }
     ]
   },
@@ -639,11 +639,11 @@ export const collections: Collection[] = [
     "key": "when-numbers-run-the-work",
     "en": {
       "title": "When the numbers run the work",
-      "lede": "Teams measure to see what is happening, and then start working to the measure. This column reads through how that can go wrong, from choosing what to count, to rewarding it, to reading the result, and then how to keep a number honest."
+      "lede": "Teams measure to see what is happening, and can end up working to the measure. This column reads through how that can go wrong, from choosing what to count, to rewarding it, to reading the result, and then how to keep a number useful."
     },
     "ja": {
       "title": "数字で仕事を回すとき",
-      "lede": "チームは何が起きているかを見るために測り、やがてその数字に向けて働き始める。このコラムは、それがどう崩れうるかを順に読む。何を数えるか、それに報いるとどうなるか、結果をどう読むか。そして、数字を正直に保つ手まで。"
+      "lede": "チームは何が起きているかを見るために測り、やがてその数字に向けて働くようになりやすい。このコラムは、何を数えるか、それに報いるとどうなるか、結果をどう読むか、そして数字を役に立つまま保つ手までを順に読む。"
     },
     "laws": [
       {
@@ -653,13 +653,13 @@ export const collections: Collection[] = [
       },
       {
         "slug": "mcnamara-fallacy",
-        "en": "Pointing at what is easy to count is not the same as pointing at what matters.",
-        "ja": "数えやすいものを指すことと、大事なものを指すことは同じではない。"
+        "en": "A ranking only covers what someone thought to count.",
+        "ja": "ただ、順位がつくのは、誰かが数えようと決めたものだけだ。"
       },
       {
         "slug": "goodharts-law",
-        "en": "Once a number is chosen, it tends to become a target, and targets change behaviour.",
-        "ja": "数字が選ばれると、それは目標になりやすい。目標は人の動きを変える。"
+        "en": "That harm comes from what the number leaves out, even while the number is honest. Tie it to a reward and the number itself stops being honest.",
+        "ja": "ここまでの害は、数字が正直でも、その外にあるものから来る。報酬に結びつけると、今度は数字そのものが正直でなくなる。"
       },
       {
         "slug": "cobra-effect",
@@ -673,13 +673,18 @@ export const collections: Collection[] = [
       },
       {
         "slug": "twymans-law",
-        "en": "Even the numbers that are in the report can mislead, most of all the ones that look best.",
-        "ja": "報告に載った数字でさえ、人を迷わせうる。とくに、いちばん良く見える数字がそうだ。"
+        "en": "Even the numbers that are in the report can mislead, most of all the surprising ones, and a surprisingly good one is the least likely to be checked.",
+        "ja": "報告に載った数字でさえ、人を迷わせうる。とくに意外な数字がそうで、良すぎる数字ほど確かめられない。"
+      },
+      {
+        "slug": "genchi-genbutsu",
+        "en": "Checking the plumbing still means checking a number against other numbers. At some point someone has to look at the work itself.",
+        "ja": "配管を確かめても、比べている相手はまだ別の数字だ。どこかで誰かが、仕事そのものを見に行く必要がある。"
       },
       {
         "slug": "error-budget",
-        "en": "One way to keep a number honest is to agree in advance what it will make the team do, whichever way it moves.",
-        "ja": "数字を正直に保つ手の一つは、それがどちらに動いたらチームが何をするかを、先に決めておくことだ。"
+        "en": "Another way is to agree, before the number moves, what the team will do when it does, so nobody argues over it in the moment.",
+        "ja": "もう一つの手は、数字が動く前に、動いたら何をするかを決めておくことだ。そうすれば、その場で誰も言い争わずに済む。"
       }
     ]
   },
@@ -701,8 +706,8 @@ export const collections: Collection[] = [
       },
       {
         "slug": "theory-of-constraints",
-        "en": "A profile lists many slow things, and only some of them set the pace of the whole.",
-        "ja": "計測すると遅いものがたくさん並ぶが、全体の速さを決めているのはその一部だ。"
+        "en": "Measuring turns up many slow steps. When the work passes through them in a chain, only one of them sets how much gets through.",
+        "ja": "測ると遅い工程がいくつも見つかる。仕事がそれらを順に通るなら、どれだけ流れるかを決めるのはそのうち一つだ。"
       },
       {
         "slug": "amdahls-law",
@@ -710,14 +715,9 @@ export const collections: Collection[] = [
         "ja": "ボトルネックを見つけても、直してどれだけ効くかは、それが全体のどれだけを占めるかで決まる。"
       },
       {
-        "slug": "gustafsons-law",
-        "en": "That limit assumes the job stays the same size. When the job grows with the hardware, the picture changes.",
-        "ja": "その限界は、仕事の大きさが変わらない前提だ。仕事がハードと一緒に大きくなるなら、見え方が変わる。"
-      },
-      {
         "slug": "littles-law",
-        "en": "For services and teams alike, much of the time something takes can be time spent waiting in line.",
-        "ja": "サービスでもチームでも、かかる時間の多くは列に並んで待つ時間でありうる。"
+        "en": "Amdahl counts the time spent doing the work. Often the bigger share is time spent before the work starts, waiting for it.",
+        "ja": "アムダールが数えるのは、仕事をしている時間だ。多くの場合それより大きいのは、仕事が始まるまで待っている時間だ。"
       },
       {
         "slug": "kingmans-formula",
@@ -726,18 +726,18 @@ export const collections: Collection[] = [
       },
       {
         "slug": "tail-at-scale",
-        "en": "Queues show up in every server a request touches, and the user waits for all of them.",
-        "ja": "待ち行列はリクエストが通るすべてのサーバにあり、利用者はそのすべてを待つ。"
+        "en": "A request that touches many servers meets every one of their queues and stalls, and the user waits for the slowest.",
+        "ja": "多くのサーバに触れるリクエストは、そのすべての列と停止に出会う。利用者は、いちばん遅いものを待つ。"
       },
       {
         "slug": "constant-work",
-        "en": "Some of the worst slowdowns come from the system's own reaction to trouble.",
-        "ja": "最悪の遅さのいくつかは、トラブルへのシステム自身の反応から生まれる。"
+        "en": "The usual cures for the tail, hedging and retrying, add work, and work that grows exactly when things go wrong is a slowdown of its own.",
+        "ja": "裾への定番の手であるヘッジや再試行は、仕事を増やす。物事がうまくいかないときにちょうど増える仕事は、それ自体が遅さの原因になる。"
       },
       {
         "slug": "wirths-law",
-        "en": "Whatever speed is won tends to be spent again as the software grows.",
-        "ja": "勝ち取った速さは、ソフトウェアが育つにつれて、また使われていきやすい。"
+        "en": "Every fix so far is a one-off. Speed won once does not stay won unless something defends it.",
+        "ja": "ここまでの手は、どれも一回きりだ。一度勝ち取った速さも、守る仕組みがなければ残らない。"
       }
     ]
   }
