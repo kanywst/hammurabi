@@ -707,3 +707,74 @@ figures:
     author: "Web Summit"
     page: "https://commons.wikimedia.org/wiki/File:Ed_Catmull_at_Web_Summit_2015_(cropped).jpg"
     focus: { x: 0.5, y: 0.38, zoom: 1 }
+  - slug: brandolinis-law
+    kind: person
+    name: "Alberto Brandolini"
+  - slug: automation-bias
+    kind: person
+    name: "Linda J. Skitka"
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Linda_Skitka.jpg"
+    license: "CC BY-SA 4.0"
+    author: "Michael Schacht"
+    page: "https://commons.wikimedia.org/wiki/File:Linda_Skitka.jpg"
+  - slug: small-changes
+    kind: company
+    name: "Google"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg"
+    license: "Public domain"
+    page: "https://commons.wikimedia.org/wiki/File:Google_Favicon_2025.svg"
+  - slug: programming-as-theory-building
+    kind: person
+    name: "Peter Naur"
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/55/Peternaur.JPG"
+    license: "CC BY-SA 3.0"
+    author: "Eriktj"
+    page: "https://commons.wikimedia.org/wiki/File:Peternaur.JPG"
+  - slug: test-oracle-problem
+    kind: none
+  - slug: lethal-trifecta
+    kind: person
+    name: "Simon Willison"
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Simon_Willison_%282929211382%29_%28cropped%29.jpg"
+    license: "CC BY 2.0"
+    author: "Paul Downey"
+    page: "https://commons.wikimedia.org/wiki/File:Simon_Willison_(2929211382)_(cropped).jpg"
+  - slug: cost-of-delay
+    kind: none
+  - slug: last-responsible-moment
+    kind: person
+    name: "Mary Poppendieck"
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/89/Workshop_Value_Stream_Mapping_de_Mary_Poppendieck._%281574484326%29.jpg"
+    license: "CC BY-SA 2.0"
+    author: "Improve It"
+    page: "https://commons.wikimedia.org/wiki/File:Workshop_Value_Stream_Mapping_de_Mary_Poppendieck._(1574484326).jpg"
+    focus: { x: 0.5, y: 0.18, zoom: 3 }
+  - slug: pre-mortem
+    kind: none
+  - slug: wicked-problems
+    kind: none
+  - slug: most-ideas-fail
+    kind: none
+  - slug: kingmans-formula
+    kind: person
+    name: "J. F. C. Kingman"
+  - slug: makers-schedule
+    kind: person
+    name: "Paul Graham"
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Paul_Graham_talking_about_Prototype_Day_at_Y_Combinator_Summer_2009.jpg"
+    license: "CC BY-SA 2.0"
+    author: "Kevin Hale"
+    page: "https://commons.wikimedia.org/wiki/File:Paul_Graham_talking_about_Prototype_Day_at_Y_Combinator_Summer_2009.jpg"
+    focus: { x: 0.5, y: 0.35, zoom: 2 }
+  - slug: mcnamara-fallacy
+    kind: person
+    name: "Daniel Yankelovich"
+  - slug: twymans-law
+    kind: none
+  - slug: psychological-safety
+    kind: person
+    name: "Amy Edmondson"
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Amy_Edmondson._Photo_Credit-_Evgenia_Eliseeva_%282018_photo%3B_cropped_2022%29.jpg"
+    license: "CC BY-SA 2.0"
+    author: "Evgenia Eliseeva (photo credit; uploaded by Amy Edmondson)"
+    page: "https://commons.wikimedia.org/wiki/File:Amy_Edmondson._Photo_Credit-_Evgenia_Eliseeva_(2018_photo;_cropped_2022).jpg"
