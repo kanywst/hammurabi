@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.7.0](https://github.com/kanywst/hammurabi/compare/v2.6.0...v2.7.0) (2026-11-07)
+
+
+### Added to the codex
+
+* **codex:** add sixteen laws from developer pain points ([#193](https://github.com/kanywst/hammurabi/issues/193)) ([a091b64](https://github.com/kanywst/hammurabi/commit/a091b646bbb1e7ad6138e50449f73a3796010dcb))
+
 ## [2.6.0](https://github.com/kanywst/hammurabi/compare/v2.5.0...v2.6.0) (2026-11-05)
 
 
