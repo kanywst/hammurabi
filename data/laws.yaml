@@ -349,6 +349,108 @@ collections:
       - slug: mcnamara-fallacy
         en: Most Ideas Fail asked for a metric before building. Once the result is in, that metric is also the easiest place to stop looking.
         ja: 「大半のアイデアは失敗する」は、作る前に指標を決めろと言った。結果が出ると、その指標の外を見なくなりやすい。
+  - key: before-and-after-an-incident
+    en:
+      title: Before and after an incident
+      lede: An incident is often several things lining up rather than one bad moment. This column reads from the small exceptions that build up before it, through the moment it is noticed, to what a team does afterwards so the next one is less likely.
+    ja:
+      title: 障害の前とあと
+      lede: 障害は、ひとつの悪い瞬間ではなく、いくつかのことが重なって起きることが多い。このコラムは、障害の前に積み重なる小さな例外から、それに気づく瞬間、そして次を起こりにくくするための事後の手までを順に読む。
+    laws:
+      - slug: normalization-of-deviance
+        en: It often starts well before anything breaks, with a shortcut that worked.
+        ja: 多くの場合、何かが壊れるずっと前、うまくいった近道から始まる。
+      - slug: broken-windows-theory
+        en: What one person tolerates quietly, a team can come to tolerate openly.
+        ja: 一人が黙って許したことを、チームはやがて公然と許すようになりうる。
+      - slug: normalcy-bias
+        en: When the first real warning arrives, it looks like one more of the exceptions everyone has learned to live with.
+        ja: 最初の本物の警告が来ても、みんなが慣れてしまった例外の一つに見える。
+      - slug: swiss-cheese-model
+        en: A dismissed warning is rarely the whole story. Looking back, there is often more than one place the incident could have been stopped.
+        ja: 見過ごされた警告だけが原因ということはまれだ。振り返ると、止められた場所は一つではないことが多い。
+      - slug: normal-accident-theory
+        en: Adding another layer is the obvious response, and in some systems it is not enough.
+        ja: 層をもう一つ足すのが自然な対応だが、それでは足りないシステムもある。
+      - slug: andon
+        en: When something does go wrong, how fast it is raised depends on whether anyone feels free to raise it.
+        ja: それでも何かがおかしくなったとき、どれだけ早く声が上がるかは、上げてよいと思えるかどうかに左右される。
+      - slug: blameless-postmortem
+        en: After the incident the same question returns. Will the people closest to it say what they saw?
+        ja: 障害のあとも同じ問いが戻ってくる。いちばん近くにいた人は、見たことを話すだろうか。
+      - slug: five-whys
+        en: With the facts on the table, the analysis has to go past the first cause it finds.
+        ja: 事実が出そろったら、分析は最初に見つかった原因の先まで進む必要がある。
+      - slug: mechanisms-not-good-intentions
+        en: The analysis produces action items, and what kind of action item it produces decides whether the next incident is less likely.
+        ja: 分析からは対策が出てくる。どんな種類の対策かで、次の障害が起きにくくなるかが決まる。
+      - slug: chaos-engineering
+        en: Every fix so far was learned from an incident that already happened. The last step is to learn some of them without one.
+        ja: ここまでの対策は、どれも起きてしまった障害から学んだものだ。最後の一歩は、障害を待たずに学ぶことだ。
+  - key: when-numbers-run-the-work
+    en:
+      title: When the numbers run the work
+      lede: Teams measure to see what is happening, and then start working to the measure. This column reads through how that can go wrong, from choosing what to count, to rewarding it, to reading the result, and then how to keep a number honest.
+    ja:
+      title: 数字で仕事を回すとき
+      lede: チームは何が起きているかを見るために測り、やがてその数字に向けて働き始める。このコラムは、それがどう崩れうるかを順に読む。何を数えるか、それに報いるとどうなるか、結果をどう読むか。そして、数字を正直に保つ手まで。
+    laws:
+      - slug: pareto-principle
+        en: Numbers earn their place by pointing at where to look first.
+        ja: 数字が役に立つのは、まずどこを見ればいいかを指してくれるからだ。
+      - slug: mcnamara-fallacy
+        en: Pointing at what is easy to count is not the same as pointing at what matters.
+        ja: 数えやすいものを指すことと、大事なものを指すことは同じではない。
+      - slug: goodharts-law
+        en: Once a number is chosen, it tends to become a target, and targets change behaviour.
+        ja: 数字が選ばれると、それは目標になりやすい。目標は人の動きを変える。
+      - slug: cobra-effect
+        en: Gaming a number is the mild case. The severe case is a reward that makes the problem itself grow.
+        ja: 数字を取り繕うだけなら、まだ軽い。重いのは、報酬が問題そのものを育ててしまう場合だ。
+      - slug: survivorship-bias
+        en: Reading the results has its own trap, because the cases that make it into the report are not the only ones that happened.
+        ja: 結果を読む段にも罠がある。報告に残った例だけが、起きたことのすべてではない。
+      - slug: twymans-law
+        en: Even the numbers that are in the report can mislead, most of all the ones that look best.
+        ja: 報告に載った数字でさえ、人を迷わせうる。とくに、いちばん良く見える数字がそうだ。
+      - slug: error-budget
+        en: One way to keep a number honest is to agree in advance what it will make the team do, whichever way it moves.
+        ja: 数字を正直に保つ手の一つは、それがどちらに動いたらチームが何をするかを、先に決めておくことだ。
+  - key: making-it-faster
+    en:
+      title: Making it faster
+      lede: When something is too slow, the first instinct is to speed up the part you know. This column reads from finding where the time actually goes, to the limits on any speedup, to why waiting grows, and then to what keeps speed over time.
+    ja:
+      title: 速くしたいとき
+      lede: 何かが遅いとき、まず手をつけたくなるのは自分の知っている部分だ。このコラムは、時間が実際にどこで使われているかを見つけるところから、速くできる限界、待ち時間が伸びる理由、そして速さを保ち続ける手までを順に読む。
+    laws:
+      - slug: premature-optimization
+        en: It often starts with a part someone already suspects.
+        ja: 多くの場合、誰かが前から怪しいと思っている部分から始まる。
+      - slug: theory-of-constraints
+        en: A profile lists many slow things, and only some of them set the pace of the whole.
+        ja: 計測すると遅いものがたくさん並ぶが、全体の速さを決めているのはその一部だ。
+      - slug: amdahls-law
+        en: Even after finding the bottleneck, how much a fix can help depends on how much of the total it is.
+        ja: ボトルネックを見つけても、直してどれだけ効くかは、それが全体のどれだけを占めるかで決まる。
+      - slug: gustafsons-law
+        en: That limit assumes the job stays the same size. When the job grows with the hardware, the picture changes.
+        ja: その限界は、仕事の大きさが変わらない前提だ。仕事がハードと一緒に大きくなるなら、見え方が変わる。
+      - slug: littles-law
+        en: For services and teams alike, much of the time something takes can be time spent waiting in line.
+        ja: サービスでもチームでも、かかる時間の多くは列に並んで待つ時間でありうる。
+      - slug: kingmans-formula
+        en: Little's Law ties waiting to the length of the line. What makes the line long is the next question.
+        ja: リトルの法則は、待ち時間を列の長さに結びつける。では何が列を長くするのか。
+      - slug: tail-at-scale
+        en: Queues show up in every server a request touches, and the user waits for all of them.
+        ja: 待ち行列はリクエストが通るすべてのサーバにあり、利用者はそのすべてを待つ。
+      - slug: constant-work
+        en: Some of the worst slowdowns come from the system's own reaction to trouble.
+        ja: 最悪の遅さのいくつかは、トラブルへのシステム自身の反応から生まれる。
+      - slug: wirths-law
+        en: Whatever speed is won tends to be spent again as the software grows.
+        ja: 勝ち取った速さは、ソフトウェアが育つにつれて、また使われていきやすい。
 
 laws:
   - slug: type-1-vs-type-2-decisions
