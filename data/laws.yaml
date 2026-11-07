@@ -386,7 +386,7 @@ collections:
         ja: 分析が何を見つけても、最後は対策の一覧になる。どんな種類の対策かで、次の障害が起きにくくなるかが決まる。
       - slug: chaos-engineering
         en: The postmortem steps all start from an incident that already happened. The last step is to learn some of the same lessons without one.
-        ja: ポストモーテムからの手は、どれも起きてしまった障害が出発点だ。最後の一歩は、障害を待たずに同じことを学ぶことだ。
+        ja: ポストモーテムからの手は、どれも起きてしまった障害が出発点だ。最後の一歩は、障害を待たずに、同じ教訓のいくつかを学ぶことだ。
   - key: when-numbers-run-the-work
     en:
       title: When the numbers run the work
@@ -437,14 +437,14 @@ collections:
         en: Even after finding the bottleneck, how much a fix can help depends on how much of the total it is.
         ja: ボトルネックを見つけても、直してどれだけ効くかは、それが全体のどれだけを占めるかで決まる。
       - slug: littles-law
-        en: Amdahl counts the time spent doing the work. Often the bigger share is time spent before the work starts, waiting for it.
-        ja: アムダールが数えるのは、仕事をしている時間だ。多くの場合それより大きいのは、仕事が始まるまで待っている時間だ。
+        en: Amdahl counts the time spent doing the work. In a busy system the bigger share can be time spent before the work starts, waiting for it.
+        ja: アムダールが数えるのは、仕事をしている時間だ。混んでいるシステムでは、仕事が始まるまで待つ時間のほうが大きくなりうる。
       - slug: kingmans-formula
         en: Little's Law ties waiting to the length of the line. What makes the line long is the next question.
         ja: リトルの法則は、待ち時間を列の長さに結びつける。何が列を長くするのかが、次の問いだ。
       - slug: tail-at-scale
-        en: A request that touches many servers meets every one of their queues and stalls, and the user waits for the slowest.
-        ja: 多くのサーバに触れるリクエストは、そのすべての列と停止に出会う。利用者は、いちばん遅いものを待つ。
+        en: A request that touches many servers is likely to meet some node's queue or stall, and the user waits for the slowest.
+        ja: 多くのサーバに触れるリクエストは、どこかのサーバの列や停止に出会いやすい。利用者は、いちばん遅いものを待つ。
       - slug: constant-work
         en: The usual cures for the tail, hedging and retrying, add work, and work that grows exactly when things go wrong is a slowdown of its own.
         ja: 裾への定番の手であるヘッジや再試行は、仕事を増やす。物事がうまくいかないときにちょうど増える仕事は、それ自体が遅さの原因になる。
