@@ -827,8 +827,8 @@ export const collections: Collection[] = [
       },
       {
         "slug": "parkinsons-law",
-        "en": "You might hope tasks that come in under would offset the ones that run over. Few come in under.",
-        "ja": "遅れた仕事の分を、早く終わった仕事が取り返してくれると期待したくなる。だが、早く終わりそうな仕事がそのまま早く終わることは少ない。"
+        "en": "You might hope tasks that come in under would offset the ones that run over. Tasks that could finish early tend to expand to fill their time, so early finishes rarely offset the late ones.",
+        "ja": "遅れた仕事の分を、早く終わった仕事が取り返してくれると期待したくなる。だが、早く終わりそうな仕事は時間いっぱいまで膨らみやすく、早めが遅れを取り返すことはまれだ。"
       },
       {
         "slug": "kingmans-formula",
@@ -842,8 +842,8 @@ export const collections: Collection[] = [
       },
       {
         "slug": "fixed-time-variable-scope",
-        "en": "Of the two levers left, moving the date is padding by another name, and padding gets used up. Moving scope is the one that can be planned in from the start.",
-        "ja": "残る二つの手のうち、期日を動かすのは余裕を足すのと変わらず、余裕は使い切られる。スコープを動かす手なら、最初から計画に組み込める。"
+        "en": "Besides adding people, a late project can move the date or the scope. Moving the date is padding by another name, and padding tends to get used up. Moving scope is the one that can be planned in from the start.",
+        "ja": "人を足す以外に、遅れたプロジェクトが動かせるのは期日かスコープだ。期日を動かすのは余裕を足すのと変わらず、余裕は使い切られやすい。スコープを動かす手なら、最初から計画に組み込める。"
       },
       {
         "slug": "cost-of-delay",
