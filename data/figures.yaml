@@ -730,6 +730,7 @@ figures:
     license: "CC BY-SA 3.0"
     author: "Eriktj"
     page: "https://commons.wikimedia.org/wiki/File:Peternaur.JPG"
+    focus: { x: 0.45, y: 0.3, zoom: 1 }
   - slug: test-oracle-problem
     kind: none
   - slug: lethal-trifecta
@@ -765,7 +766,7 @@ figures:
     license: "CC BY-SA 2.0"
     author: "Kevin Hale"
     page: "https://commons.wikimedia.org/wiki/File:Paul_Graham_talking_about_Prototype_Day_at_Y_Combinator_Summer_2009.jpg"
-    focus: { x: 0.5, y: 0.35, zoom: 2 }
+    focus: { x: 0.9, y: 0.28, zoom: 4.5 }
   - slug: mcnamara-fallacy
     kind: person
     name: "Daniel Yankelovich"

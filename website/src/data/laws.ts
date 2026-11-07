@@ -5748,10 +5748,14 @@ export const laws: Law[] = [
       "kind": "person",
       "name": "Linda J. Skitka",
       "monogram": "LS",
-      "image": null,
+      "image": "/figures/automation-bias.webp",
       "logo": null,
       "wide": false,
-      "credit": null
+      "credit": {
+        "author": "Michael Schacht",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Linda_Skitka.jpg"
+      }
     },
     "en": {
       "title": "Automation Bias",
@@ -5845,10 +5849,14 @@ export const laws: Law[] = [
       "kind": "person",
       "name": "Peter Naur",
       "monogram": "PN",
-      "image": null,
+      "image": "/figures/programming-as-theory-building.webp",
       "logo": null,
       "wide": false,
-      "credit": null
+      "credit": {
+        "author": "Eriktj",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Peternaur.JPG"
+      }
     },
     "en": {
       "title": "Programming as Theory Building",
@@ -5939,10 +5947,14 @@ export const laws: Law[] = [
       "kind": "person",
       "name": "Simon Willison",
       "monogram": "SW",
-      "image": null,
+      "image": "/figures/lethal-trifecta.webp",
       "logo": null,
       "wide": false,
-      "credit": null
+      "credit": {
+        "author": "Paul Downey",
+        "license": "CC BY 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Simon_Willison_(2929211382)_(cropped).jpg"
+      }
     },
     "en": {
       "title": "The Lethal Trifecta",
@@ -6039,10 +6051,14 @@ export const laws: Law[] = [
       "kind": "person",
       "name": "Mary Poppendieck",
       "monogram": "MP",
-      "image": null,
+      "image": "/figures/last-responsible-moment.webp",
       "logo": null,
       "wide": false,
-      "credit": null
+      "credit": {
+        "author": "Improve It",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Workshop_Value_Stream_Mapping_de_Mary_Poppendieck._(1574484326).jpg"
+      }
     },
     "en": {
       "title": "The Last Responsible Moment",
@@ -6278,10 +6294,14 @@ export const laws: Law[] = [
       "kind": "person",
       "name": "Paul Graham",
       "monogram": "PG",
-      "image": null,
+      "image": "/figures/makers-schedule.webp",
       "logo": null,
       "wide": false,
-      "credit": null
+      "credit": {
+        "author": "Kevin Hale",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Paul_Graham_talking_about_Prototype_Day_at_Y_Combinator_Summer_2009.jpg"
+      }
     },
     "en": {
       "title": "Maker's Schedule, Manager's Schedule",
@@ -6423,10 +6443,14 @@ export const laws: Law[] = [
       "kind": "person",
       "name": "Amy Edmondson",
       "monogram": "AE",
-      "image": null,
+      "image": "/figures/psychological-safety.webp",
       "logo": null,
       "wide": false,
-      "credit": null
+      "credit": {
+        "author": "Evgenia Eliseeva (photo credit; uploaded by Amy Edmondson)",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Amy_Edmondson._Photo_Credit-_Evgenia_Eliseeva_(2018_photo;_cropped_2022).jpg"
+      }
     },
     "en": {
       "title": "Psychological Safety",
