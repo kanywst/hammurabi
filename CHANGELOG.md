@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.0](https://github.com/kanywst/hammurabi/compare/v2.8.0...v2.9.0) (2026-11-07)
+
+
+### Added to the codex
+
+* **codex:** add three columns, on incidents, metrics and speed ([#197](https://github.com/kanywst/hammurabi/issues/197)) ([5167294](https://github.com/kanywst/hammurabi/commit/5167294577c9aed096664c87628e2364e3369e24))
+
 ## [2.8.0](https://github.com/kanywst/hammurabi/compare/v2.7.0...v2.8.0) (2026-11-07)
 
 
