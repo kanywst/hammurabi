@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.0](https://github.com/kanywst/hammurabi/compare/v2.9.0...v2.10.0) (2026-11-07)
+
+
+### Added to the codex
+
+* **codex:** add two columns, on old code and on slipping estimates ([#199](https://github.com/kanywst/hammurabi/issues/199)) ([dd28502](https://github.com/kanywst/hammurabi/commit/dd285028e8de785877f2880b762c5cee66f61aab))
+
 ## [2.9.0](https://github.com/kanywst/hammurabi/compare/v2.8.0...v2.9.0) (2026-11-07)
 
 
