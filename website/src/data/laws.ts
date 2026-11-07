@@ -745,11 +745,11 @@ export const collections: Collection[] = [
     "key": "living-with-old-code",
     "en": {
       "title": "Living with old code",
-      "lede": "Old code invites two opposite urges, to delete what looks useless and to rewrite the whole thing. This column reads from finding out what the code is doing, to keeping it changeable, to replacing it without a big rewrite."
+      "lede": "Old code invites two opposite urges, to delete what looks useless and to rewrite the whole thing. This column reads from finding out why the code is there and who relies on it, to keeping it changeable, to replacing it without a big rewrite."
     },
     "ja": {
       "title": "古いコードとつきあう",
-      "lede": "古いコードは、二つの逆向きの衝動を呼ぶ。無駄に見えるものを消したい衝動と、全部書き直したい衝動だ。このコラムは、そのコードが何をしているかを知るところから、変えられる状態を保つ手、そして大きな書き直しをせずに置き換える手までを順に読む。"
+      "lede": "古いコードは、二つの逆向きの衝動を呼ぶ。無駄に見えるものを消したい衝動と、全部書き直したい衝動だ。このコラムは、そのコードがなぜあり、誰が頼っているかを知るところから、変えられる状態を保つ手、そして大きな書き直しをせずに置き換える手までを順に読む。"
     },
     "laws": [
       {
@@ -758,49 +758,49 @@ export const collections: Collection[] = [
         "ja": "多くの場合、何もしていないように見える部分から始まる。"
       },
       {
-        "slug": "hyrums-law",
-        "en": "Even once you know why it was written, its users may depend on more than that.",
-        "ja": "書かれた理由が分かっても、使っている側はそれ以上のものに頼っているかもしれない。"
+        "slug": "programming-as-theory-building",
+        "en": "Learning why it is there often means asking the people who built it, and they may be gone.",
+        "ja": "なぜそこにあるのかを知るには、作った人に聞くことになりやすい。その人たちは、もういないかもしれない。"
       },
       {
-        "slug": "programming-as-theory-building",
-        "en": "The reasons and the dependencies both lived in the heads of the people who built it, and those people may be gone.",
-        "ja": "理由も依存も、作った人たちの頭の中にあった。その人たちは、もういないかもしれない。"
+        "slug": "hyrums-law",
+        "en": "Even they could not list everything it is relied on for. That list is held by its users.",
+        "ja": "その人たちでも、何に頼られているかを全部は挙げられない。それを知っているのは使っている側だ。"
       },
       {
         "slug": "lehmans-laws",
-        "en": "Meanwhile the code keeps being changed, because it is still in use.",
-        "ja": "その間もコードは変更され続ける。まだ使われているからだ。"
+        "en": "Nobody gets to wait until the code is understood again, because code still in use keeps being changed.",
+        "ja": "コードが理解し直されるまで待ってはもらえない。使われているコードは変更され続けるからだ。"
       },
       {
         "slug": "technical-debt",
-        "en": "Some of the complexity that builds up was chosen on purpose, as a shortcut, and can be tracked as one.",
-        "ja": "積み上がる複雑さの一部は、近道として意図して選んだものだ。それなら、近道として記録できる。"
+        "en": "Some of that complexity was taken on knowingly, by shipping before the problem was fully understood, and that part can be recorded as a loan.",
+        "ja": "その複雑さの一部は、問題を理解しきる前に承知で出したコードだ。その分は借金として記録できる。"
       },
       {
         "slug": "boy-scout-rule",
-        "en": "Paying it back does not have to wait for a project of its own.",
-        "ja": "返すのは、専用のプロジェクトを待たなくてよい。"
+        "en": "Part of it can be paid back without waiting for a project of its own.",
+        "ja": "その一部は、専用のプロジェクトを待たずに返せる。"
       },
       {
         "slug": "second-system-effect",
-        "en": "When small repairs feel too slow, the urge is to start again from scratch.",
-        "ja": "小さな手直しでは遅すぎると感じると、一から作り直したくなる。"
+        "en": "When small repairs feel too slow, the other urge from the start takes over, and a rewrite tempts you to fix more than was broken.",
+        "ja": "小さな手直しでは遅すぎると感じると、もう一方の衝動が勝つ。作り直すなら、壊れていない所まで直したくなる。"
       },
       {
         "slug": "galls-law",
-        "en": "A rewrite also gives up the one thing the old system has, which is that it already works.",
+        "en": "A rewrite also gives up something the old system already has: it works.",
         "ja": "作り直しは、古いシステムが持っているもの、つまり今動いているという事実も手放す。"
       },
       {
         "slug": "strangler-fig",
-        "en": "The alternative is to grow the replacement around the old system, one working piece at a time.",
-        "ja": "代わりの道は、古いシステムの周りに新しいものを、動く部品一つずつ育てていくことだ。"
+        "en": "If a replacement has to grow from something that works, the old system can be that something.",
+        "ja": "置き換えも動くものから育てるなら、その動くものは古いシステム自身でよい。"
       },
       {
         "slug": "beyonce-rule",
-        "en": "Moving piece by piece only works if you can tell when a piece starts to behave differently.",
-        "ja": "一つずつ移す方法が通用するのは、移した部品のふるまいが変わったときに気づけるときだけだ。"
+        "en": "Each piece moved can break someone who relied on the old behaviour, and the people moving it see only what a test checks.",
+        "ja": "部品を一つ移すたびに、古い挙動に頼っていた誰かが壊れうる。移す側に見えるのは、テストが確かめている挙動だけだ。"
       }
     ]
   },
@@ -808,17 +808,17 @@ export const collections: Collection[] = [
     "key": "why-estimates-slip",
     "en": {
       "title": "Why estimates slip",
-      "lede": "Estimates often slip for familiar reasons. This column reads from the estimate itself, to how work behaves once it starts, to what a late project tempts a team to do, and then to planning that expects the slip."
+      "lede": "Estimates tend to slip one way, late, and the reasons are well known. This column reads from the estimate itself, to how work behaves once it starts and while it waits, to what a late project tempts a team to do, and then to planning that expects the slip."
     },
     "ja": {
       "title": "見積りがずれるわけ",
-      "lede": "見積りは、見覚えのある理由でずれることが多い。このコラムは、見積りそのものから、始めた仕事のふるまい、遅れたプロジェクトがチームを誘う手、そしてずれを前提にした計画までを順に読む。"
+      "lede": "見積りは遅れる側にずれやすく、その理由はよく知られている。このコラムは、見積りそのものから、始めた仕事と待たされる仕事のふるまい、遅れたプロジェクトがチームを誘う手、そしてずれを前提にした計画までを順に読む。"
     },
     "laws": [
       {
         "slug": "hofstadters-law",
         "en": "It starts with the estimate, which is made when the least is known.",
-        "ja": "始まりは見積りだ。見積りは、いちばん何も分かっていないときに出される。"
+        "ja": "始まりは見積りだ。見積りは、分かっていることがいちばん少ないときに出される。"
       },
       {
         "slug": "ninety-ninety-rule",
@@ -827,13 +827,13 @@ export const collections: Collection[] = [
       },
       {
         "slug": "parkinsons-law",
-        "en": "Work that could finish early tends to fill its time instead, so early and late do not cancel out.",
-        "ja": "早く終わりそうな仕事も、時間いっぱいまで膨らみやすい。だから早めと遅れは打ち消し合わない。"
+        "en": "You might hope tasks that come in under would offset the ones that run over. Few come in under.",
+        "ja": "遅れた仕事の分を、早く終わった仕事が取り返してくれると期待したくなる。だが、早く終わりそうな仕事がそのまま早く終わることは少ない。"
       },
       {
         "slug": "kingmans-formula",
-        "en": "A team booked to full capacity can add one more delay, with every new request waiting in line.",
-        "ja": "予定を目一杯に詰めたチームでは、遅れがもう一つ加わりうる。新しい依頼が、列で待たされることだ。"
+        "en": "One delay sits outside every task's estimate: on a team whose every hour is booked, new work is likely to wait in line before it even starts.",
+        "ja": "どの作業の見積りにも入らない遅れもある。予定が埋まりきったチームでは、新しい仕事は始まる前から列で待たされやすい。"
       },
       {
         "slug": "brooks-law",
@@ -842,13 +842,13 @@ export const collections: Collection[] = [
       },
       {
         "slug": "fixed-time-variable-scope",
-        "en": "Of the levers that remain, holding the date and moving the scope is the one that can be planned in from the start.",
-        "ja": "残る手のうち、期日を固定してスコープを動かすやり方は、最初から計画に組み込める。"
+        "en": "Of the two levers left, moving the date is padding by another name, and padding gets used up. Moving scope is the one that can be planned in from the start.",
+        "ja": "残る二つの手のうち、期日を動かすのは余裕を足すのと変わらず、余裕は使い切られる。スコープを動かす手なら、最初から計画に組み込める。"
       },
       {
         "slug": "cost-of-delay",
-        "en": "Moving scope means choosing what goes first, and that choice often lacks a measure of what waiting costs.",
-        "ja": "スコープを動かすには、何を先にやるかを選ぶ必要がある。その選択に欠けがちなのが、待たせる費用という物差しだ。"
+        "en": "Moving scope means deciding what ships inside the box and what waits, and what waits keeps losing value.",
+        "ja": "スコープを動かすと、箱に入れるものと後に回すものを決めることになる。後に回したものは、待つ間も価値を失い続ける。"
       }
     ]
   }
