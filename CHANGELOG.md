@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.1](https://github.com/kanywst/hammurabi/compare/v2.10.0...v2.10.1) (2026-11-08)
+
+
+### Corrections
+
+* **deps:** patch minimatch and brace-expansion in website ([#204](https://github.com/kanywst/hammurabi/issues/204)) ([c4c698b](https://github.com/kanywst/hammurabi/commit/c4c698b1bcfd23a7d13306beecf2f6b0e6e509f7))
+
 ## [2.10.0](https://github.com/kanywst/hammurabi/compare/v2.9.0...v2.10.0) (2026-11-07)
 
 
