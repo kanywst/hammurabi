@@ -37,6 +37,7 @@
   },
   "overrides": {
     "postcss": "$postcss",
-    "sharp": "^0.35.4"
+    "sharp": "^0.35.4",
+    "minimatch@>=7 <11.0.1": "^11.0.5"
   }
 }
